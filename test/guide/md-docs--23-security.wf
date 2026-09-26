@@ -1,5 +1,9 @@
-// md-docs/19-security.md
-page Post(path: "/p/:slug", title: "Post", slug: String) {
+// md-docs/23-security.md
+type Post { title: String, body: String }
+api Backend(base: "/api") {
+    get post(slug: String) at "posts/:slug" -> Post
+}
+page PostPage(path: "/p/:slug", title: "Post", description: "One post.", slug: String) {
     resource post = Backend.post(slug: slug)
     match post {
         ready(p) { Unsafe.Html(sanitize(p.body)) }
@@ -7,7 +11,7 @@ page Post(path: "/p/:slug", title: "Post", slug: String) {
     }
 }
 
-// md-docs/19-security.md
+// md-docs/23-security.md
 api Backend(base: "/api/v1") {
     credentials: .sameOrigin      // the cookie goes with every call
     get me() -> User

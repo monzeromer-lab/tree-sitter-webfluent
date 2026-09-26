@@ -1,4 +1,4 @@
-// md-docs/17-outputs.md
+// md-docs/33-pdf-and-slides.md
 type Line { item: String, qty: Number, price: Number }
 const LINES: [Line] = [
     Line(item: "Design", qty: 12, price: 90),
@@ -39,7 +39,7 @@ page Invoice(path: "/", title: "Invoice", description: "An invoice.") {
     }
 }
 
-// md-docs/17-outputs.md
+// md-docs/33-pdf-and-slides.md
 page Deck(path: "/", title: "Q4 review", description: "The quarter in slides.") {
     Presentation {
         TitleSlide("Q4 review", subtitle: "Acme Studio, October 2026")
@@ -68,25 +68,5 @@ page Deck(path: "/", title: "Q4 review", description: "The quarter in slides.") 
             Heading("Thank you").h1
         }
     }
-}
-
-// md-docs/17-outputs.md
-page Invoice(path: "/", title: "Invoice", description: "An invoice.") {
-    Heading("Invoice #{number}").h1
-    Text("Bill to: {customer.name}")
-    Table {
-        Table.Head { Table.Row { Table.Cell("Item")  Table.Cell("Qty")  Table.Cell("Amount") } }
-        Table.Body {
-            for item in items {
-                Table.Row {
-                    Table.Cell(item.name)
-                    Table.Cell("{item.qty}")
-                    Table.Cell(format(item.price * item.qty, .currency))
-                }
-            }
-        }
-    }
-    if paid { Badge("Paid").success } else { Badge("Due").warning }
-    Text("Total: {format(total, .currency)}").bold.lg
 }
 

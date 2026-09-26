@@ -1,4 +1,4 @@
-// md-docs/04-elements.md
+// md-docs/07-elements.md
 page P(path: "/") {
     Button("Save", disabled: false).primary.lg {
         style { min-width: 120px }
@@ -8,7 +8,7 @@ page P(path: "/") {
     }
 }
 
-// md-docs/04-elements.md
+// md-docs/07-elements.md
 page P(path: "/") {
     Row(gap: .md, align: .center, justify: .between) {
         Text("left")
@@ -16,7 +16,7 @@ page P(path: "/") {
     }
 }
 
-// md-docs/04-elements.md
+// md-docs/07-elements.md
 page P(path: "/") {
     Button("Danger").danger            // tone: .danger
     Button("Wide").full.outlined       // width: .full, outlined: true
@@ -24,14 +24,14 @@ page P(path: "/") {
     state q = ""
 }
 
-// md-docs/04-elements.md
+// md-docs/07-elements.md
 page P(path: "/") {
     Button("More", aria-expanded: "false", aria-controls: "panel", data-track: "more")
     Input(bind: name, id: "name", autocomplete: "name", maxlength: 40)
     state name = ""
 }
 
-// md-docs/04-elements.md
+// md-docs/07-elements.md
 page P(path: "/") {
     Card.elevated {
         Card.Header { Heading("Title").h3 }
@@ -53,18 +53,18 @@ page P(path: "/") {
     state region = "fra1"
 }
 
-// md-docs/04-elements.md
+// md-docs/07-elements.md
 page P(path: "/") {
     Heading("Title").h1                       // a real <h1>; .h2 is the default
     Text("Plain, {count} live").bold.muted   // an inline run of text
     Paragraph("Prose, as a <p>.")
     Code("let x = 1").block
     Blockquote("A quotation.")
-    Markdown("**Bold** and a [link](/docs)")  // chapter 16
+    Markdown("**Bold** and a [link](/docs)")  // chapter 27
     state count = 3
 }
 
-// md-docs/04-elements.md
+// md-docs/07-elements.md
 page P(path: "/") {
     Container {                                  // centred, max-width
         Row(gap: .md, align: .center) {          // horizontal flex

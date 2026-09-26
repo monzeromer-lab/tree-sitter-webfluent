@@ -1,4 +1,4 @@
-// md-docs/21-cookbook.md
+// md-docs/35-recipes.md
 enum Filter { all, open, done }
 type Todo { id: Number, title: String, done: Bool = false, createdAt: String }
 store Todos {
@@ -90,7 +90,7 @@ page Home(path: "/", title: "Todos", description: "A small list of things to do.
     if let id = lastEdited { Text("Editing #{id}").muted.sm }
 }
 
-// md-docs/21-cookbook.md
+// md-docs/35-recipes.md
 theme Paper {
     color-primary: #7C3AED
     color-background: #FFFFFF
@@ -204,7 +204,7 @@ page NotFound(path: "*", title: "Not found", description: "Nothing lives here.",
     Link("Back home", to: "/")
 }
 
-// md-docs/21-cookbook.md
+// md-docs/35-recipes.md
 type Deploy { id: String, service: String, status: String, startedAt: String, by: String }
 type Service { name: String, healthy: Bool, region: String }
 enum Sort { newest, service, status }
@@ -412,7 +412,7 @@ page Settings(path: "/settings", title: "Settings", description: "Your preferenc
     }
 }
 
-// md-docs/21-cookbook.md
+// md-docs/35-recipes.md
 page Search(path: "/") {
     state typed = ""
     state q = ""
@@ -430,7 +430,7 @@ page Search(path: "/") {
     }
 }
 
-// md-docs/21-cookbook.md
+// md-docs/35-recipes.md
 page Rows(path: "/") {
     state page = 1
     state perPage = 20
@@ -449,7 +449,7 @@ page Rows(path: "/") {
     }
 }
 
-// md-docs/21-cookbook.md
+// md-docs/35-recipes.md
 type Item { id: String, liked: Bool }
 page Likes(path: "/") {
     state items: [Item] = [Item(id: "a", liked: false)]
@@ -470,7 +470,7 @@ page Likes(path: "/") {
     if error != "" { Toast(error).danger }
 }
 
-// md-docs/21-cookbook.md
+// md-docs/35-recipes.md
 component Confirm(_ title: String, visible: Bool, danger: Bool = false) {
     event confirm()
     event cancel()
@@ -495,7 +495,7 @@ page Use(path: "/") {
     if gone { Alert("Account deleted.").info }
 }
 
-// md-docs/21-cookbook.md
+// md-docs/35-recipes.md
 page Nav(path: "/") {
     state open = false
     if viewport.md {
@@ -516,27 +516,26 @@ page Nav(path: "/") {
     }
 }
 
-// md-docs/21-cookbook.md
+// md-docs/35-recipes.md
 page Signup(path: "/") {
     state email = ""
     state password = ""
     state confirm = ""
     state sent = false
-    derived emailOk = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)
-    derived passwordOk = password.length >= 8
-    derived same = password == confirm
-    derived ok = emailOk && passwordOk && same
+    validate email { required  email "Enter a valid email" }
+    validate password { required  minLength(8) "At least 8 characters" }
+    validate confirm { matches(password) "The passwords differ" }
     Form(bind: form) {
-        on submit { if ok { sent = true  form.reset() } }
-        Input(bind: email, name: "email", label: "Email", error: if email != "" && !emailOk { "Enter a valid email" } else { "" }).email.required
-        Input(bind: password, name: "password", label: "Password", error: if password != "" && !passwordOk { "At least 8 characters" } else { "" }).password.required
-        Input(bind: confirm, name: "confirm", label: "Confirm password", error: if confirm != "" && !same { "Passwords differ" } else { "" }).password.required
-        Button("Create account", type: .submit, disabled: !ok).primary
+        on submit { sent = true  form.reset() }
+        Input(bind: email, name: "email", label: "Email").email
+        Input(bind: password, name: "password", label: "Password").password
+        Input(bind: confirm, name: "confirm", label: "Confirm password").password
+        Button("Create account", type: .submit, disabled: !form.valid).primary
     }
     if sent { Alert("Welcome aboard.").success }
 }
 
-// md-docs/21-cookbook.md
+// md-docs/35-recipes.md
 page Account(path: "/account") {
     derived tab = if hash != "" { hash } else { "profile" }
     Row(gap: .sm) {
@@ -547,7 +546,7 @@ page Account(path: "/account") {
     if tab == "billing" { Text("Billing settings") }
 }
 
-// md-docs/21-cookbook.md
+// md-docs/35-recipes.md
 store Cart { state count = 0 }
 component CartBadge(count: Number) {
     if count > 0 { Badge("{count}").primary }
@@ -557,11 +556,112 @@ page Shop(path: "/") {
     CartBadge(count: Cart.count)
 }
 
-// md-docs/21-cookbook.md
+// md-docs/35-recipes.md
 page Countdown(path: "/") {
     state left = 10
     every(1000) { if left > 0 { left = left - 1 } }
     Progress(value: 10 - left, max: 10)
     Text(if left == 0 { "Done" } else { "{left}s" })
+}
+
+// md-docs/35-recipes.md
+type User { id: String, name: String }
+api Auth(base: "/api") {
+    credentials: .sameOrigin
+    get me() -> User
+    post signIn(body: Map) -> User
+        errors { 401 -> Map }
+    post signOut()
+}
+store Session {
+    state user: User? = null
+    state checked = false
+    derived signedIn = user != null
+    action load() {
+        try { user = await Auth.me() } catch e { user = null }
+        checked = true
+    }
+    action signIn(email: String, password: String) {
+        user = await Auth.signIn(body: { email: email, password: password })
+        navigate("/account")
+    }
+    action signOut() {
+        await Auth.signOut()
+        user = null
+        navigate("/")
+    }
+}
+page SignIn(path: "/sign-in", title: "Sign in", description: "Sign in to your account.", noindex: true) {
+    state email = ""
+    state password = ""
+    state problem = ""
+    validate email { required  email }
+    validate password { required }
+    action send() {
+        problem = ""
+        try { await Session.signIn(email, password) } catch e { problem = "That email and password do not match." }
+    }
+    Heading("Sign in").h1
+    if problem != "" { Alert(problem).danger }
+    Form(bind: form) {
+        on submit { send() }
+        Input(bind: email, label: "Email").email
+        Input(bind: password, label: "Password").password
+        Button("Sign in", type: .submit, disabled: send.pending).primary
+    }
+}
+page Account(path: "/account", title: "Your account", description: "Your account.", guard: Session.signedIn, redirect: "/sign-in") {
+    use Session
+    Heading("Your account").h1
+    if let u = Session.user { Text("Signed in as {u.name}") }
+    Button("Sign out") { on click { Session.signOut() } }
+}
+
+// md-docs/35-recipes.md
+type Item { id: String, name: String }
+api Catalog(base: "/api") {
+    get items(page: Number = 1) -> [Item]
+}
+page Items(path: "/items", title: "Items", description: "Everything, a page at a time.") {
+    state page = 1
+    resource list = Catalog.items(page: page, paginate: .page)
+    Heading("Items").h1
+    for item in list.items by item.id { Text(item.name) }
+    if list.hasMore {
+        Button("Load more", disabled: list.state == "loading") { on click { list.loadMore() } }
+    }
+}
+
+// md-docs/35-recipes.md
+page Products(path: "/products", title: "Products", description: "Everything we sell.") {
+    derived sort = query.sort ?? "name"
+    Heading("Products").h1
+    Row(gap: .sm) {
+        Link("By name", to: "/products?sort=name")
+        Link("By price", to: "/products?sort=price")
+    }
+    Text("Sorted by {sort}")
+}
+
+// md-docs/35-recipes.md
+page Settings(path: "/settings", title: "Settings", description: "How the site looks.") {
+    Heading("Settings").h1
+    Row(gap: .sm) {
+        Button("Light", outlined: theme != "light") { on click { setTheme("light") } }
+        Button("Dark", outlined: theme != "dark") { on click { setTheme("dark") } }
+        Button("Match the system", outlined: theme != "system") { on click { setTheme("system") } }
+    }
+}
+
+// md-docs/35-recipes.md
+page Share(path: "/share", title: "Share", description: "Copy the link.") {
+    state copied = false
+    action copy(text: String) {
+        await navigator.clipboard.writeText(text)
+        copied = true
+    }
+    Heading("Share").h1
+    Button("Copy the link") { on click { copy(location.href) } }
+    if copied { Toast("Copied").success }
 }
 

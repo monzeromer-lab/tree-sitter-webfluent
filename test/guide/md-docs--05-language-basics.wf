@@ -1,4 +1,4 @@
-// md-docs/02-language-basics.md
+// md-docs/05-language-basics.md
 page Home(path: "/", title: "Home", description: "The front page.") { Text("hi") }
 component Chip(_ label: String, tone: Tone = .calm) { Badge(label) }
 store Cart { state items = []  derived count = items.length }
@@ -6,12 +6,15 @@ theme Brand { color-primary: #0F766E  radius-md: 14px }
 app { Navbar { Text("Shop").heading }  Router }
 type Todo { id: String, title: String, done: Bool = false }
 enum Tone { calm, loud }
+api Backend(base: "/api/v1") { get todos() -> [Todo] }
+external Confetti from "https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/+esm" { fn confetti(options: Map) }
 const API = "/api/v1"
 data posts = "posts.json"
+image hero = "hero.jpg"
 animation Pulse { from { opacity: 1 } to { opacity: 0.5 } }
 test "chip shows its label" { Chip("Beta")  expect "Beta" }
 
-// md-docs/02-language-basics.md
+// md-docs/05-language-basics.md
 /// A doc comment: attaches to the declaration that follows it.
 component Avatar(_ initials: String) { Text(initials).bold }
 page Doc(path: "/") {
@@ -20,7 +23,7 @@ page Doc(path: "/") {
        comment. */
 }
 
-// md-docs/02-language-basics.md
+// md-docs/05-language-basics.md
 page P(path: "/") {
     state n = 0
     Text("{n}")                          // an element: fine in a render block
@@ -29,13 +32,13 @@ page P(path: "/") {
     }
 }
 
-// md-docs/02-language-basics.md
+// md-docs/05-language-basics.md
 page P(path: "/") {
     state a = 1  state b = 2
     Button("x") { on click { a = a + 1; b = b + 1 } }
 }
 
-// md-docs/02-language-basics.md
+// md-docs/05-language-basics.md
 page Home(path: "/") {
     state open = true
     Row(gap: .sm) {
@@ -53,7 +56,7 @@ page Home(path: "/") {
     }
 }
 
-// md-docs/02-language-basics.md
+// md-docs/05-language-basics.md
 page Home(path: "/") {
     state open = true
     Row(gap: .sm) {
@@ -73,7 +76,7 @@ page Home(path: "/") {
     }
 }
 
-// md-docs/02-language-basics.md
+// md-docs/05-language-basics.md
 page P(path: "/") {
     state user = { name: "Sam", age: 41 }
     Text("Hello, {user.name}! You are {user.age * 12} months old.")
@@ -81,7 +84,7 @@ page P(path: "/") {
     Text("A literal dollar: ${user.age}")     // `$` alone is plain text
 }
 
-// md-docs/02-language-basics.md
+// md-docs/05-language-basics.md
 const SAMPLE = #"page Home(path: "/") { state n = 0 }"#
 const TRICKY = ##"a raw string ends with "# — like that"##
 const LETTER = """

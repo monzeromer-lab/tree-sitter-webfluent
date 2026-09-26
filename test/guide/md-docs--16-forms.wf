@@ -1,32 +1,4 @@
-// md-docs/06-events-and-forms.md
-page Clicks(path: "/") {
-    state n = 0
-    state last = ""
-    Button("+1") { on click { n = n + 1 } }
-    Input(bind: last, placeholder: "type") {
-        on input { log(last) }
-        on keydown(e) { if e.key == "Enter" { log("submitted {last}") } }
-        on focus { log("in") }
-        on blur { log("out") }
-    }
-    Text("{n}")
-}
-
-// md-docs/06-events-and-forms.md
-page Keys(path: "/") {
-    state open = false
-    state q = ""
-    Input(bind: q, ref: box, placeholder: "Search") {
-        on key("Escape") { q = "" }            // on the element: fires while it has focus
-        on key("Enter", e) { log(e.target.value) }
-    }
-    on key("ctrl+k") { box.focus() }           // on the page: fires anywhere on the page
-    on key("cmd+k") { box.focus() }
-    on key("?") { open = !open }
-    if open { Alert("Shortcuts: ctrl+k to search, ? for this.").info }
-}
-
-// md-docs/06-events-and-forms.md
+// md-docs/16-forms.md
 page Signup(path: "/") {
     state name = ""
     state email = ""
@@ -50,7 +22,15 @@ page Signup(path: "/") {
     Text("{name} <{email}> wants {seats} {plan} seats from {when}")
 }
 
-// md-docs/06-events-and-forms.md
+// md-docs/16-forms.md
+page Handle(path: "/", title: "Handle", description: "Pick a handle.") {
+    state handle = ""
+    derived problem = if handle.length > 0 && handle.length < 3 { "At least three characters" } else { "" }
+    Heading("Pick a handle").h1
+    Input(bind: handle, label: "Handle", hint: "Letters, numbers and dashes", error: problem)
+}
+
+// md-docs/16-forms.md
 page Contact(path: "/") {
     state name = ""
     state email = ""
@@ -74,7 +54,7 @@ page Contact(path: "/") {
     if sent { Alert("Thanks — we will be in touch.").success }
 }
 
-// md-docs/06-events-and-forms.md
+// md-docs/16-forms.md
 page Signup(path: "/join", title: "Join", description: "Make an account.") {
     state email = ""
     state password = ""
@@ -103,13 +83,13 @@ page Signup(path: "/join", title: "Join", description: "Make an account.") {
     }
 }
 
-// md-docs/06-events-and-forms.md
+// md-docs/16-forms.md
 page Doc(path: "/") {
     state nights: Number(1..=30) = 2
     validate nights { required }
 }
 
-// md-docs/06-events-and-forms.md
+// md-docs/16-forms.md
 page Doc(path: "/") {
     action signUp() {
         try {
@@ -120,7 +100,67 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/06-events-and-forms.md
+// md-docs/16-forms.md
+api Backend(base: "/api") {
+    post avatar(id: String, file: File) at "users/:id/avatar"
+}
+page Avatar(path: "/avatar", title: "Your picture", description: "Change your picture.") {
+    state picked: File? = null
+    state done = false
+
+    action upload() {
+        if let f = picked {
+            await Backend.avatar(id: "me", file: f)
+            done = true
+        }
+    }
+
+    Heading("Your picture").h1
+    FileUpload(accept: "image/*", label: "Choose a picture") {
+        on change(e) { picked = e.target.files[0] }
+    }
+    if let f = picked {
+        Image(src: f.preview(), alt: "The picture you chose")
+        Text("{f.name}, {format(f.size / 1024, .integer)} kB").muted.sm
+        Button("Upload", disabled: upload.pending).primary { on click { upload() } }
+        if upload.pending { Progress(value: Backend.avatar.progress * 100, max: 100) }
+    }
+    if done { Alert("Uploaded.").success }
+}
+
+// md-docs/16-forms.md
+api Backend(base: "/api") {
+    post signUp(body: Map) -> Map
+        errors { 422 -> Map }
+}
+page Join(path: "/join", title: "Join", description: "Make an account.") {
+    state email = ""
+    state password = ""
+    state joined = false
+
+    validate email { required  email }
+    validate password { required  minLength(8) }
+
+    action join() {
+        try {
+            await Backend.signUp(body: { email: email, password: password })
+            joined = true
+        } catch e {
+            form.apply(e.body.errors)
+        }
+    }
+
+    Heading("Join").h1
+    if joined { Alert("Welcome aboard.").success }
+    Form(bind: form) {
+        on submit { join() }
+        Input(bind: email, name: "email", label: "Email").email
+        Input(bind: password, name: "password", label: "Password").password
+        Button("Join", type: .submit, disabled: !form.valid || join.pending).primary
+    }
+}
+
+// md-docs/16-forms.md
 store Api {
     state saved = 0
     action save(payload: Map) {
@@ -135,45 +175,5 @@ page Save(path: "/") {
     Button("Save", disabled: Api.save.pending).primary { on click { Api.save({ text: text }) } }
     if Api.save.pending { Spinner.sm }
     Text("Saved {Api.saved} times")
-}
-
-// md-docs/06-events-and-forms.md
-component Counter(_ start: Number) {
-    event change(value: Number)
-    state n = start
-    Row(gap: .sm) {
-        Button("−") { on click { n = n - 1  emit change(n) } }
-        Text("{n}")
-        Button("+") { on click { n = n + 1  emit change(n) } }
-    }
-}
-page Use(path: "/") {
-    state total = 0
-    Counter(10) { on change(v) { total = v } }
-    Text("Now {total}")
-}
-
-// md-docs/06-events-and-forms.md
-page ThemePicker(path: "/") {
-    Row(gap: .sm) {
-        Button("Light", outlined: theme != "light") { on click { setTheme("light") } }
-        Button("Dark", outlined: theme != "dark") { on click { setTheme("dark") } }
-        Button("System", outlined: theme != "system") { on click { setTheme("system") } }
-    }
-}
-
-// md-docs/06-events-and-forms.md
-page Overlays(path: "/") {
-    state confirm = false
-    state deleted = false
-    Button("Delete").danger { on click { confirm = true } }
-    Modal(visible: confirm, title: "Delete this?") {
-        Text("This cannot be undone.")
-        Modal.Footer {
-            Button("Cancel") { on click { confirm = false } }
-            Button("Delete").danger { on click { confirm = false  deleted = true } }
-        }
-    }
-    if deleted { Toast("Deleted").success }
 }
 

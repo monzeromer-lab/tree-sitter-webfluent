@@ -1,4 +1,4 @@
-// md-docs/14-data.md
+// md-docs/17-data.md
 type Deploy { id: String, status: String, startedAt: String }
 page Deploys(path: "/", title: "Deploys", description: "Recent deploys.") {
     resource deploys: [Deploy] = fetch("/api/deploys")
@@ -19,7 +19,7 @@ page Deploys(path: "/", title: "Deploys", description: "Recent deploys.") {
     Button("Refresh") { on click { deploys.reload() } }
 }
 
-// md-docs/14-data.md
+// md-docs/17-data.md
 page Search(path: "/") {
     state q = ""
     state token = "abc"
@@ -33,7 +33,7 @@ page Search(path: "/") {
     }
 }
 
-// md-docs/14-data.md
+// md-docs/17-data.md
 type Post { slug: String, title: String, body: String }
 page PostPage(path: "/posts/:slug", slug: String) {
     resource post: Post = fetch("/api/posts/{slug}")
@@ -47,7 +47,7 @@ page PostPage(path: "/posts/:slug", slug: String) {
     }
 }
 
-// md-docs/14-data.md
+// md-docs/17-data.md
 type User { id: String, name: String }
 api Backend(base: "/api/v1") {
     credentials: .sameOrigin      // the session cookie goes with every call
@@ -79,7 +79,7 @@ page Users(path: "/users", title: "Users", description: "Everyone.") {
     }
 }
 
-// md-docs/14-data.md
+// md-docs/17-data.md
 api Backend(base: env.PUBLIC_API ?? "/api/v1") {
     headers {
         Authorization: "Bearer {Session.token}"
@@ -93,66 +93,34 @@ api Backend(base: env.PUBLIC_API ?? "/api/v1") {
     get me() -> User
 }
 
-// md-docs/14-data.md
+// md-docs/17-data.md
 api Backend from "openapi.json" (base: env.PUBLIC_API)
 
-// md-docs/14-data.md
+// md-docs/17-data.md
+type Item { id: String, name: String }
+api Catalog(base: "/api") {
+    get items(page: Number = 1) -> [Item]
+}
+page Items(path: "/items", title: "Items", description: "Everything, a page at a time.") {
+    state page = 1
+    resource list = Catalog.items(page: page, paginate: .page)
+    Heading("Items").h1
+    for item in list.items by item.id { Text(item.name) }
+    if list.hasMore {
+        Button("Load more") { on click { list.loadMore() } }
+    }
+}
+
+// md-docs/17-data.md
 page Doc(path: "/") {
     action rename(id: String, name: String) {
         optimistic(Todos.items, items => items.map(i => if i.id == id { { ...i, title: name } } else { i }))
-        await Backend.updateUser(id, { name: name })
+        await Backend.updateUser(id: id, body: { name: name })
         Backend.users.invalidate()
     }
 }
 
-// md-docs/14-data.md
-page Chat(path: "/chat", title: "Chat", description: "Talk.") {
-    state draft = ""
-    socket chat = ws("wss://example.com/chat", heartbeat: 20.seconds) {
-        on message(m) { log(m) }
-    }
-
-    Heading("Chat").h1
-    match chat {
-        connecting { Spinner.sm }
-        open       { for m in chat.messages by m.id { Text(m.text) } }
-        closed(c)  { Alert("Disconnected ({c.code})").warning }
-        error(e)   { Alert(e.message).danger }
-    }
-    Input(bind: draft, label: "Message").text
-    Button("Send").primary { on click { chat.send({ text: draft })  draft = "" } }
-}
-
-// md-docs/14-data.md
-page Doc(path: "/") {
-    stream ticks = sse("/events", events: ["price"])
-    channel cart = broadcast("cart") { on message(m) { Cart.merge(m) } }
-    beacon("/analytics", { event: "checkout" })     // survives the page unloading
-}
-
-// md-docs/14-data.md
-page Doc(path: "/") {
-    effect { if let p = ticks.last("price") { price = p } }
-    Button("Sync") { on click { cart.post({ items: Cart.count }) } }
-}
-
-// md-docs/14-data.md
-page Doc(path: "/") {
-    if !network.online { Alert("You are offline — changes are queued.").warning }
-}
-
-// md-docs/14-data.md
-page Home(path: "/", title: "Home", description: "The front page.") {
-    if update.available {
-        Button("A new version is ready — reload") { on click { update.apply() } }
-    }
-    if network.queued > 0 {
-        Text("{network.queued} change(s) will be sent when you are back online").muted
-    }
-    Heading("Home").h1
-}
-
-// md-docs/14-data.md
+// md-docs/17-data.md
 type Todo { id: String, title: String, done: Bool = false }
 page Todos(path: "/") {
     state todos: [Todo] = []
@@ -192,7 +160,7 @@ page Todos(path: "/") {
     }
 }
 
-// md-docs/14-data.md
+// md-docs/17-data.md
 type Post { slug: String, title: String, date: String, body: String }
 data posts: [Post] = "posts.json"
 page Blog(path: "/", title: "Blog", description: "Every post.") {
@@ -205,7 +173,7 @@ page Blog(path: "/", title: "Blog", description: "Every post.") {
     }
 }
 
-// md-docs/14-data.md
+// md-docs/17-data.md
 type Post { slug: String, title: String, date: String, body: String }
 data posts: [Post] = "posts.json"
 page PostPage(path: "/posts/:slug", slug: String, title: "Post", description: "A post.", paths: posts.map(p => p.slug)) {
@@ -216,20 +184,6 @@ page PostPage(path: "/posts/:slug", slug: String, title: "Post", description: "A
         Markdown(p.body)
     } else {
         Alert("No such post").warning
-    }
-}
-
-// md-docs/14-data.md
-const PAGE_SIZE = 25
-const API = env.PUBLIC_API_URL ?? "/api"
-const FEATURES = { billing: env.PUBLIC_BILLING == "on", beta: false }
-page Rows(path: "/") {
-    resource rows = fetch("{API}/rows?limit={PAGE_SIZE}")
-    if FEATURES.billing { Link("Billing", to: "/billing") }
-    match rows {
-        loading { Spinner }
-        error(e) { Text(e.message).danger }
-        ready(r) { Text("{r.length} rows") }
     }
 }
 

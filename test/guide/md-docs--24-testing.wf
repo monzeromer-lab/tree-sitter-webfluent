@@ -1,4 +1,4 @@
-// md-docs/18-tooling.md
+// md-docs/24-testing.md
 component PriceTag(_ amount: Number, sale: Bool = false) {
     Row(gap: .sm, align: .center) {
         Text(format(amount, .currency)).bold
@@ -20,7 +20,7 @@ test "a list renders each row"(data: { rows: [{ name: "a" }, { name: "b" }] }) {
     expect "b"
 }
 
-// md-docs/18-tooling.md
+// md-docs/24-testing.md
 test "reporting an incident opens one more" {
     use IncidentStore
     state draft = ""
@@ -32,5 +32,11 @@ test "reporting an incident opens one more" {
     type "Queue backing up" into "What happened"
     click "Report"
     expect "3 open"
+}
+
+// md-docs/24-testing.md
+test "the cart shows what is in it"(data: { Cart: { items: [{ id: "a", qty: 2 }] } }) {
+    CartSummary()
+    expect "2 items"
 }
 
