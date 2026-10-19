@@ -1,4 +1,4 @@
-// md-docs/41-design-tokens.md
+// md-docs/42-design-tokens.md
 theme Brand {
     color-primary: #0F766E
     radius-md: 14px
