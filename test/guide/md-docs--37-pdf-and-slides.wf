@@ -1,4 +1,4 @@
-// md-docs/34-pdf-and-slides.md
+// md-docs/37-pdf-and-slides.md
 type Line { item: String, qty: Number, price: Number }
 const LINES: [Line] = [
     Line(item: "Design", qty: 12, price: 90),
@@ -43,7 +43,7 @@ page Invoice(path: "/", title: "Invoice", description: "An invoice.") {
     }
 }
 
-// md-docs/34-pdf-and-slides.md
+// md-docs/37-pdf-and-slides.md
 const SALES = [
     { month: "Jan", web: 41, store: 22 },
     { month: "Feb", web: 48, store: 25 },
@@ -58,7 +58,7 @@ page Report(path: "/", title: "Sales", description: "The quarter.") {
     }
 }
 
-// md-docs/34-pdf-and-slides.md
+// md-docs/37-pdf-and-slides.md
 page Deck(path: "/", title: "Q4 review", description: "The quarter in slides.") {
     Presentation {
         TitleSlide("Q4 review", subtitle: "Acme Studio, October 2026")

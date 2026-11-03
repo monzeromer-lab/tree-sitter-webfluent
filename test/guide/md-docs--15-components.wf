@@ -1,4 +1,4 @@
-// md-docs/11-components.md
+// md-docs/15-components.md
 component Greeting(_ name: String) {
     Text("Hello, {name}!")
 }
@@ -7,7 +7,7 @@ page Home(path: "/", title: "Home", description: "A greeting.") {
     Greeting("Ada")
 }
 
-// md-docs/11-components.md
+// md-docs/15-components.md
 /// A person, at a glance.
 component UserCard(_ name: String, role: String, active: Bool = true, avatar: String? = null) {
     Card.elevated {
@@ -27,7 +27,7 @@ page Team(path: "/") {
     UserCard("Ann", role: "PM").active
 }
 
-// md-docs/11-components.md
+// md-docs/15-components.md
 enum Tone { calm, loud }
 component Note(_ text: String, tone: Tone = .calm) {
     Text(text) {
@@ -40,7 +40,7 @@ page Notes(path: "/") {
     Note("Loud too").loud
 }
 
-// md-docs/11-components.md
+// md-docs/15-components.md
 type Todo { id: String, title: String, done: Bool = false }
 component TodoRow(_ todo: Todo) {
     event toggle(id: String)
@@ -63,7 +63,7 @@ page Todos(path: "/") {
     }
 }
 
-// md-docs/11-components.md
+// md-docs/15-components.md
 component Entry(_ key: String) {
     event menu(key: String, x: Number, y: Number)
     Button(key) {
@@ -79,7 +79,7 @@ page Files(path: "/") {
     Text("Menu for {at}")
 }
 
-// md-docs/11-components.md
+// md-docs/15-components.md
 component Panel(_ title: String) {
     slot
     slot trailing
@@ -99,7 +99,7 @@ page Keys(path: "/") {
     }
 }
 
-// md-docs/11-components.md
+// md-docs/15-components.md
 type Todo { id: String, title: String, done: Bool = false }
 component TodoList(items: [Todo]) {
     slot row(item: Todo, index: Number)
@@ -118,7 +118,7 @@ page Use(path: "/") {
     }
 }
 
-// md-docs/11-components.md
+// md-docs/15-components.md
 component Panel(_ title: String) {
     part Header(_ text: String) { Heading(text).h3 }
     part Footer { Divider  Text("End").muted.sm }
@@ -133,7 +133,7 @@ page Parts(path: "/") {
     }
 }
 
-// md-docs/11-components.md
+// md-docs/15-components.md
 component Stepper(_ start: Number, step: Number = 1) {
     event change(value: Number)
     state n = start
@@ -147,7 +147,7 @@ component Stepper(_ start: Number, step: Number = 1) {
     }
 }
 
-// md-docs/11-components.md
+// md-docs/15-components.md
 store Cart {
     state items: [String] = []
     action add(name: String) { items.push(name) }
@@ -162,7 +162,7 @@ page Shop(path: "/") {
     Text("{Cart.items.length} in cart")
 }
 
-// md-docs/11-components.md
+// md-docs/15-components.md
 component Chip(_ label: String, extra: String = "", note: String = "") {
     Badge(label, class: extra, aria-description: note)
 }
@@ -171,7 +171,7 @@ page Chips(path: "/", title: "Chips", description: "Styled by the caller.") {
     Chip("Beta", extra: "chip-beta", note: "Not finished yet") { on click { log("beta") } }
 }
 
-// md-docs/11-components.md
+// md-docs/15-components.md
 component Stepper(_ value: Number, label: String, min: Number = 0) {
     event change(value: Number)
     Row(gap: .sm, align: .center) {

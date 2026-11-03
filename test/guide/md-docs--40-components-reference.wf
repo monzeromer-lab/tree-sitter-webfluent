@@ -1,10 +1,10 @@
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Container { Heading("Pricing").h1 }
     Container.fluid { Text("Edge to edge") }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Row(gap: .md, align: .center, justify: .between) {
         Text("Left")
@@ -13,7 +13,7 @@ page Doc(path: "/") {
     Row(direction: { base: .column, md: .row }) { Text("a")  Text("b") }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Row {
         Column(span: 8) { Text("Main") }
@@ -21,7 +21,7 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Grid(columns: { base: 1, md: 3 }, gap: .lg) {
         Card { Text("One") }
@@ -30,7 +30,7 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Stack(gap: .sm) {
         Text("First")
@@ -38,14 +38,14 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Text("Above")
     Spacer.lg
     Text("Below")
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     state rows = (0..10000).map((i) => "row {i}")
     state picked = "row 0"
@@ -55,7 +55,7 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     state side = 240
     Row {
@@ -65,25 +65,25 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Text("Section one")
     Divider
     Text("Section two")
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Host(tag: "canvas", mount: (node) => node.getContext("2d"), cleanup: (ctx) => log("gone"))
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Stack(ref: panel)
     Portal(into: panel) { Text("Drawn inside the stack") }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Navbar {
         Navbar.Brand { Link("Acme", to: "/") }
@@ -92,7 +92,7 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Sidebar {
         Sidebar.Header { Text("Console").bold }
@@ -102,14 +102,14 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Link("About us", to: "/about")
     Link("Guide", to: "/docs", active: .prefix)
     Link(to: "https://example.com", target: "_blank") { Text("Example") }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Tabs {
         Tabs.Page("Profile") { Text("Your details") }
@@ -117,7 +117,7 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Breadcrumb {
         Breadcrumb.Item(to: "/") { Text("Home") }
@@ -126,7 +126,7 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Menu(trigger: "Options") {
         Menu.Item(shortcut: "F2") { Text("Rename") }
@@ -139,7 +139,7 @@ page Doc(path: "/") {
     Menu(visible: asked, at: point) { Menu.Item { Text("Copy") } }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Card.elevated {
         Card.Header { Heading("Pro").h3 }
@@ -148,7 +148,7 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Table(caption: "Deploys") {
         Table.Head { Table.Row { Table.Cell("Region")  Table.Cell("Status") } }
@@ -156,7 +156,7 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     List {
         List.Item { Text("Milk") }
@@ -165,46 +165,46 @@ page Doc(path: "/") {
     List.ordered { List.Item { Text("First") } }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Badge("Beta").info
     Badge("3 new").danger.pill
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Tag("design")
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Avatar(src: "/ada.jpg", alt: "Ada Lovelace")
     Avatar(initials: "AL").primary.lg
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Tooltip("Copies the link") { IconButton(icon: "copy", label: "Copy link") }
     Tooltip("Save", shortcut: "Ctrl+S", delay: 400, placement: .bottom) { Button("Save") }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Chart(kind: .bar, data: [{ month: "Jan", web: 12 }, { month: "Feb", web: 18 }], x: "month", y: "web", unit: "k")
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     QrCode("https://example.com/report/q1")
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     state email = ""
     Input(bind: email, label: "Email", hint: "We never share it").email.required
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     state plan = "free"
     Select(bind: plan, label: "Plan") {
@@ -213,43 +213,43 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     state agree = false
     Checkbox(bind: agree, label: "I agree to the terms")
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     state size = "m"
     Radio(bind: size, value: "s", label: "Small")
     Radio(bind: size, value: "m", label: "Medium")
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     state notify = true
     Switch(bind: notify, label: "Email me about replies")
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     state volume = 50
     Slider(bind: volume, min: 0, max: 100, step: 5, label: "Volume")
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     state start: Date? = null
     DatePicker(bind: start, label: "Start date", min: "2026-01-01")
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     FileUpload(accept: "image/*", label: "Choose a picture") { on change(e) { log(e.target.files[0].name) } }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     state name = ""
     Form(bind: form) {
@@ -259,25 +259,25 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     state note = ""
     Textarea(bind: note, label: "Notes", rows: 4, maxLength: 200)
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Alert("Your changes were saved.").success
     Alert("The server is not answering.").danger
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     state saved = false
     if saved { Toast("Saved").success }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     state open = false
     Button("Delete") { on click { open = true } }
@@ -288,7 +288,7 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     state open = false
     Button("Branches", ref: branches) { on click { open = !open } }
@@ -298,7 +298,7 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     state asking = false
     Dialog(visible: asking, title: "Leave without saving notes.md?") {
@@ -307,37 +307,37 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Spinner
     Spinner.lg
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Progress(value: 40, max: 100)
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Skeleton(height: "20px", width: "200px")
     Skeleton(size: "48px").circle
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Button("Save").primary { on click { log("saved") } }
     Button("Delete").danger.outlined.sm
     Button("Send", type: .submit).primary.full
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     IconButton(icon: "close", label: "Close")
     IconButton(icon: "edit", label: "Edit the title").primary.sm
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     ButtonGroup {
         Button("Day")
@@ -346,7 +346,7 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Dropdown(label: "Actions") {
         Dropdown.Item { Text("Duplicate") }
@@ -355,23 +355,23 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Image(src: "/team.jpg", alt: "The team at the launch", width: 1200, height: 630)
     Image(src: "/flourish.svg", alt: "")
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Video(src: "/demo.mp4", captions: "/demo.en.vtt", poster: "/demo.jpg").controls
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Audio(src: "/episode-1.mp3", transcript: "/episode-1.txt").controls
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Frame(src: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", title: "The launch talk", allow: "fullscreen")
     state heard = ""
@@ -382,13 +382,13 @@ page Doc(path: "/") {
     Frame(srcdoc: "<p>Version {version}</p>", title: "Example", sandbox: "")
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Icon("search")
     Icon("check").lg.success
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Carousel(label: "Recent work", autoplay: true, interval: 5000) {
         Carousel.Slide { Image(src: "/one.jpg", alt: "A bridge at dusk") }
@@ -396,57 +396,57 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Text("Hello, world")
     Text("Last updated today").muted.sm
     Text("Important").bold.danger
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Heading("Pricing").h1
     Heading("Frequently asked").h2
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Text("Run ")
     Code("wf serve")
     Code("page Home(path: \"/\") { Text(\"Hi\") }", language: "wf").block
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     state docs = "Returns &lt;T&gt;, as [the guide](/docs) says."
     Markdown("Some **bold** text and a [link](/docs).")
     Markdown(docs).inert
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     state body = "<p>From the CMS</p>"
     Unsafe.Html(sanitize(body))
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Blockquote { Text("Make it work, make it right, make it fast.") }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     TableOfContents(levels: 2)
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Document(page_size: "A4") {
         Section { Heading("Report").h1  Paragraph("Revenue grew.") }
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Section {
         Heading("Terms").h2
@@ -454,39 +454,39 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Paragraph("A block of prose, with the spacing a paragraph has.")
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Header { Text("Company Inc.").muted.sm }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Footer { Text("© Company Inc.").muted.sm }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Background(on: .first) { Stack { style { height: 100%; background: linear-gradient(160deg, #1d4ed8, #0f172a) } } }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Watermark("DRAFT")
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Text("End of chapter one.")
     PageBreak
     Heading("Chapter two").h2
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Presentation {
         TitleSlide("Q1 review", subtitle: "March 2026")
@@ -494,7 +494,7 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Presentation {
         Slide {
@@ -504,17 +504,17 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Presentation { TitleSlide("Q1 review", subtitle: "Acme, March 2026") }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Presentation { SectionSlide("Numbers").primary }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Presentation {
         TwoColumn {
@@ -524,12 +524,12 @@ page Doc(path: "/") {
     }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 page Doc(path: "/") {
     Presentation { ImageSlide(src: "chart.png", caption: "Revenue by month") }
 }
 
-// md-docs/37-components-reference.md
+// md-docs/40-components-reference.md
 app {
     Navbar { Navbar.Brand { Link("Acme", to: "/") } }
     Router(transition: .fade, duration: "200ms")

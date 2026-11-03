@@ -1,4 +1,4 @@
-// md-docs/05-language-basics.md
+// md-docs/09-language-basics.md
 page Home(path: "/", title: "Home", description: "The front page.") { Heading("Welcome").h1 }
 component Chip(_ label: String, tone: Tone = .calm) { Badge(label) }
 store Cart { state items = []  derived count = items.length }
@@ -13,7 +13,7 @@ image hero = "hero.jpg"
 animation Pulse { from { opacity: 1 } to { opacity: 0.5 } }
 test "chip shows its label" { Chip("Beta")  expect "Beta" }
 
-// md-docs/05-language-basics.md
+// md-docs/09-language-basics.md
 /// A person's initials, in a circle.
 component Avatar(_ initials: String) { Text(initials).bold }
 page Doc(path: "/") {
@@ -22,7 +22,7 @@ page Doc(path: "/") {
        comment. */
 }
 
-// md-docs/05-language-basics.md
+// md-docs/09-language-basics.md
 page Counter(path: "/", title: "Counter", description: "A number that goes up.") {
     state clicks = 0
     Heading("Counter").h1
@@ -32,7 +32,7 @@ page Counter(path: "/", title: "Counter", description: "A number that goes up.")
     }
 }
 
-// md-docs/05-language-basics.md
+// md-docs/09-language-basics.md
 page Score(path: "/", title: "Score", description: "Two teams, two numbers.") {
     state home = 1  state away = 2
     Heading("Score").h1
@@ -40,7 +40,7 @@ page Score(path: "/", title: "Score", description: "Two teams, two numbers.") {
     Button("Both score") { on click { home = home + 1; away = away + 1 } }
 }
 
-// md-docs/05-language-basics.md
+// md-docs/09-language-basics.md
 page Home(path: "/", title: "Home", description: "A panel that opens and closes.") {
     state open = true
     Heading("Home").h1
@@ -59,7 +59,7 @@ page Home(path: "/", title: "Home", description: "A panel that opens and closes.
     }
 }
 
-// md-docs/05-language-basics.md
+// md-docs/09-language-basics.md
 page Home(path: "/", title: "Home", description: "A panel that opens and closes.") {
     state open = true
     Heading("Home").h1
@@ -80,7 +80,7 @@ page Home(path: "/", title: "Home", description: "A panel that opens and closes.
     }
 }
 
-// md-docs/05-language-basics.md
+// md-docs/09-language-basics.md
 page Greeting(path: "/", title: "Greeting", description: "A greeting that knows your age.") {
     state user = { name: "Sam", age: 41 }
     Heading("Hello, {user.name}!").h1
@@ -89,7 +89,7 @@ page Greeting(path: "/", title: "Greeting", description: "A greeting that knows 
     Text("A literal dollar: ${user.age}")     // `$` alone is plain text: "$41"
 }
 
-// md-docs/05-language-basics.md
+// md-docs/09-language-basics.md
 const SAMPLE = #"page Home(path: "/") { state n = 0 }"#
 const TRICKY = ##"a raw string ends with "# — like that"##
 const name = "Ada"

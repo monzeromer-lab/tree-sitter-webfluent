@@ -1,4 +1,4 @@
-// md-docs/28-media.md
+// md-docs/21-media.md
 page Media(path: "/") {
     Image(src: "/hero.jpg", alt: "The team at the launch", width: 1200, height: 630)
     Image(src: "/deco.png", alt: "")
@@ -6,7 +6,7 @@ page Media(path: "/") {
     Audio(src: "/talk.mp3", transcript: "/talk.txt").controls
 }
 
-// md-docs/28-media.md
+// md-docs/21-media.md
 image hero = "hero.jpg"
 page Home(path: "/", title: "Home", description: "The front page.") {
     Image(hero, alt: "The team at the launch",
@@ -15,7 +15,7 @@ page Home(path: "/", title: "Home", description: "The front page.") {
     Text("It is {hero.width} by {hero.height}, and mostly {hero.color}.")
 }
 
-// md-docs/28-media.md
+// md-docs/21-media.md
 page Inbox(path: "/", title: "Inbox", description: "Messages, with icons.") {
     Heading("Inbox").h1
     Row(gap: .sm) {
@@ -28,7 +28,7 @@ page Inbox(path: "/", title: "Inbox", description: "Messages, with icons.") {
     }
 }
 
-// md-docs/28-media.md
+// md-docs/21-media.md
 page Gallery(path: "/", title: "Gallery", description: "Three pictures.") {
     Heading("Gallery").h1
     Carousel(label: "Recent work", autoplay: true, interval: 5000) {
@@ -38,7 +38,7 @@ page Gallery(path: "/", title: "Gallery", description: "Three pictures.") {
     }
 }
 
-// md-docs/28-media.md
+// md-docs/21-media.md
 page Talk(path: "/", title: "The talk", description: "The launch talk, and what the preview says.") {
     state heard = ""
     Heading("The talk").h1
@@ -49,7 +49,7 @@ page Talk(path: "/", title: "The talk", description: "The launch talk, and what 
     Text(heard)
 }
 
-// md-docs/28-media.md
+// md-docs/21-media.md
 page Preview(path: "/preview-note", title: "Preview", description: "A note, drawn as it will look.") {
     state note = "Hello"
     Heading("Preview").h1

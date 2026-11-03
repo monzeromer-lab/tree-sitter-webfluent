@@ -1,4 +1,4 @@
-// md-docs/21-i18n.md
+// md-docs/28-i18n.md
 type User { name: String }
 page Home(path: "/", title: "Home", description: "The home page.") {
     state user = User(name: "Sam")
@@ -8,18 +8,18 @@ page Home(path: "/", title: "Home", description: "The home page.") {
     Button(t("actions.save")).primary
 }
 
-// md-docs/21-i18n.md
+// md-docs/28-i18n.md
 page Doc(path: "/") {
     Heading("Problems").h2          // المشاكل, for a reader in ar
     Text("{l.count} missing")       // one key, `{count} missing`
 }
 
-// md-docs/21-i18n.md
+// md-docs/28-i18n.md
 page Doc(path: "/") {
     Text("{files} files")           // 11 ملفًا, for a reader in ar
 }
 
-// md-docs/21-i18n.md
+// md-docs/28-i18n.md
 app {
     state chosen = "en"
     Navbar {
@@ -45,7 +45,7 @@ page Home(path: "/", title: "Home", description: "The home page.") {
     if locale == "ar" { Text("النسخة العربية") }
 }
 
-// md-docs/21-i18n.md
+// md-docs/28-i18n.md
 app {
     Navbar {
         Navbar.Brand { Link("i18n", to: "/") }

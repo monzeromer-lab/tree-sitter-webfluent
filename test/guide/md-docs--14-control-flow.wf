@@ -1,4 +1,4 @@
-// md-docs/10-control-flow.md
+// md-docs/14-control-flow.md
 page Status(path: "/", title: "Status", description: "A message chosen by a count.") {
     state count = 0
     Heading("Status").h1
@@ -12,7 +12,7 @@ page Status(path: "/", title: "Status", description: "A message chosen by a coun
     Button("+1") { on click { count = count + 1 } }
 }
 
-// md-docs/10-control-flow.md
+// md-docs/14-control-flow.md
 type User { name: String, email: String? }
 page Profile(path: "/", title: "Profile", description: "A user who may not be signed in.") {
     state user: User? = null
@@ -25,7 +25,7 @@ page Profile(path: "/", title: "Profile", description: "A user who may not be si
     }
 }
 
-// md-docs/10-control-flow.md
+// md-docs/14-control-flow.md
 type Todo { id: String, title: String, done: Bool = false }
 page Checklist(path: "/", title: "Checklist", description: "Three kinds of loop.") {
     state todos: [Todo] = [Todo(id: "a", title: "Write"), Todo(id: "b", title: "Ship", done: true)]
@@ -42,7 +42,7 @@ page Checklist(path: "/", title: "Checklist", description: "Three kinds of loop.
     for n in 1..=3 { Badge("{n}") }                     // over a range
 }
 
-// md-docs/10-control-flow.md
+// md-docs/14-control-flow.md
 type Hit { id: String, heading: Bool, text: String }
 page Search(path: "/", title: "Search", description: "Results, a window at a time.") {
     state rows = (0..10000).map((i) => "src/file{i}.wf")
@@ -61,7 +61,7 @@ page Search(path: "/", title: "Search", description: "Results, a window at a tim
     }
 }
 
-// md-docs/10-control-flow.md
+// md-docs/14-control-flow.md
 page Panel(path: "/", title: "Panel", description: "A panel hidden, not removed.") {
     state open = true
     Heading("Panel").h1
@@ -71,7 +71,7 @@ page Panel(path: "/", title: "Panel", description: "A panel hidden, not removed.
     }
 }
 
-// md-docs/10-control-flow.md
+// md-docs/14-control-flow.md
 enum Status { idle, running(job: String), failed(reason: String), done(count: Number) }
 page Job(path: "/", title: "Job", description: "One arm per case of an enum.") {
     state s: Status = .idle
@@ -85,7 +85,7 @@ page Job(path: "/", title: "Job", description: "One arm per case of an enum.") {
     Text(match s { .idle { "waiting" } .failed(r) { r } else { "busy" } })   // as a value
 }
 
-// md-docs/10-control-flow.md
+// md-docs/14-control-flow.md
 page Choose(path: "/", title: "Choose", description: "Values picked by a condition.") {
     state n = 5
     state nick: String? = null
@@ -95,7 +95,7 @@ page Choose(path: "/", title: "Choose", description: "Values picked by a conditi
     Text("{size} {label}")
 }
 
-// md-docs/10-control-flow.md
+// md-docs/14-control-flow.md
 page Sync(path: "/", title: "Sync", description: "Control flow inside an action.") {
     state rows: [Map] = []
     state error = ""

@@ -1,4 +1,4 @@
-// md-docs/08-state-and-reactivity.md
+// md-docs/12-state-and-reactivity.md
 page Counter(path: "/", title: "Counter", description: "A state, read and written.") {
     state count = 0                  // inferred: Number
     state name: String = "Sam"       // declared
@@ -11,7 +11,7 @@ page Counter(path: "/", title: "Counter", description: "A state, read and writte
     Button("+1") { on click { count = count + 1 } }
 }
 
-// md-docs/08-state-and-reactivity.md
+// md-docs/12-state-and-reactivity.md
 page Cart(path: "/", title: "Cart", description: "Totals worked out from state.") {
     state items = [{ name: "Pen", price: 2.5, qty: 4 }, { name: "Pad", price: 6, qty: 1 }]
     state taxRate = 0.2
@@ -25,7 +25,7 @@ page Cart(path: "/", title: "Cart", description: "Totals worked out from state."
     if empty { Text("Your cart is empty.").muted }
 }
 
-// md-docs/08-state-and-reactivity.md
+// md-docs/12-state-and-reactivity.md
 page Watch(path: "/", title: "Watch", description: "Effects that follow a search.") {
     state search = ""
     effect {
@@ -39,7 +39,7 @@ page Watch(path: "/", title: "Watch", description: "Effects that follow a search
     Input(bind: search, placeholder: "Search")
 }
 
-// md-docs/08-state-and-reactivity.md
+// md-docs/12-state-and-reactivity.md
 page Todos(path: "/", title: "To-dos", description: "Actions that change a list.") {
     state items: [String] = []
     state draft = ""
@@ -69,7 +69,7 @@ page Todos(path: "/", title: "To-dos", description: "Actions that change a list.
     }
 }
 
-// md-docs/08-state-and-reactivity.md
+// md-docs/12-state-and-reactivity.md
 page Prefs(path: "/", title: "Preferences", description: "Settings kept across visits.") {
     persist scheme = "light"
     persist perPage = 20
@@ -81,7 +81,7 @@ page Prefs(path: "/", title: "Preferences", description: "Settings kept across v
     Slider(bind: perPage, min: 10, max: 100, step: 10, label: "Rows per page")
 }
 
-// md-docs/08-state-and-reactivity.md
+// md-docs/12-state-and-reactivity.md
 page Clock(path: "/", title: "Clock", description: "A timer and a one-off delay.") {
     state seconds = 0
     state toast: String? = "Welcome"
@@ -92,7 +92,7 @@ page Clock(path: "/", title: "Clock", description: "A timer and a one-off delay.
     if let message = toast { Alert(message).info }
 }
 
-// md-docs/08-state-and-reactivity.md
+// md-docs/12-state-and-reactivity.md
 page Search(path: "/", title: "Search", description: "A handle on an input.") {
     state q = ""
     Heading("Search").h1
@@ -102,7 +102,7 @@ page Search(path: "/", title: "Search", description: "A handle on an input.") {
     on key("/") { box.focus() }
 }
 
-// md-docs/08-state-and-reactivity.md
+// md-docs/12-state-and-reactivity.md
 page Where(path: "/", title: "Where", description: "The browser, read as values.") {
     Heading("Where am I?").h1
     Text(if viewport.md { "A wide window" } else { "A narrow window" })

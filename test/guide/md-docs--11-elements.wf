@@ -1,4 +1,4 @@
-// md-docs/07-elements.md
+// md-docs/11-elements.md
 page Editor(path: "/", title: "Editor", description: "A save button, fully dressed.") {
     Heading("Editor").h1
     Button("Save", disabled: false).primary.lg {
@@ -9,7 +9,7 @@ page Editor(path: "/", title: "Editor", description: "A save button, fully dress
     }
 }
 
-// md-docs/07-elements.md
+// md-docs/11-elements.md
 page Toolbar(path: "/", title: "Toolbar", description: "Two labels, spaced apart.") {
     Heading("Toolbar").h1
     Row(gap: .md, align: .center, justify: .between) {
@@ -18,7 +18,7 @@ page Toolbar(path: "/", title: "Toolbar", description: "Two labels, spaced apart
     }
 }
 
-// md-docs/07-elements.md
+// md-docs/11-elements.md
 page Search(path: "/", title: "Search", description: "A search box and two buttons.") {
     state term = ""
     Heading("Search").h1
@@ -27,7 +27,7 @@ page Search(path: "/", title: "Search", description: "A search box and two butto
     Input(bind: term, label: "Search").search.required     // type: .search, required: true
 }
 
-// md-docs/07-elements.md
+// md-docs/11-elements.md
 page Signup(path: "/", title: "Sign up", description: "A name field and a menu button.") {
     state name = ""
     Heading("Sign up").h1
@@ -35,7 +35,7 @@ page Signup(path: "/", title: "Sign up", description: "A name field and a menu b
     Input(bind: name, label: "Name", id: "name", autocomplete: "name", maxlength: 40)
 }
 
-// md-docs/07-elements.md
+// md-docs/11-elements.md
 page References(path: "/", title: "References", description: "A list box of references.") {
     state refs = [{ id: "a" }, { id: "b" }, { id: "c" }]
     state current = 0
@@ -47,7 +47,7 @@ page References(path: "/", title: "References", description: "A list box of refe
     }
 }
 
-// md-docs/07-elements.md
+// md-docs/11-elements.md
 page Regions(path: "/", title: "Regions", description: "A card, a table, a select and tabs.") {
     state region = "fra1"
     Heading("Regions").h1
@@ -70,7 +70,7 @@ page Regions(path: "/", title: "Regions", description: "A card, a table, a selec
     }
 }
 
-// md-docs/07-elements.md
+// md-docs/11-elements.md
 page Article(path: "/", title: "Article", description: "Every kind of text.") {
     state count = 3
     Heading("Release notes").h1                // a real <h1>; .h2 is the default
@@ -78,10 +78,10 @@ page Article(path: "/", title: "Article", description: "Every kind of text.") {
     Paragraph("Prose, as a <p>.")
     Code("let x = 1").block
     Blockquote("A quotation.")
-    Markdown("**Bold** and a [link](/docs)")   // chapter 27
+    Markdown("**Bold** and a [link](/docs)")   // see Content
 }
 
-// md-docs/07-elements.md
+// md-docs/11-elements.md
 page Dashboard(path: "/", title: "Dashboard", description: "Every layout element at once.") {
     Header { Heading("Dashboard").h1 }
     Container {                                  // centred, with a max width

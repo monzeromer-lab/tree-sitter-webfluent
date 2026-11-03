@@ -1,4 +1,4 @@
-// md-docs/15-styling.md
+// md-docs/19-styling.md
 theme Brand {
     color-primary: #0F766E
     color-secondary: #134E4A
@@ -14,7 +14,7 @@ theme Brand {
     shadow-md: 0 4px 12px rgba(0,0,0,0.08)
 }
 
-// md-docs/15-styling.md
+// md-docs/19-styling.md
 page Styled(path: "/styled", title: "Styled card", description: "A card with its own style.") {
     state accent = "#D97706"
     state wide = false
@@ -39,7 +39,7 @@ page Styled(path: "/styled", title: "Styled card", description: "A card with its
     }
 }
 
-// md-docs/15-styling.md
+// md-docs/19-styling.md
 page Swatch(path: "/swatch", title: "Swatch", description: "A hover colour that follows state.") {
     state hoverColor = "#0F766E"
 
@@ -53,7 +53,7 @@ page Swatch(path: "/swatch", title: "Swatch", description: "A hover colour that 
     Button("Use amber") { on click { hoverColor = "#D97706" } }
 }
 
-// md-docs/15-styling.md
+// md-docs/19-styling.md
 page Fade(path: "/fade", title: "Fade", description: "A card that fades in and out.") {
     state active = false
 
@@ -66,7 +66,7 @@ page Fade(path: "/fade", title: "Fade", description: "A card that fades in and o
     Button("Toggle") { on click { active = !active } }
 }
 
-// md-docs/15-styling.md
+// md-docs/19-styling.md
 page Welcome(path: "/welcome", title: "Welcome", description: "A heading whose class follows state.") {
     state active = true
 
@@ -76,7 +76,7 @@ page Welcome(path: "/welcome", title: "Welcome", description: "A heading whose c
     }
 }
 
-// md-docs/15-styling.md
+// md-docs/19-styling.md
 page Chores(path: "/chores", title: "Chores", description: "Classes that follow state.") {
     state done = false
     state urgent = true
@@ -88,7 +88,7 @@ page Chores(path: "/chores", title: "Chores", description: "Classes that follow 
     Button("Done") { on click { done = !done } }
 }
 
-// md-docs/15-styling.md
+// md-docs/19-styling.md
 theme Light {
     color-background: #FFFFFF
     color-text: #0F172A
@@ -110,7 +110,7 @@ page Prefs(path: "/prefs", title: "Appearance", description: "Choose light or da
     }
 }
 
-// md-docs/15-styling.md
+// md-docs/19-styling.md
 page Layout(path: "/projects", title: "Projects", description: "A grid of projects.") {
     Container {
         Stack(gap: .lg) {
@@ -125,10 +125,10 @@ page Layout(path: "/projects", title: "Projects", description: "A grid of projec
     }
 }
 
-// md-docs/15-styling.md
+// md-docs/19-styling.md
 theme Brand { screen-md: 900px }
 
-// md-docs/15-styling.md
+// md-docs/19-styling.md
 page Doc(path: "/") {
     Heading("Title").h1 {
         style {

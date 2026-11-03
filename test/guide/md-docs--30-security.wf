@@ -1,4 +1,4 @@
-// md-docs/23-security.md
+// md-docs/30-security.md
 type Post { title: String, body: String }
 api Backend(base: "/api") {
     get post(slug: String) at "posts/:slug" -> Post
@@ -14,7 +14,7 @@ page PostPage(path: "/p/:slug", title: "Post", description: "One post.", slug: S
     }
 }
 
-// md-docs/23-security.md
+// md-docs/30-security.md
 type User { id: String, name: String }
 api Backend(base: "/api/v1") {
     credentials: .sameOrigin

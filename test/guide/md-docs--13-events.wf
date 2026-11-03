@@ -1,4 +1,4 @@
-// md-docs/09-events.md
+// md-docs/13-events.md
 page Clicks(path: "/", title: "Clicks", description: "Handlers on a button and a field.") {
     state n = 0
     state last = ""
@@ -13,7 +13,7 @@ page Clicks(path: "/", title: "Clicks", description: "Handlers on a button and a
     Text("{n}")
 }
 
-// md-docs/09-events.md
+// md-docs/13-events.md
 page Drop(path: "/", title: "Drop", description: "A place to drop files.") {
     state names: [String] = []
     Heading("Drop files here").h1
@@ -27,7 +27,7 @@ page Drop(path: "/", title: "Drop", description: "A place to drop files.") {
     }
 }
 
-// md-docs/09-events.md
+// md-docs/13-events.md
 page Keys(path: "/", title: "Keys", description: "Keys on a field and on the page.") {
     state open = false
     state q = ""
@@ -42,7 +42,7 @@ page Keys(path: "/", title: "Keys", description: "Keys on a field and on the pag
     if open { Alert("Shortcuts: ctrl+k to search, ? for this.").info }
 }
 
-// md-docs/09-events.md
+// md-docs/13-events.md
 store Commands {
     state said = ""
     state table: [Command] = [
@@ -72,7 +72,7 @@ app {
     Router
 }
 
-// md-docs/09-events.md
+// md-docs/13-events.md
 component Counter(_ start: Number) {
     event change(value: Number)
     state n = start
@@ -89,7 +89,7 @@ page Tally(path: "/", title: "Tally", description: "A component that reports its
     Text("Now {total}")
 }
 
-// md-docs/09-events.md
+// md-docs/13-events.md
 page Overlays(path: "/", title: "Overlays", description: "What a page opens.") {
     state confirm = false
     state deleted = false
@@ -111,7 +111,7 @@ page Overlays(path: "/", title: "Overlays", description: "What a page opens.") {
     Tooltip("Copies the link") { IconButton(icon: "copy", label: "Copy link") }
 }
 
-// md-docs/09-events.md
+// md-docs/13-events.md
 page Editor(path: "/", title: "Editor", description: "Layers at a control and at the pointer.") {
     state branches = false
     state wrap = false
@@ -161,7 +161,7 @@ page Editor(path: "/", title: "Editor", description: "Layers at a control and at
     Text(said)
 }
 
-// md-docs/09-events.md
+// md-docs/13-events.md
 page Files(path: "/", title: "Files", description: "Reorder, move and resize.") {
     state side = 240
     state tabs = ["App.wf", "Home.wf"]
@@ -201,7 +201,7 @@ page Files(path: "/", title: "Files", description: "Reorder, move and resize.") 
     }
 }
 
-// md-docs/09-events.md
+// md-docs/13-events.md
 component TreeRow(_ name: String) {
     Row { Icon("file")  Text(name) }
 }
@@ -218,7 +218,7 @@ page Files(path: "/files", title: "Files", description: "Tree rows you can drag.
     }
 }
 
-// md-docs/09-events.md
+// md-docs/13-events.md
 page Scrolled(path: "/", title: "Scrolled", description: "How far down the reader is.") {
     state y = 0
     on scroll { y = window.scrollY }
@@ -226,7 +226,7 @@ page Scrolled(path: "/", title: "Scrolled", description: "How far down the reade
     Text("{y}px down")
 }
 
-// md-docs/09-events.md
+// md-docs/13-events.md
 page Selection(path: "/", title: "Selection", description: "What the reader has selected.") {
     state picked = ""
     action track() { picked = document.getSelection().toString() }

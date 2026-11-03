@@ -1,4 +1,4 @@
-// md-docs/36-tutorials.md
+// md-docs/08-recipes.md
 page Search(path: "/", title: "Search", description: "Search as you type, without a request per key.") {
     state typed = ""
     state q = ""
@@ -17,7 +17,7 @@ page Search(path: "/", title: "Search", description: "Search as you type, withou
     }
 }
 
-// md-docs/36-tutorials.md
+// md-docs/08-recipes.md
 page Rows(path: "/", title: "Rows", description: "Every row, twenty at a time.") {
     state page = 1
     state perPage = 20
@@ -37,7 +37,7 @@ page Rows(path: "/", title: "Rows", description: "Every row, twenty at a time.")
     }
 }
 
-// md-docs/36-tutorials.md
+// md-docs/08-recipes.md
 type Item { id: String, liked: Bool }
 page Likes(path: "/", title: "Likes", description: "A like that shows at once.") {
     state items: [Item] = [Item(id: "a", liked: false)]
@@ -59,7 +59,7 @@ page Likes(path: "/", title: "Likes", description: "A like that shows at once.")
     if error != "" { Toast(error).danger }
 }
 
-// md-docs/36-tutorials.md
+// md-docs/08-recipes.md
 component Confirm(_ title: String, visible: Bool, danger: Bool = false) {
     event confirm()
     event cancel()
@@ -85,7 +85,7 @@ page Account(path: "/", title: "Account", description: "Close your account.") {
     if gone { Alert("Account deleted.").info }
 }
 
-// md-docs/36-tutorials.md
+// md-docs/08-recipes.md
 page Nav(path: "/", title: "Home", description: "Navigation that fits the screen.") {
     state open = false
     Heading("Home").h1
@@ -107,7 +107,7 @@ page Nav(path: "/", title: "Home", description: "Navigation that fits the screen
     }
 }
 
-// md-docs/36-tutorials.md
+// md-docs/08-recipes.md
 page Signup(path: "/", title: "Sign up", description: "Make an account.") {
     state email = ""
     state password = ""
@@ -127,7 +127,7 @@ page Signup(path: "/", title: "Sign up", description: "Make an account.") {
     if sent { Alert("Welcome aboard.").success }
 }
 
-// md-docs/36-tutorials.md
+// md-docs/08-recipes.md
 page Account(path: "/account", title: "Account", description: "Your profile and billing.") {
     derived tab = if hash != "" { hash } else { "profile" }
     Heading("Account").h1
@@ -139,7 +139,7 @@ page Account(path: "/account", title: "Account", description: "Your profile and 
     if tab == "billing" { Text("Billing settings") }
 }
 
-// md-docs/36-tutorials.md
+// md-docs/08-recipes.md
 store Cart { state count = 0 }
 component CartBadge(count: Number) {
     if count > 0 { Badge("{count}").primary }
@@ -150,7 +150,7 @@ page Shop(path: "/", title: "Shop", description: "Everything we sell.") {
     CartBadge(count: Cart.count)
 }
 
-// md-docs/36-tutorials.md
+// md-docs/08-recipes.md
 page Countdown(path: "/", title: "Countdown", description: "Ten seconds, counted down.") {
     state left = 10
     every(1000) { if left > 0 { left = left - 1 } }
@@ -159,7 +159,7 @@ page Countdown(path: "/", title: "Countdown", description: "Ten seconds, counted
     Text(if left == 0 { "Done" } else { "{left}s" })
 }
 
-// md-docs/36-tutorials.md
+// md-docs/08-recipes.md
 type User { id: String, name: String }
 api Auth(base: "/api") {
     credentials: .sameOrigin
@@ -212,7 +212,7 @@ page Account(path: "/account", title: "Your account", description: "Your account
     Button("Sign out") { on click { Session.signOut() } }
 }
 
-// md-docs/36-tutorials.md
+// md-docs/08-recipes.md
 type Item { id: String, name: String }
 api Catalog(base: "/api") {
     get items(page: Number = 1) -> [Item]
@@ -227,7 +227,7 @@ page Items(path: "/items", title: "Items", description: "Everything, a page at a
     }
 }
 
-// md-docs/36-tutorials.md
+// md-docs/08-recipes.md
 page Products(path: "/products", title: "Products", description: "Everything we sell.") {
     derived sort = query.sort ?? "name"
     Heading("Products").h1
@@ -238,7 +238,7 @@ page Products(path: "/products", title: "Products", description: "Everything we 
     Text("Sorted by {sort}")
 }
 
-// md-docs/36-tutorials.md
+// md-docs/08-recipes.md
 page Settings(path: "/settings", title: "Settings", description: "How the site looks.") {
     Heading("Settings").h1
     Row(gap: .sm) {
@@ -248,7 +248,7 @@ page Settings(path: "/settings", title: "Settings", description: "How the site l
     }
 }
 
-// md-docs/36-tutorials.md
+// md-docs/08-recipes.md
 page Share(path: "/share", title: "Share", description: "Copy the link.") {
     state copied = false
     action copy(text: String) {

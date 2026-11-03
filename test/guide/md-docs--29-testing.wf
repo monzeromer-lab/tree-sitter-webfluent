@@ -1,4 +1,4 @@
-// md-docs/24-testing.md
+// md-docs/29-testing.md
 component PriceTag(_ amount: Number, sale: Bool = false) {
     Row(gap: .sm, align: .center) {
         Text(format(amount, .currency)).bold
@@ -20,7 +20,7 @@ test "a list renders each row"(data: { rows: [{ name: "Ada" }, { name: "Grace" }
     expect "Grace"
 }
 
-// md-docs/24-testing.md
+// md-docs/29-testing.md
 store IncidentStore {
     state titles: [String] = ["Disk full", "Login slow"]
     derived open = titles.length
@@ -39,14 +39,14 @@ test "reporting an incident opens one more" {
     expect "3 open"
 }
 
-// md-docs/24-testing.md
+// md-docs/29-testing.md
 test "a portal draws into the element a handle names" {
     Stack(ref: spot)
     Portal(into: spot) { Text("in") }
     expect "in"
 }
 
-// md-docs/24-testing.md
+// md-docs/29-testing.md
 type CartItem { id: String, qty: Number }
 store Cart {
     state items: [CartItem] = []
@@ -60,7 +60,7 @@ test "the cart shows what is in it"(data: { Cart: { items: [{ id: "a", qty: 2 }]
     expect "2 items"
 }
 
-// md-docs/24-testing.md
+// md-docs/29-testing.md
 test "a task is added with Enter" {
     Tasks
     type "Walk the dog" into "New task"

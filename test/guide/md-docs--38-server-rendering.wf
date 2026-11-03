@@ -1,4 +1,4 @@
-// md-docs/35-server-rendering.md
+// md-docs/38-server-rendering.md
 page Invoice(path: "/", title: "Invoice", description: "An invoice.") {
     Heading("Invoice #{number}").h1
     Text("Bill to: {customer.name}")

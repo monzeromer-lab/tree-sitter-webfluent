@@ -1,4 +1,4 @@
-// md-docs/25-project-structure.md
+// md-docs/32-project-structure.md
 component PriceCard(_ plan: String, price: Number) {
     Card {
         Text(plan).bold

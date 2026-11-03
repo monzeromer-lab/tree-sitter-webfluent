@@ -1,4 +1,4 @@
-// md-docs/30-environments.md
+// md-docs/35-environments.md
 const API = env.PUBLIC_API ?? "/api"
 const FEATURES = { billing: env.PUBLIC_BILLING == "on" }
 page Rows(path: "/", title: "Rows", description: "Rows from the API.") {
