@@ -118,21 +118,35 @@ store Layout {
 }
 
 // md-docs/16-stores.md
+type Deploy { id: String, status: String }
 store Deploys {
-    state rows: [Map] = []
-    state loaded = false
-    action load() {
-        if loaded { return }
-        let r = await fetch("/api/deploys")
-        rows = r.rows
-        loaded = true
-    }
+    state page = 1
+    resource rows: [Deploy] = fetch("/api/deploys?page={page}")
+    derived failing = (rows.data ?? []).filter(d => d.status == "failed").length
+    action next() { page = page + 1 }
+    action refresh() { rows.reload() }
 }
 page DeploysPage(path: "/deploys", title: "Deploys", description: "Every deploy.") {
-    use Deploys
-    Deploys.load()
-    if !Deploys.loaded { Spinner }
-    for d in Deploys.rows by d.id { Text("{d.id}: {d.status}") }
+    Heading("Deploys").h1
+    Text("{Deploys.failing} failing")
+    match Deploys.rows {
+        loading { Spinner() }
+        error(e) { Text(e.message) }
+        ready(rows) {
+            for d in rows by d.id { Text("{d.id}: {d.status}") }
+        }
+    }
+    Button("Refresh", disabled: Deploys.rows.pending) { on click { Deploys.refresh() } }
+    Button("Next page") { on click { Deploys.next() } }
+}
+
+// md-docs/16-stores.md
+store Feed {
+    state items: [Map] = []
+    action more() {
+        let r = await fetch("/api/feed?after={items.length}")
+        items = [...items, ...r.items]
+    }
 }
 
 // md-docs/16-stores.md

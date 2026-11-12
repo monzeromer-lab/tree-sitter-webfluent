@@ -245,6 +245,14 @@ page Doc(path: "/") {
 }
 
 // AGENTS.md
+store Feed {
+    state page = 1
+    resource rows = fetch("/api/rows?page={page}")
+    derived count = rows.data?.length ?? 0
+    action next() { page = page + 1 }
+}
+
+// AGENTS.md
 page Doc(path: "/") {
     state count = 0                      // Signal — reactive variable
     state draft: String = ""             // with a declared type

@@ -57,3 +57,11 @@ app {
     Router
 }
 
+// md-docs/28-i18n.md
+page Home(path: "/", title: "منذر عمر", description: "مهندس خلفيات.") {
+    Heading("مرحباً").h1
+}
+page HomeEn(path: "/en", title: "Monzer Omer", description: "Engineer.", lang: "en", translates: Home) {
+    Heading("Hello").h1
+}
+
