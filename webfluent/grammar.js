@@ -119,9 +119,22 @@ module.exports = grammar({
 
   // The layout tokens are declared in both grammars so one scanner serves
   // both; the braced grammar never asks for an indent or a dedent. The
-  // braces go through the scanner too, counted: inside them the layout is
-  // free.
-  externals: ($) => [$.style_text, $._indent, $._dedent, $._layout, "{", "}"],
+  // braces, parentheses and brackets go through the scanner too, counted:
+  // inside them the layout is free, so an argument list may run onto the
+  // next line before an indented body. `t(` opens a parenthesis as well.
+  externals: ($) => [
+    $.style_text,
+    $._indent,
+    $._dedent,
+    $._layout,
+    "{",
+    "}",
+    "(",
+    ")",
+    "[",
+    "]",
+    "t(",
+  ],
 
   conflicts: ($) => [
     [$.state_declaration],
@@ -529,9 +542,10 @@ module.exports = grammar({
       ),
 
     // `required t("form.amount")`: a rule's message, translated. Lexed as
-    // one token so it is never read as the next rule.
+    // one token (by the scanner, which counts its parenthesis) so it is
+    // never read as the next rule.
     rule_translation: ($) =>
-      seq(alias(token(prec(2, "t(")), "t("), sepBy($._argument, ","), optional(","), ")"),
+      seq("t(", sepBy($._argument, ","), optional(","), ")"),
 
     // `socket chat = ws("wss://…") { send Out  receive In  on message(m) { } }`,
     // `stream ticks = sse("/events")`, `channel cart = broadcast("cart") { … }`,

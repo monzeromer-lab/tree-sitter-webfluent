@@ -43,13 +43,25 @@
 #define WF_CAT(a, b) WF_CAT2(a, b)
 #define WF_SCANNER(fn) WF_CAT(WF_CAT(tree_sitter_, WF_GRAMMAR), WF_CAT(_external_scanner_, fn))
 
-enum TokenType { STYLE_TEXT, INDENT, DEDENT, LAYOUT, LBRACE, RBRACE };
+enum TokenType {
+  STYLE_TEXT,
+  INDENT,
+  DEDENT,
+  LAYOUT,
+  LBRACE,
+  RBRACE,
+  LPAREN,
+  RPAREN,
+  LBRACKET,
+  RBRACKET,
+  TRANSLATE,
+};
 
 #define MAX_DEPTH 64
 
 typedef struct {
   uint16_t line_indent;
-  // Braces the writer wrote and has not closed.
+  // Braces, parentheses and brackets the writer wrote and has not closed.
   uint16_t explicit;
   uint16_t depth;
   uint16_t indents[MAX_DEPTH];
@@ -202,19 +214,37 @@ bool WF_SCANNER(scan)(void *payload, TSLexer *lexer,
       return true;
     }
   }
-  // A brace the writer wrote: counted, so the layout inside it is free.
-  if (valid_symbols[LBRACE] && lexer->lookahead == '{') {
+  // A brace, parenthesis or bracket the writer wrote: counted, so the
+  // layout inside it is free — an argument list may go on over several
+  // lines before the indented body it opens.
+  static const struct { int32_t open_c, close_c; enum TokenType open, close; } pairs[] = {
+      {'{', '}', LBRACE, RBRACE}, {'(', ')', LPAREN, RPAREN}, {'[', ']', LBRACKET, RBRACKET}};
+  for (unsigned i = 0; i < sizeof pairs / sizeof pairs[0]; i++) {
+    if (valid_symbols[pairs[i].open] && lexer->lookahead == pairs[i].open_c) {
+      lexer->advance(lexer, false);
+      lexer->mark_end(lexer);
+      if (s->explicit < UINT16_MAX) s->explicit++;
+      lexer->result_symbol = pairs[i].open;
+      return true;
+    }
+  }
+  for (unsigned i = 0; i < sizeof pairs / sizeof pairs[0]; i++) {
+    if (valid_symbols[pairs[i].close] && lexer->lookahead == pairs[i].close_c) {
+      lexer->advance(lexer, false);
+      lexer->mark_end(lexer);
+      if (s->explicit > 0) s->explicit--;
+      lexer->result_symbol = pairs[i].close;
+      return true;
+    }
+  }
+  // `t(` of a translated rule message: one token, its parenthesis counted.
+  if (valid_symbols[TRANSLATE] && lexer->lookahead == 't') {
+    lexer->advance(lexer, false);
+    if (lexer->lookahead != '(') return false;
     lexer->advance(lexer, false);
     lexer->mark_end(lexer);
     if (s->explicit < UINT16_MAX) s->explicit++;
-    lexer->result_symbol = LBRACE;
-    return true;
-  }
-  if (valid_symbols[RBRACE] && lexer->lookahead == '}') {
-    lexer->advance(lexer, false);
-    lexer->mark_end(lexer);
-    if (s->explicit > 0) s->explicit--;
-    lexer->result_symbol = RBRACE;
+    lexer->result_symbol = TRANSLATE;
     return true;
   }
   return false;

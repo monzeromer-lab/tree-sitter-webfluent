@@ -2556,19 +2556,7 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "ALIAS",
-          "content": {
-            "type": "TOKEN",
-            "content": {
-              "type": "PREC",
-              "value": 2,
-              "content": {
-                "type": "STRING",
-                "value": "t("
-              }
-            }
-          },
-          "named": false,
+          "type": "STRING",
           "value": "t("
         },
         {
@@ -7289,6 +7277,26 @@
     {
       "type": "STRING",
       "value": "}"
+    },
+    {
+      "type": "STRING",
+      "value": "("
+    },
+    {
+      "type": "STRING",
+      "value": ")"
+    },
+    {
+      "type": "STRING",
+      "value": "["
+    },
+    {
+      "type": "STRING",
+      "value": "]"
+    },
+    {
+      "type": "STRING",
+      "value": "t("
     }
   ],
   "inline": [

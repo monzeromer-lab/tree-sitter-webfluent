@@ -231,3 +231,155 @@ page P(path: "/")
               (builtin_component)
               (argument_list
                 (identifier)))))))))
+
+================================================================================
+A page header whose arguments run onto the next line, lined up under them
+================================================================================
+
+page A(path: "/a",
+       title: "A")
+    Heading("x").h1
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (page_declaration
+    (component_identifier)
+    (page_attributes
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content)))
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (block
+      (element
+        (builtin_component)
+        (argument_list
+          (string
+            (string_content)))
+        (flag)))))
+
+================================================================================
+A page header continued at the body's own indentation
+================================================================================
+
+page A(path: "/a",
+    title: "A")
+    Heading("x").h1
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (page_declaration
+    (component_identifier)
+    (page_attributes
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content)))
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (block
+      (element
+        (builtin_component)
+        (argument_list
+          (string
+            (string_content)))
+        (flag)))))
+
+================================================================================
+A page header continued deeper than its body
+================================================================================
+
+page A(path: "/a",
+            title: "A")
+    Heading("x").h1
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (page_declaration
+    (component_identifier)
+    (page_attributes
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content)))
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (block
+      (element
+        (builtin_component)
+        (argument_list
+          (string
+            (string_content)))
+        (flag)))))
+
+================================================================================
+An element's arguments and a list over several lines before its block
+================================================================================
+
+page A(path: "/a")
+    state xs = [
+        1,
+        2,
+    ]
+    Row(gap: .sm,
+            align: .center)
+        Text("x")
+    Text("y")
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (page_declaration
+    (component_identifier)
+    (page_attributes
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (block
+      (state_declaration
+        (identifier)
+        (array
+          (number)
+          (number)))
+      (element
+        (builtin_component)
+        (argument_list
+          (named_argument
+            (attribute_name
+              (identifier))
+            (enum_case
+              (identifier)))
+          (named_argument
+            (attribute_name
+              (identifier))
+            (enum_case
+              (identifier))))
+        (block
+          (element
+            (builtin_component)
+            (argument_list
+              (string
+                (string_content))))))
+      (element
+        (builtin_component)
+        (argument_list
+          (string
+            (string_content)))))))
