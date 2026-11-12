@@ -25,6 +25,6 @@ api Backend(base: "/api/v1") {
 store Session {
     state user: User? = null
     action load() { user = await Backend.me() }
-    action out() { await Backend.signOut()  user = null  navigate("/") }
+    action out() { await Backend.signOut()  user = null  Backend.me.invalidate()  navigate("/") }
 }
 
