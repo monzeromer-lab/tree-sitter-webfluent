@@ -1,0 +1,19 @@
+{
+  "name": "tree-sitter-webfluent",
+  "version": "1.0.0",
+  "description": "Tree-sitter grammars for WebFluent: the braced layout (.wf) and the indented layout (.wfx)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/monzeromer-lab/tree-sitter-webfluent.git"
+  },
+  "keywords": ["tree-sitter", "parser", "webfluent"],
+  "license": "MPL-2.0",
+  "private": true,
+  "devDependencies": {
+    "tree-sitter-cli": "^0.24.0"
+  },
+  "scripts": {
+    "generate": "cd webfluent && tree-sitter generate && cd ../webfluentx && tree-sitter generate",
+    "test": "cd webfluent && tree-sitter test && cd ../webfluentx && tree-sitter test"
+  }
+}

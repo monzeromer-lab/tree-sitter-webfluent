@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  grammar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      # The parsers Zed compiles are the committed ones: a grammar.js change
+      # committed without its regenerated parser shows up as a diff here.
+      - name: Generate both parsers
+        run: npm run generate
+      - name: Generated parsers are committed
+        run: git diff --exit-code -- webfluent/src webfluentx/src
+      - name: Corpus tests
+        run: npm test

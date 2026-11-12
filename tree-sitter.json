@@ -1,0 +1,28 @@
+{
+  "grammars": [
+    {
+      "name": "webfluent",
+      "camelcase": "Webfluent",
+      "scope": "source.webfluent",
+      "path": "webfluent",
+      "file-types": ["wf"],
+      "injection-regex": "^(wf|webfluent)$"
+    },
+    {
+      "name": "webfluentx",
+      "camelcase": "Webfluentx",
+      "scope": "source.webfluentx",
+      "path": "webfluentx",
+      "file-types": ["wfx"],
+      "injection-regex": "^(wfx)$"
+    }
+  ],
+  "metadata": {
+    "version": "1.0.0",
+    "license": "MPL-2.0",
+    "description": "Tree-sitter grammars for WebFluent",
+    "authors": [{ "name": "Monzer Omer", "email": "monzer.a.omer@gmail.com" }],
+    "links": { "repository": "https://github.com/monzeromer-lab/tree-sitter-webfluent" }
+  },
+  "bindings": { "c": false, "go": false, "node": false, "python": false, "rust": false, "swift": false }
+}
