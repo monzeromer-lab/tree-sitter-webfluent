@@ -107,7 +107,7 @@ static bool is_word_char(int32_t c) {
 
 // `#"…"#`, `##"…"##`, …: the text up to a quote followed by as many `#` as
 // opened it — no escapes, no splices.
-static bool scan_raw_string(TSLexer *lexer) {
+static bool scan_raw_string(TSLexer *lexer, bool one_line) {
   unsigned hashes = 0;
   while (lexer->lookahead == '#') {
     lexer->advance(lexer, false);
@@ -116,7 +116,7 @@ static bool scan_raw_string(TSLexer *lexer) {
   if (hashes == 0 || lexer->lookahead != '"') return false;
   lexer->advance(lexer, false);
   for (;;) {
-    if (lexer->lookahead == 0) return false;
+    if (lexer->lookahead == 0 || (one_line && lexer->lookahead == '\n')) return false;
     if (lexer->lookahead != '"') {
       lexer->advance(lexer, false);
       continue;
@@ -127,7 +127,18 @@ static bool scan_raw_string(TSLexer *lexer) {
       lexer->advance(lexer, false);
       closing++;
     }
-    if (closing == hashes) break;
+    if (closing == hashes) {
+      // In error recovery the `#` may have been the first character of an
+      // ordinary string (`"#"`), and this quote the opening one of the next
+      // (`"#top"`, `"#fff"`): a closing that runs on into a word or a
+      // string is not taken there.
+      int32_t c = lexer->lookahead;
+      if (one_line && ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') ||
+                       c == '_' || c == '"' || c == '#' || c == '{' || c >= 0x80)) {
+        return false;
+      }
+      break;
+    }
   }
   lexer->mark_end(lexer);
   lexer->result_symbol = RAW_STRING;
@@ -266,9 +277,15 @@ static bool scan_style_text(TSLexer *lexer) {
 bool WF_SCANNER(scan)(void *payload, TSLexer *lexer,
                                                  const bool *valid_symbols) {
   Scanner *s = payload;
-  // Every symbol at once is error recovery: nothing is decided here then.
+  // Every symbol at once is error recovery: no layout is decided then. A
+  // raw string is still read, so one in broken code is not taken apart —
+  // but only one that closes on its own line and whose closing runs into
+  // no word or string, since here the `#` may sit just inside an ordinary
+  // string (`to: "#"`) and the quote after it be the next one's (`"#top"`).
   if (valid_symbols[STYLE_TEXT] && valid_symbols[INDENT] && valid_symbols[DEDENT] &&
       valid_symbols[LBRACE] && valid_symbols[RBRACE]) {
+    while (is_space(lexer->lookahead) || lexer->lookahead == '\n') lexer->advance(lexer, true);
+    if (valid_symbols[RAW_STRING] && lexer->lookahead == '#') return scan_raw_string(lexer, true);
     return false;
   }
   // A value first: it stops at the end of its line without crossing it,
@@ -338,7 +355,7 @@ bool WF_SCANNER(scan)(void *payload, TSLexer *lexer,
       return true;
     }
   }
-  if (valid_symbols[RAW_STRING] && lexer->lookahead == '#') return scan_raw_string(lexer);
+  if (valid_symbols[RAW_STRING] && lexer->lookahead == '#') return scan_raw_string(lexer, false);
   // `t(` of a translated rule message: one token, its parenthesis counted.
   if (valid_symbols[TRANSLATE] && lexer->lookahead == 't') {
     lexer->advance(lexer, false);

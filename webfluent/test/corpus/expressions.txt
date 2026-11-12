@@ -658,3 +658,76 @@ const C = ###"two hashes "## do not end this"###
     (component_identifier)
     (string
       (raw_string))))
+
+================================================================================
+A raw string inside broken code
+================================================================================
+
+page A(path: "/") {
+    Text( ]] #"raw "q" { text"# ]]
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (page_declaration
+    (component_identifier)
+    (page_attributes
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (block
+      (element
+        (builtin_component))
+      (ERROR
+        (ERROR)
+        (string
+          (raw_string))))))
+
+================================================================================
+Strings and colours that start with a hash inside broken code
+================================================================================
+
+page A(path: "/") {
+    Text( ]] Link("Top", to: "#") ]] Link("Up", to: "#top") ]] Text(#FFF)
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (ERROR
+    (component_identifier)
+    (page_attributes
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (builtin_component)
+    (ERROR
+      (call_expression
+        (builtin_component)
+        (arguments
+          (string
+            (string_content))
+          (named_argument
+            (attribute_name
+              (identifier))
+            (string
+              (string_content)))))
+      (call_expression
+        (builtin_component)
+        (arguments
+          (string
+            (string_content))
+          (named_argument
+            (attribute_name
+              (identifier))
+            (string
+              (string_content))))))
+    (call_expression
+      (builtin_component)
+      (arguments
+        (color)))))

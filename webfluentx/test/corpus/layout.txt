@@ -449,3 +449,26 @@ page P(path: "/")
             (argument_list
               (string
                 (raw_string)))))))))
+
+================================================================================
+A raw string inside broken code
+================================================================================
+
+page A(path: "/")
+    Text( ]] #"raw "q" { text"# ]]
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (ERROR
+    (component_identifier)
+    (page_attributes
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (builtin_component)
+    (ERROR)
+    (string
+      (raw_string))))
