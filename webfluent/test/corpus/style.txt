@@ -152,8 +152,8 @@ page P(path: "/") {
               (property_name
                 (identifier))
               (style_value
-                (style_text)
                 (style_text)))
+            (comment)
             (style_property
               (property_name
                 (identifier)
@@ -201,3 +201,133 @@ page P(path: "/") {
               (style_value
                 (style_text)
                 (design_token)))))))))
+
+================================================================================
+Two declarations on one line, two spaces apart
+================================================================================
+
+theme Brand { color-primary: #0F766E  radius-md: 14px }
+
+page P(path: "/") {
+    Card {
+        style {
+            padding: 0  margin: 0 auto
+            width: {w}px  height: 2px
+            border: 0  &:hover { opacity: 1  color: red }
+        }
+    }
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (theme_declaration
+    (component_identifier)
+    (theme_body
+      (token_declaration
+        (property_name
+          (identifier)
+          (identifier))
+        (style_value
+          (style_text)))
+      (token_declaration
+        (property_name
+          (identifier)
+          (identifier))
+        (style_value
+          (style_text)))))
+  (page_declaration
+    (component_identifier)
+    (page_attributes
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (block
+      (element
+        (builtin_component)
+        (block
+          (style_block
+            (style_property
+              (property_name
+                (identifier))
+              (style_value
+                (style_text)))
+            (style_property
+              (property_name
+                (identifier))
+              (style_value
+                (style_text)))
+            (style_property
+              (property_name
+                (identifier))
+              (style_value
+                (interpolation
+                  (identifier))
+                (style_text)))
+            (style_property
+              (property_name
+                (identifier))
+              (style_value
+                (style_text)))
+            (style_property
+              (property_name
+                (identifier))
+              (style_value
+                (style_text)))
+            (nested_rule
+              (selector)
+              (style_property
+                (property_name
+                  (identifier))
+                (style_value
+                  (style_text)))
+              (style_property
+                (property_name
+                  (identifier))
+                (style_value
+                  (style_text))))))))))
+
+================================================================================
+A comment after a splice ends the value
+================================================================================
+
+page P(path: "/") {
+    Card {
+        style {
+            --accent: {tone}  // follows state
+            width: {pct}%
+        }
+    }
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (page_declaration
+    (component_identifier)
+    (page_attributes
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (block
+      (element
+        (builtin_component)
+        (block
+          (style_block
+            (style_property
+              (custom_property_name)
+              (style_value
+                (interpolation
+                  (identifier))))
+            (comment)
+            (style_property
+              (property_name
+                (identifier))
+              (style_value
+                (interpolation
+                  (identifier))
+                (style_text)))))))))

@@ -383,3 +383,69 @@ page A(path: "/a")
         (argument_list
           (string
             (string_content)))))))
+
+================================================================================
+A one-line theme and style declarations two spaces apart
+================================================================================
+
+theme Brand { color-primary: #0F766E  radius-md: 14px }
+
+page P(path: "/")
+    Card
+        style
+            padding: 0  margin: 0 auto
+            --accent: {tone}  // follows state
+        Text(#"say "hi""#)
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (theme_declaration
+    (component_identifier)
+    (theme_body
+      (token_declaration
+        (property_name
+          (identifier)
+          (identifier))
+        (style_value
+          (style_text)))
+      (token_declaration
+        (property_name
+          (identifier)
+          (identifier))
+        (style_value
+          (style_text)))))
+  (page_declaration
+    (component_identifier)
+    (page_attributes
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (block
+      (element
+        (builtin_component)
+        (block
+          (style_block
+            (style_property
+              (property_name
+                (identifier))
+              (style_value
+                (style_text)))
+            (style_property
+              (property_name
+                (identifier))
+              (style_value
+                (style_text)))
+            (style_property
+              (custom_property_name)
+              (style_value
+                (interpolation
+                  (identifier))))
+            (comment))
+          (element
+            (builtin_component)
+            (argument_list
+              (string
+                (raw_string)))))))))

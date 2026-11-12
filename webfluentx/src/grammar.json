@@ -7098,76 +7098,6 @@
         }
       ]
     },
-    "raw_string": {
-      "type": "TOKEN",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "#\""
-              },
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "PATTERN",
-                      "value": "[^\"]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "\"[^#]"
-                    }
-                  ]
-                }
-              },
-              {
-                "type": "STRING",
-                "value": "\"#"
-              }
-            ]
-          },
-          {
-            "type": "SEQ",
-            "members": [
-              {
-                "type": "STRING",
-                "value": "##\""
-              },
-              {
-                "type": "REPEAT",
-                "content": {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "PATTERN",
-                      "value": "[^\"]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "\"[^#]"
-                    },
-                    {
-                      "type": "PATTERN",
-                      "value": "\"#[^#]"
-                    }
-                  ]
-                }
-              },
-              {
-                "type": "STRING",
-                "value": "\"##"
-              }
-            ]
-          }
-        ]
-      }
-    },
     "block_string": {
       "type": "SEQ",
       "members": [
@@ -7809,11 +7739,11 @@
     },
     "identifier": {
       "type": "PATTERN",
-      "value": "[a-z_\\p{Lo}][a-zA-Z0-9_\\p{Lo}\\p{Lm}\\p{Mn}\\p{Mc}\\p{Nd}]*"
+      "value": "[a-z_\\p{Ll}\\p{Lo}\\p{Lm}\\p{Lt}\\p{Nl}][\\p{L}\\p{N}\\p{Mn}\\p{Mc}_]*"
     },
     "component_identifier": {
       "type": "PATTERN",
-      "value": "[A-Z][a-zA-Z0-9_]*"
+      "value": "[A-Z\\p{Lu}][\\p{L}\\p{N}\\p{Mn}\\p{Mc}_]*"
     },
     "doc_comment": {
       "type": "TOKEN",
@@ -7979,6 +7909,10 @@
     {
       "type": "STRING",
       "value": "t("
+    },
+    {
+      "type": "SYMBOL",
+      "name": "raw_string"
     }
   ],
   "inline": [

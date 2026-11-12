@@ -602,23 +602,28 @@ page P(path: "/") { Text("Total: {total:.currency}") }
 (source_file
   (const_declaration
     (component_identifier)
-    (string (raw_string)))
+    (string
+      (raw_string)))
   (const_declaration
     (component_identifier)
-    (string (raw_string)))
+    (string
+      (raw_string)))
   (const_declaration
     (component_identifier)
     (string
       (block_string
         (block_string_content)
-        (interpolation (identifier))
+        (interpolation
+          (identifier))
         (block_string_content))))
   (page_declaration
     (component_identifier)
     (page_attributes
       (named_argument
-        (attribute_name (identifier))
-        (string (string_content))))
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
     (block
       (element
         (builtin_component)
@@ -627,4 +632,29 @@ page P(path: "/") { Text("Total: {total:.currency}") }
             (string_content)
             (interpolation
               (identifier)
-              (format_spec (identifier)))))))))
+              (format_spec
+                (identifier)))))))))
+
+================================================================================
+Raw strings with any number of hashes
+================================================================================
+
+const A = #"page Home(path: "/") { state n = 0 }"#
+const B = ##"a raw string ends with "# — like that"##
+const C = ###"two hashes "## do not end this"###
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (const_declaration
+    (component_identifier)
+    (string
+      (raw_string)))
+  (const_declaration
+    (component_identifier)
+    (string
+      (raw_string)))
+  (const_declaration
+    (component_identifier)
+    (string
+      (raw_string))))

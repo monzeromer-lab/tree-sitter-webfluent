@@ -55,6 +55,7 @@ enum TokenType {
   LBRACKET,
   RBRACKET,
   TRANSLATE,
+  RAW_STRING,
 };
 
 #define MAX_DEPTH 64
@@ -99,10 +100,72 @@ void WF_SCANNER(deserialize)(void *payload, const char *buffer,
 
 static bool is_space(int32_t c) { return c == ' ' || c == '\t' || c == '\r'; }
 
+// A letter, a digit or `-`: what a property's name is made of.
+static bool is_word_char(int32_t c) {
+  return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9') || c == '-';
+}
+
+// `#"…"#`, `##"…"##`, …: the text up to a quote followed by as many `#` as
+// opened it — no escapes, no splices.
+static bool scan_raw_string(TSLexer *lexer) {
+  unsigned hashes = 0;
+  while (lexer->lookahead == '#') {
+    lexer->advance(lexer, false);
+    hashes++;
+  }
+  if (hashes == 0 || lexer->lookahead != '"') return false;
+  lexer->advance(lexer, false);
+  for (;;) {
+    if (lexer->lookahead == 0) return false;
+    if (lexer->lookahead != '"') {
+      lexer->advance(lexer, false);
+      continue;
+    }
+    lexer->advance(lexer, false);
+    unsigned closing = 0;
+    while (closing < hashes && lexer->lookahead == '#') {
+      lexer->advance(lexer, false);
+      closing++;
+    }
+    if (closing == hashes) break;
+  }
+  lexer->mark_end(lexer);
+  lexer->result_symbol = RAW_STRING;
+  return true;
+}
+
+// At a word after two spaces in a style value: whether it is the name of
+// the next declaration (`radius-md:`). The word, and the spaces after it,
+// are read either way; when it is not a name they are the value's text, and
+// `last` is what was read last.
+static bool declaration_ahead(TSLexer *lexer, int32_t *last) {
+  int32_t c = lexer->lookahead;
+  if (!is_word_char(c) || (c >= '0' && c <= '9')) return false;
+  while (is_word_char(lexer->lookahead)) {
+    *last = lexer->lookahead;
+    lexer->advance(lexer, false);
+  }
+  while (lexer->lookahead == ' ') {
+    *last = ' ';
+    lexer->advance(lexer, false);
+  }
+  return lexer->lookahead == ':';
+}
+
+// The text read so far, up to where its end was marked.
+static bool style_text_so_far(TSLexer *lexer) {
+  lexer->result_symbol = STYLE_TEXT;
+  return true;
+}
+
 static bool scan_style_text(TSLexer *lexer) {
   // Leading blanks belong to nobody; a line break before any text means
   // the value is over.
-  while (is_space(lexer->lookahead)) lexer->advance(lexer, true);
+  unsigned blanks = 0;
+  while (is_space(lexer->lookahead)) {
+    lexer->advance(lexer, true);
+    blanks++;
+  }
   if (lexer->lookahead == '\n' || lexer->lookahead == 0) return false;
   if (lexer->lookahead == '{' || lexer->lookahead == '}' || lexer->lookahead == '$' ||
       lexer->lookahead == ';') {
@@ -112,6 +175,25 @@ static bool scan_style_text(TSLexer *lexer) {
   int parens = 0;
   bool consumed = false;
   int32_t last = 0;
+  // After a splice, two spaces and the next declaration end the value as
+  // they do anywhere in it (see below).
+  if (blanks >= 2) {
+    if (lexer->lookahead == '&' || lexer->lookahead == '@') return false;
+    if (declaration_ahead(lexer, &last)) return false;
+    if (last != 0) {
+      consumed = true;
+      lexer->mark_end(lexer);
+    }
+  }
+  // A comment after a splice (`--accent: {tone}  // follows state`): the
+  // value is over, and the comment is the grammar's.
+  if (!consumed && lexer->lookahead == '/') {
+    lexer->advance(lexer, false);
+    if (lexer->lookahead == '/') return false;
+    lexer->mark_end(lexer);
+    consumed = true;
+    last = '/';
+  }
   while (lexer->lookahead != 0) {
     int32_t c = lexer->lookahead;
     if (c == '\n') {
@@ -131,7 +213,7 @@ static bool scan_style_text(TSLexer *lexer) {
     if (c == '/' && parens == 0 && last == ' ') {
       lexer->mark_end(lexer);
       lexer->advance(lexer, false);
-      if (lexer->lookahead == '/') return consumed;
+      if (lexer->lookahead == '/') return consumed && style_text_so_far(lexer);
       consumed = true;
       last = '/';
       continue;
@@ -146,6 +228,25 @@ static bool scan_style_text(TSLexer *lexer) {
       if (lexer->lookahead == quote) lexer->advance(lexer, false);
       consumed = true;
       last = quote;
+      lexer->mark_end(lexer);
+      continue;
+    }
+    // Two spaces and the next declaration — `name:`, `&…` or `@…` — end
+    // the value: `color-primary: #0F766E  radius-md: 14px` on one line is
+    // two declarations, as it is for the compiler.
+    if (c == ' ' && parens == 0) {
+      int spaces = 0;
+      while (lexer->lookahead == ' ') {
+        lexer->advance(lexer, false);
+        spaces++;
+      }
+      consumed = true;
+      if (last != ',') last = ' ';
+      if (spaces >= 2) {
+        int32_t n = lexer->lookahead;
+        if (n == '&' || n == '@') return style_text_so_far(lexer);
+        if (declaration_ahead(lexer, &last)) return style_text_so_far(lexer);
+      }
       lexer->mark_end(lexer);
       continue;
     }
@@ -237,6 +338,7 @@ bool WF_SCANNER(scan)(void *payload, TSLexer *lexer,
       return true;
     }
   }
+  if (valid_symbols[RAW_STRING] && lexer->lookahead == '#') return scan_raw_string(lexer);
   // `t(` of a translated rule message: one token, its parenthesis counted.
   if (valid_symbols[TRANSLATE] && lexer->lookahead == 't') {
     lexer->advance(lexer, false);

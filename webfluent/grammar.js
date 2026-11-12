@@ -134,6 +134,10 @@ module.exports = grammar({
     "[",
     "]",
     "t(",
+    // `#"…"#`, with as many `#` as the text needs: no escapes, no splices,
+    // so a sample of code goes in whole. Read by the scanner, since what
+    // ends it is a quote and the run of hashes it opened with.
+    $.raw_string,
   ],
 
   conflicts: ($) => [
@@ -1160,17 +1164,6 @@ module.exports = grammar({
         choice('"', alias(token.immediate(/\{"/), '"')),
       ),
 
-    // `#"…"#`, with as many `#` as the text needs: no escapes, no splices,
-    // so a sample of code goes in whole. One token, since what ends it is
-    // the run of hashes it opened with.
-    raw_string: (_) =>
-      token(
-        choice(
-          seq('#"', repeat(choice(/[^"]/, /"[^#]/)), '"#'),
-          seq('##"', repeat(choice(/[^"]/, /"[^#]/, /"#[^#]/)), '"##'),
-        ),
-      ),
-
     // `"""…"""` — escapes and splices, over as many lines as it likes.
     block_string: ($) =>
       seq(
@@ -1290,10 +1283,14 @@ module.exports = grammar({
 
     // ─── Names ──────────────────────────────────────────────────────────
 
-    // A name in any script, as the compiler reads one (UAX #31): عددٌ.
-    identifier: (_) => /[a-z_\p{Lo}][a-zA-Z0-9_\p{Lo}\p{Lm}\p{Mn}\p{Mc}\p{Nd}]*/,
+    // A name in any script, as the compiler reads one (UAX #31): عددٌ,
+    // café, état. What the compiler calls capitalised — a first letter that
+    // is upper case, `É` as much as `E` — is a `component_identifier`; any
+    // other letter, or `_`, starts an `identifier`. After the first letter a
+    // name goes on with letters, digits, `_` and the marks of its letters.
+    identifier: (_) => /[a-z_\p{Ll}\p{Lo}\p{Lm}\p{Lt}\p{Nl}][\p{L}\p{N}\p{Mn}\p{Mc}_]*/,
 
-    component_identifier: (_) => /[A-Z][a-zA-Z0-9_]*/,
+    component_identifier: (_) => /[A-Z\p{Lu}][\p{L}\p{N}\p{Mn}\p{Mc}_]*/,
 
     // ─── Comments ───────────────────────────────────────────────────────
 

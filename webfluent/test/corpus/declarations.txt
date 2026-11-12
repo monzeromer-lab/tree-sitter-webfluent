@@ -634,3 +634,53 @@ page Home(path: "/") {
         (builtin_component)
         (argument_list
           (identifier))))))
+
+================================================================================
+Names in any script, accented capitals included
+================================================================================
+
+component Été(_ titre: String) { Text(titre) }
+
+page Café(path: "/") {
+    state état = 2
+    state عددٌ = 3
+    Été("{état} {عددٌ}")
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (component_declaration
+    (component_identifier)
+    (parameter_list
+      (parameter
+        (identifier)
+        (builtin_type)))
+    (block
+      (element
+        (builtin_component)
+        (argument_list
+          (identifier)))))
+  (page_declaration
+    (component_identifier)
+    (page_attributes
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (block
+      (state_declaration
+        (identifier)
+        (number))
+      (state_declaration
+        (identifier)
+        (number))
+      (element
+        (component_identifier)
+        (argument_list
+          (string
+            (string_content)
+            (string_content)
+            (string_content)
+            (string_content)))))))
