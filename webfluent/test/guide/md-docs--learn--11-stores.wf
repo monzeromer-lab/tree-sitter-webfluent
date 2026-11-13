@@ -47,6 +47,11 @@ store Cart {
 }
 
 // md-docs/learn/11-stores.md
+store Cart(scope: .app) { state items: [String] = [] }        // the default: as long as the page is open
+store Session(scope: .session) { state step = 1 }             // this tab's
+store Filters(scope: .route) { state search = "" }            // this route's
+
+// md-docs/learn/11-stores.md
 store Session {
     state user: Map? = null
     state error = ""
@@ -150,6 +155,15 @@ store Feed {
 }
 
 // md-docs/learn/11-stores.md
+type Item { id: String, qty: Number = 1 }
+store Cart {
+    state items: [Item] = []
+    derived count = items.map(i => i.qty).sum()
+}
+component CartSummary() {
+    use Cart
+    Text("{Cart.count} items")
+}
 test "the cart shows what is in it"(data: { Cart: { items: [{ id: "a", qty: 2 }] } }) {
     CartSummary()
     expect "2 items"

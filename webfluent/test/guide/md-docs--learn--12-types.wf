@@ -35,12 +35,6 @@ page Stay(path: "/", title: "Stay", description: "One booking.") {
 }
 
 // md-docs/learn/12-types.md
-page Doc(path: "/") {
-    state site: Url = "https://example.com"     // fine
-    state bad: Url = "example"                  // T01: A URL has a scheme
-}
-
-// md-docs/learn/12-types.md
 page Feed(path: "/", title: "Feed", description: "What happened lately.") {
     state posted: DateTime = @2026-03-14T09:30:00Z
     derived age = posted.until(now)
@@ -49,19 +43,12 @@ page Feed(path: "/", title: "Feed", description: "What happened lately.") {
 }
 
 // md-docs/learn/12-types.md
-page Doc(path: "/") {
+page Stay(path: "/", title: "Stay", description: "Values held to a condition.") {
     state nights: Number(1..=30) = 12
     state pass: String(minLength: 8) = "correcthorse"
     state start: Date(after: @2026-01-01) = @2026-03-14
-}
-
-// md-docs/learn/12-types.md
-page Doc(path: "/") {
-    state token: Secret = ""
-    Text(token)                     // shown
-    Text("Bearer {token}")          // in text — which is how it ends up in a URL
-    persist token: Secret = ""      // kept in the browser
-    log(token)                      // in the console, and often in a log service
+    Heading("Stay").h1
+    Text("{nights} nights from {start}, {pass.length} characters")
 }
 
 // md-docs/learn/12-types.md

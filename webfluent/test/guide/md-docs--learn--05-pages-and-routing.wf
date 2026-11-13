@@ -116,6 +116,14 @@ page Share(path: "/share", title: "Share", description: "A page with its own tag
 }
 
 // md-docs/learn/05-pages-and-routing.md
+page Home(path: "/", title: "Home", description: "What we make.") {
+    Heading("Welcome").h1
+}
+page HomeAr(path: "/ar", title: "الرئيسية", description: "ما نصنعه.", lang: "ar", translates: Home) {
+    Heading("أهلاً بك").h1
+}
+
+// md-docs/learn/05-pages-and-routing.md
 page NotFound(path: "*", title: "Not found", description: "Nothing lives here.", noindex: true) {
     Container {
         Heading("Nothing here").h1

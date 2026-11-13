@@ -1,6 +1,23 @@
 // md-docs/learn/13-styling.md
 theme Brand {
     color-primary: #0F766E
+    radius-md: 14px
+}
+page Home(path: "/", title: "Home", description: "A themed page.") {
+    Heading("Welcome").h1
+    Card {
+        style {
+            border-left: 4px solid $color-primary
+            &:hover { box-shadow: $shadow-lg }
+        }
+        Text("Every primary button on the site is teal now.")
+        Button("Start").primary
+    }
+}
+
+// md-docs/learn/13-styling.md
+theme Brand {
+    color-primary: #0F766E
     color-secondary: #134E4A
     color-background: #FFFFFF
     color-surface: #F8FAFC

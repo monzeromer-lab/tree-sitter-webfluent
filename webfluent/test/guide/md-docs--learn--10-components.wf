@@ -146,6 +146,13 @@ component Stepper(_ start: Number, step: Number = 1) {
         if even { Badge("even").info }
     }
 }
+page Counters(path: "/", title: "Counters", description: "Two steppers, two counts.") {
+    state last = 0
+    Heading("Counters").h1
+    Stepper(0) { on change(v) { last = v } }
+    Stepper(10, step: 5) { on change(v) { last = v } }
+    Text("Last value: {last}")
+}
 
 // md-docs/learn/10-components.md
 store Cart {

@@ -1,0 +1,28 @@
+// md-docs/about/how-reactivity-works.md
+page Home(path: "/", title: "Count", description: "A counter.") {
+    state count = 0
+    derived double = count * 2
+    Heading("Count").h1
+    Text("{count} doubled is {double}")
+    Button("Add one") { on click { count = count + 1 } }
+}
+
+// md-docs/about/how-reactivity-works.md
+type Todo { id: String, title: String, done: Bool = false }
+page Todos(path: "/", title: "Todos", description: "A list that keeps its rows.") {
+    state todos: [Todo] = [Todo(id: "1", title: "Milk"), Todo(id: "2", title: "Bread")]
+    state draft = ""
+    derived left = todos.filter(item => !item.done).length
+
+    Heading("Todos").h1
+    Text("{left} left")
+    Input(bind: draft, label: "New todo")
+    Button("Add") { on click { todos = todos.concat([Todo(id: uuid(), title: draft)])  draft = "" } }
+    for todo in todos by todo.id {
+        Checkbox(bind: todo.done, label: todo.title)
+    }
+    if left == 0 {
+        Text("All done.")
+    }
+}
+
