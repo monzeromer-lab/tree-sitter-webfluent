@@ -20,3 +20,11 @@ page Likes(path: "/", title: "Likes", description: "A like that shows at once.")
     if error != "" { Toast(error).danger }
 }
 
+// md-docs/recipes/optimistic-updates.md
+page Doc(path: "/") {
+    action like(id: String) {
+        optimistic(items, list => list.map(i => if i.id == id { Item(id: i.id, liked: !i.liked) } else { i }))
+        await fetch("/api/like/{id}", { method: "POST" })
+    }
+}
+

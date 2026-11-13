@@ -1,0 +1,11 @@
+// md-docs/recipes/migrate-from-external.md
+const STRIPE_KEY = "pk_test_123"
+page Pricing(path: "/pricing", title: "Pricing", description: "Plans, on a card that leans.") {
+    Heading("Pricing").h1
+    Card(mount: (n) => initTilt(n, 10)) { Text("Pro") }
+    Element("stripe-pricing-table", publishableKey: STRIPE_KEY)
+}
+page Doc(path: "/") {
+    // Your publishable key, from the Stripe dashboard.
+}
+

@@ -17,3 +17,20 @@ page Custom(path: "/", title: "Custom", description: "Keyframes of your own.") {
     }
 }
 
+// md-docs/recipes/keyframes.md
+animation Pulse {
+    from { opacity: 1 }
+    50% { opacity: 0.4 }
+    to { opacity: 1 }
+}
+page Live(path: "/", title: "Live", description: "A badge that pulses for as long as it is shown.") {
+    Heading("Live").h1
+    Badge("Recording") {
+        style {
+            @media (prefers-reduced-motion: no-preference) {
+                animation: Pulse 1s infinite
+            }
+        }
+    }
+}
+

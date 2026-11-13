@@ -3,7 +3,7 @@ page Sales(path: "/sales", title: "Sales", description: "How it is going.") {
     state values: [Number] = [12, 19, 7, 15]
 
     Heading("Sales").h1
-    Host(tag: "canvas",
+    Host(tag: "canvas", role: "img", aria-label: "Sales by quarter",
          mount: (c) => drawSales(c, values),
          cleanup: (chart) => chart.destroy())
 }

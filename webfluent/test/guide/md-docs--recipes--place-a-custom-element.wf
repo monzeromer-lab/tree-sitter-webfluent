@@ -1,0 +1,15 @@
+// md-docs/recipes/place-a-custom-element.md
+const STRIPE_KEY = "pk_test_123"
+page Pricing(path: "/pricing", title: "Pricing", description: "Plans.") {
+    state loaded = false
+
+    Heading("Pricing").h1
+    if !loaded { Spinner }
+    Element("stripe-pricing-table", publishableKey: STRIPE_KEY, pricing-table-id: "prctbl_1") {
+        on ready { loaded = true }
+    }
+}
+page Doc(path: "/") {
+    // Your publishable key, from the Stripe dashboard.
+}
+

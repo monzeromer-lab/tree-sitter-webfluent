@@ -1,0 +1,16 @@
+// md-docs/recipes/hand-an-element-to-a-script.md
+page Welcome(path: "/welcome", title: "Welcome", description: "A greeting a script types out, letter by letter.") {
+    state name = "reader"
+    state typing = true
+
+    Heading("Welcome").h1
+    Input(bind: name, label: "Your name")
+    Switch(bind: typing, label: "Type the greeting")
+    if typing {
+        Host(tag: "p",
+             mount: (node) => startTypewriter(node, "Hello, {name}."),
+             update: (writer) => writer.retype("Hello, {name}."),
+             cleanup: (writer) => writer.stop())
+    }
+}
+

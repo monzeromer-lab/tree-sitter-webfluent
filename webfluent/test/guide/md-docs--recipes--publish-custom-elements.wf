@@ -1,0 +1,25 @@
+// md-docs/recipes/publish-custom-elements.md
+component PriceTag(label: String, amount: Number, sale: Bool = false) {
+    Row(gap: .sm, align: .center) {
+        Text(label).bold
+        Text("${amount}")
+        if sale { Badge("Sale").success }
+    }
+}
+component Rating(value: Number = 0) {
+    event rate(stars: Number)
+    Row(gap: .xs) {
+        for n in 1..=5 by n {
+            Button("{n}", outlined: n > value) {
+                on click { emit rate(n) }
+            }
+        }
+    }
+}
+page Preview(path: "/", title: "Preview", description: "The components this project publishes.") {
+    state stars = 3
+    Heading("Preview").h1
+    PriceTag(label: "Pro", amount: 29).sale
+    Rating(value: stars) { on rate(n) { stars = n } }
+}
+

@@ -1,0 +1,15 @@
+// md-docs/recipes/talk-between-tabs.md
+store Cart {
+    state count = 0
+    action add() { count = count + 1 }
+    action merge(m: Map) { count = m.items }
+}
+page Shop(path: "/", title: "Shop", description: "A cart every tab agrees on.") {
+    use Cart
+    channel cart = broadcast("cart") { on message(m) { Cart.merge(m) } }
+
+    Heading("Shop").h1
+    Text("{Cart.count} in the cart")
+    Button("Add to cart") { on click { Cart.add()  cart.post({ items: Cart.count }) } }
+}
+

@@ -1,17 +1,12 @@
 // md-docs/recipes/add-a-picture.md
-page Media(path: "/") {
-    Image(src: "/hero.jpg", alt: "The team at the launch", width: 1200, height: 630)
-    Image(src: "/deco.png", alt: "")
-    Video(src: "/demo.mp4", captions: "/demo.en.vtt").controls
-    Audio(src: "/talk.mp3", transcript: "/talk.txt").controls
-}
-
-// md-docs/recipes/add-a-picture.md
 image hero = "hero.jpg"
 page Home(path: "/", title: "Home", description: "The front page.") {
+    Heading("Home").h1
     Image(hero, alt: "The team at the launch",
           sizes: "(max-width: 768px) 100vw, 1200px",
           placeholder: .blur)
     Text("It is {hero.width} by {hero.height}, and mostly {hero.color}.")
+    Image(src: "/office.jpg", alt: "The office on a quiet morning")
+    Image(src: "/deco.png", alt: "")
 }
 

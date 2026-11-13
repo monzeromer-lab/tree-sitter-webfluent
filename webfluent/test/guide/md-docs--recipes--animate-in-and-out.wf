@@ -1,14 +1,21 @@
 // md-docs/recipes/animate-in-and-out.md
-page Enter(path: "/", title: "Enter", description: "Four ways to arrive.") {
+page Notices(path: "/", title: "Notices", description: "Cards and an alert that animate in and out.") {
     state open = false
-    Heading("Enter").h1
-    Button("Open") { on click { open = !open } }
+    state toast: String? = "Saved"
+    Heading("Notices").h1
+    Button("Toggle the cards") { on click { open = !open } }
     if open {
         Card.fadeIn { Text("Faded in") }
         Card(animate: .slideUp, speed: .fast) { Text("Slid up, quickly") }
         Card.scaleIn.slow { Text("Grew, slowly") }
         Card(animate: .fadeIn, duration: "600ms", delay: "200ms", easing: "ease-out") { Text("Tuned") }
     }
+    if let message = toast {
+        Alert(message, animate: .slideDown, exit: .fadeOut).success {
+            Button("Dismiss").sm { on click { toast = null } }
+        }
+    }
+    Button("Show the alert") { on click { toast = "Saved again" } }
 }
 
 // md-docs/recipes/animate-in-and-out.md
@@ -16,18 +23,6 @@ page Story(path: "/", title: "Story", description: "Sections that arrive as you 
     Heading("Our story").h1
     Text("Scroll down.")
     Section(animate: .fadeIn, on: .enterView) { Heading("Further down").h2 }
-}
-
-// md-docs/recipes/animate-in-and-out.md
-page Exit(path: "/", title: "Exit", description: "An alert that fades away.") {
-    state toast: String? = "Saved"
-    Heading("Exit").h1
-    if let message = toast {
-        Alert(message, animate: .slideDown, exit: .fadeOut).success {
-            Button("Dismiss").sm { on click { toast = null } }
-        }
-    }
-    Button("Show") { on click { toast = "Saved again" } }
 }
 
 // md-docs/recipes/animate-in-and-out.md

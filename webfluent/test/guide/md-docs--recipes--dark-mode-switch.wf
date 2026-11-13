@@ -1,4 +1,15 @@
 // md-docs/recipes/dark-mode-switch.md
+theme Light {
+    color-background: #FFFFFF
+    color-text: #0F172A
+}
+theme Night {
+    color-background: #0B1220
+    color-surface: #111827
+    color-text: #E5E7EB
+    color-text-muted: #9CA3AF
+    color-border: #1F2937
+}
 page Settings(path: "/settings", title: "Settings", description: "How the site looks.") {
     Heading("Settings").h1
     Row(gap: .sm) {

@@ -1,14 +1,5 @@
 // md-docs/recipes/translate-a-site.md
 type User { name: String }
-page Home(path: "/", title: "Home", description: "The home page.") {
-    state user = User(name: "Sam")
-    state items: [String] = ["a", "b", "c"]
-    Heading(t("welcome", { name: user.name })).h1
-    Text(t("items", { count: items.length }))
-    Button(t("actions.save")).primary
-}
-
-// md-docs/recipes/translate-a-site.md
 app {
     state chosen = "en"
     Navbar {
@@ -29,9 +20,16 @@ app {
     Router
 }
 page Home(path: "/", title: "Home", description: "The home page.") {
-    Heading("Home").h1
+    state user = User(name: "Sam")
+    state items: [String] = ["a", "b", "c"]
+    Heading(t("welcome", { name: user.name })).h1
+    Text(t("items", { count: items.length }))
+    Button(t("actions.save")).primary
     Text("Locale: {locale}, direction: {dir}")
     if locale == "ar" { Text("النسخة العربية") }
+}
+page About(path: "/about", title: "About", description: "About the site.") {
+    Heading(t("nav.about")).h1
 }
 
 // md-docs/recipes/translate-a-site.md

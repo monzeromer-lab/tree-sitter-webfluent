@@ -1,0 +1,17 @@
+// md-docs/coming-from/html-css.md
+page Team(path: "/", title: "Team", description: "Who we are.") {
+    Heading("Team").h1
+    Person("Ada Lovelace", role: "Analyst", photo: "/ada.jpg")
+}
+component Person(_ name: String, role: String, photo: String) {
+    Card.outlined {
+        Row(gap: .sm, align: .center) {
+            Avatar(src: photo, alt: name)
+            Stack {
+                Heading(name).h3
+                Text(role).muted
+            }
+        }
+    }
+}
+

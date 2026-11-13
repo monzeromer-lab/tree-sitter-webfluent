@@ -9,4 +9,7 @@ component DocsShell {
         Container { children }
     }
 }
+app {
+    Router
+}
 

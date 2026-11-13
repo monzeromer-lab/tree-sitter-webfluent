@@ -1,6 +1,12 @@
 // md-docs/recipes/search-and-link-previews.md
 type Post { slug: String, title: String, summary: String, cover: String, date: String, body: String }
 data posts: [Post] = "posts.json"
+page Home(path: "/", title: "Acme", description: "Tools for small teams.", image: "/og-default.png", image_alt: "The Acme logo on a blue field") {
+    Heading("Acme").h1
+    for p in posts by p.slug {
+        Link(p.title, to: "/posts/{p.slug}")
+    }
+}
 page PostPage(path: "/posts/:slug", slug: String, title: "Post", description: "A post from the blog.", type: "article", paths: posts.map(p => p.slug)) {
     derived post = posts.find(p => p.slug == slug)
     head {
@@ -14,5 +20,8 @@ page PostPage(path: "/posts/:slug", slug: String, title: "Post", description: "A
         Text(format(p.date, .date, "long")).muted
         Markdown(p.body)
     }
+}
+page Thanks(path: "/thanks", title: "Thanks", description: "Your message reached us.", noindex: true) {
+    Heading("Thanks").h1
 }
 

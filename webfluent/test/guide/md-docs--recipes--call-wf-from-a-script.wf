@@ -1,0 +1,7 @@
+// md-docs/recipes/call-wf-from-a-script.md
+page Article(path: "/article", title: "Slow roasting", description: "Why we take eleven minutes over it.") {
+    Heading("Slow roasting").h1
+    Text("Eleven minutes, and why it matters.")
+    Button("Copy the link") { on click { shareLink() } }
+}
+

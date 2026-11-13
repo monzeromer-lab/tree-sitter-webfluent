@@ -1,0 +1,10 @@
+// md-docs/recipes/listen-for-wf-render.md
+const NOTES = """
+    Read the [WebFluent guide](https://webfluent.monzeromer.dev/docs), or
+    the [MDN page on links](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a).
+    """
+page Notes(path: "/notes", title: "Notes", description: "Links in Markdown that open in a new tab.") {
+    Heading("Notes").h1
+    Markdown(NOTES, class: "notes")
+}
+

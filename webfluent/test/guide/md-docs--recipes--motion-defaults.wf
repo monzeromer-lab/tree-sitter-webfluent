@@ -1,0 +1,19 @@
+// md-docs/recipes/motion-defaults.md
+page Welcome(path: "/", title: "Welcome", description: "Motion that follows the project's defaults.") {
+    state open = false
+    Heading("Welcome").h1.fadeIn
+    Button("Details") { on click { open = !open } }
+    if open {
+        Card(exit: .fadeOut).slideUp { Text("This card takes the default length and easing.") }
+    }
+    Card {
+        style {
+            @media (prefers-reduced-motion: no-preference) {
+                transition: box-shadow $animation-duration-normal $animation-easing-default
+            }
+            &:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.12) }
+        }
+        Text("A hand-written transition, kept from readers who asked for less motion.")
+    }
+}
+

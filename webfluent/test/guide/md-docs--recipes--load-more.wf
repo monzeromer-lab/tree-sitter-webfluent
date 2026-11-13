@@ -9,7 +9,7 @@ page Items(path: "/items", title: "Items", description: "Everything, a page at a
     Heading("Items").h1
     for item in list.items by item.id { Text(item.name) }
     if list.hasMore {
-        Button("Load more", disabled: list.state == "loading") { on click { list.loadMore() } }
+        Button("Load more", disabled: list.pending) { on click { list.loadMore() } }
     }
 }
 

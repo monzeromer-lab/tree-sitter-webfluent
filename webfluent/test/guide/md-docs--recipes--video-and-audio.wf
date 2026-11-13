@@ -1,0 +1,7 @@
+// md-docs/recipes/video-and-audio.md
+page Media(path: "/", title: "Media", description: "The demo and the launch talk.") {
+    Heading("Media").h1
+    Video(src: "/demo.mp4", captions: "/demo.en.vtt", poster: "/demo.jpg").controls
+    Audio(src: "/talk.mp3", transcript: "/talk.txt").controls
+}
+

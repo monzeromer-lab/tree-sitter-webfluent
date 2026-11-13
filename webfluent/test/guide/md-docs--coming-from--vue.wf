@@ -1,16 +1,4 @@
-// md-docs/coming-from/react-vue-svelte.md
-component Counter(start: Number = 0) {
-    event change(value: Number)
-    state n = start
-    derived even = n % 2 == 0
-    Row(gap: .sm, align: .center) {
-        Button("+") { on click { n = n + 1  emit change(n) } }
-        Text("{n}")
-        if even { Badge("even").info }
-    }
-}
-
-// md-docs/coming-from/react-vue-svelte.md
+// md-docs/coming-from/vue.md
 page Scores(path: "/", title: "Scores", description: "A counter that reports each change.") {
     state last = 0
     Heading("Scores").h1

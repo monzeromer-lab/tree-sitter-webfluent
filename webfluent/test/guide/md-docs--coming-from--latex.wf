@@ -1,0 +1,18 @@
+// md-docs/coming-from/latex.md
+page Report(path: "/", title: "Quarterly report", description: "Sales for the quarter.") {
+    Document(size: "A4", title: "Quarterly report", author: "Acme Studio") {
+        Footer { Text("Page {page} of {pages}").muted.sm.center }
+        Heading("Quarterly report").h1
+        Text("Acme Studio").muted
+        Heading("Sales").h2
+        Text("Revenue grew in every region.")
+        Table(caption: "Revenue by region") {
+            Table.Head { Table.Row { Table.Cell("Region")  Table.Cell("Revenue") } }
+            Table.Body {
+                Table.Row { Table.Cell("North")  Table.Cell("$2.4M") }
+                Table.Row { Table.Cell("South")  Table.Cell("$1.9M") }
+            }
+        }
+    }
+}
+

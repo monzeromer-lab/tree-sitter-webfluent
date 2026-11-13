@@ -1,0 +1,13 @@
+// md-docs/recipes/chart-from-a-library.md
+page Sales(path: "/sales", title: "Sales", description: "Sales by quarter, as a bar chart.") {
+    state lastYear = false
+    derived values: [Number] = if lastYear { [9, 14, 11, 13] } else { [12, 19, 7, 15] }
+
+    Heading("Sales").h1
+    Switch(bind: lastYear, label: "Show last year")
+    Host(tag: "canvas", role: "img", aria-label: "Sales by quarter",
+         mount: (canvas) => drawSales(canvas, values),
+         update: (chart) => showSales(chart, values),
+         cleanup: (chart) => chart.destroy())
+}
+
