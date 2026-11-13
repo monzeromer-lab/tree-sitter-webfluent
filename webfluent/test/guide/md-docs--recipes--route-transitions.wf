@@ -1,0 +1,11 @@
+// md-docs/recipes/route-transitions.md
+app {
+    Navbar {
+        Navbar.Brand { Link("Motion", to: "/") }
+        Navbar.Links { Link("Home", to: "/")  Link("About", to: "/about") }
+    }
+    Router(transition: .fade, duration: "200ms")
+}
+page Home(path: "/", title: "Home", description: "The front page.") { Heading("Home").h1 }
+page About(path: "/about", title: "About", description: "Who we are.") { Heading("About").h1 }
+

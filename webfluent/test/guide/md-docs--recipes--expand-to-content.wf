@@ -1,0 +1,10 @@
+// md-docs/recipes/expand-to-content.md
+page Details(path: "/", title: "Details", description: "A box that opens smoothly.") {
+    state open = false
+    Heading("Details").h1
+    Button("Details") { on click { open = !open } }
+    show open {
+        Stack(animate: .expand) { Text("As much text as there is.") }
+    }
+}
+

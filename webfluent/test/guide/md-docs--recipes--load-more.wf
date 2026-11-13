@@ -1,0 +1,15 @@
+// md-docs/recipes/load-more.md
+type Item { id: String, name: String }
+api Catalog(base: "/api") {
+    get items(page: Number = 1) -> [Item]
+}
+page Items(path: "/items", title: "Items", description: "Everything, a page at a time.") {
+    state page = 1
+    resource list = Catalog.items(page: page, paginate: .page)
+    Heading("Items").h1
+    for item in list.items by item.id { Text(item.name) }
+    if list.hasMore {
+        Button("Load more", disabled: list.state == "loading") { on click { list.loadMore() } }
+    }
+}
+

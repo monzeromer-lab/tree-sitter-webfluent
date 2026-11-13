@@ -1,0 +1,20 @@
+// md-docs/recipes/validation-messages.md
+page Signup(path: "/", title: "Sign up", description: "Make an account.") {
+    state email = ""
+    state password = ""
+    state confirm = ""
+    state sent = false
+    validate email { required  email "Enter a valid email" }
+    validate password { required  minLength(8) "At least 8 characters" }
+    validate confirm { matches(password) "The passwords differ" }
+    Heading("Sign up").h1
+    Form(bind: form) {
+        on submit { sent = true  form.reset() }
+        Input(bind: email, name: "email", label: "Email").email
+        Input(bind: password, name: "password", label: "Password").password
+        Input(bind: confirm, name: "confirm", label: "Confirm password").password
+        Button("Create account", type: .submit, disabled: !form.valid).primary
+    }
+    if sent { Alert("Welcome aboard.").success }
+}
+

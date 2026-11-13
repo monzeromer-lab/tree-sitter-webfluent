@@ -1,0 +1,44 @@
+// md-docs/recipes/animate-in-and-out.md
+page Enter(path: "/", title: "Enter", description: "Four ways to arrive.") {
+    state open = false
+    Heading("Enter").h1
+    Button("Open") { on click { open = !open } }
+    if open {
+        Card.fadeIn { Text("Faded in") }
+        Card(animate: .slideUp, speed: .fast) { Text("Slid up, quickly") }
+        Card.scaleIn.slow { Text("Grew, slowly") }
+        Card(animate: .fadeIn, duration: "600ms", delay: "200ms", easing: "ease-out") { Text("Tuned") }
+    }
+}
+
+// md-docs/recipes/animate-in-and-out.md
+page Story(path: "/", title: "Story", description: "Sections that arrive as you read.") {
+    Heading("Our story").h1
+    Text("Scroll down.")
+    Section(animate: .fadeIn, on: .enterView) { Heading("Further down").h2 }
+}
+
+// md-docs/recipes/animate-in-and-out.md
+page Exit(path: "/", title: "Exit", description: "An alert that fades away.") {
+    state toast: String? = "Saved"
+    Heading("Exit").h1
+    if let message = toast {
+        Alert(message, animate: .slideDown, exit: .fadeOut).success {
+            Button("Dismiss").sm { on click { toast = null } }
+        }
+    }
+    Button("Show") { on click { toast = "Saved again" } }
+}
+
+// md-docs/recipes/animate-in-and-out.md
+enum Step { one, two, three }
+page Wizard(path: "/", title: "Wizard", description: "Three steps, animated.") {
+    state step: Step = .one
+    Heading("Set up").h1
+    match step {
+        .one { Card(animate: .slideLeft, exit: .fadeOut) { Text("Step one")  Button("Next") { on click { step = .two } } } }
+        .two { Card(animate: .slideLeft, exit: .fadeOut) { Text("Step two")  Button("Next") { on click { step = .three } } } }
+        .three { Card(animate: .scaleIn) { Text("Done") } }
+    }
+}
+

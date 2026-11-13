@@ -1,0 +1,11 @@
+// md-docs/recipes/filters-in-the-address.md
+page Products(path: "/products", title: "Products", description: "Everything we sell.") {
+    derived sort = query.sort ?? "name"
+    Heading("Products").h1
+    Row(gap: .sm) {
+        Link("By name", to: "/products?sort=name")
+        Link("By price", to: "/products?sort=price")
+    }
+    Text("Sorted by {sort}")
+}
+

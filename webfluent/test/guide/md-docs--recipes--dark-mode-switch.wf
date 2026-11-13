@@ -1,0 +1,10 @@
+// md-docs/recipes/dark-mode-switch.md
+page Settings(path: "/settings", title: "Settings", description: "How the site looks.") {
+    Heading("Settings").h1
+    Row(gap: .sm) {
+        Button("Light", outlined: theme != "light") { on click { setTheme("light") } }
+        Button("Dark", outlined: theme != "dark") { on click { setTheme("dark") } }
+        Button("Match the system", outlined: theme != "system") { on click { setTheme("system") } }
+    }
+}
+

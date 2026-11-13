@@ -1,0 +1,12 @@
+// md-docs/recipes/tween-on-change.md
+page Tween(path: "/", title: "Tween", description: "A panel that grows.") {
+    state open = false
+    Heading("Tween").h1
+    Card {
+        style { max-height: {if open { "20rem" } else { "3rem" }}; overflow: hidden }
+        transition { max-height: 250ms ease-in-out }
+        Button("Toggle") { on click { open = !open } }
+        Text("Long content that reveals itself.")
+    }
+}
+

@@ -1,0 +1,13 @@
+// md-docs/recipes/show-an-icon.md
+page Inbox(path: "/", title: "Inbox", description: "Messages, with icons.") {
+    Heading("Inbox").h1
+    Row(gap: .sm) {
+        Icon("mail")
+        Icon("bell").lg.primary
+        IconButton(icon: "close", label: "Close the inbox")
+    }
+    Sidebar {
+        Sidebar.Item(to: "/", icon: "home") { Text("Home") }
+    }
+}
+

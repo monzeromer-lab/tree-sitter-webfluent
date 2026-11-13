@@ -1,0 +1,23 @@
+// md-docs/recipes/shared-element.md
+type Post { id: String, slug: String, title: String, cover: String }
+const posts: [Post] = [
+    Post(id: "1", slug: "slow-roasting", title: "Slow roasting", cover: "/roast.jpg"),
+]
+page Blog(path: "/", title: "Blog", description: "Every post.") {
+    Heading("Blog").h1
+    for post in posts by post.id {
+        Link(to: "/p/{post.slug}") {
+            Image(src: post.cover, alt: post.title, shared: "cover-{post.id}")
+            Text(post.title)
+        }
+    }
+}
+page Article(path: "/p/:slug", title: "Post", description: "One post.", slug: String) {
+    if let post = posts.find(p => p.slug == slug) {
+        Heading(post.title).h1
+        Image(src: post.cover, alt: post.title, shared: "cover-{post.id}")
+    } else {
+        Heading("Not found").h1
+    }
+}
+

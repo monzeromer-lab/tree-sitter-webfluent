@@ -1,0 +1,8 @@
+// md-docs/recipes/show-code.md
+page Snippets(path: "/", title: "Snippets", description: "Code on the page.") {
+    Heading("Snippets").h1
+    Text("Run ")  Code("wf serve")  Text(" to start.")
+    Code("page Home(path: \"/\") {\n    Text(\"Hi\")\n}", language: "wf").block
+    Code("$ wf build", language: "bash").block
+}
+

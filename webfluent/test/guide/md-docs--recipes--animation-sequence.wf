@@ -1,0 +1,9 @@
+// md-docs/recipes/animation-sequence.md
+page Landing(path: "/", title: "Welcome", description: "A page that introduces itself.") {
+    sequence {
+        step { Heading("Welcome").h1.fadeIn }
+        step(after: "120ms") { Text("What we do.").slideUp }
+        step(after: "120ms") { Button("Start").primary.slideUp }
+    }
+}
+

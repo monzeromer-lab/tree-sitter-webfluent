@@ -1,0 +1,19 @@
+// md-docs/recipes/debounce-a-search.md
+page Search(path: "/", title: "Search", description: "Search as you type, without a request per key.") {
+    state typed = ""
+    state q = ""
+    action commit(value: String) { if value == typed { q = value } }
+    effect {
+        let pending = typed
+        setTimeout(() => commit(pending), 300)
+    }
+    resource hits = fetch("/api/search?q={q}")
+    Heading("Search").h1
+    Input(bind: typed, placeholder: "Search", aria-label: "Search")
+    match hits {
+        loading { Spinner.sm }
+        error(e) { Text(e.message).danger }
+        ready(list) { Text("{list.length} results for {q}") }
+    }
+}
+

@@ -1,0 +1,11 @@
+// md-docs/recipes/store-value-as-a-prop.md
+store Cart { state count = 0 }
+component CartBadge(count: Number) {
+    if count > 0 { Badge("{count}").primary }
+}
+page Shop(path: "/", title: "Shop", description: "Everything we sell.") {
+    use Cart
+    Heading("Shop").h1
+    CartBadge(count: Cart.count)
+}
+

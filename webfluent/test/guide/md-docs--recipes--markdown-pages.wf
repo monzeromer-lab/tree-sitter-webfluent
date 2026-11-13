@@ -1,0 +1,12 @@
+// md-docs/recipes/markdown-pages.md
+component DocsShell {
+    slot
+    Row(gap: .lg) {
+        Sidebar {
+            Sidebar.Item(to: "/guide/install") { Text("Installing") }
+            Sidebar.Item(to: "/guide/pages") { Text("Pages") }
+        }
+        Container { children }
+    }
+}
+

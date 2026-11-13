@@ -1,0 +1,8 @@
+// md-docs/recipes/keep-writes-made-offline.md
+page Notes(path: "/notes", title: "Notes", description: "Notes that save offline.") {
+    Heading("Notes").h1
+    if network.queued > 0 {
+        Text("{network.queued} change(s) will be sent when you are back online").muted
+    }
+}
+

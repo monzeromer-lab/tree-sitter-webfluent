@@ -1,0 +1,10 @@
+// md-docs/recipes/show-a-carousel.md
+page Gallery(path: "/", title: "Gallery", description: "Three pictures.") {
+    Heading("Gallery").h1
+    Carousel(label: "Recent work", autoplay: true, interval: 5000) {
+        Carousel.Slide { Image(src: "/one.jpg", alt: "A bridge at dusk") }
+        Carousel.Slide { Image(src: "/two.jpg", alt: "The harbour from above") }
+        Carousel.Slide { Image(src: "/three.jpg", alt: "Rain on the market") }
+    }
+}
+

@@ -1,0 +1,7 @@
+// md-docs/recipes/work-offline.md
+page Offline(path: "/offline", title: "Offline", description: "Shown when a page was not stored.") {
+    Heading("You are offline").h1
+    Text("This page was not saved for offline use. It will load when you are back online.")
+    Link("Go to the home page", to: "/")
+}
+

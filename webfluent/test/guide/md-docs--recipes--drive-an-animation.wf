@@ -1,0 +1,18 @@
+// md-docs/recipes/drive-an-animation.md
+page Hover(path: "/", title: "Hover", description: "A card that pulses on hover.") {
+    Heading("Hover").h1
+    Card(ref: panel) {
+        on mouseenter { animate(panel, "pulse", "400ms") }
+        Text("Point at me.")
+    }
+}
+
+// md-docs/recipes/drive-an-animation.md
+page Replay(path: "/", title: "Replay", description: "A card that fades in again on hover.") {
+    Heading("Replay").h1
+    Card.outlined.fadeIn {
+        on mouseenter(e) { replayAnimation(e.currentTarget, "fadeIn") }
+        Text("Point at me.")
+    }
+}
+

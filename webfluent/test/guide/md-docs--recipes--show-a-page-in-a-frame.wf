@@ -1,0 +1,19 @@
+// md-docs/recipes/show-a-page-in-a-frame.md
+page Talk(path: "/", title: "The talk", description: "The launch talk, and what the preview says.") {
+    state heard = ""
+    Heading("The talk").h1
+    Frame(src: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", title: "The launch talk", allow: "fullscreen")
+    Frame(src: "/preview/", title: "Preview", sandbox: "allow-scripts") {
+        on message(m) { heard = m.data }
+    }
+    Text(heard)
+}
+
+// md-docs/recipes/show-a-page-in-a-frame.md
+page Preview(path: "/preview-note", title: "Preview", description: "A note, drawn as it will look.") {
+    state note = "Hello"
+    Heading("Preview").h1
+    Input(bind: note, label: "Note")
+    Frame(srcdoc: "<p>{note}</p>", title: "The note, drawn", sandbox: "")
+}
+

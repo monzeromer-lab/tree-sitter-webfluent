@@ -1,0 +1,12 @@
+// md-docs/recipes/copy-to-the-clipboard.md
+page Share(path: "/share", title: "Share", description: "Copy the link.") {
+    state copied = false
+    action copy(text: String) {
+        await navigator.clipboard.writeText(text)
+        copied = true
+    }
+    Heading("Share").h1
+    Button("Copy the link") { on click { copy(location.href) } }
+    if copied { Toast("Copied").success }
+}
+

@@ -1,0 +1,14 @@
+// md-docs/recipes/render-markdown.md
+page Notes(path: "/", title: "Release notes", description: "What changed in this release.") {
+    state body = "# Release notes\n\nVersion **3.3** adds:\n\n- Markdown pages\n- `wf docs`\n\n> Ship it."
+    Markdown(body)
+    Markdown("Inline *emphasis*, a [link](/about) and an ![image](/img.png).")
+}
+
+// md-docs/recipes/render-markdown.md
+page Hover(path: "/", title: "Hover", description: "Documentation from a language server.") {
+    state docs = "Returns a list of &lt;T&gt; &mdash; see [the guide](https://example.com/guide).\n\n![build](https://ci.example.com/badge.svg)"
+    Heading("Hover").h1
+    Markdown(docs).inert
+}
+

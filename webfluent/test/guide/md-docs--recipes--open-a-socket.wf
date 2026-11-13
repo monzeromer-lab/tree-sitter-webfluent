@@ -1,4 +1,4 @@
-// md-docs/recipes/realtime.md
+// md-docs/recipes/open-a-socket.md
 page Chat(path: "/chat", title: "Chat", description: "Talk to the team.") {
     state draft = ""
     socket chat = ws("wss://example.com/chat", heartbeat: 20.seconds) {
@@ -16,7 +16,7 @@ page Chat(path: "/chat", title: "Chat", description: "Talk to the team.") {
     Button("Send").primary { on click { chat.send({ text: draft })  draft = "" } }
 }
 
-// md-docs/recipes/realtime.md
+// md-docs/recipes/open-a-socket.md
 type Incoming { id: String, text: String }
 type Outgoing { text: String }
 page Room(path: "/room", title: "Room", description: "A typed conversation.") {
@@ -29,18 +29,5 @@ page Room(path: "/room", title: "Room", description: "A typed conversation.") {
     for m in chat.messages by m.id { Text(m.text) }
     Input(bind: draft, label: "Message")
     Button("Send") { on click { chat.send(Outgoing(text: draft))  draft = "" } }
-}
-
-// md-docs/recipes/realtime.md
-page Checkout(path: "/checkout", title: "Checkout", description: "Pay for the order.") {
-    Heading("Checkout").h1
-    Button("Pay").primary { on click { beacon("/analytics", { event: "checkout", value: 42 }) } }
-}
-
-// md-docs/recipes/realtime.md
-page Inbox(path: "/inbox", title: "Inbox", description: "Your messages.") {
-    Heading("Inbox").h1
-    if !network.online { Alert("You are offline — changes are queued.").warning }
-    if network.saveData { Text("Data saver is on.").muted }
 }
 

@@ -1,4 +1,4 @@
-// md-docs/recipes/desktop-apps.md
+// md-docs/recipes/tauri-app.md
 page Hello(path: "/", title: "Hello", description: "Says hello from Rust.") {
     state name = ""
     state reply = ""
@@ -20,7 +20,7 @@ page Hello(path: "/", title: "Hello", description: "Says hello from Rust.") {
     Text(reply)
 }
 
-// md-docs/recipes/desktop-apps.md
+// md-docs/recipes/tauri-app.md
 page Sync(path: "/sync", title: "Sync", description: "How far the sync has got.") {
     state done = 0
     state problem = ""
@@ -45,7 +45,7 @@ page Sync(path: "/sync", title: "Sync", description: "How far the sync has got."
     }
 }
 
-// md-docs/recipes/desktop-apps.md
+// md-docs/recipes/tauri-app.md
 page Library(path: "/library", title: "Library", description: "Where the notes are kept.") {
     state folder = ""
 

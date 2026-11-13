@@ -1,0 +1,6 @@
+// md-docs/recipes/send-on-unload.md
+page Checkout(path: "/checkout", title: "Checkout", description: "Pay for the order.") {
+    Heading("Checkout").h1
+    Button("Pay").primary { on click { beacon("/analytics", { event: "checkout", value: 42 }) } }
+}
+
