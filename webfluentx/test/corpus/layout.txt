@@ -472,3 +472,45 @@ page A(path: "/")
     (ERROR)
     (string
       (raw_string))))
+
+================================================================================
+A match expression with its arms indented under it
+================================================================================
+
+component Label(_ kind: Kind)
+    derived name = match kind
+        .one { "One" }
+        .two { "Two" }
+    Text(name)
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (component_declaration
+    (component_identifier)
+    (parameter_list
+      (parameter
+        (identifier)
+        (named_type
+          (component_identifier))))
+    (block
+      (derived_declaration
+        (identifier)
+        (match_expression
+          (identifier)
+          (match_expression_arm
+            (case_pattern
+              (enum_case
+                (identifier)))
+            (string
+              (string_content)))
+          (match_expression_arm
+            (case_pattern
+              (enum_case
+                (identifier)))
+            (string
+              (string_content)))))
+      (element
+        (builtin_component)
+        (argument_list
+          (identifier))))))

@@ -1137,7 +1137,7 @@ module.exports = grammar({
     match_expression: ($) =>
       prec(
         -2,
-        seq("match", field("value", $._expression), "{", repeat($.match_expression_arm), "}"),
+        seq("match", field("value", $._expression), braced($, repeat($.match_expression_arm))),
       ),
 
     match_expression_arm: ($) =>
