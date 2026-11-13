@@ -1,0 +1,7 @@
+// md-docs/errors/T01.md
+page P(path: "/", title: "T", description: "D") {
+    state count: Number = 0
+    Heading("Count {count}").h1
+    Button("Reset") { on click { count = 0 } }
+}
+

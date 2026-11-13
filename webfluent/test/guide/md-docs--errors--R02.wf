@@ -1,0 +1,5 @@
+// md-docs/errors/R02.md
+page Profile(path: "/u/:id", title: "T", description: "D", id: String) {
+    Heading("Profile {id}").h1
+}
+

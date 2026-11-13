@@ -1,0 +1,7 @@
+// md-docs/errors/V03.md
+page P(path: "/", title: "T", description: "D") {
+    state body = "**Hi**"
+    Heading("Markup").h1
+    Markdown(body)
+}
+

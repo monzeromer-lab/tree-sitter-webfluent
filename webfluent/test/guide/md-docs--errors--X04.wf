@@ -1,0 +1,12 @@
+// md-docs/errors/X04.md
+page P(path: "/", title: "T", description: "D") {
+    state count = 0
+    action next() {
+        count = count + 1
+        return count
+    }
+    derived ticket = count
+    Heading("Ticket {ticket}").h1
+    Button("Next") { on click { next() } }
+}
+

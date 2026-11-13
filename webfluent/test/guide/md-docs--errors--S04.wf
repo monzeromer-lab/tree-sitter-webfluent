@@ -1,0 +1,4 @@
+// md-docs/errors/S04.md
+page A(path: "/about", title: "A", description: "D") { Heading("A").h1 }
+page B(path: "/team", title: "B", description: "D") { Heading("B").h1 }
+

@@ -1,0 +1,11 @@
+// md-docs/errors/F03.md
+page P(path: "/", title: "T", description: "D") {
+    state email = ""
+    validate email { required  email }
+    Heading("Join").h1
+    Form {
+        Input(bind: email, label: "Email").email
+        Button("Join", type: .submit)
+    }
+}
+

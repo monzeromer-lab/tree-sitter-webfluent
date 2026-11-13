@@ -1,0 +1,8 @@
+// md-docs/errors/T10.md
+page P(path: "/", title: "T", description: "D") {
+    state count = 0
+    action add(step: Number) { count = count + step }
+    Heading("Count").h1
+    Button("+") { on click { add(1) } }
+}
+

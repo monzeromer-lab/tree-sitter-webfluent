@@ -1,0 +1,7 @@
+// md-docs/errors/E113.md
+component Product(_ name: String, price: Number = 0) { Text("{name}: {price}") }
+page P(path: "/", title: "T", description: "D") {
+    Heading("Shop").h1
+    Product("Laptop", price: 999)
+}
+

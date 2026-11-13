@@ -1,0 +1,11 @@
+// md-docs/errors/T21.md
+page P(path: "/", title: "T", description: "D") {
+    resource users = fetch("/api/users")
+    Heading("Users").h1
+    match users {
+        loading { Spinner }
+        error(e) { Alert(e.message).danger }
+        ready(list) { Text("{list.length} users") }
+    }
+}
+

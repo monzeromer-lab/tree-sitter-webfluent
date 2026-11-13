@@ -1,0 +1,7 @@
+// md-docs/errors/A03.md
+page P(path: "/", title: "T", description: "D") {
+    state name = ""
+    Heading("Name").h1
+    Input(bind: name, label: "Name").text
+}
+

@@ -1,0 +1,5 @@
+// md-docs/errors/S03.md
+page P(path: "/", title: "T", description: "A description that says what the page holds, in a sentence a search result shows whole.") {
+    Heading("Long").h1
+}
+

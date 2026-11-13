@@ -1,0 +1,7 @@
+// md-docs/errors/C02.md
+component Badge2(_ label: String, colour: String = "") { Text(label) }
+page P(path: "/", title: "T", description: "D") {
+    Heading("Badges").h1
+    Badge2("New", colour: "red")
+}
+

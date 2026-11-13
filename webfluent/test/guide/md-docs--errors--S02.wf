@@ -1,0 +1,5 @@
+// md-docs/errors/S02.md
+page P(path: "/", title: "T", description: "What a reader gets from this page.") {
+    Heading("No description").h1
+}
+

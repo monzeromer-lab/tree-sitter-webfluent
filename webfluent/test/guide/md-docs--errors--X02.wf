@@ -1,0 +1,7 @@
+// md-docs/errors/X02.md
+page P(path: "/", title: "T", description: "D") {
+    state visits = 0
+    Heading("Visits {visits}").h1
+    Button("Visit") { on click { visits = visits + 1 } }
+}
+

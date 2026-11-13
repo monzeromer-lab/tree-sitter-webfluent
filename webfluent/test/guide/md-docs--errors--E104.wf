@@ -1,0 +1,10 @@
+// md-docs/errors/E104.md
+component Shell {
+    slot
+    Text("frame")
+    children
+}
+page P(path: "/", title: "T", description: "D", layout: Shell) {
+    Heading("Home").h1
+}
+

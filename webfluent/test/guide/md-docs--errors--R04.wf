@@ -1,0 +1,6 @@
+// md-docs/errors/R04.md
+page Post(path: "/blog/first", title: "T", description: "D") {
+    Heading("First post").h1
+    Image(src: "/images/cover.png", alt: "")
+}
+

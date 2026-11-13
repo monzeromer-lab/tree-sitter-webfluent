@@ -1,0 +1,7 @@
+// md-docs/errors/A08.md
+page P(path: "/", title: "T", description: "D") {
+    state open = false
+    Heading("Modal").h1
+    Modal(visible: open, title: "Hello") { Text("Hello") }
+}
+

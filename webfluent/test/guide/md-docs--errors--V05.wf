@@ -1,0 +1,7 @@
+// md-docs/errors/V05.md
+page P(path: "/", title: "T", description: "D") {
+    Heading("Hello").h1 {
+        style { color: red }
+    }
+}
+

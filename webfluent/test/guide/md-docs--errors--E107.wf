@@ -1,0 +1,6 @@
+// md-docs/errors/E107.md
+page P(path: "/", title: "T", description: "D") {
+    Heading("Go").h1
+    Link("Go", to: "https://example.com/")
+}
+

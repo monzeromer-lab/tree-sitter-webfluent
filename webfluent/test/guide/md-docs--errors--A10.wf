@@ -1,0 +1,9 @@
+// md-docs/errors/A10.md
+page P(path: "/", title: "T", description: "D") {
+    Heading("Table").h1
+    Table(caption: "Prices") {
+        Table.Head { Table.Row { Table.Cell("Item")  Table.Cell("Price") } }
+        Table.Body { Table.Row { Table.Cell("Pen")  Table.Cell("2") } }
+    }
+}
+

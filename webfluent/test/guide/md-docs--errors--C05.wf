@@ -1,0 +1,6 @@
+// md-docs/errors/C05.md
+page P(path: "/", title: "T", description: "D") {
+    Heading("Rule").h1
+    Divider()
+}
+

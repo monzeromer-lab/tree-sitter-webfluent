@@ -1,0 +1,6 @@
+// md-docs/errors/E116.md
+page P(path: "/", title: "T", description: "D") {
+    Heading("Pricing").h1
+    Element("pricing-table")
+}
+

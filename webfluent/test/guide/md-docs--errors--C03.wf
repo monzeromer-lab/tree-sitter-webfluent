@@ -1,0 +1,7 @@
+// md-docs/errors/C03.md
+page P(path: "/", title: "T", description: "D") {
+    state plan = "pro"
+    Heading("Plans").h1
+    Select(bind: plan, label: "Plan") { Select.Option("Pro", value: "pro") }
+}
+

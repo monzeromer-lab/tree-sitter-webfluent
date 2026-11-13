@@ -1,0 +1,7 @@
+// md-docs/errors/X01.md
+page P(path: "/", title: "T", description: "D") {
+    state limit = 3
+    Heading("Limit {limit}").h1
+    Button("More") { on click { limit = 4 } }
+}
+

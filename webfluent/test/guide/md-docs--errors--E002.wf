@@ -1,0 +1,6 @@
+// md-docs/errors/E002.md
+page P(path: "/", title: "T", description: "D") {
+    Heading("Hello").h1
+    Text("a") Text("b")
+}
+

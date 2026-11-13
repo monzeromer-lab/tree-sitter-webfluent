@@ -1,0 +1,7 @@
+// md-docs/errors/U02.md
+page P(path: "/", title: "T", description: "D") {
+    state n = 1
+    derived doubled = n * 2
+    Heading("{n} doubled is {doubled}").h1
+}
+

@@ -1,0 +1,7 @@
+// md-docs/errors/T08.md
+page P(path: "/", title: "T", description: "D") {
+    state total = 3
+    Heading("Loop").h1
+    for n in 1..=total { Text("{n}") }
+}
+

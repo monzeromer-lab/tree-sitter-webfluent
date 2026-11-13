@@ -1,0 +1,6 @@
+// md-docs/errors/T18.md
+page P(path: "/", title: "T", description: "D") {
+    state price = 12
+    Heading("Total {price * 2}").h1
+}
+

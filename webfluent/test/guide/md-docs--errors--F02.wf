@@ -1,0 +1,7 @@
+// md-docs/errors/F02.md
+page P(path: "/", title: "T", description: "D") {
+    state qty = 1
+    Heading("Order").h1
+    Input(bind: qty, label: "Quantity").number
+}
+

@@ -1,0 +1,7 @@
+// md-docs/errors/U08.md
+page P(path: "/", title: "T", description: "D") {
+    state beta = false
+    Heading("Beta").h1
+    if beta { Text("Coming soon") }
+}
+

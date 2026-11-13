@@ -1,0 +1,7 @@
+// md-docs/errors/T16.md
+page P(path: "/", title: "T", description: "D") {
+    state names = ["Ada", "Grace"]
+    Heading("People").h1
+    Text(names.join(", "))
+}
+

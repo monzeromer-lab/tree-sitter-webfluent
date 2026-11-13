@@ -1,0 +1,9 @@
+// md-docs/errors/C07.md
+component Rows2(_ name: String) {
+    Stack { for x in [1, 2] { Text(name) } }
+}
+page P(path: "/", title: "T", description: "D") {
+    Heading("Files").h1
+    Rows2("a", drag: "a")
+}
+

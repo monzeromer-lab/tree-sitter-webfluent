@@ -1,0 +1,7 @@
+// md-docs/errors/V07.md
+page P(path: "/", title: "T", description: "D") {
+    state pct = 40
+    Heading("Progress").h1
+    Card { style { width: {pct}% } }
+}
+

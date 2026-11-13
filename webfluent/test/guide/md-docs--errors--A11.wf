@@ -1,0 +1,6 @@
+// md-docs/errors/A11.md
+page P(path: "/", title: "T", description: "D") {
+    Heading("Title").h1
+    Heading("Deep").h2
+}
+

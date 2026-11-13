@@ -1,0 +1,9 @@
+// md-docs/errors/R03.md
+app {
+    Navbar { Navbar.Brand { Text("Ledger") } }
+    Router
+}
+page Home(path: "/", title: "T", description: "D") {
+    Heading("Home").h1
+}
+

@@ -1,0 +1,12 @@
+// md-docs/errors/T22.md
+component Entry(_ key: String) {
+    event menu(key: String, x: Number, y: Number)
+    Button(key) { on contextmenu(e) { e.preventDefault()  emit menu(key, e.clientX, e.clientY) } }
+}
+page P(path: "/", title: "T", description: "D") {
+    state at = ""
+    Heading("Files").h1
+    Entry("notes.wf") { on menu(key, x, y) { at = "{key} at {x}, {y}" } }
+    Text(at)
+}
+

@@ -1,0 +1,7 @@
+// md-docs/errors/U03.md
+component Orphan { Text("Somebody places me") }
+page P(path: "/", title: "T", description: "D") {
+    Heading("Home").h1
+    Orphan
+}
+

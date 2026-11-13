@@ -1,0 +1,7 @@
+// md-docs/errors/T12.md
+page P(path: "/", title: "T", description: "D") {
+    state token: Secret = ""
+    Heading("Token").h1
+    Button("Sign in") { on click { fetch("/api/session", method: "POST", body: { token: token }) } }
+}
+

@@ -1,0 +1,6 @@
+// md-docs/errors/V10.md
+page P(path: "/", title: "T", description: "D") {
+    Heading("Chart").h1
+    Host(tag: "canvas", mount: (n) => n)
+}
+

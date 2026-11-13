@@ -1,0 +1,6 @@
+// md-docs/errors/E117.md
+page P(path: "/", title: "T", description: "D") {
+    on key("ctrl+shift+k") { log("search") }
+    Heading("Search").h1
+}
+

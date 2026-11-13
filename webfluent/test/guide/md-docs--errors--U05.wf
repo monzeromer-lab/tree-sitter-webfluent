@@ -1,0 +1,8 @@
+// md-docs/errors/U05.md
+page P(path: "/", title: "T", description: "D") {
+    state n = 0
+    action reset() { n = 0 }
+    Heading("{n}").h1
+    Button("Reset") { on click { reset() } }
+}
+

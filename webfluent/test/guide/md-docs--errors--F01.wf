@@ -1,0 +1,8 @@
+// md-docs/errors/F01.md
+page P(path: "/", title: "T", description: "D") {
+    state first = "Ada"
+    derived name = first.toUpperCase()
+    Heading(name).h1
+    Input(bind: first, label: "Name")
+}
+

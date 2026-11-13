@@ -1,0 +1,7 @@
+// md-docs/errors/A16.md
+page P(path: "/", title: "T", description: "D") {
+    state rows = ["a", "b"]
+    Heading("Rows").h1
+    for r in rows by r { Text(r, id: "row-{r}") }
+}
+

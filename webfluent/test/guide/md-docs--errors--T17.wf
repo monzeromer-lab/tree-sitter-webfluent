@@ -1,0 +1,8 @@
+// md-docs/errors/T17.md
+page P(path: "/", title: "T", description: "D") {
+    state saved = false
+    action save() { saved = true }
+    Heading("Save").h1
+    Button("Save", disabled: saved) { on click { save() } }
+}
+

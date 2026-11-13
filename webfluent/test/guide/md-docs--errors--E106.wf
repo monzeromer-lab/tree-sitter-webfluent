@@ -1,0 +1,8 @@
+// md-docs/errors/E106.md
+page P(path: "/", title: "T", description: "D") {
+    state saves = 0
+    action save() { saves = saves + 1 }
+    Heading("Saved {saves} times").h1
+    Button("Save") { on click { save() } }
+}
+

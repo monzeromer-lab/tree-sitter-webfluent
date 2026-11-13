@@ -1,0 +1,12 @@
+// md-docs/errors/P02.md
+store Cart {
+    persist items: [String] = [] {
+        version: 2
+        migrate 1 -> 2 { old }
+    }
+}
+page P(path: "/", title: "T", description: "D") {
+    use Cart
+    Heading("{Cart.items.length} items").h1
+}
+

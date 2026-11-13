@@ -1,0 +1,7 @@
+// md-docs/errors/F04.md
+page P(path: "/", title: "T", description: "D") {
+    state agree = false
+    Heading("Terms").h1
+    Checkbox(bind: agree, label: "I agree")
+}
+

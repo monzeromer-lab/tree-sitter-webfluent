@@ -1,0 +1,6 @@
+// md-docs/errors/A09.md
+page P(path: "/", title: "T", description: "D") {
+    Heading("Demo").h1
+    Video(src: "/demo.mp4", captions: "/demo.en.vtt").controls
+}
+

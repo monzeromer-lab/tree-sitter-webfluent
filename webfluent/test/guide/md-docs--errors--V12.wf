@@ -1,0 +1,9 @@
+// md-docs/errors/V12.md
+page P(path: "/", title: "T", description: "D") {
+    state rows = ["a", "b"]
+    Heading("Files").h1
+    VirtualList(rowHeight: 32) {
+        for r in rows by r { Text(r) }
+    }
+}
+

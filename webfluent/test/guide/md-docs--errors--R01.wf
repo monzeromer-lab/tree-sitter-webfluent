@@ -1,0 +1,9 @@
+// md-docs/errors/R01.md
+page Home(path: "/", title: "T", description: "D") {
+    Heading("Home").h1
+    Link("About us", to: "/about")
+}
+page About(path: "/about", title: "About", description: "D") {
+    Heading("About").h1
+}
+

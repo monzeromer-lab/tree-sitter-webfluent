@@ -1,0 +1,7 @@
+// md-docs/errors/T07.md
+page P(path: "/", title: "T", description: "D") {
+    state items = ["a"]
+    Heading("List").h1
+    if items.length > 0 { Text("There are items") }
+}
+

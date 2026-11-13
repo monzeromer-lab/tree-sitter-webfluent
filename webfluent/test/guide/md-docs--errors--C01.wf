@@ -1,0 +1,7 @@
+// md-docs/errors/C01.md
+type Todo { id: String, title: String, done: Bool = false }
+page P(path: "/", title: "T", description: "D") {
+    state todo = Todo(id: "1", title: "Write the docs")
+    Heading(todo.title).h1
+}
+

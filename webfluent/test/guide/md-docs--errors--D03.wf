@@ -1,0 +1,11 @@
+// md-docs/errors/D03.md
+component Panel(_ title: String) {
+    persist open = false { key: title }
+    Card { Text(title)  if open { Text("Open") } }
+}
+page P(path: "/", title: "T", description: "D") {
+    Heading("Panels").h1
+    Panel("One")
+    Panel("Two")
+}
+

@@ -1,0 +1,12 @@
+// md-docs/errors/U06.md
+page P(path: "/", title: "T", description: "D") {
+    state n = 0
+    action reset() {
+        n = 0
+        log("reset")
+        return n
+    }
+    Heading("Count {n}").h1
+    Button("Reset") { on click { reset() } }
+}
+

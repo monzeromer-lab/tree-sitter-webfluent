@@ -1,0 +1,9 @@
+// md-docs/errors/V11.md
+component SalesChart(_ title: String) {
+    Text(title)
+}
+page P(path: "/", title: "T", description: "D") {
+    Heading("Sales").h1
+    SalesChart("Sales by month")
+}
+

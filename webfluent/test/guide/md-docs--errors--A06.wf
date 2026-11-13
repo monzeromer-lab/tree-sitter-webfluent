@@ -1,0 +1,9 @@
+// md-docs/errors/A06.md
+page P(path: "/", title: "T", description: "D") {
+    Heading("Links").h1
+    Link("About us", to: "/about")
+}
+page About(path: "/about", title: "About", description: "D") {
+    Heading("About").h1
+}
+

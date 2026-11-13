@@ -1,0 +1,6 @@
+// md-docs/errors/D02.md
+page P(path: "/", title: "T", description: "D") {
+    persist step = 1
+    Heading("Pick {step}").h1
+}
+

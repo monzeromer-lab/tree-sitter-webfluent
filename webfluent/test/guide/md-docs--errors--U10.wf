@@ -1,0 +1,11 @@
+// md-docs/errors/U10.md
+enum Tone { calm, loud }
+page P(path: "/", title: "T", description: "D") {
+    state tone: Tone = .calm
+    Heading("Tone").h1
+    match tone {
+        .calm { Text("Calm") }
+        .loud { Text("Loud") }
+    }
+}
+

@@ -1,0 +1,6 @@
+// md-docs/errors/A07.md
+page P(path: "/", title: "T", description: "D") {
+    Heading("Title").h1
+    Heading("Details").h2
+}
+

@@ -1,0 +1,5 @@
+// md-docs/errors/S01.md
+page P(path: "/", title: "Home", description: "D") {
+    Heading("No title").h1
+}
+

@@ -1,0 +1,7 @@
+// md-docs/errors/T20.md
+page P(path: "/", title: "T", description: "D") {
+    state tags = ["a", "b"]
+    Heading("Tags").h1
+    Text("Tagged {tags.join(", ")}")
+}
+

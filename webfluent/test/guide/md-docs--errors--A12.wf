@@ -1,0 +1,5 @@
+// md-docs/errors/A12.md
+page P(path: "/", title: "T", description: "D") {
+    Heading("Section").h1
+}
+

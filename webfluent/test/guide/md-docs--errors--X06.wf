@@ -1,0 +1,8 @@
+// md-docs/errors/X06.md
+page P(path: "/", title: "T", description: "D") {
+    state posted = @2026-03-14T09:30:00Z
+    derived clock = now(every: 1.seconds)
+    derived age = posted.until(clock)
+    Heading("Posted {age.minutes()} minutes ago").h1
+}
+

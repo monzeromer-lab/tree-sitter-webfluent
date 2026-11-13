@@ -1,0 +1,9 @@
+// md-docs/errors/A13.md
+theme Faint {
+    color-text: #333333
+    color-background: #FFFFFF
+}
+page P(path: "/", title: "T", description: "D") {
+    Heading("Contrast").h1
+}
+

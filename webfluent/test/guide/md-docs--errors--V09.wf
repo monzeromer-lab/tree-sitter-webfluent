@@ -1,0 +1,6 @@
+// md-docs/errors/V09.md
+page P(path: "/", title: "T", description: "D") {
+    Heading("Save").h1
+    Button("Save") { on click { log("saved") } }
+}
+

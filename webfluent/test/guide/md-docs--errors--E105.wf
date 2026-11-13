@@ -1,0 +1,7 @@
+// md-docs/errors/E105.md
+page P(path: "/", title: "T", description: "D") {
+    state n = 0
+    Heading("Count {n}").h1
+    Button("+1") { on click { n = n + 1 } }
+}
+

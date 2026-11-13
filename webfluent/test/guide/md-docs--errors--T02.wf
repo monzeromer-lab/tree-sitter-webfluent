@@ -1,0 +1,7 @@
+// md-docs/errors/T02.md
+enum Tone { calm, loud }
+page P(path: "/", title: "T", description: "D") {
+    state tone: Tone = .calm
+    Heading("Tone: {tone}").h1
+}
+

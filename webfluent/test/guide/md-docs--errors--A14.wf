@@ -1,0 +1,9 @@
+// md-docs/errors/A14.md
+page P(path: "/", title: "T", description: "D") {
+    Heading("Tabs").h1
+    Row(role: "tablist") {
+        Button("One", role: "tab")
+        Button("Two", role: "tab")
+    }
+}
+

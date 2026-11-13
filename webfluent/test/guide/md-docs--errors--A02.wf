@@ -1,0 +1,6 @@
+// md-docs/errors/A02.md
+page P(path: "/", title: "T", description: "D") {
+    Heading("Close").h1
+    IconButton(icon: "close", label: "Close")
+}
+

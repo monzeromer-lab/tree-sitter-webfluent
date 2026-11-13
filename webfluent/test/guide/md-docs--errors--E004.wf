@@ -1,0 +1,5 @@
+// md-docs/errors/E004.md
+page Home(path: "/", title: "T", description: "D") {
+    Heading("Hi").h1
+}
+

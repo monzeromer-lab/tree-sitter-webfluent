@@ -1,0 +1,6 @@
+// md-docs/errors/U07.md
+page P(path: "/", title: "T", description: "D") {
+    state shown = 0
+    Heading("Count {shown}").h1
+}
+

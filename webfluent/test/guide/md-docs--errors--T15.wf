@@ -1,0 +1,12 @@
+// md-docs/errors/T15.md
+enum Status { draft, review, live }
+page P(path: "/", title: "T", description: "D") {
+    state status: Status = .draft
+    Heading("Status").h1
+    match status {
+        .draft { Text("Draft") }
+        .review { Text("In review") }
+        .live { Text("Live") }
+    }
+}
+

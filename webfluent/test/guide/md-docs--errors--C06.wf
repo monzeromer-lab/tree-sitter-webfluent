@@ -1,0 +1,7 @@
+// md-docs/errors/C06.md
+component Tag2(_ label: String) { Text(label) }
+page P(path: "/", title: "T", description: "D") {
+    Heading("Tags").h1
+    Tag2("new")
+}
+

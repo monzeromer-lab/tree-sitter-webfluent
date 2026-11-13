@@ -1,0 +1,6 @@
+// md-docs/errors/A05.md
+page P(path: "/", title: "T", description: "D") {
+    Heading("Actions").h1
+    Button { Icon("check")  Text("Save") }
+}
+

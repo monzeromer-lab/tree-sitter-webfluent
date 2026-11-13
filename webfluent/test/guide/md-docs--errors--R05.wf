@@ -1,0 +1,8 @@
+// md-docs/errors/R05.md
+page Home(path: "/", title: "Home", description: "D") {
+    Heading("Home").h1
+}
+page HomeEn(path: "/en", title: "Home", description: "D", lang: "en", translates: Home) {
+    Heading("Home").h1
+}
+

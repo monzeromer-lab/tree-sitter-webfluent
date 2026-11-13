@@ -1,0 +1,7 @@
+// md-docs/errors/T13.md
+page P(path: "/", title: "T", description: "D") {
+    state count = 0
+    Heading("Counter").h1
+    Button("+") { on click { count = count + 1 } }
+}
+

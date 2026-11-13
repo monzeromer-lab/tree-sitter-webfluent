@@ -1,0 +1,6 @@
+// md-docs/errors/V04.md
+page P(path: "/", title: "T", description: "D") {
+    Heading("Classes").h1
+    Card(class: "note") { Text("x") }
+}
+

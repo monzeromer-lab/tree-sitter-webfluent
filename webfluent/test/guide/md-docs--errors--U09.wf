@@ -1,0 +1,7 @@
+// md-docs/errors/U09.md
+page P(path: "/", title: "T", description: "D") {
+    state rows = [{ id: 1, name: "a" }]
+    Heading("Rows").h1
+    for r in rows by r.id { Input(bind: r.name, label: "Name") }
+}
+
