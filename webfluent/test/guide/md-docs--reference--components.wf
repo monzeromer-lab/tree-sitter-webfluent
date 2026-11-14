@@ -74,6 +74,15 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
+    AppShell {
+        AppShell.Header { Text("Ledger").bold  Spacer  ThemeToggle }
+        Sidebar { Sidebar.Item(to: "/", icon: "home") { Text("Home") } }
+        Router
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
     Host(tag: "canvas", mount: (node) => node.getContext("2d"), cleanup: (ctx) => log("gone"))
 }
 
@@ -162,6 +171,20 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
+    state palette = false
+    Button("Commands") { on click { palette = true } }
+    CommandPalette(open: palette) {
+        CommandPalette.Group("Pages") {
+            CommandPalette.Item("Home", icon: "home") { on select { navigate("/") } }
+        }
+        CommandPalette.Group("Actions") {
+            CommandPalette.Item("Toggle theme", shortcut: "mod+shift+l") { on select { setTheme(if theme == "dark" { "light" } else { "dark" }) } }
+        }
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
     Card.elevated {
         Card.Header { Heading("Pro").h3 }
         Card.Body { Text("Everything in Free, and more.") }
@@ -207,6 +230,26 @@ page Doc(path: "/") {
 page Doc(path: "/") {
     Tooltip("Copies the link") { IconButton(icon: "copy", label: "Copy link") }
     Tooltip("Save", shortcut: "Ctrl+S", delay: 400, placement: .bottom) { Button("Save") }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state files = [{ path: "src", name: "src", children: [{ path: "src/App.wf", name: "App.wf", children: [] }] }]
+    state file = ""
+    Tree(items: files, children: f => f.children, key: f => f.path, bind: file, label: "Files") {
+        row(f) { Icon(if f.children.length > 0 { "folder" } else { "file" })  Text(f.name) }
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state deploys = [{ id: "1", service: "web", status: "live" }, { id: "2", service: "api", status: "failed" }]
+    state chosen: [String] = []
+    DataTable(rows: deploys, key: d => d.id, bind: chosen, label: "Deploys").multiple {
+        empty { EmptyState(icon: "list", title: "No deploys yet") }
+        DataTable.Column("Service", value: d => d.service).sortable
+        DataTable.Column("Status") { cell(d) { Badge(d.status) } }
+    }
 }
 
 // md-docs/reference/components.md
@@ -335,6 +378,26 @@ page Doc(path: "/") {
 page Doc(path: "/") {
     state day: Date? = null
     Calendar(bind: day, min: @2026-01-01, disabled: d => d.weekday() >= 6, label: "Delivery day")
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state fruit = "apple"
+    Listbox(bind: fruit, label: "Fruit") {
+        Listbox.Option("Apple", value: "apple")
+        Listbox.Option("Banana", value: "banana")
+        Listbox.Option("Cherry", value: "cherry")
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state city = ""
+    state cities = [{ id: "par", name: "Paris", country: "France" }, { id: "por", name: "Porto", country: "Portugal" }]
+    Combobox(bind: city, options: cities, text: c => c.name, key: c => c.id, label: "City") {
+        option(c) { Text(c.name)  Text(c.country).muted }
+        empty { Text("No city by that name") }
+    }
 }
 
 // md-docs/reference/components.md

@@ -236,3 +236,24 @@ page PostPage(path: "/posts/:slug", slug: String, title: "Post", description: "A
     }
 }
 
+// md-docs/learn/15-data.md
+type Deploy { id: String, service: String, status: String }
+type Node { path: String, name: String, children: [Node] = [] }
+page Ops(path: "/", title: "Ops", description: "Deploys, files and a search.") {
+    state deploys: [Deploy] = [Deploy(id: "1", service: "web", status: "live")]
+    state chosen: [String] = []
+    state files: [Node] = [Node(path: "src", name: "src", children: [Node(path: "src/App.wf", name: "App.wf")])]
+    state file = ""
+    state who = ""
+    Heading("Ops").h1
+    DataTable(rows: deploys, key: d => d.id, bind: chosen, label: "Deploys").multiple {
+        empty { Text("No deploys yet") }
+        DataTable.Column("Service", value: d => d.service).sortable
+        DataTable.Column("Status") { cell(d) { Badge(d.status) } }
+    }
+    Tree(items: files, children: f => f.children, key: f => f.path, bind: file, label: "Files") {
+        row(f) { Text(f.name) }
+    }
+    Combobox(bind: who, options: ["Ada", "Alan", "Grace"], text: p => p, label: "Owner")
+}
+

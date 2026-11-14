@@ -4470,6 +4470,10 @@
     "named": false
   },
   {
+    "type": "AppShell",
+    "named": false
+  },
+  {
     "type": "Audio",
     "named": false
   },
@@ -4546,11 +4550,23 @@
     "named": false
   },
   {
+    "type": "Combobox",
+    "named": false
+  },
+  {
+    "type": "CommandPalette",
+    "named": false
+  },
+  {
     "type": "Container",
     "named": false
   },
   {
     "type": "CopyButton",
+    "named": false
+  },
+  {
+    "type": "DataTable",
     "named": false
   },
   {
@@ -4655,6 +4671,10 @@
   },
   {
     "type": "List",
+    "named": false
+  },
+  {
+    "type": "Listbox",
     "named": false
   },
   {
@@ -4875,6 +4895,10 @@
   },
   {
     "type": "Tooltip",
+    "named": false
+  },
+  {
+    "type": "Tree",
     "named": false
   },
   {

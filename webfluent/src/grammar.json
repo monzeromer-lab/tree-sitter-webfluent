@@ -4461,6 +4461,30 @@
           },
           {
             "type": "STRING",
+            "value": "Listbox"
+          },
+          {
+            "type": "STRING",
+            "value": "Tree"
+          },
+          {
+            "type": "STRING",
+            "value": "DataTable"
+          },
+          {
+            "type": "STRING",
+            "value": "Combobox"
+          },
+          {
+            "type": "STRING",
+            "value": "CommandPalette"
+          },
+          {
+            "type": "STRING",
+            "value": "AppShell"
+          },
+          {
+            "type": "STRING",
             "value": "Unsafe"
           },
           {
