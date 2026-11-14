@@ -4525,6 +4525,26 @@
           },
           {
             "type": "STRING",
+            "value": "HoverCard"
+          },
+          {
+            "type": "STRING",
+            "value": "LoadingOverlay"
+          },
+          {
+            "type": "STRING",
+            "value": "Lightbox"
+          },
+          {
+            "type": "STRING",
+            "value": "Tour"
+          },
+          {
+            "type": "STRING",
+            "value": "ConsentBanner"
+          },
+          {
+            "type": "STRING",
             "value": "Unsafe"
           },
           {

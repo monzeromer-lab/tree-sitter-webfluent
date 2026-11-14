@@ -61,7 +61,7 @@ const BUILTIN_COMPONENTS = [
   "Image", "Video", "Audio", "Frame", "Icon", "Carousel",
   // Typography
   "Text", "Heading", "Code", "Blockquote", "Markdown",
-  "Callout", "Kbd", "EmptyState", "Stat", "CodeBlock", "Chip", "VisuallyHidden", "CopyButton", "ThemeToggle", "LocaleSwitch", "Accordion", "Field", "Fieldset", "InputGroup", "OnThisPage", "Toggle", "ToggleGroup", "RadioGroup", "Pagination", "Stepper", "NumberInput", "Calendar", "Listbox", "Tree", "DataTable", "Combobox", "CommandPalette", "AppShell", "CheckboxGroup", "InputOTP", "TagInput", "Rating", "DateRangePicker", "NavigationMenu", "Menubar", "ContextMenu", "BottomNavigation", "PrevNext", "Unsafe",
+  "Callout", "Kbd", "EmptyState", "Stat", "CodeBlock", "Chip", "VisuallyHidden", "CopyButton", "ThemeToggle", "LocaleSwitch", "Accordion", "Field", "Fieldset", "InputGroup", "OnThisPage", "Toggle", "ToggleGroup", "RadioGroup", "Pagination", "Stepper", "NumberInput", "Calendar", "Listbox", "Tree", "DataTable", "Combobox", "CommandPalette", "AppShell", "CheckboxGroup", "InputOTP", "TagInput", "Rating", "DateRangePicker", "NavigationMenu", "Menubar", "ContextMenu", "BottomNavigation", "PrevNext", "HoverCard", "LoadingOverlay", "Lightbox", "Tour", "ConsentBanner", "Unsafe",
   // A node handed to somebody else's code, a custom element by its tag, and
   // a block drawn into a node somebody else's code owns.
   "Host", "Element", "Portal",

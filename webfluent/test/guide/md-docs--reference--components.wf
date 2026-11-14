@@ -226,6 +226,177 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
+    HoverCard(delay: 300) {
+        Link("@ada", to: "/")
+        HoverCard.Content {
+            Text("Ada Lovelace").bold
+            Text("Wrote the first program.").muted
+        }
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state saving = false
+    Button("Save") { on click { saving = !saving } }
+    LoadingOverlay(visible: saving, label: "Saving") {
+        Card { Text("Your profile") }
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state touring = false
+    Button("New", ref: newBtn)
+    Button("Take the tour") { on click { touring = true } }
+    Tour(open: touring) {
+        Tour.Step(target: newBtn, title: "New") { Text("Start a project here.") }
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    ConsentBanner("We would like to count visits.", accept: "Allow", decline: "No thanks") {
+        Link("How we count", to: "/")
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Alert("Your changes were saved.").success
+    Alert("The server is not answering.").danger
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state saved = false
+    if saved { Toast("Saved").success }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state open = false
+    Button("Delete") { on click { open = true } }
+    Modal(visible: open, title: "Delete deploys.wf?").closable {
+        Modal.Title { Markdown("Delete `deploys.wf`?") }
+        Text("This cannot be undone.")
+        Modal.Footer { Button("Cancel") { on click { open = false } } }
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state open = false
+    Button("Branches", ref: branches) { on click { open = !open } }
+    Popover(visible: open, anchor: branches, placement: .bottomStart, label: "Branches").arrow {
+        on close(reason) { log(reason) }
+        Text("main")
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state asking = false
+    Dialog(visible: asking, title: "Leave without saving notes.md?") {
+        Dialog.Title { Markdown("Leave without saving `notes.md`?") }
+        Text("Your draft will be lost.")
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state sure = false
+    Button("Discard") { on click { sure = true } }
+    AlertDialog(visible: sure, title: "Discard your changes?") {
+        Text("Your edits will be lost.")
+        AlertDialog.Footer {
+            Button("Keep editing") { on click { sure = false } }
+            Button("Discard").danger { on click { sure = false } }
+        }
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state filters = false
+    state sort = "new"
+    Button("Filters") { on click { filters = true } }
+    Sheet(visible: filters, title: "Filters", snap: [0.5, 1]).closable {
+        Radio(bind: sort, value: "new", label: "Newest")
+        Radio(bind: sort, value: "price", label: "Price")
+        Sheet.Footer { Button("Show results").primary { on click { filters = false } } }
+    }
+    state details = false
+    Sheet(visible: details, side: .end, title: "Details") { Text("Opened 3 days ago") }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Spinner
+    Spinner.lg
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Progress(value: 40, max: 100)
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Skeleton(height: "20px", width: "200px")
+    Skeleton(size: "48px").circle
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Lightbox(label: "Trip") {
+        Image(src: "/favicon.svg", alt: "The logo")
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Image(src: "/team.jpg", alt: "The team at the launch", width: 1200, height: 630)
+    Image(src: "/flourish.svg", alt: "")
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Video(src: "/demo.mp4", captions: "/demo.en.vtt", poster: "/demo.jpg").controls
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Audio(src: "/episode-1.mp3", transcript: "/episode-1.txt").controls
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Frame(src: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", title: "The launch talk", allow: "fullscreen")
+    state heard = ""
+    Frame(src: "/preview/", title: "Preview", sandbox: "allow-scripts") {
+        on message(m) { heard = m.data }
+    }
+    state version = 1
+    Frame(srcdoc: "<p>Version {version}</p>", title: "Example", sandbox: "")
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Icon("search")
+    Icon("check").lg.success
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Carousel(label: "Recent work", autoplay: true, interval: 5000) {
+        Carousel.Slide { Image(src: "/one.jpg", alt: "A bridge at dusk") }
+        Carousel.Slide { Image(src: "/two.jpg", alt: "The harbour") }
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
     Card.elevated {
         Card.Header { Heading("Pro").h3 }
         Card.Body { Text("Everything in Free, and more.") }
@@ -477,92 +648,6 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
-    Alert("Your changes were saved.").success
-    Alert("The server is not answering.").danger
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    state saved = false
-    if saved { Toast("Saved").success }
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    state open = false
-    Button("Delete") { on click { open = true } }
-    Modal(visible: open, title: "Delete deploys.wf?").closable {
-        Modal.Title { Markdown("Delete `deploys.wf`?") }
-        Text("This cannot be undone.")
-        Modal.Footer { Button("Cancel") { on click { open = false } } }
-    }
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    state open = false
-    Button("Branches", ref: branches) { on click { open = !open } }
-    Popover(visible: open, anchor: branches, placement: .bottomStart, label: "Branches").arrow {
-        on close(reason) { log(reason) }
-        Text("main")
-    }
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    state asking = false
-    Dialog(visible: asking, title: "Leave without saving notes.md?") {
-        Dialog.Title { Markdown("Leave without saving `notes.md`?") }
-        Text("Your draft will be lost.")
-    }
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    state sure = false
-    Button("Discard") { on click { sure = true } }
-    AlertDialog(visible: sure, title: "Discard your changes?") {
-        Text("Your edits will be lost.")
-        AlertDialog.Footer {
-            Button("Keep editing") { on click { sure = false } }
-            Button("Discard").danger { on click { sure = false } }
-        }
-    }
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    state filters = false
-    state sort = "new"
-    Button("Filters") { on click { filters = true } }
-    Sheet(visible: filters, title: "Filters", snap: [0.5, 1]).closable {
-        Radio(bind: sort, value: "new", label: "Newest")
-        Radio(bind: sort, value: "price", label: "Price")
-        Sheet.Footer { Button("Show results").primary { on click { filters = false } } }
-    }
-    state details = false
-    Sheet(visible: details, side: .end, title: "Details") { Text("Opened 3 days ago") }
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    Spinner
-    Spinner.lg
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    Progress(value: 40, max: 100)
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    Skeleton(height: "20px", width: "200px")
-    Skeleton(size: "48px").circle
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
     Callout("Run `wf check` before you push.").tip
     Callout("Deleting a project deletes its builds too.", title: "Before you delete").caution
 }
@@ -674,47 +759,6 @@ page Doc(path: "/") {
         Dropdown.Item { Text("Duplicate") }
         Dropdown.Divider
         Dropdown.Item { Text("Archive") }
-    }
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    Image(src: "/team.jpg", alt: "The team at the launch", width: 1200, height: 630)
-    Image(src: "/flourish.svg", alt: "")
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    Video(src: "/demo.mp4", captions: "/demo.en.vtt", poster: "/demo.jpg").controls
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    Audio(src: "/episode-1.mp3", transcript: "/episode-1.txt").controls
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    Frame(src: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ", title: "The launch talk", allow: "fullscreen")
-    state heard = ""
-    Frame(src: "/preview/", title: "Preview", sandbox: "allow-scripts") {
-        on message(m) { heard = m.data }
-    }
-    state version = 1
-    Frame(srcdoc: "<p>Version {version}</p>", title: "Example", sandbox: "")
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    Icon("search")
-    Icon("check").lg.success
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    Carousel(label: "Recent work", autoplay: true, interval: 5000) {
-        Carousel.Slide { Image(src: "/one.jpg", alt: "A bridge at dusk") }
-        Carousel.Slide { Image(src: "/two.jpg", alt: "The harbour") }
     }
 }
 

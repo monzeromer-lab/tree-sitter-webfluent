@@ -4566,6 +4566,10 @@
     "named": false
   },
   {
+    "type": "ConsentBanner",
+    "named": false
+  },
+  {
     "type": "Container",
     "named": false
   },
@@ -4654,6 +4658,10 @@
     "named": false
   },
   {
+    "type": "HoverCard",
+    "named": false
+  },
+  {
     "type": "Icon",
     "named": false
   },
@@ -4686,6 +4694,10 @@
     "named": false
   },
   {
+    "type": "Lightbox",
+    "named": false
+  },
+  {
     "type": "Link",
     "named": false
   },
@@ -4695,6 +4707,10 @@
   },
   {
     "type": "Listbox",
+    "named": false
+  },
+  {
+    "type": "LoadingOverlay",
     "named": false
   },
   {
@@ -4935,6 +4951,10 @@
   },
   {
     "type": "Tooltip",
+    "named": false
+  },
+  {
+    "type": "Tour",
     "named": false
   },
   {
