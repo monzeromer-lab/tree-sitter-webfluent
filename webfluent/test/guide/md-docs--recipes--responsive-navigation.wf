@@ -9,9 +9,11 @@ page Nav(path: "/", title: "Home", description: "Navigation that fits the screen
             Link("Pricing", to: "/pricing")
         }
     } else {
-        IconButton(icon: "menu", label: "Open navigation") { on click { open = !open } }
+        IconButton(icon: "menu", label: "Open navigation", aria-expanded: open, aria-controls: "nav-menu") {
+            on click { open = !open }
+        }
         show open {
-            Stack(gap: .sm, animate: .slideDown) {
+            Stack(gap: .sm, animate: .slideDown, id: "nav-menu") {
                 Link("Home", to: "/")
                 Link("Docs", to: "/docs")
                 Link("Pricing", to: "/pricing")
@@ -19,4 +21,6 @@ page Nav(path: "/", title: "Home", description: "Navigation that fits the screen
         }
     }
 }
+page Docs(path: "/docs", title: "Docs", description: "How it works.") { Heading("Docs").h1 }
+page Pricing(path: "/pricing", title: "Pricing", description: "What it costs.") { Heading("Pricing").h1 }
 

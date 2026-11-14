@@ -81,7 +81,6 @@ page Files(path: "/") {
 
 // md-docs/learn/10-components.md
 component Panel(_ title: String) {
-    slot
     slot trailing
     Card {
         Row(justify: .between, align: .center) {

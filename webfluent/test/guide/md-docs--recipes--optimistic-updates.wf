@@ -4,6 +4,7 @@ page Likes(path: "/", title: "Likes", description: "A like that shows at once.")
     state items: [Item] = [Item(id: "a", liked: false)]
     state error = ""
     action like(id: String) {
+        error = ""
         let before = items
         items = items.map(i => if i.id == id { Item(id: i.id, liked: !i.liked) } else { i })
         try {

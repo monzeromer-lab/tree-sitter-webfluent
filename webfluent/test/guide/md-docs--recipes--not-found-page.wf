@@ -1,0 +1,11 @@
+// md-docs/recipes/not-found-page.md
+page NotFound(path: "*", title: "Page not found", description: "There is no page at this address.", noindex: true) {
+    Heading("We couldn't find that page").h1
+    Text("The address may be mistyped, or the page may have moved.")
+    Link("Go to the front page", to: "/")
+}
+page Front(path: "/", title: "Front", description: "The front page.") {
+    Heading("Front").h1
+    Link("A link to nowhere", to: "/no-such-page")
+}
+

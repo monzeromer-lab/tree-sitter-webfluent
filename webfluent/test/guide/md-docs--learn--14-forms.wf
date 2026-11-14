@@ -133,10 +133,14 @@ page Doc(path: "/") {
 }
 
 // md-docs/learn/14-forms.md
+api Backend(base: "/api") {
+    post signUp(body: Map) -> Map
+        errors { 422 -> Map }
+}
 page Doc(path: "/") {
-    action signUp() {
+    action join() {
         try {
-            await Backend.signUp(email, password)
+            await Backend.signUp(body: { email: email, password: password })
         } catch e {
             form.apply(e.body.errors)     // { email: "That address is taken" }
         }

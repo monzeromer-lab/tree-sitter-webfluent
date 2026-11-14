@@ -1,12 +1,20 @@
 // md-docs/recipes/copy-to-the-clipboard.md
 page Share(path: "/share", title: "Share", description: "Copy the link.") {
     state copied = false
+    state failed = false
     action copy(text: String) {
-        await navigator.clipboard.writeText(text)
-        copied = true
+        copied = false
+        failed = false
+        try {
+            await navigator.clipboard.writeText(text)
+            copied = true
+        } catch e {
+            failed = true
+        }
     }
     Heading("Share").h1
     Button("Copy the link") { on click { copy(location.href) } }
     if copied { Toast("Copied").success }
+    if failed { Toast("Could not copy. Select the address and copy it by hand.").danger }
 }
 

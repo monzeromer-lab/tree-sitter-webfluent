@@ -1,0 +1,35 @@
+// md-docs/recipes/pdf-report.md
+const MONTHS = [
+    { month: "Jan", web: 41, store: 22 },
+    { month: "Feb", web: 48, store: 25 },
+    { month: "Mar", web: 55, store: 24 },
+]
+page Report(path: "/", title: "Q1 report", description: "Sales for the first quarter.") {
+    Document(size: "A4", title: "Q1 report", author: "Acme Inc.") {
+        Header(on: .rest) { Text("Acme Inc. · Q1 report").muted.sm.right }
+        Footer { Text("Page {page} of {pages}").muted.sm.center }
+
+        Heading("Q1 report").h1
+        Text("Web sales grew every month; the shop held steady.")
+
+        Heading("Sales by month").h2
+        Chart(kind: .bar, data: MONTHS, x: "month", y: ["web", "store"], unit: "k", legend: true)
+
+        Table(caption: "Sales by month, in thousands") {
+            Table.Head {
+                Table.Row { Table.Cell("Month")  Table.Cell("Web")  Table.Cell("Shop") }
+            }
+            Table.Body {
+                for m in MONTHS {
+                    Table.Row { Table.Cell(m.month)  Table.Cell("{m.web}k")  Table.Cell("{m.store}k") }
+                }
+            }
+        }
+
+        Card {
+            style { break-inside: avoid }
+            Text("Total: {MONTHS.map(m => m.web + m.store).sum()}k").bold
+        }
+    }
+}
+

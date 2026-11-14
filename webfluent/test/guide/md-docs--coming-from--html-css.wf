@@ -8,7 +8,7 @@ component Person(_ name: String, role: String, photo: String) {
         Row(gap: .sm, align: .center) {
             Avatar(src: photo, alt: name)
             Stack {
-                Heading(name).h3
+                Heading(name).h2
                 Text(role).muted
             }
         }

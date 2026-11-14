@@ -2,11 +2,15 @@
 page Account(path: "/account", title: "Account", description: "Your profile and billing.") {
     derived tab = if hash != "" { hash } else { "profile" }
     Heading("Account").h1
-    Row(gap: .sm) {
-        Link("Profile", to: "/account#profile")
-        Link("Billing", to: "/account#billing")
+    Row(gap: .sm, role: "tablist", aria-label: "Account") {
+        Button("Profile", role: "tab", aria-selected: tab == "profile", outlined: tab != "profile") {
+            on click { navigate("/account#profile") }
+        }
+        Button("Billing", role: "tab", aria-selected: tab == "billing", outlined: tab != "billing") {
+            on click { navigate("/account#billing") }
+        }
     }
-    if tab == "profile" { Text("Profile settings") }
-    if tab == "billing" { Text("Billing settings") }
+    if tab == "profile" { Text("Profile settings", role: "tabpanel") }
+    if tab == "billing" { Text("Billing settings", role: "tabpanel") }
 }
 

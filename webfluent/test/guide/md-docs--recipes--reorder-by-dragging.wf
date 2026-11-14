@@ -1,0 +1,46 @@
+// md-docs/recipes/reorder-by-dragging.md
+type Job { id: String, title: String }
+page Order(path: "/order", title: "Today's order", description: "Drag the jobs into the order you will do them.") {
+    state jobs: [Job] = [
+        Job(id: "brief", title: "Write the brief"),
+        Job(id: "call", title: "Call the printer"),
+        Job(id: "proofs", title: "Check the proofs"),
+    ]
+
+    action move(id: String, target: String, position: String) {
+        let moving = jobs.find(j => j.id == id)
+        if moving == null { return }
+        let rest = jobs.filter(j => j.id != id)
+        let at = rest.findIndex(j => j.id == target)
+        let index = if position == "after" { at + 1 } else { at }
+        jobs = [...rest.slice(0, index), moving, ...rest.slice(index)]
+    }
+
+    action step(id: String, offset: Number) {
+        let from = jobs.findIndex(j => j.id == id)
+        let to = from + offset
+        if to < 0 || to >= jobs.length { return }
+        move(id, jobs[to].id, if offset > 0 { "after" } else { "before" })
+    }
+
+    Heading("Today's order").h1
+    Stack(gap: .sm, role: "list") {
+        for job, i in jobs by job.id {
+            Card(drag: job.id, dropValue: job.id, role: "listitem") {
+                on receive(d) { move(d.value, job.id, d.position) }
+                Row(gap: .sm, align: .center) {
+                    Icon("grid")
+                    Text("{i + 1}. {job.title}")
+                    Spacer
+                    IconButton(icon: "chevron-up", label: "Move {job.title} up", disabled: i == 0).sm {
+                        on click { step(job.id, -1) }
+                    }
+                    IconButton(icon: "chevron-down", label: "Move {job.title} down", disabled: i == jobs.length - 1).sm {
+                        on click { step(job.id, 1) }
+                    }
+                }
+            }
+        }
+    }
+}
+

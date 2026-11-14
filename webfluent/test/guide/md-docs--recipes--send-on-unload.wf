@@ -1,6 +1,20 @@
 // md-docs/recipes/send-on-unload.md
 page Checkout(path: "/checkout", title: "Checkout", description: "Pay for the order.") {
+    state paid = false
+
+    on visibilitychange {
+        if document.visibilityState == "hidden" {
+            beacon("/analytics", { event: "left-checkout", paid: paid })
+        }
+    }
+
     Heading("Checkout").h1
+    Button("Pay").primary { on click { paid = true } }
+}
+
+// md-docs/recipes/send-on-unload.md
+page Pay(path: "/pay", title: "Pay", description: "Pay for the order.") {
+    Heading("Pay").h1
     Button("Pay").primary { on click { beacon("/analytics", { event: "checkout", value: 42 }) } }
 }
 

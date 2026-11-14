@@ -1,7 +1,7 @@
 // md-docs/errors/T04.md
-type User { name: String, email: String? }
+type Member { name: String, email: String? }
 page P(path: "/", title: "T", description: "D") {
-    state user = User(name: "Ada", email: null)
+    state user = Member(name: "Ada", email: null)
     Heading("Profile").h1
     Text(user.email?.toUpperCase() ?? "")
 }
