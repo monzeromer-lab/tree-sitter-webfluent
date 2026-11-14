@@ -177,12 +177,12 @@ page Shop(path: "/", title: "Shop", description: "Buttons that share one cart.")
 }
 
 // md-docs/learn/10-components.md
-component Chip(_ label: String, extra: String = "", note: String = "") {
+component Pill(_ label: String, extra: String = "", note: String = "") {
     Badge(label, class: extra, aria-description: note)
 }
-page Chips(path: "/", title: "Chips", description: "Styled by the caller.") {
-    Heading("Chips").h1
-    Chip("Beta", extra: "chip-beta", note: "Not finished yet") { on click { log("beta") } }
+page Pills(path: "/", title: "Pills", description: "Styled by the caller.") {
+    Heading("Pills").h1
+    Pill("Beta", extra: "chip-beta", note: "Not finished yet") { on click { log("beta") } }
 }
 
 // md-docs/learn/10-components.md

@@ -109,3 +109,26 @@ page Dashboard(path: "/", title: "Dashboard", description: "Every layout element
     Footer { Text("the last region") }
 }
 
+// md-docs/learn/06-elements.md
+page Report(path: "/", title: "Report", description: "The month, at a glance.") {
+    state tags = ["Rust", "Go"]
+    Heading("Report").h1
+    Callout("Figures are for the month to date.").note
+    Row(gap: .lg) {
+        Stat("Revenue", value: 48210, format: .currency, change: 0.124)
+        Stat("Churn", value: 0.031, format: .percent, change: -0.02)
+    }
+    Text { Text("Search with ")  Kbd("mod+k") }
+    for tag in tags by tag {
+        Chip(tag).removable { on remove { tags = tags.filter(x => x != tag) } }
+    }
+    CodeBlock("wf build", language: "bash", title: "Terminal").copy
+    Accordion.single {
+        Accordion.Item("How is revenue counted?") { Text("Paid invoices, by the day they were paid.") }
+        Accordion.Item("When does the month end?") { Text("At midnight UTC on its last day.") }
+    }
+    if tags.length == 0 {
+        EmptyState(icon: "folder", title: "No tags", text: "Add one to group the report.")
+    }
+}
+

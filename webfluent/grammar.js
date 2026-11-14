@@ -60,7 +60,8 @@ const BUILTIN_COMPONENTS = [
   // Media
   "Image", "Video", "Audio", "Frame", "Icon", "Carousel",
   // Typography
-  "Text", "Heading", "Code", "Blockquote", "Markdown", "Unsafe",
+  "Text", "Heading", "Code", "Blockquote", "Markdown",
+  "Callout", "Kbd", "EmptyState", "Stat", "CodeBlock", "Chip", "VisuallyHidden", "CopyButton", "ThemeToggle", "LocaleSwitch", "Accordion", "Field", "Fieldset", "InputGroup", "OnThisPage", "Unsafe",
   // A node handed to somebody else's code, a custom element by its tag, and
   // a block drawn into a node somebody else's code owns.
   "Host", "Element", "Portal",

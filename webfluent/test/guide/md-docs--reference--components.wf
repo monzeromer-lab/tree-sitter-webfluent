@@ -141,6 +141,11 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
+    OnThisPage(levels: 2)
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
     Card.elevated {
         Card.Header { Heading("Pro").h3 }
         Card.Body { Text("Everything in Free, and more.") }
@@ -267,6 +272,36 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
+    state plan = "basic"
+    Field(label: "Plan", hint: "You can change it later.") {
+        Select(bind: plan) { Select.Option("Basic", value: "basic")  Select.Option("Pro", value: "pro") }
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state street = ""
+    state city = ""
+    Fieldset(legend: "Address") {
+        Input(bind: street, label: "Street")
+        Input(bind: city, label: "City")
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state q = ""
+    InputGroup {
+        Icon("search")
+        Input(bind: q, aria-label: "Search")
+        InputGroup.Clear
+    }
+    state site = ""
+    InputGroup { InputGroup.Addon("https://")  Input(bind: site, aria-label: "Site") }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
     Alert("Your changes were saved.").success
     Alert("The server is not answering.").danger
 }
@@ -349,6 +384,71 @@ page Doc(path: "/") {
 page Doc(path: "/") {
     Skeleton(height: "20px", width: "200px")
     Skeleton(size: "48px").circle
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Callout("Run `wf check` before you push.").tip
+    Callout("Deleting a project deletes its builds too.", title: "Before you delete").caution
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Text { Text("Press ")  Kbd("mod+k")  Text(" to search") }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    EmptyState(icon: "folder", title: "No projects yet", text: "Create one to get started.") {
+        Button("New project").primary
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Stat("Revenue", value: 48210, format: .currency, change: 0.124)
+    Stat("Churn", value: 0.031, format: .percent, change: -0.02)
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    CodeBlock("page Home(path: \"/\") {\n    Text(\"Hello\")\n}", language: "wf", title: "Home.wf").copy.lines
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state open = false
+    Chip("Open only", selected: open) { on click { open = !open } }
+    Chip("Rust", icon: "code").removable { on remove { log("removed") } }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Link(to: "/docs") { Text("Docs")  VisuallyHidden("(the reference)") }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Accordion.single {
+        Accordion.Item("Shipping") { Text("Two to four days.") }
+        Accordion.Item("Returns", open: true) { Text("Thirty days.") }
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    CopyButton(value: "https://example.com/invite/42")
+    CopyButton("Copy link", value: "https://example.com", copied: "Link copied")
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Row(gap: .sm) { ThemeToggle  LocaleSwitch }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    LocaleSwitch(label: "Language")
 }
 
 // md-docs/reference/components.md

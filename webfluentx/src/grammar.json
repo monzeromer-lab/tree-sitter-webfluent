@@ -4937,6 +4937,66 @@
           },
           {
             "type": "STRING",
+            "value": "Callout"
+          },
+          {
+            "type": "STRING",
+            "value": "Kbd"
+          },
+          {
+            "type": "STRING",
+            "value": "EmptyState"
+          },
+          {
+            "type": "STRING",
+            "value": "Stat"
+          },
+          {
+            "type": "STRING",
+            "value": "CodeBlock"
+          },
+          {
+            "type": "STRING",
+            "value": "Chip"
+          },
+          {
+            "type": "STRING",
+            "value": "VisuallyHidden"
+          },
+          {
+            "type": "STRING",
+            "value": "CopyButton"
+          },
+          {
+            "type": "STRING",
+            "value": "ThemeToggle"
+          },
+          {
+            "type": "STRING",
+            "value": "LocaleSwitch"
+          },
+          {
+            "type": "STRING",
+            "value": "Accordion"
+          },
+          {
+            "type": "STRING",
+            "value": "Field"
+          },
+          {
+            "type": "STRING",
+            "value": "Fieldset"
+          },
+          {
+            "type": "STRING",
+            "value": "InputGroup"
+          },
+          {
+            "type": "STRING",
+            "value": "OnThisPage"
+          },
+          {
+            "type": "STRING",
             "value": "Unsafe"
           },
           {

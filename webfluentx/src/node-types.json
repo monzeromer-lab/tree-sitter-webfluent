@@ -4454,6 +4454,10 @@
     "named": false
   },
   {
+    "type": "Accordion",
+    "named": false
+  },
+  {
     "type": "Alert",
     "named": false
   },
@@ -4502,6 +4506,10 @@
     "named": false
   },
   {
+    "type": "Callout",
+    "named": false
+  },
+  {
     "type": "Card",
     "named": false
   },
@@ -4518,7 +4526,15 @@
     "named": false
   },
   {
+    "type": "Chip",
+    "named": false
+  },
+  {
     "type": "Code",
+    "named": false
+  },
+  {
+    "type": "CodeBlock",
     "named": false
   },
   {
@@ -4527,6 +4543,10 @@
   },
   {
     "type": "Container",
+    "named": false
+  },
+  {
+    "type": "CopyButton",
     "named": false
   },
   {
@@ -4551,6 +4571,18 @@
   },
   {
     "type": "Element",
+    "named": false
+  },
+  {
+    "type": "EmptyState",
+    "named": false
+  },
+  {
+    "type": "Field",
+    "named": false
+  },
+  {
+    "type": "Fieldset",
     "named": false
   },
   {
@@ -4606,11 +4638,23 @@
     "named": false
   },
   {
+    "type": "InputGroup",
+    "named": false
+  },
+  {
+    "type": "Kbd",
+    "named": false
+  },
+  {
     "type": "Link",
     "named": false
   },
   {
     "type": "List",
+    "named": false
+  },
+  {
+    "type": "LocaleSwitch",
     "named": false
   },
   {
@@ -4635,6 +4679,10 @@
   },
   {
     "type": "Number",
+    "named": false
+  },
+  {
+    "type": "OnThisPage",
     "named": false
   },
   {
@@ -4734,6 +4782,10 @@
     "named": false
   },
   {
+    "type": "Stat",
+    "named": false
+  },
+  {
     "type": "String",
     "named": false
   },
@@ -4782,6 +4834,10 @@
     "named": false
   },
   {
+    "type": "ThemeToggle",
+    "named": false
+  },
+  {
     "type": "TitleSlide",
     "named": false
   },
@@ -4811,6 +4867,10 @@
   },
   {
     "type": "VirtualList",
+    "named": false
+  },
+  {
+    "type": "VisuallyHidden",
     "named": false
   },
   {

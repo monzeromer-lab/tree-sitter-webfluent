@@ -52,7 +52,7 @@ page P(path: "/") {
             (identifier)))
         (block
           (element
-            (component_identifier)
+            (builtin_component)
             (argument_list
               (identifier)))))
       (if_statement
@@ -60,7 +60,7 @@ page P(path: "/") {
           (identifier))
         (block
           (element
-            (component_identifier)
+            (builtin_component)
             (argument_list
               (identifier))))))))
 
