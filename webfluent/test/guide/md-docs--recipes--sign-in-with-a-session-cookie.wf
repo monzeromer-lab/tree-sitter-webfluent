@@ -44,10 +44,23 @@ page SignIn(path: "/sign-in", title: "Sign in", description: "Sign in to your ac
         Button("Sign in", type: .submit, disabled: send.pending).primary
     }
 }
-page Account(path: "/account", title: "Your account", description: "Your account.", guard: Session.signedIn, redirect: "/sign-in") {
+page Account(path: "/account", title: "Your account", description: "Your account.", guard: !Session.checked || Session.signedIn, redirect: "/sign-in") {
     use Session
+    // The guard is read when the route opens, which on a reload is before
+    // `load` has answered; this sends the reader on once it has.
+    effect { if Session.checked && !Session.signedIn { navigate("/sign-in") } }
     Heading("Your account").h1
-    if let u = Session.user { Text("Signed in as {u.name}") }
-    Button("Sign out") { on click { Session.signOut() } }
+    if !Session.checked { Spinner }
+    if let u = Session.user {
+        Text("Signed in as {u.name}")
+        Button("Sign out") { on click { Session.signOut() } }
+    }
+}
+
+// md-docs/recipes/sign-in-with-a-session-cookie.md
+app {
+    use Session
+    Session.load()
+    Router
 }
 

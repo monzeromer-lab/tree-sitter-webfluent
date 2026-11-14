@@ -35,9 +35,8 @@ store Cart {
     derived total = subtotal - discount
 
     action add(item: Item) {
-        let found = items.find(i => i.id == item.id)
-        if found != null {
-            found.qty = found.qty + 1
+        if items.some(i => i.id == item.id) {
+            items = items.map(i => if i.id == item.id { { ...i, qty: i.qty + 1 } } else { i })
         } else {
             items.push(item)
         }
