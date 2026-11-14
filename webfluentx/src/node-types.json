@@ -4498,6 +4498,10 @@
     "named": false
   },
   {
+    "type": "BottomNavigation",
+    "named": false
+  },
+  {
     "type": "Breadcrumb",
     "named": false
   },
@@ -4563,6 +4567,10 @@
   },
   {
     "type": "Container",
+    "named": false
+  },
+  {
+    "type": "ContextMenu",
     "named": false
   },
   {
@@ -4706,11 +4714,19 @@
     "named": false
   },
   {
+    "type": "Menubar",
+    "named": false
+  },
+  {
     "type": "Modal",
     "named": false
   },
   {
     "type": "Navbar",
+    "named": false
+  },
+  {
+    "type": "NavigationMenu",
     "named": false
   },
   {
@@ -4751,6 +4767,10 @@
   },
   {
     "type": "Presentation",
+    "named": false
+  },
+  {
+    "type": "PrevNext",
     "named": false
   },
   {

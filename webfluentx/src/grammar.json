@@ -5069,6 +5069,26 @@
           },
           {
             "type": "STRING",
+            "value": "NavigationMenu"
+          },
+          {
+            "type": "STRING",
+            "value": "Menubar"
+          },
+          {
+            "type": "STRING",
+            "value": "ContextMenu"
+          },
+          {
+            "type": "STRING",
+            "value": "BottomNavigation"
+          },
+          {
+            "type": "STRING",
+            "value": "PrevNext"
+          },
+          {
+            "type": "STRING",
             "value": "Unsafe"
           },
           {

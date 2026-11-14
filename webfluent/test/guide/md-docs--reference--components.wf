@@ -150,6 +150,47 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
+    NavigationMenu(label: "Main") {
+        NavigationMenu.Item("Products") {
+            Link("Editor", to: "/")
+            Link("Compiler", to: "/")
+        }
+        NavigationMenu.Link("Pricing", to: "/")
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state said = ""
+    ContextMenu {
+        Card { Text("Right-click here, or long-press") }
+        ContextMenu.Items(label: "File actions") {
+            Menu.Item(shortcut: "F2") { on click { said = "rename" }  Text("Rename") }
+            Menu.Item.danger { on click { said = "delete" }  Text("Delete") }
+        }
+    }
+    Text(said)
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    BottomNavigation(label: "Sections") {
+        BottomNavigation.Item("Home", to: "/", icon: "home")
+        BottomNavigation.Item("Search", to: "/", icon: "search")
+        BottomNavigation.Item("Me", to: "/", icon: "user")
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    PrevNext {
+        PrevNext.Prev("Forms", to: "/")
+        PrevNext.Next("Stores", to: "/")
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
     OnThisPage(levels: 2)
 }
 
