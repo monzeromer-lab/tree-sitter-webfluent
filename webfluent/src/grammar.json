@@ -2822,6 +2822,22 @@
           ]
         },
         {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "concurrent",
+              "content": {
+                "type": "STRING",
+                "value": "concurrent"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
           "type": "FIELD",
           "name": "body",
           "content": {
@@ -4273,6 +4289,14 @@
           },
           {
             "type": "STRING",
+            "value": "AlertDialog"
+          },
+          {
+            "type": "STRING",
+            "value": "Sheet"
+          },
+          {
+            "type": "STRING",
             "value": "Popover"
           },
           {
@@ -4701,12 +4725,25 @@
                       "type": "SEQ",
                       "members": [
                         {
-                          "type": "FIELD",
-                          "name": "parameter",
-                          "content": {
-                            "type": "SYMBOL",
-                            "name": "_name"
-                          }
+                          "type": "CHOICE",
+                          "members": [
+                            {
+                              "type": "FIELD",
+                              "name": "parameter",
+                              "content": {
+                                "type": "SYMBOL",
+                                "name": "_name"
+                              }
+                            },
+                            {
+                              "type": "FIELD",
+                              "name": "pace",
+                              "content": {
+                                "type": "SYMBOL",
+                                "name": "handler_pace"
+                              }
+                            }
+                          ]
                         },
                         {
                           "type": "REPEAT",
@@ -4718,12 +4755,25 @@
                                 "value": ","
                               },
                               {
-                                "type": "FIELD",
-                                "name": "parameter",
-                                "content": {
-                                  "type": "SYMBOL",
-                                  "name": "_name"
-                                }
+                                "type": "CHOICE",
+                                "members": [
+                                  {
+                                    "type": "FIELD",
+                                    "name": "parameter",
+                                    "content": {
+                                      "type": "SYMBOL",
+                                      "name": "_name"
+                                    }
+                                  },
+                                  {
+                                    "type": "FIELD",
+                                    "name": "pace",
+                                    "content": {
+                                      "type": "SYMBOL",
+                                      "name": "handler_pace"
+                                    }
+                                  }
+                                ]
                               }
                             ]
                           }
@@ -4749,6 +4799,40 @@
           "content": {
             "type": "SYMBOL",
             "name": "block"
+          }
+        }
+      ]
+    },
+    "handler_pace": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "kind",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "STRING",
+                "value": "debounce"
+              },
+              {
+                "type": "STRING",
+                "value": "throttle"
+              }
+            ]
+          }
+        },
+        {
+          "type": "STRING",
+          "value": ":"
+        },
+        {
+          "type": "FIELD",
+          "name": "every",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
           }
         }
       ]

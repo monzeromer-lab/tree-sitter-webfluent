@@ -28,6 +28,25 @@ page Drop(path: "/", title: "Drop", description: "A place to drop files.") {
 }
 
 // md-docs/learn/08-events.md
+page Reader(path: "/", title: "Reader", description: "A search box and a long page.") {
+    state typed = ""
+    state q = ""
+    state read = 0
+    state loads = 0
+    Heading("Reader").h1
+    Input(bind: typed, label: "Search") {
+        on input(debounce: 300.ms) { q = typed }
+    }
+    Stack {
+        style { height: 300px; overflow-y: auto }
+        on scroll(e, throttle: 100.ms) { read = e.target.scrollTop }
+        Stack { style { height: 2000px; flex-shrink: 0 } Text("A long article") }
+    }
+    Text("Searching for {q}, scrolled {read}px")
+    Text("End of the list") { on visible { loads = loads + 1 } }
+}
+
+// md-docs/learn/08-events.md
 page Keys(path: "/", title: "Keys", description: "Keys on a field and on the page.") {
     state open = false
     state q = ""

@@ -381,6 +381,16 @@
           }
         ]
       },
+      "concurrent": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "concurrent",
+            "named": false
+          }
+        ]
+      },
       "name": {
         "multiple": false,
         "required": true,
@@ -1841,6 +1851,16 @@
           }
         ]
       },
+      "pace": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "handler_pace",
+            "named": true
+          }
+        ]
+      },
       "parameter": {
         "multiple": true,
         "required": false,
@@ -2076,6 +2096,36 @@
           {
             "type": "identifier",
             "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "handler_pace",
+    "named": true,
+    "fields": {
+      "every": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_expression",
+            "named": true
+          }
+        ]
+      },
+      "kind": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "debounce",
+            "named": false
+          },
+          {
+            "type": "throttle",
+            "named": false
           }
         ]
       }
@@ -4408,6 +4458,10 @@
     "named": false
   },
   {
+    "type": "AlertDialog",
+    "named": false
+  },
+  {
     "type": "Any",
     "named": false
   },
@@ -4644,6 +4698,10 @@
     "named": false
   },
   {
+    "type": "Sheet",
+    "named": false
+  },
+  {
     "type": "Sidebar",
     "named": false
   },
@@ -4844,6 +4902,10 @@
     "named": true
   },
   {
+    "type": "concurrent",
+    "named": false
+  },
+  {
     "type": "connecting",
     "named": false
   },
@@ -4857,6 +4919,10 @@
   },
   {
     "type": "data",
+    "named": false
+  },
+  {
+    "type": "debounce",
     "named": false
   },
   {
@@ -5149,6 +5215,10 @@
   },
   {
     "type": "theme",
+    "named": false
+  },
+  {
+    "type": "throttle",
     "named": false
   },
   {

@@ -54,7 +54,7 @@ const BUILTIN_COMPONENTS = [
   "Input", "Select", "Option", "Checkbox", "Radio", "Switch", "Slider",
   "DatePicker", "FileUpload", "Form", "Textarea",
   // Feedback
-  "Alert", "Toast", "Modal", "Dialog", "Popover", "Spinner", "Progress", "Skeleton",
+  "Alert", "Toast", "Modal", "Dialog", "AlertDialog", "Sheet", "Popover", "Spinner", "Progress", "Skeleton",
   // Actions
   "Button", "IconButton", "ButtonGroup", "Dropdown",
   // Media
@@ -576,11 +576,14 @@ module.exports = grammar({
 
     effect_declaration: ($) => seq("effect", field("body", $.block)),
 
+    // `action save() { … }`; `action poll() concurrent { … }` runs every
+    // call, where a call with the arguments of one still running is that call.
     action_declaration: ($) =>
       seq(
         "action",
         field("name", $._name),
         optional(field("parameters", $.parameter_list)),
+        optional(field("concurrent", "concurrent")),
         field("body", $.block),
       ),
 
@@ -804,7 +807,9 @@ module.exports = grammar({
 
     // `on click { }`, `on keydown(event) { }`, `on toggle(id) { }`.
     // `on click(e) { }`; `on key("ctrl+k") { }` names the key it answers to;
-    // `on menu(key, x, y) { }` names each value a component's event sends.
+    // `on menu(key, x, y) { }` names each value a component's event sends;
+    // `on input(debounce: 300.ms) { }` and `on scroll(e, throttle: 100.ms) { }`
+    // say how often it runs.
     event_handler: ($) =>
       seq(
         "on",
@@ -814,13 +819,19 @@ module.exports = grammar({
             "(",
             choice(
               seq(field("key", $.string), optional(seq(",", field("parameter", $._name)))),
-              seq(field("parameter", $._name), repeat(seq(",", field("parameter", $._name)))),
+              seq(
+                choice(field("parameter", $._name), field("pace", $.handler_pace)),
+                repeat(seq(",", choice(field("parameter", $._name), field("pace", $.handler_pace)))),
+              ),
             ),
             ")",
           ),
         ),
         field("body", $.block),
       ),
+
+    handler_pace: ($) =>
+      seq(field("kind", choice("debounce", "throttle")), ":", field("every", $._expression)),
 
     // `every(1000) { tick() }`, `after(500) { hide() }`.
     timer_statement: ($) =>

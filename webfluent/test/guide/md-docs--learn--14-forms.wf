@@ -221,8 +221,8 @@ page Notes(path: "/notes", title: "Notes", description: "Save a note.") {
 
     Heading("Notes").h1
     Input(bind: text, label: "Note")
-    Button("Save", disabled: Api.save.pending).primary { on click { Api.save({ text: text }) } }
-    if Api.save.pending { Spinner.sm }
+    Button("Save").primary { on click { Api.save({ text: text }) } }
+    Button("Save a copy", loading: Api.save.pending) { on click { Api.save({ text: text, copy: true }) } }
     Text("Saved {Api.saved} times")
 }
 

@@ -724,3 +724,63 @@ test "tabs follow the arrow keys" {
       (expect_statement
         (string
           (string_content))))))
+
+================================================================================
+An action every call of which runs, and handlers that say how often they run
+================================================================================
+
+page P(path: "/") {
+    action poll() concurrent { await fetch("/p") }
+    Input(bind: q) { on input(debounce: 300.ms) { log(q) } }
+    Stack { on scroll(e, throttle: 100) { log(e) } }
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (page_declaration
+    (component_identifier)
+    (page_attributes
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (block
+      (action_declaration
+        (identifier)
+        (parameter_list)
+        (block
+          (expression_statement
+            (unary_expression
+              (call_expression
+                (identifier)
+                (arguments
+                  (string
+                    (string_content))))))))
+      (element
+        (builtin_component)
+        (argument_list
+          (named_argument
+            (attribute_name
+              (identifier))
+            (identifier)))
+        (block
+          (event_handler
+            (identifier)
+            (handler_pace
+              (duration))
+            (block
+              (log_statement
+                (identifier))))))
+      (element
+        (builtin_component)
+        (block
+          (event_handler
+            (identifier)
+            (identifier)
+            (handler_pace
+              (number))
+            (block
+              (log_statement
+                (identifier)))))))))
