@@ -314,6 +314,12 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
+    ConsentBanner("We would like to count visits.")
+    ConsentSettings("Cookie settings")
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
     state done = 40
     CircularProgress(value: done, label: "Upload") { Text("{done}%").sm }
     Button("More") { on click { done = done + 20 } }
