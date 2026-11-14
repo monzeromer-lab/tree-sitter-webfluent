@@ -146,6 +146,22 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
+    state page = 5
+    Pagination(bind: page, pages: 12, siblings: 1)
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state step = 0
+    Stepper(bind: step) {
+        Stepper.Step("Account") { Text("Your name and email.") }
+        Stepper.Step("Billing", done: step > 1) { Text("A card on file.") }
+        Stepper.Step("Confirm") { Text("Check and send.") }
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
     Card.elevated {
         Card.Header { Heading("Pro").h3 }
         Card.Body { Text("Everything in Free, and more.") }
@@ -302,6 +318,27 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
+    state plan = "free"
+    RadioGroup(bind: plan, label: "Plan").cards {
+        RadioGroup.Option("Free", value: "free", hint: "For trying it out")
+        RadioGroup.Option("Team", value: "team", hint: "€8 a seat")
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state qty = 1
+    NumberInput(bind: qty, min: 1, max: 99, label: "Quantity")
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state day: Date? = null
+    Calendar(bind: day, min: @2026-01-01, disabled: d => d.weekday() >= 6, label: "Delivery day")
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
     Alert("Your changes were saved.").success
     Alert("The server is not answering.").danger
 }
@@ -449,6 +486,26 @@ page Doc(path: "/") {
 // md-docs/reference/components.md
 page Doc(path: "/") {
     LocaleSwitch(label: "Language")
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state bold = false
+    Toggle("Bold", bind: bold, icon: "type")
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state view = "grid"
+    ToggleGroup(bind: view, label: "View") {
+        ToggleGroup.Item("Grid", value: "grid", icon: "grid")
+        ToggleGroup.Item("List", value: "list", icon: "list")
+    }
+    state styles: [String] = []
+    ToggleGroup(bind: styles, label: "Text style").multiple {
+        ToggleGroup.Item("Bold", value: "b")
+        ToggleGroup.Item("Italic", value: "i")
+    }
 }
 
 // md-docs/reference/components.md

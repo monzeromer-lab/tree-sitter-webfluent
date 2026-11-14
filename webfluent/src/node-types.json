@@ -4506,6 +4506,10 @@
     "named": false
   },
   {
+    "type": "Calendar",
+    "named": false
+  },
+  {
     "type": "Callout",
     "named": false
   },
@@ -4682,6 +4686,10 @@
     "named": false
   },
   {
+    "type": "NumberInput",
+    "named": false
+  },
+  {
     "type": "OnThisPage",
     "named": false
   },
@@ -4691,6 +4699,10 @@
   },
   {
     "type": "PageBreak",
+    "named": false
+  },
+  {
+    "type": "Pagination",
     "named": false
   },
   {
@@ -4719,6 +4731,10 @@
   },
   {
     "type": "Radio",
+    "named": false
+  },
+  {
+    "type": "RadioGroup",
     "named": false
   },
   {
@@ -4786,6 +4802,10 @@
     "named": false
   },
   {
+    "type": "Stepper",
+    "named": false
+  },
+  {
     "type": "String",
     "named": false
   },
@@ -4843,6 +4863,14 @@
   },
   {
     "type": "Toast",
+    "named": false
+  },
+  {
+    "type": "Toggle",
+    "named": false
+  },
+  {
+    "type": "ToggleGroup",
     "named": false
   },
   {

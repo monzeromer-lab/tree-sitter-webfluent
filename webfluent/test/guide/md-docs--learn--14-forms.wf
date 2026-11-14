@@ -226,3 +226,28 @@ page Notes(path: "/notes", title: "Notes", description: "Save a note.") {
     Text("Saved {Api.saved} times")
 }
 
+// md-docs/learn/14-forms.md
+page Order(path: "/", title: "Order", description: "Choose how it is sent.") {
+    state view = "grid"
+    state plan = "free"
+    state qty = 1
+    state step = 0
+    state day: Date? = null
+    Heading("Order").h1
+    ToggleGroup(bind: view, label: "View") {
+        ToggleGroup.Item("Grid", value: "grid", icon: "grid")
+        ToggleGroup.Item("List", value: "list", icon: "list")
+    }
+    RadioGroup(bind: plan, label: "Plan").cards {
+        RadioGroup.Option("Free", value: "free", hint: "For trying it out")
+        RadioGroup.Option("Team", value: "team", hint: "€8 a seat")
+    }
+    NumberInput(bind: qty, min: 1, max: 9, label: "Quantity")
+    Stepper(bind: step) {
+        Stepper.Step("Address") { Text("Where it goes.") }
+        Stepper.Step("Delivery") {
+            Calendar(bind: day, disabled: d => d.weekday() >= 6, label: "Delivery day")
+        }
+    }
+}
+

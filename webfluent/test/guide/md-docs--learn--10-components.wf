@@ -140,7 +140,7 @@ page Parts(path: "/", title: "Parts", description: "A panel with parts of its ow
 }
 
 // md-docs/learn/10-components.md
-component Stepper(_ start: Number, step: Number = 1) {
+component Counter(_ start: Number, step: Number = 1) {
     event change(value: Number)
     state n = start
     derived even = n % 2 == 0
@@ -152,11 +152,11 @@ component Stepper(_ start: Number, step: Number = 1) {
         if even { Badge("even").info }
     }
 }
-page Counters(path: "/", title: "Counters", description: "Two steppers, two counts.") {
+page Counters(path: "/", title: "Counters", description: "Two counters, two counts.") {
     state last = 0
     Heading("Counters").h1
-    Stepper(0) { on change(v) { last = v } }
-    Stepper(10, step: 5) { on change(v) { last = v } }
+    Counter(0) { on change(v) { last = v } }
+    Counter(10, step: 5) { on change(v) { last = v } }
     Text("Last value: {last}")
 }
 
@@ -186,7 +186,7 @@ page Pills(path: "/", title: "Pills", description: "Styled by the caller.") {
 }
 
 // md-docs/learn/10-components.md
-component Stepper(_ value: Number, label: String, min: Number = 0) {
+component Counter(_ value: Number, label: String, min: Number = 0) {
     event change(value: Number)
     Row(gap: .sm, align: .center) {
         Button("−", disabled: value <= min).sm { on click { emit change(value - 1) } }
@@ -197,6 +197,6 @@ component Stepper(_ value: Number, label: String, min: Number = 0) {
 page Booking(path: "/", title: "Booking", description: "How many seats.") {
     state seats = 1
     Heading("Book").h1
-    Stepper(seats, label: "Seats", min: 1) { on change(v) { seats = v } }
+    Counter(seats, label: "Seats", min: 1) { on change(v) { seats = v } }
 }
 

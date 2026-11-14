@@ -4997,6 +4997,34 @@
           },
           {
             "type": "STRING",
+            "value": "Toggle"
+          },
+          {
+            "type": "STRING",
+            "value": "ToggleGroup"
+          },
+          {
+            "type": "STRING",
+            "value": "RadioGroup"
+          },
+          {
+            "type": "STRING",
+            "value": "Pagination"
+          },
+          {
+            "type": "STRING",
+            "value": "Stepper"
+          },
+          {
+            "type": "STRING",
+            "value": "NumberInput"
+          },
+          {
+            "type": "STRING",
+            "value": "Calendar"
+          },
+          {
+            "type": "STRING",
             "value": "Unsafe"
           },
           {
