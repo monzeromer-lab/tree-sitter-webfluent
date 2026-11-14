@@ -1110,7 +1110,8 @@ module.exports = grammar({
 
     lambda_parameters: ($) => seq("(", sepBy($.identifier, ","), ")"),
 
-    // `if cond { a } else { b }` as a value, chained with `else if`. The
+    // `if cond { a } else { b }` as a value, chained with `else if`; in the
+    // indented layout each branch may be the lines under it. The
     // low precedence keeps `if a { go() }` at the start of a statement the
     // statement, whose block holds statements, not a value.
     if_expression: ($) =>
@@ -1123,12 +1124,10 @@ module.exports = grammar({
             seq("let", field("binding", $.identifier), "=", field("value", $._expression)),
             field("condition", $._expression),
           ),
-          "{",
-          field("consequence", $._expression),
-          "}",
+          braced($, field("consequence", $._expression)),
           // Without an `else` the value is `null` when the condition fails.
           optional(
-            seq("else", choice($.if_expression, seq("{", field("alternative", $._expression), "}"))),
+            seq("else", choice($.if_expression, braced($, field("alternative", $._expression)))),
           ),
         ),
       ),
@@ -1141,7 +1140,7 @@ module.exports = grammar({
       ),
 
     match_expression_arm: ($) =>
-      seq(field("pattern", $._arm_pattern), "{", field("value", $._expression), "}"),
+      seq(field("pattern", $._arm_pattern), braced($, field("value", $._expression))),
 
     // `.primary`, `.calm` — a case of an enum, named by the prop or type.
     enum_case: ($) => seq(".", field("name", $._name)),

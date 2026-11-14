@@ -514,3 +514,93 @@ component Label(_ kind: Kind)
         (builtin_component)
         (argument_list
           (identifier))))))
+
+================================================================================
+An if value with its branches indented under it
+================================================================================
+
+page P(path: "/")
+    derived shown = if sort == .price
+        rows.sortBy(r => r)
+    else if rows.length > 2
+        rows.take(2)
+    else
+        rows
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (page_declaration
+    (component_identifier)
+    (page_attributes
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (block
+      (derived_declaration
+        (identifier)
+        (if_expression
+          (binary_expression
+            (identifier)
+            (enum_case
+              (identifier)))
+          (call_expression
+            (member_expression
+              (identifier)
+              (identifier))
+            (arguments
+              (lambda
+                (identifier)
+                (identifier))))
+          (if_expression
+            (binary_expression
+              (member_expression
+                (identifier)
+                (identifier))
+              (number))
+            (call_expression
+              (member_expression
+                (identifier)
+                (identifier))
+              (arguments
+                (number)))
+            (identifier)))))))
+
+================================================================================
+A match value whose arm is indented under it
+================================================================================
+
+page P(path: "/")
+    derived label = match sort
+        .price
+            "By price"
+        else { "As listed" }
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (page_declaration
+    (component_identifier)
+    (page_attributes
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (block
+      (derived_declaration
+        (identifier)
+        (match_expression
+          (identifier)
+          (match_expression_arm
+            (case_pattern
+              (enum_case
+                (identifier)))
+            (string
+              (string_content)))
+          (match_expression_arm
+            (else_pattern)
+            (string
+              (string_content))))))))
