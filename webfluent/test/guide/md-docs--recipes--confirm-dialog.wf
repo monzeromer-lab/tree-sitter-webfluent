@@ -3,7 +3,7 @@ component Confirm(_ title: String, visible: Bool, danger: Bool = false) {
     event confirm()
     event cancel()
     slot
-    Dialog(visible: visible, title: title) {
+    AlertDialog(visible: visible, title: title) {
         children
         Row(gap: .sm, justify: .end) {
             Button("Cancel") { on click { emit cancel() } }
@@ -20,6 +20,20 @@ page Account(path: "/", title: "Account", description: "Close your account.") {
         on confirm { gone = true  asking = false }
         on cancel { asking = false }
         Text("Everything goes. This cannot be undone.")
+    }
+    if gone { Alert("Account deleted.").info }
+}
+
+// md-docs/recipes/confirm-dialog.md
+page Account(path: "/", title: "Account", description: "Close your account.") {
+    state gone = false
+    Heading("Account").h1
+    Button("Delete account").danger {
+        on click {
+            if await ask("Delete your account?", detail: "Everything goes. This cannot be undone.", yes: "Delete", danger: true) {
+                gone = true
+            }
+        }
     }
     if gone { Alert("Account deleted.").info }
 }

@@ -122,6 +122,55 @@ page Overlays(path: "/", title: "Overlays", description: "What a page opens.") {
 }
 
 // md-docs/learn/08-events.md
+page Profile(path: "/", title: "Profile", description: "A modal that starts in a field.") {
+    state editing = false
+    state name = ""
+    Heading("Profile").h1
+    Button("Edit profile") { on click { editing = true } }
+    Modal(visible: editing, title: "Edit profile", dismiss: .escape, initialFocus: nameField) {
+        Input(bind: name, label: "Name", ref: nameField)
+        Modal.Footer { Button("Save").primary { on click { editing = false } } }
+    }
+}
+
+// md-docs/learn/08-events.md
+page Shop(path: "/", title: "Shop", description: "Filters in a bottom sheet.") {
+    state filters = false
+    state sort = "new"
+    Heading("Shop").h1
+    Button("Filters") { on click { filters = true } }
+    Sheet(visible: filters, title: "Filters", snap: [0.5, 1]).closable {
+        Radio(bind: sort, value: "new", label: "Newest")
+        Radio(bind: sort, value: "price", label: "Price")
+        Sheet.Footer { Button("Show results").primary { on click { filters = false } } }
+    }
+}
+
+// md-docs/learn/08-events.md
+store Mail {
+    state archived: [String] = []
+    action archive(id: String) {
+        archived = archived.concat([id])
+        toast("Conversation archived", action: "Undo", onAction: restore)
+    }
+    action restore() { archived = archived.slice(0, -1) }
+}
+page Inbox(path: "/", title: "Inbox", description: "Toasts, a question, an announcement.") {
+    use Mail
+    state gone = false
+    Heading("Inbox").h1
+    Button("Archive") { on click { Mail.archive("m1") } }
+    Button("Delete everything").danger {
+        on click {
+            if await ask("Delete every message?", detail: "This cannot be undone.", yes: "Delete", danger: true) {
+                gone = true
+                announce("Every message deleted", .assertive)
+            }
+        }
+    }
+}
+
+// md-docs/learn/08-events.md
 page Editor(path: "/", title: "Editor", description: "Layers at a control and at the pointer.") {
     state branches = false
     state asked = false

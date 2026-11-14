@@ -1,0 +1,8 @@
+// md-docs/errors/A18.md
+page P(path: "/", title: "T", description: "D") {
+    state open = false
+    Heading("Branches").h1
+    Button("main", ref: branch) { on click { open = !open } }
+    Popover(visible: open, anchor: branch, label: "Branches") { Button("feature/layers") }
+}
+
