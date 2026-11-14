@@ -81,7 +81,7 @@ page Deck(path: "/", title: "Q4 review", description: "The quarter in slides.") 
                 Text("The March pricing test.")
             }
         }
-        ImageSlide(src: "chart.png", caption: "Monthly recurring revenue")
+        ImageSlide(src: "/chart.png", caption: "Monthly recurring revenue")
         Slide {
             style { background: linear-gradient(135deg, #1E3A8A, #0F172A); color: #fff }
             Heading("Thank you").h1

@@ -3,6 +3,6 @@ type Member { name: String, email: String? }
 page P(path: "/", title: "T", description: "D") {
     state user = Member(name: "Ada", email: null)
     Heading("Profile").h1
-    Text(user.email?.toUpperCase() ?? "")
+    Text("{user.email?.length ?? 0} characters")
 }
 

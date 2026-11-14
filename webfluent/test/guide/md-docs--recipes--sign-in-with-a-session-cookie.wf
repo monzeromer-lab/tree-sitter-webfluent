@@ -22,6 +22,7 @@ store Session {
     action signOut() {
         await Auth.signOut()
         user = null
+        Auth.me.invalidate()
         navigate("/")
     }
 }

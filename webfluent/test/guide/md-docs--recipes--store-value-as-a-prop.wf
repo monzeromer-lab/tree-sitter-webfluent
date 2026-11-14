@@ -6,6 +6,9 @@ component CartBadge(count: Number) {
 page Shop(path: "/", title: "Shop", description: "Everything we sell.") {
     use Cart
     Heading("Shop").h1
-    CartBadge(count: Cart.count)
+    Row(gap: .sm, align: .center) {
+        Button("Add to cart") { on click { Cart.count = Cart.count + 1 } }
+        CartBadge(count: Cart.count)
+    }
 }
 

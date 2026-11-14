@@ -10,10 +10,12 @@ page Search(path: "/", title: "Search", description: "Search as you type, withou
     resource hits = fetch("/api/search?q={q}")
     Heading("Search").h1
     Input(bind: typed, placeholder: "Search", aria-label: "Search")
-    match hits {
-        loading { Spinner.sm }
-        error(e) { Text(e.message).danger }
-        ready(list) { Text("{list.length} results for {q}") }
+    if q != "" {
+        match hits {
+            loading { Spinner.sm }
+            error(e) { Text(e.message).danger }
+            ready(list) { Text("{list.length} results for {q}") }
+        }
     }
 }
 

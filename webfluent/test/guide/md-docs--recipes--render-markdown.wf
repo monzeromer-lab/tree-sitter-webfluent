@@ -1,6 +1,7 @@
 // md-docs/recipes/render-markdown.md
 page Notes(path: "/", title: "Release notes", description: "What changed in this release.") {
-    state body = "# Release notes\n\nVersion **3.3** adds:\n\n- Markdown pages\n- `wf docs`\n\n> Ship it."
+    state body = "## Version 3.3\n\nThis release adds:\n\n- Markdown pages\n- `wf docs`\n\n> Ship it."
+    Heading("Release notes").h1
     Markdown(body)
     Markdown("Inline *emphasis*, a [link](/about) and an ![image](/img.png).")
 }

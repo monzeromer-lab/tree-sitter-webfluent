@@ -1,10 +1,6 @@
 // md-docs/recipes/library-from-a-cdn.md
-page Sales(path: "/sales", title: "Sales", description: "How it is going.") {
-    state values: [Number] = [12, 19, 7, 15]
-
-    Heading("Sales").h1
-    Host(tag: "canvas", role: "img", aria-label: "Sales by quarter",
-         mount: (c) => drawSales(c, values),
-         cleanup: (chart) => chart.destroy())
+page Launch(path: "/launch", title: "Launch", description: "A button that celebrates.") {
+    Heading("We shipped").h1
+    Button("Celebrate").primary { on click { celebrate() } }
 }
 

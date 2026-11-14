@@ -1,0 +1,6 @@
+// md-docs/errors/E003.md
+page Home(path: "/", title: "Home", description: "Two words in a row.")
+    Heading("Home").h1
+    Row
+        Text("a")
+        Text("b")

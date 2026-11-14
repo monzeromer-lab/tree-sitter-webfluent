@@ -1,7 +1,7 @@
 // md-docs/recipes/translate-a-site.md
 type User { name: String }
 app {
-    state chosen = "en"
+    state chosen = locale
     Navbar {
         Navbar.Brand { Link("i18n", to: "/") }
         Navbar.Links {

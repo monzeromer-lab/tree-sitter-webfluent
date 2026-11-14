@@ -1,0 +1,17 @@
+// md-docs/recipes/keyboard-and-screen-reader.md
+page Plans(path: "/plans", title: "Plans", description: "Choose a plan.") {
+    state q = ""
+    state chosen = ""
+    Heading("Plans").h1
+    Input(bind: q, label: "Search the plans", hint: "Try “team” or “solo”").search
+    IconButton(icon: "close", label: "Clear the search") { on click { q = "" } }
+    Button("Search", aria-label: "Search the plans") { on click { log(q) } }
+    Card(role: "button", tabindex: "0") {
+        on click { chosen = "Team" }
+        on key("Enter") { chosen = "Team" }
+        on key("space") { chosen = "Team" }
+        Text("Team plan")
+    }
+    Text("Chosen: {chosen}")
+}
+

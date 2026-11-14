@@ -78,7 +78,7 @@ page Article(path: "/", title: "Article", description: "Every kind of text.") {
     Paragraph("Prose, as a <p>.")
     Code("let x = 1").block
     Blockquote("A quotation.")
-    Markdown("**Bold** and a [link](/docs)")   // see Content
+    Markdown("**Bold** and a [link](/docs)")   // Markdown, rendered as HTML
 }
 
 // md-docs/learn/06-elements.md

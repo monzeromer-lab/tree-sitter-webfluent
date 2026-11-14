@@ -1,11 +1,23 @@
 // md-docs/recipes/filters-in-the-address.md
+const PRODUCTS = [
+    { name: "Kettle", price: 39 },
+    { name: "Apron", price: 18 },
+    { name: "Mug", price: 9 },
+]
 page Products(path: "/products", title: "Products", description: "Everything we sell.") {
     derived sort = query.sort ?? "name"
+    derived shown = if sort == "price" {
+        PRODUCTS.sortBy(p => p.price)
+    } else {
+        PRODUCTS.sortBy(p => p.name)
+    }
     Heading("Products").h1
     Row(gap: .sm) {
         Link("By name", to: "/products?sort=name")
         Link("By price", to: "/products?sort=price")
     }
-    Text("Sorted by {sort}")
+    for p in shown by p.name {
+        Text("{p.name}: ${p.price}")
+    }
 }
 

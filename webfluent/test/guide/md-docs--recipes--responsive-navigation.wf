@@ -1,7 +1,6 @@
 // md-docs/recipes/responsive-navigation.md
-page Nav(path: "/", title: "Home", description: "Navigation that fits the screen.") {
+app {
     state open = false
-    Heading("Home").h1
     if viewport.md {
         Row(gap: .md) {
             Link("Home", to: "/")
@@ -14,13 +13,16 @@ page Nav(path: "/", title: "Home", description: "Navigation that fits the screen
         }
         show open {
             Stack(gap: .sm, animate: .slideDown, id: "nav-menu") {
+                on click { open = false }
                 Link("Home", to: "/")
                 Link("Docs", to: "/docs")
                 Link("Pricing", to: "/pricing")
             }
         }
     }
+    Router
 }
+page Home(path: "/", title: "Home", description: "Navigation that fits the screen.") { Heading("Home").h1 }
 page Docs(path: "/docs", title: "Docs", description: "How it works.") { Heading("Docs").h1 }
 page Pricing(path: "/pricing", title: "Pricing", description: "What it costs.") { Heading("Pricing").h1 }
 

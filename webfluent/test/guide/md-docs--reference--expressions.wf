@@ -22,6 +22,7 @@ page Literals(path: "/literals", title: "Literals", description: "One value of e
     state accent = $primary                       // a design token
     Heading("Literals").h1
     Text("{label} {count} {ratio} {open} {sizes.length} {owner.name}")
+    Text("{note ?? \"none\"} {slug.test(label)} {accent}")
 }
 
 // md-docs/reference/expressions.md
