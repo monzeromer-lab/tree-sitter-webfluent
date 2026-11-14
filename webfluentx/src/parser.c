@@ -15,9 +15,9 @@
 #define LANGUAGE_VERSION 14
 #define STATE_COUNT 3154
 #define LARGE_STATE_COUNT 1040
-#define SYMBOL_COUNT 456
+#define SYMBOL_COUNT 461
 #define ALIAS_COUNT 2
-#define TOKEN_COUNT 280
+#define TOKEN_COUNT 285
 #define EXTERNAL_TOKEN_COUNT 12
 #define FIELD_COUNT 62
 #define MAX_ALIAS_SEQUENCE_LENGTH 12
@@ -220,267 +220,272 @@ enum ts_symbol_identifiers {
   anon_sym_Combobox = 194,
   anon_sym_CommandPalette = 195,
   anon_sym_AppShell = 196,
-  anon_sym_Unsafe = 197,
-  anon_sym_Host = 198,
-  anon_sym_Element = 199,
-  anon_sym_Portal = 200,
-  anon_sym_Document = 201,
-  anon_sym_Section = 202,
-  anon_sym_Paragraph = 203,
-  anon_sym_PageBreak = 204,
-  anon_sym_Header = 205,
-  anon_sym_Footer = 206,
-  anon_sym_Background = 207,
-  anon_sym_Watermark = 208,
-  anon_sym_TableOfContents = 209,
-  anon_sym_Chart = 210,
-  anon_sym_QrCode = 211,
-  anon_sym_Presentation = 212,
-  anon_sym_Slide = 213,
-  anon_sym_TitleSlide = 214,
-  anon_sym_SectionSlide = 215,
-  anon_sym_TwoColumn = 216,
-  anon_sym_ImageSlide = 217,
-  anon_sym_on = 218,
-  anon_sym_debounce = 219,
-  anon_sym_throttle = 220,
-  anon_sym_every = 221,
-  anon_sym_cleanup = 222,
-  anon_sym_meta = 223,
-  anon_sym_link = 224,
-  anon_sym_script = 225,
-  anon_sym_style = 226,
-  sym_selector = 227,
-  sym_vendor_property_name = 228,
-  sym_custom_property_name = 229,
-  anon_sym_transition = 230,
-  anon_sym_QMARK_QMARK = 231,
-  anon_sym_PIPE_PIPE = 232,
-  anon_sym_AMP_AMP = 233,
-  anon_sym_EQ_EQ = 234,
-  anon_sym_BANG_EQ = 235,
-  anon_sym_BANG_EQ_EQ = 236,
-  anon_sym_LT = 237,
-  anon_sym_LT_EQ = 238,
-  anon_sym_GT_EQ = 239,
-  anon_sym_PLUS = 240,
-  anon_sym_STAR = 241,
-  anon_sym_SLASH = 242,
-  anon_sym_PERCENT = 243,
-  anon_sym_BANG = 244,
-  anon_sym_await = 245,
-  anon_sym_QMARK_DOT = 246,
-  anon_sym_EQ_GT = 247,
-  sym_design_token = 248,
-  anon_sym_DQUOTE = 249,
-  aux_sym__quoted_string_token1 = 250,
-  anon_sym_DQUOTE_DQUOTE_DQUOTE = 251,
-  aux_sym_block_string_content_token1 = 252,
-  aux_sym_block_string_content_token2 = 253,
-  aux_sym_block_string_content_token3 = 254,
-  aux_sym_string_content_token1 = 255,
-  sym_escape_sequence = 256,
-  sym_escaped_string = 257,
-  aux_sym_interpolation_token1 = 258,
-  aux_sym_interpolation_token2 = 259,
-  sym_temporal = 260,
-  sym_money = 261,
-  sym_duration = 262,
-  sym_color = 263,
-  sym_number = 264,
-  sym_regex = 265,
-  anon_sym_true = 266,
-  anon_sym_false = 267,
-  sym_null = 268,
-  anon_sym_DOT_DOT_DOT = 269,
-  anon_sym_DOT_DOT = 270,
-  anon_sym_DOT_DOT_EQ = 271,
-  sym_component_identifier = 272,
-  sym_doc_comment = 273,
-  sym_comment = 274,
-  sym_style_text = 275,
-  sym__indent = 276,
-  sym__dedent = 277,
-  sym__layout = 278,
-  sym_raw_string = 279,
-  sym_source_file = 280,
-  sym__declaration = 281,
-  sym_const_declaration = 282,
-  sym_data_declaration = 283,
-  sym_api_declaration = 284,
-  sym_api_settings = 285,
-  sym_api_body = 286,
-  sym_api_setting = 287,
-  sym_api_headers = 288,
-  sym_header = 289,
-  sym_header_name = 290,
-  sym_endpoint = 291,
-  sym_endpoint_errors = 292,
-  sym_error_mapping = 293,
-  sym_endpoint_setting = 294,
-  sym_page_declaration = 295,
-  sym_page_attributes = 296,
-  sym_route_parameter = 297,
-  sym_component_declaration = 298,
-  sym_part_declaration = 299,
-  sym_store_declaration = 300,
-  sym_theme_declaration = 301,
-  sym_theme_body = 302,
-  sym_animation_declaration = 303,
-  sym_keyframe = 304,
-  sym_test_declaration = 305,
-  sym_expect_statement = 306,
-  sym_act_statement = 307,
-  sym_token_declaration = 308,
-  sym_app_declaration = 309,
-  sym_type_declaration = 310,
-  sym_field_declaration = 311,
-  sym_enum_declaration = 312,
-  sym_enum_case_declaration = 313,
-  sym_parameter_list = 314,
-  sym_parameter = 315,
-  sym__type = 316,
-  sym_refined_type = 317,
-  sym_builtin_type = 318,
-  sym_list_type = 319,
-  sym_optional_type = 320,
-  sym_named_type = 321,
-  sym_block = 322,
-  sym__statement = 323,
-  sym_state_declaration = 324,
-  sym_persist_policy = 325,
-  sym_persist_option = 326,
-  sym_migration = 327,
-  sym_derived_declaration = 328,
-  sym_validate_declaration = 329,
-  sym_validation_rule = 330,
-  sym_rule_translation = 331,
-  sym_connection_declaration = 332,
-  sym_connection_body = 333,
-  sym_message_type = 334,
-  sym_effect_declaration = 335,
-  sym_action_declaration = 336,
-  sym_use_declaration = 337,
-  sym_resource_declaration = 338,
-  sym_event_declaration = 339,
-  sym_slot_declaration = 340,
-  sym_let_declaration = 341,
-  sym_destructuring_pattern = 342,
-  sym_try_statement = 343,
-  sym_navigate_statement = 344,
-  sym_log_statement = 345,
-  sym_return_statement = 346,
-  sym_emit_statement = 347,
-  sym_if_statement = 348,
-  sym_if_let = 349,
-  sym_else_clause = 350,
-  sym_for_statement = 351,
-  sym_show_statement = 352,
-  sym_sequence_statement = 353,
-  sym_step = 354,
-  sym_match_statement = 355,
-  sym_match_arm = 356,
-  sym__arm_pattern = 357,
-  sym_error_pattern = 358,
-  sym_ready_pattern = 359,
-  sym_state_pattern = 360,
-  sym_case_pattern = 361,
-  sym_else_pattern = 362,
-  sym_element = 363,
-  sym_part = 364,
-  sym_flag = 365,
-  sym_builtin_component = 366,
-  sym_argument_list = 367,
-  sym__argument = 368,
-  sym_named_argument = 369,
-  sym_attribute_name = 370,
-  sym_arguments = 371,
-  sym_event_handler = 372,
-  sym_handler_pace = 373,
-  sym_timer_statement = 374,
-  sym_cleanup_block = 375,
-  sym_head_block = 376,
-  sym_head_tag = 377,
-  sym_slot_fill = 378,
-  sym_style_block = 379,
-  sym_style_property = 380,
-  sym_style_value = 381,
-  sym_nested_rule = 382,
-  sym_property_name = 383,
-  sym_transition_block = 384,
-  sym_call_statement = 385,
-  sym_store_member = 386,
-  sym_assignment = 387,
-  sym_expression_statement = 388,
-  sym__expression = 389,
-  sym__primary_expression = 390,
-  sym_binary_expression = 391,
-  sym_unary_expression = 392,
-  sym_member_expression = 393,
-  sym_index_expression = 394,
-  sym_call_expression = 395,
-  sym_parenthesized_expression = 396,
-  sym_lambda = 397,
-  sym_lambda_parameters = 398,
-  sym_if_expression = 399,
-  sym_match_expression = 400,
-  sym_match_expression_arm = 401,
-  sym_enum_case = 402,
-  sym_case_value = 403,
-  sym_string = 404,
-  sym__quoted_string = 405,
-  sym_block_string = 406,
-  sym_block_string_content = 407,
-  sym_string_content = 408,
-  sym_interpolation = 409,
-  sym_format_spec = 410,
-  sym_boolean = 411,
-  sym_array = 412,
-  sym_object = 413,
-  sym_spread_element = 414,
-  sym_pair = 415,
-  sym_range_expression = 416,
-  aux_sym_source_file_repeat1 = 417,
-  aux_sym_api_settings_repeat1 = 418,
-  aux_sym_api_body_repeat1 = 419,
-  aux_sym_api_headers_repeat1 = 420,
-  aux_sym_header_name_repeat1 = 421,
-  aux_sym_endpoint_repeat1 = 422,
-  aux_sym_endpoint_errors_repeat1 = 423,
-  aux_sym_page_attributes_repeat1 = 424,
-  aux_sym_theme_body_repeat1 = 425,
-  aux_sym_animation_declaration_repeat1 = 426,
-  aux_sym_keyframe_repeat1 = 427,
-  aux_sym_type_declaration_repeat1 = 428,
-  aux_sym_enum_declaration_repeat1 = 429,
-  aux_sym_enum_case_declaration_repeat1 = 430,
-  aux_sym_parameter_list_repeat1 = 431,
-  aux_sym_refined_type_repeat1 = 432,
-  aux_sym_block_repeat1 = 433,
-  aux_sym_persist_policy_repeat1 = 434,
-  aux_sym_validate_declaration_repeat1 = 435,
-  aux_sym_connection_body_repeat1 = 436,
-  aux_sym_destructuring_pattern_repeat1 = 437,
-  aux_sym_sequence_statement_repeat1 = 438,
-  aux_sym_match_statement_repeat1 = 439,
-  aux_sym_case_pattern_repeat1 = 440,
-  aux_sym_element_repeat1 = 441,
-  aux_sym_attribute_name_repeat1 = 442,
-  aux_sym_event_handler_repeat1 = 443,
-  aux_sym_head_block_repeat1 = 444,
-  aux_sym_slot_fill_repeat1 = 445,
-  aux_sym_style_block_repeat1 = 446,
-  aux_sym_style_value_repeat1 = 447,
-  aux_sym_property_name_repeat1 = 448,
-  aux_sym_call_statement_repeat1 = 449,
-  aux_sym_lambda_parameters_repeat1 = 450,
-  aux_sym_match_expression_repeat1 = 451,
-  aux_sym__quoted_string_repeat1 = 452,
-  aux_sym_block_string_repeat1 = 453,
-  aux_sym_array_repeat1 = 454,
-  aux_sym_object_repeat1 = 455,
-  alias_sym_method = 456,
-  alias_sym_property = 457,
+  anon_sym_CheckboxGroup = 197,
+  anon_sym_InputOTP = 198,
+  anon_sym_TagInput = 199,
+  anon_sym_Rating = 200,
+  anon_sym_DateRangePicker = 201,
+  anon_sym_Unsafe = 202,
+  anon_sym_Host = 203,
+  anon_sym_Element = 204,
+  anon_sym_Portal = 205,
+  anon_sym_Document = 206,
+  anon_sym_Section = 207,
+  anon_sym_Paragraph = 208,
+  anon_sym_PageBreak = 209,
+  anon_sym_Header = 210,
+  anon_sym_Footer = 211,
+  anon_sym_Background = 212,
+  anon_sym_Watermark = 213,
+  anon_sym_TableOfContents = 214,
+  anon_sym_Chart = 215,
+  anon_sym_QrCode = 216,
+  anon_sym_Presentation = 217,
+  anon_sym_Slide = 218,
+  anon_sym_TitleSlide = 219,
+  anon_sym_SectionSlide = 220,
+  anon_sym_TwoColumn = 221,
+  anon_sym_ImageSlide = 222,
+  anon_sym_on = 223,
+  anon_sym_debounce = 224,
+  anon_sym_throttle = 225,
+  anon_sym_every = 226,
+  anon_sym_cleanup = 227,
+  anon_sym_meta = 228,
+  anon_sym_link = 229,
+  anon_sym_script = 230,
+  anon_sym_style = 231,
+  sym_selector = 232,
+  sym_vendor_property_name = 233,
+  sym_custom_property_name = 234,
+  anon_sym_transition = 235,
+  anon_sym_QMARK_QMARK = 236,
+  anon_sym_PIPE_PIPE = 237,
+  anon_sym_AMP_AMP = 238,
+  anon_sym_EQ_EQ = 239,
+  anon_sym_BANG_EQ = 240,
+  anon_sym_BANG_EQ_EQ = 241,
+  anon_sym_LT = 242,
+  anon_sym_LT_EQ = 243,
+  anon_sym_GT_EQ = 244,
+  anon_sym_PLUS = 245,
+  anon_sym_STAR = 246,
+  anon_sym_SLASH = 247,
+  anon_sym_PERCENT = 248,
+  anon_sym_BANG = 249,
+  anon_sym_await = 250,
+  anon_sym_QMARK_DOT = 251,
+  anon_sym_EQ_GT = 252,
+  sym_design_token = 253,
+  anon_sym_DQUOTE = 254,
+  aux_sym__quoted_string_token1 = 255,
+  anon_sym_DQUOTE_DQUOTE_DQUOTE = 256,
+  aux_sym_block_string_content_token1 = 257,
+  aux_sym_block_string_content_token2 = 258,
+  aux_sym_block_string_content_token3 = 259,
+  aux_sym_string_content_token1 = 260,
+  sym_escape_sequence = 261,
+  sym_escaped_string = 262,
+  aux_sym_interpolation_token1 = 263,
+  aux_sym_interpolation_token2 = 264,
+  sym_temporal = 265,
+  sym_money = 266,
+  sym_duration = 267,
+  sym_color = 268,
+  sym_number = 269,
+  sym_regex = 270,
+  anon_sym_true = 271,
+  anon_sym_false = 272,
+  sym_null = 273,
+  anon_sym_DOT_DOT_DOT = 274,
+  anon_sym_DOT_DOT = 275,
+  anon_sym_DOT_DOT_EQ = 276,
+  sym_component_identifier = 277,
+  sym_doc_comment = 278,
+  sym_comment = 279,
+  sym_style_text = 280,
+  sym__indent = 281,
+  sym__dedent = 282,
+  sym__layout = 283,
+  sym_raw_string = 284,
+  sym_source_file = 285,
+  sym__declaration = 286,
+  sym_const_declaration = 287,
+  sym_data_declaration = 288,
+  sym_api_declaration = 289,
+  sym_api_settings = 290,
+  sym_api_body = 291,
+  sym_api_setting = 292,
+  sym_api_headers = 293,
+  sym_header = 294,
+  sym_header_name = 295,
+  sym_endpoint = 296,
+  sym_endpoint_errors = 297,
+  sym_error_mapping = 298,
+  sym_endpoint_setting = 299,
+  sym_page_declaration = 300,
+  sym_page_attributes = 301,
+  sym_route_parameter = 302,
+  sym_component_declaration = 303,
+  sym_part_declaration = 304,
+  sym_store_declaration = 305,
+  sym_theme_declaration = 306,
+  sym_theme_body = 307,
+  sym_animation_declaration = 308,
+  sym_keyframe = 309,
+  sym_test_declaration = 310,
+  sym_expect_statement = 311,
+  sym_act_statement = 312,
+  sym_token_declaration = 313,
+  sym_app_declaration = 314,
+  sym_type_declaration = 315,
+  sym_field_declaration = 316,
+  sym_enum_declaration = 317,
+  sym_enum_case_declaration = 318,
+  sym_parameter_list = 319,
+  sym_parameter = 320,
+  sym__type = 321,
+  sym_refined_type = 322,
+  sym_builtin_type = 323,
+  sym_list_type = 324,
+  sym_optional_type = 325,
+  sym_named_type = 326,
+  sym_block = 327,
+  sym__statement = 328,
+  sym_state_declaration = 329,
+  sym_persist_policy = 330,
+  sym_persist_option = 331,
+  sym_migration = 332,
+  sym_derived_declaration = 333,
+  sym_validate_declaration = 334,
+  sym_validation_rule = 335,
+  sym_rule_translation = 336,
+  sym_connection_declaration = 337,
+  sym_connection_body = 338,
+  sym_message_type = 339,
+  sym_effect_declaration = 340,
+  sym_action_declaration = 341,
+  sym_use_declaration = 342,
+  sym_resource_declaration = 343,
+  sym_event_declaration = 344,
+  sym_slot_declaration = 345,
+  sym_let_declaration = 346,
+  sym_destructuring_pattern = 347,
+  sym_try_statement = 348,
+  sym_navigate_statement = 349,
+  sym_log_statement = 350,
+  sym_return_statement = 351,
+  sym_emit_statement = 352,
+  sym_if_statement = 353,
+  sym_if_let = 354,
+  sym_else_clause = 355,
+  sym_for_statement = 356,
+  sym_show_statement = 357,
+  sym_sequence_statement = 358,
+  sym_step = 359,
+  sym_match_statement = 360,
+  sym_match_arm = 361,
+  sym__arm_pattern = 362,
+  sym_error_pattern = 363,
+  sym_ready_pattern = 364,
+  sym_state_pattern = 365,
+  sym_case_pattern = 366,
+  sym_else_pattern = 367,
+  sym_element = 368,
+  sym_part = 369,
+  sym_flag = 370,
+  sym_builtin_component = 371,
+  sym_argument_list = 372,
+  sym__argument = 373,
+  sym_named_argument = 374,
+  sym_attribute_name = 375,
+  sym_arguments = 376,
+  sym_event_handler = 377,
+  sym_handler_pace = 378,
+  sym_timer_statement = 379,
+  sym_cleanup_block = 380,
+  sym_head_block = 381,
+  sym_head_tag = 382,
+  sym_slot_fill = 383,
+  sym_style_block = 384,
+  sym_style_property = 385,
+  sym_style_value = 386,
+  sym_nested_rule = 387,
+  sym_property_name = 388,
+  sym_transition_block = 389,
+  sym_call_statement = 390,
+  sym_store_member = 391,
+  sym_assignment = 392,
+  sym_expression_statement = 393,
+  sym__expression = 394,
+  sym__primary_expression = 395,
+  sym_binary_expression = 396,
+  sym_unary_expression = 397,
+  sym_member_expression = 398,
+  sym_index_expression = 399,
+  sym_call_expression = 400,
+  sym_parenthesized_expression = 401,
+  sym_lambda = 402,
+  sym_lambda_parameters = 403,
+  sym_if_expression = 404,
+  sym_match_expression = 405,
+  sym_match_expression_arm = 406,
+  sym_enum_case = 407,
+  sym_case_value = 408,
+  sym_string = 409,
+  sym__quoted_string = 410,
+  sym_block_string = 411,
+  sym_block_string_content = 412,
+  sym_string_content = 413,
+  sym_interpolation = 414,
+  sym_format_spec = 415,
+  sym_boolean = 416,
+  sym_array = 417,
+  sym_object = 418,
+  sym_spread_element = 419,
+  sym_pair = 420,
+  sym_range_expression = 421,
+  aux_sym_source_file_repeat1 = 422,
+  aux_sym_api_settings_repeat1 = 423,
+  aux_sym_api_body_repeat1 = 424,
+  aux_sym_api_headers_repeat1 = 425,
+  aux_sym_header_name_repeat1 = 426,
+  aux_sym_endpoint_repeat1 = 427,
+  aux_sym_endpoint_errors_repeat1 = 428,
+  aux_sym_page_attributes_repeat1 = 429,
+  aux_sym_theme_body_repeat1 = 430,
+  aux_sym_animation_declaration_repeat1 = 431,
+  aux_sym_keyframe_repeat1 = 432,
+  aux_sym_type_declaration_repeat1 = 433,
+  aux_sym_enum_declaration_repeat1 = 434,
+  aux_sym_enum_case_declaration_repeat1 = 435,
+  aux_sym_parameter_list_repeat1 = 436,
+  aux_sym_refined_type_repeat1 = 437,
+  aux_sym_block_repeat1 = 438,
+  aux_sym_persist_policy_repeat1 = 439,
+  aux_sym_validate_declaration_repeat1 = 440,
+  aux_sym_connection_body_repeat1 = 441,
+  aux_sym_destructuring_pattern_repeat1 = 442,
+  aux_sym_sequence_statement_repeat1 = 443,
+  aux_sym_match_statement_repeat1 = 444,
+  aux_sym_case_pattern_repeat1 = 445,
+  aux_sym_element_repeat1 = 446,
+  aux_sym_attribute_name_repeat1 = 447,
+  aux_sym_event_handler_repeat1 = 448,
+  aux_sym_head_block_repeat1 = 449,
+  aux_sym_slot_fill_repeat1 = 450,
+  aux_sym_style_block_repeat1 = 451,
+  aux_sym_style_value_repeat1 = 452,
+  aux_sym_property_name_repeat1 = 453,
+  aux_sym_call_statement_repeat1 = 454,
+  aux_sym_lambda_parameters_repeat1 = 455,
+  aux_sym_match_expression_repeat1 = 456,
+  aux_sym__quoted_string_repeat1 = 457,
+  aux_sym_block_string_repeat1 = 458,
+  aux_sym_array_repeat1 = 459,
+  aux_sym_object_repeat1 = 460,
+  alias_sym_method = 461,
+  alias_sym_property = 462,
 };
 
 static const char * const ts_symbol_names[] = {
@@ -681,6 +686,11 @@ static const char * const ts_symbol_names[] = {
   [anon_sym_Combobox] = "Combobox",
   [anon_sym_CommandPalette] = "CommandPalette",
   [anon_sym_AppShell] = "AppShell",
+  [anon_sym_CheckboxGroup] = "CheckboxGroup",
+  [anon_sym_InputOTP] = "InputOTP",
+  [anon_sym_TagInput] = "TagInput",
+  [anon_sym_Rating] = "Rating",
+  [anon_sym_DateRangePicker] = "DateRangePicker",
   [anon_sym_Unsafe] = "Unsafe",
   [anon_sym_Host] = "Host",
   [anon_sym_Element] = "Element",
@@ -1142,6 +1152,11 @@ static const TSSymbol ts_symbol_map[] = {
   [anon_sym_Combobox] = anon_sym_Combobox,
   [anon_sym_CommandPalette] = anon_sym_CommandPalette,
   [anon_sym_AppShell] = anon_sym_AppShell,
+  [anon_sym_CheckboxGroup] = anon_sym_CheckboxGroup,
+  [anon_sym_InputOTP] = anon_sym_InputOTP,
+  [anon_sym_TagInput] = anon_sym_TagInput,
+  [anon_sym_Rating] = anon_sym_Rating,
+  [anon_sym_DateRangePicker] = anon_sym_DateRangePicker,
   [anon_sym_Unsafe] = anon_sym_Unsafe,
   [anon_sym_Host] = anon_sym_Host,
   [anon_sym_Element] = anon_sym_Element,
@@ -2191,6 +2206,26 @@ static const TSSymbolMetadata ts_symbol_metadata[] = {
     .named = false,
   },
   [anon_sym_AppShell] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_CheckboxGroup] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_InputOTP] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_TagInput] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_Rating] = {
+    .visible = true,
+    .named = false,
+  },
+  [anon_sym_DateRangePicker] = {
     .visible = true,
     .named = false,
   },
@@ -7439,53 +7474,53 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
     case 0:
       if (eof) ADVANCE(110);
       ADVANCE_MAP(
-        '!', 273,
-        '"', 278,
+        '!', 278,
+        '"', 283,
         '#', 99,
         '$', 69,
-        '%', 271,
+        '%', 276,
         '&', 21,
         '(', 115,
         ')', 117,
-        '*', 268,
-        '+', 267,
+        '*', 273,
+        '+', 272,
         ',', 116,
         '-', 120,
         '.', 138,
-        '/', 270,
+        '/', 275,
         ':', 111,
         ';', 125,
-        '<', 264,
+        '<', 269,
         '=', 114,
         '>', 122,
         '?', 135,
         '@', 84,
-        'A', 414,
-        'B', 350,
-        'C', 352,
-        'D', 362,
-        'E', 599,
-        'F', 554,
-        'G', 747,
-        'H', 489,
-        'I', 418,
-        'K', 404,
-        'L', 555,
-        'M', 353,
-        'N', 354,
-        'O', 633,
-        'P', 356,
-        'Q', 729,
-        'R', 399,
-        'S', 461,
-        'T', 357,
-        'U', 649,
-        'V', 556,
-        'W', 367,
+        'A', 423,
+        'B', 358,
+        'C', 360,
+        'D', 371,
+        'E', 616,
+        'F', 568,
+        'G', 771,
+        'H', 499,
+        'I', 427,
+        'K', 413,
+        'L', 569,
+        'M', 361,
+        'N', 362,
+        'O', 650,
+        'P', 364,
+        'Q', 752,
+        'R', 365,
+        'S', 471,
+        'T', 366,
+        'U', 666,
+        'V', 570,
+        'W', 376,
         '[', 132,
         '\\', 104,
         ']', 133,
-        't', 328,
+        't', 333,
         '{', 118,
         '|', 66,
         '}', 119,
@@ -7495,52 +7530,52 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       );
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(107);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(320);
-      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(861);
-      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(329);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(325);
+      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(889);
+      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(334);
       END_STATE();
     case 1:
       ADVANCE_MAP(
-        '!', 273,
-        '"', 278,
+        '!', 278,
+        '"', 283,
         '#', 99,
         '$', 69,
-        '%', 271,
+        '%', 276,
         '&', 21,
         '(', 115,
-        '*', 268,
-        '+', 267,
+        '*', 273,
+        '+', 272,
         '-', 121,
         '.', 138,
-        '/', 270,
+        '/', 275,
         ';', 125,
-        '<', 264,
+        '<', 269,
         '=', 113,
         '>', 122,
         '?', 30,
         '@', 84,
-        'A', 414,
-        'B', 350,
-        'C', 352,
-        'D', 362,
-        'E', 599,
-        'F', 554,
-        'G', 747,
-        'H', 489,
-        'I', 418,
-        'K', 404,
-        'L', 555,
-        'M', 353,
-        'N', 354,
-        'O', 633,
-        'P', 356,
-        'Q', 729,
-        'R', 399,
-        'S', 461,
-        'T', 357,
-        'U', 649,
-        'V', 556,
-        'W', 367,
+        'A', 423,
+        'B', 358,
+        'C', 360,
+        'D', 371,
+        'E', 616,
+        'F', 568,
+        'G', 771,
+        'H', 499,
+        'I', 427,
+        'K', 413,
+        'L', 569,
+        'M', 361,
+        'N', 362,
+        'O', 650,
+        'P', 364,
+        'Q', 752,
+        'R', 365,
+        'S', 471,
+        'T', 366,
+        'U', 666,
+        'V', 570,
+        'W', 376,
         '[', 132,
         '\\', 11,
         '{', 118,
@@ -7552,52 +7587,52 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       );
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(2);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(320);
-      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(861);
-      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(329);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(325);
+      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(889);
+      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(334);
       END_STATE();
     case 2:
       ADVANCE_MAP(
-        '!', 273,
-        '"', 278,
+        '!', 278,
+        '"', 283,
         '#', 99,
         '$', 69,
-        '%', 271,
+        '%', 276,
         '&', 21,
         '(', 115,
-        '*', 268,
-        '+', 267,
+        '*', 273,
+        '+', 272,
         '-', 121,
         '.', 137,
-        '/', 270,
+        '/', 275,
         ';', 125,
-        '<', 264,
+        '<', 269,
         '=', 113,
         '>', 122,
         '?', 30,
         '@', 84,
-        'A', 414,
-        'B', 350,
-        'C', 352,
-        'D', 362,
-        'E', 599,
-        'F', 554,
-        'G', 747,
-        'H', 489,
-        'I', 418,
-        'K', 404,
-        'L', 555,
-        'M', 353,
-        'N', 354,
-        'O', 633,
-        'P', 356,
-        'Q', 729,
-        'R', 399,
-        'S', 461,
-        'T', 357,
-        'U', 649,
-        'V', 556,
-        'W', 367,
+        'A', 423,
+        'B', 358,
+        'C', 360,
+        'D', 371,
+        'E', 616,
+        'F', 568,
+        'G', 771,
+        'H', 499,
+        'I', 427,
+        'K', 413,
+        'L', 569,
+        'M', 361,
+        'N', 362,
+        'O', 650,
+        'P', 364,
+        'Q', 752,
+        'R', 365,
+        'S', 471,
+        'T', 366,
+        'U', 666,
+        'V', 570,
+        'W', 376,
         '[', 132,
         '\\', 11,
         '{', 118,
@@ -7609,14 +7644,14 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       );
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(2);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(320);
-      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(861);
-      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(329);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(325);
+      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(889);
+      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(334);
       END_STATE();
     case 3:
       ADVANCE_MAP(
-        '!', 272,
-        '"', 278,
+        '!', 277,
+        '"', 283,
         '#', 99,
         '$', 69,
         '(', 115,
@@ -7628,28 +7663,28 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
         '=', 112,
         '?', 134,
         '@', 84,
-        'A', 414,
-        'B', 350,
-        'C', 352,
-        'D', 362,
-        'E', 599,
-        'F', 554,
-        'G', 747,
-        'H', 489,
-        'I', 418,
-        'K', 404,
-        'L', 555,
-        'M', 353,
-        'N', 354,
-        'O', 633,
-        'P', 356,
-        'Q', 729,
-        'R', 399,
-        'S', 461,
-        'T', 357,
-        'U', 649,
-        'V', 556,
-        'W', 367,
+        'A', 423,
+        'B', 358,
+        'C', 360,
+        'D', 371,
+        'E', 616,
+        'F', 568,
+        'G', 771,
+        'H', 499,
+        'I', 427,
+        'K', 413,
+        'L', 569,
+        'M', 361,
+        'N', 362,
+        'O', 650,
+        'P', 364,
+        'Q', 752,
+        'R', 365,
+        'S', 471,
+        'T', 366,
+        'U', 666,
+        'V', 570,
+        'W', 376,
         '[', 132,
         '\\', 11,
         ']', 133,
@@ -7661,44 +7696,44 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       );
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(3);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(320);
-      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(861);
-      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(329);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(325);
+      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(889);
+      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(334);
       END_STATE();
     case 4:
       ADVANCE_MAP(
         '!', 38,
-        '"', 278,
+        '"', 283,
         '$', 101,
-        '%', 271,
+        '%', 276,
         '&', 21,
         '(', 115,
         ')', 117,
-        '*', 268,
-        '+', 267,
+        '*', 273,
+        '+', 272,
         ',', 116,
         '-', 121,
         '.', 137,
-        '/', 269,
-        '<', 264,
+        '/', 274,
+        '<', 269,
         '=', 39,
         '>', 122,
         '?', 30,
         '[', 132,
         ']', 133,
-        '{', 300,
+        '{', 305,
         '|', 66,
         '}', 119,
       );
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(4);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(322);
-      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(861);
-      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(329);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(327);
+      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(889);
+      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(334);
       END_STATE();
     case 5:
       ADVANCE_MAP(
-        '"', 278,
+        '"', 283,
         '(', 115,
         ',', 116,
         '-', 27,
@@ -7712,110 +7747,110 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       );
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(5);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(322);
-      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(861);
-      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(329);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(327);
+      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(889);
+      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(334);
       END_STATE();
     case 6:
       ADVANCE_MAP(
-        '"', 278,
+        '"', 283,
         '(', 115,
         '-', 120,
         '/', 22,
         ':', 111,
-        'A', 632,
-        'B', 671,
-        'M', 380,
-        'N', 845,
-        'S', 807,
+        'A', 649,
+        'B', 691,
+        'M', 390,
+        'N', 873,
+        'S', 830,
         '[', 132,
-        't', 328,
+        't', 333,
         '{', 118,
         '}', 119,
       );
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(7);
-      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(861);
-      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(329);
+      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(889);
+      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(334);
       END_STATE();
     case 7:
       ADVANCE_MAP(
-        '"', 278,
+        '"', 283,
         '(', 115,
         '/', 22,
         ':', 111,
-        'A', 632,
-        'B', 671,
-        'M', 380,
-        'N', 845,
-        'S', 807,
+        'A', 649,
+        'B', 691,
+        'M', 390,
+        'N', 873,
+        'S', 830,
         '[', 132,
-        't', 328,
+        't', 333,
         '{', 118,
         '}', 119,
       );
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(7);
-      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(861);
-      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(329);
+      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(889);
+      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(334);
       END_STATE();
     case 8:
       if (lookahead == '"') ADVANCE(25);
-      if (lookahead == '*') ADVANCE(285);
-      if (lookahead != 0) ADVANCE(286);
+      if (lookahead == '*') ADVANCE(290);
+      if (lookahead != 0) ADVANCE(291);
       END_STATE();
     case 9:
-      if (lookahead == '"') ADVANCE(280);
+      if (lookahead == '"') ADVANCE(285);
       END_STATE();
     case 10:
-      if (lookahead == '"') ADVANCE(280);
-      if (lookahead != 0) ADVANCE(288);
+      if (lookahead == '"') ADVANCE(285);
+      if (lookahead != 0) ADVANCE(293);
       END_STATE();
     case 11:
       if (lookahead == '"') ADVANCE(40);
       END_STATE();
     case 12:
-      if (lookahead == '"') ADVANCE(299);
+      if (lookahead == '"') ADVANCE(304);
       if (lookahead != 0 &&
           lookahead != '\n') ADVANCE(40);
       END_STATE();
     case 13:
-      if (lookahead == '"') ADVANCE(277);
-      if (lookahead == '/') ADVANCE(293);
+      if (lookahead == '"') ADVANCE(282);
+      if (lookahead == '/') ADVANCE(298);
       if (lookahead == '\\') ADVANCE(104);
-      if (lookahead == '{') ADVANCE(301);
+      if (lookahead == '{') ADVANCE(306);
       if (('\t' <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(296);
-      if (lookahead != 0) ADVANCE(297);
+          lookahead == ' ') ADVANCE(301);
+      if (lookahead != 0) ADVANCE(302);
       END_STATE();
     case 14:
       if (lookahead == '"') ADVANCE(16);
-      if (lookahead == '/') ADVANCE(287);
+      if (lookahead == '/') ADVANCE(292);
       if (lookahead == '\\') ADVANCE(104);
-      if (lookahead == '{') ADVANCE(302);
+      if (lookahead == '{') ADVANCE(307);
       if (('\t' <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(284);
-      if (lookahead != 0) ADVANCE(288);
+          lookahead == ' ') ADVANCE(289);
+      if (lookahead != 0) ADVANCE(293);
       END_STATE();
     case 15:
       if (lookahead == '"') ADVANCE(106);
-      if (lookahead != 0) ADVANCE(288);
+      if (lookahead != 0) ADVANCE(293);
       END_STATE();
     case 16:
       if (lookahead == '"') ADVANCE(10);
-      if (lookahead != 0) ADVANCE(288);
+      if (lookahead != 0) ADVANCE(293);
       END_STATE();
     case 17:
       if (lookahead == '"') ADVANCE(8);
-      if (lookahead == '*') ADVANCE(285);
-      if (lookahead != 0) ADVANCE(286);
+      if (lookahead == '*') ADVANCE(290);
+      if (lookahead != 0) ADVANCE(291);
       END_STATE();
     case 18:
       if (lookahead == '$') ADVANCE(101);
       if (lookahead == '-') ADVANCE(27);
       if (lookahead == '/') ADVANCE(22);
       if (lookahead == ';') ADVANCE(125);
-      if (lookahead == '{') ADVANCE(300);
+      if (lookahead == '{') ADVANCE(305);
       if (lookahead == '}') ADVANCE(119);
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(18);
@@ -7827,8 +7862,8 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead == '>' ||
           lookahead == '@' ||
           lookahead == '[' ||
-          lookahead == '~') ADVANCE(255);
-      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(329);
+          lookahead == '~') ADVANCE(260);
+      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(334);
       END_STATE();
     case 19:
       if (lookahead == '%') ADVANCE(124);
@@ -7840,15 +7875,15 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(20);
       END_STATE();
     case 21:
-      if (lookahead == '&') ADVANCE(260);
+      if (lookahead == '&') ADVANCE(265);
       END_STATE();
     case 22:
       if (lookahead == '*') ADVANCE(25);
-      if (lookahead == '/') ADVANCE(868);
+      if (lookahead == '/') ADVANCE(896);
       END_STATE();
     case 23:
       if (lookahead == '*') ADVANCE(25);
-      if (lookahead == '/') ADVANCE(868);
+      if (lookahead == '/') ADVANCE(896);
       if (lookahead == '[') ADVANCE(41);
       if (lookahead == '\\') ADVANCE(103);
       if (lookahead != 0 &&
@@ -7856,7 +7891,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 24:
       if (lookahead == '*') ADVANCE(24);
-      if (lookahead == '/') ADVANCE(865);
+      if (lookahead == '/') ADVANCE(893);
       if (lookahead != 0) ADVANCE(25);
       END_STATE();
     case 25:
@@ -7871,7 +7906,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
     case 27:
       if (lookahead == '-') ADVANCE(102);
       if (('A' <= lookahead && lookahead <= 'Z') ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(256);
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(261);
       END_STATE();
     case 28:
       if (lookahead == '-') ADVANCE(94);
@@ -7880,17 +7915,17 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == '-') ADVANCE(87);
       END_STATE();
     case 30:
-      if (lookahead == '.') ADVANCE(274);
-      if (lookahead == '?') ADVANCE(258);
+      if (lookahead == '.') ADVANCE(279);
+      if (lookahead == '?') ADVANCE(263);
       END_STATE();
     case 31:
       if (lookahead == '.') ADVANCE(32);
       END_STATE();
     case 32:
-      if (lookahead == '.') ADVANCE(325);
+      if (lookahead == '.') ADVANCE(330);
       END_STATE();
     case 33:
-      if (lookahead == '/') ADVANCE(324);
+      if (lookahead == '/') ADVANCE(329);
       if (lookahead == '[') ADVANCE(41);
       if (lookahead == '\\') ADVANCE(103);
       if (lookahead != 0 &&
@@ -7916,11 +7951,11 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == ':') ADVANCE(91);
       END_STATE();
     case 38:
-      if (lookahead == '=') ADVANCE(262);
+      if (lookahead == '=') ADVANCE(267);
       END_STATE();
     case 39:
-      if (lookahead == '=') ADVANCE(261);
-      if (lookahead == '>') ADVANCE(275);
+      if (lookahead == '=') ADVANCE(266);
+      if (lookahead == '>') ADVANCE(280);
       END_STATE();
     case 40:
       if (lookahead == '\\') ADVANCE(12);
@@ -7952,16 +7987,16 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == 'm') ADVANCE(51);
       if (lookahead == 's') ADVANCE(47);
       if (lookahead == 'w') ADVANCE(50);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(321);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(326);
       END_STATE();
     case 46:
-      if (lookahead == 'd') ADVANCE(315);
+      if (lookahead == 'd') ADVANCE(320);
       END_STATE();
     case 47:
       if (lookahead == 'e') ADVANCE(43);
       END_STATE();
     case 48:
-      if (lookahead == 'e') ADVANCE(315);
+      if (lookahead == 'e') ADVANCE(320);
       END_STATE();
     case 49:
       if (lookahead == 'e') ADVANCE(52);
@@ -7971,10 +8006,10 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 51:
       if (lookahead == 'i') ADVANCE(55);
-      if (lookahead == 's') ADVANCE(314);
+      if (lookahead == 's') ADVANCE(319);
       END_STATE();
     case 52:
-      if (lookahead == 'k') ADVANCE(315);
+      if (lookahead == 'k') ADVANCE(320);
       END_STATE();
     case 53:
       if (lookahead == 'm') ADVANCE(123);
@@ -7998,7 +8033,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == 'o') ADVANCE(54);
       END_STATE();
     case 60:
-      if (lookahead == 'r') ADVANCE(315);
+      if (lookahead == 'r') ADVANCE(320);
       END_STATE();
     case 61:
       if (lookahead == 'r') ADVANCE(58);
@@ -8013,10 +8048,10 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (lookahead == 'u') ADVANCE(62);
       END_STATE();
     case 65:
-      if (lookahead == 'y') ADVANCE(315);
+      if (lookahead == 'y') ADVANCE(320);
       END_STATE();
     case 66:
-      if (lookahead == '|') ADVANCE(259);
+      if (lookahead == '|') ADVANCE(264);
       END_STATE();
     case 67:
       if (('\t' <= lookahead && lookahead <= '\r') ||
@@ -8024,52 +8059,52 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(19);
       END_STATE();
     case 68:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(312);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(317);
       END_STATE();
     case 69:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(312);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(317);
       if (('A' <= lookahead && lookahead <= 'Z') ||
           lookahead == '_' ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(276);
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(281);
       END_STATE();
     case 70:
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(35);
       END_STATE();
     case 71:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(313);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(318);
       END_STATE();
     case 72:
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(28);
       END_STATE();
     case 73:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(307);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(312);
       END_STATE();
     case 74:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(305);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(310);
       END_STATE();
     case 75:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(311);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(316);
       END_STATE();
     case 76:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(309);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(314);
       END_STATE();
     case 77:
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(36);
       END_STATE();
     case 78:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(308);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(313);
       END_STATE();
     case 79:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(304);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(309);
       END_STATE();
     case 80:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(306);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(311);
       END_STATE();
     case 81:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(310);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(315);
       END_STATE();
     case 82:
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(323);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(328);
       END_STATE();
     case 83:
       if (('0' <= lookahead && lookahead <= '9')) ADVANCE(20);
@@ -8113,12 +8148,12 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
     case 96:
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'F') ||
-          ('a' <= lookahead && lookahead <= 'f')) ADVANCE(317);
+          ('a' <= lookahead && lookahead <= 'f')) ADVANCE(322);
       END_STATE();
     case 97:
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'F') ||
-          ('a' <= lookahead && lookahead <= 'f')) ADVANCE(316);
+          ('a' <= lookahead && lookahead <= 'f')) ADVANCE(321);
       END_STATE();
     case 98:
       if (('0' <= lookahead && lookahead <= '9') ||
@@ -8133,17 +8168,17 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
     case 100:
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'F') ||
-          ('a' <= lookahead && lookahead <= 'f')) ADVANCE(319);
+          ('a' <= lookahead && lookahead <= 'f')) ADVANCE(324);
       END_STATE();
     case 101:
       if (('A' <= lookahead && lookahead <= 'Z') ||
           lookahead == '_' ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(276);
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(281);
       END_STATE();
     case 102:
       if (('A' <= lookahead && lookahead <= 'Z') ||
           lookahead == '_' ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(257);
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(262);
       END_STATE();
     case 103:
       if (lookahead != 0 &&
@@ -8151,65 +8186,65 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 104:
       if (lookahead != 0 &&
-          lookahead != '\n') ADVANCE(298);
+          lookahead != '\n') ADVANCE(303);
       END_STATE();
     case 105:
       if (lookahead != 0 &&
-          lookahead != '\n') ADVANCE(290);
+          lookahead != '\n') ADVANCE(295);
       END_STATE();
     case 106:
       if (lookahead != 0 &&
-          lookahead != '"') ADVANCE(288);
+          lookahead != '"') ADVANCE(293);
       END_STATE();
     case 107:
       if (eof) ADVANCE(110);
       ADVANCE_MAP(
-        '!', 273,
-        '"', 278,
+        '!', 278,
+        '"', 283,
         '#', 99,
         '$', 69,
-        '%', 271,
+        '%', 276,
         '&', 21,
         '(', 115,
         ')', 117,
-        '*', 268,
-        '+', 267,
+        '*', 273,
+        '+', 272,
         ',', 116,
         '-', 121,
         '.', 137,
-        '/', 270,
+        '/', 275,
         ':', 111,
         ';', 125,
-        '<', 264,
+        '<', 269,
         '=', 114,
         '>', 122,
         '?', 135,
         '@', 84,
-        'A', 414,
-        'B', 350,
-        'C', 352,
-        'D', 362,
-        'E', 599,
-        'F', 554,
-        'G', 747,
-        'H', 489,
-        'I', 418,
-        'K', 404,
-        'L', 555,
-        'M', 353,
-        'N', 354,
-        'O', 633,
-        'P', 356,
-        'Q', 729,
-        'R', 399,
-        'S', 461,
-        'T', 357,
-        'U', 649,
-        'V', 556,
-        'W', 367,
+        'A', 423,
+        'B', 358,
+        'C', 360,
+        'D', 371,
+        'E', 616,
+        'F', 568,
+        'G', 771,
+        'H', 499,
+        'I', 427,
+        'K', 413,
+        'L', 569,
+        'M', 361,
+        'N', 362,
+        'O', 650,
+        'P', 364,
+        'Q', 752,
+        'R', 365,
+        'S', 471,
+        'T', 366,
+        'U', 666,
+        'V', 570,
+        'W', 376,
         '[', 132,
         ']', 133,
-        't', 328,
+        't', 333,
         '{', 118,
         '|', 66,
         '}', 119,
@@ -8219,56 +8254,56 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       );
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(107);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(320);
-      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(861);
-      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(329);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(325);
+      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(889);
+      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(334);
       END_STATE();
     case 108:
       if (eof) ADVANCE(110);
       ADVANCE_MAP(
-        '!', 273,
-        '"', 278,
+        '!', 278,
+        '"', 283,
         '#', 99,
         '$', 69,
-        '%', 271,
+        '%', 276,
         '&', 21,
         '(', 115,
         ')', 117,
-        '*', 268,
-        '+', 267,
+        '*', 273,
+        '+', 272,
         ',', 116,
         '-', 121,
         '.', 137,
-        '/', 270,
+        '/', 275,
         ':', 111,
         ';', 125,
-        '<', 264,
+        '<', 269,
         '=', 114,
         '>', 122,
         '?', 30,
         '@', 84,
-        'A', 414,
-        'B', 350,
-        'C', 352,
-        'D', 362,
-        'E', 599,
-        'F', 554,
-        'G', 747,
-        'H', 489,
-        'I', 418,
-        'K', 404,
-        'L', 555,
-        'M', 353,
-        'N', 354,
-        'O', 633,
-        'P', 356,
-        'Q', 729,
-        'R', 399,
-        'S', 461,
-        'T', 357,
-        'U', 649,
-        'V', 556,
-        'W', 367,
+        'A', 423,
+        'B', 358,
+        'C', 360,
+        'D', 371,
+        'E', 616,
+        'F', 568,
+        'G', 771,
+        'H', 499,
+        'I', 427,
+        'K', 413,
+        'L', 569,
+        'M', 361,
+        'N', 362,
+        'O', 650,
+        'P', 364,
+        'Q', 752,
+        'R', 365,
+        'S', 471,
+        'T', 366,
+        'U', 666,
+        'V', 570,
+        'W', 376,
         '[', 132,
         '\\', 11,
         '{', 118,
@@ -8280,63 +8315,63 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       );
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(108);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(320);
-      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(861);
-      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(329);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(325);
+      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(889);
+      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(334);
       END_STATE();
     case 109:
       if (eof) ADVANCE(110);
       ADVANCE_MAP(
         '!', 38,
-        '"', 278,
-        '%', 271,
+        '"', 283,
+        '%', 276,
         '&', 21,
         '(', 115,
         ')', 117,
-        '*', 268,
-        '+', 267,
+        '*', 273,
+        '+', 272,
         ',', 116,
         '-', 121,
         '.', 137,
-        '/', 269,
+        '/', 274,
         ':', 111,
-        '<', 264,
+        '<', 269,
         '=', 39,
         '>', 122,
         '?', 30,
-        'A', 415,
-        'B', 351,
-        'C', 352,
-        'D', 362,
-        'E', 599,
-        'F', 554,
-        'G', 747,
-        'H', 489,
-        'I', 418,
-        'K', 404,
-        'L', 555,
-        'M', 385,
-        'N', 355,
-        'O', 633,
-        'P', 356,
-        'Q', 729,
-        'R', 399,
-        'S', 462,
-        'T', 357,
-        'U', 649,
-        'V', 556,
-        'W', 367,
+        'A', 424,
+        'B', 359,
+        'C', 360,
+        'D', 371,
+        'E', 616,
+        'F', 568,
+        'G', 771,
+        'H', 499,
+        'I', 427,
+        'K', 413,
+        'L', 569,
+        'M', 395,
+        'N', 363,
+        'O', 650,
+        'P', 364,
+        'Q', 752,
+        'R', 365,
+        'S', 472,
+        'T', 366,
+        'U', 666,
+        'V', 570,
+        'W', 376,
         '[', 132,
         ']', 133,
         '{', 118,
         '|', 66,
-        '}', 303,
+        '}', 308,
       );
       if (('\t' <= lookahead && lookahead <= '\r') ||
           lookahead == ' ') SKIP(109);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(322);
-      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(861);
-      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(329);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(327);
+      if (set_contains(sym_component_identifier_character_set_1, 611, lookahead)) ADVANCE(889);
+      if (set_contains(sym_identifier_character_set_1, 957, lookahead)) ADVANCE(334);
       END_STATE();
     case 110:
       ACCEPT_TOKEN(ts_builtin_sym_end);
@@ -8349,12 +8384,12 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 113:
       ACCEPT_TOKEN(anon_sym_EQ);
-      if (lookahead == '=') ADVANCE(261);
+      if (lookahead == '=') ADVANCE(266);
       END_STATE();
     case 114:
       ACCEPT_TOKEN(anon_sym_EQ);
-      if (lookahead == '=') ADVANCE(261);
-      if (lookahead == '>') ADVANCE(275);
+      if (lookahead == '=') ADVANCE(266);
+      if (lookahead == '>') ADVANCE(280);
       END_STATE();
     case 115:
       ACCEPT_TOKEN(anon_sym_LPAREN);
@@ -8379,7 +8414,7 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 122:
       ACCEPT_TOKEN(anon_sym_GT);
-      if (lookahead == '=') ADVANCE(266);
+      if (lookahead == '=') ADVANCE(271);
       END_STATE();
     case 123:
       ACCEPT_TOKEN(sym_keyframe_selector);
@@ -8395,28 +8430,28 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 126:
       ACCEPT_TOKEN(anon_sym_String);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 127:
       ACCEPT_TOKEN(anon_sym_Number);
-      if (lookahead == 'I') ADVANCE(660);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'I') ADVANCE(686);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 128:
       ACCEPT_TOKEN(anon_sym_Number);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 129:
       ACCEPT_TOKEN(anon_sym_Bool);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 130:
       ACCEPT_TOKEN(anon_sym_Map);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 131:
       ACCEPT_TOKEN(anon_sym_Any);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 132:
       ACCEPT_TOKEN(anon_sym_LBRACK);
@@ -8429,18 +8464,18 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 135:
       ACCEPT_TOKEN(anon_sym_QMARK);
-      if (lookahead == '.') ADVANCE(274);
+      if (lookahead == '.') ADVANCE(279);
       END_STATE();
     case 136:
       ACCEPT_TOKEN(anon_sym_t_LPAREN);
       END_STATE();
     case 137:
       ACCEPT_TOKEN(anon_sym_DOT);
-      if (lookahead == '.') ADVANCE(326);
+      if (lookahead == '.') ADVANCE(331);
       END_STATE();
     case 138:
       ACCEPT_TOKEN(anon_sym_DOT);
-      if (lookahead == '.') ADVANCE(326);
+      if (lookahead == '.') ADVANCE(331);
       if (lookahead == '_' ||
           ('a' <= lookahead && lookahead <= 'z')) ADVANCE(140);
       END_STATE();
@@ -8457,706 +8492,685 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 141:
       ACCEPT_TOKEN(anon_sym_Container);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 142:
       ACCEPT_TOKEN(anon_sym_Row);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 143:
       ACCEPT_TOKEN(anon_sym_Column);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 144:
       ACCEPT_TOKEN(anon_sym_Grid);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 145:
       ACCEPT_TOKEN(anon_sym_Stack);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 146:
       ACCEPT_TOKEN(anon_sym_Spacer);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 147:
       ACCEPT_TOKEN(anon_sym_Divider);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 148:
       ACCEPT_TOKEN(anon_sym_Splitter);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 149:
       ACCEPT_TOKEN(anon_sym_VirtualList);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 150:
       ACCEPT_TOKEN(anon_sym_Navbar);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 151:
       ACCEPT_TOKEN(anon_sym_Sidebar);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 152:
       ACCEPT_TOKEN(anon_sym_Breadcrumb);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 153:
       ACCEPT_TOKEN(anon_sym_Link);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 154:
       ACCEPT_TOKEN(anon_sym_Menu);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 155:
       ACCEPT_TOKEN(anon_sym_Tabs);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 156:
       ACCEPT_TOKEN(anon_sym_TabPage);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 157:
       ACCEPT_TOKEN(anon_sym_Router);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 158:
       ACCEPT_TOKEN(anon_sym_Route);
       if (lookahead == 'r') ADVANCE(157);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 159:
       ACCEPT_TOKEN(anon_sym_Card);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 160:
       ACCEPT_TOKEN(anon_sym_Table);
-      if (lookahead == 'O') ADVANCE(533);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'O') ADVANCE(545);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 161:
       ACCEPT_TOKEN(anon_sym_Thead);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 162:
       ACCEPT_TOKEN(anon_sym_Tbody);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 163:
       ACCEPT_TOKEN(anon_sym_Trow);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 164:
       ACCEPT_TOKEN(anon_sym_Tcell);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 165:
       ACCEPT_TOKEN(anon_sym_List);
-      if (lookahead == 'b') ADVANCE(673);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'b') ADVANCE(693);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 166:
       ACCEPT_TOKEN(anon_sym_Badge);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 167:
       ACCEPT_TOKEN(anon_sym_Avatar);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 168:
       ACCEPT_TOKEN(anon_sym_Tooltip);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 169:
       ACCEPT_TOKEN(anon_sym_Tag);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'I') ADVANCE(678);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 170:
       ACCEPT_TOKEN(anon_sym_Input);
-      if (lookahead == 'G') ADVANCE(758);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'G') ADVANCE(781);
+      if (lookahead == 'O') ADVANCE(354);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 171:
       ACCEPT_TOKEN(anon_sym_Select);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 172:
       ACCEPT_TOKEN(anon_sym_Option);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 173:
       ACCEPT_TOKEN(anon_sym_Checkbox);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'G') ADVANCE(788);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 174:
       ACCEPT_TOKEN(anon_sym_Radio);
-      if (lookahead == 'G') ADVANCE(760);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'G') ADVANCE(784);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 175:
       ACCEPT_TOKEN(anon_sym_Switch);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 176:
       ACCEPT_TOKEN(anon_sym_Slider);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 177:
       ACCEPT_TOKEN(anon_sym_DatePicker);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 178:
       ACCEPT_TOKEN(anon_sym_FileUpload);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 179:
       ACCEPT_TOKEN(anon_sym_Form);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 180:
       ACCEPT_TOKEN(anon_sym_Textarea);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 181:
       ACCEPT_TOKEN(anon_sym_Alert);
-      if (lookahead == 'D') ADVANCE(567);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'D') ADVANCE(582);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 182:
       ACCEPT_TOKEN(anon_sym_Toast);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 183:
       ACCEPT_TOKEN(anon_sym_Modal);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 184:
       ACCEPT_TOKEN(anon_sym_Dialog);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 185:
       ACCEPT_TOKEN(anon_sym_AlertDialog);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 186:
       ACCEPT_TOKEN(anon_sym_Sheet);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 187:
       ACCEPT_TOKEN(anon_sym_Popover);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 188:
       ACCEPT_TOKEN(anon_sym_Spinner);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 189:
       ACCEPT_TOKEN(anon_sym_Progress);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 190:
       ACCEPT_TOKEN(anon_sym_Skeleton);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 191:
       ACCEPT_TOKEN(anon_sym_Button);
-      if (lookahead == 'G') ADVANCE(762);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'G') ADVANCE(786);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 192:
       ACCEPT_TOKEN(anon_sym_IconButton);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 193:
       ACCEPT_TOKEN(anon_sym_ButtonGroup);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 194:
       ACCEPT_TOKEN(anon_sym_Dropdown);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 195:
       ACCEPT_TOKEN(anon_sym_Image);
-      if (lookahead == 'S') ADVANCE(618);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'S') ADVANCE(635);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 196:
       ACCEPT_TOKEN(anon_sym_Video);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 197:
       ACCEPT_TOKEN(anon_sym_Audio);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 198:
       ACCEPT_TOKEN(anon_sym_Frame);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 199:
       ACCEPT_TOKEN(anon_sym_Icon);
-      if (lookahead == 'B') ADVANCE(844);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'B') ADVANCE(872);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 200:
       ACCEPT_TOKEN(anon_sym_Carousel);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 201:
       ACCEPT_TOKEN(anon_sym_Text);
-      if (lookahead == 'a') ADVANCE(761);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(785);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 202:
       ACCEPT_TOKEN(anon_sym_Heading);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 203:
       ACCEPT_TOKEN(anon_sym_Code);
-      if (lookahead == 'B') ADVANCE(616);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'B') ADVANCE(633);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 204:
       ACCEPT_TOKEN(anon_sym_Blockquote);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 205:
       ACCEPT_TOKEN(anon_sym_Markdown);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 206:
       ACCEPT_TOKEN(anon_sym_Callout);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 207:
       ACCEPT_TOKEN(anon_sym_Kbd);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 208:
       ACCEPT_TOKEN(anon_sym_EmptyState);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 209:
       ACCEPT_TOKEN(anon_sym_Stat);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 210:
       ACCEPT_TOKEN(anon_sym_CodeBlock);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 211:
       ACCEPT_TOKEN(anon_sym_Chip);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 212:
       ACCEPT_TOKEN(anon_sym_VisuallyHidden);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 213:
       ACCEPT_TOKEN(anon_sym_CopyButton);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 214:
       ACCEPT_TOKEN(anon_sym_ThemeToggle);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 215:
       ACCEPT_TOKEN(anon_sym_LocaleSwitch);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 216:
       ACCEPT_TOKEN(anon_sym_Accordion);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 217:
       ACCEPT_TOKEN(anon_sym_Field);
-      if (lookahead == 's') ADVANCE(521);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 's') ADVANCE(531);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 218:
       ACCEPT_TOKEN(anon_sym_Fieldset);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 219:
       ACCEPT_TOKEN(anon_sym_InputGroup);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 220:
       ACCEPT_TOKEN(anon_sym_OnThisPage);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 221:
       ACCEPT_TOKEN(anon_sym_Toggle);
-      if (lookahead == 'G') ADVANCE(763);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'G') ADVANCE(787);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 222:
       ACCEPT_TOKEN(anon_sym_ToggleGroup);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 223:
       ACCEPT_TOKEN(anon_sym_RadioGroup);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 224:
       ACCEPT_TOKEN(anon_sym_Pagination);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 225:
       ACCEPT_TOKEN(anon_sym_Stepper);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 226:
       ACCEPT_TOKEN(anon_sym_NumberInput);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 227:
       ACCEPT_TOKEN(anon_sym_Calendar);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 228:
       ACCEPT_TOKEN(anon_sym_Listbox);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 229:
       ACCEPT_TOKEN(anon_sym_Tree);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 230:
       ACCEPT_TOKEN(anon_sym_DataTable);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 231:
       ACCEPT_TOKEN(anon_sym_Combobox);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 232:
       ACCEPT_TOKEN(anon_sym_CommandPalette);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 233:
       ACCEPT_TOKEN(anon_sym_AppShell);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 234:
-      ACCEPT_TOKEN(anon_sym_Unsafe);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_CheckboxGroup);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 235:
-      ACCEPT_TOKEN(anon_sym_Host);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_InputOTP);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 236:
-      ACCEPT_TOKEN(anon_sym_Element);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_TagInput);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 237:
-      ACCEPT_TOKEN(anon_sym_Portal);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_Rating);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 238:
-      ACCEPT_TOKEN(anon_sym_Document);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_DateRangePicker);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 239:
-      ACCEPT_TOKEN(anon_sym_Section);
-      if (lookahead == 'S') ADVANCE(620);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_Unsafe);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 240:
-      ACCEPT_TOKEN(anon_sym_Paragraph);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_Host);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 241:
-      ACCEPT_TOKEN(anon_sym_PageBreak);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_Element);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 242:
-      ACCEPT_TOKEN(anon_sym_Header);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_Portal);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 243:
-      ACCEPT_TOKEN(anon_sym_Footer);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_Document);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 244:
-      ACCEPT_TOKEN(anon_sym_Background);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_Section);
+      if (lookahead == 'S') ADVANCE(637);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 245:
-      ACCEPT_TOKEN(anon_sym_Watermark);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_Paragraph);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 246:
-      ACCEPT_TOKEN(anon_sym_TableOfContents);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_PageBreak);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 247:
-      ACCEPT_TOKEN(anon_sym_Chart);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_Header);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 248:
-      ACCEPT_TOKEN(anon_sym_QrCode);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_Footer);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 249:
-      ACCEPT_TOKEN(anon_sym_Presentation);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_Background);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 250:
-      ACCEPT_TOKEN(anon_sym_Slide);
-      if (lookahead == 'r') ADVANCE(176);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_Watermark);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 251:
-      ACCEPT_TOKEN(anon_sym_TitleSlide);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_TableOfContents);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 252:
-      ACCEPT_TOKEN(anon_sym_SectionSlide);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_Chart);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 253:
-      ACCEPT_TOKEN(anon_sym_TwoColumn);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_QrCode);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 254:
-      ACCEPT_TOKEN(anon_sym_ImageSlide);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_Presentation);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 255:
+      ACCEPT_TOKEN(anon_sym_Slide);
+      if (lookahead == 'r') ADVANCE(176);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 256:
+      ACCEPT_TOKEN(anon_sym_TitleSlide);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 257:
+      ACCEPT_TOKEN(anon_sym_SectionSlide);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 258:
+      ACCEPT_TOKEN(anon_sym_TwoColumn);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 259:
+      ACCEPT_TOKEN(anon_sym_ImageSlide);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 260:
       ACCEPT_TOKEN(sym_selector);
       if (lookahead != 0 &&
           lookahead != '\n' &&
           lookahead != '{' &&
-          lookahead != '}') ADVANCE(255);
+          lookahead != '}') ADVANCE(260);
       END_STATE();
-    case 256:
+    case 261:
       ACCEPT_TOKEN(sym_vendor_property_name);
       if (lookahead == '-' ||
           ('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'Z') ||
           lookahead == '_' ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(256);
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(261);
       END_STATE();
-    case 257:
+    case 262:
       ACCEPT_TOKEN(sym_custom_property_name);
       if (lookahead == '-' ||
           ('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'Z') ||
           lookahead == '_' ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(257);
-      END_STATE();
-    case 258:
-      ACCEPT_TOKEN(anon_sym_QMARK_QMARK);
-      END_STATE();
-    case 259:
-      ACCEPT_TOKEN(anon_sym_PIPE_PIPE);
-      END_STATE();
-    case 260:
-      ACCEPT_TOKEN(anon_sym_AMP_AMP);
-      END_STATE();
-    case 261:
-      ACCEPT_TOKEN(anon_sym_EQ_EQ);
-      END_STATE();
-    case 262:
-      ACCEPT_TOKEN(anon_sym_BANG_EQ);
-      if (lookahead == '=') ADVANCE(263);
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(262);
       END_STATE();
     case 263:
-      ACCEPT_TOKEN(anon_sym_BANG_EQ_EQ);
+      ACCEPT_TOKEN(anon_sym_QMARK_QMARK);
       END_STATE();
     case 264:
-      ACCEPT_TOKEN(anon_sym_LT);
-      if (lookahead == '=') ADVANCE(265);
+      ACCEPT_TOKEN(anon_sym_PIPE_PIPE);
       END_STATE();
     case 265:
-      ACCEPT_TOKEN(anon_sym_LT_EQ);
+      ACCEPT_TOKEN(anon_sym_AMP_AMP);
       END_STATE();
     case 266:
-      ACCEPT_TOKEN(anon_sym_GT_EQ);
+      ACCEPT_TOKEN(anon_sym_EQ_EQ);
       END_STATE();
     case 267:
-      ACCEPT_TOKEN(anon_sym_PLUS);
+      ACCEPT_TOKEN(anon_sym_BANG_EQ);
+      if (lookahead == '=') ADVANCE(268);
       END_STATE();
     case 268:
-      ACCEPT_TOKEN(anon_sym_STAR);
+      ACCEPT_TOKEN(anon_sym_BANG_EQ_EQ);
       END_STATE();
     case 269:
-      ACCEPT_TOKEN(anon_sym_SLASH);
-      if (lookahead == '*') ADVANCE(25);
-      if (lookahead == '/') ADVANCE(868);
+      ACCEPT_TOKEN(anon_sym_LT);
+      if (lookahead == '=') ADVANCE(270);
       END_STATE();
     case 270:
+      ACCEPT_TOKEN(anon_sym_LT_EQ);
+      END_STATE();
+    case 271:
+      ACCEPT_TOKEN(anon_sym_GT_EQ);
+      END_STATE();
+    case 272:
+      ACCEPT_TOKEN(anon_sym_PLUS);
+      END_STATE();
+    case 273:
+      ACCEPT_TOKEN(anon_sym_STAR);
+      END_STATE();
+    case 274:
       ACCEPT_TOKEN(anon_sym_SLASH);
       if (lookahead == '*') ADVANCE(25);
-      if (lookahead == '/') ADVANCE(868);
+      if (lookahead == '/') ADVANCE(896);
+      END_STATE();
+    case 275:
+      ACCEPT_TOKEN(anon_sym_SLASH);
+      if (lookahead == '*') ADVANCE(25);
+      if (lookahead == '/') ADVANCE(896);
       if (lookahead == '[') ADVANCE(41);
       if (lookahead == '\\') ADVANCE(103);
       if (lookahead != 0 &&
           lookahead != '\n') ADVANCE(33);
       END_STATE();
-    case 271:
+    case 276:
       ACCEPT_TOKEN(anon_sym_PERCENT);
       END_STATE();
-    case 272:
+    case 277:
       ACCEPT_TOKEN(anon_sym_BANG);
       END_STATE();
-    case 273:
+    case 278:
       ACCEPT_TOKEN(anon_sym_BANG);
-      if (lookahead == '=') ADVANCE(262);
+      if (lookahead == '=') ADVANCE(267);
       END_STATE();
-    case 274:
+    case 279:
       ACCEPT_TOKEN(anon_sym_QMARK_DOT);
       END_STATE();
-    case 275:
+    case 280:
       ACCEPT_TOKEN(anon_sym_EQ_GT);
       END_STATE();
-    case 276:
+    case 281:
       ACCEPT_TOKEN(sym_design_token);
       if (lookahead == '-' ||
           ('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'Z') ||
           lookahead == '_' ||
-          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(276);
+          ('a' <= lookahead && lookahead <= 'z')) ADVANCE(281);
       END_STATE();
-    case 277:
+    case 282:
       ACCEPT_TOKEN(anon_sym_DQUOTE);
       END_STATE();
-    case 278:
+    case 283:
       ACCEPT_TOKEN(anon_sym_DQUOTE);
       if (lookahead == '"') ADVANCE(9);
       END_STATE();
-    case 279:
+    case 284:
       ACCEPT_TOKEN(aux_sym__quoted_string_token1);
       END_STATE();
-    case 280:
-      ACCEPT_TOKEN(anon_sym_DQUOTE_DQUOTE_DQUOTE);
-      END_STATE();
-    case 281:
-      ACCEPT_TOKEN(aux_sym_block_string_content_token1);
-      if (lookahead == '\n') ADVANCE(288);
-      if (lookahead == '"') ADVANCE(867);
-      if (lookahead == '/') ADVANCE(283);
-      if (lookahead != 0 &&
-          lookahead != '\\' &&
-          lookahead != '{') ADVANCE(282);
-      END_STATE();
-    case 282:
-      ACCEPT_TOKEN(aux_sym_block_string_content_token1);
-      if (lookahead == '\n') ADVANCE(288);
-      if (lookahead == '"') ADVANCE(867);
-      if (lookahead != 0 &&
-          lookahead != '\\' &&
-          lookahead != '{') ADVANCE(282);
-      END_STATE();
-    case 283:
-      ACCEPT_TOKEN(aux_sym_block_string_content_token1);
-      if (lookahead == '\n') ADVANCE(288);
-      if (lookahead == '"') ADVANCE(863);
-      if (lookahead != 0 &&
-          lookahead != '\\' &&
-          lookahead != '{') ADVANCE(283);
-      END_STATE();
-    case 284:
-      ACCEPT_TOKEN(aux_sym_block_string_content_token1);
-      if (lookahead == '"') ADVANCE(16);
-      if (lookahead == '/') ADVANCE(287);
-      if (('\t' <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(284);
-      if (lookahead != 0 &&
-          lookahead != '\\' &&
-          lookahead != '{') ADVANCE(288);
-      END_STATE();
     case 285:
-      ACCEPT_TOKEN(aux_sym_block_string_content_token1);
-      if (lookahead == '"') ADVANCE(17);
-      if (lookahead == '*') ADVANCE(285);
-      if (lookahead == '/') ADVANCE(288);
-      if (lookahead != 0 &&
-          lookahead != '\\' &&
-          lookahead != '{') ADVANCE(286);
+      ACCEPT_TOKEN(anon_sym_DQUOTE_DQUOTE_DQUOTE);
       END_STATE();
     case 286:
       ACCEPT_TOKEN(aux_sym_block_string_content_token1);
-      if (lookahead == '"') ADVANCE(17);
-      if (lookahead == '*') ADVANCE(285);
+      if (lookahead == '\n') ADVANCE(293);
+      if (lookahead == '"') ADVANCE(895);
+      if (lookahead == '/') ADVANCE(288);
       if (lookahead != 0 &&
           lookahead != '\\' &&
-          lookahead != '{') ADVANCE(286);
+          lookahead != '{') ADVANCE(287);
       END_STATE();
     case 287:
       ACCEPT_TOKEN(aux_sym_block_string_content_token1);
-      if (lookahead == '"') ADVANCE(15);
-      if (lookahead == '*') ADVANCE(286);
-      if (lookahead == '/') ADVANCE(281);
+      if (lookahead == '\n') ADVANCE(293);
+      if (lookahead == '"') ADVANCE(895);
       if (lookahead != 0 &&
           lookahead != '\\' &&
-          lookahead != '{') ADVANCE(288);
+          lookahead != '{') ADVANCE(287);
       END_STATE();
     case 288:
       ACCEPT_TOKEN(aux_sym_block_string_content_token1);
-      if (lookahead == '"') ADVANCE(15);
+      if (lookahead == '\n') ADVANCE(293);
+      if (lookahead == '"') ADVANCE(891);
       if (lookahead != 0 &&
           lookahead != '\\' &&
           lookahead != '{') ADVANCE(288);
       END_STATE();
     case 289:
-      ACCEPT_TOKEN(aux_sym_block_string_content_token2);
+      ACCEPT_TOKEN(aux_sym_block_string_content_token1);
+      if (lookahead == '"') ADVANCE(16);
+      if (lookahead == '/') ADVANCE(292);
+      if (('\t' <= lookahead && lookahead <= '\r') ||
+          lookahead == ' ') ADVANCE(289);
+      if (lookahead != 0 &&
+          lookahead != '\\' &&
+          lookahead != '{') ADVANCE(293);
       END_STATE();
     case 290:
-      ACCEPT_TOKEN(aux_sym_block_string_content_token3);
+      ACCEPT_TOKEN(aux_sym_block_string_content_token1);
+      if (lookahead == '"') ADVANCE(17);
+      if (lookahead == '*') ADVANCE(290);
+      if (lookahead == '/') ADVANCE(293);
+      if (lookahead != 0 &&
+          lookahead != '\\' &&
+          lookahead != '{') ADVANCE(291);
       END_STATE();
     case 291:
-      ACCEPT_TOKEN(aux_sym_string_content_token1);
-      if (lookahead == '\n') ADVANCE(297);
-      if (lookahead == '/') ADVANCE(292);
+      ACCEPT_TOKEN(aux_sym_block_string_content_token1);
+      if (lookahead == '"') ADVANCE(17);
+      if (lookahead == '*') ADVANCE(290);
       if (lookahead != 0 &&
-          lookahead != '"' &&
           lookahead != '\\' &&
-          lookahead != '{') ADVANCE(292);
+          lookahead != '{') ADVANCE(291);
       END_STATE();
     case 292:
-      ACCEPT_TOKEN(aux_sym_string_content_token1);
-      if (lookahead == '\n') ADVANCE(297);
+      ACCEPT_TOKEN(aux_sym_block_string_content_token1);
+      if (lookahead == '"') ADVANCE(15);
+      if (lookahead == '*') ADVANCE(291);
+      if (lookahead == '/') ADVANCE(286);
       if (lookahead != 0 &&
-          lookahead != '"' &&
           lookahead != '\\' &&
-          lookahead != '{') ADVANCE(292);
+          lookahead != '{') ADVANCE(293);
       END_STATE();
     case 293:
-      ACCEPT_TOKEN(aux_sym_string_content_token1);
-      if (lookahead == '*') ADVANCE(295);
-      if (lookahead == '/') ADVANCE(291);
+      ACCEPT_TOKEN(aux_sym_block_string_content_token1);
+      if (lookahead == '"') ADVANCE(15);
       if (lookahead != 0 &&
-          lookahead != '"' &&
           lookahead != '\\' &&
-          lookahead != '{') ADVANCE(297);
+          lookahead != '{') ADVANCE(293);
       END_STATE();
     case 294:
-      ACCEPT_TOKEN(aux_sym_string_content_token1);
-      if (lookahead == '*') ADVANCE(294);
-      if (lookahead == '/') ADVANCE(297);
-      if (lookahead != 0 &&
-          lookahead != '"' &&
-          lookahead != '\\' &&
-          lookahead != '{') ADVANCE(295);
+      ACCEPT_TOKEN(aux_sym_block_string_content_token2);
       END_STATE();
     case 295:
-      ACCEPT_TOKEN(aux_sym_string_content_token1);
-      if (lookahead == '*') ADVANCE(294);
-      if (lookahead != 0 &&
-          lookahead != '"' &&
-          lookahead != '\\' &&
-          lookahead != '{') ADVANCE(295);
+      ACCEPT_TOKEN(aux_sym_block_string_content_token3);
       END_STATE();
     case 296:
       ACCEPT_TOKEN(aux_sym_string_content_token1);
-      if (lookahead == '/') ADVANCE(293);
-      if (('\t' <= lookahead && lookahead <= '\r') ||
-          lookahead == ' ') ADVANCE(296);
+      if (lookahead == '\n') ADVANCE(302);
+      if (lookahead == '/') ADVANCE(297);
       if (lookahead != 0 &&
           lookahead != '"' &&
           lookahead != '\\' &&
@@ -9164,31 +9178,75 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
       END_STATE();
     case 297:
       ACCEPT_TOKEN(aux_sym_string_content_token1);
+      if (lookahead == '\n') ADVANCE(302);
       if (lookahead != 0 &&
           lookahead != '"' &&
           lookahead != '\\' &&
           lookahead != '{') ADVANCE(297);
       END_STATE();
     case 298:
-      ACCEPT_TOKEN(sym_escape_sequence);
+      ACCEPT_TOKEN(aux_sym_string_content_token1);
+      if (lookahead == '*') ADVANCE(300);
+      if (lookahead == '/') ADVANCE(296);
+      if (lookahead != 0 &&
+          lookahead != '"' &&
+          lookahead != '\\' &&
+          lookahead != '{') ADVANCE(302);
       END_STATE();
     case 299:
-      ACCEPT_TOKEN(sym_escaped_string);
+      ACCEPT_TOKEN(aux_sym_string_content_token1);
+      if (lookahead == '*') ADVANCE(299);
+      if (lookahead == '/') ADVANCE(302);
+      if (lookahead != 0 &&
+          lookahead != '"' &&
+          lookahead != '\\' &&
+          lookahead != '{') ADVANCE(300);
       END_STATE();
     case 300:
-      ACCEPT_TOKEN(aux_sym_interpolation_token1);
+      ACCEPT_TOKEN(aux_sym_string_content_token1);
+      if (lookahead == '*') ADVANCE(299);
+      if (lookahead != 0 &&
+          lookahead != '"' &&
+          lookahead != '\\' &&
+          lookahead != '{') ADVANCE(300);
       END_STATE();
     case 301:
+      ACCEPT_TOKEN(aux_sym_string_content_token1);
+      if (lookahead == '/') ADVANCE(298);
+      if (('\t' <= lookahead && lookahead <= '\r') ||
+          lookahead == ' ') ADVANCE(301);
+      if (lookahead != 0 &&
+          lookahead != '"' &&
+          lookahead != '\\' &&
+          lookahead != '{') ADVANCE(302);
+      END_STATE();
+    case 302:
+      ACCEPT_TOKEN(aux_sym_string_content_token1);
+      if (lookahead != 0 &&
+          lookahead != '"' &&
+          lookahead != '\\' &&
+          lookahead != '{') ADVANCE(302);
+      END_STATE();
+    case 303:
+      ACCEPT_TOKEN(sym_escape_sequence);
+      END_STATE();
+    case 304:
+      ACCEPT_TOKEN(sym_escaped_string);
+      END_STATE();
+    case 305:
       ACCEPT_TOKEN(aux_sym_interpolation_token1);
-      if (lookahead == '"') ADVANCE(279);
+      END_STATE();
+    case 306:
+      ACCEPT_TOKEN(aux_sym_interpolation_token1);
+      if (lookahead == '"') ADVANCE(284);
       if (lookahead == '\\') ADVANCE(105);
       if (lookahead != 0 &&
           lookahead != '(' &&
           (lookahead < 'A' || '\\' < lookahead) &&
           lookahead != '_' &&
-          (lookahead < 'a' || '{' < lookahead)) ADVANCE(289);
+          (lookahead < 'a' || '{' < lookahead)) ADVANCE(294);
       END_STATE();
-    case 302:
+    case 307:
       ACCEPT_TOKEN(aux_sym_interpolation_token1);
       if (lookahead == '\\') ADVANCE(105);
       if (lookahead != 0 &&
@@ -9196,2936 +9254,3053 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
           lookahead != '(' &&
           (lookahead < 'A' || '\\' < lookahead) &&
           lookahead != '_' &&
-          (lookahead < 'a' || '{' < lookahead)) ADVANCE(289);
-      END_STATE();
-    case 303:
-      ACCEPT_TOKEN(aux_sym_interpolation_token2);
-      END_STATE();
-    case 304:
-      ACCEPT_TOKEN(sym_temporal);
-      END_STATE();
-    case 305:
-      ACCEPT_TOKEN(sym_temporal);
-      if (lookahead == '.') ADVANCE(75);
-      END_STATE();
-    case 306:
-      ACCEPT_TOKEN(sym_temporal);
-      if (lookahead == '.') ADVANCE(81);
-      if (lookahead == 'Z') ADVANCE(304);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(95);
-      END_STATE();
-    case 307:
-      ACCEPT_TOKEN(sym_temporal);
-      if (lookahead == ':') ADVANCE(86);
+          (lookahead < 'a' || '{' < lookahead)) ADVANCE(294);
       END_STATE();
     case 308:
-      ACCEPT_TOKEN(sym_temporal);
-      if (lookahead == ':') ADVANCE(90);
-      if (lookahead == 'Z') ADVANCE(304);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(95);
+      ACCEPT_TOKEN(aux_sym_interpolation_token2);
       END_STATE();
     case 309:
       ACCEPT_TOKEN(sym_temporal);
-      if (lookahead == 'T') ADVANCE(88);
       END_STATE();
     case 310:
       ACCEPT_TOKEN(sym_temporal);
-      if (lookahead == 'Z') ADVANCE(304);
-      if (lookahead == '+' ||
-          lookahead == '-') ADVANCE(95);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(310);
+      if (lookahead == '.') ADVANCE(75);
       END_STATE();
     case 311:
       ACCEPT_TOKEN(sym_temporal);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(311);
+      if (lookahead == '.') ADVANCE(81);
+      if (lookahead == 'Z') ADVANCE(309);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(95);
       END_STATE();
     case 312:
-      ACCEPT_TOKEN(sym_money);
-      if (lookahead == '.') ADVANCE(71);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(312);
+      ACCEPT_TOKEN(sym_temporal);
+      if (lookahead == ':') ADVANCE(86);
       END_STATE();
     case 313:
-      ACCEPT_TOKEN(sym_money);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(313);
+      ACCEPT_TOKEN(sym_temporal);
+      if (lookahead == ':') ADVANCE(90);
+      if (lookahead == 'Z') ADVANCE(309);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(95);
       END_STATE();
     case 314:
-      ACCEPT_TOKEN(sym_duration);
+      ACCEPT_TOKEN(sym_temporal);
+      if (lookahead == 'T') ADVANCE(88);
       END_STATE();
     case 315:
-      ACCEPT_TOKEN(sym_duration);
-      if (lookahead == 's') ADVANCE(314);
+      ACCEPT_TOKEN(sym_temporal);
+      if (lookahead == 'Z') ADVANCE(309);
+      if (lookahead == '+' ||
+          lookahead == '-') ADVANCE(95);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(315);
       END_STATE();
     case 316:
-      ACCEPT_TOKEN(sym_color);
+      ACCEPT_TOKEN(sym_temporal);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(316);
       END_STATE();
     case 317:
+      ACCEPT_TOKEN(sym_money);
+      if (lookahead == '.') ADVANCE(71);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(317);
+      END_STATE();
+    case 318:
+      ACCEPT_TOKEN(sym_money);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(318);
+      END_STATE();
+    case 319:
+      ACCEPT_TOKEN(sym_duration);
+      END_STATE();
+    case 320:
+      ACCEPT_TOKEN(sym_duration);
+      if (lookahead == 's') ADVANCE(319);
+      END_STATE();
+    case 321:
+      ACCEPT_TOKEN(sym_color);
+      END_STATE();
+    case 322:
       ACCEPT_TOKEN(sym_color);
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'F') ||
-          ('a' <= lookahead && lookahead <= 'f')) ADVANCE(318);
+          ('a' <= lookahead && lookahead <= 'f')) ADVANCE(323);
       END_STATE();
-    case 318:
+    case 323:
       ACCEPT_TOKEN(sym_color);
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'F') ||
           ('a' <= lookahead && lookahead <= 'f')) ADVANCE(100);
       END_STATE();
-    case 319:
+    case 324:
       ACCEPT_TOKEN(sym_color);
       if (('0' <= lookahead && lookahead <= '9') ||
           ('A' <= lookahead && lookahead <= 'F') ||
           ('a' <= lookahead && lookahead <= 'f')) ADVANCE(97);
       END_STATE();
-    case 320:
+    case 325:
       ACCEPT_TOKEN(sym_number);
       if (lookahead == '.') ADVANCE(45);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(320);
-      END_STATE();
-    case 321:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '.') ADVANCE(44);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(321);
-      END_STATE();
-    case 322:
-      ACCEPT_TOKEN(sym_number);
-      if (lookahead == '.') ADVANCE(82);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(322);
-      END_STATE();
-    case 323:
-      ACCEPT_TOKEN(sym_number);
-      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(323);
-      END_STATE();
-    case 324:
-      ACCEPT_TOKEN(sym_regex);
-      if (('a' <= lookahead && lookahead <= 'z')) ADVANCE(324);
-      END_STATE();
-    case 325:
-      ACCEPT_TOKEN(anon_sym_DOT_DOT_DOT);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(325);
       END_STATE();
     case 326:
-      ACCEPT_TOKEN(anon_sym_DOT_DOT);
-      if (lookahead == '=') ADVANCE(327);
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '.') ADVANCE(44);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(326);
       END_STATE();
     case 327:
-      ACCEPT_TOKEN(anon_sym_DOT_DOT_EQ);
+      ACCEPT_TOKEN(sym_number);
+      if (lookahead == '.') ADVANCE(82);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(327);
       END_STATE();
     case 328:
-      ACCEPT_TOKEN(sym_identifier);
-      if (lookahead == '(') ADVANCE(136);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(329);
+      ACCEPT_TOKEN(sym_number);
+      if (('0' <= lookahead && lookahead <= '9')) ADVANCE(328);
       END_STATE();
     case 329:
-      ACCEPT_TOKEN(sym_identifier);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(329);
+      ACCEPT_TOKEN(sym_regex);
+      if (('a' <= lookahead && lookahead <= 'z')) ADVANCE(329);
       END_STATE();
     case 330:
-      ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'B') ADVANCE(842);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_DOT_DOT_DOT);
       END_STATE();
     case 331:
-      ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'B') ADVANCE(759);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_DOT_DOT);
+      if (lookahead == '=') ADVANCE(332);
       END_STATE();
     case 332:
-      ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'C') ADVANCE(704);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(anon_sym_DOT_DOT_EQ);
       END_STATE();
     case 333:
-      ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'C') ADVANCE(688);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(sym_identifier);
+      if (lookahead == '(') ADVANCE(136);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(334);
       END_STATE();
     case 334:
-      ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'C') ADVANCE(708);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ACCEPT_TOKEN(sym_identifier);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(334);
       END_STATE();
     case 335:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'H') ADVANCE(565);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'B') ADVANCE(870);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 336:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'I') ADVANCE(660);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'B') ADVANCE(782);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 337:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'L') ADVANCE(575);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'C') ADVANCE(725);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 338:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'P') ADVANCE(576);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'C') ADVANCE(708);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 339:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'P') ADVANCE(392);
-      if (lookahead == 'l') ADVANCE(472);
-      if (lookahead == 's') ADVANCE(155);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'C') ADVANCE(716);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 340:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'P') ADVANCE(398);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'H') ADVANCE(580);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 341:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'P') ADVANCE(397);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'I') ADVANCE(686);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 342:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'S') ADVANCE(553);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'L') ADVANCE(587);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 343:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'S') ADVANCE(851);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'P') ADVANCE(235);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 344:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'S') ADVANCE(815);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'P') ADVANCE(588);
+      if (lookahead == 'R') ADVANCE(391);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 345:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'S') ADVANCE(619);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'P') ADVANCE(401);
+      if (lookahead == 'l') ADVANCE(482);
+      if (lookahead == 's') ADVANCE(155);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 346:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'T') ADVANCE(552);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'P') ADVANCE(408);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 347:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'T') ADVANCE(365);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'P') ADVANCE(407);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 348:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'T') ADVANCE(683);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'P') ADVANCE(596);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 349:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'U') ADVANCE(725);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'S') ADVANCE(567);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 350:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(416);
-      if (lookahead == 'l') ADVANCE(678);
-      if (lookahead == 'o') ADVANCE(667);
-      if (lookahead == 'r') ADVANCE(525);
-      if (lookahead == 'u') ADVANCE(793);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'S') ADVANCE(879);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 351:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(416);
-      if (lookahead == 'l') ADVANCE(678);
-      if (lookahead == 'r') ADVANCE(525);
-      if (lookahead == 'u') ADVANCE(793);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'S') ADVANCE(838);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 352:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(598);
-      if (lookahead == 'h') ADVANCE(389);
-      if (lookahead == 'o') ADVANCE(444);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'S') ADVANCE(636);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 353:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(711);
-      if (lookahead == 'e') ADVANCE(651);
-      if (lookahead == 'o') ADVANCE(442);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'T') ADVANCE(566);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 354:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(846);
-      if (lookahead == 'u') ADVANCE(622);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'T') ADVANCE(343);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 355:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(846);
-      if (lookahead == 'u') ADVANCE(630);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'T') ADVANCE(374);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 356:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(534);
-      if (lookahead == 'o') ADVANCE(722);
-      if (lookahead == 'r') ADVANCE(490);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'T') ADVANCE(703);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 357:
       ACCEPT_TOKEN(sym_component_identifier);
-      ADVANCE_MAP(
-        'a', 402,
-        'b', 682,
-        'c', 498,
-        'e', 855,
-        'h', 463,
-        'i', 810,
-        'o', 386,
-        'r', 506,
-        'w', 697,
-      );
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'U') ADVANCE(747);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 358:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(423);
-      if (lookahead == 'e') ADVANCE(721);
-      if (lookahead == 'r') ADVANCE(559);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(425);
+      if (lookahead == 'l') ADVANCE(698);
+      if (lookahead == 'o') ADVANCE(687);
+      if (lookahead == 'r') ADVANCE(537);
+      if (lookahead == 'u') ADVANCE(819);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 359:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(423);
-      if (lookahead == 'e') ADVANCE(721);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(425);
+      if (lookahead == 'l') ADVANCE(698);
+      if (lookahead == 'r') ADVANCE(537);
+      if (lookahead == 'u') ADVANCE(819);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 360:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(532);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(615);
+      if (lookahead == 'h') ADVANCE(399);
+      if (lookahead == 'o') ADVANCE(454);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 361:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(180);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(732);
+      if (lookahead == 'e') ADVANCE(668);
+      if (lookahead == 'o') ADVANCE(452);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 362:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(775);
-      if (lookahead == 'i') ADVANCE(364);
-      if (lookahead == 'o') ADVANCE(429);
-      if (lookahead == 'r') ADVANCE(681);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(874);
+      if (lookahead == 'u') ADVANCE(639);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 363:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(347);
-      if (lookahead == 'e') ADVANCE(338);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(874);
+      if (lookahead == 'u') ADVANCE(647);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 364:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(603);
-      if (lookahead == 'v') ADVANCE(561);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(546);
+      if (lookahead == 'o') ADVANCE(744);
+      if (lookahead == 'r') ADVANCE(500);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 365:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(411);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(467);
+      if (lookahead == 'o') ADVANCE(855);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 366:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(430);
-      if (lookahead == 'i') ADVANCE(654);
-      if (lookahead == 'l') ADVANCE(573);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ADVANCE_MAP(
+        'a', 411,
+        'b', 702,
+        'c', 509,
+        'e', 883,
+        'h', 473,
+        'i', 833,
+        'o', 396,
+        'r', 516,
+        'w', 718,
+      );
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 367:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(808);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(432);
+      if (lookahead == 'e') ADVANCE(743);
+      if (lookahead == 'r') ADVANCE(574);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 368:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(439);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(432);
+      if (lookahead == 'e') ADVANCE(743);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 369:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(796);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(544);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 370:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(730);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(180);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 371:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(592);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(800);
+      if (lookahead == 'i') ADVANCE(373);
+      if (lookahead == 'o') ADVANCE(438);
+      if (lookahead == 'r') ADVANCE(701);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 372:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(443);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(355);
+      if (lookahead == 'e') ADVANCE(344);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 373:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(585);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(620);
+      if (lookahead == 'v') ADVANCE(576);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 374:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(720);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(420);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 375:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(594);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(439);
+      if (lookahead == 'i') ADVANCE(672);
+      if (lookahead == 'l') ADVANCE(584);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 376:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(733);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(831);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 377:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(655);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(449);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 378:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(436);
-      if (lookahead == 'm') ADVANCE(491);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(822);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 379:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(595);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(753);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 380:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(712);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(609);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 381:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(438);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(453);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 382:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(738);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(601);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 383:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(741);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(742);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 384:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(752);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(611);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 385:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(748);
-      if (lookahead == 'e') ADVANCE(651);
-      if (lookahead == 'o') ADVANCE(442);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(756);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 386:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(771);
-      if (lookahead == 'g') ADVANCE(546);
-      if (lookahead == 'o') ADVANCE(615);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(446);
+      if (lookahead == 'm') ADVANCE(501);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 387:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(543);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(673);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 388:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(626);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(612);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 389:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(755);
-      if (lookahead == 'e') ADVANCE(421);
-      if (lookahead == 'i') ADVANCE(713);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(448);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 390:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(604);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(733);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 391:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(580);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(681);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 392:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(544);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(761);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 393:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(541);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(764);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 394:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(612);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(775);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 395:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(608);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(772);
+      if (lookahead == 'e') ADVANCE(668);
+      if (lookahead == 'o') ADVANCE(452);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 396:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(805);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(796);
+      if (lookahead == 'g') ADVANCE(560);
+      if (lookahead == 'o') ADVANCE(632);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 397:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(545);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(556);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 398:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(613);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(643);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 399:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(457);
-      if (lookahead == 'o') ADVANCE(829);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(778);
+      if (lookahead == 'e') ADVANCE(430);
+      if (lookahead == 'i') ADVANCE(734);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 400:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(820);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(621);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 401:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'a') ADVANCE(821);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(557);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 402:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'b') ADVANCE(339);
-      if (lookahead == 'g') ADVANCE(169);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(554);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 403:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'b') ADVANCE(152);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(628);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 404:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'b') ADVANCE(432);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(625);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 405:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'b') ADVANCE(376);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(595);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 406:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'b') ADVANCE(700);
-      if (lookahead == 'm') ADVANCE(377);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(828);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 407:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'b') ADVANCE(382);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(559);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 408:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'b') ADVANCE(676);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(630);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 409:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'b') ADVANCE(679);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(843);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 410:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'b') ADVANCE(504);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'a') ADVANCE(847);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 411:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'b') ADVANCE(611);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'b') ADVANCE(345);
+      if (lookahead == 'g') ADVANCE(169);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 412:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'b') ADVANCE(522);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'b') ADVANCE(152);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 413:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'b') ADVANCE(523);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'b') ADVANCE(442);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 414:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'c') ADVANCE(424);
-      if (lookahead == 'l') ADVANCE(488);
-      if (lookahead == 'n') ADVANCE(856);
-      if (lookahead == 'p') ADVANCE(710);
-      if (lookahead == 'u') ADVANCE(440);
-      if (lookahead == 'v') ADVANCE(369);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'b') ADVANCE(385);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 415:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'c') ADVANCE(424);
-      if (lookahead == 'l') ADVANCE(488);
-      if (lookahead == 'p') ADVANCE(710);
-      if (lookahead == 'u') ADVANCE(440);
-      if (lookahead == 'v') ADVANCE(369);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'b') ADVANCE(721);
+      if (lookahead == 'm') ADVANCE(387);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 416:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'c') ADVANCE(588);
-      if (lookahead == 'd') ADVANCE(542);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'b') ADVANCE(392);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 417:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'c') ADVANCE(549);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'b') ADVANCE(696);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 418:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'c') ADVANCE(675);
-      if (lookahead == 'm') ADVANCE(387);
-      if (lookahead == 'n') ADVANCE(719);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'b') ADVANCE(699);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 419:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'c') ADVANCE(582);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'b') ADVANCE(515);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 420:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'c') ADVANCE(395);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'b') ADVANCE(629);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 421:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'c') ADVANCE(587);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'b') ADVANCE(533);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 422:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'c') ADVANCE(551);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'b') ADVANCE(535);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 423:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'c') ADVANCE(583);
-      if (lookahead == 't') ADVANCE(209);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(433);
+      if (lookahead == 'l') ADVANCE(498);
+      if (lookahead == 'n') ADVANCE(884);
+      if (lookahead == 'p') ADVANCE(731);
+      if (lookahead == 'u') ADVANCE(450);
+      if (lookahead == 'v') ADVANCE(378);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 424:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'c') ADVANCE(677);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(433);
+      if (lookahead == 'l') ADVANCE(498);
+      if (lookahead == 'p') ADVANCE(731);
+      if (lookahead == 'u') ADVANCE(450);
+      if (lookahead == 'v') ADVANCE(378);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 425:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'c') ADVANCE(589);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(604);
+      if (lookahead == 'd') ADVANCE(555);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 426:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'c') ADVANCE(584);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(563);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 427:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'c') ADVANCE(751);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(695);
+      if (lookahead == 'm') ADVANCE(397);
+      if (lookahead == 'n') ADVANCE(741);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 428:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'c') ADVANCE(784);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(598);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 429:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'c') ADVANCE(843);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(404);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 430:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'c') ADVANCE(507);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(603);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 431:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'c') ADVANCE(816);
-      if (lookahead == 'l') ADVANCE(500);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(565);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 432:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(207);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(599);
+      if (lookahead == 't') ADVANCE(209);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 433:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(159);
-      if (lookahead == 'o') ADVANCE(838);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(697);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 434:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(144);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(605);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 435:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(217);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(600);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 436:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(161);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(774);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 437:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(244);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(809);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 438:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(178);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(871);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 439:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(502);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(518);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 440:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(562);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(839);
+      if (lookahead == 'l') ADVANCE(511);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 441:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(858);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'c') ADVANCE(606);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 442:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(371);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(207);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 443:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(427);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(159);
+      if (lookahead == 'o') ADVANCE(866);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 444:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(464);
-      if (lookahead == 'l') ADVANCE(826);
-      if (lookahead == 'm') ADVANCE(406);
-      if (lookahead == 'n') ADVANCE(798);
-      if (lookahead == 'p') ADVANCE(857);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(144);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 445:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(524);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(217);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 446:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(512);
-      if (lookahead == 'r') ADVANCE(811);
-      if (lookahead == 's') ADVANCE(830);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(161);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 447:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(674);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(249);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 448:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(471);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(178);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 449:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(473);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(513);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 450:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(480);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(577);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 451:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(482);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(886);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 452:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(484);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(380);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 453:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(520);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(436);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 454:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(340);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(474);
+      if (lookahead == 'l') ADVANCE(852);
+      if (lookahead == 'm') ADVANCE(415);
+      if (lookahead == 'n') ADVANCE(824);
+      if (lookahead == 'p') ADVANCE(885);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 455:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(383);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(536);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 456:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(699);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(523);
+      if (lookahead == 'r') ADVANCE(834);
+      if (lookahead == 's') ADVANCE(856);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 457:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(566);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(694);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 458:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(569);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(481);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 459:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(509);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(483);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 460:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'd') ADVANCE(453);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(490);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 461:
       ACCEPT_TOKEN(sym_component_identifier);
-      ADVANCE_MAP(
-        'e', 431,
-        'h', 503,
-        'i', 445,
-        'k', 495,
-        'l', 574,
-        'p', 366,
-        't', 358,
-        'w', 563,
-      );
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(492);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 462:
       ACCEPT_TOKEN(sym_component_identifier);
-      ADVANCE_MAP(
-        'e', 431,
-        'h', 503,
-        'i', 445,
-        'k', 495,
-        'l', 574,
-        'p', 366,
-        't', 359,
-        'w', 563,
-      );
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(494);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 463:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(378);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(534);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 464:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(203);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(346);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 465:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(349);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(393);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 466:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(229);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(720);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 467:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(166);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(581);
+      if (lookahead == 't') ADVANCE(573);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 468:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(198);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(590);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 469:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(195);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(520);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 470:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(158);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'd') ADVANCE(463);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 471:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(250);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ADVANCE_MAP(
+        'e', 440,
+        'h', 514,
+        'i', 455,
+        'k', 506,
+        'l', 585,
+        'p', 375,
+        't', 367,
+        'w', 578,
+      );
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 472:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(160);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      ADVANCE_MAP(
+        'e', 440,
+        'h', 514,
+        'i', 455,
+        'k', 506,
+        'l', 585,
+        'p', 375,
+        't', 368,
+        'w', 578,
+      );
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 473:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(248);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(386);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 474:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(221);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(203);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 475:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(234);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(357);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 476:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(156);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(229);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 477:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(230);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(166);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 478:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(204);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(198);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 479:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(208);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(195);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 480:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(254);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(158);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 481:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(220);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(255);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 482:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(251);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(160);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 483:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(214);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(253);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 484:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(252);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(221);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 485:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(232);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(239);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 486:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(625);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(156);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 487:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(331);
-      if (lookahead == 'i') ADVANCE(662);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(230);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 488:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(754);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(204);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 489:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(368);
-      if (lookahead == 'o') ADVANCE(770);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(208);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 490:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(774);
-      if (lookahead == 'o') ADVANCE(539);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(259);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 491:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(348);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(220);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 492:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(345);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(256);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 493:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(602);
-      if (lookahead == 'l') ADVANCE(465);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(214);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 494:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(343);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(257);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 495:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(606);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(232);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 496:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(661);
-      if (lookahead == 'l') ADVANCE(698);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(642);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 497:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(768);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(336);
+      if (lookahead == 'i') ADVANCE(680);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 498:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(601);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(777);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 499:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(749);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(377);
+      if (lookahead == 'o') ADVANCE(795);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 500:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(428);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(799);
+      if (lookahead == 'o') ADVANCE(552);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 501:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(731);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(356);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 502:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(732);
-      if (lookahead == 'i') ADVANCE(653);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(352);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 503:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(514);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(619);
+      if (lookahead == 'l') ADVANCE(475);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 504:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(734);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(348);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 505:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(657);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(350);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 506:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(466);
-      if (lookahead == 'o') ADVANCE(848);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(623);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 507:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(735);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(679);
+      if (lookahead == 'l') ADVANCE(719);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 508:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(597);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(793);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 509:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(736);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(618);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 510:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(737);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(773);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 511:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(373);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(437);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 512:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(670);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(754);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 513:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(361);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(755);
+      if (lookahead == 'i') ADVANCE(671);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 514:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(782);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(525);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 515:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(739);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(757);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 516:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(740);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(476);
+      if (lookahead == 'o') ADVANCE(876);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 517:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(742);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(675);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 518:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(743);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(758);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 519:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(744);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(614);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 520:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(648);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(759);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 521:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(788);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(760);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 522:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(745);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(382);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 523:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(746);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(690);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 524:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(407);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(370);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 525:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(372);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(807);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 526:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(801);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(762);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 527:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(666);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(763);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 528:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(819);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(765);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 529:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(605);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(766);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 530:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(658);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(767);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 531:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'e') ADVANCE(659);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(813);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 532:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'f') ADVANCE(475);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(768);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 533:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'f') ADVANCE(334);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(769);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 534:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'g') ADVANCE(487);
-      if (lookahead == 'r') ADVANCE(393);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(665);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 535:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'g') ADVANCE(184);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(770);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 536:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'g') ADVANCE(126);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(416);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 537:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'g') ADVANCE(202);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(381);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 538:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'g') ADVANCE(185);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(837);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 539:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'g') ADVANCE(757);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(685);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 540:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'g') ADVANCE(756);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(841);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 541:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'g') ADVANCE(753);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(622);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 542:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'g') ADVANCE(467);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(676);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 543:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'g') ADVANCE(469);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'e') ADVANCE(677);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 544:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'g') ADVANCE(476);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'f') ADVANCE(485);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 545:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'g') ADVANCE(481);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'f') ADVANCE(339);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 546:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'g') ADVANCE(609);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'g') ADVANCE(497);
+      if (lookahead == 'r') ADVANCE(402);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 547:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'g') ADVANCE(614);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'g') ADVANCE(184);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 548:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'g') ADVANCE(547);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'g') ADVANCE(237);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 549:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'h') ADVANCE(175);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'g') ADVANCE(126);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 550:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'h') ADVANCE(240);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'g') ADVANCE(202);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 551:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'h') ADVANCE(215);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'g') ADVANCE(185);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 552:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'h') ADVANCE(557);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'g') ADVANCE(780);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 553:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'h') ADVANCE(529);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'g') ADVANCE(779);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 554:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(493);
-      if (lookahead == 'o') ADVANCE(709);
-      if (lookahead == 'r') ADVANCE(388);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'g') ADVANCE(776);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 555:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(650);
-      if (lookahead == 'o') ADVANCE(420);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'g') ADVANCE(477);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 556:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(446);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'g') ADVANCE(479);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 557:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(767);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'g') ADVANCE(486);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 558:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(434);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'g') ADVANCE(504);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 559:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(652);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'g') ADVANCE(491);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 560:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(714);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'g') ADVANCE(627);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 561:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(459);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'g') ADVANCE(631);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 562:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(668);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'g') ADVANCE(561);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 563:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(792);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'h') ADVANCE(175);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 564:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(689);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'h') ADVANCE(245);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 565:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(460);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'h') ADVANCE(215);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 566:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(669);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'h') ADVANCE(571);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 567:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(394);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'h') ADVANCE(541);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 568:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(690);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(503);
+      if (lookahead == 'o') ADVANCE(730);
+      if (lookahead == 'r') ADVANCE(398);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 569:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(692);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(667);
+      if (lookahead == 'o') ADVANCE(429);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 570:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(797);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(456);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 571:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(695);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(790);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 572:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(696);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(444);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 573:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(823);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(669);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 574:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(448);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(670);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 575:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(772);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(735);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 576:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(425);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(469);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 577:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(450);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(688);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 578:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(451);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(818);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 579:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(452);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(709);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 580:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'i') ADVANCE(665);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(470);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 581:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'k') ADVANCE(153);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(689);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 582:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'k') ADVANCE(728);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(403);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 583:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'k') ADVANCE(145);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(823);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 584:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'k') ADVANCE(210);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(848);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 585:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'k') ADVANCE(241);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(458);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 586:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'k') ADVANCE(245);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(710);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 587:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'k') ADVANCE(408);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(798);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 588:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'k') ADVANCE(540);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(434);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 589:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'k') ADVANCE(519);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(460);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 590:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'k') ADVANCE(456);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(712);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 591:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(129);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(461);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 592:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(183);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(462);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 593:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(164);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(715);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 594:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(237);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(717);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 595:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(337);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(684);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 596:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(233);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'i') ADVANCE(441);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 597:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(200);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'k') ADVANCE(153);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 598:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(496);
-      if (lookahead == 'r') ADVANCE(433);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'k') ADVANCE(751);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 599:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(486);
-      if (lookahead == 'm') ADVANCE(723);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'k') ADVANCE(145);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 600:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(859);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'k') ADVANCE(210);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 601:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(593);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'k') ADVANCE(246);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 602:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(435);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'k') ADVANCE(250);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 603:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(680);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'k') ADVANCE(417);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 604:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(600);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'k') ADVANCE(553);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 605:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(596);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'k') ADVANCE(530);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 606:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(526);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'k') ADVANCE(532);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 607:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(492);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'k') ADVANCE(466);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 608:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(494);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(129);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 609:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(474);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(183);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 610:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(703);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(164);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 611:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(477);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(242);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 612:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(684);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(342);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 613:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(528);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(233);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 614:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(483);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(200);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 615:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(795);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(507);
+      if (lookahead == 'r') ADVANCE(443);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 616:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(706);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(496);
+      if (lookahead == 'm') ADVANCE(745);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 617:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(839);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(887);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 618:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(577);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(610);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 619:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(578);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(445);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 620:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'l') ADVANCE(579);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(700);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 621:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'm') ADVANCE(179);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(617);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 622:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'm') ADVANCE(410);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(613);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 623:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'm') ADVANCE(403);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(538);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 624:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'm') ADVANCE(636);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(502);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 625:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'm') ADVANCE(505);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(505);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 626:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'm') ADVANCE(468);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(724);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 627:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'm') ADVANCE(643);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(484);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 628:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'm') ADVANCE(384);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(705);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 629:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'm') ADVANCE(530);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(487);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 630:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'm') ADVANCE(412);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(540);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 631:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'm') ADVANCE(413);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(493);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 632:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(856);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(821);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 633:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(346);
-      if (lookahead == 'p') ADVANCE(809);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(727);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 634:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(199);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(867);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 635:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(191);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(589);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 636:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(143);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(591);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 637:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(172);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'l') ADVANCE(592);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 638:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(239);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'm') ADVANCE(179);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 639:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(194);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'm') ADVANCE(419);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 640:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(205);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'm') ADVANCE(412);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 641:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(190);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'm') ADVANCE(653);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 642:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(216);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'm') ADVANCE(517);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 643:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(253);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'm') ADVANCE(478);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 644:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(213);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'm') ADVANCE(660);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 645:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(192);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'm') ADVANCE(394);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 646:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(224);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'm') ADVANCE(542);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 647:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(249);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'm') ADVANCE(421);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 648:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(212);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'm') ADVANCE(422);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 649:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(769);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(884);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 650:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(581);
-      if (lookahead == 's') ADVANCE(777);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(353);
+      if (lookahead == 'p') ADVANCE(832);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 651:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(825);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(199);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 652:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(536);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(191);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 653:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(537);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(143);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 654:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(664);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(172);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 655:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(454);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(244);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 656:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(437);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(194);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 657:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(786);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(205);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 658:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(787);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(190);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 659:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(794);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(216);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 660:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(726);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(258);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 661:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(455);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(213);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 662:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(400);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(192);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 663:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(818);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(224);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 664:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(515);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(254);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 665:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(518);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(212);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 666:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'n') ADVANCE(824);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(794);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 667:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(591);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(597);
+      if (lookahead == 's') ADVANCE(802);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 668:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(197);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(851);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 669:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(174);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(548);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 670:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(196);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(549);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 671:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(667);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(550);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 672:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(847);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(683);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 673:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(852);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(464);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 674:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(849);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(447);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 675:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(634);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(811);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 676:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(853);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(812);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 677:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(764);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(820);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 678:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(419);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(748);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 679:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(854);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(465);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 680:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(535);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(409);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 681:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(724);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(558);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 682:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(441);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(840);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 683:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(548);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(526);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 684:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(538);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(529);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 685:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(840);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(850);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 686:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(635);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'n') ADVANCE(749);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 687:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(827);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(608);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 688:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(617);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(197);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 689:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(637);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(174);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 690:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(638);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(196);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 691:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(641);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(687);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 692:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(642);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(875);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 693:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(644);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(880);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 694:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(645);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(877);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 695:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(646);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(651);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 696:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(647);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(881);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 697:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(333);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(789);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 698:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(834);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(428);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 699:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(850);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(882);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 700:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(409);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(547);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 701:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(828);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(746);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 702:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(804);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(451);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 703:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(381);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(562);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 704:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(449);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(868);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 705:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(831);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(551);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 706:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(426);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(853);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 707:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(832);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(652);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 708:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(663);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(634);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 709:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'o') ADVANCE(813);
-      if (lookahead == 'r') ADVANCE(621);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(654);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 710:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'p') ADVANCE(342);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(655);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 711:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'p') ADVANCE(130);
-      if (lookahead == 'r') ADVANCE(590);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(658);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 712:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'p') ADVANCE(130);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(659);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 713:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'p') ADVANCE(211);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(661);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 714:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'p') ADVANCE(168);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(662);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 715:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'p') ADVANCE(219);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(663);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 716:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'p') ADVANCE(223);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(682);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 717:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'p') ADVANCE(193);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(664);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 718:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'p') ADVANCE(222);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(338);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 719:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'p') ADVANCE(833);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(861);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 720:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'p') ADVANCE(550);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(878);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 721:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'p') ADVANCE(727);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(418);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 722:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'p') ADVANCE(672);
-      if (lookahead == 'r') ADVANCE(812);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(854);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 723:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'p') ADVANCE(791);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(827);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 724:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'p') ADVANCE(447);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(389);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 725:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'p') ADVANCE(610);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(459);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 726:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'p') ADVANCE(836);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(857);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 727:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'p') ADVANCE(516);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(435);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 728:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'q') ADVANCE(835);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(858);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 729:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(332);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(859);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 730:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(167);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'o') ADVANCE(836);
+      if (lookahead == 'r') ADVANCE(638);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 731:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(243);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(349);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 732:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(242);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(130);
+      if (lookahead == 'r') ADVANCE(607);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 733:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(150);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(130);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 734:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(127);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(211);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 735:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(146);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(168);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 736:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(147);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(219);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 737:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(187);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(223);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 738:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(151);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(193);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 739:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(188);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(222);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 740:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(225);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(234);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 741:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(227);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(860);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 742:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(148);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(564);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 743:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(141);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(750);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 744:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(177);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(692);
+      if (lookahead == 'r') ADVANCE(835);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 745:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(336);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(817);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 746:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(128);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(457);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 747:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(558);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(626);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 748:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(590);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(863);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 749:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(628);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(864);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 750:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(559);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'p') ADVANCE(527);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 751:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(837);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'q') ADVANCE(862);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 752:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(586);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(337);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 753:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(374);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(167);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 754:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(779);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(248);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 755:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(780);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(247);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 756:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(685);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(150);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 757:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(497);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(127);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 758:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(687);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(146);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 759:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(511);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(147);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 760:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(701);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(187);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 761:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(513);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(151);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 762:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(705);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(188);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 763:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(707);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(225);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 764:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'r') ADVANCE(458);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(227);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 765:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 's') ADVANCE(189);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(148);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 766:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 's') ADVANCE(246);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(141);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 767:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 's') ADVANCE(341);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(177);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 768:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 's') ADVANCE(765);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(238);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 769:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 's') ADVANCE(360);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(341);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 770:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 's') ADVANCE(776);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(128);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 771:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 's') ADVANCE(783);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(572);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 772:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 's') ADVANCE(790);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(607);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 773:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 's') ADVANCE(508);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(645);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 774:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 's') ADVANCE(527);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(865);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 775:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(363);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(602);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 776:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(235);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(383);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 777:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(165);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(804);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 778:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(201);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(805);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 779:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(181);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(704);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 780:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(247);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(508);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 781:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(170);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(706);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 782:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(186);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(522);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 783:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(182);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(574);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 784:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(171);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(722);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 785:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(206);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(524);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 786:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(236);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(726);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 787:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(238);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(728);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 788:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(218);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(729);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 789:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(226);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'r') ADVANCE(468);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 790:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(149);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 's') ADVANCE(347);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 791:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(860);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 's') ADVANCE(189);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 792:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(417);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 's') ADVANCE(251);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 793:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(799);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 's') ADVANCE(791);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 794:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(766);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 's') ADVANCE(369);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 795:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(560);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 's') ADVANCE(801);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 796:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(370);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 's') ADVANCE(808);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 797:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(422);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 's') ADVANCE(519);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 798:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(391);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 's') ADVANCE(816);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 799:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(686);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 's') ADVANCE(539);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 800:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(470);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(372);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 801:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(691);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(240);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 802:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(693);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(165);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 803:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(694);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(201);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 804:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(478);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(181);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 805:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(479);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(252);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 806:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(485);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(170);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 807:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(750);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(186);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 808:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(499);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(182);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 809:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(564);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(171);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 810:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(607);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(206);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 811:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(841);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(241);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 812:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(375);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(243);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 813:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(501);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(218);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 814:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(802);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(236);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 815:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(396);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(226);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 816:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(568);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(149);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 817:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(803);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(888);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 818:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(531);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(426);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 819:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(806);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(825);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 820:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(571);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(792);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 821:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(572);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(575);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 822:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(517);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(379);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 823:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(822);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(431);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 824:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 't') ADVANCE(401);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(405);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 825:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(154);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(707);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 826:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(624);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(480);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 827:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(715);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(488);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 828:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(716);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(489);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 829:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(800);
-      if (lookahead == 'w') ADVANCE(142);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(495);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 830:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(390);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(783);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 831:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(717);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(510);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 832:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(718);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(579);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 833:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(781);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(624);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 834:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(785);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(869);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 835:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(702);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(384);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 836:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(789);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(512);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 837:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(623);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(711);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 838:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(773);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(406);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 839:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(627);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(586);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 840:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(656);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(543);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 841:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(379);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(829);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 842:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(814);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(713);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 843:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(629);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(593);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 844:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(817);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(714);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 845:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'u') ADVANCE(631);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(528);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 846:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'v') ADVANCE(405);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(842);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 847:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'v') ADVANCE(510);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(594);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 848:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'w') ADVANCE(163);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(845);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 849:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'w') ADVANCE(639);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(844);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 850:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'w') ADVANCE(640);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 't') ADVANCE(410);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 851:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'w') ADVANCE(570);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'u') ADVANCE(154);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 852:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'x') ADVANCE(228);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'u') ADVANCE(641);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 853:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'x') ADVANCE(173);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'u') ADVANCE(736);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 854:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'x') ADVANCE(231);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'u') ADVANCE(737);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 855:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'x') ADVANCE(778);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'u') ADVANCE(826);
+      if (lookahead == 'w') ADVANCE(142);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 856:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'y') ADVANCE(131);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'u') ADVANCE(400);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 857:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'y') ADVANCE(330);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'u') ADVANCE(738);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 858:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'y') ADVANCE(162);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'u') ADVANCE(739);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 859:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'y') ADVANCE(335);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'u') ADVANCE(740);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 860:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (lookahead == 'y') ADVANCE(344);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'u') ADVANCE(806);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 861:
       ACCEPT_TOKEN(sym_component_identifier);
-      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(861);
+      if (lookahead == 'u') ADVANCE(810);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 862:
-      ACCEPT_TOKEN(sym_doc_comment);
-      if (lookahead == '\n') ADVANCE(288);
-      if (lookahead == '"') ADVANCE(864);
-      if (lookahead != 0) ADVANCE(283);
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'u') ADVANCE(723);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 863:
-      ACCEPT_TOKEN(sym_doc_comment);
-      if (lookahead == '\n') ADVANCE(288);
-      if (lookahead == '"') ADVANCE(862);
-      if (lookahead != 0) ADVANCE(283);
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'u') ADVANCE(814);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 864:
-      ACCEPT_TOKEN(sym_doc_comment);
-      if (lookahead != 0 &&
-          lookahead != '\n') ADVANCE(864);
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'u') ADVANCE(815);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 865:
-      ACCEPT_TOKEN(sym_comment);
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'u') ADVANCE(640);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 866:
-      ACCEPT_TOKEN(sym_comment);
-      if (lookahead == '\n') ADVANCE(288);
-      if (lookahead == '"') ADVANCE(869);
-      if (lookahead != 0) ADVANCE(282);
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'u') ADVANCE(797);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 867:
-      ACCEPT_TOKEN(sym_comment);
-      if (lookahead == '\n') ADVANCE(288);
-      if (lookahead == '"') ADVANCE(866);
-      if (lookahead != 0) ADVANCE(282);
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'u') ADVANCE(644);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 868:
-      ACCEPT_TOKEN(sym_comment);
-      if (lookahead == '/') ADVANCE(864);
-      if (lookahead != 0 &&
-          lookahead != '\n') ADVANCE(869);
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'u') ADVANCE(674);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
       END_STATE();
     case 869:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'u') ADVANCE(388);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 870:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'u') ADVANCE(846);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 871:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'u') ADVANCE(646);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 872:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'u') ADVANCE(849);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 873:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'u') ADVANCE(648);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 874:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'v') ADVANCE(414);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 875:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'v') ADVANCE(521);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 876:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'w') ADVANCE(163);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 877:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'w') ADVANCE(656);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 878:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'w') ADVANCE(657);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 879:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'w') ADVANCE(583);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 880:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'x') ADVANCE(228);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 881:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'x') ADVANCE(173);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 882:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'x') ADVANCE(231);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 883:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'x') ADVANCE(803);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 884:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'y') ADVANCE(131);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 885:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'y') ADVANCE(335);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 886:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'y') ADVANCE(162);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 887:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'y') ADVANCE(340);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 888:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (lookahead == 'y') ADVANCE(351);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 889:
+      ACCEPT_TOKEN(sym_component_identifier);
+      if (set_contains(sym_identifier_character_set_2, 498, lookahead)) ADVANCE(889);
+      END_STATE();
+    case 890:
+      ACCEPT_TOKEN(sym_doc_comment);
+      if (lookahead == '\n') ADVANCE(293);
+      if (lookahead == '"') ADVANCE(892);
+      if (lookahead != 0) ADVANCE(288);
+      END_STATE();
+    case 891:
+      ACCEPT_TOKEN(sym_doc_comment);
+      if (lookahead == '\n') ADVANCE(293);
+      if (lookahead == '"') ADVANCE(890);
+      if (lookahead != 0) ADVANCE(288);
+      END_STATE();
+    case 892:
+      ACCEPT_TOKEN(sym_doc_comment);
+      if (lookahead != 0 &&
+          lookahead != '\n') ADVANCE(892);
+      END_STATE();
+    case 893:
+      ACCEPT_TOKEN(sym_comment);
+      END_STATE();
+    case 894:
+      ACCEPT_TOKEN(sym_comment);
+      if (lookahead == '\n') ADVANCE(293);
+      if (lookahead == '"') ADVANCE(897);
+      if (lookahead != 0) ADVANCE(287);
+      END_STATE();
+    case 895:
+      ACCEPT_TOKEN(sym_comment);
+      if (lookahead == '\n') ADVANCE(293);
+      if (lookahead == '"') ADVANCE(894);
+      if (lookahead != 0) ADVANCE(287);
+      END_STATE();
+    case 896:
+      ACCEPT_TOKEN(sym_comment);
+      if (lookahead == '/') ADVANCE(892);
+      if (lookahead != 0 &&
+          lookahead != '\n') ADVANCE(897);
+      END_STATE();
+    case 897:
       ACCEPT_TOKEN(sym_comment);
       if (lookahead != 0 &&
-          lookahead != '\n') ADVANCE(869);
+          lookahead != '\n') ADVANCE(897);
       END_STATE();
     default:
       return false;
@@ -16690,6 +16865,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1),
     [anon_sym_CommandPalette] = ACTIONS(1),
     [anon_sym_AppShell] = ACTIONS(1),
+    [anon_sym_CheckboxGroup] = ACTIONS(1),
+    [anon_sym_InputOTP] = ACTIONS(1),
+    [anon_sym_TagInput] = ACTIONS(1),
+    [anon_sym_Rating] = ACTIONS(1),
+    [anon_sym_DateRangePicker] = ACTIONS(1),
     [anon_sym_Unsafe] = ACTIONS(1),
     [anon_sym_Host] = ACTIONS(1),
     [anon_sym_Element] = ACTIONS(1),
@@ -16999,6 +17179,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(107),
     [anon_sym_CommandPalette] = ACTIONS(107),
     [anon_sym_AppShell] = ACTIONS(107),
+    [anon_sym_CheckboxGroup] = ACTIONS(107),
+    [anon_sym_InputOTP] = ACTIONS(107),
+    [anon_sym_TagInput] = ACTIONS(107),
+    [anon_sym_Rating] = ACTIONS(107),
+    [anon_sym_DateRangePicker] = ACTIONS(107),
     [anon_sym_Unsafe] = ACTIONS(107),
     [anon_sym_Host] = ACTIONS(107),
     [anon_sym_Element] = ACTIONS(107),
@@ -17248,6 +17433,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(107),
     [anon_sym_CommandPalette] = ACTIONS(107),
     [anon_sym_AppShell] = ACTIONS(107),
+    [anon_sym_CheckboxGroup] = ACTIONS(107),
+    [anon_sym_InputOTP] = ACTIONS(107),
+    [anon_sym_TagInput] = ACTIONS(107),
+    [anon_sym_Rating] = ACTIONS(107),
+    [anon_sym_DateRangePicker] = ACTIONS(107),
     [anon_sym_Unsafe] = ACTIONS(107),
     [anon_sym_Host] = ACTIONS(107),
     [anon_sym_Element] = ACTIONS(107),
@@ -17496,6 +17686,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(229),
     [anon_sym_CommandPalette] = ACTIONS(229),
     [anon_sym_AppShell] = ACTIONS(229),
+    [anon_sym_CheckboxGroup] = ACTIONS(229),
+    [anon_sym_InputOTP] = ACTIONS(229),
+    [anon_sym_TagInput] = ACTIONS(229),
+    [anon_sym_Rating] = ACTIONS(229),
+    [anon_sym_DateRangePicker] = ACTIONS(229),
     [anon_sym_Unsafe] = ACTIONS(229),
     [anon_sym_Host] = ACTIONS(229),
     [anon_sym_Element] = ACTIONS(229),
@@ -17745,6 +17940,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(353),
     [anon_sym_CommandPalette] = ACTIONS(353),
     [anon_sym_AppShell] = ACTIONS(353),
+    [anon_sym_CheckboxGroup] = ACTIONS(353),
+    [anon_sym_InputOTP] = ACTIONS(353),
+    [anon_sym_TagInput] = ACTIONS(353),
+    [anon_sym_Rating] = ACTIONS(353),
+    [anon_sym_DateRangePicker] = ACTIONS(353),
     [anon_sym_Unsafe] = ACTIONS(353),
     [anon_sym_Host] = ACTIONS(353),
     [anon_sym_Element] = ACTIONS(353),
@@ -17994,6 +18194,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(229),
     [anon_sym_CommandPalette] = ACTIONS(229),
     [anon_sym_AppShell] = ACTIONS(229),
+    [anon_sym_CheckboxGroup] = ACTIONS(229),
+    [anon_sym_InputOTP] = ACTIONS(229),
+    [anon_sym_TagInput] = ACTIONS(229),
+    [anon_sym_Rating] = ACTIONS(229),
+    [anon_sym_DateRangePicker] = ACTIONS(229),
     [anon_sym_Unsafe] = ACTIONS(229),
     [anon_sym_Host] = ACTIONS(229),
     [anon_sym_Element] = ACTIONS(229),
@@ -18244,6 +18449,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(107),
     [anon_sym_CommandPalette] = ACTIONS(107),
     [anon_sym_AppShell] = ACTIONS(107),
+    [anon_sym_CheckboxGroup] = ACTIONS(107),
+    [anon_sym_InputOTP] = ACTIONS(107),
+    [anon_sym_TagInput] = ACTIONS(107),
+    [anon_sym_Rating] = ACTIONS(107),
+    [anon_sym_DateRangePicker] = ACTIONS(107),
     [anon_sym_Unsafe] = ACTIONS(107),
     [anon_sym_Host] = ACTIONS(107),
     [anon_sym_Element] = ACTIONS(107),
@@ -18492,6 +18702,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(229),
     [anon_sym_CommandPalette] = ACTIONS(229),
     [anon_sym_AppShell] = ACTIONS(229),
+    [anon_sym_CheckboxGroup] = ACTIONS(229),
+    [anon_sym_InputOTP] = ACTIONS(229),
+    [anon_sym_TagInput] = ACTIONS(229),
+    [anon_sym_Rating] = ACTIONS(229),
+    [anon_sym_DateRangePicker] = ACTIONS(229),
     [anon_sym_Unsafe] = ACTIONS(229),
     [anon_sym_Host] = ACTIONS(229),
     [anon_sym_Element] = ACTIONS(229),
@@ -18742,6 +18957,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(107),
     [anon_sym_CommandPalette] = ACTIONS(107),
     [anon_sym_AppShell] = ACTIONS(107),
+    [anon_sym_CheckboxGroup] = ACTIONS(107),
+    [anon_sym_InputOTP] = ACTIONS(107),
+    [anon_sym_TagInput] = ACTIONS(107),
+    [anon_sym_Rating] = ACTIONS(107),
+    [anon_sym_DateRangePicker] = ACTIONS(107),
     [anon_sym_Unsafe] = ACTIONS(107),
     [anon_sym_Host] = ACTIONS(107),
     [anon_sym_Element] = ACTIONS(107),
@@ -18991,6 +19211,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(521),
     [anon_sym_CommandPalette] = ACTIONS(521),
     [anon_sym_AppShell] = ACTIONS(521),
+    [anon_sym_CheckboxGroup] = ACTIONS(521),
+    [anon_sym_InputOTP] = ACTIONS(521),
+    [anon_sym_TagInput] = ACTIONS(521),
+    [anon_sym_Rating] = ACTIONS(521),
+    [anon_sym_DateRangePicker] = ACTIONS(521),
     [anon_sym_Unsafe] = ACTIONS(521),
     [anon_sym_Host] = ACTIONS(521),
     [anon_sym_Element] = ACTIONS(521),
@@ -19239,6 +19464,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(229),
     [anon_sym_CommandPalette] = ACTIONS(229),
     [anon_sym_AppShell] = ACTIONS(229),
+    [anon_sym_CheckboxGroup] = ACTIONS(229),
+    [anon_sym_InputOTP] = ACTIONS(229),
+    [anon_sym_TagInput] = ACTIONS(229),
+    [anon_sym_Rating] = ACTIONS(229),
+    [anon_sym_DateRangePicker] = ACTIONS(229),
     [anon_sym_Unsafe] = ACTIONS(229),
     [anon_sym_Host] = ACTIONS(229),
     [anon_sym_Element] = ACTIONS(229),
@@ -19488,6 +19718,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(229),
     [anon_sym_CommandPalette] = ACTIONS(229),
     [anon_sym_AppShell] = ACTIONS(229),
+    [anon_sym_CheckboxGroup] = ACTIONS(229),
+    [anon_sym_InputOTP] = ACTIONS(229),
+    [anon_sym_TagInput] = ACTIONS(229),
+    [anon_sym_Rating] = ACTIONS(229),
+    [anon_sym_DateRangePicker] = ACTIONS(229),
     [anon_sym_Unsafe] = ACTIONS(229),
     [anon_sym_Host] = ACTIONS(229),
     [anon_sym_Element] = ACTIONS(229),
@@ -19738,6 +19973,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(107),
     [anon_sym_CommandPalette] = ACTIONS(107),
     [anon_sym_AppShell] = ACTIONS(107),
+    [anon_sym_CheckboxGroup] = ACTIONS(107),
+    [anon_sym_InputOTP] = ACTIONS(107),
+    [anon_sym_TagInput] = ACTIONS(107),
+    [anon_sym_Rating] = ACTIONS(107),
+    [anon_sym_DateRangePicker] = ACTIONS(107),
     [anon_sym_Unsafe] = ACTIONS(107),
     [anon_sym_Host] = ACTIONS(107),
     [anon_sym_Element] = ACTIONS(107),
@@ -19986,6 +20226,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(229),
     [anon_sym_CommandPalette] = ACTIONS(229),
     [anon_sym_AppShell] = ACTIONS(229),
+    [anon_sym_CheckboxGroup] = ACTIONS(229),
+    [anon_sym_InputOTP] = ACTIONS(229),
+    [anon_sym_TagInput] = ACTIONS(229),
+    [anon_sym_Rating] = ACTIONS(229),
+    [anon_sym_DateRangePicker] = ACTIONS(229),
     [anon_sym_Unsafe] = ACTIONS(229),
     [anon_sym_Host] = ACTIONS(229),
     [anon_sym_Element] = ACTIONS(229),
@@ -20236,6 +20481,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(107),
     [anon_sym_CommandPalette] = ACTIONS(107),
     [anon_sym_AppShell] = ACTIONS(107),
+    [anon_sym_CheckboxGroup] = ACTIONS(107),
+    [anon_sym_InputOTP] = ACTIONS(107),
+    [anon_sym_TagInput] = ACTIONS(107),
+    [anon_sym_Rating] = ACTIONS(107),
+    [anon_sym_DateRangePicker] = ACTIONS(107),
     [anon_sym_Unsafe] = ACTIONS(107),
     [anon_sym_Host] = ACTIONS(107),
     [anon_sym_Element] = ACTIONS(107),
@@ -20484,6 +20734,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(229),
     [anon_sym_CommandPalette] = ACTIONS(229),
     [anon_sym_AppShell] = ACTIONS(229),
+    [anon_sym_CheckboxGroup] = ACTIONS(229),
+    [anon_sym_InputOTP] = ACTIONS(229),
+    [anon_sym_TagInput] = ACTIONS(229),
+    [anon_sym_Rating] = ACTIONS(229),
+    [anon_sym_DateRangePicker] = ACTIONS(229),
     [anon_sym_Unsafe] = ACTIONS(229),
     [anon_sym_Host] = ACTIONS(229),
     [anon_sym_Element] = ACTIONS(229),
@@ -20734,6 +20989,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(107),
     [anon_sym_CommandPalette] = ACTIONS(107),
     [anon_sym_AppShell] = ACTIONS(107),
+    [anon_sym_CheckboxGroup] = ACTIONS(107),
+    [anon_sym_InputOTP] = ACTIONS(107),
+    [anon_sym_TagInput] = ACTIONS(107),
+    [anon_sym_Rating] = ACTIONS(107),
+    [anon_sym_DateRangePicker] = ACTIONS(107),
     [anon_sym_Unsafe] = ACTIONS(107),
     [anon_sym_Host] = ACTIONS(107),
     [anon_sym_Element] = ACTIONS(107),
@@ -20982,6 +21242,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(229),
     [anon_sym_CommandPalette] = ACTIONS(229),
     [anon_sym_AppShell] = ACTIONS(229),
+    [anon_sym_CheckboxGroup] = ACTIONS(229),
+    [anon_sym_InputOTP] = ACTIONS(229),
+    [anon_sym_TagInput] = ACTIONS(229),
+    [anon_sym_Rating] = ACTIONS(229),
+    [anon_sym_DateRangePicker] = ACTIONS(229),
     [anon_sym_Unsafe] = ACTIONS(229),
     [anon_sym_Host] = ACTIONS(229),
     [anon_sym_Element] = ACTIONS(229),
@@ -21232,6 +21497,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(107),
     [anon_sym_CommandPalette] = ACTIONS(107),
     [anon_sym_AppShell] = ACTIONS(107),
+    [anon_sym_CheckboxGroup] = ACTIONS(107),
+    [anon_sym_InputOTP] = ACTIONS(107),
+    [anon_sym_TagInput] = ACTIONS(107),
+    [anon_sym_Rating] = ACTIONS(107),
+    [anon_sym_DateRangePicker] = ACTIONS(107),
     [anon_sym_Unsafe] = ACTIONS(107),
     [anon_sym_Host] = ACTIONS(107),
     [anon_sym_Element] = ACTIONS(107),
@@ -21480,6 +21750,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(229),
     [anon_sym_CommandPalette] = ACTIONS(229),
     [anon_sym_AppShell] = ACTIONS(229),
+    [anon_sym_CheckboxGroup] = ACTIONS(229),
+    [anon_sym_InputOTP] = ACTIONS(229),
+    [anon_sym_TagInput] = ACTIONS(229),
+    [anon_sym_Rating] = ACTIONS(229),
+    [anon_sym_DateRangePicker] = ACTIONS(229),
     [anon_sym_Unsafe] = ACTIONS(229),
     [anon_sym_Host] = ACTIONS(229),
     [anon_sym_Element] = ACTIONS(229),
@@ -21730,6 +22005,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(107),
     [anon_sym_CommandPalette] = ACTIONS(107),
     [anon_sym_AppShell] = ACTIONS(107),
+    [anon_sym_CheckboxGroup] = ACTIONS(107),
+    [anon_sym_InputOTP] = ACTIONS(107),
+    [anon_sym_TagInput] = ACTIONS(107),
+    [anon_sym_Rating] = ACTIONS(107),
+    [anon_sym_DateRangePicker] = ACTIONS(107),
     [anon_sym_Unsafe] = ACTIONS(107),
     [anon_sym_Host] = ACTIONS(107),
     [anon_sym_Element] = ACTIONS(107),
@@ -21978,6 +22258,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(229),
     [anon_sym_CommandPalette] = ACTIONS(229),
     [anon_sym_AppShell] = ACTIONS(229),
+    [anon_sym_CheckboxGroup] = ACTIONS(229),
+    [anon_sym_InputOTP] = ACTIONS(229),
+    [anon_sym_TagInput] = ACTIONS(229),
+    [anon_sym_Rating] = ACTIONS(229),
+    [anon_sym_DateRangePicker] = ACTIONS(229),
     [anon_sym_Unsafe] = ACTIONS(229),
     [anon_sym_Host] = ACTIONS(229),
     [anon_sym_Element] = ACTIONS(229),
@@ -22228,6 +22513,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(107),
     [anon_sym_CommandPalette] = ACTIONS(107),
     [anon_sym_AppShell] = ACTIONS(107),
+    [anon_sym_CheckboxGroup] = ACTIONS(107),
+    [anon_sym_InputOTP] = ACTIONS(107),
+    [anon_sym_TagInput] = ACTIONS(107),
+    [anon_sym_Rating] = ACTIONS(107),
+    [anon_sym_DateRangePicker] = ACTIONS(107),
     [anon_sym_Unsafe] = ACTIONS(107),
     [anon_sym_Host] = ACTIONS(107),
     [anon_sym_Element] = ACTIONS(107),
@@ -22476,6 +22766,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(229),
     [anon_sym_CommandPalette] = ACTIONS(229),
     [anon_sym_AppShell] = ACTIONS(229),
+    [anon_sym_CheckboxGroup] = ACTIONS(229),
+    [anon_sym_InputOTP] = ACTIONS(229),
+    [anon_sym_TagInput] = ACTIONS(229),
+    [anon_sym_Rating] = ACTIONS(229),
+    [anon_sym_DateRangePicker] = ACTIONS(229),
     [anon_sym_Unsafe] = ACTIONS(229),
     [anon_sym_Host] = ACTIONS(229),
     [anon_sym_Element] = ACTIONS(229),
@@ -22726,6 +23021,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(107),
     [anon_sym_CommandPalette] = ACTIONS(107),
     [anon_sym_AppShell] = ACTIONS(107),
+    [anon_sym_CheckboxGroup] = ACTIONS(107),
+    [anon_sym_InputOTP] = ACTIONS(107),
+    [anon_sym_TagInput] = ACTIONS(107),
+    [anon_sym_Rating] = ACTIONS(107),
+    [anon_sym_DateRangePicker] = ACTIONS(107),
     [anon_sym_Unsafe] = ACTIONS(107),
     [anon_sym_Host] = ACTIONS(107),
     [anon_sym_Element] = ACTIONS(107),
@@ -22974,6 +23274,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(229),
     [anon_sym_CommandPalette] = ACTIONS(229),
     [anon_sym_AppShell] = ACTIONS(229),
+    [anon_sym_CheckboxGroup] = ACTIONS(229),
+    [anon_sym_InputOTP] = ACTIONS(229),
+    [anon_sym_TagInput] = ACTIONS(229),
+    [anon_sym_Rating] = ACTIONS(229),
+    [anon_sym_DateRangePicker] = ACTIONS(229),
     [anon_sym_Unsafe] = ACTIONS(229),
     [anon_sym_Host] = ACTIONS(229),
     [anon_sym_Element] = ACTIONS(229),
@@ -23224,6 +23529,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(107),
     [anon_sym_CommandPalette] = ACTIONS(107),
     [anon_sym_AppShell] = ACTIONS(107),
+    [anon_sym_CheckboxGroup] = ACTIONS(107),
+    [anon_sym_InputOTP] = ACTIONS(107),
+    [anon_sym_TagInput] = ACTIONS(107),
+    [anon_sym_Rating] = ACTIONS(107),
+    [anon_sym_DateRangePicker] = ACTIONS(107),
     [anon_sym_Unsafe] = ACTIONS(107),
     [anon_sym_Host] = ACTIONS(107),
     [anon_sym_Element] = ACTIONS(107),
@@ -23472,6 +23782,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(229),
     [anon_sym_CommandPalette] = ACTIONS(229),
     [anon_sym_AppShell] = ACTIONS(229),
+    [anon_sym_CheckboxGroup] = ACTIONS(229),
+    [anon_sym_InputOTP] = ACTIONS(229),
+    [anon_sym_TagInput] = ACTIONS(229),
+    [anon_sym_Rating] = ACTIONS(229),
+    [anon_sym_DateRangePicker] = ACTIONS(229),
     [anon_sym_Unsafe] = ACTIONS(229),
     [anon_sym_Host] = ACTIONS(229),
     [anon_sym_Element] = ACTIONS(229),
@@ -23722,6 +24037,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(107),
     [anon_sym_CommandPalette] = ACTIONS(107),
     [anon_sym_AppShell] = ACTIONS(107),
+    [anon_sym_CheckboxGroup] = ACTIONS(107),
+    [anon_sym_InputOTP] = ACTIONS(107),
+    [anon_sym_TagInput] = ACTIONS(107),
+    [anon_sym_Rating] = ACTIONS(107),
+    [anon_sym_DateRangePicker] = ACTIONS(107),
     [anon_sym_Unsafe] = ACTIONS(107),
     [anon_sym_Host] = ACTIONS(107),
     [anon_sym_Element] = ACTIONS(107),
@@ -23970,6 +24290,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(229),
     [anon_sym_CommandPalette] = ACTIONS(229),
     [anon_sym_AppShell] = ACTIONS(229),
+    [anon_sym_CheckboxGroup] = ACTIONS(229),
+    [anon_sym_InputOTP] = ACTIONS(229),
+    [anon_sym_TagInput] = ACTIONS(229),
+    [anon_sym_Rating] = ACTIONS(229),
+    [anon_sym_DateRangePicker] = ACTIONS(229),
     [anon_sym_Unsafe] = ACTIONS(229),
     [anon_sym_Host] = ACTIONS(229),
     [anon_sym_Element] = ACTIONS(229),
@@ -24220,6 +24545,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(107),
     [anon_sym_CommandPalette] = ACTIONS(107),
     [anon_sym_AppShell] = ACTIONS(107),
+    [anon_sym_CheckboxGroup] = ACTIONS(107),
+    [anon_sym_InputOTP] = ACTIONS(107),
+    [anon_sym_TagInput] = ACTIONS(107),
+    [anon_sym_Rating] = ACTIONS(107),
+    [anon_sym_DateRangePicker] = ACTIONS(107),
     [anon_sym_Unsafe] = ACTIONS(107),
     [anon_sym_Host] = ACTIONS(107),
     [anon_sym_Element] = ACTIONS(107),
@@ -24468,6 +24798,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(229),
     [anon_sym_CommandPalette] = ACTIONS(229),
     [anon_sym_AppShell] = ACTIONS(229),
+    [anon_sym_CheckboxGroup] = ACTIONS(229),
+    [anon_sym_InputOTP] = ACTIONS(229),
+    [anon_sym_TagInput] = ACTIONS(229),
+    [anon_sym_Rating] = ACTIONS(229),
+    [anon_sym_DateRangePicker] = ACTIONS(229),
     [anon_sym_Unsafe] = ACTIONS(229),
     [anon_sym_Host] = ACTIONS(229),
     [anon_sym_Element] = ACTIONS(229),
@@ -24718,6 +25053,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(107),
     [anon_sym_CommandPalette] = ACTIONS(107),
     [anon_sym_AppShell] = ACTIONS(107),
+    [anon_sym_CheckboxGroup] = ACTIONS(107),
+    [anon_sym_InputOTP] = ACTIONS(107),
+    [anon_sym_TagInput] = ACTIONS(107),
+    [anon_sym_Rating] = ACTIONS(107),
+    [anon_sym_DateRangePicker] = ACTIONS(107),
     [anon_sym_Unsafe] = ACTIONS(107),
     [anon_sym_Host] = ACTIONS(107),
     [anon_sym_Element] = ACTIONS(107),
@@ -24966,6 +25306,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(229),
     [anon_sym_CommandPalette] = ACTIONS(229),
     [anon_sym_AppShell] = ACTIONS(229),
+    [anon_sym_CheckboxGroup] = ACTIONS(229),
+    [anon_sym_InputOTP] = ACTIONS(229),
+    [anon_sym_TagInput] = ACTIONS(229),
+    [anon_sym_Rating] = ACTIONS(229),
+    [anon_sym_DateRangePicker] = ACTIONS(229),
     [anon_sym_Unsafe] = ACTIONS(229),
     [anon_sym_Host] = ACTIONS(229),
     [anon_sym_Element] = ACTIONS(229),
@@ -25216,6 +25561,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(107),
     [anon_sym_CommandPalette] = ACTIONS(107),
     [anon_sym_AppShell] = ACTIONS(107),
+    [anon_sym_CheckboxGroup] = ACTIONS(107),
+    [anon_sym_InputOTP] = ACTIONS(107),
+    [anon_sym_TagInput] = ACTIONS(107),
+    [anon_sym_Rating] = ACTIONS(107),
+    [anon_sym_DateRangePicker] = ACTIONS(107),
     [anon_sym_Unsafe] = ACTIONS(107),
     [anon_sym_Host] = ACTIONS(107),
     [anon_sym_Element] = ACTIONS(107),
@@ -25412,6 +25762,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(554),
     [anon_sym_CommandPalette] = ACTIONS(554),
     [anon_sym_AppShell] = ACTIONS(554),
+    [anon_sym_CheckboxGroup] = ACTIONS(554),
+    [anon_sym_InputOTP] = ACTIONS(554),
+    [anon_sym_TagInput] = ACTIONS(554),
+    [anon_sym_Rating] = ACTIONS(554),
+    [anon_sym_DateRangePicker] = ACTIONS(554),
     [anon_sym_Unsafe] = ACTIONS(554),
     [anon_sym_Host] = ACTIONS(554),
     [anon_sym_Element] = ACTIONS(554),
@@ -25627,6 +25982,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(554),
     [anon_sym_CommandPalette] = ACTIONS(554),
     [anon_sym_AppShell] = ACTIONS(554),
+    [anon_sym_CheckboxGroup] = ACTIONS(554),
+    [anon_sym_InputOTP] = ACTIONS(554),
+    [anon_sym_TagInput] = ACTIONS(554),
+    [anon_sym_Rating] = ACTIONS(554),
+    [anon_sym_DateRangePicker] = ACTIONS(554),
     [anon_sym_Unsafe] = ACTIONS(554),
     [anon_sym_Host] = ACTIONS(554),
     [anon_sym_Element] = ACTIONS(554),
@@ -25839,6 +26199,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(554),
     [anon_sym_CommandPalette] = ACTIONS(554),
     [anon_sym_AppShell] = ACTIONS(554),
+    [anon_sym_CheckboxGroup] = ACTIONS(554),
+    [anon_sym_InputOTP] = ACTIONS(554),
+    [anon_sym_TagInput] = ACTIONS(554),
+    [anon_sym_Rating] = ACTIONS(554),
+    [anon_sym_DateRangePicker] = ACTIONS(554),
     [anon_sym_Unsafe] = ACTIONS(554),
     [anon_sym_Host] = ACTIONS(554),
     [anon_sym_Element] = ACTIONS(554),
@@ -26050,6 +26415,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(554),
     [anon_sym_CommandPalette] = ACTIONS(554),
     [anon_sym_AppShell] = ACTIONS(554),
+    [anon_sym_CheckboxGroup] = ACTIONS(554),
+    [anon_sym_InputOTP] = ACTIONS(554),
+    [anon_sym_TagInput] = ACTIONS(554),
+    [anon_sym_Rating] = ACTIONS(554),
+    [anon_sym_DateRangePicker] = ACTIONS(554),
     [anon_sym_Unsafe] = ACTIONS(554),
     [anon_sym_Host] = ACTIONS(554),
     [anon_sym_Element] = ACTIONS(554),
@@ -26279,6 +26649,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -26489,6 +26864,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -26682,6 +27062,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(662),
     [anon_sym_CommandPalette] = ACTIONS(662),
     [anon_sym_AppShell] = ACTIONS(662),
+    [anon_sym_CheckboxGroup] = ACTIONS(662),
+    [anon_sym_InputOTP] = ACTIONS(662),
+    [anon_sym_TagInput] = ACTIONS(662),
+    [anon_sym_Rating] = ACTIONS(662),
+    [anon_sym_DateRangePicker] = ACTIONS(662),
     [anon_sym_Unsafe] = ACTIONS(662),
     [anon_sym_Host] = ACTIONS(662),
     [anon_sym_Element] = ACTIONS(662),
@@ -26891,6 +27276,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(662),
     [anon_sym_CommandPalette] = ACTIONS(662),
     [anon_sym_AppShell] = ACTIONS(662),
+    [anon_sym_CheckboxGroup] = ACTIONS(662),
+    [anon_sym_InputOTP] = ACTIONS(662),
+    [anon_sym_TagInput] = ACTIONS(662),
+    [anon_sym_Rating] = ACTIONS(662),
+    [anon_sym_DateRangePicker] = ACTIONS(662),
     [anon_sym_Unsafe] = ACTIONS(662),
     [anon_sym_Host] = ACTIONS(662),
     [anon_sym_Element] = ACTIONS(662),
@@ -27102,6 +27492,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(662),
     [anon_sym_CommandPalette] = ACTIONS(662),
     [anon_sym_AppShell] = ACTIONS(662),
+    [anon_sym_CheckboxGroup] = ACTIONS(662),
+    [anon_sym_InputOTP] = ACTIONS(662),
+    [anon_sym_TagInput] = ACTIONS(662),
+    [anon_sym_Rating] = ACTIONS(662),
+    [anon_sym_DateRangePicker] = ACTIONS(662),
     [anon_sym_Unsafe] = ACTIONS(662),
     [anon_sym_Host] = ACTIONS(662),
     [anon_sym_Element] = ACTIONS(662),
@@ -27311,6 +27706,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(662),
     [anon_sym_CommandPalette] = ACTIONS(662),
     [anon_sym_AppShell] = ACTIONS(662),
+    [anon_sym_CheckboxGroup] = ACTIONS(662),
+    [anon_sym_InputOTP] = ACTIONS(662),
+    [anon_sym_TagInput] = ACTIONS(662),
+    [anon_sym_Rating] = ACTIONS(662),
+    [anon_sym_DateRangePicker] = ACTIONS(662),
     [anon_sym_Unsafe] = ACTIONS(662),
     [anon_sym_Host] = ACTIONS(662),
     [anon_sym_Element] = ACTIONS(662),
@@ -27519,6 +27919,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(564),
     [anon_sym_CommandPalette] = ACTIONS(564),
     [anon_sym_AppShell] = ACTIONS(564),
+    [anon_sym_CheckboxGroup] = ACTIONS(564),
+    [anon_sym_InputOTP] = ACTIONS(564),
+    [anon_sym_TagInput] = ACTIONS(564),
+    [anon_sym_Rating] = ACTIONS(564),
+    [anon_sym_DateRangePicker] = ACTIONS(564),
     [anon_sym_Unsafe] = ACTIONS(564),
     [anon_sym_Host] = ACTIONS(564),
     [anon_sym_Element] = ACTIONS(564),
@@ -27729,6 +28134,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(564),
     [anon_sym_CommandPalette] = ACTIONS(564),
     [anon_sym_AppShell] = ACTIONS(564),
+    [anon_sym_CheckboxGroup] = ACTIONS(564),
+    [anon_sym_InputOTP] = ACTIONS(564),
+    [anon_sym_TagInput] = ACTIONS(564),
+    [anon_sym_Rating] = ACTIONS(564),
+    [anon_sym_DateRangePicker] = ACTIONS(564),
     [anon_sym_Unsafe] = ACTIONS(564),
     [anon_sym_Host] = ACTIONS(564),
     [anon_sym_Element] = ACTIONS(564),
@@ -27936,6 +28346,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(564),
     [anon_sym_CommandPalette] = ACTIONS(564),
     [anon_sym_AppShell] = ACTIONS(564),
+    [anon_sym_CheckboxGroup] = ACTIONS(564),
+    [anon_sym_InputOTP] = ACTIONS(564),
+    [anon_sym_TagInput] = ACTIONS(564),
+    [anon_sym_Rating] = ACTIONS(564),
+    [anon_sym_DateRangePicker] = ACTIONS(564),
     [anon_sym_Unsafe] = ACTIONS(564),
     [anon_sym_Host] = ACTIONS(564),
     [anon_sym_Element] = ACTIONS(564),
@@ -28144,6 +28559,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(564),
     [anon_sym_CommandPalette] = ACTIONS(564),
     [anon_sym_AppShell] = ACTIONS(564),
+    [anon_sym_CheckboxGroup] = ACTIONS(564),
+    [anon_sym_InputOTP] = ACTIONS(564),
+    [anon_sym_TagInput] = ACTIONS(564),
+    [anon_sym_Rating] = ACTIONS(564),
+    [anon_sym_DateRangePicker] = ACTIONS(564),
     [anon_sym_Unsafe] = ACTIONS(564),
     [anon_sym_Host] = ACTIONS(564),
     [anon_sym_Element] = ACTIONS(564),
@@ -28353,6 +28773,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(704),
     [anon_sym_CommandPalette] = ACTIONS(704),
     [anon_sym_AppShell] = ACTIONS(704),
+    [anon_sym_CheckboxGroup] = ACTIONS(704),
+    [anon_sym_InputOTP] = ACTIONS(704),
+    [anon_sym_TagInput] = ACTIONS(704),
+    [anon_sym_Rating] = ACTIONS(704),
+    [anon_sym_DateRangePicker] = ACTIONS(704),
     [anon_sym_Unsafe] = ACTIONS(704),
     [anon_sym_Host] = ACTIONS(704),
     [anon_sym_Element] = ACTIONS(704),
@@ -28560,6 +28985,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(708),
     [anon_sym_CommandPalette] = ACTIONS(708),
     [anon_sym_AppShell] = ACTIONS(708),
+    [anon_sym_CheckboxGroup] = ACTIONS(708),
+    [anon_sym_InputOTP] = ACTIONS(708),
+    [anon_sym_TagInput] = ACTIONS(708),
+    [anon_sym_Rating] = ACTIONS(708),
+    [anon_sym_DateRangePicker] = ACTIONS(708),
     [anon_sym_Unsafe] = ACTIONS(708),
     [anon_sym_Host] = ACTIONS(708),
     [anon_sym_Element] = ACTIONS(708),
@@ -28766,6 +29196,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(704),
     [anon_sym_CommandPalette] = ACTIONS(704),
     [anon_sym_AppShell] = ACTIONS(704),
+    [anon_sym_CheckboxGroup] = ACTIONS(704),
+    [anon_sym_InputOTP] = ACTIONS(704),
+    [anon_sym_TagInput] = ACTIONS(704),
+    [anon_sym_Rating] = ACTIONS(704),
+    [anon_sym_DateRangePicker] = ACTIONS(704),
     [anon_sym_Unsafe] = ACTIONS(704),
     [anon_sym_Host] = ACTIONS(704),
     [anon_sym_Element] = ACTIONS(704),
@@ -28974,6 +29409,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(712),
     [anon_sym_CommandPalette] = ACTIONS(712),
     [anon_sym_AppShell] = ACTIONS(712),
+    [anon_sym_CheckboxGroup] = ACTIONS(712),
+    [anon_sym_InputOTP] = ACTIONS(712),
+    [anon_sym_TagInput] = ACTIONS(712),
+    [anon_sym_Rating] = ACTIONS(712),
+    [anon_sym_DateRangePicker] = ACTIONS(712),
     [anon_sym_Unsafe] = ACTIONS(712),
     [anon_sym_Host] = ACTIONS(712),
     [anon_sym_Element] = ACTIONS(712),
@@ -29181,6 +29621,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(718),
     [anon_sym_CommandPalette] = ACTIONS(718),
     [anon_sym_AppShell] = ACTIONS(718),
+    [anon_sym_CheckboxGroup] = ACTIONS(718),
+    [anon_sym_InputOTP] = ACTIONS(718),
+    [anon_sym_TagInput] = ACTIONS(718),
+    [anon_sym_Rating] = ACTIONS(718),
+    [anon_sym_DateRangePicker] = ACTIONS(718),
     [anon_sym_Unsafe] = ACTIONS(718),
     [anon_sym_Host] = ACTIONS(718),
     [anon_sym_Element] = ACTIONS(718),
@@ -29386,6 +29831,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(564),
     [anon_sym_CommandPalette] = ACTIONS(564),
     [anon_sym_AppShell] = ACTIONS(564),
+    [anon_sym_CheckboxGroup] = ACTIONS(564),
+    [anon_sym_InputOTP] = ACTIONS(564),
+    [anon_sym_TagInput] = ACTIONS(564),
+    [anon_sym_Rating] = ACTIONS(564),
+    [anon_sym_DateRangePicker] = ACTIONS(564),
     [anon_sym_Unsafe] = ACTIONS(564),
     [anon_sym_Host] = ACTIONS(564),
     [anon_sym_Element] = ACTIONS(564),
@@ -29594,6 +30044,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(724),
     [anon_sym_CommandPalette] = ACTIONS(724),
     [anon_sym_AppShell] = ACTIONS(724),
+    [anon_sym_CheckboxGroup] = ACTIONS(724),
+    [anon_sym_InputOTP] = ACTIONS(724),
+    [anon_sym_TagInput] = ACTIONS(724),
+    [anon_sym_Rating] = ACTIONS(724),
+    [anon_sym_DateRangePicker] = ACTIONS(724),
     [anon_sym_Unsafe] = ACTIONS(724),
     [anon_sym_Host] = ACTIONS(724),
     [anon_sym_Element] = ACTIONS(724),
@@ -29800,6 +30255,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(708),
     [anon_sym_CommandPalette] = ACTIONS(708),
     [anon_sym_AppShell] = ACTIONS(708),
+    [anon_sym_CheckboxGroup] = ACTIONS(708),
+    [anon_sym_InputOTP] = ACTIONS(708),
+    [anon_sym_TagInput] = ACTIONS(708),
+    [anon_sym_Rating] = ACTIONS(708),
+    [anon_sym_DateRangePicker] = ACTIONS(708),
     [anon_sym_Unsafe] = ACTIONS(708),
     [anon_sym_Host] = ACTIONS(708),
     [anon_sym_Element] = ACTIONS(708),
@@ -30007,6 +30467,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(712),
     [anon_sym_CommandPalette] = ACTIONS(712),
     [anon_sym_AppShell] = ACTIONS(712),
+    [anon_sym_CheckboxGroup] = ACTIONS(712),
+    [anon_sym_InputOTP] = ACTIONS(712),
+    [anon_sym_TagInput] = ACTIONS(712),
+    [anon_sym_Rating] = ACTIONS(712),
+    [anon_sym_DateRangePicker] = ACTIONS(712),
     [anon_sym_Unsafe] = ACTIONS(712),
     [anon_sym_Host] = ACTIONS(712),
     [anon_sym_Element] = ACTIONS(712),
@@ -30214,6 +30679,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(718),
     [anon_sym_CommandPalette] = ACTIONS(718),
     [anon_sym_AppShell] = ACTIONS(718),
+    [anon_sym_CheckboxGroup] = ACTIONS(718),
+    [anon_sym_InputOTP] = ACTIONS(718),
+    [anon_sym_TagInput] = ACTIONS(718),
+    [anon_sym_Rating] = ACTIONS(718),
+    [anon_sym_DateRangePicker] = ACTIONS(718),
     [anon_sym_Unsafe] = ACTIONS(718),
     [anon_sym_Host] = ACTIONS(718),
     [anon_sym_Element] = ACTIONS(718),
@@ -30422,6 +30892,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(564),
     [anon_sym_CommandPalette] = ACTIONS(564),
     [anon_sym_AppShell] = ACTIONS(564),
+    [anon_sym_CheckboxGroup] = ACTIONS(564),
+    [anon_sym_InputOTP] = ACTIONS(564),
+    [anon_sym_TagInput] = ACTIONS(564),
+    [anon_sym_Rating] = ACTIONS(564),
+    [anon_sym_DateRangePicker] = ACTIONS(564),
     [anon_sym_Unsafe] = ACTIONS(564),
     [anon_sym_Host] = ACTIONS(564),
     [anon_sym_Element] = ACTIONS(564),
@@ -30629,6 +31104,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(564),
     [anon_sym_CommandPalette] = ACTIONS(564),
     [anon_sym_AppShell] = ACTIONS(564),
+    [anon_sym_CheckboxGroup] = ACTIONS(564),
+    [anon_sym_InputOTP] = ACTIONS(564),
+    [anon_sym_TagInput] = ACTIONS(564),
+    [anon_sym_Rating] = ACTIONS(564),
+    [anon_sym_DateRangePicker] = ACTIONS(564),
     [anon_sym_Unsafe] = ACTIONS(564),
     [anon_sym_Host] = ACTIONS(564),
     [anon_sym_Element] = ACTIONS(564),
@@ -30836,6 +31316,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(708),
     [anon_sym_CommandPalette] = ACTIONS(708),
     [anon_sym_AppShell] = ACTIONS(708),
+    [anon_sym_CheckboxGroup] = ACTIONS(708),
+    [anon_sym_InputOTP] = ACTIONS(708),
+    [anon_sym_TagInput] = ACTIONS(708),
+    [anon_sym_Rating] = ACTIONS(708),
+    [anon_sym_DateRangePicker] = ACTIONS(708),
     [anon_sym_Unsafe] = ACTIONS(708),
     [anon_sym_Host] = ACTIONS(708),
     [anon_sym_Element] = ACTIONS(708),
@@ -31043,6 +31528,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(712),
     [anon_sym_CommandPalette] = ACTIONS(712),
     [anon_sym_AppShell] = ACTIONS(712),
+    [anon_sym_CheckboxGroup] = ACTIONS(712),
+    [anon_sym_InputOTP] = ACTIONS(712),
+    [anon_sym_TagInput] = ACTIONS(712),
+    [anon_sym_Rating] = ACTIONS(712),
+    [anon_sym_DateRangePicker] = ACTIONS(712),
     [anon_sym_Unsafe] = ACTIONS(712),
     [anon_sym_Host] = ACTIONS(712),
     [anon_sym_Element] = ACTIONS(712),
@@ -31250,6 +31740,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(718),
     [anon_sym_CommandPalette] = ACTIONS(718),
     [anon_sym_AppShell] = ACTIONS(718),
+    [anon_sym_CheckboxGroup] = ACTIONS(718),
+    [anon_sym_InputOTP] = ACTIONS(718),
+    [anon_sym_TagInput] = ACTIONS(718),
+    [anon_sym_Rating] = ACTIONS(718),
+    [anon_sym_DateRangePicker] = ACTIONS(718),
     [anon_sym_Unsafe] = ACTIONS(718),
     [anon_sym_Host] = ACTIONS(718),
     [anon_sym_Element] = ACTIONS(718),
@@ -31457,6 +31952,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(662),
     [anon_sym_CommandPalette] = ACTIONS(662),
     [anon_sym_AppShell] = ACTIONS(662),
+    [anon_sym_CheckboxGroup] = ACTIONS(662),
+    [anon_sym_InputOTP] = ACTIONS(662),
+    [anon_sym_TagInput] = ACTIONS(662),
+    [anon_sym_Rating] = ACTIONS(662),
+    [anon_sym_DateRangePicker] = ACTIONS(662),
     [anon_sym_Unsafe] = ACTIONS(662),
     [anon_sym_Host] = ACTIONS(662),
     [anon_sym_Element] = ACTIONS(662),
@@ -31663,6 +32163,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(771),
     [anon_sym_CommandPalette] = ACTIONS(771),
     [anon_sym_AppShell] = ACTIONS(771),
+    [anon_sym_CheckboxGroup] = ACTIONS(771),
+    [anon_sym_InputOTP] = ACTIONS(771),
+    [anon_sym_TagInput] = ACTIONS(771),
+    [anon_sym_Rating] = ACTIONS(771),
+    [anon_sym_DateRangePicker] = ACTIONS(771),
     [anon_sym_Unsafe] = ACTIONS(771),
     [anon_sym_Host] = ACTIONS(771),
     [anon_sym_Element] = ACTIONS(771),
@@ -31870,6 +32375,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(810),
     [anon_sym_CommandPalette] = ACTIONS(810),
     [anon_sym_AppShell] = ACTIONS(810),
+    [anon_sym_CheckboxGroup] = ACTIONS(810),
+    [anon_sym_InputOTP] = ACTIONS(810),
+    [anon_sym_TagInput] = ACTIONS(810),
+    [anon_sym_Rating] = ACTIONS(810),
+    [anon_sym_DateRangePicker] = ACTIONS(810),
     [anon_sym_Unsafe] = ACTIONS(810),
     [anon_sym_Host] = ACTIONS(810),
     [anon_sym_Element] = ACTIONS(810),
@@ -32077,6 +32587,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(818),
     [anon_sym_CommandPalette] = ACTIONS(818),
     [anon_sym_AppShell] = ACTIONS(818),
+    [anon_sym_CheckboxGroup] = ACTIONS(818),
+    [anon_sym_InputOTP] = ACTIONS(818),
+    [anon_sym_TagInput] = ACTIONS(818),
+    [anon_sym_Rating] = ACTIONS(818),
+    [anon_sym_DateRangePicker] = ACTIONS(818),
     [anon_sym_Unsafe] = ACTIONS(818),
     [anon_sym_Host] = ACTIONS(818),
     [anon_sym_Element] = ACTIONS(818),
@@ -32285,6 +32800,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(826),
     [anon_sym_CommandPalette] = ACTIONS(826),
     [anon_sym_AppShell] = ACTIONS(826),
+    [anon_sym_CheckboxGroup] = ACTIONS(826),
+    [anon_sym_InputOTP] = ACTIONS(826),
+    [anon_sym_TagInput] = ACTIONS(826),
+    [anon_sym_Rating] = ACTIONS(826),
+    [anon_sym_DateRangePicker] = ACTIONS(826),
     [anon_sym_Unsafe] = ACTIONS(826),
     [anon_sym_Host] = ACTIONS(826),
     [anon_sym_Element] = ACTIONS(826),
@@ -32493,6 +33013,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(830),
     [anon_sym_CommandPalette] = ACTIONS(830),
     [anon_sym_AppShell] = ACTIONS(830),
+    [anon_sym_CheckboxGroup] = ACTIONS(830),
+    [anon_sym_InputOTP] = ACTIONS(830),
+    [anon_sym_TagInput] = ACTIONS(830),
+    [anon_sym_Rating] = ACTIONS(830),
+    [anon_sym_DateRangePicker] = ACTIONS(830),
     [anon_sym_Unsafe] = ACTIONS(830),
     [anon_sym_Host] = ACTIONS(830),
     [anon_sym_Element] = ACTIONS(830),
@@ -32699,6 +33224,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(662),
     [anon_sym_CommandPalette] = ACTIONS(662),
     [anon_sym_AppShell] = ACTIONS(662),
+    [anon_sym_CheckboxGroup] = ACTIONS(662),
+    [anon_sym_InputOTP] = ACTIONS(662),
+    [anon_sym_TagInput] = ACTIONS(662),
+    [anon_sym_Rating] = ACTIONS(662),
+    [anon_sym_DateRangePicker] = ACTIONS(662),
     [anon_sym_Unsafe] = ACTIONS(662),
     [anon_sym_Host] = ACTIONS(662),
     [anon_sym_Element] = ACTIONS(662),
@@ -32905,6 +33435,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(834),
     [anon_sym_CommandPalette] = ACTIONS(834),
     [anon_sym_AppShell] = ACTIONS(834),
+    [anon_sym_CheckboxGroup] = ACTIONS(834),
+    [anon_sym_InputOTP] = ACTIONS(834),
+    [anon_sym_TagInput] = ACTIONS(834),
+    [anon_sym_Rating] = ACTIONS(834),
+    [anon_sym_DateRangePicker] = ACTIONS(834),
     [anon_sym_Unsafe] = ACTIONS(834),
     [anon_sym_Host] = ACTIONS(834),
     [anon_sym_Element] = ACTIONS(834),
@@ -33113,6 +33648,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(830),
     [anon_sym_CommandPalette] = ACTIONS(830),
     [anon_sym_AppShell] = ACTIONS(830),
+    [anon_sym_CheckboxGroup] = ACTIONS(830),
+    [anon_sym_InputOTP] = ACTIONS(830),
+    [anon_sym_TagInput] = ACTIONS(830),
+    [anon_sym_Rating] = ACTIONS(830),
+    [anon_sym_DateRangePicker] = ACTIONS(830),
     [anon_sym_Unsafe] = ACTIONS(830),
     [anon_sym_Host] = ACTIONS(830),
     [anon_sym_Element] = ACTIONS(830),
@@ -33319,6 +33859,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(724),
     [anon_sym_CommandPalette] = ACTIONS(724),
     [anon_sym_AppShell] = ACTIONS(724),
+    [anon_sym_CheckboxGroup] = ACTIONS(724),
+    [anon_sym_InputOTP] = ACTIONS(724),
+    [anon_sym_TagInput] = ACTIONS(724),
+    [anon_sym_Rating] = ACTIONS(724),
+    [anon_sym_DateRangePicker] = ACTIONS(724),
     [anon_sym_Unsafe] = ACTIONS(724),
     [anon_sym_Host] = ACTIONS(724),
     [anon_sym_Element] = ACTIONS(724),
@@ -33526,6 +34071,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(845),
     [anon_sym_CommandPalette] = ACTIONS(845),
     [anon_sym_AppShell] = ACTIONS(845),
+    [anon_sym_CheckboxGroup] = ACTIONS(845),
+    [anon_sym_InputOTP] = ACTIONS(845),
+    [anon_sym_TagInput] = ACTIONS(845),
+    [anon_sym_Rating] = ACTIONS(845),
+    [anon_sym_DateRangePicker] = ACTIONS(845),
     [anon_sym_Unsafe] = ACTIONS(845),
     [anon_sym_Host] = ACTIONS(845),
     [anon_sym_Element] = ACTIONS(845),
@@ -33734,6 +34284,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(712),
     [anon_sym_CommandPalette] = ACTIONS(712),
     [anon_sym_AppShell] = ACTIONS(712),
+    [anon_sym_CheckboxGroup] = ACTIONS(712),
+    [anon_sym_InputOTP] = ACTIONS(712),
+    [anon_sym_TagInput] = ACTIONS(712),
+    [anon_sym_Rating] = ACTIONS(712),
+    [anon_sym_DateRangePicker] = ACTIONS(712),
     [anon_sym_Unsafe] = ACTIONS(712),
     [anon_sym_Host] = ACTIONS(712),
     [anon_sym_Element] = ACTIONS(712),
@@ -33941,6 +34496,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(718),
     [anon_sym_CommandPalette] = ACTIONS(718),
     [anon_sym_AppShell] = ACTIONS(718),
+    [anon_sym_CheckboxGroup] = ACTIONS(718),
+    [anon_sym_InputOTP] = ACTIONS(718),
+    [anon_sym_TagInput] = ACTIONS(718),
+    [anon_sym_Rating] = ACTIONS(718),
+    [anon_sym_DateRangePicker] = ACTIONS(718),
     [anon_sym_Unsafe] = ACTIONS(718),
     [anon_sym_Host] = ACTIONS(718),
     [anon_sym_Element] = ACTIONS(718),
@@ -34148,6 +34708,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(857),
     [anon_sym_CommandPalette] = ACTIONS(857),
     [anon_sym_AppShell] = ACTIONS(857),
+    [anon_sym_CheckboxGroup] = ACTIONS(857),
+    [anon_sym_InputOTP] = ACTIONS(857),
+    [anon_sym_TagInput] = ACTIONS(857),
+    [anon_sym_Rating] = ACTIONS(857),
+    [anon_sym_DateRangePicker] = ACTIONS(857),
     [anon_sym_Unsafe] = ACTIONS(857),
     [anon_sym_Host] = ACTIONS(857),
     [anon_sym_Element] = ACTIONS(857),
@@ -34355,6 +34920,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(845),
     [anon_sym_CommandPalette] = ACTIONS(845),
     [anon_sym_AppShell] = ACTIONS(845),
+    [anon_sym_CheckboxGroup] = ACTIONS(845),
+    [anon_sym_InputOTP] = ACTIONS(845),
+    [anon_sym_TagInput] = ACTIONS(845),
+    [anon_sym_Rating] = ACTIONS(845),
+    [anon_sym_DateRangePicker] = ACTIONS(845),
     [anon_sym_Unsafe] = ACTIONS(845),
     [anon_sym_Host] = ACTIONS(845),
     [anon_sym_Element] = ACTIONS(845),
@@ -34563,6 +35133,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(662),
     [anon_sym_CommandPalette] = ACTIONS(662),
     [anon_sym_AppShell] = ACTIONS(662),
+    [anon_sym_CheckboxGroup] = ACTIONS(662),
+    [anon_sym_InputOTP] = ACTIONS(662),
+    [anon_sym_TagInput] = ACTIONS(662),
+    [anon_sym_Rating] = ACTIONS(662),
+    [anon_sym_DateRangePicker] = ACTIONS(662),
     [anon_sym_Unsafe] = ACTIONS(662),
     [anon_sym_Host] = ACTIONS(662),
     [anon_sym_Element] = ACTIONS(662),
@@ -34770,6 +35345,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(662),
     [anon_sym_CommandPalette] = ACTIONS(662),
     [anon_sym_AppShell] = ACTIONS(662),
+    [anon_sym_CheckboxGroup] = ACTIONS(662),
+    [anon_sym_InputOTP] = ACTIONS(662),
+    [anon_sym_TagInput] = ACTIONS(662),
+    [anon_sym_Rating] = ACTIONS(662),
+    [anon_sym_DateRangePicker] = ACTIONS(662),
     [anon_sym_Unsafe] = ACTIONS(662),
     [anon_sym_Host] = ACTIONS(662),
     [anon_sym_Element] = ACTIONS(662),
@@ -34975,6 +35555,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(861),
     [anon_sym_CommandPalette] = ACTIONS(861),
     [anon_sym_AppShell] = ACTIONS(861),
+    [anon_sym_CheckboxGroup] = ACTIONS(861),
+    [anon_sym_InputOTP] = ACTIONS(861),
+    [anon_sym_TagInput] = ACTIONS(861),
+    [anon_sym_Rating] = ACTIONS(861),
+    [anon_sym_DateRangePicker] = ACTIONS(861),
     [anon_sym_Unsafe] = ACTIONS(861),
     [anon_sym_Host] = ACTIONS(861),
     [anon_sym_Element] = ACTIONS(861),
@@ -35183,6 +35768,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(861),
     [anon_sym_CommandPalette] = ACTIONS(861),
     [anon_sym_AppShell] = ACTIONS(861),
+    [anon_sym_CheckboxGroup] = ACTIONS(861),
+    [anon_sym_InputOTP] = ACTIONS(861),
+    [anon_sym_TagInput] = ACTIONS(861),
+    [anon_sym_Rating] = ACTIONS(861),
+    [anon_sym_DateRangePicker] = ACTIONS(861),
     [anon_sym_Unsafe] = ACTIONS(861),
     [anon_sym_Host] = ACTIONS(861),
     [anon_sym_Element] = ACTIONS(861),
@@ -35389,6 +35979,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(857),
     [anon_sym_CommandPalette] = ACTIONS(857),
     [anon_sym_AppShell] = ACTIONS(857),
+    [anon_sym_CheckboxGroup] = ACTIONS(857),
+    [anon_sym_InputOTP] = ACTIONS(857),
+    [anon_sym_TagInput] = ACTIONS(857),
+    [anon_sym_Rating] = ACTIONS(857),
+    [anon_sym_DateRangePicker] = ACTIONS(857),
     [anon_sym_Unsafe] = ACTIONS(857),
     [anon_sym_Host] = ACTIONS(857),
     [anon_sym_Element] = ACTIONS(857),
@@ -35597,6 +36192,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(771),
     [anon_sym_CommandPalette] = ACTIONS(771),
     [anon_sym_AppShell] = ACTIONS(771),
+    [anon_sym_CheckboxGroup] = ACTIONS(771),
+    [anon_sym_InputOTP] = ACTIONS(771),
+    [anon_sym_TagInput] = ACTIONS(771),
+    [anon_sym_Rating] = ACTIONS(771),
+    [anon_sym_DateRangePicker] = ACTIONS(771),
     [anon_sym_Unsafe] = ACTIONS(771),
     [anon_sym_Host] = ACTIONS(771),
     [anon_sym_Element] = ACTIONS(771),
@@ -35804,6 +36404,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(810),
     [anon_sym_CommandPalette] = ACTIONS(810),
     [anon_sym_AppShell] = ACTIONS(810),
+    [anon_sym_CheckboxGroup] = ACTIONS(810),
+    [anon_sym_InputOTP] = ACTIONS(810),
+    [anon_sym_TagInput] = ACTIONS(810),
+    [anon_sym_Rating] = ACTIONS(810),
+    [anon_sym_DateRangePicker] = ACTIONS(810),
     [anon_sym_Unsafe] = ACTIONS(810),
     [anon_sym_Host] = ACTIONS(810),
     [anon_sym_Element] = ACTIONS(810),
@@ -36011,6 +36616,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(818),
     [anon_sym_CommandPalette] = ACTIONS(818),
     [anon_sym_AppShell] = ACTIONS(818),
+    [anon_sym_CheckboxGroup] = ACTIONS(818),
+    [anon_sym_InputOTP] = ACTIONS(818),
+    [anon_sym_TagInput] = ACTIONS(818),
+    [anon_sym_Rating] = ACTIONS(818),
+    [anon_sym_DateRangePicker] = ACTIONS(818),
     [anon_sym_Unsafe] = ACTIONS(818),
     [anon_sym_Host] = ACTIONS(818),
     [anon_sym_Element] = ACTIONS(818),
@@ -36219,6 +36829,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(826),
     [anon_sym_CommandPalette] = ACTIONS(826),
     [anon_sym_AppShell] = ACTIONS(826),
+    [anon_sym_CheckboxGroup] = ACTIONS(826),
+    [anon_sym_InputOTP] = ACTIONS(826),
+    [anon_sym_TagInput] = ACTIONS(826),
+    [anon_sym_Rating] = ACTIONS(826),
+    [anon_sym_DateRangePicker] = ACTIONS(826),
     [anon_sym_Unsafe] = ACTIONS(826),
     [anon_sym_Host] = ACTIONS(826),
     [anon_sym_Element] = ACTIONS(826),
@@ -36425,6 +37040,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(834),
     [anon_sym_CommandPalette] = ACTIONS(834),
     [anon_sym_AppShell] = ACTIONS(834),
+    [anon_sym_CheckboxGroup] = ACTIONS(834),
+    [anon_sym_InputOTP] = ACTIONS(834),
+    [anon_sym_TagInput] = ACTIONS(834),
+    [anon_sym_Rating] = ACTIONS(834),
+    [anon_sym_DateRangePicker] = ACTIONS(834),
     [anon_sym_Unsafe] = ACTIONS(834),
     [anon_sym_Host] = ACTIONS(834),
     [anon_sym_Element] = ACTIONS(834),
@@ -36633,6 +37253,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(564),
     [anon_sym_CommandPalette] = ACTIONS(564),
     [anon_sym_AppShell] = ACTIONS(564),
+    [anon_sym_CheckboxGroup] = ACTIONS(564),
+    [anon_sym_InputOTP] = ACTIONS(564),
+    [anon_sym_TagInput] = ACTIONS(564),
+    [anon_sym_Rating] = ACTIONS(564),
+    [anon_sym_DateRangePicker] = ACTIONS(564),
     [anon_sym_Unsafe] = ACTIONS(564),
     [anon_sym_Host] = ACTIONS(564),
     [anon_sym_Element] = ACTIONS(564),
@@ -36839,6 +37464,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(708),
     [anon_sym_CommandPalette] = ACTIONS(708),
     [anon_sym_AppShell] = ACTIONS(708),
+    [anon_sym_CheckboxGroup] = ACTIONS(708),
+    [anon_sym_InputOTP] = ACTIONS(708),
+    [anon_sym_TagInput] = ACTIONS(708),
+    [anon_sym_Rating] = ACTIONS(708),
+    [anon_sym_DateRangePicker] = ACTIONS(708),
     [anon_sym_Unsafe] = ACTIONS(708),
     [anon_sym_Host] = ACTIONS(708),
     [anon_sym_Element] = ACTIONS(708),
@@ -37046,6 +37676,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(876),
     [anon_sym_CommandPalette] = ACTIONS(876),
     [anon_sym_AppShell] = ACTIONS(876),
+    [anon_sym_CheckboxGroup] = ACTIONS(876),
+    [anon_sym_InputOTP] = ACTIONS(876),
+    [anon_sym_TagInput] = ACTIONS(876),
+    [anon_sym_Rating] = ACTIONS(876),
+    [anon_sym_DateRangePicker] = ACTIONS(876),
     [anon_sym_Unsafe] = ACTIONS(876),
     [anon_sym_Host] = ACTIONS(876),
     [anon_sym_Element] = ACTIONS(876),
@@ -37252,6 +37887,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(880),
     [anon_sym_CommandPalette] = ACTIONS(880),
     [anon_sym_AppShell] = ACTIONS(880),
+    [anon_sym_CheckboxGroup] = ACTIONS(880),
+    [anon_sym_InputOTP] = ACTIONS(880),
+    [anon_sym_TagInput] = ACTIONS(880),
+    [anon_sym_Rating] = ACTIONS(880),
+    [anon_sym_DateRangePicker] = ACTIONS(880),
     [anon_sym_Unsafe] = ACTIONS(880),
     [anon_sym_Host] = ACTIONS(880),
     [anon_sym_Element] = ACTIONS(880),
@@ -37457,6 +38097,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(662),
     [anon_sym_CommandPalette] = ACTIONS(662),
     [anon_sym_AppShell] = ACTIONS(662),
+    [anon_sym_CheckboxGroup] = ACTIONS(662),
+    [anon_sym_InputOTP] = ACTIONS(662),
+    [anon_sym_TagInput] = ACTIONS(662),
+    [anon_sym_Rating] = ACTIONS(662),
+    [anon_sym_DateRangePicker] = ACTIONS(662),
     [anon_sym_Unsafe] = ACTIONS(662),
     [anon_sym_Host] = ACTIONS(662),
     [anon_sym_Element] = ACTIONS(662),
@@ -37663,6 +38308,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(838),
     [anon_sym_CommandPalette] = ACTIONS(838),
     [anon_sym_AppShell] = ACTIONS(838),
+    [anon_sym_CheckboxGroup] = ACTIONS(838),
+    [anon_sym_InputOTP] = ACTIONS(838),
+    [anon_sym_TagInput] = ACTIONS(838),
+    [anon_sym_Rating] = ACTIONS(838),
+    [anon_sym_DateRangePicker] = ACTIONS(838),
     [anon_sym_Unsafe] = ACTIONS(838),
     [anon_sym_Host] = ACTIONS(838),
     [anon_sym_Element] = ACTIONS(838),
@@ -37869,6 +38519,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(849),
     [anon_sym_CommandPalette] = ACTIONS(849),
     [anon_sym_AppShell] = ACTIONS(849),
+    [anon_sym_CheckboxGroup] = ACTIONS(849),
+    [anon_sym_InputOTP] = ACTIONS(849),
+    [anon_sym_TagInput] = ACTIONS(849),
+    [anon_sym_Rating] = ACTIONS(849),
+    [anon_sym_DateRangePicker] = ACTIONS(849),
     [anon_sym_Unsafe] = ACTIONS(849),
     [anon_sym_Host] = ACTIONS(849),
     [anon_sym_Element] = ACTIONS(849),
@@ -38075,6 +38730,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(884),
     [anon_sym_CommandPalette] = ACTIONS(884),
     [anon_sym_AppShell] = ACTIONS(884),
+    [anon_sym_CheckboxGroup] = ACTIONS(884),
+    [anon_sym_InputOTP] = ACTIONS(884),
+    [anon_sym_TagInput] = ACTIONS(884),
+    [anon_sym_Rating] = ACTIONS(884),
+    [anon_sym_DateRangePicker] = ACTIONS(884),
     [anon_sym_Unsafe] = ACTIONS(884),
     [anon_sym_Host] = ACTIONS(884),
     [anon_sym_Element] = ACTIONS(884),
@@ -38281,6 +38941,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(894),
     [anon_sym_CommandPalette] = ACTIONS(894),
     [anon_sym_AppShell] = ACTIONS(894),
+    [anon_sym_CheckboxGroup] = ACTIONS(894),
+    [anon_sym_InputOTP] = ACTIONS(894),
+    [anon_sym_TagInput] = ACTIONS(894),
+    [anon_sym_Rating] = ACTIONS(894),
+    [anon_sym_DateRangePicker] = ACTIONS(894),
     [anon_sym_Unsafe] = ACTIONS(894),
     [anon_sym_Host] = ACTIONS(894),
     [anon_sym_Element] = ACTIONS(894),
@@ -38487,6 +39152,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(898),
     [anon_sym_CommandPalette] = ACTIONS(898),
     [anon_sym_AppShell] = ACTIONS(898),
+    [anon_sym_CheckboxGroup] = ACTIONS(898),
+    [anon_sym_InputOTP] = ACTIONS(898),
+    [anon_sym_TagInput] = ACTIONS(898),
+    [anon_sym_Rating] = ACTIONS(898),
+    [anon_sym_DateRangePicker] = ACTIONS(898),
     [anon_sym_Unsafe] = ACTIONS(898),
     [anon_sym_Host] = ACTIONS(898),
     [anon_sym_Element] = ACTIONS(898),
@@ -38693,6 +39363,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(662),
     [anon_sym_CommandPalette] = ACTIONS(662),
     [anon_sym_AppShell] = ACTIONS(662),
+    [anon_sym_CheckboxGroup] = ACTIONS(662),
+    [anon_sym_InputOTP] = ACTIONS(662),
+    [anon_sym_TagInput] = ACTIONS(662),
+    [anon_sym_Rating] = ACTIONS(662),
+    [anon_sym_DateRangePicker] = ACTIONS(662),
     [anon_sym_Unsafe] = ACTIONS(662),
     [anon_sym_Host] = ACTIONS(662),
     [anon_sym_Element] = ACTIONS(662),
@@ -38899,6 +39574,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(902),
     [anon_sym_CommandPalette] = ACTIONS(902),
     [anon_sym_AppShell] = ACTIONS(902),
+    [anon_sym_CheckboxGroup] = ACTIONS(902),
+    [anon_sym_InputOTP] = ACTIONS(902),
+    [anon_sym_TagInput] = ACTIONS(902),
+    [anon_sym_Rating] = ACTIONS(902),
+    [anon_sym_DateRangePicker] = ACTIONS(902),
     [anon_sym_Unsafe] = ACTIONS(902),
     [anon_sym_Host] = ACTIONS(902),
     [anon_sym_Element] = ACTIONS(902),
@@ -39106,6 +39786,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(865),
     [anon_sym_CommandPalette] = ACTIONS(865),
     [anon_sym_AppShell] = ACTIONS(865),
+    [anon_sym_CheckboxGroup] = ACTIONS(865),
+    [anon_sym_InputOTP] = ACTIONS(865),
+    [anon_sym_TagInput] = ACTIONS(865),
+    [anon_sym_Rating] = ACTIONS(865),
+    [anon_sym_DateRangePicker] = ACTIONS(865),
     [anon_sym_Unsafe] = ACTIONS(865),
     [anon_sym_Host] = ACTIONS(865),
     [anon_sym_Element] = ACTIONS(865),
@@ -39311,6 +39996,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(906),
     [anon_sym_CommandPalette] = ACTIONS(906),
     [anon_sym_AppShell] = ACTIONS(906),
+    [anon_sym_CheckboxGroup] = ACTIONS(906),
+    [anon_sym_InputOTP] = ACTIONS(906),
+    [anon_sym_TagInput] = ACTIONS(906),
+    [anon_sym_Rating] = ACTIONS(906),
+    [anon_sym_DateRangePicker] = ACTIONS(906),
     [anon_sym_Unsafe] = ACTIONS(906),
     [anon_sym_Host] = ACTIONS(906),
     [anon_sym_Element] = ACTIONS(906),
@@ -39517,6 +40207,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(910),
     [anon_sym_CommandPalette] = ACTIONS(910),
     [anon_sym_AppShell] = ACTIONS(910),
+    [anon_sym_CheckboxGroup] = ACTIONS(910),
+    [anon_sym_InputOTP] = ACTIONS(910),
+    [anon_sym_TagInput] = ACTIONS(910),
+    [anon_sym_Rating] = ACTIONS(910),
+    [anon_sym_DateRangePicker] = ACTIONS(910),
     [anon_sym_Unsafe] = ACTIONS(910),
     [anon_sym_Host] = ACTIONS(910),
     [anon_sym_Element] = ACTIONS(910),
@@ -39724,6 +40419,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(822),
     [anon_sym_CommandPalette] = ACTIONS(822),
     [anon_sym_AppShell] = ACTIONS(822),
+    [anon_sym_CheckboxGroup] = ACTIONS(822),
+    [anon_sym_InputOTP] = ACTIONS(822),
+    [anon_sym_TagInput] = ACTIONS(822),
+    [anon_sym_Rating] = ACTIONS(822),
+    [anon_sym_DateRangePicker] = ACTIONS(822),
     [anon_sym_Unsafe] = ACTIONS(822),
     [anon_sym_Host] = ACTIONS(822),
     [anon_sym_Element] = ACTIONS(822),
@@ -39929,6 +40629,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(914),
     [anon_sym_CommandPalette] = ACTIONS(914),
     [anon_sym_AppShell] = ACTIONS(914),
+    [anon_sym_CheckboxGroup] = ACTIONS(914),
+    [anon_sym_InputOTP] = ACTIONS(914),
+    [anon_sym_TagInput] = ACTIONS(914),
+    [anon_sym_Rating] = ACTIONS(914),
+    [anon_sym_DateRangePicker] = ACTIONS(914),
     [anon_sym_Unsafe] = ACTIONS(914),
     [anon_sym_Host] = ACTIONS(914),
     [anon_sym_Element] = ACTIONS(914),
@@ -40135,6 +40840,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(918),
     [anon_sym_CommandPalette] = ACTIONS(918),
     [anon_sym_AppShell] = ACTIONS(918),
+    [anon_sym_CheckboxGroup] = ACTIONS(918),
+    [anon_sym_InputOTP] = ACTIONS(918),
+    [anon_sym_TagInput] = ACTIONS(918),
+    [anon_sym_Rating] = ACTIONS(918),
+    [anon_sym_DateRangePicker] = ACTIONS(918),
     [anon_sym_Unsafe] = ACTIONS(918),
     [anon_sym_Host] = ACTIONS(918),
     [anon_sym_Element] = ACTIONS(918),
@@ -40341,6 +41051,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(876),
     [anon_sym_CommandPalette] = ACTIONS(876),
     [anon_sym_AppShell] = ACTIONS(876),
+    [anon_sym_CheckboxGroup] = ACTIONS(876),
+    [anon_sym_InputOTP] = ACTIONS(876),
+    [anon_sym_TagInput] = ACTIONS(876),
+    [anon_sym_Rating] = ACTIONS(876),
+    [anon_sym_DateRangePicker] = ACTIONS(876),
     [anon_sym_Unsafe] = ACTIONS(876),
     [anon_sym_Host] = ACTIONS(876),
     [anon_sym_Element] = ACTIONS(876),
@@ -40547,6 +41262,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(922),
     [anon_sym_CommandPalette] = ACTIONS(922),
     [anon_sym_AppShell] = ACTIONS(922),
+    [anon_sym_CheckboxGroup] = ACTIONS(922),
+    [anon_sym_InputOTP] = ACTIONS(922),
+    [anon_sym_TagInput] = ACTIONS(922),
+    [anon_sym_Rating] = ACTIONS(922),
+    [anon_sym_DateRangePicker] = ACTIONS(922),
     [anon_sym_Unsafe] = ACTIONS(922),
     [anon_sym_Host] = ACTIONS(922),
     [anon_sym_Element] = ACTIONS(922),
@@ -40753,6 +41473,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(926),
     [anon_sym_CommandPalette] = ACTIONS(926),
     [anon_sym_AppShell] = ACTIONS(926),
+    [anon_sym_CheckboxGroup] = ACTIONS(926),
+    [anon_sym_InputOTP] = ACTIONS(926),
+    [anon_sym_TagInput] = ACTIONS(926),
+    [anon_sym_Rating] = ACTIONS(926),
+    [anon_sym_DateRangePicker] = ACTIONS(926),
     [anon_sym_Unsafe] = ACTIONS(926),
     [anon_sym_Host] = ACTIONS(926),
     [anon_sym_Element] = ACTIONS(926),
@@ -40959,6 +41684,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -41165,6 +41895,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -41371,6 +42106,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -41577,6 +42317,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -41783,6 +42528,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -41989,6 +42739,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -42195,6 +42950,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -42401,6 +43161,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(958),
     [anon_sym_CommandPalette] = ACTIONS(958),
     [anon_sym_AppShell] = ACTIONS(958),
+    [anon_sym_CheckboxGroup] = ACTIONS(958),
+    [anon_sym_InputOTP] = ACTIONS(958),
+    [anon_sym_TagInput] = ACTIONS(958),
+    [anon_sym_Rating] = ACTIONS(958),
+    [anon_sym_DateRangePicker] = ACTIONS(958),
     [anon_sym_Unsafe] = ACTIONS(958),
     [anon_sym_Host] = ACTIONS(958),
     [anon_sym_Element] = ACTIONS(958),
@@ -42608,6 +43373,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(838),
     [anon_sym_CommandPalette] = ACTIONS(838),
     [anon_sym_AppShell] = ACTIONS(838),
+    [anon_sym_CheckboxGroup] = ACTIONS(838),
+    [anon_sym_InputOTP] = ACTIONS(838),
+    [anon_sym_TagInput] = ACTIONS(838),
+    [anon_sym_Rating] = ACTIONS(838),
+    [anon_sym_DateRangePicker] = ACTIONS(838),
     [anon_sym_Unsafe] = ACTIONS(838),
     [anon_sym_Host] = ACTIONS(838),
     [anon_sym_Element] = ACTIONS(838),
@@ -42813,6 +43583,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(962),
     [anon_sym_CommandPalette] = ACTIONS(962),
     [anon_sym_AppShell] = ACTIONS(962),
+    [anon_sym_CheckboxGroup] = ACTIONS(962),
+    [anon_sym_InputOTP] = ACTIONS(962),
+    [anon_sym_TagInput] = ACTIONS(962),
+    [anon_sym_Rating] = ACTIONS(962),
+    [anon_sym_DateRangePicker] = ACTIONS(962),
     [anon_sym_Unsafe] = ACTIONS(962),
     [anon_sym_Host] = ACTIONS(962),
     [anon_sym_Element] = ACTIONS(962),
@@ -43019,6 +43794,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(966),
     [anon_sym_CommandPalette] = ACTIONS(966),
     [anon_sym_AppShell] = ACTIONS(966),
+    [anon_sym_CheckboxGroup] = ACTIONS(966),
+    [anon_sym_InputOTP] = ACTIONS(966),
+    [anon_sym_TagInput] = ACTIONS(966),
+    [anon_sym_Rating] = ACTIONS(966),
+    [anon_sym_DateRangePicker] = ACTIONS(966),
     [anon_sym_Unsafe] = ACTIONS(966),
     [anon_sym_Host] = ACTIONS(966),
     [anon_sym_Element] = ACTIONS(966),
@@ -43225,6 +44005,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(970),
     [anon_sym_CommandPalette] = ACTIONS(970),
     [anon_sym_AppShell] = ACTIONS(970),
+    [anon_sym_CheckboxGroup] = ACTIONS(970),
+    [anon_sym_InputOTP] = ACTIONS(970),
+    [anon_sym_TagInput] = ACTIONS(970),
+    [anon_sym_Rating] = ACTIONS(970),
+    [anon_sym_DateRangePicker] = ACTIONS(970),
     [anon_sym_Unsafe] = ACTIONS(970),
     [anon_sym_Host] = ACTIONS(970),
     [anon_sym_Element] = ACTIONS(970),
@@ -43432,6 +44217,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(849),
     [anon_sym_CommandPalette] = ACTIONS(849),
     [anon_sym_AppShell] = ACTIONS(849),
+    [anon_sym_CheckboxGroup] = ACTIONS(849),
+    [anon_sym_InputOTP] = ACTIONS(849),
+    [anon_sym_TagInput] = ACTIONS(849),
+    [anon_sym_Rating] = ACTIONS(849),
+    [anon_sym_DateRangePicker] = ACTIONS(849),
     [anon_sym_Unsafe] = ACTIONS(849),
     [anon_sym_Host] = ACTIONS(849),
     [anon_sym_Element] = ACTIONS(849),
@@ -43637,6 +44427,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(974),
     [anon_sym_CommandPalette] = ACTIONS(974),
     [anon_sym_AppShell] = ACTIONS(974),
+    [anon_sym_CheckboxGroup] = ACTIONS(974),
+    [anon_sym_InputOTP] = ACTIONS(974),
+    [anon_sym_TagInput] = ACTIONS(974),
+    [anon_sym_Rating] = ACTIONS(974),
+    [anon_sym_DateRangePicker] = ACTIONS(974),
     [anon_sym_Unsafe] = ACTIONS(974),
     [anon_sym_Host] = ACTIONS(974),
     [anon_sym_Element] = ACTIONS(974),
@@ -43843,6 +44638,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(978),
     [anon_sym_CommandPalette] = ACTIONS(978),
     [anon_sym_AppShell] = ACTIONS(978),
+    [anon_sym_CheckboxGroup] = ACTIONS(978),
+    [anon_sym_InputOTP] = ACTIONS(978),
+    [anon_sym_TagInput] = ACTIONS(978),
+    [anon_sym_Rating] = ACTIONS(978),
+    [anon_sym_DateRangePicker] = ACTIONS(978),
     [anon_sym_Unsafe] = ACTIONS(978),
     [anon_sym_Host] = ACTIONS(978),
     [anon_sym_Element] = ACTIONS(978),
@@ -44049,6 +44849,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(982),
     [anon_sym_CommandPalette] = ACTIONS(982),
     [anon_sym_AppShell] = ACTIONS(982),
+    [anon_sym_CheckboxGroup] = ACTIONS(982),
+    [anon_sym_InputOTP] = ACTIONS(982),
+    [anon_sym_TagInput] = ACTIONS(982),
+    [anon_sym_Rating] = ACTIONS(982),
+    [anon_sym_DateRangePicker] = ACTIONS(982),
     [anon_sym_Unsafe] = ACTIONS(982),
     [anon_sym_Host] = ACTIONS(982),
     [anon_sym_Element] = ACTIONS(982),
@@ -44255,6 +45060,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(986),
     [anon_sym_CommandPalette] = ACTIONS(986),
     [anon_sym_AppShell] = ACTIONS(986),
+    [anon_sym_CheckboxGroup] = ACTIONS(986),
+    [anon_sym_InputOTP] = ACTIONS(986),
+    [anon_sym_TagInput] = ACTIONS(986),
+    [anon_sym_Rating] = ACTIONS(986),
+    [anon_sym_DateRangePicker] = ACTIONS(986),
     [anon_sym_Unsafe] = ACTIONS(986),
     [anon_sym_Host] = ACTIONS(986),
     [anon_sym_Element] = ACTIONS(986),
@@ -44461,6 +45271,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(990),
     [anon_sym_CommandPalette] = ACTIONS(990),
     [anon_sym_AppShell] = ACTIONS(990),
+    [anon_sym_CheckboxGroup] = ACTIONS(990),
+    [anon_sym_InputOTP] = ACTIONS(990),
+    [anon_sym_TagInput] = ACTIONS(990),
+    [anon_sym_Rating] = ACTIONS(990),
+    [anon_sym_DateRangePicker] = ACTIONS(990),
     [anon_sym_Unsafe] = ACTIONS(990),
     [anon_sym_Host] = ACTIONS(990),
     [anon_sym_Element] = ACTIONS(990),
@@ -44667,6 +45482,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(994),
     [anon_sym_CommandPalette] = ACTIONS(994),
     [anon_sym_AppShell] = ACTIONS(994),
+    [anon_sym_CheckboxGroup] = ACTIONS(994),
+    [anon_sym_InputOTP] = ACTIONS(994),
+    [anon_sym_TagInput] = ACTIONS(994),
+    [anon_sym_Rating] = ACTIONS(994),
+    [anon_sym_DateRangePicker] = ACTIONS(994),
     [anon_sym_Unsafe] = ACTIONS(994),
     [anon_sym_Host] = ACTIONS(994),
     [anon_sym_Element] = ACTIONS(994),
@@ -44873,6 +45693,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(998),
     [anon_sym_CommandPalette] = ACTIONS(998),
     [anon_sym_AppShell] = ACTIONS(998),
+    [anon_sym_CheckboxGroup] = ACTIONS(998),
+    [anon_sym_InputOTP] = ACTIONS(998),
+    [anon_sym_TagInput] = ACTIONS(998),
+    [anon_sym_Rating] = ACTIONS(998),
+    [anon_sym_DateRangePicker] = ACTIONS(998),
     [anon_sym_Unsafe] = ACTIONS(998),
     [anon_sym_Host] = ACTIONS(998),
     [anon_sym_Element] = ACTIONS(998),
@@ -45079,6 +45904,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1002),
     [anon_sym_CommandPalette] = ACTIONS(1002),
     [anon_sym_AppShell] = ACTIONS(1002),
+    [anon_sym_CheckboxGroup] = ACTIONS(1002),
+    [anon_sym_InputOTP] = ACTIONS(1002),
+    [anon_sym_TagInput] = ACTIONS(1002),
+    [anon_sym_Rating] = ACTIONS(1002),
+    [anon_sym_DateRangePicker] = ACTIONS(1002),
     [anon_sym_Unsafe] = ACTIONS(1002),
     [anon_sym_Host] = ACTIONS(1002),
     [anon_sym_Element] = ACTIONS(1002),
@@ -45286,6 +46116,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(662),
     [anon_sym_CommandPalette] = ACTIONS(662),
     [anon_sym_AppShell] = ACTIONS(662),
+    [anon_sym_CheckboxGroup] = ACTIONS(662),
+    [anon_sym_InputOTP] = ACTIONS(662),
+    [anon_sym_TagInput] = ACTIONS(662),
+    [anon_sym_Rating] = ACTIONS(662),
+    [anon_sym_DateRangePicker] = ACTIONS(662),
     [anon_sym_Unsafe] = ACTIONS(662),
     [anon_sym_Host] = ACTIONS(662),
     [anon_sym_Element] = ACTIONS(662),
@@ -45491,6 +46326,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1006),
     [anon_sym_CommandPalette] = ACTIONS(1006),
     [anon_sym_AppShell] = ACTIONS(1006),
+    [anon_sym_CheckboxGroup] = ACTIONS(1006),
+    [anon_sym_InputOTP] = ACTIONS(1006),
+    [anon_sym_TagInput] = ACTIONS(1006),
+    [anon_sym_Rating] = ACTIONS(1006),
+    [anon_sym_DateRangePicker] = ACTIONS(1006),
     [anon_sym_Unsafe] = ACTIONS(1006),
     [anon_sym_Host] = ACTIONS(1006),
     [anon_sym_Element] = ACTIONS(1006),
@@ -45697,6 +46537,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1010),
     [anon_sym_CommandPalette] = ACTIONS(1010),
     [anon_sym_AppShell] = ACTIONS(1010),
+    [anon_sym_CheckboxGroup] = ACTIONS(1010),
+    [anon_sym_InputOTP] = ACTIONS(1010),
+    [anon_sym_TagInput] = ACTIONS(1010),
+    [anon_sym_Rating] = ACTIONS(1010),
+    [anon_sym_DateRangePicker] = ACTIONS(1010),
     [anon_sym_Unsafe] = ACTIONS(1010),
     [anon_sym_Host] = ACTIONS(1010),
     [anon_sym_Element] = ACTIONS(1010),
@@ -45903,6 +46748,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1014),
     [anon_sym_CommandPalette] = ACTIONS(1014),
     [anon_sym_AppShell] = ACTIONS(1014),
+    [anon_sym_CheckboxGroup] = ACTIONS(1014),
+    [anon_sym_InputOTP] = ACTIONS(1014),
+    [anon_sym_TagInput] = ACTIONS(1014),
+    [anon_sym_Rating] = ACTIONS(1014),
+    [anon_sym_DateRangePicker] = ACTIONS(1014),
     [anon_sym_Unsafe] = ACTIONS(1014),
     [anon_sym_Host] = ACTIONS(1014),
     [anon_sym_Element] = ACTIONS(1014),
@@ -46109,6 +46959,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1018),
     [anon_sym_CommandPalette] = ACTIONS(1018),
     [anon_sym_AppShell] = ACTIONS(1018),
+    [anon_sym_CheckboxGroup] = ACTIONS(1018),
+    [anon_sym_InputOTP] = ACTIONS(1018),
+    [anon_sym_TagInput] = ACTIONS(1018),
+    [anon_sym_Rating] = ACTIONS(1018),
+    [anon_sym_DateRangePicker] = ACTIONS(1018),
     [anon_sym_Unsafe] = ACTIONS(1018),
     [anon_sym_Host] = ACTIONS(1018),
     [anon_sym_Element] = ACTIONS(1018),
@@ -46315,6 +47170,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1024),
     [anon_sym_CommandPalette] = ACTIONS(1024),
     [anon_sym_AppShell] = ACTIONS(1024),
+    [anon_sym_CheckboxGroup] = ACTIONS(1024),
+    [anon_sym_InputOTP] = ACTIONS(1024),
+    [anon_sym_TagInput] = ACTIONS(1024),
+    [anon_sym_Rating] = ACTIONS(1024),
+    [anon_sym_DateRangePicker] = ACTIONS(1024),
     [anon_sym_Unsafe] = ACTIONS(1024),
     [anon_sym_Host] = ACTIONS(1024),
     [anon_sym_Element] = ACTIONS(1024),
@@ -46521,6 +47381,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1028),
     [anon_sym_CommandPalette] = ACTIONS(1028),
     [anon_sym_AppShell] = ACTIONS(1028),
+    [anon_sym_CheckboxGroup] = ACTIONS(1028),
+    [anon_sym_InputOTP] = ACTIONS(1028),
+    [anon_sym_TagInput] = ACTIONS(1028),
+    [anon_sym_Rating] = ACTIONS(1028),
+    [anon_sym_DateRangePicker] = ACTIONS(1028),
     [anon_sym_Unsafe] = ACTIONS(1028),
     [anon_sym_Host] = ACTIONS(1028),
     [anon_sym_Element] = ACTIONS(1028),
@@ -46728,6 +47593,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(894),
     [anon_sym_CommandPalette] = ACTIONS(894),
     [anon_sym_AppShell] = ACTIONS(894),
+    [anon_sym_CheckboxGroup] = ACTIONS(894),
+    [anon_sym_InputOTP] = ACTIONS(894),
+    [anon_sym_TagInput] = ACTIONS(894),
+    [anon_sym_Rating] = ACTIONS(894),
+    [anon_sym_DateRangePicker] = ACTIONS(894),
     [anon_sym_Unsafe] = ACTIONS(894),
     [anon_sym_Host] = ACTIONS(894),
     [anon_sym_Element] = ACTIONS(894),
@@ -46934,6 +47804,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(898),
     [anon_sym_CommandPalette] = ACTIONS(898),
     [anon_sym_AppShell] = ACTIONS(898),
+    [anon_sym_CheckboxGroup] = ACTIONS(898),
+    [anon_sym_InputOTP] = ACTIONS(898),
+    [anon_sym_TagInput] = ACTIONS(898),
+    [anon_sym_Rating] = ACTIONS(898),
+    [anon_sym_DateRangePicker] = ACTIONS(898),
     [anon_sym_Unsafe] = ACTIONS(898),
     [anon_sym_Host] = ACTIONS(898),
     [anon_sym_Element] = ACTIONS(898),
@@ -47140,6 +48015,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(902),
     [anon_sym_CommandPalette] = ACTIONS(902),
     [anon_sym_AppShell] = ACTIONS(902),
+    [anon_sym_CheckboxGroup] = ACTIONS(902),
+    [anon_sym_InputOTP] = ACTIONS(902),
+    [anon_sym_TagInput] = ACTIONS(902),
+    [anon_sym_Rating] = ACTIONS(902),
+    [anon_sym_DateRangePicker] = ACTIONS(902),
     [anon_sym_Unsafe] = ACTIONS(902),
     [anon_sym_Host] = ACTIONS(902),
     [anon_sym_Element] = ACTIONS(902),
@@ -47346,6 +48226,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(906),
     [anon_sym_CommandPalette] = ACTIONS(906),
     [anon_sym_AppShell] = ACTIONS(906),
+    [anon_sym_CheckboxGroup] = ACTIONS(906),
+    [anon_sym_InputOTP] = ACTIONS(906),
+    [anon_sym_TagInput] = ACTIONS(906),
+    [anon_sym_Rating] = ACTIONS(906),
+    [anon_sym_DateRangePicker] = ACTIONS(906),
     [anon_sym_Unsafe] = ACTIONS(906),
     [anon_sym_Host] = ACTIONS(906),
     [anon_sym_Element] = ACTIONS(906),
@@ -47552,6 +48437,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(910),
     [anon_sym_CommandPalette] = ACTIONS(910),
     [anon_sym_AppShell] = ACTIONS(910),
+    [anon_sym_CheckboxGroup] = ACTIONS(910),
+    [anon_sym_InputOTP] = ACTIONS(910),
+    [anon_sym_TagInput] = ACTIONS(910),
+    [anon_sym_Rating] = ACTIONS(910),
+    [anon_sym_DateRangePicker] = ACTIONS(910),
     [anon_sym_Unsafe] = ACTIONS(910),
     [anon_sym_Host] = ACTIONS(910),
     [anon_sym_Element] = ACTIONS(910),
@@ -47758,6 +48648,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(914),
     [anon_sym_CommandPalette] = ACTIONS(914),
     [anon_sym_AppShell] = ACTIONS(914),
+    [anon_sym_CheckboxGroup] = ACTIONS(914),
+    [anon_sym_InputOTP] = ACTIONS(914),
+    [anon_sym_TagInput] = ACTIONS(914),
+    [anon_sym_Rating] = ACTIONS(914),
+    [anon_sym_DateRangePicker] = ACTIONS(914),
     [anon_sym_Unsafe] = ACTIONS(914),
     [anon_sym_Host] = ACTIONS(914),
     [anon_sym_Element] = ACTIONS(914),
@@ -47964,6 +48859,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(918),
     [anon_sym_CommandPalette] = ACTIONS(918),
     [anon_sym_AppShell] = ACTIONS(918),
+    [anon_sym_CheckboxGroup] = ACTIONS(918),
+    [anon_sym_InputOTP] = ACTIONS(918),
+    [anon_sym_TagInput] = ACTIONS(918),
+    [anon_sym_Rating] = ACTIONS(918),
+    [anon_sym_DateRangePicker] = ACTIONS(918),
     [anon_sym_Unsafe] = ACTIONS(918),
     [anon_sym_Host] = ACTIONS(918),
     [anon_sym_Element] = ACTIONS(918),
@@ -48170,6 +49070,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(922),
     [anon_sym_CommandPalette] = ACTIONS(922),
     [anon_sym_AppShell] = ACTIONS(922),
+    [anon_sym_CheckboxGroup] = ACTIONS(922),
+    [anon_sym_InputOTP] = ACTIONS(922),
+    [anon_sym_TagInput] = ACTIONS(922),
+    [anon_sym_Rating] = ACTIONS(922),
+    [anon_sym_DateRangePicker] = ACTIONS(922),
     [anon_sym_Unsafe] = ACTIONS(922),
     [anon_sym_Host] = ACTIONS(922),
     [anon_sym_Element] = ACTIONS(922),
@@ -48376,6 +49281,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(926),
     [anon_sym_CommandPalette] = ACTIONS(926),
     [anon_sym_AppShell] = ACTIONS(926),
+    [anon_sym_CheckboxGroup] = ACTIONS(926),
+    [anon_sym_InputOTP] = ACTIONS(926),
+    [anon_sym_TagInput] = ACTIONS(926),
+    [anon_sym_Rating] = ACTIONS(926),
+    [anon_sym_DateRangePicker] = ACTIONS(926),
     [anon_sym_Unsafe] = ACTIONS(926),
     [anon_sym_Host] = ACTIONS(926),
     [anon_sym_Element] = ACTIONS(926),
@@ -48582,6 +49492,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -48788,6 +49703,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -48994,6 +49914,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -49200,6 +50125,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -49406,6 +50336,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -49612,6 +50547,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -49818,6 +50758,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -50024,6 +50969,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(958),
     [anon_sym_CommandPalette] = ACTIONS(958),
     [anon_sym_AppShell] = ACTIONS(958),
+    [anon_sym_CheckboxGroup] = ACTIONS(958),
+    [anon_sym_InputOTP] = ACTIONS(958),
+    [anon_sym_TagInput] = ACTIONS(958),
+    [anon_sym_Rating] = ACTIONS(958),
+    [anon_sym_DateRangePicker] = ACTIONS(958),
     [anon_sym_Unsafe] = ACTIONS(958),
     [anon_sym_Host] = ACTIONS(958),
     [anon_sym_Element] = ACTIONS(958),
@@ -50230,6 +51180,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(962),
     [anon_sym_CommandPalette] = ACTIONS(962),
     [anon_sym_AppShell] = ACTIONS(962),
+    [anon_sym_CheckboxGroup] = ACTIONS(962),
+    [anon_sym_InputOTP] = ACTIONS(962),
+    [anon_sym_TagInput] = ACTIONS(962),
+    [anon_sym_Rating] = ACTIONS(962),
+    [anon_sym_DateRangePicker] = ACTIONS(962),
     [anon_sym_Unsafe] = ACTIONS(962),
     [anon_sym_Host] = ACTIONS(962),
     [anon_sym_Element] = ACTIONS(962),
@@ -50436,6 +51391,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(966),
     [anon_sym_CommandPalette] = ACTIONS(966),
     [anon_sym_AppShell] = ACTIONS(966),
+    [anon_sym_CheckboxGroup] = ACTIONS(966),
+    [anon_sym_InputOTP] = ACTIONS(966),
+    [anon_sym_TagInput] = ACTIONS(966),
+    [anon_sym_Rating] = ACTIONS(966),
+    [anon_sym_DateRangePicker] = ACTIONS(966),
     [anon_sym_Unsafe] = ACTIONS(966),
     [anon_sym_Host] = ACTIONS(966),
     [anon_sym_Element] = ACTIONS(966),
@@ -50642,6 +51602,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(970),
     [anon_sym_CommandPalette] = ACTIONS(970),
     [anon_sym_AppShell] = ACTIONS(970),
+    [anon_sym_CheckboxGroup] = ACTIONS(970),
+    [anon_sym_InputOTP] = ACTIONS(970),
+    [anon_sym_TagInput] = ACTIONS(970),
+    [anon_sym_Rating] = ACTIONS(970),
+    [anon_sym_DateRangePicker] = ACTIONS(970),
     [anon_sym_Unsafe] = ACTIONS(970),
     [anon_sym_Host] = ACTIONS(970),
     [anon_sym_Element] = ACTIONS(970),
@@ -50848,6 +51813,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(974),
     [anon_sym_CommandPalette] = ACTIONS(974),
     [anon_sym_AppShell] = ACTIONS(974),
+    [anon_sym_CheckboxGroup] = ACTIONS(974),
+    [anon_sym_InputOTP] = ACTIONS(974),
+    [anon_sym_TagInput] = ACTIONS(974),
+    [anon_sym_Rating] = ACTIONS(974),
+    [anon_sym_DateRangePicker] = ACTIONS(974),
     [anon_sym_Unsafe] = ACTIONS(974),
     [anon_sym_Host] = ACTIONS(974),
     [anon_sym_Element] = ACTIONS(974),
@@ -51054,6 +52024,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(978),
     [anon_sym_CommandPalette] = ACTIONS(978),
     [anon_sym_AppShell] = ACTIONS(978),
+    [anon_sym_CheckboxGroup] = ACTIONS(978),
+    [anon_sym_InputOTP] = ACTIONS(978),
+    [anon_sym_TagInput] = ACTIONS(978),
+    [anon_sym_Rating] = ACTIONS(978),
+    [anon_sym_DateRangePicker] = ACTIONS(978),
     [anon_sym_Unsafe] = ACTIONS(978),
     [anon_sym_Host] = ACTIONS(978),
     [anon_sym_Element] = ACTIONS(978),
@@ -51260,6 +52235,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(982),
     [anon_sym_CommandPalette] = ACTIONS(982),
     [anon_sym_AppShell] = ACTIONS(982),
+    [anon_sym_CheckboxGroup] = ACTIONS(982),
+    [anon_sym_InputOTP] = ACTIONS(982),
+    [anon_sym_TagInput] = ACTIONS(982),
+    [anon_sym_Rating] = ACTIONS(982),
+    [anon_sym_DateRangePicker] = ACTIONS(982),
     [anon_sym_Unsafe] = ACTIONS(982),
     [anon_sym_Host] = ACTIONS(982),
     [anon_sym_Element] = ACTIONS(982),
@@ -51466,6 +52446,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(986),
     [anon_sym_CommandPalette] = ACTIONS(986),
     [anon_sym_AppShell] = ACTIONS(986),
+    [anon_sym_CheckboxGroup] = ACTIONS(986),
+    [anon_sym_InputOTP] = ACTIONS(986),
+    [anon_sym_TagInput] = ACTIONS(986),
+    [anon_sym_Rating] = ACTIONS(986),
+    [anon_sym_DateRangePicker] = ACTIONS(986),
     [anon_sym_Unsafe] = ACTIONS(986),
     [anon_sym_Host] = ACTIONS(986),
     [anon_sym_Element] = ACTIONS(986),
@@ -51671,6 +52656,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(880),
     [anon_sym_CommandPalette] = ACTIONS(880),
     [anon_sym_AppShell] = ACTIONS(880),
+    [anon_sym_CheckboxGroup] = ACTIONS(880),
+    [anon_sym_InputOTP] = ACTIONS(880),
+    [anon_sym_TagInput] = ACTIONS(880),
+    [anon_sym_Rating] = ACTIONS(880),
+    [anon_sym_DateRangePicker] = ACTIONS(880),
     [anon_sym_Unsafe] = ACTIONS(880),
     [anon_sym_Host] = ACTIONS(880),
     [anon_sym_Element] = ACTIONS(880),
@@ -51878,6 +52868,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(990),
     [anon_sym_CommandPalette] = ACTIONS(990),
     [anon_sym_AppShell] = ACTIONS(990),
+    [anon_sym_CheckboxGroup] = ACTIONS(990),
+    [anon_sym_InputOTP] = ACTIONS(990),
+    [anon_sym_TagInput] = ACTIONS(990),
+    [anon_sym_Rating] = ACTIONS(990),
+    [anon_sym_DateRangePicker] = ACTIONS(990),
     [anon_sym_Unsafe] = ACTIONS(990),
     [anon_sym_Host] = ACTIONS(990),
     [anon_sym_Element] = ACTIONS(990),
@@ -52084,6 +53079,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(994),
     [anon_sym_CommandPalette] = ACTIONS(994),
     [anon_sym_AppShell] = ACTIONS(994),
+    [anon_sym_CheckboxGroup] = ACTIONS(994),
+    [anon_sym_InputOTP] = ACTIONS(994),
+    [anon_sym_TagInput] = ACTIONS(994),
+    [anon_sym_Rating] = ACTIONS(994),
+    [anon_sym_DateRangePicker] = ACTIONS(994),
     [anon_sym_Unsafe] = ACTIONS(994),
     [anon_sym_Host] = ACTIONS(994),
     [anon_sym_Element] = ACTIONS(994),
@@ -52290,6 +53290,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(998),
     [anon_sym_CommandPalette] = ACTIONS(998),
     [anon_sym_AppShell] = ACTIONS(998),
+    [anon_sym_CheckboxGroup] = ACTIONS(998),
+    [anon_sym_InputOTP] = ACTIONS(998),
+    [anon_sym_TagInput] = ACTIONS(998),
+    [anon_sym_Rating] = ACTIONS(998),
+    [anon_sym_DateRangePicker] = ACTIONS(998),
     [anon_sym_Unsafe] = ACTIONS(998),
     [anon_sym_Host] = ACTIONS(998),
     [anon_sym_Element] = ACTIONS(998),
@@ -52495,6 +53500,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(857),
     [anon_sym_CommandPalette] = ACTIONS(857),
     [anon_sym_AppShell] = ACTIONS(857),
+    [anon_sym_CheckboxGroup] = ACTIONS(857),
+    [anon_sym_InputOTP] = ACTIONS(857),
+    [anon_sym_TagInput] = ACTIONS(857),
+    [anon_sym_Rating] = ACTIONS(857),
+    [anon_sym_DateRangePicker] = ACTIONS(857),
     [anon_sym_Unsafe] = ACTIONS(857),
     [anon_sym_Host] = ACTIONS(857),
     [anon_sym_Element] = ACTIONS(857),
@@ -52702,6 +53712,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1002),
     [anon_sym_CommandPalette] = ACTIONS(1002),
     [anon_sym_AppShell] = ACTIONS(1002),
+    [anon_sym_CheckboxGroup] = ACTIONS(1002),
+    [anon_sym_InputOTP] = ACTIONS(1002),
+    [anon_sym_TagInput] = ACTIONS(1002),
+    [anon_sym_Rating] = ACTIONS(1002),
+    [anon_sym_DateRangePicker] = ACTIONS(1002),
     [anon_sym_Unsafe] = ACTIONS(1002),
     [anon_sym_Host] = ACTIONS(1002),
     [anon_sym_Element] = ACTIONS(1002),
@@ -52908,6 +53923,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1006),
     [anon_sym_CommandPalette] = ACTIONS(1006),
     [anon_sym_AppShell] = ACTIONS(1006),
+    [anon_sym_CheckboxGroup] = ACTIONS(1006),
+    [anon_sym_InputOTP] = ACTIONS(1006),
+    [anon_sym_TagInput] = ACTIONS(1006),
+    [anon_sym_Rating] = ACTIONS(1006),
+    [anon_sym_DateRangePicker] = ACTIONS(1006),
     [anon_sym_Unsafe] = ACTIONS(1006),
     [anon_sym_Host] = ACTIONS(1006),
     [anon_sym_Element] = ACTIONS(1006),
@@ -53114,6 +54134,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1010),
     [anon_sym_CommandPalette] = ACTIONS(1010),
     [anon_sym_AppShell] = ACTIONS(1010),
+    [anon_sym_CheckboxGroup] = ACTIONS(1010),
+    [anon_sym_InputOTP] = ACTIONS(1010),
+    [anon_sym_TagInput] = ACTIONS(1010),
+    [anon_sym_Rating] = ACTIONS(1010),
+    [anon_sym_DateRangePicker] = ACTIONS(1010),
     [anon_sym_Unsafe] = ACTIONS(1010),
     [anon_sym_Host] = ACTIONS(1010),
     [anon_sym_Element] = ACTIONS(1010),
@@ -53320,6 +54345,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1014),
     [anon_sym_CommandPalette] = ACTIONS(1014),
     [anon_sym_AppShell] = ACTIONS(1014),
+    [anon_sym_CheckboxGroup] = ACTIONS(1014),
+    [anon_sym_InputOTP] = ACTIONS(1014),
+    [anon_sym_TagInput] = ACTIONS(1014),
+    [anon_sym_Rating] = ACTIONS(1014),
+    [anon_sym_DateRangePicker] = ACTIONS(1014),
     [anon_sym_Unsafe] = ACTIONS(1014),
     [anon_sym_Host] = ACTIONS(1014),
     [anon_sym_Element] = ACTIONS(1014),
@@ -53526,6 +54556,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1024),
     [anon_sym_CommandPalette] = ACTIONS(1024),
     [anon_sym_AppShell] = ACTIONS(1024),
+    [anon_sym_CheckboxGroup] = ACTIONS(1024),
+    [anon_sym_InputOTP] = ACTIONS(1024),
+    [anon_sym_TagInput] = ACTIONS(1024),
+    [anon_sym_Rating] = ACTIONS(1024),
+    [anon_sym_DateRangePicker] = ACTIONS(1024),
     [anon_sym_Unsafe] = ACTIONS(1024),
     [anon_sym_Host] = ACTIONS(1024),
     [anon_sym_Element] = ACTIONS(1024),
@@ -53732,6 +54767,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1028),
     [anon_sym_CommandPalette] = ACTIONS(1028),
     [anon_sym_AppShell] = ACTIONS(1028),
+    [anon_sym_CheckboxGroup] = ACTIONS(1028),
+    [anon_sym_InputOTP] = ACTIONS(1028),
+    [anon_sym_TagInput] = ACTIONS(1028),
+    [anon_sym_Rating] = ACTIONS(1028),
+    [anon_sym_DateRangePicker] = ACTIONS(1028),
     [anon_sym_Unsafe] = ACTIONS(1028),
     [anon_sym_Host] = ACTIONS(1028),
     [anon_sym_Element] = ACTIONS(1028),
@@ -53936,6 +54976,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(894),
     [anon_sym_CommandPalette] = ACTIONS(894),
     [anon_sym_AppShell] = ACTIONS(894),
+    [anon_sym_CheckboxGroup] = ACTIONS(894),
+    [anon_sym_InputOTP] = ACTIONS(894),
+    [anon_sym_TagInput] = ACTIONS(894),
+    [anon_sym_Rating] = ACTIONS(894),
+    [anon_sym_DateRangePicker] = ACTIONS(894),
     [anon_sym_Unsafe] = ACTIONS(894),
     [anon_sym_Host] = ACTIONS(894),
     [anon_sym_Element] = ACTIONS(894),
@@ -54142,6 +55187,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(898),
     [anon_sym_CommandPalette] = ACTIONS(898),
     [anon_sym_AppShell] = ACTIONS(898),
+    [anon_sym_CheckboxGroup] = ACTIONS(898),
+    [anon_sym_InputOTP] = ACTIONS(898),
+    [anon_sym_TagInput] = ACTIONS(898),
+    [anon_sym_Rating] = ACTIONS(898),
+    [anon_sym_DateRangePicker] = ACTIONS(898),
     [anon_sym_Unsafe] = ACTIONS(898),
     [anon_sym_Host] = ACTIONS(898),
     [anon_sym_Element] = ACTIONS(898),
@@ -54348,6 +55398,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(902),
     [anon_sym_CommandPalette] = ACTIONS(902),
     [anon_sym_AppShell] = ACTIONS(902),
+    [anon_sym_CheckboxGroup] = ACTIONS(902),
+    [anon_sym_InputOTP] = ACTIONS(902),
+    [anon_sym_TagInput] = ACTIONS(902),
+    [anon_sym_Rating] = ACTIONS(902),
+    [anon_sym_DateRangePicker] = ACTIONS(902),
     [anon_sym_Unsafe] = ACTIONS(902),
     [anon_sym_Host] = ACTIONS(902),
     [anon_sym_Element] = ACTIONS(902),
@@ -54554,6 +55609,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(906),
     [anon_sym_CommandPalette] = ACTIONS(906),
     [anon_sym_AppShell] = ACTIONS(906),
+    [anon_sym_CheckboxGroup] = ACTIONS(906),
+    [anon_sym_InputOTP] = ACTIONS(906),
+    [anon_sym_TagInput] = ACTIONS(906),
+    [anon_sym_Rating] = ACTIONS(906),
+    [anon_sym_DateRangePicker] = ACTIONS(906),
     [anon_sym_Unsafe] = ACTIONS(906),
     [anon_sym_Host] = ACTIONS(906),
     [anon_sym_Element] = ACTIONS(906),
@@ -54760,6 +55820,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(884),
     [anon_sym_CommandPalette] = ACTIONS(884),
     [anon_sym_AppShell] = ACTIONS(884),
+    [anon_sym_CheckboxGroup] = ACTIONS(884),
+    [anon_sym_InputOTP] = ACTIONS(884),
+    [anon_sym_TagInput] = ACTIONS(884),
+    [anon_sym_Rating] = ACTIONS(884),
+    [anon_sym_DateRangePicker] = ACTIONS(884),
     [anon_sym_Unsafe] = ACTIONS(884),
     [anon_sym_Host] = ACTIONS(884),
     [anon_sym_Element] = ACTIONS(884),
@@ -54966,6 +56031,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(910),
     [anon_sym_CommandPalette] = ACTIONS(910),
     [anon_sym_AppShell] = ACTIONS(910),
+    [anon_sym_CheckboxGroup] = ACTIONS(910),
+    [anon_sym_InputOTP] = ACTIONS(910),
+    [anon_sym_TagInput] = ACTIONS(910),
+    [anon_sym_Rating] = ACTIONS(910),
+    [anon_sym_DateRangePicker] = ACTIONS(910),
     [anon_sym_Unsafe] = ACTIONS(910),
     [anon_sym_Host] = ACTIONS(910),
     [anon_sym_Element] = ACTIONS(910),
@@ -55172,6 +56242,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(880),
     [anon_sym_CommandPalette] = ACTIONS(880),
     [anon_sym_AppShell] = ACTIONS(880),
+    [anon_sym_CheckboxGroup] = ACTIONS(880),
+    [anon_sym_InputOTP] = ACTIONS(880),
+    [anon_sym_TagInput] = ACTIONS(880),
+    [anon_sym_Rating] = ACTIONS(880),
+    [anon_sym_DateRangePicker] = ACTIONS(880),
     [anon_sym_Unsafe] = ACTIONS(880),
     [anon_sym_Host] = ACTIONS(880),
     [anon_sym_Element] = ACTIONS(880),
@@ -55378,6 +56453,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(914),
     [anon_sym_CommandPalette] = ACTIONS(914),
     [anon_sym_AppShell] = ACTIONS(914),
+    [anon_sym_CheckboxGroup] = ACTIONS(914),
+    [anon_sym_InputOTP] = ACTIONS(914),
+    [anon_sym_TagInput] = ACTIONS(914),
+    [anon_sym_Rating] = ACTIONS(914),
+    [anon_sym_DateRangePicker] = ACTIONS(914),
     [anon_sym_Unsafe] = ACTIONS(914),
     [anon_sym_Host] = ACTIONS(914),
     [anon_sym_Element] = ACTIONS(914),
@@ -55585,6 +56665,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(822),
     [anon_sym_CommandPalette] = ACTIONS(822),
     [anon_sym_AppShell] = ACTIONS(822),
+    [anon_sym_CheckboxGroup] = ACTIONS(822),
+    [anon_sym_InputOTP] = ACTIONS(822),
+    [anon_sym_TagInput] = ACTIONS(822),
+    [anon_sym_Rating] = ACTIONS(822),
+    [anon_sym_DateRangePicker] = ACTIONS(822),
     [anon_sym_Unsafe] = ACTIONS(822),
     [anon_sym_Host] = ACTIONS(822),
     [anon_sym_Element] = ACTIONS(822),
@@ -55790,6 +56875,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(876),
     [anon_sym_CommandPalette] = ACTIONS(876),
     [anon_sym_AppShell] = ACTIONS(876),
+    [anon_sym_CheckboxGroup] = ACTIONS(876),
+    [anon_sym_InputOTP] = ACTIONS(876),
+    [anon_sym_TagInput] = ACTIONS(876),
+    [anon_sym_Rating] = ACTIONS(876),
+    [anon_sym_DateRangePicker] = ACTIONS(876),
     [anon_sym_Unsafe] = ACTIONS(876),
     [anon_sym_Host] = ACTIONS(876),
     [anon_sym_Element] = ACTIONS(876),
@@ -55996,6 +57086,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(922),
     [anon_sym_CommandPalette] = ACTIONS(922),
     [anon_sym_AppShell] = ACTIONS(922),
+    [anon_sym_CheckboxGroup] = ACTIONS(922),
+    [anon_sym_InputOTP] = ACTIONS(922),
+    [anon_sym_TagInput] = ACTIONS(922),
+    [anon_sym_Rating] = ACTIONS(922),
+    [anon_sym_DateRangePicker] = ACTIONS(922),
     [anon_sym_Unsafe] = ACTIONS(922),
     [anon_sym_Host] = ACTIONS(922),
     [anon_sym_Element] = ACTIONS(922),
@@ -56202,6 +57297,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(926),
     [anon_sym_CommandPalette] = ACTIONS(926),
     [anon_sym_AppShell] = ACTIONS(926),
+    [anon_sym_CheckboxGroup] = ACTIONS(926),
+    [anon_sym_InputOTP] = ACTIONS(926),
+    [anon_sym_TagInput] = ACTIONS(926),
+    [anon_sym_Rating] = ACTIONS(926),
+    [anon_sym_DateRangePicker] = ACTIONS(926),
     [anon_sym_Unsafe] = ACTIONS(926),
     [anon_sym_Host] = ACTIONS(926),
     [anon_sym_Element] = ACTIONS(926),
@@ -56408,6 +57508,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -56614,6 +57719,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -56820,6 +57930,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(704),
     [anon_sym_CommandPalette] = ACTIONS(704),
     [anon_sym_AppShell] = ACTIONS(704),
+    [anon_sym_CheckboxGroup] = ACTIONS(704),
+    [anon_sym_InputOTP] = ACTIONS(704),
+    [anon_sym_TagInput] = ACTIONS(704),
+    [anon_sym_Rating] = ACTIONS(704),
+    [anon_sym_DateRangePicker] = ACTIONS(704),
     [anon_sym_Unsafe] = ACTIONS(704),
     [anon_sym_Host] = ACTIONS(704),
     [anon_sym_Element] = ACTIONS(704),
@@ -57026,6 +58141,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -57232,6 +58352,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -57438,6 +58563,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -57644,6 +58774,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -57850,6 +58985,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -58056,6 +59196,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(958),
     [anon_sym_CommandPalette] = ACTIONS(958),
     [anon_sym_AppShell] = ACTIONS(958),
+    [anon_sym_CheckboxGroup] = ACTIONS(958),
+    [anon_sym_InputOTP] = ACTIONS(958),
+    [anon_sym_TagInput] = ACTIONS(958),
+    [anon_sym_Rating] = ACTIONS(958),
+    [anon_sym_DateRangePicker] = ACTIONS(958),
     [anon_sym_Unsafe] = ACTIONS(958),
     [anon_sym_Host] = ACTIONS(958),
     [anon_sym_Element] = ACTIONS(958),
@@ -58262,6 +59407,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(962),
     [anon_sym_CommandPalette] = ACTIONS(962),
     [anon_sym_AppShell] = ACTIONS(962),
+    [anon_sym_CheckboxGroup] = ACTIONS(962),
+    [anon_sym_InputOTP] = ACTIONS(962),
+    [anon_sym_TagInput] = ACTIONS(962),
+    [anon_sym_Rating] = ACTIONS(962),
+    [anon_sym_DateRangePicker] = ACTIONS(962),
     [anon_sym_Unsafe] = ACTIONS(962),
     [anon_sym_Host] = ACTIONS(962),
     [anon_sym_Element] = ACTIONS(962),
@@ -58468,6 +59618,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(966),
     [anon_sym_CommandPalette] = ACTIONS(966),
     [anon_sym_AppShell] = ACTIONS(966),
+    [anon_sym_CheckboxGroup] = ACTIONS(966),
+    [anon_sym_InputOTP] = ACTIONS(966),
+    [anon_sym_TagInput] = ACTIONS(966),
+    [anon_sym_Rating] = ACTIONS(966),
+    [anon_sym_DateRangePicker] = ACTIONS(966),
     [anon_sym_Unsafe] = ACTIONS(966),
     [anon_sym_Host] = ACTIONS(966),
     [anon_sym_Element] = ACTIONS(966),
@@ -58674,6 +59829,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(826),
     [anon_sym_CommandPalette] = ACTIONS(826),
     [anon_sym_AppShell] = ACTIONS(826),
+    [anon_sym_CheckboxGroup] = ACTIONS(826),
+    [anon_sym_InputOTP] = ACTIONS(826),
+    [anon_sym_TagInput] = ACTIONS(826),
+    [anon_sym_Rating] = ACTIONS(826),
+    [anon_sym_DateRangePicker] = ACTIONS(826),
     [anon_sym_Unsafe] = ACTIONS(826),
     [anon_sym_Host] = ACTIONS(826),
     [anon_sym_Element] = ACTIONS(826),
@@ -58880,6 +60040,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(970),
     [anon_sym_CommandPalette] = ACTIONS(970),
     [anon_sym_AppShell] = ACTIONS(970),
+    [anon_sym_CheckboxGroup] = ACTIONS(970),
+    [anon_sym_InputOTP] = ACTIONS(970),
+    [anon_sym_TagInput] = ACTIONS(970),
+    [anon_sym_Rating] = ACTIONS(970),
+    [anon_sym_DateRangePicker] = ACTIONS(970),
     [anon_sym_Unsafe] = ACTIONS(970),
     [anon_sym_Host] = ACTIONS(970),
     [anon_sym_Element] = ACTIONS(970),
@@ -59086,6 +60251,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(974),
     [anon_sym_CommandPalette] = ACTIONS(974),
     [anon_sym_AppShell] = ACTIONS(974),
+    [anon_sym_CheckboxGroup] = ACTIONS(974),
+    [anon_sym_InputOTP] = ACTIONS(974),
+    [anon_sym_TagInput] = ACTIONS(974),
+    [anon_sym_Rating] = ACTIONS(974),
+    [anon_sym_DateRangePicker] = ACTIONS(974),
     [anon_sym_Unsafe] = ACTIONS(974),
     [anon_sym_Host] = ACTIONS(974),
     [anon_sym_Element] = ACTIONS(974),
@@ -59292,6 +60462,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(978),
     [anon_sym_CommandPalette] = ACTIONS(978),
     [anon_sym_AppShell] = ACTIONS(978),
+    [anon_sym_CheckboxGroup] = ACTIONS(978),
+    [anon_sym_InputOTP] = ACTIONS(978),
+    [anon_sym_TagInput] = ACTIONS(978),
+    [anon_sym_Rating] = ACTIONS(978),
+    [anon_sym_DateRangePicker] = ACTIONS(978),
     [anon_sym_Unsafe] = ACTIONS(978),
     [anon_sym_Host] = ACTIONS(978),
     [anon_sym_Element] = ACTIONS(978),
@@ -59498,6 +60673,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(982),
     [anon_sym_CommandPalette] = ACTIONS(982),
     [anon_sym_AppShell] = ACTIONS(982),
+    [anon_sym_CheckboxGroup] = ACTIONS(982),
+    [anon_sym_InputOTP] = ACTIONS(982),
+    [anon_sym_TagInput] = ACTIONS(982),
+    [anon_sym_Rating] = ACTIONS(982),
+    [anon_sym_DateRangePicker] = ACTIONS(982),
     [anon_sym_Unsafe] = ACTIONS(982),
     [anon_sym_Host] = ACTIONS(982),
     [anon_sym_Element] = ACTIONS(982),
@@ -59704,6 +60884,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(830),
     [anon_sym_CommandPalette] = ACTIONS(830),
     [anon_sym_AppShell] = ACTIONS(830),
+    [anon_sym_CheckboxGroup] = ACTIONS(830),
+    [anon_sym_InputOTP] = ACTIONS(830),
+    [anon_sym_TagInput] = ACTIONS(830),
+    [anon_sym_Rating] = ACTIONS(830),
+    [anon_sym_DateRangePicker] = ACTIONS(830),
     [anon_sym_Unsafe] = ACTIONS(830),
     [anon_sym_Host] = ACTIONS(830),
     [anon_sym_Element] = ACTIONS(830),
@@ -59910,6 +61095,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(986),
     [anon_sym_CommandPalette] = ACTIONS(986),
     [anon_sym_AppShell] = ACTIONS(986),
+    [anon_sym_CheckboxGroup] = ACTIONS(986),
+    [anon_sym_InputOTP] = ACTIONS(986),
+    [anon_sym_TagInput] = ACTIONS(986),
+    [anon_sym_Rating] = ACTIONS(986),
+    [anon_sym_DateRangePicker] = ACTIONS(986),
     [anon_sym_Unsafe] = ACTIONS(986),
     [anon_sym_Host] = ACTIONS(986),
     [anon_sym_Element] = ACTIONS(986),
@@ -60116,6 +61306,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(990),
     [anon_sym_CommandPalette] = ACTIONS(990),
     [anon_sym_AppShell] = ACTIONS(990),
+    [anon_sym_CheckboxGroup] = ACTIONS(990),
+    [anon_sym_InputOTP] = ACTIONS(990),
+    [anon_sym_TagInput] = ACTIONS(990),
+    [anon_sym_Rating] = ACTIONS(990),
+    [anon_sym_DateRangePicker] = ACTIONS(990),
     [anon_sym_Unsafe] = ACTIONS(990),
     [anon_sym_Host] = ACTIONS(990),
     [anon_sym_Element] = ACTIONS(990),
@@ -60322,6 +61517,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(994),
     [anon_sym_CommandPalette] = ACTIONS(994),
     [anon_sym_AppShell] = ACTIONS(994),
+    [anon_sym_CheckboxGroup] = ACTIONS(994),
+    [anon_sym_InputOTP] = ACTIONS(994),
+    [anon_sym_TagInput] = ACTIONS(994),
+    [anon_sym_Rating] = ACTIONS(994),
+    [anon_sym_DateRangePicker] = ACTIONS(994),
     [anon_sym_Unsafe] = ACTIONS(994),
     [anon_sym_Host] = ACTIONS(994),
     [anon_sym_Element] = ACTIONS(994),
@@ -60528,6 +61728,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(998),
     [anon_sym_CommandPalette] = ACTIONS(998),
     [anon_sym_AppShell] = ACTIONS(998),
+    [anon_sym_CheckboxGroup] = ACTIONS(998),
+    [anon_sym_InputOTP] = ACTIONS(998),
+    [anon_sym_TagInput] = ACTIONS(998),
+    [anon_sym_Rating] = ACTIONS(998),
+    [anon_sym_DateRangePicker] = ACTIONS(998),
     [anon_sym_Unsafe] = ACTIONS(998),
     [anon_sym_Host] = ACTIONS(998),
     [anon_sym_Element] = ACTIONS(998),
@@ -60736,6 +61941,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(857),
     [anon_sym_CommandPalette] = ACTIONS(857),
     [anon_sym_AppShell] = ACTIONS(857),
+    [anon_sym_CheckboxGroup] = ACTIONS(857),
+    [anon_sym_InputOTP] = ACTIONS(857),
+    [anon_sym_TagInput] = ACTIONS(857),
+    [anon_sym_Rating] = ACTIONS(857),
+    [anon_sym_DateRangePicker] = ACTIONS(857),
     [anon_sym_Unsafe] = ACTIONS(857),
     [anon_sym_Host] = ACTIONS(857),
     [anon_sym_Element] = ACTIONS(857),
@@ -60941,6 +62151,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(894),
     [anon_sym_CommandPalette] = ACTIONS(894),
     [anon_sym_AppShell] = ACTIONS(894),
+    [anon_sym_CheckboxGroup] = ACTIONS(894),
+    [anon_sym_InputOTP] = ACTIONS(894),
+    [anon_sym_TagInput] = ACTIONS(894),
+    [anon_sym_Rating] = ACTIONS(894),
+    [anon_sym_DateRangePicker] = ACTIONS(894),
     [anon_sym_Unsafe] = ACTIONS(894),
     [anon_sym_Host] = ACTIONS(894),
     [anon_sym_Element] = ACTIONS(894),
@@ -61147,6 +62362,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(898),
     [anon_sym_CommandPalette] = ACTIONS(898),
     [anon_sym_AppShell] = ACTIONS(898),
+    [anon_sym_CheckboxGroup] = ACTIONS(898),
+    [anon_sym_InputOTP] = ACTIONS(898),
+    [anon_sym_TagInput] = ACTIONS(898),
+    [anon_sym_Rating] = ACTIONS(898),
+    [anon_sym_DateRangePicker] = ACTIONS(898),
     [anon_sym_Unsafe] = ACTIONS(898),
     [anon_sym_Host] = ACTIONS(898),
     [anon_sym_Element] = ACTIONS(898),
@@ -61353,6 +62573,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(902),
     [anon_sym_CommandPalette] = ACTIONS(902),
     [anon_sym_AppShell] = ACTIONS(902),
+    [anon_sym_CheckboxGroup] = ACTIONS(902),
+    [anon_sym_InputOTP] = ACTIONS(902),
+    [anon_sym_TagInput] = ACTIONS(902),
+    [anon_sym_Rating] = ACTIONS(902),
+    [anon_sym_DateRangePicker] = ACTIONS(902),
     [anon_sym_Unsafe] = ACTIONS(902),
     [anon_sym_Host] = ACTIONS(902),
     [anon_sym_Element] = ACTIONS(902),
@@ -61559,6 +62784,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(906),
     [anon_sym_CommandPalette] = ACTIONS(906),
     [anon_sym_AppShell] = ACTIONS(906),
+    [anon_sym_CheckboxGroup] = ACTIONS(906),
+    [anon_sym_InputOTP] = ACTIONS(906),
+    [anon_sym_TagInput] = ACTIONS(906),
+    [anon_sym_Rating] = ACTIONS(906),
+    [anon_sym_DateRangePicker] = ACTIONS(906),
     [anon_sym_Unsafe] = ACTIONS(906),
     [anon_sym_Host] = ACTIONS(906),
     [anon_sym_Element] = ACTIONS(906),
@@ -61765,6 +62995,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(884),
     [anon_sym_CommandPalette] = ACTIONS(884),
     [anon_sym_AppShell] = ACTIONS(884),
+    [anon_sym_CheckboxGroup] = ACTIONS(884),
+    [anon_sym_InputOTP] = ACTIONS(884),
+    [anon_sym_TagInput] = ACTIONS(884),
+    [anon_sym_Rating] = ACTIONS(884),
+    [anon_sym_DateRangePicker] = ACTIONS(884),
     [anon_sym_Unsafe] = ACTIONS(884),
     [anon_sym_Host] = ACTIONS(884),
     [anon_sym_Element] = ACTIONS(884),
@@ -61971,6 +63206,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(910),
     [anon_sym_CommandPalette] = ACTIONS(910),
     [anon_sym_AppShell] = ACTIONS(910),
+    [anon_sym_CheckboxGroup] = ACTIONS(910),
+    [anon_sym_InputOTP] = ACTIONS(910),
+    [anon_sym_TagInput] = ACTIONS(910),
+    [anon_sym_Rating] = ACTIONS(910),
+    [anon_sym_DateRangePicker] = ACTIONS(910),
     [anon_sym_Unsafe] = ACTIONS(910),
     [anon_sym_Host] = ACTIONS(910),
     [anon_sym_Element] = ACTIONS(910),
@@ -62177,6 +63417,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(880),
     [anon_sym_CommandPalette] = ACTIONS(880),
     [anon_sym_AppShell] = ACTIONS(880),
+    [anon_sym_CheckboxGroup] = ACTIONS(880),
+    [anon_sym_InputOTP] = ACTIONS(880),
+    [anon_sym_TagInput] = ACTIONS(880),
+    [anon_sym_Rating] = ACTIONS(880),
+    [anon_sym_DateRangePicker] = ACTIONS(880),
     [anon_sym_Unsafe] = ACTIONS(880),
     [anon_sym_Host] = ACTIONS(880),
     [anon_sym_Element] = ACTIONS(880),
@@ -62383,6 +63628,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(914),
     [anon_sym_CommandPalette] = ACTIONS(914),
     [anon_sym_AppShell] = ACTIONS(914),
+    [anon_sym_CheckboxGroup] = ACTIONS(914),
+    [anon_sym_InputOTP] = ACTIONS(914),
+    [anon_sym_TagInput] = ACTIONS(914),
+    [anon_sym_Rating] = ACTIONS(914),
+    [anon_sym_DateRangePicker] = ACTIONS(914),
     [anon_sym_Unsafe] = ACTIONS(914),
     [anon_sym_Host] = ACTIONS(914),
     [anon_sym_Element] = ACTIONS(914),
@@ -62589,6 +63839,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(918),
     [anon_sym_CommandPalette] = ACTIONS(918),
     [anon_sym_AppShell] = ACTIONS(918),
+    [anon_sym_CheckboxGroup] = ACTIONS(918),
+    [anon_sym_InputOTP] = ACTIONS(918),
+    [anon_sym_TagInput] = ACTIONS(918),
+    [anon_sym_Rating] = ACTIONS(918),
+    [anon_sym_DateRangePicker] = ACTIONS(918),
     [anon_sym_Unsafe] = ACTIONS(918),
     [anon_sym_Host] = ACTIONS(918),
     [anon_sym_Element] = ACTIONS(918),
@@ -62795,6 +64050,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(876),
     [anon_sym_CommandPalette] = ACTIONS(876),
     [anon_sym_AppShell] = ACTIONS(876),
+    [anon_sym_CheckboxGroup] = ACTIONS(876),
+    [anon_sym_InputOTP] = ACTIONS(876),
+    [anon_sym_TagInput] = ACTIONS(876),
+    [anon_sym_Rating] = ACTIONS(876),
+    [anon_sym_DateRangePicker] = ACTIONS(876),
     [anon_sym_Unsafe] = ACTIONS(876),
     [anon_sym_Host] = ACTIONS(876),
     [anon_sym_Element] = ACTIONS(876),
@@ -63001,6 +64261,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(922),
     [anon_sym_CommandPalette] = ACTIONS(922),
     [anon_sym_AppShell] = ACTIONS(922),
+    [anon_sym_CheckboxGroup] = ACTIONS(922),
+    [anon_sym_InputOTP] = ACTIONS(922),
+    [anon_sym_TagInput] = ACTIONS(922),
+    [anon_sym_Rating] = ACTIONS(922),
+    [anon_sym_DateRangePicker] = ACTIONS(922),
     [anon_sym_Unsafe] = ACTIONS(922),
     [anon_sym_Host] = ACTIONS(922),
     [anon_sym_Element] = ACTIONS(922),
@@ -63207,6 +64472,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(926),
     [anon_sym_CommandPalette] = ACTIONS(926),
     [anon_sym_AppShell] = ACTIONS(926),
+    [anon_sym_CheckboxGroup] = ACTIONS(926),
+    [anon_sym_InputOTP] = ACTIONS(926),
+    [anon_sym_TagInput] = ACTIONS(926),
+    [anon_sym_Rating] = ACTIONS(926),
+    [anon_sym_DateRangePicker] = ACTIONS(926),
     [anon_sym_Unsafe] = ACTIONS(926),
     [anon_sym_Host] = ACTIONS(926),
     [anon_sym_Element] = ACTIONS(926),
@@ -63413,6 +64683,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -63619,6 +64894,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -63825,6 +65105,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(704),
     [anon_sym_CommandPalette] = ACTIONS(704),
     [anon_sym_AppShell] = ACTIONS(704),
+    [anon_sym_CheckboxGroup] = ACTIONS(704),
+    [anon_sym_InputOTP] = ACTIONS(704),
+    [anon_sym_TagInput] = ACTIONS(704),
+    [anon_sym_Rating] = ACTIONS(704),
+    [anon_sym_DateRangePicker] = ACTIONS(704),
     [anon_sym_Unsafe] = ACTIONS(704),
     [anon_sym_Host] = ACTIONS(704),
     [anon_sym_Element] = ACTIONS(704),
@@ -64031,6 +65316,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -64237,6 +65527,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -64443,6 +65738,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -64649,6 +65949,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -64855,6 +66160,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(954),
     [anon_sym_CommandPalette] = ACTIONS(954),
     [anon_sym_AppShell] = ACTIONS(954),
+    [anon_sym_CheckboxGroup] = ACTIONS(954),
+    [anon_sym_InputOTP] = ACTIONS(954),
+    [anon_sym_TagInput] = ACTIONS(954),
+    [anon_sym_Rating] = ACTIONS(954),
+    [anon_sym_DateRangePicker] = ACTIONS(954),
     [anon_sym_Unsafe] = ACTIONS(954),
     [anon_sym_Host] = ACTIONS(954),
     [anon_sym_Element] = ACTIONS(954),
@@ -65061,6 +66371,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(958),
     [anon_sym_CommandPalette] = ACTIONS(958),
     [anon_sym_AppShell] = ACTIONS(958),
+    [anon_sym_CheckboxGroup] = ACTIONS(958),
+    [anon_sym_InputOTP] = ACTIONS(958),
+    [anon_sym_TagInput] = ACTIONS(958),
+    [anon_sym_Rating] = ACTIONS(958),
+    [anon_sym_DateRangePicker] = ACTIONS(958),
     [anon_sym_Unsafe] = ACTIONS(958),
     [anon_sym_Host] = ACTIONS(958),
     [anon_sym_Element] = ACTIONS(958),
@@ -65267,6 +66582,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(962),
     [anon_sym_CommandPalette] = ACTIONS(962),
     [anon_sym_AppShell] = ACTIONS(962),
+    [anon_sym_CheckboxGroup] = ACTIONS(962),
+    [anon_sym_InputOTP] = ACTIONS(962),
+    [anon_sym_TagInput] = ACTIONS(962),
+    [anon_sym_Rating] = ACTIONS(962),
+    [anon_sym_DateRangePicker] = ACTIONS(962),
     [anon_sym_Unsafe] = ACTIONS(962),
     [anon_sym_Host] = ACTIONS(962),
     [anon_sym_Element] = ACTIONS(962),
@@ -65473,6 +66793,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(966),
     [anon_sym_CommandPalette] = ACTIONS(966),
     [anon_sym_AppShell] = ACTIONS(966),
+    [anon_sym_CheckboxGroup] = ACTIONS(966),
+    [anon_sym_InputOTP] = ACTIONS(966),
+    [anon_sym_TagInput] = ACTIONS(966),
+    [anon_sym_Rating] = ACTIONS(966),
+    [anon_sym_DateRangePicker] = ACTIONS(966),
     [anon_sym_Unsafe] = ACTIONS(966),
     [anon_sym_Host] = ACTIONS(966),
     [anon_sym_Element] = ACTIONS(966),
@@ -65679,6 +67004,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(826),
     [anon_sym_CommandPalette] = ACTIONS(826),
     [anon_sym_AppShell] = ACTIONS(826),
+    [anon_sym_CheckboxGroup] = ACTIONS(826),
+    [anon_sym_InputOTP] = ACTIONS(826),
+    [anon_sym_TagInput] = ACTIONS(826),
+    [anon_sym_Rating] = ACTIONS(826),
+    [anon_sym_DateRangePicker] = ACTIONS(826),
     [anon_sym_Unsafe] = ACTIONS(826),
     [anon_sym_Host] = ACTIONS(826),
     [anon_sym_Element] = ACTIONS(826),
@@ -65885,6 +67215,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(970),
     [anon_sym_CommandPalette] = ACTIONS(970),
     [anon_sym_AppShell] = ACTIONS(970),
+    [anon_sym_CheckboxGroup] = ACTIONS(970),
+    [anon_sym_InputOTP] = ACTIONS(970),
+    [anon_sym_TagInput] = ACTIONS(970),
+    [anon_sym_Rating] = ACTIONS(970),
+    [anon_sym_DateRangePicker] = ACTIONS(970),
     [anon_sym_Unsafe] = ACTIONS(970),
     [anon_sym_Host] = ACTIONS(970),
     [anon_sym_Element] = ACTIONS(970),
@@ -66091,6 +67426,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(974),
     [anon_sym_CommandPalette] = ACTIONS(974),
     [anon_sym_AppShell] = ACTIONS(974),
+    [anon_sym_CheckboxGroup] = ACTIONS(974),
+    [anon_sym_InputOTP] = ACTIONS(974),
+    [anon_sym_TagInput] = ACTIONS(974),
+    [anon_sym_Rating] = ACTIONS(974),
+    [anon_sym_DateRangePicker] = ACTIONS(974),
     [anon_sym_Unsafe] = ACTIONS(974),
     [anon_sym_Host] = ACTIONS(974),
     [anon_sym_Element] = ACTIONS(974),
@@ -66297,6 +67637,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(978),
     [anon_sym_CommandPalette] = ACTIONS(978),
     [anon_sym_AppShell] = ACTIONS(978),
+    [anon_sym_CheckboxGroup] = ACTIONS(978),
+    [anon_sym_InputOTP] = ACTIONS(978),
+    [anon_sym_TagInput] = ACTIONS(978),
+    [anon_sym_Rating] = ACTIONS(978),
+    [anon_sym_DateRangePicker] = ACTIONS(978),
     [anon_sym_Unsafe] = ACTIONS(978),
     [anon_sym_Host] = ACTIONS(978),
     [anon_sym_Element] = ACTIONS(978),
@@ -66503,6 +67848,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(982),
     [anon_sym_CommandPalette] = ACTIONS(982),
     [anon_sym_AppShell] = ACTIONS(982),
+    [anon_sym_CheckboxGroup] = ACTIONS(982),
+    [anon_sym_InputOTP] = ACTIONS(982),
+    [anon_sym_TagInput] = ACTIONS(982),
+    [anon_sym_Rating] = ACTIONS(982),
+    [anon_sym_DateRangePicker] = ACTIONS(982),
     [anon_sym_Unsafe] = ACTIONS(982),
     [anon_sym_Host] = ACTIONS(982),
     [anon_sym_Element] = ACTIONS(982),
@@ -66709,6 +68059,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(830),
     [anon_sym_CommandPalette] = ACTIONS(830),
     [anon_sym_AppShell] = ACTIONS(830),
+    [anon_sym_CheckboxGroup] = ACTIONS(830),
+    [anon_sym_InputOTP] = ACTIONS(830),
+    [anon_sym_TagInput] = ACTIONS(830),
+    [anon_sym_Rating] = ACTIONS(830),
+    [anon_sym_DateRangePicker] = ACTIONS(830),
     [anon_sym_Unsafe] = ACTIONS(830),
     [anon_sym_Host] = ACTIONS(830),
     [anon_sym_Element] = ACTIONS(830),
@@ -66915,6 +68270,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(986),
     [anon_sym_CommandPalette] = ACTIONS(986),
     [anon_sym_AppShell] = ACTIONS(986),
+    [anon_sym_CheckboxGroup] = ACTIONS(986),
+    [anon_sym_InputOTP] = ACTIONS(986),
+    [anon_sym_TagInput] = ACTIONS(986),
+    [anon_sym_Rating] = ACTIONS(986),
+    [anon_sym_DateRangePicker] = ACTIONS(986),
     [anon_sym_Unsafe] = ACTIONS(986),
     [anon_sym_Host] = ACTIONS(986),
     [anon_sym_Element] = ACTIONS(986),
@@ -67121,6 +68481,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(990),
     [anon_sym_CommandPalette] = ACTIONS(990),
     [anon_sym_AppShell] = ACTIONS(990),
+    [anon_sym_CheckboxGroup] = ACTIONS(990),
+    [anon_sym_InputOTP] = ACTIONS(990),
+    [anon_sym_TagInput] = ACTIONS(990),
+    [anon_sym_Rating] = ACTIONS(990),
+    [anon_sym_DateRangePicker] = ACTIONS(990),
     [anon_sym_Unsafe] = ACTIONS(990),
     [anon_sym_Host] = ACTIONS(990),
     [anon_sym_Element] = ACTIONS(990),
@@ -67327,6 +68692,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(994),
     [anon_sym_CommandPalette] = ACTIONS(994),
     [anon_sym_AppShell] = ACTIONS(994),
+    [anon_sym_CheckboxGroup] = ACTIONS(994),
+    [anon_sym_InputOTP] = ACTIONS(994),
+    [anon_sym_TagInput] = ACTIONS(994),
+    [anon_sym_Rating] = ACTIONS(994),
+    [anon_sym_DateRangePicker] = ACTIONS(994),
     [anon_sym_Unsafe] = ACTIONS(994),
     [anon_sym_Host] = ACTIONS(994),
     [anon_sym_Element] = ACTIONS(994),
@@ -67533,6 +68903,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(998),
     [anon_sym_CommandPalette] = ACTIONS(998),
     [anon_sym_AppShell] = ACTIONS(998),
+    [anon_sym_CheckboxGroup] = ACTIONS(998),
+    [anon_sym_InputOTP] = ACTIONS(998),
+    [anon_sym_TagInput] = ACTIONS(998),
+    [anon_sym_Rating] = ACTIONS(998),
+    [anon_sym_DateRangePicker] = ACTIONS(998),
     [anon_sym_Unsafe] = ACTIONS(998),
     [anon_sym_Host] = ACTIONS(998),
     [anon_sym_Element] = ACTIONS(998),
@@ -67738,6 +69113,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1006),
     [anon_sym_CommandPalette] = ACTIONS(1006),
     [anon_sym_AppShell] = ACTIONS(1006),
+    [anon_sym_CheckboxGroup] = ACTIONS(1006),
+    [anon_sym_InputOTP] = ACTIONS(1006),
+    [anon_sym_TagInput] = ACTIONS(1006),
+    [anon_sym_Rating] = ACTIONS(1006),
+    [anon_sym_DateRangePicker] = ACTIONS(1006),
     [anon_sym_Unsafe] = ACTIONS(1006),
     [anon_sym_Host] = ACTIONS(1006),
     [anon_sym_Element] = ACTIONS(1006),
@@ -67944,6 +69324,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1010),
     [anon_sym_CommandPalette] = ACTIONS(1010),
     [anon_sym_AppShell] = ACTIONS(1010),
+    [anon_sym_CheckboxGroup] = ACTIONS(1010),
+    [anon_sym_InputOTP] = ACTIONS(1010),
+    [anon_sym_TagInput] = ACTIONS(1010),
+    [anon_sym_Rating] = ACTIONS(1010),
+    [anon_sym_DateRangePicker] = ACTIONS(1010),
     [anon_sym_Unsafe] = ACTIONS(1010),
     [anon_sym_Host] = ACTIONS(1010),
     [anon_sym_Element] = ACTIONS(1010),
@@ -68150,6 +69535,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1014),
     [anon_sym_CommandPalette] = ACTIONS(1014),
     [anon_sym_AppShell] = ACTIONS(1014),
+    [anon_sym_CheckboxGroup] = ACTIONS(1014),
+    [anon_sym_InputOTP] = ACTIONS(1014),
+    [anon_sym_TagInput] = ACTIONS(1014),
+    [anon_sym_Rating] = ACTIONS(1014),
+    [anon_sym_DateRangePicker] = ACTIONS(1014),
     [anon_sym_Unsafe] = ACTIONS(1014),
     [anon_sym_Host] = ACTIONS(1014),
     [anon_sym_Element] = ACTIONS(1014),
@@ -68356,6 +69746,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1024),
     [anon_sym_CommandPalette] = ACTIONS(1024),
     [anon_sym_AppShell] = ACTIONS(1024),
+    [anon_sym_CheckboxGroup] = ACTIONS(1024),
+    [anon_sym_InputOTP] = ACTIONS(1024),
+    [anon_sym_TagInput] = ACTIONS(1024),
+    [anon_sym_Rating] = ACTIONS(1024),
+    [anon_sym_DateRangePicker] = ACTIONS(1024),
     [anon_sym_Unsafe] = ACTIONS(1024),
     [anon_sym_Host] = ACTIONS(1024),
     [anon_sym_Element] = ACTIONS(1024),
@@ -68562,6 +69957,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1028),
     [anon_sym_CommandPalette] = ACTIONS(1028),
     [anon_sym_AppShell] = ACTIONS(1028),
+    [anon_sym_CheckboxGroup] = ACTIONS(1028),
+    [anon_sym_InputOTP] = ACTIONS(1028),
+    [anon_sym_TagInput] = ACTIONS(1028),
+    [anon_sym_Rating] = ACTIONS(1028),
+    [anon_sym_DateRangePicker] = ACTIONS(1028),
     [anon_sym_Unsafe] = ACTIONS(1028),
     [anon_sym_Host] = ACTIONS(1028),
     [anon_sym_Element] = ACTIONS(1028),
@@ -68768,6 +70168,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(857),
     [anon_sym_CommandPalette] = ACTIONS(857),
     [anon_sym_AppShell] = ACTIONS(857),
+    [anon_sym_CheckboxGroup] = ACTIONS(857),
+    [anon_sym_InputOTP] = ACTIONS(857),
+    [anon_sym_TagInput] = ACTIONS(857),
+    [anon_sym_Rating] = ACTIONS(857),
+    [anon_sym_DateRangePicker] = ACTIONS(857),
     [anon_sym_Unsafe] = ACTIONS(857),
     [anon_sym_Host] = ACTIONS(857),
     [anon_sym_Element] = ACTIONS(857),
@@ -68975,6 +70380,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1006),
     [anon_sym_CommandPalette] = ACTIONS(1006),
     [anon_sym_AppShell] = ACTIONS(1006),
+    [anon_sym_CheckboxGroup] = ACTIONS(1006),
+    [anon_sym_InputOTP] = ACTIONS(1006),
+    [anon_sym_TagInput] = ACTIONS(1006),
+    [anon_sym_Rating] = ACTIONS(1006),
+    [anon_sym_DateRangePicker] = ACTIONS(1006),
     [anon_sym_Unsafe] = ACTIONS(1006),
     [anon_sym_Host] = ACTIONS(1006),
     [anon_sym_Element] = ACTIONS(1006),
@@ -69181,6 +70591,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1010),
     [anon_sym_CommandPalette] = ACTIONS(1010),
     [anon_sym_AppShell] = ACTIONS(1010),
+    [anon_sym_CheckboxGroup] = ACTIONS(1010),
+    [anon_sym_InputOTP] = ACTIONS(1010),
+    [anon_sym_TagInput] = ACTIONS(1010),
+    [anon_sym_Rating] = ACTIONS(1010),
+    [anon_sym_DateRangePicker] = ACTIONS(1010),
     [anon_sym_Unsafe] = ACTIONS(1010),
     [anon_sym_Host] = ACTIONS(1010),
     [anon_sym_Element] = ACTIONS(1010),
@@ -69387,6 +70802,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1014),
     [anon_sym_CommandPalette] = ACTIONS(1014),
     [anon_sym_AppShell] = ACTIONS(1014),
+    [anon_sym_CheckboxGroup] = ACTIONS(1014),
+    [anon_sym_InputOTP] = ACTIONS(1014),
+    [anon_sym_TagInput] = ACTIONS(1014),
+    [anon_sym_Rating] = ACTIONS(1014),
+    [anon_sym_DateRangePicker] = ACTIONS(1014),
     [anon_sym_Unsafe] = ACTIONS(1014),
     [anon_sym_Host] = ACTIONS(1014),
     [anon_sym_Element] = ACTIONS(1014),
@@ -69593,6 +71013,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1024),
     [anon_sym_CommandPalette] = ACTIONS(1024),
     [anon_sym_AppShell] = ACTIONS(1024),
+    [anon_sym_CheckboxGroup] = ACTIONS(1024),
+    [anon_sym_InputOTP] = ACTIONS(1024),
+    [anon_sym_TagInput] = ACTIONS(1024),
+    [anon_sym_Rating] = ACTIONS(1024),
+    [anon_sym_DateRangePicker] = ACTIONS(1024),
     [anon_sym_Unsafe] = ACTIONS(1024),
     [anon_sym_Host] = ACTIONS(1024),
     [anon_sym_Element] = ACTIONS(1024),
@@ -69799,6 +71224,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1028),
     [anon_sym_CommandPalette] = ACTIONS(1028),
     [anon_sym_AppShell] = ACTIONS(1028),
+    [anon_sym_CheckboxGroup] = ACTIONS(1028),
+    [anon_sym_InputOTP] = ACTIONS(1028),
+    [anon_sym_TagInput] = ACTIONS(1028),
+    [anon_sym_Rating] = ACTIONS(1028),
+    [anon_sym_DateRangePicker] = ACTIONS(1028),
     [anon_sym_Unsafe] = ACTIONS(1028),
     [anon_sym_Host] = ACTIONS(1028),
     [anon_sym_Element] = ACTIONS(1028),
@@ -70005,6 +71435,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(857),
     [anon_sym_CommandPalette] = ACTIONS(857),
     [anon_sym_AppShell] = ACTIONS(857),
+    [anon_sym_CheckboxGroup] = ACTIONS(857),
+    [anon_sym_InputOTP] = ACTIONS(857),
+    [anon_sym_TagInput] = ACTIONS(857),
+    [anon_sym_Rating] = ACTIONS(857),
+    [anon_sym_DateRangePicker] = ACTIONS(857),
     [anon_sym_Unsafe] = ACTIONS(857),
     [anon_sym_Host] = ACTIONS(857),
     [anon_sym_Element] = ACTIONS(857),
@@ -70210,6 +71645,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1002),
     [anon_sym_CommandPalette] = ACTIONS(1002),
     [anon_sym_AppShell] = ACTIONS(1002),
+    [anon_sym_CheckboxGroup] = ACTIONS(1002),
+    [anon_sym_InputOTP] = ACTIONS(1002),
+    [anon_sym_TagInput] = ACTIONS(1002),
+    [anon_sym_Rating] = ACTIONS(1002),
+    [anon_sym_DateRangePicker] = ACTIONS(1002),
     [anon_sym_Unsafe] = ACTIONS(1002),
     [anon_sym_Host] = ACTIONS(1002),
     [anon_sym_Element] = ACTIONS(1002),
@@ -70417,6 +71857,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1002),
     [anon_sym_CommandPalette] = ACTIONS(1002),
     [anon_sym_AppShell] = ACTIONS(1002),
+    [anon_sym_CheckboxGroup] = ACTIONS(1002),
+    [anon_sym_InputOTP] = ACTIONS(1002),
+    [anon_sym_TagInput] = ACTIONS(1002),
+    [anon_sym_Rating] = ACTIONS(1002),
+    [anon_sym_DateRangePicker] = ACTIONS(1002),
     [anon_sym_Unsafe] = ACTIONS(1002),
     [anon_sym_Host] = ACTIONS(1002),
     [anon_sym_Element] = ACTIONS(1002),
@@ -70622,6 +72067,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(865),
     [anon_sym_CommandPalette] = ACTIONS(865),
     [anon_sym_AppShell] = ACTIONS(865),
+    [anon_sym_CheckboxGroup] = ACTIONS(865),
+    [anon_sym_InputOTP] = ACTIONS(865),
+    [anon_sym_TagInput] = ACTIONS(865),
+    [anon_sym_Rating] = ACTIONS(865),
+    [anon_sym_DateRangePicker] = ACTIONS(865),
     [anon_sym_Unsafe] = ACTIONS(865),
     [anon_sym_Host] = ACTIONS(865),
     [anon_sym_Element] = ACTIONS(865),
@@ -70828,6 +72278,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(822),
     [anon_sym_CommandPalette] = ACTIONS(822),
     [anon_sym_AppShell] = ACTIONS(822),
+    [anon_sym_CheckboxGroup] = ACTIONS(822),
+    [anon_sym_InputOTP] = ACTIONS(822),
+    [anon_sym_TagInput] = ACTIONS(822),
+    [anon_sym_Rating] = ACTIONS(822),
+    [anon_sym_DateRangePicker] = ACTIONS(822),
     [anon_sym_Unsafe] = ACTIONS(822),
     [anon_sym_Host] = ACTIONS(822),
     [anon_sym_Element] = ACTIONS(822),
@@ -71034,6 +72489,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(838),
     [anon_sym_CommandPalette] = ACTIONS(838),
     [anon_sym_AppShell] = ACTIONS(838),
+    [anon_sym_CheckboxGroup] = ACTIONS(838),
+    [anon_sym_InputOTP] = ACTIONS(838),
+    [anon_sym_TagInput] = ACTIONS(838),
+    [anon_sym_Rating] = ACTIONS(838),
+    [anon_sym_DateRangePicker] = ACTIONS(838),
     [anon_sym_Unsafe] = ACTIONS(838),
     [anon_sym_Host] = ACTIONS(838),
     [anon_sym_Element] = ACTIONS(838),
@@ -71240,6 +72700,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(849),
     [anon_sym_CommandPalette] = ACTIONS(849),
     [anon_sym_AppShell] = ACTIONS(849),
+    [anon_sym_CheckboxGroup] = ACTIONS(849),
+    [anon_sym_InputOTP] = ACTIONS(849),
+    [anon_sym_TagInput] = ACTIONS(849),
+    [anon_sym_Rating] = ACTIONS(849),
+    [anon_sym_DateRangePicker] = ACTIONS(849),
     [anon_sym_Unsafe] = ACTIONS(849),
     [anon_sym_Host] = ACTIONS(849),
     [anon_sym_Element] = ACTIONS(849),
@@ -71447,6 +72912,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(865),
     [anon_sym_CommandPalette] = ACTIONS(865),
     [anon_sym_AppShell] = ACTIONS(865),
+    [anon_sym_CheckboxGroup] = ACTIONS(865),
+    [anon_sym_InputOTP] = ACTIONS(865),
+    [anon_sym_TagInput] = ACTIONS(865),
+    [anon_sym_Rating] = ACTIONS(865),
+    [anon_sym_DateRangePicker] = ACTIONS(865),
     [anon_sym_Unsafe] = ACTIONS(865),
     [anon_sym_Host] = ACTIONS(865),
     [anon_sym_Element] = ACTIONS(865),
@@ -71653,6 +73123,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(822),
     [anon_sym_CommandPalette] = ACTIONS(822),
     [anon_sym_AppShell] = ACTIONS(822),
+    [anon_sym_CheckboxGroup] = ACTIONS(822),
+    [anon_sym_InputOTP] = ACTIONS(822),
+    [anon_sym_TagInput] = ACTIONS(822),
+    [anon_sym_Rating] = ACTIONS(822),
+    [anon_sym_DateRangePicker] = ACTIONS(822),
     [anon_sym_Unsafe] = ACTIONS(822),
     [anon_sym_Host] = ACTIONS(822),
     [anon_sym_Element] = ACTIONS(822),
@@ -71859,6 +73334,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(838),
     [anon_sym_CommandPalette] = ACTIONS(838),
     [anon_sym_AppShell] = ACTIONS(838),
+    [anon_sym_CheckboxGroup] = ACTIONS(838),
+    [anon_sym_InputOTP] = ACTIONS(838),
+    [anon_sym_TagInput] = ACTIONS(838),
+    [anon_sym_Rating] = ACTIONS(838),
+    [anon_sym_DateRangePicker] = ACTIONS(838),
     [anon_sym_Unsafe] = ACTIONS(838),
     [anon_sym_Host] = ACTIONS(838),
     [anon_sym_Element] = ACTIONS(838),
@@ -72065,6 +73545,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(849),
     [anon_sym_CommandPalette] = ACTIONS(849),
     [anon_sym_AppShell] = ACTIONS(849),
+    [anon_sym_CheckboxGroup] = ACTIONS(849),
+    [anon_sym_InputOTP] = ACTIONS(849),
+    [anon_sym_TagInput] = ACTIONS(849),
+    [anon_sym_Rating] = ACTIONS(849),
+    [anon_sym_DateRangePicker] = ACTIONS(849),
     [anon_sym_Unsafe] = ACTIONS(849),
     [anon_sym_Host] = ACTIONS(849),
     [anon_sym_Element] = ACTIONS(849),
@@ -72272,6 +73757,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(662),
     [anon_sym_CommandPalette] = ACTIONS(662),
     [anon_sym_AppShell] = ACTIONS(662),
+    [anon_sym_CheckboxGroup] = ACTIONS(662),
+    [anon_sym_InputOTP] = ACTIONS(662),
+    [anon_sym_TagInput] = ACTIONS(662),
+    [anon_sym_Rating] = ACTIONS(662),
+    [anon_sym_DateRangePicker] = ACTIONS(662),
     [anon_sym_Unsafe] = ACTIONS(662),
     [anon_sym_Host] = ACTIONS(662),
     [anon_sym_Element] = ACTIONS(662),
@@ -72477,6 +73967,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(865),
     [anon_sym_CommandPalette] = ACTIONS(865),
     [anon_sym_AppShell] = ACTIONS(865),
+    [anon_sym_CheckboxGroup] = ACTIONS(865),
+    [anon_sym_InputOTP] = ACTIONS(865),
+    [anon_sym_TagInput] = ACTIONS(865),
+    [anon_sym_Rating] = ACTIONS(865),
+    [anon_sym_DateRangePicker] = ACTIONS(865),
     [anon_sym_Unsafe] = ACTIONS(865),
     [anon_sym_Host] = ACTIONS(865),
     [anon_sym_Element] = ACTIONS(865),
@@ -72684,6 +74179,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(884),
     [anon_sym_CommandPalette] = ACTIONS(884),
     [anon_sym_AppShell] = ACTIONS(884),
+    [anon_sym_CheckboxGroup] = ACTIONS(884),
+    [anon_sym_InputOTP] = ACTIONS(884),
+    [anon_sym_TagInput] = ACTIONS(884),
+    [anon_sym_Rating] = ACTIONS(884),
+    [anon_sym_DateRangePicker] = ACTIONS(884),
     [anon_sym_Unsafe] = ACTIONS(884),
     [anon_sym_Host] = ACTIONS(884),
     [anon_sym_Element] = ACTIONS(884),
@@ -72890,6 +74390,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1018),
     [anon_sym_CommandPalette] = ACTIONS(1018),
     [anon_sym_AppShell] = ACTIONS(1018),
+    [anon_sym_CheckboxGroup] = ACTIONS(1018),
+    [anon_sym_InputOTP] = ACTIONS(1018),
+    [anon_sym_TagInput] = ACTIONS(1018),
+    [anon_sym_Rating] = ACTIONS(1018),
+    [anon_sym_DateRangePicker] = ACTIONS(1018),
     [anon_sym_Unsafe] = ACTIONS(1018),
     [anon_sym_Host] = ACTIONS(1018),
     [anon_sym_Element] = ACTIONS(1018),
@@ -73094,6 +74599,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(918),
     [anon_sym_CommandPalette] = ACTIONS(918),
     [anon_sym_AppShell] = ACTIONS(918),
+    [anon_sym_CheckboxGroup] = ACTIONS(918),
+    [anon_sym_InputOTP] = ACTIONS(918),
+    [anon_sym_TagInput] = ACTIONS(918),
+    [anon_sym_Rating] = ACTIONS(918),
+    [anon_sym_DateRangePicker] = ACTIONS(918),
     [anon_sym_Unsafe] = ACTIONS(918),
     [anon_sym_Host] = ACTIONS(918),
     [anon_sym_Element] = ACTIONS(918),
@@ -73300,6 +74810,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(662),
     [anon_sym_CommandPalette] = ACTIONS(662),
     [anon_sym_AppShell] = ACTIONS(662),
+    [anon_sym_CheckboxGroup] = ACTIONS(662),
+    [anon_sym_InputOTP] = ACTIONS(662),
+    [anon_sym_TagInput] = ACTIONS(662),
+    [anon_sym_Rating] = ACTIONS(662),
+    [anon_sym_DateRangePicker] = ACTIONS(662),
     [anon_sym_Unsafe] = ACTIONS(662),
     [anon_sym_Host] = ACTIONS(662),
     [anon_sym_Element] = ACTIONS(662),
@@ -73506,6 +75021,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1070),
     [anon_sym_CommandPalette] = ACTIONS(1070),
     [anon_sym_AppShell] = ACTIONS(1070),
+    [anon_sym_CheckboxGroup] = ACTIONS(1070),
+    [anon_sym_InputOTP] = ACTIONS(1070),
+    [anon_sym_TagInput] = ACTIONS(1070),
+    [anon_sym_Rating] = ACTIONS(1070),
+    [anon_sym_DateRangePicker] = ACTIONS(1070),
     [anon_sym_Unsafe] = ACTIONS(1070),
     [anon_sym_Host] = ACTIONS(1070),
     [anon_sym_Element] = ACTIONS(1070),
@@ -73711,6 +75231,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1074),
     [anon_sym_CommandPalette] = ACTIONS(1074),
     [anon_sym_AppShell] = ACTIONS(1074),
+    [anon_sym_CheckboxGroup] = ACTIONS(1074),
+    [anon_sym_InputOTP] = ACTIONS(1074),
+    [anon_sym_TagInput] = ACTIONS(1074),
+    [anon_sym_Rating] = ACTIONS(1074),
+    [anon_sym_DateRangePicker] = ACTIONS(1074),
     [anon_sym_Unsafe] = ACTIONS(1074),
     [anon_sym_Host] = ACTIONS(1074),
     [anon_sym_Element] = ACTIONS(1074),
@@ -73915,6 +75440,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1078),
     [anon_sym_CommandPalette] = ACTIONS(1078),
     [anon_sym_AppShell] = ACTIONS(1078),
+    [anon_sym_CheckboxGroup] = ACTIONS(1078),
+    [anon_sym_InputOTP] = ACTIONS(1078),
+    [anon_sym_TagInput] = ACTIONS(1078),
+    [anon_sym_Rating] = ACTIONS(1078),
+    [anon_sym_DateRangePicker] = ACTIONS(1078),
     [anon_sym_Unsafe] = ACTIONS(1078),
     [anon_sym_Host] = ACTIONS(1078),
     [anon_sym_Element] = ACTIONS(1078),
@@ -74121,6 +75651,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1082),
     [anon_sym_CommandPalette] = ACTIONS(1082),
     [anon_sym_AppShell] = ACTIONS(1082),
+    [anon_sym_CheckboxGroup] = ACTIONS(1082),
+    [anon_sym_InputOTP] = ACTIONS(1082),
+    [anon_sym_TagInput] = ACTIONS(1082),
+    [anon_sym_Rating] = ACTIONS(1082),
+    [anon_sym_DateRangePicker] = ACTIONS(1082),
     [anon_sym_Unsafe] = ACTIONS(1082),
     [anon_sym_Host] = ACTIONS(1082),
     [anon_sym_Element] = ACTIONS(1082),
@@ -74325,6 +75860,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1086),
     [anon_sym_CommandPalette] = ACTIONS(1086),
     [anon_sym_AppShell] = ACTIONS(1086),
+    [anon_sym_CheckboxGroup] = ACTIONS(1086),
+    [anon_sym_InputOTP] = ACTIONS(1086),
+    [anon_sym_TagInput] = ACTIONS(1086),
+    [anon_sym_Rating] = ACTIONS(1086),
+    [anon_sym_DateRangePicker] = ACTIONS(1086),
     [anon_sym_Unsafe] = ACTIONS(1086),
     [anon_sym_Host] = ACTIONS(1086),
     [anon_sym_Element] = ACTIONS(1086),
@@ -74531,6 +76071,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1090),
     [anon_sym_CommandPalette] = ACTIONS(1090),
     [anon_sym_AppShell] = ACTIONS(1090),
+    [anon_sym_CheckboxGroup] = ACTIONS(1090),
+    [anon_sym_InputOTP] = ACTIONS(1090),
+    [anon_sym_TagInput] = ACTIONS(1090),
+    [anon_sym_Rating] = ACTIONS(1090),
+    [anon_sym_DateRangePicker] = ACTIONS(1090),
     [anon_sym_Unsafe] = ACTIONS(1090),
     [anon_sym_Host] = ACTIONS(1090),
     [anon_sym_Element] = ACTIONS(1090),
@@ -74735,6 +76280,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1094),
     [anon_sym_CommandPalette] = ACTIONS(1094),
     [anon_sym_AppShell] = ACTIONS(1094),
+    [anon_sym_CheckboxGroup] = ACTIONS(1094),
+    [anon_sym_InputOTP] = ACTIONS(1094),
+    [anon_sym_TagInput] = ACTIONS(1094),
+    [anon_sym_Rating] = ACTIONS(1094),
+    [anon_sym_DateRangePicker] = ACTIONS(1094),
     [anon_sym_Unsafe] = ACTIONS(1094),
     [anon_sym_Host] = ACTIONS(1094),
     [anon_sym_Element] = ACTIONS(1094),
@@ -74940,6 +76490,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1098),
     [anon_sym_CommandPalette] = ACTIONS(1098),
     [anon_sym_AppShell] = ACTIONS(1098),
+    [anon_sym_CheckboxGroup] = ACTIONS(1098),
+    [anon_sym_InputOTP] = ACTIONS(1098),
+    [anon_sym_TagInput] = ACTIONS(1098),
+    [anon_sym_Rating] = ACTIONS(1098),
+    [anon_sym_DateRangePicker] = ACTIONS(1098),
     [anon_sym_Unsafe] = ACTIONS(1098),
     [anon_sym_Host] = ACTIONS(1098),
     [anon_sym_Element] = ACTIONS(1098),
@@ -75145,6 +76700,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1102),
     [anon_sym_CommandPalette] = ACTIONS(1102),
     [anon_sym_AppShell] = ACTIONS(1102),
+    [anon_sym_CheckboxGroup] = ACTIONS(1102),
+    [anon_sym_InputOTP] = ACTIONS(1102),
+    [anon_sym_TagInput] = ACTIONS(1102),
+    [anon_sym_Rating] = ACTIONS(1102),
+    [anon_sym_DateRangePicker] = ACTIONS(1102),
     [anon_sym_Unsafe] = ACTIONS(1102),
     [anon_sym_Host] = ACTIONS(1102),
     [anon_sym_Element] = ACTIONS(1102),
@@ -75350,6 +76910,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1106),
     [anon_sym_CommandPalette] = ACTIONS(1106),
     [anon_sym_AppShell] = ACTIONS(1106),
+    [anon_sym_CheckboxGroup] = ACTIONS(1106),
+    [anon_sym_InputOTP] = ACTIONS(1106),
+    [anon_sym_TagInput] = ACTIONS(1106),
+    [anon_sym_Rating] = ACTIONS(1106),
+    [anon_sym_DateRangePicker] = ACTIONS(1106),
     [anon_sym_Unsafe] = ACTIONS(1106),
     [anon_sym_Host] = ACTIONS(1106),
     [anon_sym_Element] = ACTIONS(1106),
@@ -75555,6 +77120,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1110),
     [anon_sym_CommandPalette] = ACTIONS(1110),
     [anon_sym_AppShell] = ACTIONS(1110),
+    [anon_sym_CheckboxGroup] = ACTIONS(1110),
+    [anon_sym_InputOTP] = ACTIONS(1110),
+    [anon_sym_TagInput] = ACTIONS(1110),
+    [anon_sym_Rating] = ACTIONS(1110),
+    [anon_sym_DateRangePicker] = ACTIONS(1110),
     [anon_sym_Unsafe] = ACTIONS(1110),
     [anon_sym_Host] = ACTIONS(1110),
     [anon_sym_Element] = ACTIONS(1110),
@@ -75761,6 +77331,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(662),
     [anon_sym_CommandPalette] = ACTIONS(662),
     [anon_sym_AppShell] = ACTIONS(662),
+    [anon_sym_CheckboxGroup] = ACTIONS(662),
+    [anon_sym_InputOTP] = ACTIONS(662),
+    [anon_sym_TagInput] = ACTIONS(662),
+    [anon_sym_Rating] = ACTIONS(662),
+    [anon_sym_DateRangePicker] = ACTIONS(662),
     [anon_sym_Unsafe] = ACTIONS(662),
     [anon_sym_Host] = ACTIONS(662),
     [anon_sym_Element] = ACTIONS(662),
@@ -75965,6 +77540,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1114),
     [anon_sym_CommandPalette] = ACTIONS(1114),
     [anon_sym_AppShell] = ACTIONS(1114),
+    [anon_sym_CheckboxGroup] = ACTIONS(1114),
+    [anon_sym_InputOTP] = ACTIONS(1114),
+    [anon_sym_TagInput] = ACTIONS(1114),
+    [anon_sym_Rating] = ACTIONS(1114),
+    [anon_sym_DateRangePicker] = ACTIONS(1114),
     [anon_sym_Unsafe] = ACTIONS(1114),
     [anon_sym_Host] = ACTIONS(1114),
     [anon_sym_Element] = ACTIONS(1114),
@@ -76170,6 +77750,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1070),
     [anon_sym_CommandPalette] = ACTIONS(1070),
     [anon_sym_AppShell] = ACTIONS(1070),
+    [anon_sym_CheckboxGroup] = ACTIONS(1070),
+    [anon_sym_InputOTP] = ACTIONS(1070),
+    [anon_sym_TagInput] = ACTIONS(1070),
+    [anon_sym_Rating] = ACTIONS(1070),
+    [anon_sym_DateRangePicker] = ACTIONS(1070),
     [anon_sym_Unsafe] = ACTIONS(1070),
     [anon_sym_Host] = ACTIONS(1070),
     [anon_sym_Element] = ACTIONS(1070),
@@ -76375,6 +77960,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1118),
     [anon_sym_CommandPalette] = ACTIONS(1118),
     [anon_sym_AppShell] = ACTIONS(1118),
+    [anon_sym_CheckboxGroup] = ACTIONS(1118),
+    [anon_sym_InputOTP] = ACTIONS(1118),
+    [anon_sym_TagInput] = ACTIONS(1118),
+    [anon_sym_Rating] = ACTIONS(1118),
+    [anon_sym_DateRangePicker] = ACTIONS(1118),
     [anon_sym_Unsafe] = ACTIONS(1118),
     [anon_sym_Host] = ACTIONS(1118),
     [anon_sym_Element] = ACTIONS(1118),
@@ -76581,6 +78171,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1110),
     [anon_sym_CommandPalette] = ACTIONS(1110),
     [anon_sym_AppShell] = ACTIONS(1110),
+    [anon_sym_CheckboxGroup] = ACTIONS(1110),
+    [anon_sym_InputOTP] = ACTIONS(1110),
+    [anon_sym_TagInput] = ACTIONS(1110),
+    [anon_sym_Rating] = ACTIONS(1110),
+    [anon_sym_DateRangePicker] = ACTIONS(1110),
     [anon_sym_Unsafe] = ACTIONS(1110),
     [anon_sym_Host] = ACTIONS(1110),
     [anon_sym_Element] = ACTIONS(1110),
@@ -76786,6 +78381,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1118),
     [anon_sym_CommandPalette] = ACTIONS(1118),
     [anon_sym_AppShell] = ACTIONS(1118),
+    [anon_sym_CheckboxGroup] = ACTIONS(1118),
+    [anon_sym_InputOTP] = ACTIONS(1118),
+    [anon_sym_TagInput] = ACTIONS(1118),
+    [anon_sym_Rating] = ACTIONS(1118),
+    [anon_sym_DateRangePicker] = ACTIONS(1118),
     [anon_sym_Unsafe] = ACTIONS(1118),
     [anon_sym_Host] = ACTIONS(1118),
     [anon_sym_Element] = ACTIONS(1118),
@@ -76990,6 +78590,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1122),
     [anon_sym_CommandPalette] = ACTIONS(1122),
     [anon_sym_AppShell] = ACTIONS(1122),
+    [anon_sym_CheckboxGroup] = ACTIONS(1122),
+    [anon_sym_InputOTP] = ACTIONS(1122),
+    [anon_sym_TagInput] = ACTIONS(1122),
+    [anon_sym_Rating] = ACTIONS(1122),
+    [anon_sym_DateRangePicker] = ACTIONS(1122),
     [anon_sym_Unsafe] = ACTIONS(1122),
     [anon_sym_Host] = ACTIONS(1122),
     [anon_sym_Element] = ACTIONS(1122),
@@ -77196,6 +78801,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1094),
     [anon_sym_CommandPalette] = ACTIONS(1094),
     [anon_sym_AppShell] = ACTIONS(1094),
+    [anon_sym_CheckboxGroup] = ACTIONS(1094),
+    [anon_sym_InputOTP] = ACTIONS(1094),
+    [anon_sym_TagInput] = ACTIONS(1094),
+    [anon_sym_Rating] = ACTIONS(1094),
+    [anon_sym_DateRangePicker] = ACTIONS(1094),
     [anon_sym_Unsafe] = ACTIONS(1094),
     [anon_sym_Host] = ACTIONS(1094),
     [anon_sym_Element] = ACTIONS(1094),
@@ -77400,6 +79010,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1126),
     [anon_sym_CommandPalette] = ACTIONS(1126),
     [anon_sym_AppShell] = ACTIONS(1126),
+    [anon_sym_CheckboxGroup] = ACTIONS(1126),
+    [anon_sym_InputOTP] = ACTIONS(1126),
+    [anon_sym_TagInput] = ACTIONS(1126),
+    [anon_sym_Rating] = ACTIONS(1126),
+    [anon_sym_DateRangePicker] = ACTIONS(1126),
     [anon_sym_Unsafe] = ACTIONS(1126),
     [anon_sym_Host] = ACTIONS(1126),
     [anon_sym_Element] = ACTIONS(1126),
@@ -77606,6 +79221,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1102),
     [anon_sym_CommandPalette] = ACTIONS(1102),
     [anon_sym_AppShell] = ACTIONS(1102),
+    [anon_sym_CheckboxGroup] = ACTIONS(1102),
+    [anon_sym_InputOTP] = ACTIONS(1102),
+    [anon_sym_TagInput] = ACTIONS(1102),
+    [anon_sym_Rating] = ACTIONS(1102),
+    [anon_sym_DateRangePicker] = ACTIONS(1102),
     [anon_sym_Unsafe] = ACTIONS(1102),
     [anon_sym_Host] = ACTIONS(1102),
     [anon_sym_Element] = ACTIONS(1102),
@@ -77811,6 +79431,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1122),
     [anon_sym_CommandPalette] = ACTIONS(1122),
     [anon_sym_AppShell] = ACTIONS(1122),
+    [anon_sym_CheckboxGroup] = ACTIONS(1122),
+    [anon_sym_InputOTP] = ACTIONS(1122),
+    [anon_sym_TagInput] = ACTIONS(1122),
+    [anon_sym_Rating] = ACTIONS(1122),
+    [anon_sym_DateRangePicker] = ACTIONS(1122),
     [anon_sym_Unsafe] = ACTIONS(1122),
     [anon_sym_Host] = ACTIONS(1122),
     [anon_sym_Element] = ACTIONS(1122),
@@ -78016,6 +79641,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1086),
     [anon_sym_CommandPalette] = ACTIONS(1086),
     [anon_sym_AppShell] = ACTIONS(1086),
+    [anon_sym_CheckboxGroup] = ACTIONS(1086),
+    [anon_sym_InputOTP] = ACTIONS(1086),
+    [anon_sym_TagInput] = ACTIONS(1086),
+    [anon_sym_Rating] = ACTIONS(1086),
+    [anon_sym_DateRangePicker] = ACTIONS(1086),
     [anon_sym_Unsafe] = ACTIONS(1086),
     [anon_sym_Host] = ACTIONS(1086),
     [anon_sym_Element] = ACTIONS(1086),
@@ -78220,6 +79850,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1074),
     [anon_sym_CommandPalette] = ACTIONS(1074),
     [anon_sym_AppShell] = ACTIONS(1074),
+    [anon_sym_CheckboxGroup] = ACTIONS(1074),
+    [anon_sym_InputOTP] = ACTIONS(1074),
+    [anon_sym_TagInput] = ACTIONS(1074),
+    [anon_sym_Rating] = ACTIONS(1074),
+    [anon_sym_DateRangePicker] = ACTIONS(1074),
     [anon_sym_Unsafe] = ACTIONS(1074),
     [anon_sym_Host] = ACTIONS(1074),
     [anon_sym_Element] = ACTIONS(1074),
@@ -78426,6 +80061,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1098),
     [anon_sym_CommandPalette] = ACTIONS(1098),
     [anon_sym_AppShell] = ACTIONS(1098),
+    [anon_sym_CheckboxGroup] = ACTIONS(1098),
+    [anon_sym_InputOTP] = ACTIONS(1098),
+    [anon_sym_TagInput] = ACTIONS(1098),
+    [anon_sym_Rating] = ACTIONS(1098),
+    [anon_sym_DateRangePicker] = ACTIONS(1098),
     [anon_sym_Unsafe] = ACTIONS(1098),
     [anon_sym_Host] = ACTIONS(1098),
     [anon_sym_Element] = ACTIONS(1098),
@@ -78631,6 +80271,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1106),
     [anon_sym_CommandPalette] = ACTIONS(1106),
     [anon_sym_AppShell] = ACTIONS(1106),
+    [anon_sym_CheckboxGroup] = ACTIONS(1106),
+    [anon_sym_InputOTP] = ACTIONS(1106),
+    [anon_sym_TagInput] = ACTIONS(1106),
+    [anon_sym_Rating] = ACTIONS(1106),
+    [anon_sym_DateRangePicker] = ACTIONS(1106),
     [anon_sym_Unsafe] = ACTIONS(1106),
     [anon_sym_Host] = ACTIONS(1106),
     [anon_sym_Element] = ACTIONS(1106),
@@ -78836,6 +80481,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1114),
     [anon_sym_CommandPalette] = ACTIONS(1114),
     [anon_sym_AppShell] = ACTIONS(1114),
+    [anon_sym_CheckboxGroup] = ACTIONS(1114),
+    [anon_sym_InputOTP] = ACTIONS(1114),
+    [anon_sym_TagInput] = ACTIONS(1114),
+    [anon_sym_Rating] = ACTIONS(1114),
+    [anon_sym_DateRangePicker] = ACTIONS(1114),
     [anon_sym_Unsafe] = ACTIONS(1114),
     [anon_sym_Host] = ACTIONS(1114),
     [anon_sym_Element] = ACTIONS(1114),
@@ -79040,6 +80690,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1082),
     [anon_sym_CommandPalette] = ACTIONS(1082),
     [anon_sym_AppShell] = ACTIONS(1082),
+    [anon_sym_CheckboxGroup] = ACTIONS(1082),
+    [anon_sym_InputOTP] = ACTIONS(1082),
+    [anon_sym_TagInput] = ACTIONS(1082),
+    [anon_sym_Rating] = ACTIONS(1082),
+    [anon_sym_DateRangePicker] = ACTIONS(1082),
     [anon_sym_Unsafe] = ACTIONS(1082),
     [anon_sym_Host] = ACTIONS(1082),
     [anon_sym_Element] = ACTIONS(1082),
@@ -79245,6 +80900,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1090),
     [anon_sym_CommandPalette] = ACTIONS(1090),
     [anon_sym_AppShell] = ACTIONS(1090),
+    [anon_sym_CheckboxGroup] = ACTIONS(1090),
+    [anon_sym_InputOTP] = ACTIONS(1090),
+    [anon_sym_TagInput] = ACTIONS(1090),
+    [anon_sym_Rating] = ACTIONS(1090),
+    [anon_sym_DateRangePicker] = ACTIONS(1090),
     [anon_sym_Unsafe] = ACTIONS(1090),
     [anon_sym_Host] = ACTIONS(1090),
     [anon_sym_Element] = ACTIONS(1090),
@@ -79451,6 +81111,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(662),
     [anon_sym_CommandPalette] = ACTIONS(662),
     [anon_sym_AppShell] = ACTIONS(662),
+    [anon_sym_CheckboxGroup] = ACTIONS(662),
+    [anon_sym_InputOTP] = ACTIONS(662),
+    [anon_sym_TagInput] = ACTIONS(662),
+    [anon_sym_Rating] = ACTIONS(662),
+    [anon_sym_DateRangePicker] = ACTIONS(662),
     [anon_sym_Unsafe] = ACTIONS(662),
     [anon_sym_Host] = ACTIONS(662),
     [anon_sym_Element] = ACTIONS(662),
@@ -79655,6 +81320,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(662),
     [anon_sym_CommandPalette] = ACTIONS(662),
     [anon_sym_AppShell] = ACTIONS(662),
+    [anon_sym_CheckboxGroup] = ACTIONS(662),
+    [anon_sym_InputOTP] = ACTIONS(662),
+    [anon_sym_TagInput] = ACTIONS(662),
+    [anon_sym_Rating] = ACTIONS(662),
+    [anon_sym_DateRangePicker] = ACTIONS(662),
     [anon_sym_Unsafe] = ACTIONS(662),
     [anon_sym_Host] = ACTIONS(662),
     [anon_sym_Element] = ACTIONS(662),
@@ -79861,6 +81531,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1130),
     [anon_sym_CommandPalette] = ACTIONS(1130),
     [anon_sym_AppShell] = ACTIONS(1130),
+    [anon_sym_CheckboxGroup] = ACTIONS(1130),
+    [anon_sym_InputOTP] = ACTIONS(1130),
+    [anon_sym_TagInput] = ACTIONS(1130),
+    [anon_sym_Rating] = ACTIONS(1130),
+    [anon_sym_DateRangePicker] = ACTIONS(1130),
     [anon_sym_Unsafe] = ACTIONS(1130),
     [anon_sym_Host] = ACTIONS(1130),
     [anon_sym_Element] = ACTIONS(1130),
@@ -80066,6 +81741,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1078),
     [anon_sym_CommandPalette] = ACTIONS(1078),
     [anon_sym_AppShell] = ACTIONS(1078),
+    [anon_sym_CheckboxGroup] = ACTIONS(1078),
+    [anon_sym_InputOTP] = ACTIONS(1078),
+    [anon_sym_TagInput] = ACTIONS(1078),
+    [anon_sym_Rating] = ACTIONS(1078),
+    [anon_sym_DateRangePicker] = ACTIONS(1078),
     [anon_sym_Unsafe] = ACTIONS(1078),
     [anon_sym_Host] = ACTIONS(1078),
     [anon_sym_Element] = ACTIONS(1078),
@@ -80271,6 +81951,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1126),
     [anon_sym_CommandPalette] = ACTIONS(1126),
     [anon_sym_AppShell] = ACTIONS(1126),
+    [anon_sym_CheckboxGroup] = ACTIONS(1126),
+    [anon_sym_InputOTP] = ACTIONS(1126),
+    [anon_sym_TagInput] = ACTIONS(1126),
+    [anon_sym_Rating] = ACTIONS(1126),
+    [anon_sym_DateRangePicker] = ACTIONS(1126),
     [anon_sym_Unsafe] = ACTIONS(1126),
     [anon_sym_Host] = ACTIONS(1126),
     [anon_sym_Element] = ACTIONS(1126),
@@ -80475,6 +82160,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1130),
     [anon_sym_CommandPalette] = ACTIONS(1130),
     [anon_sym_AppShell] = ACTIONS(1130),
+    [anon_sym_CheckboxGroup] = ACTIONS(1130),
+    [anon_sym_InputOTP] = ACTIONS(1130),
+    [anon_sym_TagInput] = ACTIONS(1130),
+    [anon_sym_Rating] = ACTIONS(1130),
+    [anon_sym_DateRangePicker] = ACTIONS(1130),
     [anon_sym_Unsafe] = ACTIONS(1130),
     [anon_sym_Host] = ACTIONS(1130),
     [anon_sym_Element] = ACTIONS(1130),
@@ -80685,6 +82375,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(554),
     [anon_sym_CommandPalette] = ACTIONS(554),
     [anon_sym_AppShell] = ACTIONS(554),
+    [anon_sym_CheckboxGroup] = ACTIONS(554),
+    [anon_sym_InputOTP] = ACTIONS(554),
+    [anon_sym_TagInput] = ACTIONS(554),
+    [anon_sym_Rating] = ACTIONS(554),
+    [anon_sym_DateRangePicker] = ACTIONS(554),
     [anon_sym_Unsafe] = ACTIONS(554),
     [anon_sym_Host] = ACTIONS(554),
     [anon_sym_Element] = ACTIONS(554),
@@ -80878,6 +82573,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(554),
     [anon_sym_CommandPalette] = ACTIONS(554),
     [anon_sym_AppShell] = ACTIONS(554),
+    [anon_sym_CheckboxGroup] = ACTIONS(554),
+    [anon_sym_InputOTP] = ACTIONS(554),
+    [anon_sym_TagInput] = ACTIONS(554),
+    [anon_sym_Rating] = ACTIONS(554),
+    [anon_sym_DateRangePicker] = ACTIONS(554),
     [anon_sym_Unsafe] = ACTIONS(554),
     [anon_sym_Host] = ACTIONS(554),
     [anon_sym_Element] = ACTIONS(554),
@@ -81071,6 +82771,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1138),
     [anon_sym_CommandPalette] = ACTIONS(1138),
     [anon_sym_AppShell] = ACTIONS(1138),
+    [anon_sym_CheckboxGroup] = ACTIONS(1138),
+    [anon_sym_InputOTP] = ACTIONS(1138),
+    [anon_sym_TagInput] = ACTIONS(1138),
+    [anon_sym_Rating] = ACTIONS(1138),
+    [anon_sym_DateRangePicker] = ACTIONS(1138),
     [anon_sym_Unsafe] = ACTIONS(1138),
     [anon_sym_Host] = ACTIONS(1138),
     [anon_sym_Element] = ACTIONS(1138),
@@ -81264,6 +82969,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1142),
     [anon_sym_CommandPalette] = ACTIONS(1142),
     [anon_sym_AppShell] = ACTIONS(1142),
+    [anon_sym_CheckboxGroup] = ACTIONS(1142),
+    [anon_sym_InputOTP] = ACTIONS(1142),
+    [anon_sym_TagInput] = ACTIONS(1142),
+    [anon_sym_Rating] = ACTIONS(1142),
+    [anon_sym_DateRangePicker] = ACTIONS(1142),
     [anon_sym_Unsafe] = ACTIONS(1142),
     [anon_sym_Host] = ACTIONS(1142),
     [anon_sym_Element] = ACTIONS(1142),
@@ -81458,6 +83168,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1142),
     [anon_sym_CommandPalette] = ACTIONS(1142),
     [anon_sym_AppShell] = ACTIONS(1142),
+    [anon_sym_CheckboxGroup] = ACTIONS(1142),
+    [anon_sym_InputOTP] = ACTIONS(1142),
+    [anon_sym_TagInput] = ACTIONS(1142),
+    [anon_sym_Rating] = ACTIONS(1142),
+    [anon_sym_DateRangePicker] = ACTIONS(1142),
     [anon_sym_Unsafe] = ACTIONS(1142),
     [anon_sym_Host] = ACTIONS(1142),
     [anon_sym_Element] = ACTIONS(1142),
@@ -81650,6 +83365,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1146),
     [anon_sym_CommandPalette] = ACTIONS(1146),
     [anon_sym_AppShell] = ACTIONS(1146),
+    [anon_sym_CheckboxGroup] = ACTIONS(1146),
+    [anon_sym_InputOTP] = ACTIONS(1146),
+    [anon_sym_TagInput] = ACTIONS(1146),
+    [anon_sym_Rating] = ACTIONS(1146),
+    [anon_sym_DateRangePicker] = ACTIONS(1146),
     [anon_sym_Unsafe] = ACTIONS(1146),
     [anon_sym_Host] = ACTIONS(1146),
     [anon_sym_Element] = ACTIONS(1146),
@@ -81834,6 +83554,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -82036,6 +83761,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1146),
     [anon_sym_CommandPalette] = ACTIONS(1146),
     [anon_sym_AppShell] = ACTIONS(1146),
+    [anon_sym_CheckboxGroup] = ACTIONS(1146),
+    [anon_sym_InputOTP] = ACTIONS(1146),
+    [anon_sym_TagInput] = ACTIONS(1146),
+    [anon_sym_Rating] = ACTIONS(1146),
+    [anon_sym_DateRangePicker] = ACTIONS(1146),
     [anon_sym_Unsafe] = ACTIONS(1146),
     [anon_sym_Host] = ACTIONS(1146),
     [anon_sym_Element] = ACTIONS(1146),
@@ -82230,6 +83960,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1138),
     [anon_sym_CommandPalette] = ACTIONS(1138),
     [anon_sym_AppShell] = ACTIONS(1138),
+    [anon_sym_CheckboxGroup] = ACTIONS(1138),
+    [anon_sym_InputOTP] = ACTIONS(1138),
+    [anon_sym_TagInput] = ACTIONS(1138),
+    [anon_sym_Rating] = ACTIONS(1138),
+    [anon_sym_DateRangePicker] = ACTIONS(1138),
     [anon_sym_Unsafe] = ACTIONS(1138),
     [anon_sym_Host] = ACTIONS(1138),
     [anon_sym_Element] = ACTIONS(1138),
@@ -82412,6 +84147,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -82615,6 +84355,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1146),
     [anon_sym_CommandPalette] = ACTIONS(1146),
     [anon_sym_AppShell] = ACTIONS(1146),
+    [anon_sym_CheckboxGroup] = ACTIONS(1146),
+    [anon_sym_InputOTP] = ACTIONS(1146),
+    [anon_sym_TagInput] = ACTIONS(1146),
+    [anon_sym_Rating] = ACTIONS(1146),
+    [anon_sym_DateRangePicker] = ACTIONS(1146),
     [anon_sym_Unsafe] = ACTIONS(1146),
     [anon_sym_Host] = ACTIONS(1146),
     [anon_sym_Element] = ACTIONS(1146),
@@ -82809,6 +84554,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1146),
     [anon_sym_CommandPalette] = ACTIONS(1146),
     [anon_sym_AppShell] = ACTIONS(1146),
+    [anon_sym_CheckboxGroup] = ACTIONS(1146),
+    [anon_sym_InputOTP] = ACTIONS(1146),
+    [anon_sym_TagInput] = ACTIONS(1146),
+    [anon_sym_Rating] = ACTIONS(1146),
+    [anon_sym_DateRangePicker] = ACTIONS(1146),
     [anon_sym_Unsafe] = ACTIONS(1146),
     [anon_sym_Host] = ACTIONS(1146),
     [anon_sym_Element] = ACTIONS(1146),
@@ -83002,6 +84752,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1146),
     [anon_sym_CommandPalette] = ACTIONS(1146),
     [anon_sym_AppShell] = ACTIONS(1146),
+    [anon_sym_CheckboxGroup] = ACTIONS(1146),
+    [anon_sym_InputOTP] = ACTIONS(1146),
+    [anon_sym_TagInput] = ACTIONS(1146),
+    [anon_sym_Rating] = ACTIONS(1146),
+    [anon_sym_DateRangePicker] = ACTIONS(1146),
     [anon_sym_Unsafe] = ACTIONS(1146),
     [anon_sym_Host] = ACTIONS(1146),
     [anon_sym_Element] = ACTIONS(1146),
@@ -83195,6 +84950,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1146),
     [anon_sym_CommandPalette] = ACTIONS(1146),
     [anon_sym_AppShell] = ACTIONS(1146),
+    [anon_sym_CheckboxGroup] = ACTIONS(1146),
+    [anon_sym_InputOTP] = ACTIONS(1146),
+    [anon_sym_TagInput] = ACTIONS(1146),
+    [anon_sym_Rating] = ACTIONS(1146),
+    [anon_sym_DateRangePicker] = ACTIONS(1146),
     [anon_sym_Unsafe] = ACTIONS(1146),
     [anon_sym_Host] = ACTIONS(1146),
     [anon_sym_Element] = ACTIONS(1146),
@@ -83386,6 +85146,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1195),
     [anon_sym_CommandPalette] = ACTIONS(1195),
     [anon_sym_AppShell] = ACTIONS(1195),
+    [anon_sym_CheckboxGroup] = ACTIONS(1195),
+    [anon_sym_InputOTP] = ACTIONS(1195),
+    [anon_sym_TagInput] = ACTIONS(1195),
+    [anon_sym_Rating] = ACTIONS(1195),
+    [anon_sym_DateRangePicker] = ACTIONS(1195),
     [anon_sym_Unsafe] = ACTIONS(1195),
     [anon_sym_Host] = ACTIONS(1195),
     [anon_sym_Element] = ACTIONS(1195),
@@ -83579,6 +85344,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1195),
     [anon_sym_CommandPalette] = ACTIONS(1195),
     [anon_sym_AppShell] = ACTIONS(1195),
+    [anon_sym_CheckboxGroup] = ACTIONS(1195),
+    [anon_sym_InputOTP] = ACTIONS(1195),
+    [anon_sym_TagInput] = ACTIONS(1195),
+    [anon_sym_Rating] = ACTIONS(1195),
+    [anon_sym_DateRangePicker] = ACTIONS(1195),
     [anon_sym_Unsafe] = ACTIONS(1195),
     [anon_sym_Host] = ACTIONS(1195),
     [anon_sym_Element] = ACTIONS(1195),
@@ -83771,6 +85541,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1204),
     [anon_sym_CommandPalette] = ACTIONS(1204),
     [anon_sym_AppShell] = ACTIONS(1204),
+    [anon_sym_CheckboxGroup] = ACTIONS(1204),
+    [anon_sym_InputOTP] = ACTIONS(1204),
+    [anon_sym_TagInput] = ACTIONS(1204),
+    [anon_sym_Rating] = ACTIONS(1204),
+    [anon_sym_DateRangePicker] = ACTIONS(1204),
     [anon_sym_Unsafe] = ACTIONS(1204),
     [anon_sym_Host] = ACTIONS(1204),
     [anon_sym_Element] = ACTIONS(1204),
@@ -83962,6 +85737,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1204),
     [anon_sym_CommandPalette] = ACTIONS(1204),
     [anon_sym_AppShell] = ACTIONS(1204),
+    [anon_sym_CheckboxGroup] = ACTIONS(1204),
+    [anon_sym_InputOTP] = ACTIONS(1204),
+    [anon_sym_TagInput] = ACTIONS(1204),
+    [anon_sym_Rating] = ACTIONS(1204),
+    [anon_sym_DateRangePicker] = ACTIONS(1204),
     [anon_sym_Unsafe] = ACTIONS(1204),
     [anon_sym_Host] = ACTIONS(1204),
     [anon_sym_Element] = ACTIONS(1204),
@@ -84145,6 +85925,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -84337,6 +86122,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -84537,6 +86327,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1214),
     [anon_sym_CommandPalette] = ACTIONS(1214),
     [anon_sym_AppShell] = ACTIONS(1214),
+    [anon_sym_CheckboxGroup] = ACTIONS(1214),
+    [anon_sym_InputOTP] = ACTIONS(1214),
+    [anon_sym_TagInput] = ACTIONS(1214),
+    [anon_sym_Rating] = ACTIONS(1214),
+    [anon_sym_DateRangePicker] = ACTIONS(1214),
     [anon_sym_Unsafe] = ACTIONS(1214),
     [anon_sym_Host] = ACTIONS(1214),
     [anon_sym_Element] = ACTIONS(1214),
@@ -84727,6 +86522,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(818),
     [anon_sym_CommandPalette] = ACTIONS(818),
     [anon_sym_AppShell] = ACTIONS(818),
+    [anon_sym_CheckboxGroup] = ACTIONS(818),
+    [anon_sym_InputOTP] = ACTIONS(818),
+    [anon_sym_TagInput] = ACTIONS(818),
+    [anon_sym_Rating] = ACTIONS(818),
+    [anon_sym_DateRangePicker] = ACTIONS(818),
     [anon_sym_Unsafe] = ACTIONS(818),
     [anon_sym_Host] = ACTIONS(818),
     [anon_sym_Element] = ACTIONS(818),
@@ -84917,6 +86717,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1220),
     [anon_sym_CommandPalette] = ACTIONS(1220),
     [anon_sym_AppShell] = ACTIONS(1220),
+    [anon_sym_CheckboxGroup] = ACTIONS(1220),
+    [anon_sym_InputOTP] = ACTIONS(1220),
+    [anon_sym_TagInput] = ACTIONS(1220),
+    [anon_sym_Rating] = ACTIONS(1220),
+    [anon_sym_DateRangePicker] = ACTIONS(1220),
     [anon_sym_Unsafe] = ACTIONS(1220),
     [anon_sym_Host] = ACTIONS(1220),
     [anon_sym_Element] = ACTIONS(1220),
@@ -85106,6 +86911,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(818),
     [anon_sym_CommandPalette] = ACTIONS(818),
     [anon_sym_AppShell] = ACTIONS(818),
+    [anon_sym_CheckboxGroup] = ACTIONS(818),
+    [anon_sym_InputOTP] = ACTIONS(818),
+    [anon_sym_TagInput] = ACTIONS(818),
+    [anon_sym_Rating] = ACTIONS(818),
+    [anon_sym_DateRangePicker] = ACTIONS(818),
     [anon_sym_Unsafe] = ACTIONS(818),
     [anon_sym_Host] = ACTIONS(818),
     [anon_sym_Element] = ACTIONS(818),
@@ -85296,6 +87106,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1195),
     [anon_sym_CommandPalette] = ACTIONS(1195),
     [anon_sym_AppShell] = ACTIONS(1195),
+    [anon_sym_CheckboxGroup] = ACTIONS(1195),
+    [anon_sym_InputOTP] = ACTIONS(1195),
+    [anon_sym_TagInput] = ACTIONS(1195),
+    [anon_sym_Rating] = ACTIONS(1195),
+    [anon_sym_DateRangePicker] = ACTIONS(1195),
     [anon_sym_Unsafe] = ACTIONS(1195),
     [anon_sym_Host] = ACTIONS(1195),
     [anon_sym_Element] = ACTIONS(1195),
@@ -85486,6 +87301,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(845),
     [anon_sym_CommandPalette] = ACTIONS(845),
     [anon_sym_AppShell] = ACTIONS(845),
+    [anon_sym_CheckboxGroup] = ACTIONS(845),
+    [anon_sym_InputOTP] = ACTIONS(845),
+    [anon_sym_TagInput] = ACTIONS(845),
+    [anon_sym_Rating] = ACTIONS(845),
+    [anon_sym_DateRangePicker] = ACTIONS(845),
     [anon_sym_Unsafe] = ACTIONS(845),
     [anon_sym_Host] = ACTIONS(845),
     [anon_sym_Element] = ACTIONS(845),
@@ -85677,6 +87497,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(834),
     [anon_sym_CommandPalette] = ACTIONS(834),
     [anon_sym_AppShell] = ACTIONS(834),
+    [anon_sym_CheckboxGroup] = ACTIONS(834),
+    [anon_sym_InputOTP] = ACTIONS(834),
+    [anon_sym_TagInput] = ACTIONS(834),
+    [anon_sym_Rating] = ACTIONS(834),
+    [anon_sym_DateRangePicker] = ACTIONS(834),
     [anon_sym_Unsafe] = ACTIONS(834),
     [anon_sym_Host] = ACTIONS(834),
     [anon_sym_Element] = ACTIONS(834),
@@ -85867,6 +87692,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(861),
     [anon_sym_CommandPalette] = ACTIONS(861),
     [anon_sym_AppShell] = ACTIONS(861),
+    [anon_sym_CheckboxGroup] = ACTIONS(861),
+    [anon_sym_InputOTP] = ACTIONS(861),
+    [anon_sym_TagInput] = ACTIONS(861),
+    [anon_sym_Rating] = ACTIONS(861),
+    [anon_sym_DateRangePicker] = ACTIONS(861),
     [anon_sym_Unsafe] = ACTIONS(861),
     [anon_sym_Host] = ACTIONS(861),
     [anon_sym_Element] = ACTIONS(861),
@@ -86056,6 +87886,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(861),
     [anon_sym_CommandPalette] = ACTIONS(861),
     [anon_sym_AppShell] = ACTIONS(861),
+    [anon_sym_CheckboxGroup] = ACTIONS(861),
+    [anon_sym_InputOTP] = ACTIONS(861),
+    [anon_sym_TagInput] = ACTIONS(861),
+    [anon_sym_Rating] = ACTIONS(861),
+    [anon_sym_DateRangePicker] = ACTIONS(861),
     [anon_sym_Unsafe] = ACTIONS(861),
     [anon_sym_Host] = ACTIONS(861),
     [anon_sym_Element] = ACTIONS(861),
@@ -86247,6 +88082,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(845),
     [anon_sym_CommandPalette] = ACTIONS(845),
     [anon_sym_AppShell] = ACTIONS(845),
+    [anon_sym_CheckboxGroup] = ACTIONS(845),
+    [anon_sym_InputOTP] = ACTIONS(845),
+    [anon_sym_TagInput] = ACTIONS(845),
+    [anon_sym_Rating] = ACTIONS(845),
+    [anon_sym_DateRangePicker] = ACTIONS(845),
     [anon_sym_Unsafe] = ACTIONS(845),
     [anon_sym_Host] = ACTIONS(845),
     [anon_sym_Element] = ACTIONS(845),
@@ -86438,6 +88278,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1224),
     [anon_sym_CommandPalette] = ACTIONS(1224),
     [anon_sym_AppShell] = ACTIONS(1224),
+    [anon_sym_CheckboxGroup] = ACTIONS(1224),
+    [anon_sym_InputOTP] = ACTIONS(1224),
+    [anon_sym_TagInput] = ACTIONS(1224),
+    [anon_sym_Rating] = ACTIONS(1224),
+    [anon_sym_DateRangePicker] = ACTIONS(1224),
     [anon_sym_Unsafe] = ACTIONS(1224),
     [anon_sym_Host] = ACTIONS(1224),
     [anon_sym_Element] = ACTIONS(1224),
@@ -86626,6 +88471,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(834),
     [anon_sym_CommandPalette] = ACTIONS(834),
     [anon_sym_AppShell] = ACTIONS(834),
+    [anon_sym_CheckboxGroup] = ACTIONS(834),
+    [anon_sym_InputOTP] = ACTIONS(834),
+    [anon_sym_TagInput] = ACTIONS(834),
+    [anon_sym_Rating] = ACTIONS(834),
+    [anon_sym_DateRangePicker] = ACTIONS(834),
     [anon_sym_Unsafe] = ACTIONS(834),
     [anon_sym_Host] = ACTIONS(834),
     [anon_sym_Element] = ACTIONS(834),
@@ -86816,6 +88666,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1230),
     [anon_sym_CommandPalette] = ACTIONS(1230),
     [anon_sym_AppShell] = ACTIONS(1230),
+    [anon_sym_CheckboxGroup] = ACTIONS(1230),
+    [anon_sym_InputOTP] = ACTIONS(1230),
+    [anon_sym_TagInput] = ACTIONS(1230),
+    [anon_sym_Rating] = ACTIONS(1230),
+    [anon_sym_DateRangePicker] = ACTIONS(1230),
     [anon_sym_Unsafe] = ACTIONS(1230),
     [anon_sym_Host] = ACTIONS(1230),
     [anon_sym_Element] = ACTIONS(1230),
@@ -87006,6 +88861,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1220),
     [anon_sym_CommandPalette] = ACTIONS(1220),
     [anon_sym_AppShell] = ACTIONS(1220),
+    [anon_sym_CheckboxGroup] = ACTIONS(1220),
+    [anon_sym_InputOTP] = ACTIONS(1220),
+    [anon_sym_TagInput] = ACTIONS(1220),
+    [anon_sym_Rating] = ACTIONS(1220),
+    [anon_sym_DateRangePicker] = ACTIONS(1220),
     [anon_sym_Unsafe] = ACTIONS(1220),
     [anon_sym_Host] = ACTIONS(1220),
     [anon_sym_Element] = ACTIONS(1220),
@@ -87197,6 +89057,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1224),
     [anon_sym_CommandPalette] = ACTIONS(1224),
     [anon_sym_AppShell] = ACTIONS(1224),
+    [anon_sym_CheckboxGroup] = ACTIONS(1224),
+    [anon_sym_InputOTP] = ACTIONS(1224),
+    [anon_sym_TagInput] = ACTIONS(1224),
+    [anon_sym_Rating] = ACTIONS(1224),
+    [anon_sym_DateRangePicker] = ACTIONS(1224),
     [anon_sym_Unsafe] = ACTIONS(1224),
     [anon_sym_Host] = ACTIONS(1224),
     [anon_sym_Element] = ACTIONS(1224),
@@ -87387,6 +89252,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1230),
     [anon_sym_CommandPalette] = ACTIONS(1230),
     [anon_sym_AppShell] = ACTIONS(1230),
+    [anon_sym_CheckboxGroup] = ACTIONS(1230),
+    [anon_sym_InputOTP] = ACTIONS(1230),
+    [anon_sym_TagInput] = ACTIONS(1230),
+    [anon_sym_Rating] = ACTIONS(1230),
+    [anon_sym_DateRangePicker] = ACTIONS(1230),
     [anon_sym_Unsafe] = ACTIONS(1230),
     [anon_sym_Host] = ACTIONS(1230),
     [anon_sym_Element] = ACTIONS(1230),
@@ -87577,6 +89447,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1195),
     [anon_sym_CommandPalette] = ACTIONS(1195),
     [anon_sym_AppShell] = ACTIONS(1195),
+    [anon_sym_CheckboxGroup] = ACTIONS(1195),
+    [anon_sym_InputOTP] = ACTIONS(1195),
+    [anon_sym_TagInput] = ACTIONS(1195),
+    [anon_sym_Rating] = ACTIONS(1195),
+    [anon_sym_DateRangePicker] = ACTIONS(1195),
     [anon_sym_Unsafe] = ACTIONS(1195),
     [anon_sym_Host] = ACTIONS(1195),
     [anon_sym_Element] = ACTIONS(1195),
@@ -87768,6 +89643,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1214),
     [anon_sym_CommandPalette] = ACTIONS(1214),
     [anon_sym_AppShell] = ACTIONS(1214),
+    [anon_sym_CheckboxGroup] = ACTIONS(1214),
+    [anon_sym_InputOTP] = ACTIONS(1214),
+    [anon_sym_TagInput] = ACTIONS(1214),
+    [anon_sym_Rating] = ACTIONS(1214),
+    [anon_sym_DateRangePicker] = ACTIONS(1214),
     [anon_sym_Unsafe] = ACTIONS(1214),
     [anon_sym_Host] = ACTIONS(1214),
     [anon_sym_Element] = ACTIONS(1214),
@@ -87957,6 +89837,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1234),
     [anon_sym_CommandPalette] = ACTIONS(1234),
     [anon_sym_AppShell] = ACTIONS(1234),
+    [anon_sym_CheckboxGroup] = ACTIONS(1234),
+    [anon_sym_InputOTP] = ACTIONS(1234),
+    [anon_sym_TagInput] = ACTIONS(1234),
+    [anon_sym_Rating] = ACTIONS(1234),
+    [anon_sym_DateRangePicker] = ACTIONS(1234),
     [anon_sym_Unsafe] = ACTIONS(1234),
     [anon_sym_Host] = ACTIONS(1234),
     [anon_sym_Element] = ACTIONS(1234),
@@ -88145,6 +90030,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1234),
     [anon_sym_CommandPalette] = ACTIONS(1234),
     [anon_sym_AppShell] = ACTIONS(1234),
+    [anon_sym_CheckboxGroup] = ACTIONS(1234),
+    [anon_sym_InputOTP] = ACTIONS(1234),
+    [anon_sym_TagInput] = ACTIONS(1234),
+    [anon_sym_Rating] = ACTIONS(1234),
+    [anon_sym_DateRangePicker] = ACTIONS(1234),
     [anon_sym_Unsafe] = ACTIONS(1234),
     [anon_sym_Host] = ACTIONS(1234),
     [anon_sym_Element] = ACTIONS(1234),
@@ -88334,6 +90224,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1238),
     [anon_sym_CommandPalette] = ACTIONS(1238),
     [anon_sym_AppShell] = ACTIONS(1238),
+    [anon_sym_CheckboxGroup] = ACTIONS(1238),
+    [anon_sym_InputOTP] = ACTIONS(1238),
+    [anon_sym_TagInput] = ACTIONS(1238),
+    [anon_sym_Rating] = ACTIONS(1238),
+    [anon_sym_DateRangePicker] = ACTIONS(1238),
     [anon_sym_Unsafe] = ACTIONS(1238),
     [anon_sym_Host] = ACTIONS(1238),
     [anon_sym_Element] = ACTIONS(1238),
@@ -88524,6 +90419,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1242),
     [anon_sym_CommandPalette] = ACTIONS(1242),
     [anon_sym_AppShell] = ACTIONS(1242),
+    [anon_sym_CheckboxGroup] = ACTIONS(1242),
+    [anon_sym_InputOTP] = ACTIONS(1242),
+    [anon_sym_TagInput] = ACTIONS(1242),
+    [anon_sym_Rating] = ACTIONS(1242),
+    [anon_sym_DateRangePicker] = ACTIONS(1242),
     [anon_sym_Unsafe] = ACTIONS(1242),
     [anon_sym_Host] = ACTIONS(1242),
     [anon_sym_Element] = ACTIONS(1242),
@@ -88713,6 +90613,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1248),
     [anon_sym_CommandPalette] = ACTIONS(1248),
     [anon_sym_AppShell] = ACTIONS(1248),
+    [anon_sym_CheckboxGroup] = ACTIONS(1248),
+    [anon_sym_InputOTP] = ACTIONS(1248),
+    [anon_sym_TagInput] = ACTIONS(1248),
+    [anon_sym_Rating] = ACTIONS(1248),
+    [anon_sym_DateRangePicker] = ACTIONS(1248),
     [anon_sym_Unsafe] = ACTIONS(1248),
     [anon_sym_Host] = ACTIONS(1248),
     [anon_sym_Element] = ACTIONS(1248),
@@ -88902,6 +90807,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1252),
     [anon_sym_CommandPalette] = ACTIONS(1252),
     [anon_sym_AppShell] = ACTIONS(1252),
+    [anon_sym_CheckboxGroup] = ACTIONS(1252),
+    [anon_sym_InputOTP] = ACTIONS(1252),
+    [anon_sym_TagInput] = ACTIONS(1252),
+    [anon_sym_Rating] = ACTIONS(1252),
+    [anon_sym_DateRangePicker] = ACTIONS(1252),
     [anon_sym_Unsafe] = ACTIONS(1252),
     [anon_sym_Host] = ACTIONS(1252),
     [anon_sym_Element] = ACTIONS(1252),
@@ -89091,6 +91001,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1238),
     [anon_sym_CommandPalette] = ACTIONS(1238),
     [anon_sym_AppShell] = ACTIONS(1238),
+    [anon_sym_CheckboxGroup] = ACTIONS(1238),
+    [anon_sym_InputOTP] = ACTIONS(1238),
+    [anon_sym_TagInput] = ACTIONS(1238),
+    [anon_sym_Rating] = ACTIONS(1238),
+    [anon_sym_DateRangePicker] = ACTIONS(1238),
     [anon_sym_Unsafe] = ACTIONS(1238),
     [anon_sym_Host] = ACTIONS(1238),
     [anon_sym_Element] = ACTIONS(1238),
@@ -89279,6 +91194,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1242),
     [anon_sym_CommandPalette] = ACTIONS(1242),
     [anon_sym_AppShell] = ACTIONS(1242),
+    [anon_sym_CheckboxGroup] = ACTIONS(1242),
+    [anon_sym_InputOTP] = ACTIONS(1242),
+    [anon_sym_TagInput] = ACTIONS(1242),
+    [anon_sym_Rating] = ACTIONS(1242),
+    [anon_sym_DateRangePicker] = ACTIONS(1242),
     [anon_sym_Unsafe] = ACTIONS(1242),
     [anon_sym_Host] = ACTIONS(1242),
     [anon_sym_Element] = ACTIONS(1242),
@@ -89468,6 +91388,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1248),
     [anon_sym_CommandPalette] = ACTIONS(1248),
     [anon_sym_AppShell] = ACTIONS(1248),
+    [anon_sym_CheckboxGroup] = ACTIONS(1248),
+    [anon_sym_InputOTP] = ACTIONS(1248),
+    [anon_sym_TagInput] = ACTIONS(1248),
+    [anon_sym_Rating] = ACTIONS(1248),
+    [anon_sym_DateRangePicker] = ACTIONS(1248),
     [anon_sym_Unsafe] = ACTIONS(1248),
     [anon_sym_Host] = ACTIONS(1248),
     [anon_sym_Element] = ACTIONS(1248),
@@ -89657,6 +91582,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1252),
     [anon_sym_CommandPalette] = ACTIONS(1252),
     [anon_sym_AppShell] = ACTIONS(1252),
+    [anon_sym_CheckboxGroup] = ACTIONS(1252),
+    [anon_sym_InputOTP] = ACTIONS(1252),
+    [anon_sym_TagInput] = ACTIONS(1252),
+    [anon_sym_Rating] = ACTIONS(1252),
+    [anon_sym_DateRangePicker] = ACTIONS(1252),
     [anon_sym_Unsafe] = ACTIONS(1252),
     [anon_sym_Host] = ACTIONS(1252),
     [anon_sym_Element] = ACTIONS(1252),
@@ -89845,6 +91775,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1258),
     [anon_sym_CommandPalette] = ACTIONS(1258),
     [anon_sym_AppShell] = ACTIONS(1258),
+    [anon_sym_CheckboxGroup] = ACTIONS(1258),
+    [anon_sym_InputOTP] = ACTIONS(1258),
+    [anon_sym_TagInput] = ACTIONS(1258),
+    [anon_sym_Rating] = ACTIONS(1258),
+    [anon_sym_DateRangePicker] = ACTIONS(1258),
     [anon_sym_Unsafe] = ACTIONS(1258),
     [anon_sym_Host] = ACTIONS(1258),
     [anon_sym_Element] = ACTIONS(1258),
@@ -90033,6 +91968,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1262),
     [anon_sym_CommandPalette] = ACTIONS(1262),
     [anon_sym_AppShell] = ACTIONS(1262),
+    [anon_sym_CheckboxGroup] = ACTIONS(1262),
+    [anon_sym_InputOTP] = ACTIONS(1262),
+    [anon_sym_TagInput] = ACTIONS(1262),
+    [anon_sym_Rating] = ACTIONS(1262),
+    [anon_sym_DateRangePicker] = ACTIONS(1262),
     [anon_sym_Unsafe] = ACTIONS(1262),
     [anon_sym_Host] = ACTIONS(1262),
     [anon_sym_Element] = ACTIONS(1262),
@@ -90221,6 +92161,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1266),
     [anon_sym_CommandPalette] = ACTIONS(1266),
     [anon_sym_AppShell] = ACTIONS(1266),
+    [anon_sym_CheckboxGroup] = ACTIONS(1266),
+    [anon_sym_InputOTP] = ACTIONS(1266),
+    [anon_sym_TagInput] = ACTIONS(1266),
+    [anon_sym_Rating] = ACTIONS(1266),
+    [anon_sym_DateRangePicker] = ACTIONS(1266),
     [anon_sym_Unsafe] = ACTIONS(1266),
     [anon_sym_Host] = ACTIONS(1266),
     [anon_sym_Element] = ACTIONS(1266),
@@ -90409,6 +92354,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1270),
     [anon_sym_CommandPalette] = ACTIONS(1270),
     [anon_sym_AppShell] = ACTIONS(1270),
+    [anon_sym_CheckboxGroup] = ACTIONS(1270),
+    [anon_sym_InputOTP] = ACTIONS(1270),
+    [anon_sym_TagInput] = ACTIONS(1270),
+    [anon_sym_Rating] = ACTIONS(1270),
+    [anon_sym_DateRangePicker] = ACTIONS(1270),
     [anon_sym_Unsafe] = ACTIONS(1270),
     [anon_sym_Host] = ACTIONS(1270),
     [anon_sym_Element] = ACTIONS(1270),
@@ -90597,6 +92547,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1274),
     [anon_sym_CommandPalette] = ACTIONS(1274),
     [anon_sym_AppShell] = ACTIONS(1274),
+    [anon_sym_CheckboxGroup] = ACTIONS(1274),
+    [anon_sym_InputOTP] = ACTIONS(1274),
+    [anon_sym_TagInput] = ACTIONS(1274),
+    [anon_sym_Rating] = ACTIONS(1274),
+    [anon_sym_DateRangePicker] = ACTIONS(1274),
     [anon_sym_Unsafe] = ACTIONS(1274),
     [anon_sym_Host] = ACTIONS(1274),
     [anon_sym_Element] = ACTIONS(1274),
@@ -90785,6 +92740,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1278),
     [anon_sym_CommandPalette] = ACTIONS(1278),
     [anon_sym_AppShell] = ACTIONS(1278),
+    [anon_sym_CheckboxGroup] = ACTIONS(1278),
+    [anon_sym_InputOTP] = ACTIONS(1278),
+    [anon_sym_TagInput] = ACTIONS(1278),
+    [anon_sym_Rating] = ACTIONS(1278),
+    [anon_sym_DateRangePicker] = ACTIONS(1278),
     [anon_sym_Unsafe] = ACTIONS(1278),
     [anon_sym_Host] = ACTIONS(1278),
     [anon_sym_Element] = ACTIONS(1278),
@@ -90973,6 +92933,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1282),
     [anon_sym_CommandPalette] = ACTIONS(1282),
     [anon_sym_AppShell] = ACTIONS(1282),
+    [anon_sym_CheckboxGroup] = ACTIONS(1282),
+    [anon_sym_InputOTP] = ACTIONS(1282),
+    [anon_sym_TagInput] = ACTIONS(1282),
+    [anon_sym_Rating] = ACTIONS(1282),
+    [anon_sym_DateRangePicker] = ACTIONS(1282),
     [anon_sym_Unsafe] = ACTIONS(1282),
     [anon_sym_Host] = ACTIONS(1282),
     [anon_sym_Element] = ACTIONS(1282),
@@ -91162,6 +93127,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1286),
     [anon_sym_CommandPalette] = ACTIONS(1286),
     [anon_sym_AppShell] = ACTIONS(1286),
+    [anon_sym_CheckboxGroup] = ACTIONS(1286),
+    [anon_sym_InputOTP] = ACTIONS(1286),
+    [anon_sym_TagInput] = ACTIONS(1286),
+    [anon_sym_Rating] = ACTIONS(1286),
+    [anon_sym_DateRangePicker] = ACTIONS(1286),
     [anon_sym_Unsafe] = ACTIONS(1286),
     [anon_sym_Host] = ACTIONS(1286),
     [anon_sym_Element] = ACTIONS(1286),
@@ -91350,6 +93320,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1290),
     [anon_sym_CommandPalette] = ACTIONS(1290),
     [anon_sym_AppShell] = ACTIONS(1290),
+    [anon_sym_CheckboxGroup] = ACTIONS(1290),
+    [anon_sym_InputOTP] = ACTIONS(1290),
+    [anon_sym_TagInput] = ACTIONS(1290),
+    [anon_sym_Rating] = ACTIONS(1290),
+    [anon_sym_DateRangePicker] = ACTIONS(1290),
     [anon_sym_Unsafe] = ACTIONS(1290),
     [anon_sym_Host] = ACTIONS(1290),
     [anon_sym_Element] = ACTIONS(1290),
@@ -91538,6 +93513,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1294),
     [anon_sym_CommandPalette] = ACTIONS(1294),
     [anon_sym_AppShell] = ACTIONS(1294),
+    [anon_sym_CheckboxGroup] = ACTIONS(1294),
+    [anon_sym_InputOTP] = ACTIONS(1294),
+    [anon_sym_TagInput] = ACTIONS(1294),
+    [anon_sym_Rating] = ACTIONS(1294),
+    [anon_sym_DateRangePicker] = ACTIONS(1294),
     [anon_sym_Unsafe] = ACTIONS(1294),
     [anon_sym_Host] = ACTIONS(1294),
     [anon_sym_Element] = ACTIONS(1294),
@@ -91726,6 +93706,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1298),
     [anon_sym_CommandPalette] = ACTIONS(1298),
     [anon_sym_AppShell] = ACTIONS(1298),
+    [anon_sym_CheckboxGroup] = ACTIONS(1298),
+    [anon_sym_InputOTP] = ACTIONS(1298),
+    [anon_sym_TagInput] = ACTIONS(1298),
+    [anon_sym_Rating] = ACTIONS(1298),
+    [anon_sym_DateRangePicker] = ACTIONS(1298),
     [anon_sym_Unsafe] = ACTIONS(1298),
     [anon_sym_Host] = ACTIONS(1298),
     [anon_sym_Element] = ACTIONS(1298),
@@ -91914,6 +93899,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1302),
     [anon_sym_CommandPalette] = ACTIONS(1302),
     [anon_sym_AppShell] = ACTIONS(1302),
+    [anon_sym_CheckboxGroup] = ACTIONS(1302),
+    [anon_sym_InputOTP] = ACTIONS(1302),
+    [anon_sym_TagInput] = ACTIONS(1302),
+    [anon_sym_Rating] = ACTIONS(1302),
+    [anon_sym_DateRangePicker] = ACTIONS(1302),
     [anon_sym_Unsafe] = ACTIONS(1302),
     [anon_sym_Host] = ACTIONS(1302),
     [anon_sym_Element] = ACTIONS(1302),
@@ -92102,6 +94092,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1306),
     [anon_sym_CommandPalette] = ACTIONS(1306),
     [anon_sym_AppShell] = ACTIONS(1306),
+    [anon_sym_CheckboxGroup] = ACTIONS(1306),
+    [anon_sym_InputOTP] = ACTIONS(1306),
+    [anon_sym_TagInput] = ACTIONS(1306),
+    [anon_sym_Rating] = ACTIONS(1306),
+    [anon_sym_DateRangePicker] = ACTIONS(1306),
     [anon_sym_Unsafe] = ACTIONS(1306),
     [anon_sym_Host] = ACTIONS(1306),
     [anon_sym_Element] = ACTIONS(1306),
@@ -92290,6 +94285,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1310),
     [anon_sym_CommandPalette] = ACTIONS(1310),
     [anon_sym_AppShell] = ACTIONS(1310),
+    [anon_sym_CheckboxGroup] = ACTIONS(1310),
+    [anon_sym_InputOTP] = ACTIONS(1310),
+    [anon_sym_TagInput] = ACTIONS(1310),
+    [anon_sym_Rating] = ACTIONS(1310),
+    [anon_sym_DateRangePicker] = ACTIONS(1310),
     [anon_sym_Unsafe] = ACTIONS(1310),
     [anon_sym_Host] = ACTIONS(1310),
     [anon_sym_Element] = ACTIONS(1310),
@@ -92477,6 +94477,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1314),
     [anon_sym_CommandPalette] = ACTIONS(1314),
     [anon_sym_AppShell] = ACTIONS(1314),
+    [anon_sym_CheckboxGroup] = ACTIONS(1314),
+    [anon_sym_InputOTP] = ACTIONS(1314),
+    [anon_sym_TagInput] = ACTIONS(1314),
+    [anon_sym_Rating] = ACTIONS(1314),
+    [anon_sym_DateRangePicker] = ACTIONS(1314),
     [anon_sym_Unsafe] = ACTIONS(1314),
     [anon_sym_Host] = ACTIONS(1314),
     [anon_sym_Element] = ACTIONS(1314),
@@ -92665,6 +94670,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1318),
     [anon_sym_CommandPalette] = ACTIONS(1318),
     [anon_sym_AppShell] = ACTIONS(1318),
+    [anon_sym_CheckboxGroup] = ACTIONS(1318),
+    [anon_sym_InputOTP] = ACTIONS(1318),
+    [anon_sym_TagInput] = ACTIONS(1318),
+    [anon_sym_Rating] = ACTIONS(1318),
+    [anon_sym_DateRangePicker] = ACTIONS(1318),
     [anon_sym_Unsafe] = ACTIONS(1318),
     [anon_sym_Host] = ACTIONS(1318),
     [anon_sym_Element] = ACTIONS(1318),
@@ -92854,6 +94864,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1322),
     [anon_sym_CommandPalette] = ACTIONS(1322),
     [anon_sym_AppShell] = ACTIONS(1322),
+    [anon_sym_CheckboxGroup] = ACTIONS(1322),
+    [anon_sym_InputOTP] = ACTIONS(1322),
+    [anon_sym_TagInput] = ACTIONS(1322),
+    [anon_sym_Rating] = ACTIONS(1322),
+    [anon_sym_DateRangePicker] = ACTIONS(1322),
     [anon_sym_Unsafe] = ACTIONS(1322),
     [anon_sym_Host] = ACTIONS(1322),
     [anon_sym_Element] = ACTIONS(1322),
@@ -93042,6 +95057,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1326),
     [anon_sym_CommandPalette] = ACTIONS(1326),
     [anon_sym_AppShell] = ACTIONS(1326),
+    [anon_sym_CheckboxGroup] = ACTIONS(1326),
+    [anon_sym_InputOTP] = ACTIONS(1326),
+    [anon_sym_TagInput] = ACTIONS(1326),
+    [anon_sym_Rating] = ACTIONS(1326),
+    [anon_sym_DateRangePicker] = ACTIONS(1326),
     [anon_sym_Unsafe] = ACTIONS(1326),
     [anon_sym_Host] = ACTIONS(1326),
     [anon_sym_Element] = ACTIONS(1326),
@@ -93230,6 +95250,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1330),
     [anon_sym_CommandPalette] = ACTIONS(1330),
     [anon_sym_AppShell] = ACTIONS(1330),
+    [anon_sym_CheckboxGroup] = ACTIONS(1330),
+    [anon_sym_InputOTP] = ACTIONS(1330),
+    [anon_sym_TagInput] = ACTIONS(1330),
+    [anon_sym_Rating] = ACTIONS(1330),
+    [anon_sym_DateRangePicker] = ACTIONS(1330),
     [anon_sym_Unsafe] = ACTIONS(1330),
     [anon_sym_Host] = ACTIONS(1330),
     [anon_sym_Element] = ACTIONS(1330),
@@ -93418,6 +95443,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1334),
     [anon_sym_CommandPalette] = ACTIONS(1334),
     [anon_sym_AppShell] = ACTIONS(1334),
+    [anon_sym_CheckboxGroup] = ACTIONS(1334),
+    [anon_sym_InputOTP] = ACTIONS(1334),
+    [anon_sym_TagInput] = ACTIONS(1334),
+    [anon_sym_Rating] = ACTIONS(1334),
+    [anon_sym_DateRangePicker] = ACTIONS(1334),
     [anon_sym_Unsafe] = ACTIONS(1334),
     [anon_sym_Host] = ACTIONS(1334),
     [anon_sym_Element] = ACTIONS(1334),
@@ -93606,6 +95636,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1338),
     [anon_sym_CommandPalette] = ACTIONS(1338),
     [anon_sym_AppShell] = ACTIONS(1338),
+    [anon_sym_CheckboxGroup] = ACTIONS(1338),
+    [anon_sym_InputOTP] = ACTIONS(1338),
+    [anon_sym_TagInput] = ACTIONS(1338),
+    [anon_sym_Rating] = ACTIONS(1338),
+    [anon_sym_DateRangePicker] = ACTIONS(1338),
     [anon_sym_Unsafe] = ACTIONS(1338),
     [anon_sym_Host] = ACTIONS(1338),
     [anon_sym_Element] = ACTIONS(1338),
@@ -93793,6 +95828,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1342),
     [anon_sym_CommandPalette] = ACTIONS(1342),
     [anon_sym_AppShell] = ACTIONS(1342),
+    [anon_sym_CheckboxGroup] = ACTIONS(1342),
+    [anon_sym_InputOTP] = ACTIONS(1342),
+    [anon_sym_TagInput] = ACTIONS(1342),
+    [anon_sym_Rating] = ACTIONS(1342),
+    [anon_sym_DateRangePicker] = ACTIONS(1342),
     [anon_sym_Unsafe] = ACTIONS(1342),
     [anon_sym_Host] = ACTIONS(1342),
     [anon_sym_Element] = ACTIONS(1342),
@@ -93981,6 +96021,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1346),
     [anon_sym_CommandPalette] = ACTIONS(1346),
     [anon_sym_AppShell] = ACTIONS(1346),
+    [anon_sym_CheckboxGroup] = ACTIONS(1346),
+    [anon_sym_InputOTP] = ACTIONS(1346),
+    [anon_sym_TagInput] = ACTIONS(1346),
+    [anon_sym_Rating] = ACTIONS(1346),
+    [anon_sym_DateRangePicker] = ACTIONS(1346),
     [anon_sym_Unsafe] = ACTIONS(1346),
     [anon_sym_Host] = ACTIONS(1346),
     [anon_sym_Element] = ACTIONS(1346),
@@ -94169,6 +96214,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1350),
     [anon_sym_CommandPalette] = ACTIONS(1350),
     [anon_sym_AppShell] = ACTIONS(1350),
+    [anon_sym_CheckboxGroup] = ACTIONS(1350),
+    [anon_sym_InputOTP] = ACTIONS(1350),
+    [anon_sym_TagInput] = ACTIONS(1350),
+    [anon_sym_Rating] = ACTIONS(1350),
+    [anon_sym_DateRangePicker] = ACTIONS(1350),
     [anon_sym_Unsafe] = ACTIONS(1350),
     [anon_sym_Host] = ACTIONS(1350),
     [anon_sym_Element] = ACTIONS(1350),
@@ -94358,6 +96408,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1354),
     [anon_sym_CommandPalette] = ACTIONS(1354),
     [anon_sym_AppShell] = ACTIONS(1354),
+    [anon_sym_CheckboxGroup] = ACTIONS(1354),
+    [anon_sym_InputOTP] = ACTIONS(1354),
+    [anon_sym_TagInput] = ACTIONS(1354),
+    [anon_sym_Rating] = ACTIONS(1354),
+    [anon_sym_DateRangePicker] = ACTIONS(1354),
     [anon_sym_Unsafe] = ACTIONS(1354),
     [anon_sym_Host] = ACTIONS(1354),
     [anon_sym_Element] = ACTIONS(1354),
@@ -94546,6 +96601,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1358),
     [anon_sym_CommandPalette] = ACTIONS(1358),
     [anon_sym_AppShell] = ACTIONS(1358),
+    [anon_sym_CheckboxGroup] = ACTIONS(1358),
+    [anon_sym_InputOTP] = ACTIONS(1358),
+    [anon_sym_TagInput] = ACTIONS(1358),
+    [anon_sym_Rating] = ACTIONS(1358),
+    [anon_sym_DateRangePicker] = ACTIONS(1358),
     [anon_sym_Unsafe] = ACTIONS(1358),
     [anon_sym_Host] = ACTIONS(1358),
     [anon_sym_Element] = ACTIONS(1358),
@@ -94733,6 +96793,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1362),
     [anon_sym_CommandPalette] = ACTIONS(1362),
     [anon_sym_AppShell] = ACTIONS(1362),
+    [anon_sym_CheckboxGroup] = ACTIONS(1362),
+    [anon_sym_InputOTP] = ACTIONS(1362),
+    [anon_sym_TagInput] = ACTIONS(1362),
+    [anon_sym_Rating] = ACTIONS(1362),
+    [anon_sym_DateRangePicker] = ACTIONS(1362),
     [anon_sym_Unsafe] = ACTIONS(1362),
     [anon_sym_Host] = ACTIONS(1362),
     [anon_sym_Element] = ACTIONS(1362),
@@ -94922,6 +96987,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1366),
     [anon_sym_CommandPalette] = ACTIONS(1366),
     [anon_sym_AppShell] = ACTIONS(1366),
+    [anon_sym_CheckboxGroup] = ACTIONS(1366),
+    [anon_sym_InputOTP] = ACTIONS(1366),
+    [anon_sym_TagInput] = ACTIONS(1366),
+    [anon_sym_Rating] = ACTIONS(1366),
+    [anon_sym_DateRangePicker] = ACTIONS(1366),
     [anon_sym_Unsafe] = ACTIONS(1366),
     [anon_sym_Host] = ACTIONS(1366),
     [anon_sym_Element] = ACTIONS(1366),
@@ -95110,6 +97180,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1366),
     [anon_sym_CommandPalette] = ACTIONS(1366),
     [anon_sym_AppShell] = ACTIONS(1366),
+    [anon_sym_CheckboxGroup] = ACTIONS(1366),
+    [anon_sym_InputOTP] = ACTIONS(1366),
+    [anon_sym_TagInput] = ACTIONS(1366),
+    [anon_sym_Rating] = ACTIONS(1366),
+    [anon_sym_DateRangePicker] = ACTIONS(1366),
     [anon_sym_Unsafe] = ACTIONS(1366),
     [anon_sym_Host] = ACTIONS(1366),
     [anon_sym_Element] = ACTIONS(1366),
@@ -95298,6 +97373,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1366),
     [anon_sym_CommandPalette] = ACTIONS(1366),
     [anon_sym_AppShell] = ACTIONS(1366),
+    [anon_sym_CheckboxGroup] = ACTIONS(1366),
+    [anon_sym_InputOTP] = ACTIONS(1366),
+    [anon_sym_TagInput] = ACTIONS(1366),
+    [anon_sym_Rating] = ACTIONS(1366),
+    [anon_sym_DateRangePicker] = ACTIONS(1366),
     [anon_sym_Unsafe] = ACTIONS(1366),
     [anon_sym_Host] = ACTIONS(1366),
     [anon_sym_Element] = ACTIONS(1366),
@@ -95485,6 +97565,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1370),
     [anon_sym_CommandPalette] = ACTIONS(1370),
     [anon_sym_AppShell] = ACTIONS(1370),
+    [anon_sym_CheckboxGroup] = ACTIONS(1370),
+    [anon_sym_InputOTP] = ACTIONS(1370),
+    [anon_sym_TagInput] = ACTIONS(1370),
+    [anon_sym_Rating] = ACTIONS(1370),
+    [anon_sym_DateRangePicker] = ACTIONS(1370),
     [anon_sym_Unsafe] = ACTIONS(1370),
     [anon_sym_Host] = ACTIONS(1370),
     [anon_sym_Element] = ACTIONS(1370),
@@ -95673,6 +97758,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1374),
     [anon_sym_CommandPalette] = ACTIONS(1374),
     [anon_sym_AppShell] = ACTIONS(1374),
+    [anon_sym_CheckboxGroup] = ACTIONS(1374),
+    [anon_sym_InputOTP] = ACTIONS(1374),
+    [anon_sym_TagInput] = ACTIONS(1374),
+    [anon_sym_Rating] = ACTIONS(1374),
+    [anon_sym_DateRangePicker] = ACTIONS(1374),
     [anon_sym_Unsafe] = ACTIONS(1374),
     [anon_sym_Host] = ACTIONS(1374),
     [anon_sym_Element] = ACTIONS(1374),
@@ -95861,6 +97951,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1378),
     [anon_sym_CommandPalette] = ACTIONS(1378),
     [anon_sym_AppShell] = ACTIONS(1378),
+    [anon_sym_CheckboxGroup] = ACTIONS(1378),
+    [anon_sym_InputOTP] = ACTIONS(1378),
+    [anon_sym_TagInput] = ACTIONS(1378),
+    [anon_sym_Rating] = ACTIONS(1378),
+    [anon_sym_DateRangePicker] = ACTIONS(1378),
     [anon_sym_Unsafe] = ACTIONS(1378),
     [anon_sym_Host] = ACTIONS(1378),
     [anon_sym_Element] = ACTIONS(1378),
@@ -96049,6 +98144,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1286),
     [anon_sym_CommandPalette] = ACTIONS(1286),
     [anon_sym_AppShell] = ACTIONS(1286),
+    [anon_sym_CheckboxGroup] = ACTIONS(1286),
+    [anon_sym_InputOTP] = ACTIONS(1286),
+    [anon_sym_TagInput] = ACTIONS(1286),
+    [anon_sym_Rating] = ACTIONS(1286),
+    [anon_sym_DateRangePicker] = ACTIONS(1286),
     [anon_sym_Unsafe] = ACTIONS(1286),
     [anon_sym_Host] = ACTIONS(1286),
     [anon_sym_Element] = ACTIONS(1286),
@@ -96238,6 +98338,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1382),
     [anon_sym_CommandPalette] = ACTIONS(1382),
     [anon_sym_AppShell] = ACTIONS(1382),
+    [anon_sym_CheckboxGroup] = ACTIONS(1382),
+    [anon_sym_InputOTP] = ACTIONS(1382),
+    [anon_sym_TagInput] = ACTIONS(1382),
+    [anon_sym_Rating] = ACTIONS(1382),
+    [anon_sym_DateRangePicker] = ACTIONS(1382),
     [anon_sym_Unsafe] = ACTIONS(1382),
     [anon_sym_Host] = ACTIONS(1382),
     [anon_sym_Element] = ACTIONS(1382),
@@ -96426,6 +98531,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1386),
     [anon_sym_CommandPalette] = ACTIONS(1386),
     [anon_sym_AppShell] = ACTIONS(1386),
+    [anon_sym_CheckboxGroup] = ACTIONS(1386),
+    [anon_sym_InputOTP] = ACTIONS(1386),
+    [anon_sym_TagInput] = ACTIONS(1386),
+    [anon_sym_Rating] = ACTIONS(1386),
+    [anon_sym_DateRangePicker] = ACTIONS(1386),
     [anon_sym_Unsafe] = ACTIONS(1386),
     [anon_sym_Host] = ACTIONS(1386),
     [anon_sym_Element] = ACTIONS(1386),
@@ -96613,6 +98723,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1390),
     [anon_sym_CommandPalette] = ACTIONS(1390),
     [anon_sym_AppShell] = ACTIONS(1390),
+    [anon_sym_CheckboxGroup] = ACTIONS(1390),
+    [anon_sym_InputOTP] = ACTIONS(1390),
+    [anon_sym_TagInput] = ACTIONS(1390),
+    [anon_sym_Rating] = ACTIONS(1390),
+    [anon_sym_DateRangePicker] = ACTIONS(1390),
     [anon_sym_Unsafe] = ACTIONS(1390),
     [anon_sym_Host] = ACTIONS(1390),
     [anon_sym_Element] = ACTIONS(1390),
@@ -96801,6 +98916,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1394),
     [anon_sym_CommandPalette] = ACTIONS(1394),
     [anon_sym_AppShell] = ACTIONS(1394),
+    [anon_sym_CheckboxGroup] = ACTIONS(1394),
+    [anon_sym_InputOTP] = ACTIONS(1394),
+    [anon_sym_TagInput] = ACTIONS(1394),
+    [anon_sym_Rating] = ACTIONS(1394),
+    [anon_sym_DateRangePicker] = ACTIONS(1394),
     [anon_sym_Unsafe] = ACTIONS(1394),
     [anon_sym_Host] = ACTIONS(1394),
     [anon_sym_Element] = ACTIONS(1394),
@@ -96989,6 +99109,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1290),
     [anon_sym_CommandPalette] = ACTIONS(1290),
     [anon_sym_AppShell] = ACTIONS(1290),
+    [anon_sym_CheckboxGroup] = ACTIONS(1290),
+    [anon_sym_InputOTP] = ACTIONS(1290),
+    [anon_sym_TagInput] = ACTIONS(1290),
+    [anon_sym_Rating] = ACTIONS(1290),
+    [anon_sym_DateRangePicker] = ACTIONS(1290),
     [anon_sym_Unsafe] = ACTIONS(1290),
     [anon_sym_Host] = ACTIONS(1290),
     [anon_sym_Element] = ACTIONS(1290),
@@ -97178,6 +99303,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1266),
     [anon_sym_CommandPalette] = ACTIONS(1266),
     [anon_sym_AppShell] = ACTIONS(1266),
+    [anon_sym_CheckboxGroup] = ACTIONS(1266),
+    [anon_sym_InputOTP] = ACTIONS(1266),
+    [anon_sym_TagInput] = ACTIONS(1266),
+    [anon_sym_Rating] = ACTIONS(1266),
+    [anon_sym_DateRangePicker] = ACTIONS(1266),
     [anon_sym_Unsafe] = ACTIONS(1266),
     [anon_sym_Host] = ACTIONS(1266),
     [anon_sym_Element] = ACTIONS(1266),
@@ -97366,6 +99496,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1274),
     [anon_sym_CommandPalette] = ACTIONS(1274),
     [anon_sym_AppShell] = ACTIONS(1274),
+    [anon_sym_CheckboxGroup] = ACTIONS(1274),
+    [anon_sym_InputOTP] = ACTIONS(1274),
+    [anon_sym_TagInput] = ACTIONS(1274),
+    [anon_sym_Rating] = ACTIONS(1274),
+    [anon_sym_DateRangePicker] = ACTIONS(1274),
     [anon_sym_Unsafe] = ACTIONS(1274),
     [anon_sym_Host] = ACTIONS(1274),
     [anon_sym_Element] = ACTIONS(1274),
@@ -97554,6 +99689,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1282),
     [anon_sym_CommandPalette] = ACTIONS(1282),
     [anon_sym_AppShell] = ACTIONS(1282),
+    [anon_sym_CheckboxGroup] = ACTIONS(1282),
+    [anon_sym_InputOTP] = ACTIONS(1282),
+    [anon_sym_TagInput] = ACTIONS(1282),
+    [anon_sym_Rating] = ACTIONS(1282),
+    [anon_sym_DateRangePicker] = ACTIONS(1282),
     [anon_sym_Unsafe] = ACTIONS(1282),
     [anon_sym_Host] = ACTIONS(1282),
     [anon_sym_Element] = ACTIONS(1282),
@@ -97741,6 +99881,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1398),
     [anon_sym_CommandPalette] = ACTIONS(1398),
     [anon_sym_AppShell] = ACTIONS(1398),
+    [anon_sym_CheckboxGroup] = ACTIONS(1398),
+    [anon_sym_InputOTP] = ACTIONS(1398),
+    [anon_sym_TagInput] = ACTIONS(1398),
+    [anon_sym_Rating] = ACTIONS(1398),
+    [anon_sym_DateRangePicker] = ACTIONS(1398),
     [anon_sym_Unsafe] = ACTIONS(1398),
     [anon_sym_Host] = ACTIONS(1398),
     [anon_sym_Element] = ACTIONS(1398),
@@ -97930,6 +100075,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1314),
     [anon_sym_CommandPalette] = ACTIONS(1314),
     [anon_sym_AppShell] = ACTIONS(1314),
+    [anon_sym_CheckboxGroup] = ACTIONS(1314),
+    [anon_sym_InputOTP] = ACTIONS(1314),
+    [anon_sym_TagInput] = ACTIONS(1314),
+    [anon_sym_Rating] = ACTIONS(1314),
+    [anon_sym_DateRangePicker] = ACTIONS(1314),
     [anon_sym_Unsafe] = ACTIONS(1314),
     [anon_sym_Host] = ACTIONS(1314),
     [anon_sym_Element] = ACTIONS(1314),
@@ -98118,6 +100268,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1318),
     [anon_sym_CommandPalette] = ACTIONS(1318),
     [anon_sym_AppShell] = ACTIONS(1318),
+    [anon_sym_CheckboxGroup] = ACTIONS(1318),
+    [anon_sym_InputOTP] = ACTIONS(1318),
+    [anon_sym_TagInput] = ACTIONS(1318),
+    [anon_sym_Rating] = ACTIONS(1318),
+    [anon_sym_DateRangePicker] = ACTIONS(1318),
     [anon_sym_Unsafe] = ACTIONS(1318),
     [anon_sym_Host] = ACTIONS(1318),
     [anon_sym_Element] = ACTIONS(1318),
@@ -98306,6 +100461,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1342),
     [anon_sym_CommandPalette] = ACTIONS(1342),
     [anon_sym_AppShell] = ACTIONS(1342),
+    [anon_sym_CheckboxGroup] = ACTIONS(1342),
+    [anon_sym_InputOTP] = ACTIONS(1342),
+    [anon_sym_TagInput] = ACTIONS(1342),
+    [anon_sym_Rating] = ACTIONS(1342),
+    [anon_sym_DateRangePicker] = ACTIONS(1342),
     [anon_sym_Unsafe] = ACTIONS(1342),
     [anon_sym_Host] = ACTIONS(1342),
     [anon_sym_Element] = ACTIONS(1342),
@@ -98494,6 +100654,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1346),
     [anon_sym_CommandPalette] = ACTIONS(1346),
     [anon_sym_AppShell] = ACTIONS(1346),
+    [anon_sym_CheckboxGroup] = ACTIONS(1346),
+    [anon_sym_InputOTP] = ACTIONS(1346),
+    [anon_sym_TagInput] = ACTIONS(1346),
+    [anon_sym_Rating] = ACTIONS(1346),
+    [anon_sym_DateRangePicker] = ACTIONS(1346),
     [anon_sym_Unsafe] = ACTIONS(1346),
     [anon_sym_Host] = ACTIONS(1346),
     [anon_sym_Element] = ACTIONS(1346),
@@ -98682,6 +100847,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1350),
     [anon_sym_CommandPalette] = ACTIONS(1350),
     [anon_sym_AppShell] = ACTIONS(1350),
+    [anon_sym_CheckboxGroup] = ACTIONS(1350),
+    [anon_sym_InputOTP] = ACTIONS(1350),
+    [anon_sym_TagInput] = ACTIONS(1350),
+    [anon_sym_Rating] = ACTIONS(1350),
+    [anon_sym_DateRangePicker] = ACTIONS(1350),
     [anon_sym_Unsafe] = ACTIONS(1350),
     [anon_sym_Host] = ACTIONS(1350),
     [anon_sym_Element] = ACTIONS(1350),
@@ -98870,6 +101040,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1362),
     [anon_sym_CommandPalette] = ACTIONS(1362),
     [anon_sym_AppShell] = ACTIONS(1362),
+    [anon_sym_CheckboxGroup] = ACTIONS(1362),
+    [anon_sym_InputOTP] = ACTIONS(1362),
+    [anon_sym_TagInput] = ACTIONS(1362),
+    [anon_sym_Rating] = ACTIONS(1362),
+    [anon_sym_DateRangePicker] = ACTIONS(1362),
     [anon_sym_Unsafe] = ACTIONS(1362),
     [anon_sym_Host] = ACTIONS(1362),
     [anon_sym_Element] = ACTIONS(1362),
@@ -99058,6 +101233,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1370),
     [anon_sym_CommandPalette] = ACTIONS(1370),
     [anon_sym_AppShell] = ACTIONS(1370),
+    [anon_sym_CheckboxGroup] = ACTIONS(1370),
+    [anon_sym_InputOTP] = ACTIONS(1370),
+    [anon_sym_TagInput] = ACTIONS(1370),
+    [anon_sym_Rating] = ACTIONS(1370),
+    [anon_sym_DateRangePicker] = ACTIONS(1370),
     [anon_sym_Unsafe] = ACTIONS(1370),
     [anon_sym_Host] = ACTIONS(1370),
     [anon_sym_Element] = ACTIONS(1370),
@@ -99246,6 +101426,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1378),
     [anon_sym_CommandPalette] = ACTIONS(1378),
     [anon_sym_AppShell] = ACTIONS(1378),
+    [anon_sym_CheckboxGroup] = ACTIONS(1378),
+    [anon_sym_InputOTP] = ACTIONS(1378),
+    [anon_sym_TagInput] = ACTIONS(1378),
+    [anon_sym_Rating] = ACTIONS(1378),
+    [anon_sym_DateRangePicker] = ACTIONS(1378),
     [anon_sym_Unsafe] = ACTIONS(1378),
     [anon_sym_Host] = ACTIONS(1378),
     [anon_sym_Element] = ACTIONS(1378),
@@ -99433,6 +101618,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1402),
     [anon_sym_CommandPalette] = ACTIONS(1402),
     [anon_sym_AppShell] = ACTIONS(1402),
+    [anon_sym_CheckboxGroup] = ACTIONS(1402),
+    [anon_sym_InputOTP] = ACTIONS(1402),
+    [anon_sym_TagInput] = ACTIONS(1402),
+    [anon_sym_Rating] = ACTIONS(1402),
+    [anon_sym_DateRangePicker] = ACTIONS(1402),
     [anon_sym_Unsafe] = ACTIONS(1402),
     [anon_sym_Host] = ACTIONS(1402),
     [anon_sym_Element] = ACTIONS(1402),
@@ -99622,6 +101812,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1390),
     [anon_sym_CommandPalette] = ACTIONS(1390),
     [anon_sym_AppShell] = ACTIONS(1390),
+    [anon_sym_CheckboxGroup] = ACTIONS(1390),
+    [anon_sym_InputOTP] = ACTIONS(1390),
+    [anon_sym_TagInput] = ACTIONS(1390),
+    [anon_sym_Rating] = ACTIONS(1390),
+    [anon_sym_DateRangePicker] = ACTIONS(1390),
     [anon_sym_Unsafe] = ACTIONS(1390),
     [anon_sym_Host] = ACTIONS(1390),
     [anon_sym_Element] = ACTIONS(1390),
@@ -99810,6 +102005,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1394),
     [anon_sym_CommandPalette] = ACTIONS(1394),
     [anon_sym_AppShell] = ACTIONS(1394),
+    [anon_sym_CheckboxGroup] = ACTIONS(1394),
+    [anon_sym_InputOTP] = ACTIONS(1394),
+    [anon_sym_TagInput] = ACTIONS(1394),
+    [anon_sym_Rating] = ACTIONS(1394),
+    [anon_sym_DateRangePicker] = ACTIONS(1394),
     [anon_sym_Unsafe] = ACTIONS(1394),
     [anon_sym_Host] = ACTIONS(1394),
     [anon_sym_Element] = ACTIONS(1394),
@@ -99997,6 +102197,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1406),
     [anon_sym_CommandPalette] = ACTIONS(1406),
     [anon_sym_AppShell] = ACTIONS(1406),
+    [anon_sym_CheckboxGroup] = ACTIONS(1406),
+    [anon_sym_InputOTP] = ACTIONS(1406),
+    [anon_sym_TagInput] = ACTIONS(1406),
+    [anon_sym_Rating] = ACTIONS(1406),
+    [anon_sym_DateRangePicker] = ACTIONS(1406),
     [anon_sym_Unsafe] = ACTIONS(1406),
     [anon_sym_Host] = ACTIONS(1406),
     [anon_sym_Element] = ACTIONS(1406),
@@ -100185,6 +102390,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1410),
     [anon_sym_CommandPalette] = ACTIONS(1410),
     [anon_sym_AppShell] = ACTIONS(1410),
+    [anon_sym_CheckboxGroup] = ACTIONS(1410),
+    [anon_sym_InputOTP] = ACTIONS(1410),
+    [anon_sym_TagInput] = ACTIONS(1410),
+    [anon_sym_Rating] = ACTIONS(1410),
+    [anon_sym_DateRangePicker] = ACTIONS(1410),
     [anon_sym_Unsafe] = ACTIONS(1410),
     [anon_sym_Host] = ACTIONS(1410),
     [anon_sym_Element] = ACTIONS(1410),
@@ -100373,6 +102583,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1414),
     [anon_sym_CommandPalette] = ACTIONS(1414),
     [anon_sym_AppShell] = ACTIONS(1414),
+    [anon_sym_CheckboxGroup] = ACTIONS(1414),
+    [anon_sym_InputOTP] = ACTIONS(1414),
+    [anon_sym_TagInput] = ACTIONS(1414),
+    [anon_sym_Rating] = ACTIONS(1414),
+    [anon_sym_DateRangePicker] = ACTIONS(1414),
     [anon_sym_Unsafe] = ACTIONS(1414),
     [anon_sym_Host] = ACTIONS(1414),
     [anon_sym_Element] = ACTIONS(1414),
@@ -100562,6 +102777,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1398),
     [anon_sym_CommandPalette] = ACTIONS(1398),
     [anon_sym_AppShell] = ACTIONS(1398),
+    [anon_sym_CheckboxGroup] = ACTIONS(1398),
+    [anon_sym_InputOTP] = ACTIONS(1398),
+    [anon_sym_TagInput] = ACTIONS(1398),
+    [anon_sym_Rating] = ACTIONS(1398),
+    [anon_sym_DateRangePicker] = ACTIONS(1398),
     [anon_sym_Unsafe] = ACTIONS(1398),
     [anon_sym_Host] = ACTIONS(1398),
     [anon_sym_Element] = ACTIONS(1398),
@@ -100750,6 +102970,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1402),
     [anon_sym_CommandPalette] = ACTIONS(1402),
     [anon_sym_AppShell] = ACTIONS(1402),
+    [anon_sym_CheckboxGroup] = ACTIONS(1402),
+    [anon_sym_InputOTP] = ACTIONS(1402),
+    [anon_sym_TagInput] = ACTIONS(1402),
+    [anon_sym_Rating] = ACTIONS(1402),
+    [anon_sym_DateRangePicker] = ACTIONS(1402),
     [anon_sym_Unsafe] = ACTIONS(1402),
     [anon_sym_Host] = ACTIONS(1402),
     [anon_sym_Element] = ACTIONS(1402),
@@ -100938,6 +103163,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1406),
     [anon_sym_CommandPalette] = ACTIONS(1406),
     [anon_sym_AppShell] = ACTIONS(1406),
+    [anon_sym_CheckboxGroup] = ACTIONS(1406),
+    [anon_sym_InputOTP] = ACTIONS(1406),
+    [anon_sym_TagInput] = ACTIONS(1406),
+    [anon_sym_Rating] = ACTIONS(1406),
+    [anon_sym_DateRangePicker] = ACTIONS(1406),
     [anon_sym_Unsafe] = ACTIONS(1406),
     [anon_sym_Host] = ACTIONS(1406),
     [anon_sym_Element] = ACTIONS(1406),
@@ -101126,6 +103356,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1410),
     [anon_sym_CommandPalette] = ACTIONS(1410),
     [anon_sym_AppShell] = ACTIONS(1410),
+    [anon_sym_CheckboxGroup] = ACTIONS(1410),
+    [anon_sym_InputOTP] = ACTIONS(1410),
+    [anon_sym_TagInput] = ACTIONS(1410),
+    [anon_sym_Rating] = ACTIONS(1410),
+    [anon_sym_DateRangePicker] = ACTIONS(1410),
     [anon_sym_Unsafe] = ACTIONS(1410),
     [anon_sym_Host] = ACTIONS(1410),
     [anon_sym_Element] = ACTIONS(1410),
@@ -101314,6 +103549,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1414),
     [anon_sym_CommandPalette] = ACTIONS(1414),
     [anon_sym_AppShell] = ACTIONS(1414),
+    [anon_sym_CheckboxGroup] = ACTIONS(1414),
+    [anon_sym_InputOTP] = ACTIONS(1414),
+    [anon_sym_TagInput] = ACTIONS(1414),
+    [anon_sym_Rating] = ACTIONS(1414),
+    [anon_sym_DateRangePicker] = ACTIONS(1414),
     [anon_sym_Unsafe] = ACTIONS(1414),
     [anon_sym_Host] = ACTIONS(1414),
     [anon_sym_Element] = ACTIONS(1414),
@@ -101502,6 +103742,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1418),
     [anon_sym_CommandPalette] = ACTIONS(1418),
     [anon_sym_AppShell] = ACTIONS(1418),
+    [anon_sym_CheckboxGroup] = ACTIONS(1418),
+    [anon_sym_InputOTP] = ACTIONS(1418),
+    [anon_sym_TagInput] = ACTIONS(1418),
+    [anon_sym_Rating] = ACTIONS(1418),
+    [anon_sym_DateRangePicker] = ACTIONS(1418),
     [anon_sym_Unsafe] = ACTIONS(1418),
     [anon_sym_Host] = ACTIONS(1418),
     [anon_sym_Element] = ACTIONS(1418),
@@ -101690,6 +103935,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1422),
     [anon_sym_CommandPalette] = ACTIONS(1422),
     [anon_sym_AppShell] = ACTIONS(1422),
+    [anon_sym_CheckboxGroup] = ACTIONS(1422),
+    [anon_sym_InputOTP] = ACTIONS(1422),
+    [anon_sym_TagInput] = ACTIONS(1422),
+    [anon_sym_Rating] = ACTIONS(1422),
+    [anon_sym_DateRangePicker] = ACTIONS(1422),
     [anon_sym_Unsafe] = ACTIONS(1422),
     [anon_sym_Host] = ACTIONS(1422),
     [anon_sym_Element] = ACTIONS(1422),
@@ -101878,6 +104128,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1426),
     [anon_sym_CommandPalette] = ACTIONS(1426),
     [anon_sym_AppShell] = ACTIONS(1426),
+    [anon_sym_CheckboxGroup] = ACTIONS(1426),
+    [anon_sym_InputOTP] = ACTIONS(1426),
+    [anon_sym_TagInput] = ACTIONS(1426),
+    [anon_sym_Rating] = ACTIONS(1426),
+    [anon_sym_DateRangePicker] = ACTIONS(1426),
     [anon_sym_Unsafe] = ACTIONS(1426),
     [anon_sym_Host] = ACTIONS(1426),
     [anon_sym_Element] = ACTIONS(1426),
@@ -102066,6 +104321,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1430),
     [anon_sym_CommandPalette] = ACTIONS(1430),
     [anon_sym_AppShell] = ACTIONS(1430),
+    [anon_sym_CheckboxGroup] = ACTIONS(1430),
+    [anon_sym_InputOTP] = ACTIONS(1430),
+    [anon_sym_TagInput] = ACTIONS(1430),
+    [anon_sym_Rating] = ACTIONS(1430),
+    [anon_sym_DateRangePicker] = ACTIONS(1430),
     [anon_sym_Unsafe] = ACTIONS(1430),
     [anon_sym_Host] = ACTIONS(1430),
     [anon_sym_Element] = ACTIONS(1430),
@@ -102254,6 +104514,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1434),
     [anon_sym_CommandPalette] = ACTIONS(1434),
     [anon_sym_AppShell] = ACTIONS(1434),
+    [anon_sym_CheckboxGroup] = ACTIONS(1434),
+    [anon_sym_InputOTP] = ACTIONS(1434),
+    [anon_sym_TagInput] = ACTIONS(1434),
+    [anon_sym_Rating] = ACTIONS(1434),
+    [anon_sym_DateRangePicker] = ACTIONS(1434),
     [anon_sym_Unsafe] = ACTIONS(1434),
     [anon_sym_Host] = ACTIONS(1434),
     [anon_sym_Element] = ACTIONS(1434),
@@ -102441,6 +104706,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1418),
     [anon_sym_CommandPalette] = ACTIONS(1418),
     [anon_sym_AppShell] = ACTIONS(1418),
+    [anon_sym_CheckboxGroup] = ACTIONS(1418),
+    [anon_sym_InputOTP] = ACTIONS(1418),
+    [anon_sym_TagInput] = ACTIONS(1418),
+    [anon_sym_Rating] = ACTIONS(1418),
+    [anon_sym_DateRangePicker] = ACTIONS(1418),
     [anon_sym_Unsafe] = ACTIONS(1418),
     [anon_sym_Host] = ACTIONS(1418),
     [anon_sym_Element] = ACTIONS(1418),
@@ -102629,6 +104899,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1422),
     [anon_sym_CommandPalette] = ACTIONS(1422),
     [anon_sym_AppShell] = ACTIONS(1422),
+    [anon_sym_CheckboxGroup] = ACTIONS(1422),
+    [anon_sym_InputOTP] = ACTIONS(1422),
+    [anon_sym_TagInput] = ACTIONS(1422),
+    [anon_sym_Rating] = ACTIONS(1422),
+    [anon_sym_DateRangePicker] = ACTIONS(1422),
     [anon_sym_Unsafe] = ACTIONS(1422),
     [anon_sym_Host] = ACTIONS(1422),
     [anon_sym_Element] = ACTIONS(1422),
@@ -102818,6 +105093,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1438),
     [anon_sym_CommandPalette] = ACTIONS(1438),
     [anon_sym_AppShell] = ACTIONS(1438),
+    [anon_sym_CheckboxGroup] = ACTIONS(1438),
+    [anon_sym_InputOTP] = ACTIONS(1438),
+    [anon_sym_TagInput] = ACTIONS(1438),
+    [anon_sym_Rating] = ACTIONS(1438),
+    [anon_sym_DateRangePicker] = ACTIONS(1438),
     [anon_sym_Unsafe] = ACTIONS(1438),
     [anon_sym_Host] = ACTIONS(1438),
     [anon_sym_Element] = ACTIONS(1438),
@@ -103005,6 +105285,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1426),
     [anon_sym_CommandPalette] = ACTIONS(1426),
     [anon_sym_AppShell] = ACTIONS(1426),
+    [anon_sym_CheckboxGroup] = ACTIONS(1426),
+    [anon_sym_InputOTP] = ACTIONS(1426),
+    [anon_sym_TagInput] = ACTIONS(1426),
+    [anon_sym_Rating] = ACTIONS(1426),
+    [anon_sym_DateRangePicker] = ACTIONS(1426),
     [anon_sym_Unsafe] = ACTIONS(1426),
     [anon_sym_Host] = ACTIONS(1426),
     [anon_sym_Element] = ACTIONS(1426),
@@ -103194,6 +105479,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1442),
     [anon_sym_CommandPalette] = ACTIONS(1442),
     [anon_sym_AppShell] = ACTIONS(1442),
+    [anon_sym_CheckboxGroup] = ACTIONS(1442),
+    [anon_sym_InputOTP] = ACTIONS(1442),
+    [anon_sym_TagInput] = ACTIONS(1442),
+    [anon_sym_Rating] = ACTIONS(1442),
+    [anon_sym_DateRangePicker] = ACTIONS(1442),
     [anon_sym_Unsafe] = ACTIONS(1442),
     [anon_sym_Host] = ACTIONS(1442),
     [anon_sym_Element] = ACTIONS(1442),
@@ -103381,6 +105671,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1450),
     [anon_sym_CommandPalette] = ACTIONS(1450),
     [anon_sym_AppShell] = ACTIONS(1450),
+    [anon_sym_CheckboxGroup] = ACTIONS(1450),
+    [anon_sym_InputOTP] = ACTIONS(1450),
+    [anon_sym_TagInput] = ACTIONS(1450),
+    [anon_sym_Rating] = ACTIONS(1450),
+    [anon_sym_DateRangePicker] = ACTIONS(1450),
     [anon_sym_Unsafe] = ACTIONS(1450),
     [anon_sym_Host] = ACTIONS(1450),
     [anon_sym_Element] = ACTIONS(1450),
@@ -103569,6 +105864,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1294),
     [anon_sym_CommandPalette] = ACTIONS(1294),
     [anon_sym_AppShell] = ACTIONS(1294),
+    [anon_sym_CheckboxGroup] = ACTIONS(1294),
+    [anon_sym_InputOTP] = ACTIONS(1294),
+    [anon_sym_TagInput] = ACTIONS(1294),
+    [anon_sym_Rating] = ACTIONS(1294),
+    [anon_sym_DateRangePicker] = ACTIONS(1294),
     [anon_sym_Unsafe] = ACTIONS(1294),
     [anon_sym_Host] = ACTIONS(1294),
     [anon_sym_Element] = ACTIONS(1294),
@@ -103758,6 +106058,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1452),
     [anon_sym_CommandPalette] = ACTIONS(1452),
     [anon_sym_AppShell] = ACTIONS(1452),
+    [anon_sym_CheckboxGroup] = ACTIONS(1452),
+    [anon_sym_InputOTP] = ACTIONS(1452),
+    [anon_sym_TagInput] = ACTIONS(1452),
+    [anon_sym_Rating] = ACTIONS(1452),
+    [anon_sym_DateRangePicker] = ACTIONS(1452),
     [anon_sym_Unsafe] = ACTIONS(1452),
     [anon_sym_Host] = ACTIONS(1452),
     [anon_sym_Element] = ACTIONS(1452),
@@ -103946,6 +106251,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1456),
     [anon_sym_CommandPalette] = ACTIONS(1456),
     [anon_sym_AppShell] = ACTIONS(1456),
+    [anon_sym_CheckboxGroup] = ACTIONS(1456),
+    [anon_sym_InputOTP] = ACTIONS(1456),
+    [anon_sym_TagInput] = ACTIONS(1456),
+    [anon_sym_Rating] = ACTIONS(1456),
+    [anon_sym_DateRangePicker] = ACTIONS(1456),
     [anon_sym_Unsafe] = ACTIONS(1456),
     [anon_sym_Host] = ACTIONS(1456),
     [anon_sym_Element] = ACTIONS(1456),
@@ -104134,6 +106444,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1460),
     [anon_sym_CommandPalette] = ACTIONS(1460),
     [anon_sym_AppShell] = ACTIONS(1460),
+    [anon_sym_CheckboxGroup] = ACTIONS(1460),
+    [anon_sym_InputOTP] = ACTIONS(1460),
+    [anon_sym_TagInput] = ACTIONS(1460),
+    [anon_sym_Rating] = ACTIONS(1460),
+    [anon_sym_DateRangePicker] = ACTIONS(1460),
     [anon_sym_Unsafe] = ACTIONS(1460),
     [anon_sym_Host] = ACTIONS(1460),
     [anon_sym_Element] = ACTIONS(1460),
@@ -104322,6 +106637,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1464),
     [anon_sym_CommandPalette] = ACTIONS(1464),
     [anon_sym_AppShell] = ACTIONS(1464),
+    [anon_sym_CheckboxGroup] = ACTIONS(1464),
+    [anon_sym_InputOTP] = ACTIONS(1464),
+    [anon_sym_TagInput] = ACTIONS(1464),
+    [anon_sym_Rating] = ACTIONS(1464),
+    [anon_sym_DateRangePicker] = ACTIONS(1464),
     [anon_sym_Unsafe] = ACTIONS(1464),
     [anon_sym_Host] = ACTIONS(1464),
     [anon_sym_Element] = ACTIONS(1464),
@@ -104509,6 +106829,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1430),
     [anon_sym_CommandPalette] = ACTIONS(1430),
     [anon_sym_AppShell] = ACTIONS(1430),
+    [anon_sym_CheckboxGroup] = ACTIONS(1430),
+    [anon_sym_InputOTP] = ACTIONS(1430),
+    [anon_sym_TagInput] = ACTIONS(1430),
+    [anon_sym_Rating] = ACTIONS(1430),
+    [anon_sym_DateRangePicker] = ACTIONS(1430),
     [anon_sym_Unsafe] = ACTIONS(1430),
     [anon_sym_Host] = ACTIONS(1430),
     [anon_sym_Element] = ACTIONS(1430),
@@ -104698,6 +107023,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1468),
     [anon_sym_CommandPalette] = ACTIONS(1468),
     [anon_sym_AppShell] = ACTIONS(1468),
+    [anon_sym_CheckboxGroup] = ACTIONS(1468),
+    [anon_sym_InputOTP] = ACTIONS(1468),
+    [anon_sym_TagInput] = ACTIONS(1468),
+    [anon_sym_Rating] = ACTIONS(1468),
+    [anon_sym_DateRangePicker] = ACTIONS(1468),
     [anon_sym_Unsafe] = ACTIONS(1468),
     [anon_sym_Host] = ACTIONS(1468),
     [anon_sym_Element] = ACTIONS(1468),
@@ -104886,6 +107216,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1472),
     [anon_sym_CommandPalette] = ACTIONS(1472),
     [anon_sym_AppShell] = ACTIONS(1472),
+    [anon_sym_CheckboxGroup] = ACTIONS(1472),
+    [anon_sym_InputOTP] = ACTIONS(1472),
+    [anon_sym_TagInput] = ACTIONS(1472),
+    [anon_sym_Rating] = ACTIONS(1472),
+    [anon_sym_DateRangePicker] = ACTIONS(1472),
     [anon_sym_Unsafe] = ACTIONS(1472),
     [anon_sym_Host] = ACTIONS(1472),
     [anon_sym_Element] = ACTIONS(1472),
@@ -105074,6 +107409,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1476),
     [anon_sym_CommandPalette] = ACTIONS(1476),
     [anon_sym_AppShell] = ACTIONS(1476),
+    [anon_sym_CheckboxGroup] = ACTIONS(1476),
+    [anon_sym_InputOTP] = ACTIONS(1476),
+    [anon_sym_TagInput] = ACTIONS(1476),
+    [anon_sym_Rating] = ACTIONS(1476),
+    [anon_sym_DateRangePicker] = ACTIONS(1476),
     [anon_sym_Unsafe] = ACTIONS(1476),
     [anon_sym_Host] = ACTIONS(1476),
     [anon_sym_Element] = ACTIONS(1476),
@@ -105262,6 +107602,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1480),
     [anon_sym_CommandPalette] = ACTIONS(1480),
     [anon_sym_AppShell] = ACTIONS(1480),
+    [anon_sym_CheckboxGroup] = ACTIONS(1480),
+    [anon_sym_InputOTP] = ACTIONS(1480),
+    [anon_sym_TagInput] = ACTIONS(1480),
+    [anon_sym_Rating] = ACTIONS(1480),
+    [anon_sym_DateRangePicker] = ACTIONS(1480),
     [anon_sym_Unsafe] = ACTIONS(1480),
     [anon_sym_Host] = ACTIONS(1480),
     [anon_sym_Element] = ACTIONS(1480),
@@ -105450,6 +107795,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1484),
     [anon_sym_CommandPalette] = ACTIONS(1484),
     [anon_sym_AppShell] = ACTIONS(1484),
+    [anon_sym_CheckboxGroup] = ACTIONS(1484),
+    [anon_sym_InputOTP] = ACTIONS(1484),
+    [anon_sym_TagInput] = ACTIONS(1484),
+    [anon_sym_Rating] = ACTIONS(1484),
+    [anon_sym_DateRangePicker] = ACTIONS(1484),
     [anon_sym_Unsafe] = ACTIONS(1484),
     [anon_sym_Host] = ACTIONS(1484),
     [anon_sym_Element] = ACTIONS(1484),
@@ -105638,6 +107988,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1488),
     [anon_sym_CommandPalette] = ACTIONS(1488),
     [anon_sym_AppShell] = ACTIONS(1488),
+    [anon_sym_CheckboxGroup] = ACTIONS(1488),
+    [anon_sym_InputOTP] = ACTIONS(1488),
+    [anon_sym_TagInput] = ACTIONS(1488),
+    [anon_sym_Rating] = ACTIONS(1488),
+    [anon_sym_DateRangePicker] = ACTIONS(1488),
     [anon_sym_Unsafe] = ACTIONS(1488),
     [anon_sym_Host] = ACTIONS(1488),
     [anon_sym_Element] = ACTIONS(1488),
@@ -105826,6 +108181,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1492),
     [anon_sym_CommandPalette] = ACTIONS(1492),
     [anon_sym_AppShell] = ACTIONS(1492),
+    [anon_sym_CheckboxGroup] = ACTIONS(1492),
+    [anon_sym_InputOTP] = ACTIONS(1492),
+    [anon_sym_TagInput] = ACTIONS(1492),
+    [anon_sym_Rating] = ACTIONS(1492),
+    [anon_sym_DateRangePicker] = ACTIONS(1492),
     [anon_sym_Unsafe] = ACTIONS(1492),
     [anon_sym_Host] = ACTIONS(1492),
     [anon_sym_Element] = ACTIONS(1492),
@@ -106014,6 +108374,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1496),
     [anon_sym_CommandPalette] = ACTIONS(1496),
     [anon_sym_AppShell] = ACTIONS(1496),
+    [anon_sym_CheckboxGroup] = ACTIONS(1496),
+    [anon_sym_InputOTP] = ACTIONS(1496),
+    [anon_sym_TagInput] = ACTIONS(1496),
+    [anon_sym_Rating] = ACTIONS(1496),
+    [anon_sym_DateRangePicker] = ACTIONS(1496),
     [anon_sym_Unsafe] = ACTIONS(1496),
     [anon_sym_Host] = ACTIONS(1496),
     [anon_sym_Element] = ACTIONS(1496),
@@ -106202,6 +108567,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1500),
     [anon_sym_CommandPalette] = ACTIONS(1500),
     [anon_sym_AppShell] = ACTIONS(1500),
+    [anon_sym_CheckboxGroup] = ACTIONS(1500),
+    [anon_sym_InputOTP] = ACTIONS(1500),
+    [anon_sym_TagInput] = ACTIONS(1500),
+    [anon_sym_Rating] = ACTIONS(1500),
+    [anon_sym_DateRangePicker] = ACTIONS(1500),
     [anon_sym_Unsafe] = ACTIONS(1500),
     [anon_sym_Host] = ACTIONS(1500),
     [anon_sym_Element] = ACTIONS(1500),
@@ -106389,6 +108759,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1434),
     [anon_sym_CommandPalette] = ACTIONS(1434),
     [anon_sym_AppShell] = ACTIONS(1434),
+    [anon_sym_CheckboxGroup] = ACTIONS(1434),
+    [anon_sym_InputOTP] = ACTIONS(1434),
+    [anon_sym_TagInput] = ACTIONS(1434),
+    [anon_sym_Rating] = ACTIONS(1434),
+    [anon_sym_DateRangePicker] = ACTIONS(1434),
     [anon_sym_Unsafe] = ACTIONS(1434),
     [anon_sym_Host] = ACTIONS(1434),
     [anon_sym_Element] = ACTIONS(1434),
@@ -106577,6 +108952,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1298),
     [anon_sym_CommandPalette] = ACTIONS(1298),
     [anon_sym_AppShell] = ACTIONS(1298),
+    [anon_sym_CheckboxGroup] = ACTIONS(1298),
+    [anon_sym_InputOTP] = ACTIONS(1298),
+    [anon_sym_TagInput] = ACTIONS(1298),
+    [anon_sym_Rating] = ACTIONS(1298),
+    [anon_sym_DateRangePicker] = ACTIONS(1298),
     [anon_sym_Unsafe] = ACTIONS(1298),
     [anon_sym_Host] = ACTIONS(1298),
     [anon_sym_Element] = ACTIONS(1298),
@@ -106765,6 +109145,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1302),
     [anon_sym_CommandPalette] = ACTIONS(1302),
     [anon_sym_AppShell] = ACTIONS(1302),
+    [anon_sym_CheckboxGroup] = ACTIONS(1302),
+    [anon_sym_InputOTP] = ACTIONS(1302),
+    [anon_sym_TagInput] = ACTIONS(1302),
+    [anon_sym_Rating] = ACTIONS(1302),
+    [anon_sym_DateRangePicker] = ACTIONS(1302),
     [anon_sym_Unsafe] = ACTIONS(1302),
     [anon_sym_Host] = ACTIONS(1302),
     [anon_sym_Element] = ACTIONS(1302),
@@ -106953,6 +109338,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1438),
     [anon_sym_CommandPalette] = ACTIONS(1438),
     [anon_sym_AppShell] = ACTIONS(1438),
+    [anon_sym_CheckboxGroup] = ACTIONS(1438),
+    [anon_sym_InputOTP] = ACTIONS(1438),
+    [anon_sym_TagInput] = ACTIONS(1438),
+    [anon_sym_Rating] = ACTIONS(1438),
+    [anon_sym_DateRangePicker] = ACTIONS(1438),
     [anon_sym_Unsafe] = ACTIONS(1438),
     [anon_sym_Host] = ACTIONS(1438),
     [anon_sym_Element] = ACTIONS(1438),
@@ -107141,6 +109531,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1306),
     [anon_sym_CommandPalette] = ACTIONS(1306),
     [anon_sym_AppShell] = ACTIONS(1306),
+    [anon_sym_CheckboxGroup] = ACTIONS(1306),
+    [anon_sym_InputOTP] = ACTIONS(1306),
+    [anon_sym_TagInput] = ACTIONS(1306),
+    [anon_sym_Rating] = ACTIONS(1306),
+    [anon_sym_DateRangePicker] = ACTIONS(1306),
     [anon_sym_Unsafe] = ACTIONS(1306),
     [anon_sym_Host] = ACTIONS(1306),
     [anon_sym_Element] = ACTIONS(1306),
@@ -107329,6 +109724,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1442),
     [anon_sym_CommandPalette] = ACTIONS(1442),
     [anon_sym_AppShell] = ACTIONS(1442),
+    [anon_sym_CheckboxGroup] = ACTIONS(1442),
+    [anon_sym_InputOTP] = ACTIONS(1442),
+    [anon_sym_TagInput] = ACTIONS(1442),
+    [anon_sym_Rating] = ACTIONS(1442),
+    [anon_sym_DateRangePicker] = ACTIONS(1442),
     [anon_sym_Unsafe] = ACTIONS(1442),
     [anon_sym_Host] = ACTIONS(1442),
     [anon_sym_Element] = ACTIONS(1442),
@@ -107517,6 +109917,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1310),
     [anon_sym_CommandPalette] = ACTIONS(1310),
     [anon_sym_AppShell] = ACTIONS(1310),
+    [anon_sym_CheckboxGroup] = ACTIONS(1310),
+    [anon_sym_InputOTP] = ACTIONS(1310),
+    [anon_sym_TagInput] = ACTIONS(1310),
+    [anon_sym_Rating] = ACTIONS(1310),
+    [anon_sym_DateRangePicker] = ACTIONS(1310),
     [anon_sym_Unsafe] = ACTIONS(1310),
     [anon_sym_Host] = ACTIONS(1310),
     [anon_sym_Element] = ACTIONS(1310),
@@ -107706,6 +110111,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1504),
     [anon_sym_CommandPalette] = ACTIONS(1504),
     [anon_sym_AppShell] = ACTIONS(1504),
+    [anon_sym_CheckboxGroup] = ACTIONS(1504),
+    [anon_sym_InputOTP] = ACTIONS(1504),
+    [anon_sym_TagInput] = ACTIONS(1504),
+    [anon_sym_Rating] = ACTIONS(1504),
+    [anon_sym_DateRangePicker] = ACTIONS(1504),
     [anon_sym_Unsafe] = ACTIONS(1504),
     [anon_sym_Host] = ACTIONS(1504),
     [anon_sym_Element] = ACTIONS(1504),
@@ -107893,6 +110303,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1452),
     [anon_sym_CommandPalette] = ACTIONS(1452),
     [anon_sym_AppShell] = ACTIONS(1452),
+    [anon_sym_CheckboxGroup] = ACTIONS(1452),
+    [anon_sym_InputOTP] = ACTIONS(1452),
+    [anon_sym_TagInput] = ACTIONS(1452),
+    [anon_sym_Rating] = ACTIONS(1452),
+    [anon_sym_DateRangePicker] = ACTIONS(1452),
     [anon_sym_Unsafe] = ACTIONS(1452),
     [anon_sym_Host] = ACTIONS(1452),
     [anon_sym_Element] = ACTIONS(1452),
@@ -108081,6 +110496,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1456),
     [anon_sym_CommandPalette] = ACTIONS(1456),
     [anon_sym_AppShell] = ACTIONS(1456),
+    [anon_sym_CheckboxGroup] = ACTIONS(1456),
+    [anon_sym_InputOTP] = ACTIONS(1456),
+    [anon_sym_TagInput] = ACTIONS(1456),
+    [anon_sym_Rating] = ACTIONS(1456),
+    [anon_sym_DateRangePicker] = ACTIONS(1456),
     [anon_sym_Unsafe] = ACTIONS(1456),
     [anon_sym_Host] = ACTIONS(1456),
     [anon_sym_Element] = ACTIONS(1456),
@@ -108269,6 +110689,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1460),
     [anon_sym_CommandPalette] = ACTIONS(1460),
     [anon_sym_AppShell] = ACTIONS(1460),
+    [anon_sym_CheckboxGroup] = ACTIONS(1460),
+    [anon_sym_InputOTP] = ACTIONS(1460),
+    [anon_sym_TagInput] = ACTIONS(1460),
+    [anon_sym_Rating] = ACTIONS(1460),
+    [anon_sym_DateRangePicker] = ACTIONS(1460),
     [anon_sym_Unsafe] = ACTIONS(1460),
     [anon_sym_Host] = ACTIONS(1460),
     [anon_sym_Element] = ACTIONS(1460),
@@ -108457,6 +110882,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1464),
     [anon_sym_CommandPalette] = ACTIONS(1464),
     [anon_sym_AppShell] = ACTIONS(1464),
+    [anon_sym_CheckboxGroup] = ACTIONS(1464),
+    [anon_sym_InputOTP] = ACTIONS(1464),
+    [anon_sym_TagInput] = ACTIONS(1464),
+    [anon_sym_Rating] = ACTIONS(1464),
+    [anon_sym_DateRangePicker] = ACTIONS(1464),
     [anon_sym_Unsafe] = ACTIONS(1464),
     [anon_sym_Host] = ACTIONS(1464),
     [anon_sym_Element] = ACTIONS(1464),
@@ -108645,6 +111075,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1468),
     [anon_sym_CommandPalette] = ACTIONS(1468),
     [anon_sym_AppShell] = ACTIONS(1468),
+    [anon_sym_CheckboxGroup] = ACTIONS(1468),
+    [anon_sym_InputOTP] = ACTIONS(1468),
+    [anon_sym_TagInput] = ACTIONS(1468),
+    [anon_sym_Rating] = ACTIONS(1468),
+    [anon_sym_DateRangePicker] = ACTIONS(1468),
     [anon_sym_Unsafe] = ACTIONS(1468),
     [anon_sym_Host] = ACTIONS(1468),
     [anon_sym_Element] = ACTIONS(1468),
@@ -108834,6 +111269,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1278),
     [anon_sym_CommandPalette] = ACTIONS(1278),
     [anon_sym_AppShell] = ACTIONS(1278),
+    [anon_sym_CheckboxGroup] = ACTIONS(1278),
+    [anon_sym_InputOTP] = ACTIONS(1278),
+    [anon_sym_TagInput] = ACTIONS(1278),
+    [anon_sym_Rating] = ACTIONS(1278),
+    [anon_sym_DateRangePicker] = ACTIONS(1278),
     [anon_sym_Unsafe] = ACTIONS(1278),
     [anon_sym_Host] = ACTIONS(1278),
     [anon_sym_Element] = ACTIONS(1278),
@@ -109021,6 +111461,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1472),
     [anon_sym_CommandPalette] = ACTIONS(1472),
     [anon_sym_AppShell] = ACTIONS(1472),
+    [anon_sym_CheckboxGroup] = ACTIONS(1472),
+    [anon_sym_InputOTP] = ACTIONS(1472),
+    [anon_sym_TagInput] = ACTIONS(1472),
+    [anon_sym_Rating] = ACTIONS(1472),
+    [anon_sym_DateRangePicker] = ACTIONS(1472),
     [anon_sym_Unsafe] = ACTIONS(1472),
     [anon_sym_Host] = ACTIONS(1472),
     [anon_sym_Element] = ACTIONS(1472),
@@ -109209,6 +111654,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1476),
     [anon_sym_CommandPalette] = ACTIONS(1476),
     [anon_sym_AppShell] = ACTIONS(1476),
+    [anon_sym_CheckboxGroup] = ACTIONS(1476),
+    [anon_sym_InputOTP] = ACTIONS(1476),
+    [anon_sym_TagInput] = ACTIONS(1476),
+    [anon_sym_Rating] = ACTIONS(1476),
+    [anon_sym_DateRangePicker] = ACTIONS(1476),
     [anon_sym_Unsafe] = ACTIONS(1476),
     [anon_sym_Host] = ACTIONS(1476),
     [anon_sym_Element] = ACTIONS(1476),
@@ -109397,6 +111847,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1480),
     [anon_sym_CommandPalette] = ACTIONS(1480),
     [anon_sym_AppShell] = ACTIONS(1480),
+    [anon_sym_CheckboxGroup] = ACTIONS(1480),
+    [anon_sym_InputOTP] = ACTIONS(1480),
+    [anon_sym_TagInput] = ACTIONS(1480),
+    [anon_sym_Rating] = ACTIONS(1480),
+    [anon_sym_DateRangePicker] = ACTIONS(1480),
     [anon_sym_Unsafe] = ACTIONS(1480),
     [anon_sym_Host] = ACTIONS(1480),
     [anon_sym_Element] = ACTIONS(1480),
@@ -109585,6 +112040,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1484),
     [anon_sym_CommandPalette] = ACTIONS(1484),
     [anon_sym_AppShell] = ACTIONS(1484),
+    [anon_sym_CheckboxGroup] = ACTIONS(1484),
+    [anon_sym_InputOTP] = ACTIONS(1484),
+    [anon_sym_TagInput] = ACTIONS(1484),
+    [anon_sym_Rating] = ACTIONS(1484),
+    [anon_sym_DateRangePicker] = ACTIONS(1484),
     [anon_sym_Unsafe] = ACTIONS(1484),
     [anon_sym_Host] = ACTIONS(1484),
     [anon_sym_Element] = ACTIONS(1484),
@@ -109773,6 +112233,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1488),
     [anon_sym_CommandPalette] = ACTIONS(1488),
     [anon_sym_AppShell] = ACTIONS(1488),
+    [anon_sym_CheckboxGroup] = ACTIONS(1488),
+    [anon_sym_InputOTP] = ACTIONS(1488),
+    [anon_sym_TagInput] = ACTIONS(1488),
+    [anon_sym_Rating] = ACTIONS(1488),
+    [anon_sym_DateRangePicker] = ACTIONS(1488),
     [anon_sym_Unsafe] = ACTIONS(1488),
     [anon_sym_Host] = ACTIONS(1488),
     [anon_sym_Element] = ACTIONS(1488),
@@ -109961,6 +112426,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1492),
     [anon_sym_CommandPalette] = ACTIONS(1492),
     [anon_sym_AppShell] = ACTIONS(1492),
+    [anon_sym_CheckboxGroup] = ACTIONS(1492),
+    [anon_sym_InputOTP] = ACTIONS(1492),
+    [anon_sym_TagInput] = ACTIONS(1492),
+    [anon_sym_Rating] = ACTIONS(1492),
+    [anon_sym_DateRangePicker] = ACTIONS(1492),
     [anon_sym_Unsafe] = ACTIONS(1492),
     [anon_sym_Host] = ACTIONS(1492),
     [anon_sym_Element] = ACTIONS(1492),
@@ -110149,6 +112619,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1496),
     [anon_sym_CommandPalette] = ACTIONS(1496),
     [anon_sym_AppShell] = ACTIONS(1496),
+    [anon_sym_CheckboxGroup] = ACTIONS(1496),
+    [anon_sym_InputOTP] = ACTIONS(1496),
+    [anon_sym_TagInput] = ACTIONS(1496),
+    [anon_sym_Rating] = ACTIONS(1496),
+    [anon_sym_DateRangePicker] = ACTIONS(1496),
     [anon_sym_Unsafe] = ACTIONS(1496),
     [anon_sym_Host] = ACTIONS(1496),
     [anon_sym_Element] = ACTIONS(1496),
@@ -110337,6 +112812,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1500),
     [anon_sym_CommandPalette] = ACTIONS(1500),
     [anon_sym_AppShell] = ACTIONS(1500),
+    [anon_sym_CheckboxGroup] = ACTIONS(1500),
+    [anon_sym_InputOTP] = ACTIONS(1500),
+    [anon_sym_TagInput] = ACTIONS(1500),
+    [anon_sym_Rating] = ACTIONS(1500),
+    [anon_sym_DateRangePicker] = ACTIONS(1500),
     [anon_sym_Unsafe] = ACTIONS(1500),
     [anon_sym_Host] = ACTIONS(1500),
     [anon_sym_Element] = ACTIONS(1500),
@@ -110525,6 +113005,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1508),
     [anon_sym_CommandPalette] = ACTIONS(1508),
     [anon_sym_AppShell] = ACTIONS(1508),
+    [anon_sym_CheckboxGroup] = ACTIONS(1508),
+    [anon_sym_InputOTP] = ACTIONS(1508),
+    [anon_sym_TagInput] = ACTIONS(1508),
+    [anon_sym_Rating] = ACTIONS(1508),
+    [anon_sym_DateRangePicker] = ACTIONS(1508),
     [anon_sym_Unsafe] = ACTIONS(1508),
     [anon_sym_Host] = ACTIONS(1508),
     [anon_sym_Element] = ACTIONS(1508),
@@ -110714,6 +113199,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1450),
     [anon_sym_CommandPalette] = ACTIONS(1450),
     [anon_sym_AppShell] = ACTIONS(1450),
+    [anon_sym_CheckboxGroup] = ACTIONS(1450),
+    [anon_sym_InputOTP] = ACTIONS(1450),
+    [anon_sym_TagInput] = ACTIONS(1450),
+    [anon_sym_Rating] = ACTIONS(1450),
+    [anon_sym_DateRangePicker] = ACTIONS(1450),
     [anon_sym_Unsafe] = ACTIONS(1450),
     [anon_sym_Host] = ACTIONS(1450),
     [anon_sym_Element] = ACTIONS(1450),
@@ -110902,6 +113392,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1514),
     [anon_sym_CommandPalette] = ACTIONS(1514),
     [anon_sym_AppShell] = ACTIONS(1514),
+    [anon_sym_CheckboxGroup] = ACTIONS(1514),
+    [anon_sym_InputOTP] = ACTIONS(1514),
+    [anon_sym_TagInput] = ACTIONS(1514),
+    [anon_sym_Rating] = ACTIONS(1514),
+    [anon_sym_DateRangePicker] = ACTIONS(1514),
     [anon_sym_Unsafe] = ACTIONS(1514),
     [anon_sym_Host] = ACTIONS(1514),
     [anon_sym_Element] = ACTIONS(1514),
@@ -111089,6 +113584,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1518),
     [anon_sym_CommandPalette] = ACTIONS(1518),
     [anon_sym_AppShell] = ACTIONS(1518),
+    [anon_sym_CheckboxGroup] = ACTIONS(1518),
+    [anon_sym_InputOTP] = ACTIONS(1518),
+    [anon_sym_TagInput] = ACTIONS(1518),
+    [anon_sym_Rating] = ACTIONS(1518),
+    [anon_sym_DateRangePicker] = ACTIONS(1518),
     [anon_sym_Unsafe] = ACTIONS(1518),
     [anon_sym_Host] = ACTIONS(1518),
     [anon_sym_Element] = ACTIONS(1518),
@@ -111278,6 +113778,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1374),
     [anon_sym_CommandPalette] = ACTIONS(1374),
     [anon_sym_AppShell] = ACTIONS(1374),
+    [anon_sym_CheckboxGroup] = ACTIONS(1374),
+    [anon_sym_InputOTP] = ACTIONS(1374),
+    [anon_sym_TagInput] = ACTIONS(1374),
+    [anon_sym_Rating] = ACTIONS(1374),
+    [anon_sym_DateRangePicker] = ACTIONS(1374),
     [anon_sym_Unsafe] = ACTIONS(1374),
     [anon_sym_Host] = ACTIONS(1374),
     [anon_sym_Element] = ACTIONS(1374),
@@ -111465,6 +113970,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1322),
     [anon_sym_CommandPalette] = ACTIONS(1322),
     [anon_sym_AppShell] = ACTIONS(1322),
+    [anon_sym_CheckboxGroup] = ACTIONS(1322),
+    [anon_sym_InputOTP] = ACTIONS(1322),
+    [anon_sym_TagInput] = ACTIONS(1322),
+    [anon_sym_Rating] = ACTIONS(1322),
+    [anon_sym_DateRangePicker] = ACTIONS(1322),
     [anon_sym_Unsafe] = ACTIONS(1322),
     [anon_sym_Host] = ACTIONS(1322),
     [anon_sym_Element] = ACTIONS(1322),
@@ -111653,6 +114163,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1326),
     [anon_sym_CommandPalette] = ACTIONS(1326),
     [anon_sym_AppShell] = ACTIONS(1326),
+    [anon_sym_CheckboxGroup] = ACTIONS(1326),
+    [anon_sym_InputOTP] = ACTIONS(1326),
+    [anon_sym_TagInput] = ACTIONS(1326),
+    [anon_sym_Rating] = ACTIONS(1326),
+    [anon_sym_DateRangePicker] = ACTIONS(1326),
     [anon_sym_Unsafe] = ACTIONS(1326),
     [anon_sym_Host] = ACTIONS(1326),
     [anon_sym_Element] = ACTIONS(1326),
@@ -111842,6 +114357,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1522),
     [anon_sym_CommandPalette] = ACTIONS(1522),
     [anon_sym_AppShell] = ACTIONS(1522),
+    [anon_sym_CheckboxGroup] = ACTIONS(1522),
+    [anon_sym_InputOTP] = ACTIONS(1522),
+    [anon_sym_TagInput] = ACTIONS(1522),
+    [anon_sym_Rating] = ACTIONS(1522),
+    [anon_sym_DateRangePicker] = ACTIONS(1522),
     [anon_sym_Unsafe] = ACTIONS(1522),
     [anon_sym_Host] = ACTIONS(1522),
     [anon_sym_Element] = ACTIONS(1522),
@@ -112029,6 +114549,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1330),
     [anon_sym_CommandPalette] = ACTIONS(1330),
     [anon_sym_AppShell] = ACTIONS(1330),
+    [anon_sym_CheckboxGroup] = ACTIONS(1330),
+    [anon_sym_InputOTP] = ACTIONS(1330),
+    [anon_sym_TagInput] = ACTIONS(1330),
+    [anon_sym_Rating] = ACTIONS(1330),
+    [anon_sym_DateRangePicker] = ACTIONS(1330),
     [anon_sym_Unsafe] = ACTIONS(1330),
     [anon_sym_Host] = ACTIONS(1330),
     [anon_sym_Element] = ACTIONS(1330),
@@ -112217,6 +114742,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1334),
     [anon_sym_CommandPalette] = ACTIONS(1334),
     [anon_sym_AppShell] = ACTIONS(1334),
+    [anon_sym_CheckboxGroup] = ACTIONS(1334),
+    [anon_sym_InputOTP] = ACTIONS(1334),
+    [anon_sym_TagInput] = ACTIONS(1334),
+    [anon_sym_Rating] = ACTIONS(1334),
+    [anon_sym_DateRangePicker] = ACTIONS(1334),
     [anon_sym_Unsafe] = ACTIONS(1334),
     [anon_sym_Host] = ACTIONS(1334),
     [anon_sym_Element] = ACTIONS(1334),
@@ -112405,6 +114935,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1338),
     [anon_sym_CommandPalette] = ACTIONS(1338),
     [anon_sym_AppShell] = ACTIONS(1338),
+    [anon_sym_CheckboxGroup] = ACTIONS(1338),
+    [anon_sym_InputOTP] = ACTIONS(1338),
+    [anon_sym_TagInput] = ACTIONS(1338),
+    [anon_sym_Rating] = ACTIONS(1338),
+    [anon_sym_DateRangePicker] = ACTIONS(1338),
     [anon_sym_Unsafe] = ACTIONS(1338),
     [anon_sym_Host] = ACTIONS(1338),
     [anon_sym_Element] = ACTIONS(1338),
@@ -112593,6 +115128,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1504),
     [anon_sym_CommandPalette] = ACTIONS(1504),
     [anon_sym_AppShell] = ACTIONS(1504),
+    [anon_sym_CheckboxGroup] = ACTIONS(1504),
+    [anon_sym_InputOTP] = ACTIONS(1504),
+    [anon_sym_TagInput] = ACTIONS(1504),
+    [anon_sym_Rating] = ACTIONS(1504),
+    [anon_sym_DateRangePicker] = ACTIONS(1504),
     [anon_sym_Unsafe] = ACTIONS(1504),
     [anon_sym_Host] = ACTIONS(1504),
     [anon_sym_Element] = ACTIONS(1504),
@@ -112781,6 +115321,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1354),
     [anon_sym_CommandPalette] = ACTIONS(1354),
     [anon_sym_AppShell] = ACTIONS(1354),
+    [anon_sym_CheckboxGroup] = ACTIONS(1354),
+    [anon_sym_InputOTP] = ACTIONS(1354),
+    [anon_sym_TagInput] = ACTIONS(1354),
+    [anon_sym_Rating] = ACTIONS(1354),
+    [anon_sym_DateRangePicker] = ACTIONS(1354),
     [anon_sym_Unsafe] = ACTIONS(1354),
     [anon_sym_Host] = ACTIONS(1354),
     [anon_sym_Element] = ACTIONS(1354),
@@ -112969,6 +115514,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1358),
     [anon_sym_CommandPalette] = ACTIONS(1358),
     [anon_sym_AppShell] = ACTIONS(1358),
+    [anon_sym_CheckboxGroup] = ACTIONS(1358),
+    [anon_sym_InputOTP] = ACTIONS(1358),
+    [anon_sym_TagInput] = ACTIONS(1358),
+    [anon_sym_Rating] = ACTIONS(1358),
+    [anon_sym_DateRangePicker] = ACTIONS(1358),
     [anon_sym_Unsafe] = ACTIONS(1358),
     [anon_sym_Host] = ACTIONS(1358),
     [anon_sym_Element] = ACTIONS(1358),
@@ -113157,6 +115707,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1366),
     [anon_sym_CommandPalette] = ACTIONS(1366),
     [anon_sym_AppShell] = ACTIONS(1366),
+    [anon_sym_CheckboxGroup] = ACTIONS(1366),
+    [anon_sym_InputOTP] = ACTIONS(1366),
+    [anon_sym_TagInput] = ACTIONS(1366),
+    [anon_sym_Rating] = ACTIONS(1366),
+    [anon_sym_DateRangePicker] = ACTIONS(1366),
     [anon_sym_Unsafe] = ACTIONS(1366),
     [anon_sym_Host] = ACTIONS(1366),
     [anon_sym_Element] = ACTIONS(1366),
@@ -113345,6 +115900,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1366),
     [anon_sym_CommandPalette] = ACTIONS(1366),
     [anon_sym_AppShell] = ACTIONS(1366),
+    [anon_sym_CheckboxGroup] = ACTIONS(1366),
+    [anon_sym_InputOTP] = ACTIONS(1366),
+    [anon_sym_TagInput] = ACTIONS(1366),
+    [anon_sym_Rating] = ACTIONS(1366),
+    [anon_sym_DateRangePicker] = ACTIONS(1366),
     [anon_sym_Unsafe] = ACTIONS(1366),
     [anon_sym_Host] = ACTIONS(1366),
     [anon_sym_Element] = ACTIONS(1366),
@@ -113534,6 +116094,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1262),
     [anon_sym_CommandPalette] = ACTIONS(1262),
     [anon_sym_AppShell] = ACTIONS(1262),
+    [anon_sym_CheckboxGroup] = ACTIONS(1262),
+    [anon_sym_InputOTP] = ACTIONS(1262),
+    [anon_sym_TagInput] = ACTIONS(1262),
+    [anon_sym_Rating] = ACTIONS(1262),
+    [anon_sym_DateRangePicker] = ACTIONS(1262),
     [anon_sym_Unsafe] = ACTIONS(1262),
     [anon_sym_Host] = ACTIONS(1262),
     [anon_sym_Element] = ACTIONS(1262),
@@ -113722,6 +116287,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1270),
     [anon_sym_CommandPalette] = ACTIONS(1270),
     [anon_sym_AppShell] = ACTIONS(1270),
+    [anon_sym_CheckboxGroup] = ACTIONS(1270),
+    [anon_sym_InputOTP] = ACTIONS(1270),
+    [anon_sym_TagInput] = ACTIONS(1270),
+    [anon_sym_Rating] = ACTIONS(1270),
+    [anon_sym_DateRangePicker] = ACTIONS(1270),
     [anon_sym_Unsafe] = ACTIONS(1270),
     [anon_sym_Host] = ACTIONS(1270),
     [anon_sym_Element] = ACTIONS(1270),
@@ -113909,6 +116479,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1366),
     [anon_sym_CommandPalette] = ACTIONS(1366),
     [anon_sym_AppShell] = ACTIONS(1366),
+    [anon_sym_CheckboxGroup] = ACTIONS(1366),
+    [anon_sym_InputOTP] = ACTIONS(1366),
+    [anon_sym_TagInput] = ACTIONS(1366),
+    [anon_sym_Rating] = ACTIONS(1366),
+    [anon_sym_DateRangePicker] = ACTIONS(1366),
     [anon_sym_Unsafe] = ACTIONS(1366),
     [anon_sym_Host] = ACTIONS(1366),
     [anon_sym_Element] = ACTIONS(1366),
@@ -114097,6 +116672,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1522),
     [anon_sym_CommandPalette] = ACTIONS(1522),
     [anon_sym_AppShell] = ACTIONS(1522),
+    [anon_sym_CheckboxGroup] = ACTIONS(1522),
+    [anon_sym_InputOTP] = ACTIONS(1522),
+    [anon_sym_TagInput] = ACTIONS(1522),
+    [anon_sym_Rating] = ACTIONS(1522),
+    [anon_sym_DateRangePicker] = ACTIONS(1522),
     [anon_sym_Unsafe] = ACTIONS(1522),
     [anon_sym_Host] = ACTIONS(1522),
     [anon_sym_Element] = ACTIONS(1522),
@@ -114286,6 +116866,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1508),
     [anon_sym_CommandPalette] = ACTIONS(1508),
     [anon_sym_AppShell] = ACTIONS(1508),
+    [anon_sym_CheckboxGroup] = ACTIONS(1508),
+    [anon_sym_InputOTP] = ACTIONS(1508),
+    [anon_sym_TagInput] = ACTIONS(1508),
+    [anon_sym_Rating] = ACTIONS(1508),
+    [anon_sym_DateRangePicker] = ACTIONS(1508),
     [anon_sym_Unsafe] = ACTIONS(1508),
     [anon_sym_Host] = ACTIONS(1508),
     [anon_sym_Element] = ACTIONS(1508),
@@ -114474,6 +117059,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1518),
     [anon_sym_CommandPalette] = ACTIONS(1518),
     [anon_sym_AppShell] = ACTIONS(1518),
+    [anon_sym_CheckboxGroup] = ACTIONS(1518),
+    [anon_sym_InputOTP] = ACTIONS(1518),
+    [anon_sym_TagInput] = ACTIONS(1518),
+    [anon_sym_Rating] = ACTIONS(1518),
+    [anon_sym_DateRangePicker] = ACTIONS(1518),
     [anon_sym_Unsafe] = ACTIONS(1518),
     [anon_sym_Host] = ACTIONS(1518),
     [anon_sym_Element] = ACTIONS(1518),
@@ -114661,6 +117251,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1382),
     [anon_sym_CommandPalette] = ACTIONS(1382),
     [anon_sym_AppShell] = ACTIONS(1382),
+    [anon_sym_CheckboxGroup] = ACTIONS(1382),
+    [anon_sym_InputOTP] = ACTIONS(1382),
+    [anon_sym_TagInput] = ACTIONS(1382),
+    [anon_sym_Rating] = ACTIONS(1382),
+    [anon_sym_DateRangePicker] = ACTIONS(1382),
     [anon_sym_Unsafe] = ACTIONS(1382),
     [anon_sym_Host] = ACTIONS(1382),
     [anon_sym_Element] = ACTIONS(1382),
@@ -114849,6 +117444,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1386),
     [anon_sym_CommandPalette] = ACTIONS(1386),
     [anon_sym_AppShell] = ACTIONS(1386),
+    [anon_sym_CheckboxGroup] = ACTIONS(1386),
+    [anon_sym_InputOTP] = ACTIONS(1386),
+    [anon_sym_TagInput] = ACTIONS(1386),
+    [anon_sym_Rating] = ACTIONS(1386),
+    [anon_sym_DateRangePicker] = ACTIONS(1386),
     [anon_sym_Unsafe] = ACTIONS(1386),
     [anon_sym_Host] = ACTIONS(1386),
     [anon_sym_Element] = ACTIONS(1386),
@@ -115038,6 +117638,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1258),
     [anon_sym_CommandPalette] = ACTIONS(1258),
     [anon_sym_AppShell] = ACTIONS(1258),
+    [anon_sym_CheckboxGroup] = ACTIONS(1258),
+    [anon_sym_InputOTP] = ACTIONS(1258),
+    [anon_sym_TagInput] = ACTIONS(1258),
+    [anon_sym_Rating] = ACTIONS(1258),
+    [anon_sym_DateRangePicker] = ACTIONS(1258),
     [anon_sym_Unsafe] = ACTIONS(1258),
     [anon_sym_Host] = ACTIONS(1258),
     [anon_sym_Element] = ACTIONS(1258),
@@ -115225,6 +117830,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1514),
     [anon_sym_CommandPalette] = ACTIONS(1514),
     [anon_sym_AppShell] = ACTIONS(1514),
+    [anon_sym_CheckboxGroup] = ACTIONS(1514),
+    [anon_sym_InputOTP] = ACTIONS(1514),
+    [anon_sym_TagInput] = ACTIONS(1514),
+    [anon_sym_Rating] = ACTIONS(1514),
+    [anon_sym_DateRangePicker] = ACTIONS(1514),
     [anon_sym_Unsafe] = ACTIONS(1514),
     [anon_sym_Host] = ACTIONS(1514),
     [anon_sym_Element] = ACTIONS(1514),
@@ -115413,6 +118023,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1530),
     [anon_sym_CommandPalette] = ACTIONS(1530),
     [anon_sym_AppShell] = ACTIONS(1530),
+    [anon_sym_CheckboxGroup] = ACTIONS(1530),
+    [anon_sym_InputOTP] = ACTIONS(1530),
+    [anon_sym_TagInput] = ACTIONS(1530),
+    [anon_sym_Rating] = ACTIONS(1530),
+    [anon_sym_DateRangePicker] = ACTIONS(1530),
     [anon_sym_Unsafe] = ACTIONS(1530),
     [anon_sym_Host] = ACTIONS(1530),
     [anon_sym_Element] = ACTIONS(1530),
@@ -115599,6 +118214,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1530),
     [anon_sym_CommandPalette] = ACTIONS(1530),
     [anon_sym_AppShell] = ACTIONS(1530),
+    [anon_sym_CheckboxGroup] = ACTIONS(1530),
+    [anon_sym_InputOTP] = ACTIONS(1530),
+    [anon_sym_TagInput] = ACTIONS(1530),
+    [anon_sym_Rating] = ACTIONS(1530),
+    [anon_sym_DateRangePicker] = ACTIONS(1530),
     [anon_sym_Unsafe] = ACTIONS(1530),
     [anon_sym_Host] = ACTIONS(1530),
     [anon_sym_Element] = ACTIONS(1530),
@@ -115784,6 +118404,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -115963,6 +118588,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -116142,6 +118772,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -116321,6 +118956,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -116500,6 +119140,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -116679,6 +119324,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -116858,6 +119508,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -117037,6 +119692,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -117216,6 +119876,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -117395,6 +120060,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -117574,6 +120244,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -117753,6 +120428,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -117932,6 +120612,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -118111,6 +120796,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -118290,6 +120980,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -118469,6 +121164,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -118648,6 +121348,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -118827,6 +121532,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -119006,6 +121716,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -119185,6 +121900,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -119364,6 +122084,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -119543,6 +122268,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -119722,6 +122452,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -119901,6 +122636,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -120080,6 +122820,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -120259,6 +123004,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -120438,6 +123188,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -120617,6 +123372,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -120796,6 +123556,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -120975,6 +123740,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -121154,6 +123924,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -121333,6 +124108,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -121512,6 +124292,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -121691,6 +124476,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -121869,6 +124659,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -122047,6 +124842,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -122225,6 +125025,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -122403,6 +125208,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -122581,6 +125391,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -122759,6 +125574,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -122937,6 +125757,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -123115,6 +125940,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -123292,6 +126122,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -123470,6 +126305,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -123649,6 +126489,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -123827,6 +126672,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -124005,6 +126855,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -124183,6 +127038,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -124361,6 +127221,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -124539,6 +127404,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -124716,6 +127586,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -124895,6 +127770,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -125073,6 +127953,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -125251,6 +128136,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -125429,6 +128319,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -125607,6 +128502,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -125785,6 +128685,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -125963,6 +128868,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -126140,6 +129050,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -126319,6 +129234,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -126497,6 +129417,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -126674,6 +129599,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -126853,6 +129783,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -127031,6 +129966,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -127208,6 +130148,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -127387,6 +130332,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -127565,6 +130515,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -127742,6 +130697,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -127921,6 +130881,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -128099,6 +131064,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -128277,6 +131247,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -128454,6 +131429,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -128633,6 +131613,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -128811,6 +131796,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -128989,6 +131979,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -129166,6 +132161,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -129345,6 +132345,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -129523,6 +132528,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -129701,6 +132711,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -129879,6 +132894,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -130057,6 +133077,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -130235,6 +133260,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -130413,6 +133443,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -130591,6 +133626,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -130769,6 +133809,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -130947,6 +133992,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -131125,6 +134175,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -131303,6 +134358,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -131481,6 +134541,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -131659,6 +134724,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -131837,6 +134907,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -132015,6 +135090,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -132193,6 +135273,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -132371,6 +135456,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -132549,6 +135639,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -132727,6 +135822,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -132905,6 +136005,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -133083,6 +136188,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -133261,6 +136371,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -133439,6 +136554,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -133617,6 +136737,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -133795,6 +136920,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -133973,6 +137103,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -134151,6 +137286,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -134329,6 +137469,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -134507,6 +137652,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -134685,6 +137835,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -134863,6 +138018,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -135041,6 +138201,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -135219,6 +138384,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -135397,6 +138567,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -135575,6 +138750,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -135753,6 +138933,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -135931,6 +139116,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -136109,6 +139299,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -136287,6 +139482,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -136464,6 +139664,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -136642,6 +139847,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -136821,6 +140031,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -136998,6 +140213,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -137175,6 +140395,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -137352,6 +140577,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -137530,6 +140760,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -137706,6 +140941,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -137883,6 +141123,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -138060,6 +141305,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -138237,6 +141487,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -138414,6 +141669,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -138591,6 +141851,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -138768,6 +142033,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -138945,6 +142215,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -139122,6 +142397,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -139299,6 +142579,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -139476,6 +142761,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -139653,6 +142943,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -139830,6 +143125,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -140007,6 +143307,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -140184,6 +143489,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -140361,6 +143671,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -140538,6 +143853,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -140715,6 +144035,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -140892,6 +144217,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -141069,6 +144399,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -141246,6 +144581,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -141424,6 +144764,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -141601,6 +144946,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -141777,6 +145127,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -141955,6 +145310,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -142132,6 +145492,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -142309,6 +145674,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -142485,6 +145855,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -142661,6 +146036,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -142837,6 +146217,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -143013,6 +146398,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -143189,6 +146579,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -143365,6 +146760,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -143540,6 +146940,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -143717,6 +147122,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -143893,6 +147303,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -144068,6 +147483,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -144243,6 +147663,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -144418,6 +147843,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -144593,6 +148023,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -144768,6 +148203,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -144943,6 +148383,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -145118,6 +148563,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -145293,6 +148743,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -145468,6 +148923,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -145643,6 +149103,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -145818,6 +149283,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -145993,6 +149463,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -146168,6 +149643,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -146343,6 +149823,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -146518,6 +150003,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -146693,6 +150183,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -146868,6 +150363,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -147043,6 +150543,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -147218,6 +150723,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -147393,6 +150903,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -147568,6 +151083,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -147743,6 +151263,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -147918,6 +151443,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -148093,6 +151623,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -148267,6 +151802,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -148441,6 +151981,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -148615,6 +152160,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -148789,6 +152339,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -148963,6 +152518,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2088),
     [anon_sym_CommandPalette] = ACTIONS(2088),
     [anon_sym_AppShell] = ACTIONS(2088),
+    [anon_sym_CheckboxGroup] = ACTIONS(2088),
+    [anon_sym_InputOTP] = ACTIONS(2088),
+    [anon_sym_TagInput] = ACTIONS(2088),
+    [anon_sym_Rating] = ACTIONS(2088),
+    [anon_sym_DateRangePicker] = ACTIONS(2088),
     [anon_sym_Unsafe] = ACTIONS(2088),
     [anon_sym_Host] = ACTIONS(2088),
     [anon_sym_Element] = ACTIONS(2088),
@@ -149137,6 +152697,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2088),
     [anon_sym_CommandPalette] = ACTIONS(2088),
     [anon_sym_AppShell] = ACTIONS(2088),
+    [anon_sym_CheckboxGroup] = ACTIONS(2088),
+    [anon_sym_InputOTP] = ACTIONS(2088),
+    [anon_sym_TagInput] = ACTIONS(2088),
+    [anon_sym_Rating] = ACTIONS(2088),
+    [anon_sym_DateRangePicker] = ACTIONS(2088),
     [anon_sym_Unsafe] = ACTIONS(2088),
     [anon_sym_Host] = ACTIONS(2088),
     [anon_sym_Element] = ACTIONS(2088),
@@ -149311,6 +152876,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2088),
     [anon_sym_CommandPalette] = ACTIONS(2088),
     [anon_sym_AppShell] = ACTIONS(2088),
+    [anon_sym_CheckboxGroup] = ACTIONS(2088),
+    [anon_sym_InputOTP] = ACTIONS(2088),
+    [anon_sym_TagInput] = ACTIONS(2088),
+    [anon_sym_Rating] = ACTIONS(2088),
+    [anon_sym_DateRangePicker] = ACTIONS(2088),
     [anon_sym_Unsafe] = ACTIONS(2088),
     [anon_sym_Host] = ACTIONS(2088),
     [anon_sym_Element] = ACTIONS(2088),
@@ -149485,6 +153055,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2088),
     [anon_sym_CommandPalette] = ACTIONS(2088),
     [anon_sym_AppShell] = ACTIONS(2088),
+    [anon_sym_CheckboxGroup] = ACTIONS(2088),
+    [anon_sym_InputOTP] = ACTIONS(2088),
+    [anon_sym_TagInput] = ACTIONS(2088),
+    [anon_sym_Rating] = ACTIONS(2088),
+    [anon_sym_DateRangePicker] = ACTIONS(2088),
     [anon_sym_Unsafe] = ACTIONS(2088),
     [anon_sym_Host] = ACTIONS(2088),
     [anon_sym_Element] = ACTIONS(2088),
@@ -149659,6 +153234,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2088),
     [anon_sym_CommandPalette] = ACTIONS(2088),
     [anon_sym_AppShell] = ACTIONS(2088),
+    [anon_sym_CheckboxGroup] = ACTIONS(2088),
+    [anon_sym_InputOTP] = ACTIONS(2088),
+    [anon_sym_TagInput] = ACTIONS(2088),
+    [anon_sym_Rating] = ACTIONS(2088),
+    [anon_sym_DateRangePicker] = ACTIONS(2088),
     [anon_sym_Unsafe] = ACTIONS(2088),
     [anon_sym_Host] = ACTIONS(2088),
     [anon_sym_Element] = ACTIONS(2088),
@@ -149833,6 +153413,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2088),
     [anon_sym_CommandPalette] = ACTIONS(2088),
     [anon_sym_AppShell] = ACTIONS(2088),
+    [anon_sym_CheckboxGroup] = ACTIONS(2088),
+    [anon_sym_InputOTP] = ACTIONS(2088),
+    [anon_sym_TagInput] = ACTIONS(2088),
+    [anon_sym_Rating] = ACTIONS(2088),
+    [anon_sym_DateRangePicker] = ACTIONS(2088),
     [anon_sym_Unsafe] = ACTIONS(2088),
     [anon_sym_Host] = ACTIONS(2088),
     [anon_sym_Element] = ACTIONS(2088),
@@ -150007,6 +153592,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2088),
     [anon_sym_CommandPalette] = ACTIONS(2088),
     [anon_sym_AppShell] = ACTIONS(2088),
+    [anon_sym_CheckboxGroup] = ACTIONS(2088),
+    [anon_sym_InputOTP] = ACTIONS(2088),
+    [anon_sym_TagInput] = ACTIONS(2088),
+    [anon_sym_Rating] = ACTIONS(2088),
+    [anon_sym_DateRangePicker] = ACTIONS(2088),
     [anon_sym_Unsafe] = ACTIONS(2088),
     [anon_sym_Host] = ACTIONS(2088),
     [anon_sym_Element] = ACTIONS(2088),
@@ -150181,6 +153771,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2088),
     [anon_sym_CommandPalette] = ACTIONS(2088),
     [anon_sym_AppShell] = ACTIONS(2088),
+    [anon_sym_CheckboxGroup] = ACTIONS(2088),
+    [anon_sym_InputOTP] = ACTIONS(2088),
+    [anon_sym_TagInput] = ACTIONS(2088),
+    [anon_sym_Rating] = ACTIONS(2088),
+    [anon_sym_DateRangePicker] = ACTIONS(2088),
     [anon_sym_Unsafe] = ACTIONS(2088),
     [anon_sym_Host] = ACTIONS(2088),
     [anon_sym_Element] = ACTIONS(2088),
@@ -150355,6 +153950,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2088),
     [anon_sym_CommandPalette] = ACTIONS(2088),
     [anon_sym_AppShell] = ACTIONS(2088),
+    [anon_sym_CheckboxGroup] = ACTIONS(2088),
+    [anon_sym_InputOTP] = ACTIONS(2088),
+    [anon_sym_TagInput] = ACTIONS(2088),
+    [anon_sym_Rating] = ACTIONS(2088),
+    [anon_sym_DateRangePicker] = ACTIONS(2088),
     [anon_sym_Unsafe] = ACTIONS(2088),
     [anon_sym_Host] = ACTIONS(2088),
     [anon_sym_Element] = ACTIONS(2088),
@@ -150529,6 +154129,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -150703,6 +154308,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -150877,6 +154487,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2116),
     [anon_sym_CommandPalette] = ACTIONS(2116),
     [anon_sym_AppShell] = ACTIONS(2116),
+    [anon_sym_CheckboxGroup] = ACTIONS(2116),
+    [anon_sym_InputOTP] = ACTIONS(2116),
+    [anon_sym_TagInput] = ACTIONS(2116),
+    [anon_sym_Rating] = ACTIONS(2116),
+    [anon_sym_DateRangePicker] = ACTIONS(2116),
     [anon_sym_Unsafe] = ACTIONS(2116),
     [anon_sym_Host] = ACTIONS(2116),
     [anon_sym_Element] = ACTIONS(2116),
@@ -151051,6 +154666,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2116),
     [anon_sym_CommandPalette] = ACTIONS(2116),
     [anon_sym_AppShell] = ACTIONS(2116),
+    [anon_sym_CheckboxGroup] = ACTIONS(2116),
+    [anon_sym_InputOTP] = ACTIONS(2116),
+    [anon_sym_TagInput] = ACTIONS(2116),
+    [anon_sym_Rating] = ACTIONS(2116),
+    [anon_sym_DateRangePicker] = ACTIONS(2116),
     [anon_sym_Unsafe] = ACTIONS(2116),
     [anon_sym_Host] = ACTIONS(2116),
     [anon_sym_Element] = ACTIONS(2116),
@@ -151225,6 +154845,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2116),
     [anon_sym_CommandPalette] = ACTIONS(2116),
     [anon_sym_AppShell] = ACTIONS(2116),
+    [anon_sym_CheckboxGroup] = ACTIONS(2116),
+    [anon_sym_InputOTP] = ACTIONS(2116),
+    [anon_sym_TagInput] = ACTIONS(2116),
+    [anon_sym_Rating] = ACTIONS(2116),
+    [anon_sym_DateRangePicker] = ACTIONS(2116),
     [anon_sym_Unsafe] = ACTIONS(2116),
     [anon_sym_Host] = ACTIONS(2116),
     [anon_sym_Element] = ACTIONS(2116),
@@ -151399,6 +155024,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2116),
     [anon_sym_CommandPalette] = ACTIONS(2116),
     [anon_sym_AppShell] = ACTIONS(2116),
+    [anon_sym_CheckboxGroup] = ACTIONS(2116),
+    [anon_sym_InputOTP] = ACTIONS(2116),
+    [anon_sym_TagInput] = ACTIONS(2116),
+    [anon_sym_Rating] = ACTIONS(2116),
+    [anon_sym_DateRangePicker] = ACTIONS(2116),
     [anon_sym_Unsafe] = ACTIONS(2116),
     [anon_sym_Host] = ACTIONS(2116),
     [anon_sym_Element] = ACTIONS(2116),
@@ -151573,6 +155203,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2116),
     [anon_sym_CommandPalette] = ACTIONS(2116),
     [anon_sym_AppShell] = ACTIONS(2116),
+    [anon_sym_CheckboxGroup] = ACTIONS(2116),
+    [anon_sym_InputOTP] = ACTIONS(2116),
+    [anon_sym_TagInput] = ACTIONS(2116),
+    [anon_sym_Rating] = ACTIONS(2116),
+    [anon_sym_DateRangePicker] = ACTIONS(2116),
     [anon_sym_Unsafe] = ACTIONS(2116),
     [anon_sym_Host] = ACTIONS(2116),
     [anon_sym_Element] = ACTIONS(2116),
@@ -151747,6 +155382,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2116),
     [anon_sym_CommandPalette] = ACTIONS(2116),
     [anon_sym_AppShell] = ACTIONS(2116),
+    [anon_sym_CheckboxGroup] = ACTIONS(2116),
+    [anon_sym_InputOTP] = ACTIONS(2116),
+    [anon_sym_TagInput] = ACTIONS(2116),
+    [anon_sym_Rating] = ACTIONS(2116),
+    [anon_sym_DateRangePicker] = ACTIONS(2116),
     [anon_sym_Unsafe] = ACTIONS(2116),
     [anon_sym_Host] = ACTIONS(2116),
     [anon_sym_Element] = ACTIONS(2116),
@@ -151921,6 +155561,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -152095,6 +155740,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -152269,6 +155919,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -152443,6 +156098,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -152617,6 +156277,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -152791,6 +156456,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -152965,6 +156635,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -153139,6 +156814,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -153313,6 +156993,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -153487,6 +157172,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -153661,6 +157351,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -153835,6 +157530,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -154009,6 +157709,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2116),
     [anon_sym_CommandPalette] = ACTIONS(2116),
     [anon_sym_AppShell] = ACTIONS(2116),
+    [anon_sym_CheckboxGroup] = ACTIONS(2116),
+    [anon_sym_InputOTP] = ACTIONS(2116),
+    [anon_sym_TagInput] = ACTIONS(2116),
+    [anon_sym_Rating] = ACTIONS(2116),
+    [anon_sym_DateRangePicker] = ACTIONS(2116),
     [anon_sym_Unsafe] = ACTIONS(2116),
     [anon_sym_Host] = ACTIONS(2116),
     [anon_sym_Element] = ACTIONS(2116),
@@ -154183,6 +157888,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2142),
     [anon_sym_CommandPalette] = ACTIONS(2142),
     [anon_sym_AppShell] = ACTIONS(2142),
+    [anon_sym_CheckboxGroup] = ACTIONS(2142),
+    [anon_sym_InputOTP] = ACTIONS(2142),
+    [anon_sym_TagInput] = ACTIONS(2142),
+    [anon_sym_Rating] = ACTIONS(2142),
+    [anon_sym_DateRangePicker] = ACTIONS(2142),
     [anon_sym_Unsafe] = ACTIONS(2142),
     [anon_sym_Host] = ACTIONS(2142),
     [anon_sym_Element] = ACTIONS(2142),
@@ -154357,6 +158067,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -154531,6 +158246,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2142),
     [anon_sym_CommandPalette] = ACTIONS(2142),
     [anon_sym_AppShell] = ACTIONS(2142),
+    [anon_sym_CheckboxGroup] = ACTIONS(2142),
+    [anon_sym_InputOTP] = ACTIONS(2142),
+    [anon_sym_TagInput] = ACTIONS(2142),
+    [anon_sym_Rating] = ACTIONS(2142),
+    [anon_sym_DateRangePicker] = ACTIONS(2142),
     [anon_sym_Unsafe] = ACTIONS(2142),
     [anon_sym_Host] = ACTIONS(2142),
     [anon_sym_Element] = ACTIONS(2142),
@@ -154705,6 +158425,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2142),
     [anon_sym_CommandPalette] = ACTIONS(2142),
     [anon_sym_AppShell] = ACTIONS(2142),
+    [anon_sym_CheckboxGroup] = ACTIONS(2142),
+    [anon_sym_InputOTP] = ACTIONS(2142),
+    [anon_sym_TagInput] = ACTIONS(2142),
+    [anon_sym_Rating] = ACTIONS(2142),
+    [anon_sym_DateRangePicker] = ACTIONS(2142),
     [anon_sym_Unsafe] = ACTIONS(2142),
     [anon_sym_Host] = ACTIONS(2142),
     [anon_sym_Element] = ACTIONS(2142),
@@ -154879,6 +158604,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2142),
     [anon_sym_CommandPalette] = ACTIONS(2142),
     [anon_sym_AppShell] = ACTIONS(2142),
+    [anon_sym_CheckboxGroup] = ACTIONS(2142),
+    [anon_sym_InputOTP] = ACTIONS(2142),
+    [anon_sym_TagInput] = ACTIONS(2142),
+    [anon_sym_Rating] = ACTIONS(2142),
+    [anon_sym_DateRangePicker] = ACTIONS(2142),
     [anon_sym_Unsafe] = ACTIONS(2142),
     [anon_sym_Host] = ACTIONS(2142),
     [anon_sym_Element] = ACTIONS(2142),
@@ -155053,6 +158783,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2142),
     [anon_sym_CommandPalette] = ACTIONS(2142),
     [anon_sym_AppShell] = ACTIONS(2142),
+    [anon_sym_CheckboxGroup] = ACTIONS(2142),
+    [anon_sym_InputOTP] = ACTIONS(2142),
+    [anon_sym_TagInput] = ACTIONS(2142),
+    [anon_sym_Rating] = ACTIONS(2142),
+    [anon_sym_DateRangePicker] = ACTIONS(2142),
     [anon_sym_Unsafe] = ACTIONS(2142),
     [anon_sym_Host] = ACTIONS(2142),
     [anon_sym_Element] = ACTIONS(2142),
@@ -155227,6 +158962,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2142),
     [anon_sym_CommandPalette] = ACTIONS(2142),
     [anon_sym_AppShell] = ACTIONS(2142),
+    [anon_sym_CheckboxGroup] = ACTIONS(2142),
+    [anon_sym_InputOTP] = ACTIONS(2142),
+    [anon_sym_TagInput] = ACTIONS(2142),
+    [anon_sym_Rating] = ACTIONS(2142),
+    [anon_sym_DateRangePicker] = ACTIONS(2142),
     [anon_sym_Unsafe] = ACTIONS(2142),
     [anon_sym_Host] = ACTIONS(2142),
     [anon_sym_Element] = ACTIONS(2142),
@@ -155401,6 +159141,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2142),
     [anon_sym_CommandPalette] = ACTIONS(2142),
     [anon_sym_AppShell] = ACTIONS(2142),
+    [anon_sym_CheckboxGroup] = ACTIONS(2142),
+    [anon_sym_InputOTP] = ACTIONS(2142),
+    [anon_sym_TagInput] = ACTIONS(2142),
+    [anon_sym_Rating] = ACTIONS(2142),
+    [anon_sym_DateRangePicker] = ACTIONS(2142),
     [anon_sym_Unsafe] = ACTIONS(2142),
     [anon_sym_Host] = ACTIONS(2142),
     [anon_sym_Element] = ACTIONS(2142),
@@ -155575,6 +159320,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2142),
     [anon_sym_CommandPalette] = ACTIONS(2142),
     [anon_sym_AppShell] = ACTIONS(2142),
+    [anon_sym_CheckboxGroup] = ACTIONS(2142),
+    [anon_sym_InputOTP] = ACTIONS(2142),
+    [anon_sym_TagInput] = ACTIONS(2142),
+    [anon_sym_Rating] = ACTIONS(2142),
+    [anon_sym_DateRangePicker] = ACTIONS(2142),
     [anon_sym_Unsafe] = ACTIONS(2142),
     [anon_sym_Host] = ACTIONS(2142),
     [anon_sym_Element] = ACTIONS(2142),
@@ -155749,6 +159499,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2142),
     [anon_sym_CommandPalette] = ACTIONS(2142),
     [anon_sym_AppShell] = ACTIONS(2142),
+    [anon_sym_CheckboxGroup] = ACTIONS(2142),
+    [anon_sym_InputOTP] = ACTIONS(2142),
+    [anon_sym_TagInput] = ACTIONS(2142),
+    [anon_sym_Rating] = ACTIONS(2142),
+    [anon_sym_DateRangePicker] = ACTIONS(2142),
     [anon_sym_Unsafe] = ACTIONS(2142),
     [anon_sym_Host] = ACTIONS(2142),
     [anon_sym_Element] = ACTIONS(2142),
@@ -155923,6 +159678,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -156097,6 +159857,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -156271,6 +160036,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -156445,6 +160215,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -156619,6 +160394,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -156793,6 +160573,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -156967,6 +160752,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -157141,6 +160931,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -157315,6 +161110,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -157489,6 +161289,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2088),
     [anon_sym_CommandPalette] = ACTIONS(2088),
     [anon_sym_AppShell] = ACTIONS(2088),
+    [anon_sym_CheckboxGroup] = ACTIONS(2088),
+    [anon_sym_InputOTP] = ACTIONS(2088),
+    [anon_sym_TagInput] = ACTIONS(2088),
+    [anon_sym_Rating] = ACTIONS(2088),
+    [anon_sym_DateRangePicker] = ACTIONS(2088),
     [anon_sym_Unsafe] = ACTIONS(2088),
     [anon_sym_Host] = ACTIONS(2088),
     [anon_sym_Element] = ACTIONS(2088),
@@ -157663,6 +161468,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -157837,6 +161647,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2088),
     [anon_sym_CommandPalette] = ACTIONS(2088),
     [anon_sym_AppShell] = ACTIONS(2088),
+    [anon_sym_CheckboxGroup] = ACTIONS(2088),
+    [anon_sym_InputOTP] = ACTIONS(2088),
+    [anon_sym_TagInput] = ACTIONS(2088),
+    [anon_sym_Rating] = ACTIONS(2088),
+    [anon_sym_DateRangePicker] = ACTIONS(2088),
     [anon_sym_Unsafe] = ACTIONS(2088),
     [anon_sym_Host] = ACTIONS(2088),
     [anon_sym_Element] = ACTIONS(2088),
@@ -158011,6 +161826,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -158185,6 +162005,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -158359,6 +162184,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -158533,6 +162363,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -158707,6 +162542,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2180),
     [anon_sym_CommandPalette] = ACTIONS(2180),
     [anon_sym_AppShell] = ACTIONS(2180),
+    [anon_sym_CheckboxGroup] = ACTIONS(2180),
+    [anon_sym_InputOTP] = ACTIONS(2180),
+    [anon_sym_TagInput] = ACTIONS(2180),
+    [anon_sym_Rating] = ACTIONS(2180),
+    [anon_sym_DateRangePicker] = ACTIONS(2180),
     [anon_sym_Unsafe] = ACTIONS(2180),
     [anon_sym_Host] = ACTIONS(2180),
     [anon_sym_Element] = ACTIONS(2180),
@@ -158881,6 +162721,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -159055,6 +162900,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -159229,6 +163079,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -159403,6 +163258,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -159577,6 +163437,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -159751,6 +163616,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -159925,6 +163795,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -160099,6 +163974,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -160273,6 +164153,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -160447,6 +164332,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -160621,6 +164511,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -160795,6 +164690,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -160969,6 +164869,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2180),
     [anon_sym_CommandPalette] = ACTIONS(2180),
     [anon_sym_AppShell] = ACTIONS(2180),
+    [anon_sym_CheckboxGroup] = ACTIONS(2180),
+    [anon_sym_InputOTP] = ACTIONS(2180),
+    [anon_sym_TagInput] = ACTIONS(2180),
+    [anon_sym_Rating] = ACTIONS(2180),
+    [anon_sym_DateRangePicker] = ACTIONS(2180),
     [anon_sym_Unsafe] = ACTIONS(2180),
     [anon_sym_Host] = ACTIONS(2180),
     [anon_sym_Element] = ACTIONS(2180),
@@ -161143,6 +165048,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2180),
     [anon_sym_CommandPalette] = ACTIONS(2180),
     [anon_sym_AppShell] = ACTIONS(2180),
+    [anon_sym_CheckboxGroup] = ACTIONS(2180),
+    [anon_sym_InputOTP] = ACTIONS(2180),
+    [anon_sym_TagInput] = ACTIONS(2180),
+    [anon_sym_Rating] = ACTIONS(2180),
+    [anon_sym_DateRangePicker] = ACTIONS(2180),
     [anon_sym_Unsafe] = ACTIONS(2180),
     [anon_sym_Host] = ACTIONS(2180),
     [anon_sym_Element] = ACTIONS(2180),
@@ -161317,6 +165227,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2180),
     [anon_sym_CommandPalette] = ACTIONS(2180),
     [anon_sym_AppShell] = ACTIONS(2180),
+    [anon_sym_CheckboxGroup] = ACTIONS(2180),
+    [anon_sym_InputOTP] = ACTIONS(2180),
+    [anon_sym_TagInput] = ACTIONS(2180),
+    [anon_sym_Rating] = ACTIONS(2180),
+    [anon_sym_DateRangePicker] = ACTIONS(2180),
     [anon_sym_Unsafe] = ACTIONS(2180),
     [anon_sym_Host] = ACTIONS(2180),
     [anon_sym_Element] = ACTIONS(2180),
@@ -161491,6 +165406,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2180),
     [anon_sym_CommandPalette] = ACTIONS(2180),
     [anon_sym_AppShell] = ACTIONS(2180),
+    [anon_sym_CheckboxGroup] = ACTIONS(2180),
+    [anon_sym_InputOTP] = ACTIONS(2180),
+    [anon_sym_TagInput] = ACTIONS(2180),
+    [anon_sym_Rating] = ACTIONS(2180),
+    [anon_sym_DateRangePicker] = ACTIONS(2180),
     [anon_sym_Unsafe] = ACTIONS(2180),
     [anon_sym_Host] = ACTIONS(2180),
     [anon_sym_Element] = ACTIONS(2180),
@@ -161665,6 +165585,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2180),
     [anon_sym_CommandPalette] = ACTIONS(2180),
     [anon_sym_AppShell] = ACTIONS(2180),
+    [anon_sym_CheckboxGroup] = ACTIONS(2180),
+    [anon_sym_InputOTP] = ACTIONS(2180),
+    [anon_sym_TagInput] = ACTIONS(2180),
+    [anon_sym_Rating] = ACTIONS(2180),
+    [anon_sym_DateRangePicker] = ACTIONS(2180),
     [anon_sym_Unsafe] = ACTIONS(2180),
     [anon_sym_Host] = ACTIONS(2180),
     [anon_sym_Element] = ACTIONS(2180),
@@ -161839,6 +165764,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2180),
     [anon_sym_CommandPalette] = ACTIONS(2180),
     [anon_sym_AppShell] = ACTIONS(2180),
+    [anon_sym_CheckboxGroup] = ACTIONS(2180),
+    [anon_sym_InputOTP] = ACTIONS(2180),
+    [anon_sym_TagInput] = ACTIONS(2180),
+    [anon_sym_Rating] = ACTIONS(2180),
+    [anon_sym_DateRangePicker] = ACTIONS(2180),
     [anon_sym_Unsafe] = ACTIONS(2180),
     [anon_sym_Host] = ACTIONS(2180),
     [anon_sym_Element] = ACTIONS(2180),
@@ -162013,6 +165943,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2180),
     [anon_sym_CommandPalette] = ACTIONS(2180),
     [anon_sym_AppShell] = ACTIONS(2180),
+    [anon_sym_CheckboxGroup] = ACTIONS(2180),
+    [anon_sym_InputOTP] = ACTIONS(2180),
+    [anon_sym_TagInput] = ACTIONS(2180),
+    [anon_sym_Rating] = ACTIONS(2180),
+    [anon_sym_DateRangePicker] = ACTIONS(2180),
     [anon_sym_Unsafe] = ACTIONS(2180),
     [anon_sym_Host] = ACTIONS(2180),
     [anon_sym_Element] = ACTIONS(2180),
@@ -162187,6 +166122,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2180),
     [anon_sym_CommandPalette] = ACTIONS(2180),
     [anon_sym_AppShell] = ACTIONS(2180),
+    [anon_sym_CheckboxGroup] = ACTIONS(2180),
+    [anon_sym_InputOTP] = ACTIONS(2180),
+    [anon_sym_TagInput] = ACTIONS(2180),
+    [anon_sym_Rating] = ACTIONS(2180),
+    [anon_sym_DateRangePicker] = ACTIONS(2180),
     [anon_sym_Unsafe] = ACTIONS(2180),
     [anon_sym_Host] = ACTIONS(2180),
     [anon_sym_Element] = ACTIONS(2180),
@@ -162361,6 +166301,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2180),
     [anon_sym_CommandPalette] = ACTIONS(2180),
     [anon_sym_AppShell] = ACTIONS(2180),
+    [anon_sym_CheckboxGroup] = ACTIONS(2180),
+    [anon_sym_InputOTP] = ACTIONS(2180),
+    [anon_sym_TagInput] = ACTIONS(2180),
+    [anon_sym_Rating] = ACTIONS(2180),
+    [anon_sym_DateRangePicker] = ACTIONS(2180),
     [anon_sym_Unsafe] = ACTIONS(2180),
     [anon_sym_Host] = ACTIONS(2180),
     [anon_sym_Element] = ACTIONS(2180),
@@ -162535,6 +166480,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2218),
     [anon_sym_CommandPalette] = ACTIONS(2218),
     [anon_sym_AppShell] = ACTIONS(2218),
+    [anon_sym_CheckboxGroup] = ACTIONS(2218),
+    [anon_sym_InputOTP] = ACTIONS(2218),
+    [anon_sym_TagInput] = ACTIONS(2218),
+    [anon_sym_Rating] = ACTIONS(2218),
+    [anon_sym_DateRangePicker] = ACTIONS(2218),
     [anon_sym_Unsafe] = ACTIONS(2218),
     [anon_sym_Host] = ACTIONS(2218),
     [anon_sym_Element] = ACTIONS(2218),
@@ -162709,6 +166659,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2218),
     [anon_sym_CommandPalette] = ACTIONS(2218),
     [anon_sym_AppShell] = ACTIONS(2218),
+    [anon_sym_CheckboxGroup] = ACTIONS(2218),
+    [anon_sym_InputOTP] = ACTIONS(2218),
+    [anon_sym_TagInput] = ACTIONS(2218),
+    [anon_sym_Rating] = ACTIONS(2218),
+    [anon_sym_DateRangePicker] = ACTIONS(2218),
     [anon_sym_Unsafe] = ACTIONS(2218),
     [anon_sym_Host] = ACTIONS(2218),
     [anon_sym_Element] = ACTIONS(2218),
@@ -162883,6 +166838,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2218),
     [anon_sym_CommandPalette] = ACTIONS(2218),
     [anon_sym_AppShell] = ACTIONS(2218),
+    [anon_sym_CheckboxGroup] = ACTIONS(2218),
+    [anon_sym_InputOTP] = ACTIONS(2218),
+    [anon_sym_TagInput] = ACTIONS(2218),
+    [anon_sym_Rating] = ACTIONS(2218),
+    [anon_sym_DateRangePicker] = ACTIONS(2218),
     [anon_sym_Unsafe] = ACTIONS(2218),
     [anon_sym_Host] = ACTIONS(2218),
     [anon_sym_Element] = ACTIONS(2218),
@@ -163057,6 +167017,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2218),
     [anon_sym_CommandPalette] = ACTIONS(2218),
     [anon_sym_AppShell] = ACTIONS(2218),
+    [anon_sym_CheckboxGroup] = ACTIONS(2218),
+    [anon_sym_InputOTP] = ACTIONS(2218),
+    [anon_sym_TagInput] = ACTIONS(2218),
+    [anon_sym_Rating] = ACTIONS(2218),
+    [anon_sym_DateRangePicker] = ACTIONS(2218),
     [anon_sym_Unsafe] = ACTIONS(2218),
     [anon_sym_Host] = ACTIONS(2218),
     [anon_sym_Element] = ACTIONS(2218),
@@ -163231,6 +167196,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2218),
     [anon_sym_CommandPalette] = ACTIONS(2218),
     [anon_sym_AppShell] = ACTIONS(2218),
+    [anon_sym_CheckboxGroup] = ACTIONS(2218),
+    [anon_sym_InputOTP] = ACTIONS(2218),
+    [anon_sym_TagInput] = ACTIONS(2218),
+    [anon_sym_Rating] = ACTIONS(2218),
+    [anon_sym_DateRangePicker] = ACTIONS(2218),
     [anon_sym_Unsafe] = ACTIONS(2218),
     [anon_sym_Host] = ACTIONS(2218),
     [anon_sym_Element] = ACTIONS(2218),
@@ -163405,6 +167375,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2218),
     [anon_sym_CommandPalette] = ACTIONS(2218),
     [anon_sym_AppShell] = ACTIONS(2218),
+    [anon_sym_CheckboxGroup] = ACTIONS(2218),
+    [anon_sym_InputOTP] = ACTIONS(2218),
+    [anon_sym_TagInput] = ACTIONS(2218),
+    [anon_sym_Rating] = ACTIONS(2218),
+    [anon_sym_DateRangePicker] = ACTIONS(2218),
     [anon_sym_Unsafe] = ACTIONS(2218),
     [anon_sym_Host] = ACTIONS(2218),
     [anon_sym_Element] = ACTIONS(2218),
@@ -163579,6 +167554,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2218),
     [anon_sym_CommandPalette] = ACTIONS(2218),
     [anon_sym_AppShell] = ACTIONS(2218),
+    [anon_sym_CheckboxGroup] = ACTIONS(2218),
+    [anon_sym_InputOTP] = ACTIONS(2218),
+    [anon_sym_TagInput] = ACTIONS(2218),
+    [anon_sym_Rating] = ACTIONS(2218),
+    [anon_sym_DateRangePicker] = ACTIONS(2218),
     [anon_sym_Unsafe] = ACTIONS(2218),
     [anon_sym_Host] = ACTIONS(2218),
     [anon_sym_Element] = ACTIONS(2218),
@@ -163753,6 +167733,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2218),
     [anon_sym_CommandPalette] = ACTIONS(2218),
     [anon_sym_AppShell] = ACTIONS(2218),
+    [anon_sym_CheckboxGroup] = ACTIONS(2218),
+    [anon_sym_InputOTP] = ACTIONS(2218),
+    [anon_sym_TagInput] = ACTIONS(2218),
+    [anon_sym_Rating] = ACTIONS(2218),
+    [anon_sym_DateRangePicker] = ACTIONS(2218),
     [anon_sym_Unsafe] = ACTIONS(2218),
     [anon_sym_Host] = ACTIONS(2218),
     [anon_sym_Element] = ACTIONS(2218),
@@ -163927,6 +167912,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2218),
     [anon_sym_CommandPalette] = ACTIONS(2218),
     [anon_sym_AppShell] = ACTIONS(2218),
+    [anon_sym_CheckboxGroup] = ACTIONS(2218),
+    [anon_sym_InputOTP] = ACTIONS(2218),
+    [anon_sym_TagInput] = ACTIONS(2218),
+    [anon_sym_Rating] = ACTIONS(2218),
+    [anon_sym_DateRangePicker] = ACTIONS(2218),
     [anon_sym_Unsafe] = ACTIONS(2218),
     [anon_sym_Host] = ACTIONS(2218),
     [anon_sym_Element] = ACTIONS(2218),
@@ -164101,6 +168091,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -164275,6 +168270,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2088),
     [anon_sym_CommandPalette] = ACTIONS(2088),
     [anon_sym_AppShell] = ACTIONS(2088),
+    [anon_sym_CheckboxGroup] = ACTIONS(2088),
+    [anon_sym_InputOTP] = ACTIONS(2088),
+    [anon_sym_TagInput] = ACTIONS(2088),
+    [anon_sym_Rating] = ACTIONS(2088),
+    [anon_sym_DateRangePicker] = ACTIONS(2088),
     [anon_sym_Unsafe] = ACTIONS(2088),
     [anon_sym_Host] = ACTIONS(2088),
     [anon_sym_Element] = ACTIONS(2088),
@@ -164449,6 +168449,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -164623,6 +168628,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -164797,6 +168807,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2116),
     [anon_sym_CommandPalette] = ACTIONS(2116),
     [anon_sym_AppShell] = ACTIONS(2116),
+    [anon_sym_CheckboxGroup] = ACTIONS(2116),
+    [anon_sym_InputOTP] = ACTIONS(2116),
+    [anon_sym_TagInput] = ACTIONS(2116),
+    [anon_sym_Rating] = ACTIONS(2116),
+    [anon_sym_DateRangePicker] = ACTIONS(2116),
     [anon_sym_Unsafe] = ACTIONS(2116),
     [anon_sym_Host] = ACTIONS(2116),
     [anon_sym_Element] = ACTIONS(2116),
@@ -164971,6 +168986,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -165145,6 +169165,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2116),
     [anon_sym_CommandPalette] = ACTIONS(2116),
     [anon_sym_AppShell] = ACTIONS(2116),
+    [anon_sym_CheckboxGroup] = ACTIONS(2116),
+    [anon_sym_InputOTP] = ACTIONS(2116),
+    [anon_sym_TagInput] = ACTIONS(2116),
+    [anon_sym_Rating] = ACTIONS(2116),
+    [anon_sym_DateRangePicker] = ACTIONS(2116),
     [anon_sym_Unsafe] = ACTIONS(2116),
     [anon_sym_Host] = ACTIONS(2116),
     [anon_sym_Element] = ACTIONS(2116),
@@ -165319,6 +169344,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -165493,6 +169523,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -165667,6 +169702,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -165841,6 +169881,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -166015,6 +170060,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -166189,6 +170239,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -166363,6 +170418,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -166537,6 +170597,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -166711,6 +170776,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -166885,6 +170955,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -167059,6 +171134,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -167233,6 +171313,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -167407,6 +171492,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -167581,6 +171671,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -167755,6 +171850,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -167929,6 +172029,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -168103,6 +172208,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -168277,6 +172387,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -168451,6 +172566,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -168625,6 +172745,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -168799,6 +172924,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -168973,6 +173103,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -169147,6 +173282,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -169321,6 +173461,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2142),
     [anon_sym_CommandPalette] = ACTIONS(2142),
     [anon_sym_AppShell] = ACTIONS(2142),
+    [anon_sym_CheckboxGroup] = ACTIONS(2142),
+    [anon_sym_InputOTP] = ACTIONS(2142),
+    [anon_sym_TagInput] = ACTIONS(2142),
+    [anon_sym_Rating] = ACTIONS(2142),
+    [anon_sym_DateRangePicker] = ACTIONS(2142),
     [anon_sym_Unsafe] = ACTIONS(2142),
     [anon_sym_Host] = ACTIONS(2142),
     [anon_sym_Element] = ACTIONS(2142),
@@ -169495,6 +173640,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -169669,6 +173819,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2142),
     [anon_sym_CommandPalette] = ACTIONS(2142),
     [anon_sym_AppShell] = ACTIONS(2142),
+    [anon_sym_CheckboxGroup] = ACTIONS(2142),
+    [anon_sym_InputOTP] = ACTIONS(2142),
+    [anon_sym_TagInput] = ACTIONS(2142),
+    [anon_sym_Rating] = ACTIONS(2142),
+    [anon_sym_DateRangePicker] = ACTIONS(2142),
     [anon_sym_Unsafe] = ACTIONS(2142),
     [anon_sym_Host] = ACTIONS(2142),
     [anon_sym_Element] = ACTIONS(2142),
@@ -169843,6 +173998,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -170017,6 +174177,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -170191,6 +174356,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -170365,6 +174535,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -170539,6 +174714,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -170713,6 +174893,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2218),
     [anon_sym_CommandPalette] = ACTIONS(2218),
     [anon_sym_AppShell] = ACTIONS(2218),
+    [anon_sym_CheckboxGroup] = ACTIONS(2218),
+    [anon_sym_InputOTP] = ACTIONS(2218),
+    [anon_sym_TagInput] = ACTIONS(2218),
+    [anon_sym_Rating] = ACTIONS(2218),
+    [anon_sym_DateRangePicker] = ACTIONS(2218),
     [anon_sym_Unsafe] = ACTIONS(2218),
     [anon_sym_Host] = ACTIONS(2218),
     [anon_sym_Element] = ACTIONS(2218),
@@ -170887,6 +175072,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -171061,6 +175251,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -171235,6 +175430,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2142),
     [anon_sym_CommandPalette] = ACTIONS(2142),
     [anon_sym_AppShell] = ACTIONS(2142),
+    [anon_sym_CheckboxGroup] = ACTIONS(2142),
+    [anon_sym_InputOTP] = ACTIONS(2142),
+    [anon_sym_TagInput] = ACTIONS(2142),
+    [anon_sym_Rating] = ACTIONS(2142),
+    [anon_sym_DateRangePicker] = ACTIONS(2142),
     [anon_sym_Unsafe] = ACTIONS(2142),
     [anon_sym_Host] = ACTIONS(2142),
     [anon_sym_Element] = ACTIONS(2142),
@@ -171409,6 +175609,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -171583,6 +175788,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -171757,6 +175967,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -171931,6 +176146,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -172105,6 +176325,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -172279,6 +176504,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -172453,6 +176683,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -172627,6 +176862,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -172801,6 +177041,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -172975,6 +177220,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -173149,6 +177399,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -173323,6 +177578,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -173497,6 +177757,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -173671,6 +177936,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -173845,6 +178115,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2116),
     [anon_sym_CommandPalette] = ACTIONS(2116),
     [anon_sym_AppShell] = ACTIONS(2116),
+    [anon_sym_CheckboxGroup] = ACTIONS(2116),
+    [anon_sym_InputOTP] = ACTIONS(2116),
+    [anon_sym_TagInput] = ACTIONS(2116),
+    [anon_sym_Rating] = ACTIONS(2116),
+    [anon_sym_DateRangePicker] = ACTIONS(2116),
     [anon_sym_Unsafe] = ACTIONS(2116),
     [anon_sym_Host] = ACTIONS(2116),
     [anon_sym_Element] = ACTIONS(2116),
@@ -174019,6 +178294,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -174193,6 +178473,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -174367,6 +178652,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -174541,6 +178831,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -174715,6 +179010,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -174889,6 +179189,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -175063,6 +179368,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -175237,6 +179547,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -175411,6 +179726,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -175585,6 +179905,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -175759,6 +180084,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(612),
     [anon_sym_CommandPalette] = ACTIONS(612),
     [anon_sym_AppShell] = ACTIONS(612),
+    [anon_sym_CheckboxGroup] = ACTIONS(612),
+    [anon_sym_InputOTP] = ACTIONS(612),
+    [anon_sym_TagInput] = ACTIONS(612),
+    [anon_sym_Rating] = ACTIONS(612),
+    [anon_sym_DateRangePicker] = ACTIONS(612),
     [anon_sym_Unsafe] = ACTIONS(612),
     [anon_sym_Host] = ACTIONS(612),
     [anon_sym_Element] = ACTIONS(612),
@@ -175933,6 +180263,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -176107,6 +180442,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -176281,6 +180621,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -176455,6 +180800,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -176629,6 +180979,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -176803,6 +181158,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -176977,6 +181337,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(646),
     [anon_sym_CommandPalette] = ACTIONS(646),
     [anon_sym_AppShell] = ACTIONS(646),
+    [anon_sym_CheckboxGroup] = ACTIONS(646),
+    [anon_sym_InputOTP] = ACTIONS(646),
+    [anon_sym_TagInput] = ACTIONS(646),
+    [anon_sym_Rating] = ACTIONS(646),
+    [anon_sym_DateRangePicker] = ACTIONS(646),
     [anon_sym_Unsafe] = ACTIONS(646),
     [anon_sym_Host] = ACTIONS(646),
     [anon_sym_Element] = ACTIONS(646),
@@ -177151,6 +181516,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -177325,6 +181695,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -177499,6 +181874,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2116),
     [anon_sym_CommandPalette] = ACTIONS(2116),
     [anon_sym_AppShell] = ACTIONS(2116),
+    [anon_sym_CheckboxGroup] = ACTIONS(2116),
+    [anon_sym_InputOTP] = ACTIONS(2116),
+    [anon_sym_TagInput] = ACTIONS(2116),
+    [anon_sym_Rating] = ACTIONS(2116),
+    [anon_sym_DateRangePicker] = ACTIONS(2116),
     [anon_sym_Unsafe] = ACTIONS(2116),
     [anon_sym_Host] = ACTIONS(2116),
     [anon_sym_Element] = ACTIONS(2116),
@@ -177673,6 +182053,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2116),
     [anon_sym_CommandPalette] = ACTIONS(2116),
     [anon_sym_AppShell] = ACTIONS(2116),
+    [anon_sym_CheckboxGroup] = ACTIONS(2116),
+    [anon_sym_InputOTP] = ACTIONS(2116),
+    [anon_sym_TagInput] = ACTIONS(2116),
+    [anon_sym_Rating] = ACTIONS(2116),
+    [anon_sym_DateRangePicker] = ACTIONS(2116),
     [anon_sym_Unsafe] = ACTIONS(2116),
     [anon_sym_Host] = ACTIONS(2116),
     [anon_sym_Element] = ACTIONS(2116),
@@ -177847,6 +182232,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -178021,6 +182411,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -178195,6 +182590,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -178369,6 +182769,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -178543,6 +182948,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2116),
     [anon_sym_CommandPalette] = ACTIONS(2116),
     [anon_sym_AppShell] = ACTIONS(2116),
+    [anon_sym_CheckboxGroup] = ACTIONS(2116),
+    [anon_sym_InputOTP] = ACTIONS(2116),
+    [anon_sym_TagInput] = ACTIONS(2116),
+    [anon_sym_Rating] = ACTIONS(2116),
+    [anon_sym_DateRangePicker] = ACTIONS(2116),
     [anon_sym_Unsafe] = ACTIONS(2116),
     [anon_sym_Host] = ACTIONS(2116),
     [anon_sym_Element] = ACTIONS(2116),
@@ -178717,6 +183127,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -178891,6 +183306,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -179065,6 +183485,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -179239,6 +183664,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -179413,6 +183843,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -179587,6 +184022,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -179761,6 +184201,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -179935,6 +184380,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -180109,6 +184559,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -180283,6 +184738,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -180457,6 +184917,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2088),
     [anon_sym_CommandPalette] = ACTIONS(2088),
     [anon_sym_AppShell] = ACTIONS(2088),
+    [anon_sym_CheckboxGroup] = ACTIONS(2088),
+    [anon_sym_InputOTP] = ACTIONS(2088),
+    [anon_sym_TagInput] = ACTIONS(2088),
+    [anon_sym_Rating] = ACTIONS(2088),
+    [anon_sym_DateRangePicker] = ACTIONS(2088),
     [anon_sym_Unsafe] = ACTIONS(2088),
     [anon_sym_Host] = ACTIONS(2088),
     [anon_sym_Element] = ACTIONS(2088),
@@ -180631,6 +185096,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -180805,6 +185275,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -180979,6 +185454,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -181153,6 +185633,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -181327,6 +185812,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -181501,6 +185991,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2142),
     [anon_sym_CommandPalette] = ACTIONS(2142),
     [anon_sym_AppShell] = ACTIONS(2142),
+    [anon_sym_CheckboxGroup] = ACTIONS(2142),
+    [anon_sym_InputOTP] = ACTIONS(2142),
+    [anon_sym_TagInput] = ACTIONS(2142),
+    [anon_sym_Rating] = ACTIONS(2142),
+    [anon_sym_DateRangePicker] = ACTIONS(2142),
     [anon_sym_Unsafe] = ACTIONS(2142),
     [anon_sym_Host] = ACTIONS(2142),
     [anon_sym_Element] = ACTIONS(2142),
@@ -181675,6 +186170,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2180),
     [anon_sym_CommandPalette] = ACTIONS(2180),
     [anon_sym_AppShell] = ACTIONS(2180),
+    [anon_sym_CheckboxGroup] = ACTIONS(2180),
+    [anon_sym_InputOTP] = ACTIONS(2180),
+    [anon_sym_TagInput] = ACTIONS(2180),
+    [anon_sym_Rating] = ACTIONS(2180),
+    [anon_sym_DateRangePicker] = ACTIONS(2180),
     [anon_sym_Unsafe] = ACTIONS(2180),
     [anon_sym_Host] = ACTIONS(2180),
     [anon_sym_Element] = ACTIONS(2180),
@@ -181849,6 +186349,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2218),
     [anon_sym_CommandPalette] = ACTIONS(2218),
     [anon_sym_AppShell] = ACTIONS(2218),
+    [anon_sym_CheckboxGroup] = ACTIONS(2218),
+    [anon_sym_InputOTP] = ACTIONS(2218),
+    [anon_sym_TagInput] = ACTIONS(2218),
+    [anon_sym_Rating] = ACTIONS(2218),
+    [anon_sym_DateRangePicker] = ACTIONS(2218),
     [anon_sym_Unsafe] = ACTIONS(2218),
     [anon_sym_Host] = ACTIONS(2218),
     [anon_sym_Element] = ACTIONS(2218),
@@ -182023,6 +186528,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -182197,6 +186707,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -182371,6 +186886,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -182545,6 +187065,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -182719,6 +187244,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -182893,6 +187423,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -183067,6 +187602,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -183241,6 +187781,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -183415,6 +187960,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -183589,6 +188139,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -183763,6 +188318,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -183937,6 +188497,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -184111,6 +188676,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2116),
     [anon_sym_CommandPalette] = ACTIONS(2116),
     [anon_sym_AppShell] = ACTIONS(2116),
+    [anon_sym_CheckboxGroup] = ACTIONS(2116),
+    [anon_sym_InputOTP] = ACTIONS(2116),
+    [anon_sym_TagInput] = ACTIONS(2116),
+    [anon_sym_Rating] = ACTIONS(2116),
+    [anon_sym_DateRangePicker] = ACTIONS(2116),
     [anon_sym_Unsafe] = ACTIONS(2116),
     [anon_sym_Host] = ACTIONS(2116),
     [anon_sym_Element] = ACTIONS(2116),
@@ -184285,6 +188855,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -184459,6 +189034,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -184633,6 +189213,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -184807,6 +189392,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -184981,6 +189571,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -185155,6 +189750,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -185329,6 +189929,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -185503,6 +190108,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -185677,6 +190287,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -185851,6 +190466,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -186025,6 +190645,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -186199,6 +190824,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -186373,6 +191003,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -186547,6 +191182,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -186721,6 +191361,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -186895,6 +191540,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -187069,6 +191719,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -187243,6 +191898,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -187417,6 +192077,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -187591,6 +192256,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -187765,6 +192435,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -187939,6 +192614,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -188113,6 +192793,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -188287,6 +192972,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -188461,6 +193151,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2116),
     [anon_sym_CommandPalette] = ACTIONS(2116),
     [anon_sym_AppShell] = ACTIONS(2116),
+    [anon_sym_CheckboxGroup] = ACTIONS(2116),
+    [anon_sym_InputOTP] = ACTIONS(2116),
+    [anon_sym_TagInput] = ACTIONS(2116),
+    [anon_sym_Rating] = ACTIONS(2116),
+    [anon_sym_DateRangePicker] = ACTIONS(2116),
     [anon_sym_Unsafe] = ACTIONS(2116),
     [anon_sym_Host] = ACTIONS(2116),
     [anon_sym_Element] = ACTIONS(2116),
@@ -188635,6 +193330,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -188809,6 +193509,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -188983,6 +193688,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -189157,6 +193867,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -189331,6 +194046,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -189505,6 +194225,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -189679,6 +194404,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -189853,6 +194583,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -190027,6 +194762,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -190201,6 +194941,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -190375,6 +195120,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2116),
     [anon_sym_CommandPalette] = ACTIONS(2116),
     [anon_sym_AppShell] = ACTIONS(2116),
+    [anon_sym_CheckboxGroup] = ACTIONS(2116),
+    [anon_sym_InputOTP] = ACTIONS(2116),
+    [anon_sym_TagInput] = ACTIONS(2116),
+    [anon_sym_Rating] = ACTIONS(2116),
+    [anon_sym_DateRangePicker] = ACTIONS(2116),
     [anon_sym_Unsafe] = ACTIONS(2116),
     [anon_sym_Host] = ACTIONS(2116),
     [anon_sym_Element] = ACTIONS(2116),
@@ -190549,6 +195299,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -190723,6 +195478,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -190897,6 +195657,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -191071,6 +195836,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -191245,6 +196015,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -191419,6 +196194,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -191593,6 +196373,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -191767,6 +196552,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -191941,6 +196731,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -192115,6 +196910,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -192289,6 +197089,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -192463,6 +197268,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -192637,6 +197447,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -192811,6 +197626,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -192985,6 +197805,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -193159,6 +197984,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -193333,6 +198163,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -193507,6 +198342,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -193681,6 +198521,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -193855,6 +198700,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -194029,6 +198879,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -194203,6 +199058,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -194377,6 +199237,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -194551,6 +199416,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -194725,6 +199595,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -194899,6 +199774,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -195073,6 +199953,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -195247,6 +200132,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -195421,6 +200311,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -195595,6 +200490,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -195769,6 +200669,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -195943,6 +200848,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -196117,6 +201027,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -196291,6 +201206,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -196465,6 +201385,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -196639,6 +201564,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -196813,6 +201743,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -196987,6 +201922,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -197161,6 +202101,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -197335,6 +202280,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -197509,6 +202459,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -197683,6 +202638,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -197857,6 +202817,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -198031,6 +202996,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -198205,6 +203175,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -198379,6 +203354,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -198553,6 +203533,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -198727,6 +203712,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -198901,6 +203891,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -199075,6 +204070,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -199249,6 +204249,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -199423,6 +204428,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -199597,6 +204607,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -199771,6 +204786,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -199945,6 +204965,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -200119,6 +205144,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -200293,6 +205323,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -200467,6 +205502,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -200641,6 +205681,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -200815,6 +205860,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -200989,6 +206039,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -201163,6 +206218,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -201337,6 +206397,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -201511,6 +206576,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -201685,6 +206755,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -201859,6 +206934,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -202033,6 +207113,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -202207,6 +207292,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -202381,6 +207471,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -202555,6 +207650,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -202729,6 +207829,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -202903,6 +208008,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -203077,6 +208187,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -203251,6 +208366,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -203425,6 +208545,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -203599,6 +208724,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -203773,6 +208903,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -203947,6 +209082,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -204121,6 +209261,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -204295,6 +209440,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -204469,6 +209619,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -204643,6 +209798,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -204817,6 +209977,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -204991,6 +210156,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -205165,6 +210335,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -205339,6 +210514,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -205513,6 +210693,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -205687,6 +210872,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -205861,6 +211051,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2062),
     [anon_sym_CommandPalette] = ACTIONS(2062),
     [anon_sym_AppShell] = ACTIONS(2062),
+    [anon_sym_CheckboxGroup] = ACTIONS(2062),
+    [anon_sym_InputOTP] = ACTIONS(2062),
+    [anon_sym_TagInput] = ACTIONS(2062),
+    [anon_sym_Rating] = ACTIONS(2062),
+    [anon_sym_DateRangePicker] = ACTIONS(2062),
     [anon_sym_Unsafe] = ACTIONS(2062),
     [anon_sym_Host] = ACTIONS(2062),
     [anon_sym_Element] = ACTIONS(2062),
@@ -206035,6 +211230,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -206209,6 +211409,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -206383,6 +211588,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1558),
     [anon_sym_CommandPalette] = ACTIONS(1558),
     [anon_sym_AppShell] = ACTIONS(1558),
+    [anon_sym_CheckboxGroup] = ACTIONS(1558),
+    [anon_sym_InputOTP] = ACTIONS(1558),
+    [anon_sym_TagInput] = ACTIONS(1558),
+    [anon_sym_Rating] = ACTIONS(1558),
+    [anon_sym_DateRangePicker] = ACTIONS(1558),
     [anon_sym_Unsafe] = ACTIONS(1558),
     [anon_sym_Host] = ACTIONS(1558),
     [anon_sym_Element] = ACTIONS(1558),
@@ -206557,6 +211767,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -206731,6 +211946,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -206905,6 +212125,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -207079,6 +212304,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -207253,6 +212483,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -207427,6 +212662,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -207601,6 +212841,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -207775,6 +213020,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -207949,6 +213199,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -208123,6 +213378,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -208297,6 +213557,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -208471,6 +213736,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -208645,6 +213915,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -208819,6 +214094,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -208993,6 +214273,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -209167,6 +214452,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -209341,6 +214631,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -209515,6 +214810,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -209689,6 +214989,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -209863,6 +215168,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -210037,6 +215347,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -210211,6 +215526,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -210385,6 +215705,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2044),
     [anon_sym_CommandPalette] = ACTIONS(2044),
     [anon_sym_AppShell] = ACTIONS(2044),
+    [anon_sym_CheckboxGroup] = ACTIONS(2044),
+    [anon_sym_InputOTP] = ACTIONS(2044),
+    [anon_sym_TagInput] = ACTIONS(2044),
+    [anon_sym_Rating] = ACTIONS(2044),
+    [anon_sym_DateRangePicker] = ACTIONS(2044),
     [anon_sym_Unsafe] = ACTIONS(2044),
     [anon_sym_Host] = ACTIONS(2044),
     [anon_sym_Element] = ACTIONS(2044),
@@ -210559,6 +215884,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1175),
     [anon_sym_CommandPalette] = ACTIONS(1175),
     [anon_sym_AppShell] = ACTIONS(1175),
+    [anon_sym_CheckboxGroup] = ACTIONS(1175),
+    [anon_sym_InputOTP] = ACTIONS(1175),
+    [anon_sym_TagInput] = ACTIONS(1175),
+    [anon_sym_Rating] = ACTIONS(1175),
+    [anon_sym_DateRangePicker] = ACTIONS(1175),
     [anon_sym_Unsafe] = ACTIONS(1175),
     [anon_sym_Host] = ACTIONS(1175),
     [anon_sym_Element] = ACTIONS(1175),
@@ -210733,6 +216063,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(1744),
     [anon_sym_CommandPalette] = ACTIONS(1744),
     [anon_sym_AppShell] = ACTIONS(1744),
+    [anon_sym_CheckboxGroup] = ACTIONS(1744),
+    [anon_sym_InputOTP] = ACTIONS(1744),
+    [anon_sym_TagInput] = ACTIONS(1744),
+    [anon_sym_Rating] = ACTIONS(1744),
+    [anon_sym_DateRangePicker] = ACTIONS(1744),
     [anon_sym_Unsafe] = ACTIONS(1744),
     [anon_sym_Host] = ACTIONS(1744),
     [anon_sym_Element] = ACTIONS(1744),
@@ -210871,6 +216206,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2240),
     [anon_sym_CommandPalette] = ACTIONS(2240),
     [anon_sym_AppShell] = ACTIONS(2240),
+    [anon_sym_CheckboxGroup] = ACTIONS(2240),
+    [anon_sym_InputOTP] = ACTIONS(2240),
+    [anon_sym_TagInput] = ACTIONS(2240),
+    [anon_sym_Rating] = ACTIONS(2240),
+    [anon_sym_DateRangePicker] = ACTIONS(2240),
     [anon_sym_Unsafe] = ACTIONS(2240),
     [anon_sym_Host] = ACTIONS(2240),
     [anon_sym_Element] = ACTIONS(2240),
@@ -210993,6 +216333,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2240),
     [anon_sym_CommandPalette] = ACTIONS(2240),
     [anon_sym_AppShell] = ACTIONS(2240),
+    [anon_sym_CheckboxGroup] = ACTIONS(2240),
+    [anon_sym_InputOTP] = ACTIONS(2240),
+    [anon_sym_TagInput] = ACTIONS(2240),
+    [anon_sym_Rating] = ACTIONS(2240),
+    [anon_sym_DateRangePicker] = ACTIONS(2240),
     [anon_sym_Unsafe] = ACTIONS(2240),
     [anon_sym_Host] = ACTIONS(2240),
     [anon_sym_Element] = ACTIONS(2240),
@@ -211115,6 +216460,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2240),
     [anon_sym_CommandPalette] = ACTIONS(2240),
     [anon_sym_AppShell] = ACTIONS(2240),
+    [anon_sym_CheckboxGroup] = ACTIONS(2240),
+    [anon_sym_InputOTP] = ACTIONS(2240),
+    [anon_sym_TagInput] = ACTIONS(2240),
+    [anon_sym_Rating] = ACTIONS(2240),
+    [anon_sym_DateRangePicker] = ACTIONS(2240),
     [anon_sym_Unsafe] = ACTIONS(2240),
     [anon_sym_Host] = ACTIONS(2240),
     [anon_sym_Element] = ACTIONS(2240),
@@ -211237,6 +216587,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2240),
     [anon_sym_CommandPalette] = ACTIONS(2240),
     [anon_sym_AppShell] = ACTIONS(2240),
+    [anon_sym_CheckboxGroup] = ACTIONS(2240),
+    [anon_sym_InputOTP] = ACTIONS(2240),
+    [anon_sym_TagInput] = ACTIONS(2240),
+    [anon_sym_Rating] = ACTIONS(2240),
+    [anon_sym_DateRangePicker] = ACTIONS(2240),
     [anon_sym_Unsafe] = ACTIONS(2240),
     [anon_sym_Host] = ACTIONS(2240),
     [anon_sym_Element] = ACTIONS(2240),
@@ -211359,6 +216714,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(2258),
     [anon_sym_CommandPalette] = ACTIONS(2258),
     [anon_sym_AppShell] = ACTIONS(2258),
+    [anon_sym_CheckboxGroup] = ACTIONS(2258),
+    [anon_sym_InputOTP] = ACTIONS(2258),
+    [anon_sym_TagInput] = ACTIONS(2258),
+    [anon_sym_Rating] = ACTIONS(2258),
+    [anon_sym_DateRangePicker] = ACTIONS(2258),
     [anon_sym_Unsafe] = ACTIONS(2258),
     [anon_sym_Host] = ACTIONS(2258),
     [anon_sym_Element] = ACTIONS(2258),
@@ -211480,6 +216840,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(229),
     [anon_sym_CommandPalette] = ACTIONS(229),
     [anon_sym_AppShell] = ACTIONS(229),
+    [anon_sym_CheckboxGroup] = ACTIONS(229),
+    [anon_sym_InputOTP] = ACTIONS(229),
+    [anon_sym_TagInput] = ACTIONS(229),
+    [anon_sym_Rating] = ACTIONS(229),
+    [anon_sym_DateRangePicker] = ACTIONS(229),
     [anon_sym_Unsafe] = ACTIONS(229),
     [anon_sym_Host] = ACTIONS(229),
     [anon_sym_Element] = ACTIONS(229),
@@ -211601,6 +216966,11 @@ static const uint16_t ts_parse_table[LARGE_STATE_COUNT][SYMBOL_COUNT] = {
     [anon_sym_Combobox] = ACTIONS(107),
     [anon_sym_CommandPalette] = ACTIONS(107),
     [anon_sym_AppShell] = ACTIONS(107),
+    [anon_sym_CheckboxGroup] = ACTIONS(107),
+    [anon_sym_InputOTP] = ACTIONS(107),
+    [anon_sym_TagInput] = ACTIONS(107),
+    [anon_sym_Rating] = ACTIONS(107),
+    [anon_sym_DateRangePicker] = ACTIONS(107),
     [anon_sym_Unsafe] = ACTIONS(107),
     [anon_sym_Host] = ACTIONS(107),
     [anon_sym_Element] = ACTIONS(107),

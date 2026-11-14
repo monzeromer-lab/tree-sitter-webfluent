@@ -6,7 +6,7 @@ component PriceTag(label: String, amount: Number, sale: Bool = false) {
         if sale { Badge("Sale").success }
     }
 }
-component Rating(value: Number = 0) {
+component Stars(value: Number = 0) {
     event rate(stars: Number)
     Row(gap: .xs) {
         for n in 1..=5 by n {
@@ -20,6 +20,6 @@ page Preview(path: "/", title: "Preview", description: "The components this proj
     state stars = 3
     Heading("Preview").h1
     PriceTag(label: "Pro", amount: 29).sale
-    Rating(value: stars) { on rate(n) { stars = n } }
+    Stars(value: stars) { on rate(n) { stars = n } }
 }
 

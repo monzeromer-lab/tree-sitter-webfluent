@@ -4534,6 +4534,10 @@
     "named": false
   },
   {
+    "type": "CheckboxGroup",
+    "named": false
+  },
+  {
     "type": "Chip",
     "named": false
   },
@@ -4571,6 +4575,10 @@
   },
   {
     "type": "DatePicker",
+    "named": false
+  },
+  {
+    "type": "DateRangePicker",
     "named": false
   },
   {
@@ -4659,6 +4667,10 @@
   },
   {
     "type": "InputGroup",
+    "named": false
+  },
+  {
+    "type": "InputOTP",
     "named": false
   },
   {
@@ -4758,6 +4770,10 @@
     "named": false
   },
   {
+    "type": "Rating",
+    "named": false
+  },
+  {
     "type": "Route",
     "named": false
   },
@@ -4851,6 +4867,10 @@
   },
   {
     "type": "Tag",
+    "named": false
+  },
+  {
+    "type": "TagInput",
     "named": false
   },
   {

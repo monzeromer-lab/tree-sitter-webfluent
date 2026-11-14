@@ -5049,6 +5049,26 @@
           },
           {
             "type": "STRING",
+            "value": "CheckboxGroup"
+          },
+          {
+            "type": "STRING",
+            "value": "InputOTP"
+          },
+          {
+            "type": "STRING",
+            "value": "TagInput"
+          },
+          {
+            "type": "STRING",
+            "value": "Rating"
+          },
+          {
+            "type": "STRING",
+            "value": "DateRangePicker"
+          },
+          {
+            "type": "STRING",
             "value": "Unsafe"
           },
           {

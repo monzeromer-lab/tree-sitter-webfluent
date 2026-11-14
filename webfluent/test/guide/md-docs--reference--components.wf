@@ -402,6 +402,40 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
+    state toppings: [String] = []
+    CheckboxGroup(bind: toppings, label: "Toppings", all: "Every topping") {
+        CheckboxGroup.Option("Olives", value: "olives")
+        CheckboxGroup.Option("Onions", value: "onions")
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state code = ""
+    InputOTP(bind: code, length: 6, label: "Code from your app")
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state tags: [String] = ["rust"]
+    TagInput(bind: tags, label: "Tags", placeholder: "Add a tag")
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state stars = 4
+    Rating(bind: stars, max: 5, label: "Your rating").half
+    Rating(bind: stars, label: "Average").readonly
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state stay = { start: null, end: null }
+    DateRangePicker(bind: stay, label: "Stay", presets: [.last7, .thisMonth])
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
     Alert("Your changes were saved.").success
     Alert("The server is not answering.").danger
 }
