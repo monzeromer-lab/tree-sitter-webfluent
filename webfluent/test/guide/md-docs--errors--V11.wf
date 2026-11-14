@@ -1,9 +1,10 @@
 // md-docs/errors/V11.md
-component SalesChart(_ title: String) {
+component SalesTitle(_ title: String) {
     Text(title)
 }
 page P(path: "/", title: "T", description: "D") {
     Heading("Sales").h1
-    SalesChart("Sales by month")
+    SalesTitle("Sales by month")
+    Chart(kind: .bar, data: [3, 5, 2])
 }
 
