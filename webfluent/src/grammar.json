@@ -4605,6 +4605,38 @@
           },
           {
             "type": "STRING",
+            "value": "ColorPicker"
+          },
+          {
+            "type": "STRING",
+            "value": "TransferList"
+          },
+          {
+            "type": "STRING",
+            "value": "Editable"
+          },
+          {
+            "type": "STRING",
+            "value": "Fab"
+          },
+          {
+            "type": "STRING",
+            "value": "BackToTop"
+          },
+          {
+            "type": "STRING",
+            "value": "Popconfirm"
+          },
+          {
+            "type": "STRING",
+            "value": "Highlight"
+          },
+          {
+            "type": "STRING",
+            "value": "ClientOnly"
+          },
+          {
+            "type": "STRING",
             "value": "Unsafe"
           },
           {

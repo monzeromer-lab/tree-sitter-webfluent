@@ -120,6 +120,11 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
+    ClientOnly { Text("Drawn in your browser only") }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
     AppShell {
         AppShell.Header { Text("Ledger").bold  Spacer  ThemeToggle }
         Sidebar { Sidebar.Item(to: "/", icon: "home") { Text("Home") } }
@@ -317,6 +322,16 @@ page Doc(path: "/") {
 // md-docs/reference/components.md
 page Doc(path: "/") {
     Meter(value: 0.92, high: 0.9, label: "Disk")
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state said = ""
+    Popconfirm(title: "Delete this file?", yes: "Delete").danger {
+        on confirm { said = "deleted" }
+        Button("Delete")
+    }
+    Text(said)
 }
 
 // md-docs/reference/components.md
@@ -589,6 +604,24 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
+    state accent = "#0f766e"
+    ColorPicker(bind: accent, label: "Accent", swatches: ["#0f766e", "#b91c1c", "#1d4ed8"])
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state picked: [String] = ["b"]
+    TransferList(bind: picked, options: [{ id: "a", name: "Ada" }, { id: "b", name: "Grace" }, { id: "c", name: "Alan" }], text: p => p.name, key: p => p.id, label: "Reviewers")
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state title = "Untitled"
+    Editable(bind: title, label: "Project name")
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
     state email = ""
     Input(bind: email, label: "Email", hint: "We never share it").email.required
 }
@@ -761,51 +794,17 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
-    Callout("Run `wf check` before you push.").tip
-    Callout("Deleting a project deletes its builds too.", title: "Before you delete").caution
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    Text { Text("Press ")  Kbd("mod+k")  Text(" to search") }
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    EmptyState(icon: "folder", title: "No projects yet", text: "Create one to get started.") {
-        Button("New project").primary
+    state said = ""
+    Fab(icon: "plus", label: "Create") {
+        Fab.Action("Note", icon: "file") { on click { said = "note" } }
+        Fab.Action("Folder", icon: "folder") { on click { said = "folder" } }
     }
+    Text(said)
 }
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
-    Stat("Revenue", value: 48210, format: .currency, change: 0.124)
-    Stat("Churn", value: 0.031, format: .percent, change: -0.02)
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    CodeBlock("page Home(path: \"/\") {\n    Text(\"Hello\")\n}", language: "wf", title: "Home.wf").copy.lines
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    state open = false
-    Chip("Open only", selected: open) { on click { open = !open } }
-    Chip("Rust", icon: "code").removable { on remove { log("removed") } }
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    Link(to: "/docs") { Text("Docs")  VisuallyHidden("(the reference)") }
-}
-
-// md-docs/reference/components.md
-page Doc(path: "/") {
-    Accordion.single {
-        Accordion.Item("Shipping") { Text("Two to four days.") }
-        Accordion.Item("Returns", open: true) { Text("Thirty days.") }
-    }
+    BackToTop(after: 600)
 }
 
 // md-docs/reference/components.md
@@ -877,6 +876,13 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
+    state q = "ea"
+    Input(bind: q, label: "Search")
+    Highlight("Search near and far: each area is clear.", query: q)
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
     Text("Hello, world")
     Text("Last updated today").muted.sm
     Text("Important").bold.danger
@@ -911,6 +917,55 @@ page Doc(path: "/") {
 // md-docs/reference/components.md
 page Doc(path: "/") {
     Blockquote { Text("Make it work, make it right, make it fast.") }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Callout("Run `wf check` before you push.").tip
+    Callout("Deleting a project deletes its builds too.", title: "Before you delete").caution
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Text { Text("Press ")  Kbd("mod+k")  Text(" to search") }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    EmptyState(icon: "folder", title: "No projects yet", text: "Create one to get started.") {
+        Button("New project").primary
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Stat("Revenue", value: 48210, format: .currency, change: 0.124)
+    Stat("Churn", value: 0.031, format: .percent, change: -0.02)
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    CodeBlock("page Home(path: \"/\") {\n    Text(\"Hello\")\n}", language: "wf", title: "Home.wf").copy.lines
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state open = false
+    Chip("Open only", selected: open) { on click { open = !open } }
+    Chip("Rust", icon: "code").removable { on remove { log("removed") } }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Link(to: "/docs") { Text("Docs")  VisuallyHidden("(the reference)") }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Accordion.single {
+        Accordion.Item("Shipping") { Text("Two to four days.") }
+        Accordion.Item("Returns", open: true) { Text("Thirty days.") }
+    }
 }
 
 // md-docs/reference/components.md

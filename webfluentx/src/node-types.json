@@ -4490,6 +4490,10 @@
     "named": false
   },
   {
+    "type": "BackToTop",
+    "named": false
+  },
+  {
     "type": "Background",
     "named": false
   },
@@ -4562,11 +4566,19 @@
     "named": false
   },
   {
+    "type": "ClientOnly",
+    "named": false
+  },
+  {
     "type": "Code",
     "named": false
   },
   {
     "type": "CodeBlock",
+    "named": false
+  },
+  {
+    "type": "ColorPicker",
     "named": false
   },
   {
@@ -4630,11 +4642,19 @@
     "named": false
   },
   {
+    "type": "Editable",
+    "named": false
+  },
+  {
     "type": "Element",
     "named": false
   },
   {
     "type": "EmptyState",
+    "named": false
+  },
+  {
+    "type": "Fab",
     "named": false
   },
   {
@@ -4675,6 +4695,10 @@
   },
   {
     "type": "Heading",
+    "named": false
+  },
+  {
+    "type": "Highlight",
     "named": false
   },
   {
@@ -4811,6 +4835,10 @@
   },
   {
     "type": "Paragraph",
+    "named": false
+  },
+  {
+    "type": "Popconfirm",
     "named": false
   },
   {
@@ -5015,6 +5043,10 @@
   },
   {
     "type": "Tour",
+    "named": false
+  },
+  {
+    "type": "TransferList",
     "named": false
   },
   {
