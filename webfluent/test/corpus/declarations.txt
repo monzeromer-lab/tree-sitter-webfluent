@@ -684,3 +684,43 @@ page Café(path: "/") {
             (string_content)
             (string_content)
             (string_content)))))))
+
+================================================================================
+A test expects where the focus is
+================================================================================
+
+test "tabs follow the arrow keys" {
+    Tabs { Tabs.Page("One") { Text("1") } }
+    press "ArrowRight"
+    expect focus "Two"
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (test_declaration
+    (string
+      (string_content))
+    (block
+      (element
+        (builtin_component)
+        (block
+          (element
+            (part
+              (builtin_component)
+              (component_identifier))
+            (argument_list
+              (string
+                (string_content)))
+            (block
+              (element
+                (builtin_component)
+                (argument_list
+                  (string
+                    (string_content))))))))
+      (act_statement
+        (string
+          (string_content)))
+      (expect_statement
+        (string
+          (string_content))))))

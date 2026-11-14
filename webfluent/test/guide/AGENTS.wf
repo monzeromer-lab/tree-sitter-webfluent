@@ -277,6 +277,13 @@ page Doc(path: "/") {
 }
 
 // AGENTS.md
+page Doc(path: "/") {
+    Row(roving: .x, role: "toolbar", aria-label: "Format") {
+        Button("Bold")  Button("Italic")  Button("Underline")
+    }
+}
+
+// AGENTS.md
 api Backend(base: "/api") {
     get emailTaken(email: String) -> Bool
     post signUp(body: Map)

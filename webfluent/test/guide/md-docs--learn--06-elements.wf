@@ -71,6 +71,17 @@ page Regions(path: "/", title: "Regions", description: "A card, a table, a selec
 }
 
 // md-docs/learn/06-elements.md
+page Account(path: "/account", title: "Account", description: "Your profile and billing.") {
+    state tab = "profile"
+    Heading("Account").h1
+    Tabs(bind: tab, label: "Account") {
+        Tabs.Page("Profile", value: "profile") { Text("Your name and photo.") }
+        Tabs.Page("Billing", value: "billing") { Text("Your plan and invoices.") }
+    }
+    Text("Open: {tab}")
+}
+
+// md-docs/learn/06-elements.md
 page Article(path: "/", title: "Article", description: "Every kind of text.") {
     state count = 3
     Heading("Release notes").h1                // a real <h1>; .h2 is the default

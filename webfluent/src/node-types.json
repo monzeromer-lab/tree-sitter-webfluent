@@ -1861,9 +1861,19 @@
     "type": "expect_statement",
     "named": true,
     "fields": {
+      "focus": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
       "text": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "_expression",
@@ -4911,6 +4921,10 @@
   },
   {
     "type": "false",
+    "named": false
+  },
+  {
+    "type": "focus",
     "named": false
   },
   {

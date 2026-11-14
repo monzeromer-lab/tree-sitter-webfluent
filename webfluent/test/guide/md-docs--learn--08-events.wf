@@ -72,6 +72,17 @@ app {
 }
 
 // md-docs/learn/08-events.md
+page Editor(path: "/", title: "Editor", description: "Format the text.") {
+    state bold = false
+    state italic = false
+    Heading("Editor").h1
+    Row(roving: .x, role: "toolbar", aria-label: "Format") {
+        Button("Bold", aria-pressed: bold) { on click { bold = !bold } }
+        Button("Italic", aria-pressed: italic) { on click { italic = !italic } }
+    }
+}
+
+// md-docs/learn/08-events.md
 component Counter(_ start: Number) {
     event change(value: Number)
     state n = start

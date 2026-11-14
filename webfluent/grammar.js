@@ -351,8 +351,12 @@ module.exports = grammar({
         field("body", $.block),
       ),
 
-    // `expect "text"`, `expect not "text"` — inside a test.
-    expect_statement: ($) => seq("expect", optional("not"), field("text", $._expression)),
+    // `expect "text"`, `expect not "text"`, `expect focus "Two"` — inside a test.
+    expect_statement: ($) =>
+      choice(
+        seq("expect", optional("not"), field("text", $._expression)),
+        seq("expect", "focus", field("focus", $.string)),
+      ),
 
     // What a test does, as against what it then expects: `click "Save"`,
     // `type "Ada" into "Name"`, `press "Escape" in "Search"`.
