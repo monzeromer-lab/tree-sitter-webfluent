@@ -4545,6 +4545,66 @@
           },
           {
             "type": "STRING",
+            "value": "DescriptionList"
+          },
+          {
+            "type": "STRING",
+            "value": "Timeline"
+          },
+          {
+            "type": "STRING",
+            "value": "AvatarGroup"
+          },
+          {
+            "type": "STRING",
+            "value": "Item"
+          },
+          {
+            "type": "STRING",
+            "value": "Gallery"
+          },
+          {
+            "type": "STRING",
+            "value": "Masonry"
+          },
+          {
+            "type": "STRING",
+            "value": "CircularProgress"
+          },
+          {
+            "type": "STRING",
+            "value": "Meter"
+          },
+          {
+            "type": "STRING",
+            "value": "Sparkline"
+          },
+          {
+            "type": "STRING",
+            "value": "RelativeTime"
+          },
+          {
+            "type": "STRING",
+            "value": "AspectRatio"
+          },
+          {
+            "type": "STRING",
+            "value": "ScrollArea"
+          },
+          {
+            "type": "STRING",
+            "value": "Center"
+          },
+          {
+            "type": "STRING",
+            "value": "Sticky"
+          },
+          {
+            "type": "STRING",
+            "value": "PanelGroup"
+          },
+          {
+            "type": "STRING",
             "value": "Unsafe"
           },
           {

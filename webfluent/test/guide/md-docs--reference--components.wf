@@ -74,6 +74,52 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
+    Masonry(columns: 2) {
+        Card { Text("A short note") }
+        Card { Text("A longer note, which runs to more than one line of text.") }
+        Card { Text("Another") }
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    AspectRatio(ratio: 16 / 9) {
+        Image(src: "/favicon.svg", alt: "The logo, wide")
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    ScrollArea(height: "120px", label: "Log") {
+        for n in 1..=20 { Text("Line {n}") }
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Center {
+        style { height: 120px }
+        Spinner
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Sticky(offset: "8px") { Text("Stays in view").bold }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state sizes: [Number] = [30, 70]
+    PanelGroup(bind: sizes, label: "Resize the panels") {
+        style { height: 160px }
+        PanelGroup.Panel(min: 20) { Text("Files") }
+        PanelGroup.Panel { Text("Editor") }
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
     AppShell {
         AppShell.Header { Text("Ledger").bold  Spacer  ThemeToggle }
         Sidebar { Sidebar.Item(to: "/", icon: "home") { Text("Home") } }
@@ -263,6 +309,18 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
+    state done = 40
+    CircularProgress(value: done, label: "Upload") { Text("{done}%").sm }
+    Button("More") { on click { done = done + 20 } }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Meter(value: 0.92, high: 0.9, label: "Disk")
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
     Alert("Your changes were saved.").success
     Alert("The server is not answering.").danger
 }
@@ -356,6 +414,14 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
+    Gallery(columns: 2, ratio: 4 / 3) {
+        Image(src: "/favicon.svg", alt: "The logo")
+        Image(src: "/favicon.svg", alt: "The logo again")
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
     Image(src: "/team.jpg", alt: "The team at the launch", width: 1200, height: 630)
     Image(src: "/flourish.svg", alt: "")
 }
@@ -393,6 +459,53 @@ page Doc(path: "/") {
         Carousel.Slide { Image(src: "/one.jpg", alt: "A bridge at dusk") }
         Carousel.Slide { Image(src: "/two.jpg", alt: "The harbour") }
     }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    DescriptionList.grid {
+        DescriptionList.Item("Region", value: "eu-west")
+        DescriptionList.Item("Status") { Badge("Live").success }
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Timeline {
+        Timeline.Item("Released", at: "2026-11-14") { Text("Version 6.1") }
+        Timeline.Item("Planned") { Text("Version 7") }
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    AvatarGroup(max: 3, label: "Team") {
+        Avatar(initials: "AL")
+        Avatar(initials: "GH")
+        Avatar(initials: "AT")
+        Avatar(initials: "ED")
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    state on = true
+    Item(title: "Notifications", description: "Sent to your phone") {
+        Item.Media { Icon("bell") }
+        Item.Actions { Switch(bind: on, label: "On") }
+    }
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    Text("Sign-ups ")
+    Sparkline([3, 5, 2, 8, 6], label: "Sign-ups this week")
+    Sparkline([3, 5, 2, 8, 6], label: "By day").bar
+}
+
+// md-docs/reference/components.md
+page Doc(path: "/") {
+    RelativeTime("2026-01-01T09:00:00Z")
 }
 
 // md-docs/reference/components.md
