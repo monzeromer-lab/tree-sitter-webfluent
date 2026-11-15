@@ -145,13 +145,15 @@ page Callout(path: "/callout", title: "Callout", description: "A border coloured
 }
 
 // md-docs/reference/expressions.md
+type Row { id: String }
+type Note { text: String }
 page Report(path: "/report", title: "Report", description: "Rows loaded on request.") {
-    state rows: [Map] = []
+    state rows: [Row] = []
     state note = ""
-    action load() {
-        rows = await fetch("/api/rows")
-        let answer = await fetch("/api/note", { method: "GET" })
-        note = answer.text ?? ""
+    action load() -> ! {
+        rows = try await http.get("/api/rows")
+        let answer: Note = try await http.get("/api/note")
+        note = answer.text
     }
     Heading("Report").h1
     Button("Load", disabled: load.pending) { on click { load() } }

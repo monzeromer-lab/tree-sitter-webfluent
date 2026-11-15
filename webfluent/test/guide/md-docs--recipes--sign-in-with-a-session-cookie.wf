@@ -1,26 +1,34 @@
 // md-docs/recipes/sign-in-with-a-session-cookie.md
 type User { id: String, name: String }
+type Credentials { email: String, password: String }
+/// Why signing in can be refused.
+enum SignInError {
+    unauthorized(problem: Problem) on 401
+    http(error: HttpError)
+}
 api Auth(base: "/api") {
     credentials: .sameOrigin
-    get me() -> User
-    post signIn(body: Map) -> User
-        errors { 401 -> Map }
-    post signOut()
+    get me -> User!
+    post signIn(body: Credentials) -> User ! SignInError
+    post signOut -> !
 }
 store Session {
     state user: User? = null
     state checked = false
     derived signedIn = user != null
     action load() {
-        try { user = await Auth.me() } catch e { user = null }
+        match await Auth.me() {
+            .ok(u) { user = u }
+            .err(_) { user = null }
+        }
         checked = true
     }
-    action signIn(email: String, password: String) {
-        user = await Auth.signIn(body: { email: email, password: password })
+    action signIn(email: String, password: String) -> ! SignInError {
+        user = try await Auth.signIn(body: Credentials(email: email, password: password))
         navigate("/account")
     }
-    action signOut() {
-        await Auth.signOut()
+    action signOut() -> ! {
+        try await Auth.signOut()
         user = null
         Auth.me.invalidate()
         navigate("/")
@@ -34,7 +42,11 @@ page SignIn(path: "/sign-in", title: "Sign in", description: "Sign in to your ac
     validate password { required }
     action send() {
         problem = ""
-        try { await Session.signIn(email, password) } catch e { problem = "That email and password do not match." }
+        match await Session.signIn(email, password) {
+            .ok { }
+            .err(.unauthorized(_)) { problem = "That email and password do not match." }
+            .err(.http(e)) { problem = e.message }
+        }
     }
     Heading("Sign in").h1
     if problem != "" { Alert(problem).danger }

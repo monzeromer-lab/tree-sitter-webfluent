@@ -59,9 +59,13 @@ page Contact(path: "/contact", title: "Contact", description: "Send us a message
     state sent = false
 
     action send() {
-        let r = await fetch("/api/contact", { method: "POST", body: { name: name, email: email, message: message } })
-        sent = true
-        form.reset()
+        match await http.post("/api/contact", body: { name: name, email: email, message: message }) {
+            .ok {
+                sent = true
+                form.reset()
+            }
+            .err(e) { log(e.message) }
+        }
     }
 
     Heading("Contact us").h1
@@ -107,7 +111,7 @@ page Join(path: "/join", title: "Join", description: "Make an account.") {
 
 // md-docs/learn/14-forms.md
 api Backend(base: "/api") {
-    get emailFree(email: String) -> Bool
+    get emailFree(email: String) -> Bool!
 }
 page Register(path: "/register", title: "Register", description: "Check an address is free.") {
     state email = ""
@@ -115,7 +119,9 @@ page Register(path: "/register", title: "Register", description: "Check an addre
     validate email {
         required
         email
-        async "That address is taken" { await Backend.emailFree(email: email) }
+        async "That address is taken" {
+            match await Backend.emailFree(email: email) { .ok(free) { free } else { false } }
+        }
     }
 
     Heading("Register").h1
@@ -133,23 +139,26 @@ page Doc(path: "/") {
 }
 
 // md-docs/learn/14-forms.md
+enum SignUpError {
+    unprocessableContent(problem: FieldErrors) on 422
+    http(error: HttpError)
+}
 api Backend(base: "/api") {
-    post signUp(body: Map) -> Map
-        errors { 422 -> Map }
+    post signUp(body: SignUp) -> ! SignUpError
 }
 page Doc(path: "/") {
     action join() {
-        try {
-            await Backend.signUp(body: { email: email, password: password })
-        } catch e {
-            form.apply(e.body.errors)     // { email: "That address is taken" }
+        match await Backend.signUp(body: SignUp(email: email, password: password)) {
+            .ok { joined = true }
+            .err(.unprocessableContent(p)) { form.apply(p.errors) }   // { email: "That address is taken" }
+            .err(.http(e)) { log(e.message) }
         }
     }
 }
 
 // md-docs/learn/14-forms.md
 api Backend(base: "/api") {
-    post avatar(id: String, file: File) at "users/:id/avatar"
+    post avatar(id: String, file: File) at "users/:id/avatar" -> !
 }
 page Avatar(path: "/avatar", title: "Your picture", description: "Change your picture.") {
     state picked: File? = null
@@ -176,9 +185,15 @@ page Avatar(path: "/avatar", title: "Your picture", description: "Change your pi
 }
 
 // md-docs/learn/14-forms.md
+type SignUp { email: String, password: String }
+type FieldErrors = Problem { errors: [String: String] }
+/// Why an account can be refused.
+enum SignUpError {
+    unprocessableContent(problem: FieldErrors) on 422
+    http(error: HttpError)
+}
 api Backend(base: "/api") {
-    post signUp(body: Map) -> Map
-        errors { 422 -> Map }
+    post signUp(body: SignUp) -> ! SignUpError
 }
 page Welcome(path: "/welcome", title: "Join", description: "Make an account.") {
     state email = ""
@@ -189,11 +204,10 @@ page Welcome(path: "/welcome", title: "Join", description: "Make an account.") {
     validate password { required  minLength(8) }
 
     action join() {
-        try {
-            await Backend.signUp(body: { email: email, password: password })
-            joined = true
-        } catch e {
-            form.apply(e.body.errors)
+        match await Backend.signUp(body: SignUp(email: email, password: password)) {
+            .ok { joined = true }
+            .err(.unprocessableContent(p)) { form.apply(p.errors) }
+            .err(.http(e)) { log(e.message) }
         }
     }
 
@@ -210,8 +224,8 @@ page Welcome(path: "/welcome", title: "Join", description: "Make an account.") {
 // md-docs/learn/14-forms.md
 store Api {
     state saved = 0
-    action save(payload: Map) {
-        let r = await fetch("/api/save", { method: "POST", body: payload })
+    action save(payload: Json) -> ! {
+        try await http.post("/api/save", body: payload)
         saved = saved + 1
     }
 }

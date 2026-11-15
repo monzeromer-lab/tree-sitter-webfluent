@@ -30,14 +30,14 @@ page Doc(path: "/") {
 
 // md-docs/reference/built-ins.md
 page Doc(path: "/") {
-    action doc() {
-        let rows = await fetch("/api/rows?page={page}", { method: "GET" })
-    }
+    Text(format(price, .currency, "EUR"))
 }
 
 // md-docs/reference/built-ins.md
 page Doc(path: "/") {
-    Text(format(price, .currency, "EUR"))
+    action doc() {
+        let rows: [Row] = try await http.get("/api/rows?page={page}")
+    }
 }
 
 // md-docs/reference/built-ins.md

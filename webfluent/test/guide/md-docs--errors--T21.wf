@@ -1,6 +1,7 @@
 // md-docs/errors/T21.md
+type User { name: String }
 page P(path: "/", title: "T", description: "D") {
-    resource users = fetch("/api/users")
+    resource users: [User] = http.get("/api/users")
     Heading("Users").h1
     match users {
         loading { Spinner }

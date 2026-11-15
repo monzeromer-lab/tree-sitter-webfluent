@@ -40,6 +40,7 @@ page Watch(path: "/", title: "Watch", description: "Effects that follow a search
 }
 
 // md-docs/learn/07-state-and-reactivity.md
+type TodoList { todos: [String] }
 page Todos(path: "/", title: "To-dos", description: "Actions that change a list.") {
     state items: [String] = []
     state draft = ""
@@ -55,10 +56,9 @@ page Todos(path: "/", title: "To-dos", description: "Actions that change a list.
         items = items.filter((_, i) => i != index)
     }
 
-    action load() {
-        let r = await fetch("/api/todos")
-        let { todos } = r
-        items = todos
+    action load() -> ! {
+        let list: TodoList = try await http.get("/api/todos")
+        items = list.todos
     }
 
     Heading("To-dos").h1

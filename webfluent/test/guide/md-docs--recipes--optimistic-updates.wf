@@ -7,11 +7,12 @@ page Likes(path: "/", title: "Likes", description: "A like that shows at once.")
         error = ""
         let before = items
         items = items.map(i => if i.id == id { Item(id: i.id, liked: !i.liked) } else { i })
-        try {
-            await fetch("/api/like/{id}", { method: "POST" })
-        } catch e {
-            items = before
-            error = "Could not save. Try again."
+        match await http.post("/api/like/{id}") {
+            .ok { }
+            .err(_) {
+                items = before
+                error = "Could not save. Try again."
+            }
         }
     }
     Heading("Likes").h1
@@ -23,9 +24,9 @@ page Likes(path: "/", title: "Likes", description: "A like that shows at once.")
 
 // md-docs/recipes/optimistic-updates.md
 page Doc(path: "/") {
-    action like(id: String) {
+    action like(id: String) -> ! {
         optimistic(items, list => list.map(i => if i.id == id { Item(id: i.id, liked: !i.liked) } else { i }))
-        await fetch("/api/like/{id}", { method: "POST" })
+        try await http.post("/api/like/{id}")
     }
 }
 

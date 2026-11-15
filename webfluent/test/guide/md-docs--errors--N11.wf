@@ -1,0 +1,10 @@
+// md-docs/errors/N11.md
+type SignUp { email: String }
+api Backend(base: "/api") {
+    post signUp(body: SignUp) at "users" -> !
+}
+page P(path: "/", title: "T", description: "D") {
+    Heading("Join").h1
+    Button("Join") { on click { Backend.signUp(body: SignUp(email: "ada@example.com")) } }
+}
+

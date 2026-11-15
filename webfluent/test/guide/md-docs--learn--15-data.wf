@@ -1,7 +1,7 @@
 // md-docs/learn/15-data.md
 type Deploy { id: String, status: String, startedAt: String }
 page Deploys(path: "/deploys", title: "Deploys", description: "Recent deploys.") {
-    resource deploys: [Deploy] = fetch("/api/deploys")
+    resource deploys: [Deploy] = http.get("/api/deploys")
 
     Heading("Deploys").h1
     match deploys {
@@ -25,7 +25,7 @@ page Deploys(path: "/deploys", title: "Deploys", description: "Recent deploys.")
 type Server { id: String, name: String, status: String }
 page Servers(path: "/servers", title: "Servers", description: "Every server, kept current.") {
     state stage = "test"
-    resource servers: [Server] = fetch("/api/servers?env={stage}", on: .interval(30.seconds))
+    resource servers: [Server] = http.get("/api/servers?env={stage}", on: .interval(30.seconds))
 
     Heading("Servers").h1
     Button("Production") { on click { stage = "prod" } }
@@ -41,10 +41,11 @@ page Servers(path: "/servers", title: "Servers", description: "Every server, kep
 }
 
 // md-docs/learn/15-data.md
+type Hit { id: String, title: String }
 page Search(path: "/search", title: "Search", description: "Search the catalogue.") {
     state q = ""
     state token = "demo-token"
-    resource hits = fetch("/api/search", method: "POST",
+    resource hits: [Hit] = http.post("/api/search",
         headers: { Authorization: "Bearer {token}" },
         body: { query: q, limit: 20 })
 
@@ -60,7 +61,7 @@ page Search(path: "/search", title: "Search", description: "Search the catalogue
 // md-docs/learn/15-data.md
 type Post { slug: String, title: String, body: String }
 page PostPage(path: "/posts/:slug", title: "Post", description: "One post.", slug: String) {
-    resource post: Post = fetch("/api/posts/{slug}")
+    resource post: Post = http.get("/api/posts/{slug}")
     match post {
         loading { Skeleton }
         error(e) { Alert("Not found").warning }
@@ -72,10 +73,11 @@ page PostPage(path: "/posts/:slug", title: "Post", description: "One post.", slu
 }
 
 // md-docs/learn/15-data.md
+type Hit { id: String, title: String }
 page Lookup(path: "/lookup", title: "Lookup", description: "Search when you press Enter.") {
     state draft = ""
     state submitted = ""
-    resource hits = fetch("/api/search?q={submitted}")
+    resource hits: [Hit] = http.get("/api/search?q={submitted}")
 
     Heading("Lookup").h1
     Input(bind: draft, label: "Search") { on key("Enter") { submitted = draft } }
@@ -88,16 +90,21 @@ page Lookup(path: "/lookup", title: "Lookup", description: "Search when you pres
 
 // md-docs/learn/15-data.md
 type User { id: String, name: String }
+type NewUser { name: String }
+/// Why adding someone can be refused.
+enum CreateUserError {
+    unprocessableContent(problem: Problem) on 422
+    http(error: HttpError)
+}
 api Backend(base: "/api/v1") {
     credentials: .sameOrigin      // the session cookie goes with every call
     timeout: 10.seconds
     retry: .backoff(times: 3, on: [.network, .timeout, .status5xx])
 
-    get    users(page: Number = 1, q: String?) -> [User]
-    get    user(id: String) at "users/:id"     -> User
-    post   createUser(body: Map)               -> User
-        errors { 422 -> Map }
-    delete removeUser(id: String) at "users/:id"
+    get    users(page: Number = 1, q: String?)  -> [User]!
+    get    user(id: String) at "users/:id"      -> User!
+    post   createUser(body: NewUser)            -> User ! CreateUserError
+    delete removeUser(id: String) at "users/:id" -> !
 }
 page Users(path: "/users", title: "Users", description: "Everyone.") {
     state page: Number = 1
@@ -123,7 +130,7 @@ type User { id: String, name: String }
 store Session {
     state token = ""
     state language = "en"
-    action refresh() { token = await fetch("/api/token") }
+    action refresh() -> ! { token = try await http.get("/api/token", as: .text) }
 }
 api Backend(base: env.PUBLIC_API ?? "/api/v1") {
     headers {
@@ -135,7 +142,7 @@ api Backend(base: env.PUBLIC_API ?? "/api/v1") {
     on response(r) { log("{r.status} {r.url}") }
     on error(e)    { if e.status == 401 { await Session.refresh()  return "retry" } }
 
-    get me() -> User
+    get me -> User!
 }
 
 // md-docs/learn/15-data.md
@@ -193,7 +200,7 @@ page Team(path: "/people", title: "People", description: "Adding someone, and wh
 // md-docs/learn/15-data.md
 type Item { id: String, name: String }
 api Catalog(base: "/api") {
-    get items(page: Number = 1) -> [Item]
+    get items(page: Number = 1) -> [Item]!
 }
 page Items(path: "/items", title: "Items", description: "Everything, a page at a time.") {
     state page = 1
@@ -217,31 +224,33 @@ page Doc(path: "/") {
 
 // md-docs/learn/15-data.md
 type Todo { id: String, title: String, done: Bool = false }
+type NewTodo { title: String }
+type Change { done: Bool }
 page Todos(path: "/todos", title: "Todos", description: "Todos saved to a server.") {
     state todos: [Todo] = []
     state draft = ""
     state error = ""
 
-    action load() {
-        let r: [Todo] = await fetch("/api/todos")
-        todos = r
+    action load() -> ! {
+        todos = try await http.get("/api/todos")
     }
 
     action add() {
         if draft.trim() == "" { return }
-        try {
-            let created: Todo = await fetch("/api/todos", { method: "POST", body: { title: draft } })
-            todos.push(created)
-            draft = ""
-        } catch e {
-            error = "Could not save: {e.message}"
+        let saved: Todo! = await http.post("/api/todos", body: NewTodo(title: draft))
+        match saved {
+            .ok(created) {
+                todos.push(created)
+                draft = ""
+            }
+            .err(e) { error = "Could not save: {e.message}" }
         }
     }
 
-    action toggle(id: String) {
+    action toggle(id: String) -> ! {
         let found = todos.find(x => x.id == id)
         if let todo = found {
-            let updated: Todo = await fetch("/api/todos/{id}", { method: "PATCH", body: { done: !todo.done } })
+            let updated: Todo = try await http.patch("/api/todos/{id}", body: Change(done: !todo.done))
             todos = todos.map(x => if x.id == id { updated } else { x })
         }
     }

@@ -194,7 +194,7 @@ page Narrow(path: "/", title: "Narrow", description: "Values that may be null, n
 // md-docs/learn/12-types.md
 type Deploy { id: String, status: String, startedAt: String }
 page Deploys(path: "/", title: "Deploys", description: "A typed resource.") {
-    resource deploys: [Deploy] = fetch("/api/deploys")
+    resource deploys: [Deploy] = http.get("/api/deploys")
     Heading("Deploys").h1
     match deploys {
         loading { Spinner }

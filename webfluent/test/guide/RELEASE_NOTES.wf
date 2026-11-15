@@ -1,4 +1,17 @@
 // RELEASE_NOTES.md
+type Row { id: String }
+type Me { name: String }
+store Account {
+    state page = 1
+    state name = ""
+    resource rows: [Row] = http.get("/api/rows?page={page}")
+    action load() -> ! {
+        let me: Me = try await http.get("/api/me")
+        name = me.name
+    }
+}
+
+// RELEASE_NOTES.md
 test "reporting an incident opens one more" {
     use IncidentStore
     state draft = ""
