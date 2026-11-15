@@ -49,9 +49,9 @@ page Doc(path: "/") {
 page Doc(path: "/") {
     resource posts = fetch("/api/posts")
     match posts {
-        loading { Spinner }
-        error(e) { Alert(e.message).danger }
-        ready(list) { for p in list by p.id { PostCard(p) } }
+        .loading { Spinner }
+        .failed(e) { Alert(e.message).danger }
+        .loaded(list) { for p in list by p.id { PostCard(p) } }
     }
 }
 

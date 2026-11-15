@@ -7,9 +7,9 @@ page Rows(path: "/", title: "Rows", description: "Every row, twenty at a time.")
     resource rows: RowPage = http.get("/api/rows?page={page}&per={perPage}")
     Heading("Rows").h1
     match rows {
-        loading { Spinner }
-        error(e) { Text(e.message).danger }
-        ready(r) {
+        .loading { Spinner }
+        .failed(e) { Text(e.message).danger }
+        .loaded(r) {
             for row in r.items by row.id { Text(row.name) }
             Row(gap: .sm, align: .center) {
                 Button("Previous", disabled: page == 1) { on click { page = page - 1 } }

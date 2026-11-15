@@ -12,6 +12,19 @@ store Account {
 }
 
 // RELEASE_NOTES.md
+page Doc(path: "/") {
+    match users {
+        .loading { Skeleton(height: "20px") }
+        .failed(e) { Alert(e.message).danger }                 // e: HttpError, or the endpoint's error enum
+        .loaded(list, refreshing, stale) {
+            if refreshing { Spinner.sm }
+            if stale != null { Alert("Could not refresh").warning }
+            for u in list by u.id { Text(u.name) }
+        }
+    }
+}
+
+// RELEASE_NOTES.md
 test "reporting an incident opens one more" {
     use IncidentStore
     state draft = ""

@@ -270,7 +270,7 @@ page Doc(path: "/") {
 store Feed {
     state page = 1
     resource rows: [Row] = http.get("/api/rows?page={page}")
-    derived count = rows.data?.length ?? 0
+    derived count = rows.value?.length ?? 0
     action next() { page = page + 1 }
 }
 
@@ -466,9 +466,9 @@ page Doc(path: "/") {
 page Doc(path: "/") {
     resource users: [User] = http.get("/api/users")
     match users {
-        loading { Spinner }
-        error(err) { Alert("Failed: {err.message}").danger }
-        ready(users) {
+        .loading { Spinner }
+        .failed(err) { Alert("Failed: {err.message}").danger }
+        .loaded(users) {
             for user in users by user.id {
                 Text(user.name)
             }
@@ -480,15 +480,15 @@ page Doc(path: "/") {
 type Server { id: String, name: String, status: String }
 page Servers(path: "/servers", title: "Servers", description: "Every server, kept current.") {
     state stage = "test"
-    resource servers: [Server] = http.get("/api/servers?env={stage}", on: .interval(30.seconds))
+    resource servers: [Server] = http.get("/api/servers?env={stage}", refresh: .every(30.seconds), placeholder: .previous)
     Heading("Servers").h1
     Button("Production") { on click { stage = "prod" } }
     match servers {
-        loading { Skeleton(height: "20px") }
-        error(e) { Alert(e.message).danger }
-        ready(list) {
-            if servers.error != null { Alert("Could not refresh; this is what was there.").warning }
-            if servers.refreshing { Spinner.sm }
+        .loading { Skeleton(height: "20px") }
+        .failed(e) { Alert(e.message).danger }
+        .loaded(list, refreshing, stale) {
+            if stale != null { Alert("Could not refresh; this is what was there.").warning }
+            if refreshing { Spinner.sm }
             for s in list by s.id { Text("{s.name}: {s.status}") }
         }
     }
@@ -500,7 +500,7 @@ page Doc(path: "/") {
         headers: { "Content-Type": "application/json", "X-Api-Key": apiKey },
         body: { action: "create", token: sessionToken })
     match data {
-        ready(data) { Text("Done") }
+        .loaded(created) { Text("Done") }
         else { Spinner }
     }
 }
@@ -529,11 +529,11 @@ api Backend from "openapi.json" (base: env.PUBLIC_API)
 
 // AGENTS.md
 page Doc(path: "/") {
-    resource users = Backend.users(page: n, cache: .swr(60.seconds), on: .focus)
+    resource users = Backend.users(page: n, cache: .swr(60.seconds), refresh: .onFocus)
 
     match users {
-        loading { Skeleton }
-        error(e) {
+        .loading { Skeleton }
+        .failed(e) {
             match e {
                 .offline { Alert("You are offline.").warning }
                 .timeout { Alert("The server took too long.").warning }
@@ -541,7 +541,7 @@ page Doc(path: "/") {
             }
             Button("Try again") { on click { users.reload() } }
         }
-        ready(list) { for u in list by u.id { Text(u.name) } }
+        .loaded(list) { for u in list by u.id { Text(u.name) } }
     }
 }
 
