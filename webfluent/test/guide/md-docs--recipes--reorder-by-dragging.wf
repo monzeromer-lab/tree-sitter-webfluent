@@ -27,7 +27,9 @@ page Order(path: "/order", title: "Today's order", description: "Drag the jobs i
     Stack(gap: .sm, role: "list") {
         for job, i in jobs by job.id {
             Card(drag: job.id, dropValue: job.id, role: "listitem") {
-                on receive(d) { move(d.value, job.id, d.position) }
+                on receive(d) {
+                    if let .string(id) = d.value { move(id, job.id, d.position) }
+                }
                 Row(gap: .sm, align: .center) {
                     Icon("grid")
                     Text("{i + 1}. {job.title}")

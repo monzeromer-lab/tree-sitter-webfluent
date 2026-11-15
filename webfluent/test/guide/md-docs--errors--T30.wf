@@ -1,0 +1,13 @@
+// md-docs/errors/T30.md
+page P(path: "/", title: "T", description: "D") {
+    state copied = false
+    Heading("Share").h1
+    Button("Copy the link") {
+        on click {
+            navigator.clipboard.writeText(location.href)
+            copied = true
+        }
+    }
+    if copied { Text("Copied") }
+}
+

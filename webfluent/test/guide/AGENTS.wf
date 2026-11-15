@@ -377,27 +377,16 @@ page Doc(path: "/") {
 // AGENTS.md
 page Doc(path: "/") {
     action doc() {
-        // Storage
-        localStorage.setItem("token", tok)
-        sessionStorage.getItem("key")
-
-        // Window & Document
-        window.open("https://example.com")
+        localStorage.setItem("token", tok)            // (key: String, value: String)
+        let saved = localStorage.getItem("token")     // String?
+        window.open("/docs", "_blank", "noopener")
         document.title = "New Title"
-
-        // Console
-        console.log("debug info")
-
-        // JSON
-        payload = JSON.parse(responseText)
-        text = JSON.stringify(obj)
-
-        // Timers
-        setTimeout(callback, 1000)
-
-        // Other globals: Math, Date, Array, Object, Promise, Error,
-        // parseInt, parseFloat, encodeURIComponent, atob, btoa, fetch,
-        // alert, confirm, prompt, RegExp, Map, Set, etc.
+        console.log("saved", count)                   // anything but a Secret
+        let raw = JSON.parse(text)                    // Json: match it, or decode it
+        let text = JSON.stringify({ a: 1 })           // any plain data
+        setTimeout(() => close(), 1000)
+        await navigator.clipboard.writeText(url)
+        let wide = Math.max(1, viewport.width / 2)
     }
 }
 
@@ -518,7 +507,7 @@ page Doc(path: "/") {
 
 // AGENTS.md
 type User { id: String, name: String }
-api Backend(base: env.PUBLIC_API ?? "/api/v1") {
+api Backend(base: env.PUBLIC_API) {     // its default in the config's `env`
     timeout: 10.seconds
     retry: .backoff(times: 3, on: [.network, .timeout, .status5xx])
     credentials: .sameOrigin           // .omit · .sameOrigin · .include — the

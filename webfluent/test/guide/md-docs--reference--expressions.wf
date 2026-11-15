@@ -163,7 +163,7 @@ page Report(path: "/report", title: "Report", description: "Rows loaded on reque
 // md-docs/reference/expressions.md
 const MAX_ROWS = 50
 const PAGE_SIZE: Number = 20
-const API = env.PUBLIC_API_URL ?? "/api"
+const API = env.PUBLIC_API_URL
 page Settings(path: "/settings", title: "Settings", description: "The limits this site runs with.") {
     Heading("Settings").h1
     Text("Up to {MAX_ROWS} rows, {PAGE_SIZE} a page, from {API}")
