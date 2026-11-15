@@ -142,6 +142,55 @@ api Backend(base: env.PUBLIC_API ?? "/api/v1") {
 api Backend from "openapi.json" (base: env.PUBLIC_API)
 
 // md-docs/learn/15-data.md
+type User { id: String, name: String }
+type NewUser { name: String }
+type FieldError { field: String, message: String }
+type ValidationProblem = Problem { errors: [FieldError] }
+/// Why adding someone can be refused.
+enum CreateUserError {
+    unprocessableContent(problem: ValidationProblem) on 422
+    conflict(problem: Problem) on 409
+    http(error: HttpError)
+}
+api Backend(base: "/api") {
+    post createUser(body: NewUser) at "users" -> User ! CreateUserError
+    get ping() at "ping" -> !
+}
+store People {
+    state said = ""
+
+    /// 1. Every case handled where the call is made.
+    action submit(name: String) {
+        match await Backend.createUser(body: NewUser(name: name)) {
+            .ok(u) { said = "Added {u.name}" }
+            .err(.unprocessableContent(p)) { said = p.errors.map(e => e.message).join(", ") }
+            .err(.conflict(_)) { said = "Already there" }
+            .err(.http(.status(503, _))) { said = "The service is busy" }
+            .err(.http(e)) { said = e.message }
+        }
+    }
+
+    /// 2. The failure passed up, as the action's own.
+    action invite(name: String) -> User ! CreateUserError {
+        let user = try await Backend.createUser(body: NewUser(name: name))
+        return user
+    }
+}
+page Team(path: "/people", title: "People", description: "Adding someone, and why it can fail.") {
+    use People
+    state name = ""
+    Heading("People").h1
+    Input(bind: name, label: "Name")
+    Button("Add") { on click { People.submit(name) } }
+    Button("Invite") { on click { People.invite(name) } }
+    Text(People.said)
+    // 3. The last outcome of an action, read where it is shown.
+    if let .err(.unprocessableContent(p)) = People.invite.result {
+        Alert(p.title ?? "Check the form").danger
+    }
+}
+
+// md-docs/learn/15-data.md
 type Item { id: String, name: String }
 api Catalog(base: "/api") {
     get items(page: Number = 1) -> [Item]

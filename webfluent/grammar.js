@@ -411,6 +411,8 @@ module.exports = grammar({
       seq(
         field("name", choice($.identifier, alias($.null, $.identifier))),
         optional(seq("(", sepBy1($.field_declaration, ","), optional(","), ")")),
+        // `on 422`: the status a case of an error enum stands for.
+        optional(seq("on", field("status", $.number))),
       ),
 
     // A page or component may be named after a built-in (`page Menu`).
@@ -708,9 +710,18 @@ module.exports = grammar({
         ),
       ),
 
-    // `if let hint = expr { }`, or `if let hint { }` for a name in scope.
+    // `if let hint = expr { }`, or `if let hint { }` for a name in scope;
+    // `if let .err(e) = outcome { }` takes a case.
     if_let: ($) =>
-      prec.right(seq("let", field("name", $._name), optional(seq("=", field("value", $._expression))))),
+      prec.right(
+        seq(
+          "let",
+          choice(
+            seq(field("name", $._name), optional(seq("=", field("value", $._expression)))),
+            seq(field("pattern", $.case_pattern), "=", field("value", $._expression)),
+          ),
+        ),
+      ),
 
     else_clause: ($) => seq("else", choice($.if_statement, $.block)),
 
@@ -769,9 +780,15 @@ module.exports = grammar({
         optional(seq("(", field("name", $._name), ")")),
       ),
 
-    // `.failed(reason)` binds the case's payload, one name per part.
+    // `.failed(reason)` binds the case's payload, one name per part; a part
+    // may be `_`, a literal, or a case of its own: `.err(.status(503, _))`.
     case_pattern: ($) =>
-      seq($.enum_case, optional(seq("(", sepBy1(field("binding", $._name), ","), ")"))),
+      seq($.enum_case, optional(seq("(", sepBy1(field("binding", $._pattern), ","), ")"))),
+
+    _pattern: ($) =>
+      choice($._name, $.case_pattern, $.number, $.string, $.boolean, $.null, $.negative_pattern),
+
+    negative_pattern: ($) => seq("-", $.number),
 
     else_pattern: (_) => "else",
 
@@ -1097,7 +1114,7 @@ module.exports = grammar({
     unary_expression: ($) =>
       prec(
         PREC.unary,
-        seq(field("operator", choice("!", "-", "await")), field("operand", $._expression)),
+        seq(field("operator", choice("!", "-", "await", "try")), field("operand", $._expression)),
       ),
 
     // `event` is a keyword where a statement starts, so a handler's

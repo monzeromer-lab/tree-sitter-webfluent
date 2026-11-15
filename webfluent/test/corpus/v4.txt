@@ -650,3 +650,162 @@ page P(path: "/") {
               (argument_list
                 (string
                   (string_content))))))))))
+
+==================
+Error enums, try, nested patterns and if let with a case
+==================
+
+enum CreateUserError {
+    conflict(problem: Problem) on 409
+    http(error: HttpError)
+}
+store People {
+    action invite(name: String) -> User ! CreateUserError {
+        let user = try await Backend.create(body: name)
+        return user
+    }
+    action submit(name: String) {
+        match await Backend.create(body: name) {
+            .ok(u) { said = u.name }
+            .err(.http(.status(503, _))) { said = "down" }
+            .err(_) { said = "failed" }
+        }
+    }
+}
+page P(path: "/") {
+    if let .err(.conflict(p)) = People.invite.result { Text("taken") }
+}
+
+---
+
+(source_file
+  (enum_declaration
+    (component_identifier)
+    (enum_case_declaration
+      (identifier)
+      (field_declaration
+        (identifier)
+        (named_type
+          (component_identifier)))
+      (number))
+    (enum_case_declaration
+      (identifier)
+      (field_declaration
+        (identifier)
+        (named_type
+          (component_identifier)))))
+  (store_declaration
+    (component_identifier)
+    (block
+      (action_declaration
+        (identifier)
+        (parameter_list
+          (parameter
+            (identifier)
+            (builtin_type)))
+        (result_type
+          (named_type
+            (component_identifier))
+          (named_type
+            (component_identifier)))
+        (block
+          (let_declaration
+            (identifier)
+            (unary_expression
+              (unary_expression
+                (call_expression
+                  (member_expression
+                    (component_identifier)
+                    (identifier))
+                  (arguments
+                    (named_argument
+                      (attribute_name
+                        (identifier))
+                      (identifier)))))))
+          (return_statement
+            (identifier))))
+      (action_declaration
+        (identifier)
+        (parameter_list
+          (parameter
+            (identifier)
+            (builtin_type)))
+        (block
+          (match_statement
+            (unary_expression
+              (call_expression
+                (member_expression
+                  (component_identifier)
+                  (identifier))
+                (arguments
+                  (named_argument
+                    (attribute_name
+                      (identifier))
+                    (identifier)))))
+            (match_arm
+              (case_pattern
+                (enum_case
+                  (identifier))
+                (identifier))
+              (block
+                (assignment
+                  (identifier)
+                  (member_expression
+                    (identifier)
+                    (identifier)))))
+            (match_arm
+              (case_pattern
+                (enum_case
+                  (identifier))
+                (case_pattern
+                  (enum_case
+                    (identifier))
+                  (case_pattern
+                    (enum_case
+                      (identifier))
+                    (number)
+                    (identifier))))
+              (block
+                (assignment
+                  (identifier)
+                  (string
+                    (string_content)))))
+            (match_arm
+              (case_pattern
+                (enum_case
+                  (identifier))
+                (identifier))
+              (block
+                (assignment
+                  (identifier)
+                  (string
+                    (string_content))))))))))
+  (page_declaration
+    (component_identifier)
+    (page_attributes
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (block
+      (if_statement
+        (if_let
+          (case_pattern
+            (enum_case
+              (identifier))
+            (case_pattern
+              (enum_case
+                (identifier))
+              (identifier)))
+          (member_expression
+            (member_expression
+              (component_identifier)
+              (identifier))
+            (identifier)))
+        (block
+          (element
+            (builtin_component)
+            (argument_list
+              (string
+                (string_content)))))))))

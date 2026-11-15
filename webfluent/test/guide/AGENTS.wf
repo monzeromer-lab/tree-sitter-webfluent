@@ -252,7 +252,7 @@ store CartStore {
         total = total + product.price
     }
 
-    action getHeaders() {
+    action getHeaders() -> [String: String] {
         let h = {}
         h["Authorization"] = "Bearer " + accessToken
         return h
@@ -348,7 +348,7 @@ page Signup(path: "/join", title: "Join", description: "Make an account.") {
 store AuthStore {
     state accessToken = ""
 
-    action getHeaders() {
+    action getHeaders() -> [String: String] {
         let h = {}
         h["Authorization"] = "Bearer " + accessToken
         return h
@@ -590,7 +590,7 @@ store Lang {
         on message(m) { if m.type == "diagnostics" { problems = m.items } }
         on restart(e) { log("css restarted: {e.message}") }
     }
-    action complete(text: String, at: Number) {
+    action complete(text: String, at: Number) -> Json {
         return await css.request("complete", { text: text, at: at }, { supersede: true })
     }
 }

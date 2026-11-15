@@ -1015,11 +1015,35 @@
         "required": false,
         "types": [
           {
+            "type": "boolean",
+            "named": true
+          },
+          {
+            "type": "case_pattern",
+            "named": true
+          },
+          {
             "type": "component_identifier",
             "named": true
           },
           {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "negative_pattern",
+            "named": true
+          },
+          {
+            "type": "null",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           }
         ]
@@ -1886,6 +1910,16 @@
             "named": true
           }
         ]
+      },
+      "status": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "number",
+            "named": true
+          }
+        ]
       }
     },
     "children": {
@@ -2639,7 +2673,7 @@
     "fields": {
       "name": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "component_identifier",
@@ -2647,6 +2681,16 @@
           },
           {
             "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "pattern": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "case_pattern",
             "named": true
           }
         ]
@@ -3335,6 +3379,21 @@
       "types": [
         {
           "type": "_expression",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "negative_pattern",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "number",
           "named": true
         }
       ]
@@ -4828,6 +4887,10 @@
           },
           {
             "type": "await",
+            "named": false
+          },
+          {
+            "type": "try",
             "named": false
           }
         ]

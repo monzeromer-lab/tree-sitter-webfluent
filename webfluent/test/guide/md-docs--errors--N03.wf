@@ -1,0 +1,19 @@
+// md-docs/errors/N03.md
+type User { id: String, name: String }
+api Backend(base: "/api") {
+    get user(id: String) at "users/:id" -> User!
+}
+store People {
+    state name = ""
+    action load(id: String) -> ! {
+        let user = try await Backend.user(id: id)
+        name = user.name
+    }
+}
+page P(path: "/", title: "T", description: "D") {
+    use People
+    Heading("People").h1
+    Button("Load") { on click { People.load("1") } }
+    Text(People.name)
+}
+

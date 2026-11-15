@@ -1,0 +1,12 @@
+// md-docs/errors/N12.md
+type Problem2 { title: String }
+enum SaveError {
+    conflict(problem: Problem2) on 409
+    http(error: HttpError)
+}
+page P(path: "/", title: "T", description: "D") {
+    state last: SaveError? = null
+    Heading("Save").h1
+    Text("{last == null}")
+}
+
