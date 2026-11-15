@@ -503,3 +503,150 @@ page P(path: "/") {
             (block
               (log_statement
                 (identifier)))))))))
+
+==================
+Dictionaries, function types, aliases, results, Json and typed lambdas
+==================
+
+type Scores = [String: Number]
+type Check = (String, Number) -> Bool
+type Outcome = Settings ! DecodeError
+store Prefs {
+    state prices: [Region: Number] = { north: 1 }
+    state raw: Json = Json.null
+    action best() -> Number { return 1 }
+    action forget() -> ! DecodeError { return }
+    action quiet() -> ! { return }
+}
+component Picker(describe: (Region) -> String, done: () -> ()) { Text("x") }
+page P(path: "/") {
+    derived byTheme = (a: Settings, b: Settings) => a.theme
+    match raw {
+        .null { Text("nothing") }
+        else { Text("something") }
+    }
+}
+
+---
+
+(source_file
+  (type_declaration
+    (component_identifier)
+    (dictionary_type
+      (builtin_type)
+      (builtin_type)))
+  (type_declaration
+    (component_identifier)
+    (function_type
+      (builtin_type)
+      (builtin_type)
+      (builtin_type)))
+  (type_declaration
+    (component_identifier)
+    (result_type
+      (named_type
+        (component_identifier))
+      (named_type
+        (component_identifier))))
+  (store_declaration
+    (component_identifier)
+    (block
+      (state_declaration
+        (identifier)
+        (dictionary_type
+          (named_type
+            (component_identifier))
+          (builtin_type))
+        (object
+          (pair
+            (identifier)
+            (number))))
+      (state_declaration
+        (identifier)
+        (named_type
+          (component_identifier))
+        (member_expression
+          (component_identifier)
+          (identifier)))
+      (action_declaration
+        (identifier)
+        (parameter_list)
+        (builtin_type)
+        (block
+          (return_statement
+            (number))))
+      (action_declaration
+        (identifier)
+        (parameter_list)
+        (failure_type
+          (named_type
+            (component_identifier)))
+        (block
+          (return_statement)))
+      (action_declaration
+        (identifier)
+        (parameter_list)
+        (failure_type)
+        (block
+          (return_statement)))))
+  (component_declaration
+    (component_identifier)
+    (parameter_list
+      (parameter
+        (identifier)
+        (function_type
+          (named_type
+            (component_identifier))
+          (builtin_type)))
+      (parameter
+        (identifier)
+        (function_type
+          (unit_type))))
+    (block
+      (element
+        (builtin_component)
+        (argument_list
+          (string
+            (string_content))))))
+  (page_declaration
+    (component_identifier)
+    (page_attributes
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (block
+      (derived_declaration
+        (identifier)
+        (lambda
+          (lambda_parameters
+            (identifier)
+            (named_type
+              (component_identifier))
+            (identifier)
+            (named_type
+              (component_identifier)))
+          (member_expression
+            (identifier)
+            (identifier))))
+      (match_statement
+        (identifier)
+        (match_arm
+          (case_pattern
+            (enum_case
+              (identifier)))
+          (block
+            (element
+              (builtin_component)
+              (argument_list
+                (string
+                  (string_content))))))
+        (match_arm
+          (else_pattern)
+          (block
+            (element
+              (builtin_component)
+              (argument_list
+                (string
+                  (string_content))))))))))

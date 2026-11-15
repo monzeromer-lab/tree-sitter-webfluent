@@ -130,6 +130,34 @@ page Doc(path: "/") {
 }
 
 // AGENTS.md
+type Scores = [String: Number]               // an alias: another name for a type
+type Settings { theme: String, columns: Number }
+enum Region { north, south }
+store Prefs {
+    state scores: Scores = { ada: 3, bo: 5 }  // a dictionary: keys of one type, values of another
+    state prices: [Region: Number] = { north: 10, south: 20 }
+    state raw: Json = Json.null              // JSON as it arrives
+    action total() -> Number {               // what an action returns
+        return scores.values().sum()
+    }
+}
+component Label(_ region: Region, describe: (Region) -> String) {   // a function type
+    Text(describe(region))
+}
+page Restore(path: "/", title: "Restore", description: "Settings decoded from text.") {
+    use Prefs
+    state text = "{\"theme\": \"dark\", \"columns\": 3}"
+    derived byTheme = (a: Settings, b: Settings) => a.theme.localeCompare(b.theme)
+    Heading("Restore").h1
+    match Settings.decode(JSON.parse(text)) {   // a result: Settings ! DecodeError
+        .ok(s) { Text("{s.theme}, {s.columns} columns") }
+        .err(e) { Alert("{e.at} {e.message}").danger }   // `$.columns` · `is "3", not a Number`
+    }
+    Text("{Prefs.total()} points; Ada has {Prefs.scores.ada ?? 0}")
+    Label(.south, describe: r => "Region {r}")
+}
+
+// AGENTS.md
 const API = "/api/v1"
 const PAGE_SIZE: Number = 20
 page Doc(path: "/") {

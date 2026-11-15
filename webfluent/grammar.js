@@ -258,7 +258,7 @@ module.exports = grammar({
           field("name", $._name),
           optional(field("parameters", $.parameter_list)),
           optional(seq("at", field("path", $.string))),
-          optional(seq("-", ">", field("returns", $._type))),
+          optional(seq("-", ">", field("returns", $._returns))),
           repeat(choice($.endpoint_errors, $.endpoint_setting)),
         ),
       ),
@@ -379,9 +379,15 @@ module.exports = grammar({
       seq(
         "type",
         field("name", $._name),
-        // `type Admin = User { … }`: every field of `User`, and these.
-        optional(seq("=", field("base", $._name))),
-        braced($, seq(sepBy($.field_declaration, optional(",")), optional(","))),
+        choice(
+          seq(
+            // `type Admin = User { … }`: every field of `User`, and these.
+            optional(seq("=", field("base", $._name))),
+            braced($, seq(sepBy($.field_declaration, optional(",")), optional(","))),
+          ),
+          // `type Scores = [String: Number]`: another name for a type.
+          seq("=", field("alias", $._type)),
+        ),
       ),
 
     field_declaration: ($) =>
@@ -403,7 +409,7 @@ module.exports = grammar({
 
     enum_case_declaration: ($) =>
       seq(
-        field("name", $.identifier),
+        field("name", choice($.identifier, alias($.null, $.identifier))),
         optional(seq("(", sepBy1($.field_declaration, ","), optional(","), ")")),
       ),
 
@@ -427,7 +433,37 @@ module.exports = grammar({
       ),
 
     _type: ($) =>
-      choice($.builtin_type, $.list_type, $.optional_type, $.refined_type, $.named_type),
+      choice(
+        $.builtin_type,
+        $.list_type,
+        $.dictionary_type,
+        $.function_type,
+        $.unit_type,
+        $.optional_type,
+        $.refined_type,
+        $.result_type,
+        $.named_type,
+      ),
+
+    // `[String: Number]` — keys of one type, values of another.
+    dictionary_type: ($) => seq("[", field("key", $._type), ":", field("value", $._type), "]"),
+
+    // `(Todo) -> Bool`, `() -> ()` — a function.
+    function_type: ($) =>
+      prec.right(seq("(", sepBy($._type, ","), ")", "-", ">", field("returns", $._returns))),
+
+    // `()` — nothing.
+    unit_type: (_) => seq("(", ")"),
+
+    // `Settings ! DecodeError`, `User!` — a value, or what it fails with.
+    result_type: ($) =>
+      prec.right(1, seq(field("value", $._type), "!", optional(field("error", $.named_type)))),
+
+    // What an action, an endpoint or a function returns: a type, or `! E`
+    // and `!` for nothing that may fail.
+    _returns: ($) => choice($._type, $.failure_type),
+
+    failure_type: ($) => prec.right(seq("!", optional(field("error", $.named_type)))),
 
     // `Number(1..=30)`, `String(minLength: 8)`, `Date(after: @2026-01-01)` —
     // a type with a condition its values must meet.
@@ -444,7 +480,7 @@ module.exports = grammar({
 
     list_type: ($) => seq("[", $._type, "]"),
 
-    optional_type: ($) => prec.left(seq($._type, "?")),
+    optional_type: ($) => prec.left(2, seq($._type, "?")),
 
     named_type: ($) => $.component_identifier,
 
@@ -584,6 +620,8 @@ module.exports = grammar({
         "action",
         field("name", $._name),
         optional(field("parameters", $.parameter_list)),
+        // `-> Number`: what it returns.
+        optional(seq("-", ">", field("returns", $._returns))),
         optional(field("concurrent", "concurrent")),
         field("body", $.block),
       ),
@@ -1072,8 +1110,9 @@ module.exports = grammar({
           field("object", $._expression),
           // `?.` reads null through null.
           choice(".", "?."),
-          // Any word may follow a dot — `item.action`, `Array.from`.
-          field("property", $._name),
+          // Any word may follow a dot — `item.action`, `Array.from`,
+          // `Json.null`.
+          field("property", $._case_name),
         ),
       ),
 
@@ -1124,7 +1163,10 @@ module.exports = grammar({
         ),
       ),
 
-    lambda_parameters: ($) => seq("(", sepBy($.identifier, ","), ")"),
+    // `(a, b)`, or with types: `(a: User, b: User)`. Each name is a child
+    // of its own, its type beside it.
+    lambda_parameters: ($) =>
+      seq("(", sepBy(seq($.identifier, optional(seq(":", field("type", $._type)))), ","), ")"),
 
     // `if cond { a } else { b }` as a value, chained with `else if`; in the
     // indented layout each branch may be the lines under it. The
@@ -1159,11 +1201,14 @@ module.exports = grammar({
       seq(field("pattern", $._arm_pattern), braced($, field("value", $._expression))),
 
     // `.primary`, `.calm` — a case of an enum, named by the prop or type.
-    enum_case: ($) => seq(".", field("name", $._name)),
+    enum_case: ($) => seq(".", field("name", $._case_name)),
+
+    // A case's name: a word, or `null` — `Json`'s case for JSON's null.
+    _case_name: ($) => choice($._name, alias($.null, $.identifier)),
 
     // `.failed("boom")` — a case with its payload.
     case_value: ($) =>
-      prec(PREC.postfix, seq(".", field("name", $._name), field("arguments", $.arguments))),
+      prec(PREC.postfix, seq(".", field("name", $._case_name), field("arguments", $.arguments))),
 
     // `$surface`, `$spacing-xl` — a design token.
     design_token: (_) => token(seq("$", /[a-zA-Z_][a-zA-Z0-9_-]*/)),

@@ -105,6 +105,64 @@ page Shapes(path: "/", title: "Shapes", description: "A map literal with a shape
 }
 
 // md-docs/learn/12-types.md
+type Scores = [String: Number]
+enum Region { north, south }
+component Label(_ region: Region, describe: (Region) -> String) {
+    Text(describe(region))
+}
+page Dictionaries(path: "/", title: "Dictionaries", description: "Values by key, and a function as a prop.") {
+    state scores: Scores = { ada: 3, bo: 5 }
+    state prices: [Region: Number] = { north: 10, south: 20 }
+    Heading("Dictionaries").h1
+    Text("{scores.values().sum()} points; Ada has {scores.ada ?? 0}")
+    Text("North costs {prices.north ?? 0}")
+    Button("Add Cy") { on click { scores = scores.with("cy", 7) } }
+    Label(.south, describe: r => "Region {r}")
+}
+
+// md-docs/learn/12-types.md
+type Todo { id: String, title: String, done: Bool = false }
+store Todos {
+    state items: [Todo] = []
+    action open() -> Number {
+        return items.filter(todo => !todo.done).length
+    }
+}
+page Typed(path: "/", title: "Typed", description: "An action's result and a typed lambda.") {
+    use Todos
+    derived byTitle = (a: Todo, b: Todo) => a.title.localeCompare(b.title)
+    Heading("Typed").h1
+    Text("{Todos.open()} open")
+    for todo in Todos.items.slice().sort(byTitle) by todo.id { Text(todo.title) }
+}
+
+// md-docs/learn/12-types.md
+page Kinds(path: "/", title: "Kinds", description: "A JSON value read by what it is.") {
+    state raw: Json = Json.array([Json.number(1), Json.number(2)])
+    Heading("Kinds").h1
+    match raw {
+        .object(fields) { Text("An object of {fields.keys().length} fields") }
+        .array(items) { Text("A list of {items.length}") }
+        .string(s) { Text("The text {s}") }
+        .number(n) { Text("The number {n}") }
+        .bool(b) { Text("The flag {b}") }
+        .null { Text("Nothing") }
+    }
+}
+
+// md-docs/learn/12-types.md
+type Settings { theme: String, columns: Number }
+page Restore(path: "/", title: "Restore", description: "Settings decoded from text.") {
+    state text = "{\"theme\": \"dark\", \"columns\": 3}"
+    Heading("Restore").h1
+    Textarea(bind: text, label: "Settings", rows: 3)
+    match Settings.decode(JSON.parse(text)) {
+        .ok(s) { Text("{s.theme}, {s.columns} columns") }
+        .err(e) { Alert("{e.at} {e.message}").danger }
+    }
+}
+
+// md-docs/learn/12-types.md
 type Row { id: Number, label: String, score: Number? }
 page Infer(path: "/", title: "Infer", description: "Types the checker works out.") {
     state rows: [Row] = [Row(id: 1, label: "a"), Row(id: 2, label: "b", score: 9)]
