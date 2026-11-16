@@ -69,3 +69,63 @@ test "a task is added with Enter" {
     expect "Walk the dog"
 }
 
+// md-docs/learn/16-testing.md
+type Person { id: String, name: String, email: Email }
+type NewPerson { name: String, email: Email }
+type FieldError { field: String, message: String }
+type ValidationProblem = Problem { errors: [FieldError] }
+enum CreatePersonError {
+    unprocessableContent(problem: ValidationProblem) on 422
+    http(error: HttpError)
+}
+api Backend(base: "/api") { }
+api Backend.people {
+    get list() at "people" -> [Person]!
+    post create(body: NewPerson) at "people" -> Person ! CreatePersonError
+    invalidates [list]
+}
+store Team {
+    state problem = ""
+    action add(name: String, email: Email) {
+        match await Backend.people.create(body: NewPerson(name: name, email: email)) {
+            .ok(_) { problem = "" }
+            .err(.unprocessableContent(p)) { problem = p.errors.first()?.message ?? "Check the form" }
+            .err(.http(e)) { problem = e.message }
+        }
+    }
+}
+page People(path: "/", title: "People", description: "The team.") {
+    use Team
+    state email: Email = "ada@example.com"
+    resource people = Backend.people.list()
+    Heading("People").h1
+    match people {
+        .loading { Spinner }
+        .failed(e) { Alert(e.message).danger }
+        .loaded(list) { for p in list by p.id { Text(p.name) } }
+    }
+    Input(bind: email, label: "Email").email
+    Button("Add") { on click { Team.add("Grace", email) } }
+    Text(Team.problem)
+}
+fake OneEngineer for Backend.people {
+    list() {
+        .ok([Person(id: "1", name: "Ada", email: "ada@example.com")])
+    }
+    create(body) {
+        if body.email.domain() == "example.com" { .ok(Person(id: "2", name: body.name, email: body.email)) } else { .err(.unprocessableContent(ValidationProblem(title: "Invalid", errors: [FieldError(field: "email", message: "Use your work address")]))) }
+    }
+}
+test "lists the team"(fakes: [OneEngineer]) {
+    People
+    expect "Ada"
+    expect not called Backend.people.create
+}
+test "shows the server's field error"(fakes: [OneEngineer]) {
+    People
+    type "grace@elsewhere.org" into "Email"
+    click "Add"
+    expect "Use your work address"
+    expect called Backend.people.create
+}
+

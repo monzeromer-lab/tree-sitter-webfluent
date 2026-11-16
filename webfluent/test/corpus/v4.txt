@@ -966,3 +966,92 @@ store Logs {
             (block
               (log_statement
                 (identifier)))))))))
+
+================================================================================
+A fake, and a test that names it and expects calls
+================================================================================
+
+fake OneUser for Backend.users {
+    list(page, q) {
+        .ok([User(id: "1", name: "Ada")])
+    }
+    remove(id) {
+        .err(.status(500, null))
+    }
+}
+
+test "lists"(fakes: [OneUser]) {
+    Users
+    expect "Ada"
+    expect called Backend.users.list
+    expect not called Backend.users.remove
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (fake_declaration
+    (component_identifier)
+    (member_expression
+      (component_identifier)
+      (identifier))
+    (fake_body
+      (fake_answer
+        (identifier)
+        (identifier)
+        (identifier)
+        (case_value
+          (identifier)
+          (arguments
+            (array
+              (call_expression
+                (component_identifier)
+                (arguments
+                  (named_argument
+                    (attribute_name
+                      (identifier))
+                    (string
+                      (string_content)))
+                  (named_argument
+                    (attribute_name
+                      (identifier))
+                    (string
+                      (string_content)))))))))
+      (fake_answer
+        (identifier)
+        (identifier)
+        (case_value
+          (identifier)
+          (arguments
+            (case_value
+              (identifier)
+              (arguments
+                (number)
+                (null))))))))
+  (test_declaration
+    (string
+      (string_content))
+    (argument_list
+      (named_argument
+        (attribute_name
+          (identifier))
+        (array
+          (component_identifier))))
+    (block
+      (element
+        (component_identifier))
+      (expect_statement
+        (string
+          (string_content)))
+      (expect_statement
+        (member_expression
+          (member_expression
+            (component_identifier)
+            (identifier))
+          (identifier)))
+      (expect_statement
+        (member_expression
+          (member_expression
+            (component_identifier)
+            (identifier))
+          (identifier))))))

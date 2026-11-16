@@ -199,6 +199,7 @@ module.exports = grammar({
         $.middleware_declaration,
         $.animation_declaration,
         $.test_declaration,
+        $.fake_declaration,
       ),
 
     // `const API = "/api"`
@@ -398,11 +399,36 @@ module.exports = grammar({
         field("body", $.block),
       ),
 
-    // `expect "text"`, `expect not "text"`, `expect focus "Two"` — inside a test.
+    // `fake OneUser for Backend.users { list(page) { .ok([…]) } }` — what
+    // a test's endpoints answer in place of the network.
+    fake_declaration: ($) =>
+      seq(
+        "fake",
+        field("name", $._name),
+        "for",
+        field("target", $._expression),
+        field("body", $.fake_body),
+      ),
+
+    fake_body: ($) => braced($, repeat($.fake_answer)),
+
+    // `list(page, q) { .ok([]) }`: one endpoint's answer.
+    fake_answer: ($) =>
+      seq(
+        field("name", $._name),
+        "(",
+        sepBy(field("parameter", $._name), ","),
+        ")",
+        braced($, field("value", $._expression)),
+      ),
+
+    // `expect "text"`, `expect not "text"`, `expect focus "Two"`,
+    // `expect called Backend.users.create` — inside a test.
     expect_statement: ($) =>
       choice(
         seq("expect", optional("not"), field("text", $._expression)),
         seq("expect", "focus", field("focus", $.string)),
+        prec(1, seq("expect", optional("not"), "called", field("endpoint", $._expression))),
       ),
 
     // What a test does, as against what it then expects: `click "Save"`,

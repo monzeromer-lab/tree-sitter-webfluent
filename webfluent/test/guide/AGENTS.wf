@@ -23,6 +23,46 @@ test "reporting an incident opens one more" {
 }
 
 // AGENTS.md
+type User { id: String, name: String }
+type NewUser { name: String }
+enum CreateUserError {
+    unprocessableContent(problem: Problem) on 422
+    http(error: HttpError)
+}
+api Backend(base: "/api") { }
+api Backend.users {
+    get list(page: Number = 1) at "users" -> [User]!
+    post create(body: NewUser) at "users" -> User ! CreateUserError
+    invalidates [list]
+    delete remove(id: String) at "users/{id}" -> !
+}
+page Users(path: "/users", title: "Users", description: "Who is here.") {
+    state name = ""
+    resource users = Backend.users.list()
+    Heading("Users").h1
+    match users {
+        .loaded(list) { for u in list by u.id { Text(u.name) } }
+        else { Spinner }
+    }
+    Input(bind: name, label: "Name")
+    Button("Add") { on click { Backend.users.create(body: NewUser(name: name)) } }
+}
+fake OneUser for Backend.users {
+    list(page) { .ok([User(id: "1", name: "Ada")]) }
+    create(body) {
+        if body.name == "" { .err(.unprocessableContent(Problem(title: "A name is needed"))) } else { .ok(User(id: "2", name: body.name)) }
+    }
+    remove(id) { .err(.status(500, null)) }
+}
+test "adds a user"(fakes: [OneUser]) {
+    Users
+    expect "Ada"
+    type "Grace" into "Name"
+    click "Add"
+    expect called Backend.users.create
+}
+
+// AGENTS.md
 page Home(path: "/", title: "Home") {
     state count = 0
 

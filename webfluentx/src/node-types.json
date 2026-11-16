@@ -32,6 +32,10 @@
         "named": true
       },
       {
+        "type": "fake_declaration",
+        "named": true
+      },
+      {
         "type": "middleware_declaration",
         "named": true
       },
@@ -2250,6 +2254,16 @@
     "type": "expect_statement",
     "named": true,
     "fields": {
+      "endpoint": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "_expression",
+            "named": true
+          }
+        ]
+      },
       "focus": {
         "multiple": false,
         "required": false,
@@ -2321,6 +2335,105 @@
         "types": [
           {
             "type": "named_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "fake_answer",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "component_identifier",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "parameter": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "component_identifier",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_expression",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "fake_body",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "fake_answer",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "fake_declaration",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "fake_body",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "component_identifier",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_expression",
             "named": true
           }
         ]
@@ -5998,6 +6111,10 @@
     "named": false
   },
   {
+    "type": "called",
+    "named": false
+  },
+  {
     "type": "catch",
     "named": false
   },
@@ -6123,6 +6240,10 @@
   },
   {
     "type": "expect",
+    "named": false
+  },
+  {
+    "type": "fake",
     "named": false
   },
   {

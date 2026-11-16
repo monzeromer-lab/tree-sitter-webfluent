@@ -1,0 +1,20 @@
+// md-docs/errors/N06.md
+type User { id: String, name: String }
+api Backend(base: "/api") { }
+api Backend.users {
+    get list(page: Number = 1) at "users" -> [User]!
+}
+fake OneUser for Backend.users {
+    list(page) {
+        .ok([User(id: "1", name: "Ada")])
+    }
+}
+page P(path: "/", title: "T", description: "D") {
+    resource users = Backend.users.list()
+    Heading("Users").h1
+    match users {
+        .loaded(list) { Text("{list.length} users") }
+        else { Spinner }
+    }
+}
+
