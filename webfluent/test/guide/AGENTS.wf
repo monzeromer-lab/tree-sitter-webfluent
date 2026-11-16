@@ -558,6 +558,34 @@ page Doc(path: "/") {
 }
 
 // AGENTS.md
+type Post { id: String, title: String }
+type FeedPage { posts: [Post], nextCursor: String? }
+type LogLine { at: String, text: String }
+api Social(base: "/api") {
+    get feed(after: String?) at "feed" -> FeedPage!
+        pages .cursor(param: after, next: p => p.nextCursor, items: p => p.posts)
+    get list(page: Number = 1) at "posts" -> [Post]!
+        pages .number(param: page)                // ends at the first empty page
+    get search(q: String) at "search" -> [Post]!
+        pages .link                               // the Link header's rel="next" (RFC 8288)
+    get tail(id: String) at "logs/{id}" -> [LogLine]! streamed
+}
+store Logs {
+    state seen: [String] = []
+    action follow(id: String) {
+        for await line, i in Social.tail(id: id) { seen = seen.concat(["{i}: {line.text}"]) }
+    }
+}
+page Feed(path: "/feed", title: "Feed", description: "What is new.") {
+    resource feed = Social.feed()                 // a paged read of Post
+    resource tail = Social.tail(id: "deploy-7")   // .loaded from the first line
+    Heading("Feed").h1
+    for p in feed.items by p.id { Text(p.title) }
+    if feed.hasMore { Button("More", loading: feed.pending) { on click { feed.loadMore() } } }
+    Text("{tail.value?.length ?? 0} lines so far")
+}
+
+// AGENTS.md
 page Doc(path: "/") {
     socket chat = ws("wss://example.com/chat", protocols: ["v2"], heartbeat: 20.seconds) {
         send    Outgoing                  // typed both ways
@@ -604,6 +632,9 @@ page Home(path: "/", title: "Home", description: "The front page.") {
     }
     if network.queued > 0 {
         Text("{network.queued} change(s) will be sent when you are back online").muted
+    }
+    for r in network.refused by r.at {
+        Alert("The server refused {r.method} {r.url} ({r.status})").danger
     }
     Heading("Home").h1
 }

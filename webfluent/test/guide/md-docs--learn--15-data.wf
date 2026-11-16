@@ -115,7 +115,7 @@ page Users(path: "/users", title: "Users", description: "Everyone.") {
         .loading { Skeleton(height: "20px") }
         .failed(e) {
             match e {
-                .offline { Alert("You are offline.").warning }
+                .offline(_) { Alert("You are offline.").warning }
                 .timeout { Alert("The server took too long.").warning }
                 else     { Alert(e.message).danger }
             }
@@ -249,16 +249,58 @@ page Team(path: "/people", title: "People", description: "Adding someone, and wh
 type Item { id: String, name: String }
 api Catalog(base: "/api") {
     get items(page: Number = 1) at "items" -> [Item]!
+        pages .number(param: page)
 }
 page Items(path: "/items", title: "Items", description: "Everything, a page at a time.") {
-    state page = 1
-    resource list = Catalog.items(page: page, paginate: .page)
+    resource list = Catalog.items()
 
     Heading("Items").h1
     for item in list.items by item.id { Text(item.name) }
     if list.hasMore {
-        Button("Load more") { on click { list.loadMore() } }
+        Button("Load more", loading: list.pending) { on click { list.loadMore() } }
     }
+}
+
+// md-docs/learn/15-data.md
+type Post { id: String, title: String }
+type FeedPage { posts: [Post], nextCursor: String? }
+api Social(base: "/api") {
+    get feed(after: String?) at "feed" -> FeedPage!
+        pages .cursor(param: after, next: p => p.nextCursor, items: p => p.posts)
+}
+page Feed(path: "/feed", title: "Feed", description: "What is new, a page at a time.") {
+    resource feed = Social.feed()
+
+    Heading("Feed").h1
+    for post in feed.items by post.id { Text(post.title) }
+    if feed.hasMore {
+        Button("More", loading: feed.pending) { on click { feed.loadMore() } }
+    }
+}
+
+// md-docs/learn/15-data.md
+type LogLine { at: String, text: String }
+api Deploys(base: "/api") {
+    get tail(id: String) at "deploys/{id}/log" -> [LogLine]! streamed
+}
+store Follow {
+    state last = ""
+    action watch(id: String) {
+        for await line in Deploys.tail(id: id) { last = line.text }
+    }
+}
+page Log(path: "/log", title: "Log", description: "A deploy's log, as it is written.") {
+    use Follow
+    resource lines = Deploys.tail(id: "7")
+
+    Heading("Deploy 7").h1
+    match lines {
+        .loading { Spinner }
+        .failed(e) { Alert(e.message).danger }
+        .loaded(all) { for line, i in all by i { Text("{line.at} {line.text}") } }
+    }
+    Button("Follow") { on click { Follow.watch("7") } }
+    Text(Follow.last)
 }
 
 // md-docs/learn/15-data.md

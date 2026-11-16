@@ -280,7 +280,15 @@ module.exports = grammar({
           optional(field("parameters", $.endpoint_parameters)),
           optional(seq("at", field("path", $.string))),
           optional(seq("-", ">", field("returns", $._returns))),
-          repeat(choice($.endpoint_errors, $.endpoint_setting, $.endpoint_marker, $.endpoint_invalidates)),
+          repeat(
+            choice(
+              $.endpoint_errors,
+              $.endpoint_setting,
+              $.endpoint_marker,
+              $.endpoint_invalidates,
+              $.endpoint_pages,
+            ),
+          ),
         ),
       ),
 
@@ -294,8 +302,12 @@ module.exports = grammar({
     // `invalidates [list, byId(id)]` — the reads a write makes stale.
     endpoint_invalidates: ($) => seq("invalidates", field("reads", $.array)),
 
-    // `idempotent` — safe to send twice, with the key that says so.
-    endpoint_marker: (_) => "idempotent",
+    // `pages .cursor(param: after, next: p => p.next)` — how a read pages.
+    endpoint_pages: ($) => seq("pages", field("by", $._expression)),
+
+    // `idempotent` — safe to send twice, with the key that says so;
+    // `streamed` — an answer that arrives a line at a time.
+    endpoint_marker: (_) => choice("idempotent", "streamed"),
 
     endpoint_errors: ($) => seq("errors", braced($, repeat(seq($.error_mapping, optional(","))))),
 
@@ -763,6 +775,7 @@ module.exports = grammar({
     for_statement: ($) =>
       seq(
         "for",
+        optional(field("await", "await")),
         field("item", $._name),
         optional(seq(",", field("index", $._name))),
         "in",

@@ -1,0 +1,13 @@
+// md-docs/errors/N14.md
+type Post { id: String, title: String }
+type FeedPage { posts: [Post], nextCursor: String? }
+api Social(base: "/api") {
+    get feed(after: String?) at "feed" -> FeedPage!
+        pages .cursor(param: after, next: p => p.nextCursor, items: p => p.posts)
+}
+page P(path: "/", title: "T", description: "D") {
+    resource feed = Social.feed()
+    Heading("Feed").h1
+    for p in feed.items by p.id { Text(p.title) }
+}
+

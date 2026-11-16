@@ -697,7 +697,7 @@ page A(path: "/") {
 --------------------------------------------------------------------------------
 
 (source_file
-  (ERROR
+  (page_declaration
     (component_identifier)
     (page_attributes
       (named_argument
@@ -705,29 +705,33 @@ page A(path: "/") {
           (identifier))
         (string
           (string_content))))
-    (builtin_component)
-    (ERROR
-      (call_expression
+    (block
+      (element
         (builtin_component)
-        (arguments
-          (string
-            (string_content))
-          (named_argument
-            (attribute_name
-              (identifier))
-            (string
-              (string_content)))))
-      (call_expression
-        (builtin_component)
-        (arguments
-          (string
-            (string_content))
-          (named_argument
-            (attribute_name
-              (identifier))
-            (string
-              (string_content))))))
-    (call_expression
-      (builtin_component)
-      (arguments
-        (color)))))
+        (argument_list
+          (ERROR
+            (call_expression
+              (builtin_component)
+              (arguments
+                (string
+                  (string_content))
+                (named_argument
+                  (attribute_name
+                    (identifier))
+                  (string
+                    (string_content)))))
+            (call_expression
+              (builtin_component)
+              (arguments
+                (string
+                  (string_content))
+                (named_argument
+                  (attribute_name
+                    (identifier))
+                  (string
+                    (string_content))))))
+          (call_expression
+            (builtin_component)
+            (arguments
+              (color)))
+          (MISSING ")"))))))

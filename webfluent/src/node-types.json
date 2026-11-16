@@ -1885,6 +1885,10 @@
           "named": true
         },
         {
+          "type": "endpoint_pages",
+          "named": true
+        },
+        {
           "type": "endpoint_setting",
           "named": true
         }
@@ -1916,6 +1920,27 @@
         "types": [
           {
             "type": "array",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "endpoint_marker",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "endpoint_pages",
+    "named": true,
+    "fields": {
+      "by": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_expression",
             "named": true
           }
         ]
@@ -2383,6 +2408,16 @@
     "type": "for_statement",
     "named": true,
     "fields": {
+      "await": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "await",
+            "named": false
+          }
+        ]
+      },
       "body": {
         "multiple": false,
         "required": true,
@@ -6063,10 +6098,6 @@
     "named": false
   },
   {
-    "type": "endpoint_marker",
-    "named": true
-  },
-  {
     "type": "enum",
     "named": false
   },
@@ -6124,6 +6155,10 @@
   },
   {
     "type": "headers",
+    "named": false
+  },
+  {
+    "type": "idempotent",
     "named": false
   },
   {
@@ -6216,6 +6251,10 @@
   },
   {
     "type": "page",
+    "named": false
+  },
+  {
+    "type": "pages",
     "named": false
   },
   {
@@ -6312,6 +6351,10 @@
   },
   {
     "type": "stream",
+    "named": false
+  },
+  {
+    "type": "streamed",
     "named": false
   },
   {

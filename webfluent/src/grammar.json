@@ -758,6 +758,10 @@
                 {
                   "type": "SYMBOL",
                   "name": "endpoint_invalidates"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "endpoint_pages"
                 }
               ]
             }
@@ -897,9 +901,35 @@
         }
       ]
     },
+    "endpoint_pages": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "pages"
+        },
+        {
+          "type": "FIELD",
+          "name": "by",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
+        }
+      ]
+    },
     "endpoint_marker": {
-      "type": "STRING",
-      "value": "idempotent"
+      "type": "CHOICE",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "idempotent"
+        },
+        {
+          "type": "STRING",
+          "value": "streamed"
+        }
+      ]
     },
     "endpoint_errors": {
       "type": "SEQ",
@@ -4083,6 +4113,22 @@
         {
           "type": "STRING",
           "value": "for"
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "FIELD",
+              "name": "await",
+              "content": {
+                "type": "STRING",
+                "value": "await"
+              }
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         },
         {
           "type": "FIELD",

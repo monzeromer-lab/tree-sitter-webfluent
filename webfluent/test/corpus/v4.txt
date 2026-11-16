@@ -869,3 +869,100 @@ api Backend.todos {
               (identifier)
               (arguments
                 (identifier)))))))))
+
+================================================================================
+An endpoint that pages, one that streams, and a loop over its lines
+================================================================================
+
+api Social(base: "/api") {
+    get feed(after: String?) at "feed" -> FeedPage!
+        pages .cursor(param: after, next: p => p.nextCursor)
+    get tail(id: String) at "logs/{id}" -> [Line]! streamed
+}
+
+store Logs {
+    action walk(id: String) {
+        for await line, i in Social.tail(id: id) { log(line) }
+    }
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (api_declaration
+    (component_identifier)
+    (api_settings
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (api_body
+      (endpoint
+        (identifier)
+        (endpoint_parameters
+          (parameter
+            (identifier)
+            (optional_type
+              (builtin_type))))
+        (string
+          (string_content))
+        (result_type
+          (named_type
+            (component_identifier)))
+        (endpoint_pages
+          (case_value
+            (identifier)
+            (arguments
+              (named_argument
+                (attribute_name
+                  (identifier))
+                (identifier))
+              (named_argument
+                (attribute_name
+                  (identifier))
+                (lambda
+                  (identifier)
+                  (member_expression
+                    (identifier)
+                    (identifier))))))))
+      (endpoint
+        (identifier)
+        (endpoint_parameters
+          (parameter
+            (identifier)
+            (builtin_type)))
+        (string
+          (string_content)
+          (interpolation
+            (identifier)))
+        (result_type
+          (list_type
+            (named_type
+              (component_identifier))))
+        (endpoint_marker))))
+  (store_declaration
+    (component_identifier)
+    (block
+      (action_declaration
+        (identifier)
+        (parameter_list
+          (parameter
+            (identifier)
+            (builtin_type)))
+        (block
+          (for_statement
+            (identifier)
+            (identifier)
+            (call_expression
+              (member_expression
+                (component_identifier)
+                (identifier))
+              (arguments
+                (named_argument
+                  (attribute_name
+                    (identifier))
+                  (identifier))))
+            (block
+              (log_statement
+                (identifier)))))))))

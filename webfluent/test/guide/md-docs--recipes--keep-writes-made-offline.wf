@@ -1,8 +1,34 @@
 // md-docs/recipes/keep-writes-made-offline.md
+type Note { id: String, text: String }
+api Backend(base: "/api") { }
+api Backend.notes {
+    get list() at "notes" -> [Note]!
+    put save(id: String, body: Note) at "notes/{id}" -> Note!
+        invalidates [list]
+}
 page Notes(path: "/notes", title: "Notes", description: "Notes that save offline.") {
+    state draft = ""
+    state said = ""
     Heading("Notes").h1
+    Input(bind: draft, label: "Note")
+    Button("Save") {
+        on click {
+            match await Backend.notes.save(id: "n1", body: Note(id: "n1", text: draft)) {
+                .ok(_) { said = "Saved." }
+                .err(.offline(true)) { said = "Saved here; it will be sent when you are back online." }
+                .err(e) { said = e.message }
+            }
+        }
+    }
+    Text(said)
     if network.queued > 0 {
         Text("{network.queued} change(s) will be sent when you are back online").muted
+    }
+    for r in network.refused by r.at {
+        Alert("The server refused a change ({r.status}).").danger
+    }
+    if network.refused.length > 0 {
+        Button("Dismiss") { on click { network.clearRefused() } }
     }
 }
 
