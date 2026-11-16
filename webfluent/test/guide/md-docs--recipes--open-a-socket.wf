@@ -1,7 +1,11 @@
 // md-docs/recipes/open-a-socket.md
+type Outgoing { text: String }
+type Incoming { id: String, text: String }
 page Chat(path: "/chat", title: "Chat", description: "Talk to the team.") {
     state draft = ""
     socket chat = ws("wss://example.com/chat", heartbeat: 20.seconds) {
+        send Outgoing
+        receive Incoming
         on message(m) { log(m) }
     }
 
@@ -13,7 +17,7 @@ page Chat(path: "/chat", title: "Chat", description: "Talk to the team.") {
         error(e)   { Alert(e.message).danger }
     }
     Input(bind: draft, label: "Message").text
-    Button("Send").primary { on click { chat.send({ text: draft })  draft = "" } }
+    Button("Send").primary { on click { chat.send(Outgoing(text: draft))  draft = "" } }
 }
 
 // md-docs/recipes/open-a-socket.md

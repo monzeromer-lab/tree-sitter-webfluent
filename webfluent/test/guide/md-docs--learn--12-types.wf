@@ -105,6 +105,20 @@ page Shapes(path: "/", title: "Shapes", description: "A map literal with a shape
 }
 
 // md-docs/learn/12-types.md
+type Todo { id: String, title: String, done: Bool = false }
+page Agree(path: "/", title: "Agree", description: "Values that are what they say.") {
+    state todo = Todo(id: "1", title: "Milk")
+    state left = 3
+    state due: Date = @2026-03-14
+    state nickname: String? = null
+    Heading("Agree").h1
+    Button("Done") { on click { todo = { ...todo, done: true } } }
+    if left != 0 { Text("{left} left") }
+    Text("Due {due:.date(long)}")
+    Text(nickname ?? "friend")
+}
+
+// md-docs/learn/12-types.md
 type Scores = [String: Number]
 enum Region { north, south }
 component Label(_ region: Region, describe: (Region) -> String) {
@@ -198,7 +212,6 @@ page Narrow(path: "/", title: "Narrow", description: "Values that may be null, n
     Heading("Narrow").h1
     if let n = todo.note { Text("{n.length} chars") }
     if sel != null { Text(sel.title) }
-    if sel { Text(sel.title) }
     derived label = if sel != null { sel.title } else { "none" }
     Text(todo.note ?? "no note")
     Text(sel?.title ?? "nothing selected")

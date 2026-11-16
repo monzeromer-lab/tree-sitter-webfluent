@@ -583,9 +583,12 @@ page Doc(path: "/") {
 }
 
 // AGENTS.md
+type Problem { line: Number, message: String }
+type CssMessage { type: String, items: [Problem] = [] }
 store Lang {
-    state problems: [Map] = []
+    state problems: [Problem] = []
     worker css = spawn("/workers/css.js", restart: 1, timeout: 5000) {
+        receive CssMessage
         on message(m) { if m.type == "diagnostics" { problems = m.items } }
         on restart(e) { log("css restarted: {e.message}") }
     }

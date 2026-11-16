@@ -1,0 +1,7 @@
+// md-docs/errors/T34.md
+page P(path: "/", title: "Due", description: "D") {
+    state due: Date = @2026-03-14
+    Heading("Due").h1
+    Text("{due:.date(long)}")
+}
+

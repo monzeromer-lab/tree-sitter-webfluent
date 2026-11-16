@@ -1,0 +1,7 @@
+// md-docs/errors/T29.md
+page P(path: "/", title: "Cart", description: "D") {
+    state count = 0
+    Heading("Cart").h1
+    if count != 0 { Text("{count} items") }
+}
+

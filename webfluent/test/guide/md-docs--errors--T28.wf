@@ -1,0 +1,10 @@
+// md-docs/errors/T28.md
+type Person { name: String }
+page P(path: "/", title: "Profile", description: "D") {
+    state text = "{\"name\": \"Ada\"}"
+    derived raw = JSON.parse(text)
+    derived name = match Person.decode(raw) { .ok(p) { p.name } .err(e) { e.message } }
+    Heading("Profile").h1
+    Text(name)
+}
+

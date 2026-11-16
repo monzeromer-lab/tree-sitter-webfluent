@@ -1,0 +1,8 @@
+// md-docs/errors/T27.md
+page P(path: "/", title: "Stock", description: "D") {
+    state left = 0
+    derived label = if left > 0 { "{left} left" } else { "sold out" }
+    Heading("Stock").h1
+    Text(label)
+}
+
