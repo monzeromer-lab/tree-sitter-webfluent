@@ -1,0 +1,19 @@
+// md-docs/errors/N02.md
+type Todo { id: String, title: String }
+api Backend(base: "/api") {
+    post create(title: String) at "todos" -> Todo!
+}
+page P(path: "/", title: "T", description: "D") {
+    state said = ""
+    Heading("New").h1
+    Button("Add milk") {
+        on click {
+            match await Backend.create(title: "Milk") {
+                .ok(todo) { said = todo.title }
+                .err(e) { said = e.message }
+            }
+        }
+    }
+    Text(said)
+}
+

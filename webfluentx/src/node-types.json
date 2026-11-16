@@ -561,6 +561,10 @@
         "required": true,
         "types": [
           {
+            "type": "api_group_name",
+            "named": true
+          },
+          {
             "type": "component_identifier",
             "named": true
           },
@@ -580,6 +584,25 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "api_group_name",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "component_identifier",
+          "named": true
+        },
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -1783,7 +1806,7 @@
         "required": false,
         "types": [
           {
-            "type": "parameter_list",
+            "type": "endpoint_parameters",
             "named": true
           }
         ]
@@ -1854,6 +1877,10 @@
           "named": true
         },
         {
+          "type": "endpoint_invalidates",
+          "named": true
+        },
+        {
           "type": "endpoint_marker",
           "named": true
         },
@@ -1874,6 +1901,41 @@
       "types": [
         {
           "type": "error_mapping",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "endpoint_invalidates",
+    "named": true,
+    "fields": {
+      "reads": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "endpoint_parameters",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "parameter",
+          "named": true
+        },
+        {
+          "type": "parameter_location",
           "named": true
         }
       ]
@@ -3773,6 +3835,22 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "parameter_location",
+    "named": true,
+    "fields": {
+      "header": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -5937,6 +6015,10 @@
     "named": false
   },
   {
+    "type": "cookie",
+    "named": false
+  },
+  {
     "type": "custom_property_name",
     "named": true
   },
@@ -6037,6 +6119,10 @@
     "named": false
   },
   {
+    "type": "header",
+    "named": false
+  },
+  {
     "type": "headers",
     "named": false
   },
@@ -6058,6 +6144,10 @@
   },
   {
     "type": "into",
+    "named": false
+  },
+  {
+    "type": "invalidates",
     "named": false
   },
   {

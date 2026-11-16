@@ -94,7 +94,7 @@ api Spec from "openapi.json" (base: env.PUBLIC_API)
           (identifier)))
       (endpoint
         (identifier)
-        (parameter_list
+        (endpoint_parameters
           (parameter
             (identifier)
             (builtin_type)
@@ -104,7 +104,7 @@ api Spec from "openapi.json" (base: env.PUBLIC_API)
             (component_identifier))))
       (endpoint
         (identifier)
-        (parameter_list
+        (endpoint_parameters
           (parameter
             (identifier)
             (builtin_type)))
@@ -116,7 +116,7 @@ api Spec from "openapi.json" (base: env.PUBLIC_API)
             (builtin_type))))
       (endpoint
         (identifier)
-        (parameter_list
+        (endpoint_parameters
           (parameter
             (identifier)
             (builtin_type)))
@@ -809,3 +809,63 @@ page P(path: "/") {
             (argument_list
               (string
                 (string_content)))))))))
+
+================================================================================
+A group: header and cookie parameters, what a write makes stale
+================================================================================
+
+api Backend.todos {
+    get me(token: String in header "X-Token", theme: String? in cookie) at "me" -> Todo!
+    patch rename(id: String) at "todos/{id}" -> Todo!
+        idempotent
+        invalidates [list, byId(id)]
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (api_declaration
+    (api_group_name
+      (component_identifier)
+      (identifier))
+    (api_body
+      (endpoint
+        (identifier)
+        (endpoint_parameters
+          (parameter
+            (identifier)
+            (builtin_type))
+          (parameter_location
+            (string
+              (string_content)))
+          (parameter
+            (identifier)
+            (optional_type
+              (builtin_type)))
+          (parameter_location))
+        (string
+          (string_content))
+        (result_type
+          (named_type
+            (component_identifier))))
+      (endpoint
+        (identifier)
+        (endpoint_parameters
+          (parameter
+            (identifier)
+            (builtin_type)))
+        (string
+          (string_content)
+          (interpolation
+            (identifier)))
+        (result_type
+          (named_type
+            (component_identifier)))
+        (endpoint_marker)
+        (endpoint_invalidates
+          (array
+            (identifier)
+            (call_expression
+              (identifier)
+              (arguments
+                (identifier)))))))))

@@ -309,8 +309,8 @@ page Doc(path: "/") {
 // AGENTS.md
 type SignUp { email: String, password: String }
 api Backend(base: "/api") {
-    get emailTaken(email: String) -> Bool!
-    post signUp(body: SignUp) -> !
+    get emailTaken(email: String) at "emailTaken" -> Bool!
+    post signUp(body: SignUp) at "signUp" -> !
 }
 page Signup(path: "/join", title: "Join", description: "Make an account.") {
     state email = ""
@@ -503,6 +503,27 @@ page Doc(path: "/") {
     match data {
         .loaded(created) { Text("Done") }
         else { Spinner }
+    }
+}
+
+// AGENTS.md
+type Todo { id: String, title: String }
+type NewTodo { title: String }
+type Rename { title: String }
+api Backend(base: "/api") { }
+api Backend.todos {
+    get   list() at "todos" -> [Todo]!
+    get   byId(id: String) at "todos/{id}" -> Todo!
+    post  create(body: NewTodo) at "todos" -> Todo!
+    invalidates [list]
+    patch rename(id: String, body: Rename) at "todos/{id}" -> Todo!
+    idempotent
+        invalidates [list, byId(id)]
+}
+store Todos {
+    action add(title: String) {
+        let undo = Backend.todos.list.update(list => list.concat([Todo(id: "new", title: title)]))
+        if let .err(_) = await Backend.todos.create(body: NewTodo(title: title)) { undo() }
     }
 }
 

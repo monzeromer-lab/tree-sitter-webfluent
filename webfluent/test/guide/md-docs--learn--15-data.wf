@@ -101,10 +101,10 @@ api Backend(base: "/api/v1") {
     timeout: 10.seconds
     retry: .backoff(times: 3, on: [.network, .timeout, .status5xx])
 
-    get    users(page: Number = 1, q: String?)  -> [User]!
-    get    user(id: String) at "users/:id"      -> User!
-    post   createUser(body: NewUser)            -> User ! CreateUserError
-    delete removeUser(id: String) at "users/:id" -> !
+    get    users(page: Number = 1, q: String?) at "users"  -> [User]!
+    get    user(id: String) at "users/{id}"      -> User!
+    post   createUser(body: NewUser) at "createUser"            -> User ! CreateUserError
+    delete removeUser(id: String) at "users/{id}" -> !
 }
 page Users(path: "/users", title: "Users", description: "Everyone.") {
     state page: Number = 1
@@ -139,7 +139,7 @@ store Session {
 api Backend(base: env.PUBLIC_API) {     // its default in the config's `env`
     middleware [refreshOn401(Session.refresh), bearer(Session.accessToken), header("Accept-Language", Session.language), requestId]
 
-    get me -> User!
+    get me at "me" -> User!
 }
 
 // md-docs/learn/15-data.md
@@ -157,7 +157,40 @@ middleware client(req, next) {
 }
 api Accounts(base: "/accounts") {
     middleware [client, timed]
-    get me -> Me!
+    get me at "me" -> Me!
+}
+
+// md-docs/learn/15-data.md
+type Todo { id: String, title: String }
+type NewTodo { title: String }
+type Rename { title: String }
+api Backend(base: "/api") { }
+api Backend.todos {
+    get   list() at "todos" -> [Todo]!
+    get   byId(id: String) at "todos/{id}" -> Todo!
+    post  create(body: NewTodo) at "todos" -> Todo!
+    invalidates [list]
+    patch rename(id: String, body: Rename) at "todos/{id}" -> Todo!
+    idempotent
+        invalidates [list, byId(id)]
+}
+store Drafts {
+    action add(title: String) {
+        let undo = Backend.todos.list.update(list => list.concat([Todo(id: "new", title: title)]))
+        if let .err(_) = await Backend.todos.create(body: NewTodo(title: title)) { undo() }
+    }
+}
+page Todos(path: "/todos", title: "Todos", description: "The list.") {
+    resource todos = Backend.todos.list()
+    Heading("Todos").h1
+    Button("Add bread") {
+        on click { Backend.todos.create(body: NewTodo(title: "Bread")) }
+    }
+    match todos {
+        .loading { Spinner }
+        .failed(e) { Alert(e.message).danger }
+        .loaded(list) { for todo in list by todo.id { Text(todo.title) } }
+    }
 }
 
 // md-docs/learn/15-data.md
@@ -215,7 +248,7 @@ page Team(path: "/people", title: "People", description: "Adding someone, and wh
 // md-docs/learn/15-data.md
 type Item { id: String, name: String }
 api Catalog(base: "/api") {
-    get items(page: Number = 1) -> [Item]!
+    get items(page: Number = 1) at "items" -> [Item]!
 }
 page Items(path: "/items", title: "Items", description: "Everything, a page at a time.") {
     state page = 1

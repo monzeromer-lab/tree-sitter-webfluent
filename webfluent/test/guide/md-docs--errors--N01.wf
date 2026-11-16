@@ -1,0 +1,14 @@
+// md-docs/errors/N01.md
+type User { id: String, name: String }
+api Backend(base: "/api") {
+    get user(id: String) at "users/{id}" -> User!
+}
+page P(path: "/", title: "T", description: "D") {
+    resource user = Backend.user("7")
+    Heading("Profile").h1
+    match user {
+        .loaded(u) { Text(u.name) }
+        else { Spinner }
+    }
+}
+

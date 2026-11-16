@@ -1,0 +1,18 @@
+// md-docs/errors/N05.md
+type Todo { id: String, title: String }
+type NewTodo { title: String }
+api Backend(base: "/api") { }
+api Backend.todos {
+    get list() at "todos" -> [Todo]!
+    post create(body: NewTodo) at "todos" -> Todo!
+    invalidates [list]
+}
+page P(path: "/", title: "T", description: "D") {
+    resource todos = Backend.todos.list()
+    Heading("Todos").h1
+    match todos {
+        .loaded(list) { Text("{list.length} todos") }
+        else { Spinner }
+    }
+}
+

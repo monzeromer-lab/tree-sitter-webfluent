@@ -1,0 +1,21 @@
+// md-docs/errors/N04.md
+type Todo { id: String, title: String }
+api Backend(base: "/api") {
+    post create(title: String) at "todos" -> Todo!
+}
+store Todos {
+    state failed = ""
+    action add(title: String) {
+        match await Backend.create(title: title) {
+            .ok(_) { failed = "" }
+            .err(e) { failed = e.message }
+        }
+    }
+}
+page P(path: "/", title: "T", description: "D") {
+    use Todos
+    Heading("Todos").h1
+    Button("Add milk") { on click { Todos.add("Milk") } }
+    Text(Todos.failed)
+}
+

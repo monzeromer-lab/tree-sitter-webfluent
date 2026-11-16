@@ -227,11 +227,14 @@ module.exports = grammar({
     api_declaration: ($) =>
       seq(
         "api",
-        field("name", $._name),
+        // `api Backend.todos { … }` — a group, reached through its service.
+        field("name", choice($._name, $.api_group_name)),
         optional(seq("from", field("from", $.string))),
         optional(field("settings", $.api_settings)),
         optional(field("body", $.api_body)),
       ),
+
+    api_group_name: ($) => seq($._name, token.immediate("."), $._name),
 
     api_settings: ($) => seq("(", sepBy($.named_argument, ","), optional(","), ")"),
 
@@ -268,18 +271,28 @@ module.exports = grammar({
 
     header_name: ($) => seq($._name, repeat(seq(token.immediate("-"), $._name))),
 
-    // `get user(id: String) at "users/:id" -> User  errors { 422 -> Map }`
+    // `get user(id: String) at "users/{id}" -> User!  invalidates [list]`
     endpoint: ($) =>
       prec.right(
         seq(
           field("method", choice("get", "post", "put", "patch", "delete", "head", "options")),
           field("name", $._name),
-          optional(field("parameters", $.parameter_list)),
+          optional(field("parameters", $.endpoint_parameters)),
           optional(seq("at", field("path", $.string))),
           optional(seq("-", ">", field("returns", $._returns))),
-          repeat(choice($.endpoint_errors, $.endpoint_setting, $.endpoint_marker)),
+          repeat(choice($.endpoint_errors, $.endpoint_setting, $.endpoint_marker, $.endpoint_invalidates)),
         ),
       ),
+
+    endpoint_parameters: ($) =>
+      seq("(", sepBy(seq($.parameter, optional($.parameter_location)), ","), ")"),
+
+    // `token: String in header "X-Token"`, `theme: String? in cookie`
+    parameter_location: ($) =>
+      seq("in", choice(seq("header", field("header", $.string)), "cookie")),
+
+    // `invalidates [list, byId(id)]` — the reads a write makes stale.
+    endpoint_invalidates: ($) => seq("invalidates", field("reads", $.array)),
 
     // `idempotent` — safe to send twice, with the key that says so.
     endpoint_marker: (_) => "idempotent",

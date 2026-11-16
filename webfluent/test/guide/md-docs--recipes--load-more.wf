@@ -1,7 +1,7 @@
 // md-docs/recipes/load-more.md
 type Item { id: String, name: String }
 api Catalog(base: "/api") {
-    get items(page: Number = 1) -> [Item]!
+    get items(page: Number = 1) at "items" -> [Item]!
 }
 page Items(path: "/items", title: "Items", description: "Everything, a page at a time.") {
     state page = 1

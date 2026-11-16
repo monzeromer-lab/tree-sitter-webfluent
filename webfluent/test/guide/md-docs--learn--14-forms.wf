@@ -111,7 +111,7 @@ page Join(path: "/join", title: "Join", description: "Make an account.") {
 
 // md-docs/learn/14-forms.md
 api Backend(base: "/api") {
-    get emailFree(email: String) -> Bool!
+    get emailFree(email: String) at "emailFree" -> Bool!
 }
 page Register(path: "/register", title: "Register", description: "Check an address is free.") {
     state email = ""
@@ -144,7 +144,7 @@ enum SignUpError {
     http(error: HttpError)
 }
 api Backend(base: "/api") {
-    post signUp(body: SignUp) -> ! SignUpError
+    post signUp(body: SignUp) at "signUp" -> ! SignUpError
 }
 page Doc(path: "/") {
     action join() {
@@ -158,7 +158,7 @@ page Doc(path: "/") {
 
 // md-docs/learn/14-forms.md
 api Backend(base: "/api") {
-    post avatar(id: String, file: File) at "users/:id/avatar" -> !
+    post avatar(id: String, file: File) at "users/{id}/avatar" -> !
 }
 page Avatar(path: "/avatar", title: "Your picture", description: "Change your picture.") {
     state picked: File? = null
@@ -193,7 +193,7 @@ enum SignUpError {
     http(error: HttpError)
 }
 api Backend(base: "/api") {
-    post signUp(body: SignUp) -> ! SignUpError
+    post signUp(body: SignUp) at "signUp" -> ! SignUpError
 }
 page Welcome(path: "/welcome", title: "Join", description: "Make an account.") {
     state email = ""
