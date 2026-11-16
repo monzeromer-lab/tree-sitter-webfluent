@@ -1,5 +1,5 @@
 // md-docs/errors/X05.md
-store Cart { state items = [] }
+store Cart { state items: [String] = [] }
 page P(path: "/", title: "T", description: "D") {
     use Cart
     Heading("Cart: {Cart.items.length}").h1

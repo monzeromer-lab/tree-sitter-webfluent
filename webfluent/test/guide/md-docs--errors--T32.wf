@@ -1,0 +1,12 @@
+// md-docs/errors/T32.md
+store Todos {
+    state titles: [String] = []
+    action add(title: String) { titles = titles.concat([title]) }
+}
+page P(path: "/", title: "Todos", description: "D") {
+    use Todos
+    Heading("Todos").h1
+    Button("Add") { on click { Todos.add("Milk") } }
+    for title in Todos.titles { Text(title) }
+}
+

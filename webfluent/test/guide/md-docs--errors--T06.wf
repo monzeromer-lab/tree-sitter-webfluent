@@ -1,6 +1,6 @@
 // md-docs/errors/T06.md
 store Cart {
-    state items = []
+    state items: [String] = []
     derived count = items.length
 }
 page P(path: "/", title: "T", description: "D") {

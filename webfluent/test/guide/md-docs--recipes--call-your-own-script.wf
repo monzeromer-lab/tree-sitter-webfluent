@@ -13,6 +13,14 @@ page Gallery(path: "/gallery", title: "Gallery", description: "Cards that lean."
 }
 
 // md-docs/recipes/call-your-own-script.md
+page Search(path: "/search", title: "Search", description: "Rows a script finds.") {
+    state rows: [Row] = []
+    Heading("Search").h1
+    Button("Find milk") { on click { rows = search("milk") } }
+    for r in rows by r.id { Text(r.title) }
+}
+
+// md-docs/recipes/call-your-own-script.md
 page Story(path: "/story", title: "Story", description: "It fades in.") {
     state visible = false
     action setVisible(v: Bool) { visible = v }

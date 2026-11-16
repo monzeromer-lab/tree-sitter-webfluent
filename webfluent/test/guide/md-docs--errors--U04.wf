@@ -1,6 +1,6 @@
 // md-docs/errors/U04.md
 store Cart {
-    state items = []
+    state items: [String] = []
 }
 page P(path: "/", title: "T", description: "D") {
     use Cart

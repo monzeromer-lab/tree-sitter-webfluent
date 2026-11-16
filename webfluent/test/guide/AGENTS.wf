@@ -175,7 +175,8 @@ page Home(path: "/", title: "Home") {
 }
 
 // AGENTS.md
-data posts = "posts.json"
+type Post { slug: String, title: String }
+data posts: [Post] = "posts.json"
 page Post(path: "/p/:slug", title: "Post", slug: String, paths: posts.map(p => p.slug)) {
     derived post = posts.find(p => p.slug == slug)
     Heading(post?.title ?? "?").h1
@@ -242,7 +243,7 @@ page Doc(path: "/") {
 
 // AGENTS.md
 store CartStore {
-    state items = []
+    state items: [Map] = []
     state total = 0
 
     derived count = items.length

@@ -1,0 +1,13 @@
+// md-docs/errors/T35.md
+store Cart {
+    state prices: [Number] = [3, 4]
+    derived subtotal = prices.sum()
+    derived shipping = if subtotal > 50 { 0 } else { 5 }
+    derived total = subtotal + shipping
+}
+page P(path: "/", title: "Cart", description: "D") {
+    use Cart
+    Heading("Cart").h1
+    Text("{Cart.total}")
+}
+

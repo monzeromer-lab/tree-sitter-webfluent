@@ -1,0 +1,6 @@
+// md-docs/errors/T31.md
+page P(path: "/", title: "Tilt", description: "D") {
+    Heading("Tilt").h1
+    Card(mount: (n) => tiltBy(n, 15)) { Text("Lean on me.") }
+}
+

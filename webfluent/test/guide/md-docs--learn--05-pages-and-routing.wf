@@ -87,10 +87,11 @@ page Reference(path: "/docs/reference", title: "Reference", description: "The re
 }
 
 // md-docs/learn/05-pages-and-routing.md
+type User { name: String }
 store Auth {
-    state user = null
+    state user: User? = null
     derived loggedIn = user != null
-    action login() { user = { name: "Sam" } }
+    action login() { user = User(name: "Sam") }
     action logout() { user = null }
 }
 page Account(path: "/account", title: "Your account", description: "Your account.", guard: Auth.loggedIn, redirect: "/login") {
@@ -132,9 +133,10 @@ page NotFound(path: "*", title: "Not found", description: "Nothing lives here.",
 }
 
 // md-docs/learn/05-pages-and-routing.md
+type Run { id: String, ok: Bool }
 store Deploys {
-    state rows = []
-    action load(id: String) { rows = [{ id: id, ok: true }] }
+    state rows: [Run] = []
+    action load(id: String) { rows = [Run(id: id, ok: true)] }
 }
 page Deploy(path: "/deploys/:id", title: "Deploy", description: "One deploy.", id: String) {
     use Deploys

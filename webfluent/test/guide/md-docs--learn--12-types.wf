@@ -163,6 +163,20 @@ page Restore(path: "/", title: "Restore", description: "Settings decoded from te
 }
 
 // md-docs/learn/12-types.md
+type Todo { id: String, title: String }
+type User { name: String }
+page Board(path: "/board", title: "Board", description: "Todos.") {
+    state draft = ""
+    state items: [Todo] = []
+    state picked: User? = null
+    Heading("Board").h1
+    Input(bind: draft, label: "New todo")
+    Button("Add") { on click { items = items.concat([Todo(id: uuid(), title: draft)])  draft = "" } }
+    for todo in items by todo.id { Text(todo.title) }
+    if let user = picked { Text("Picked by {user.name}") }
+}
+
+// md-docs/learn/12-types.md
 type Row { id: Number, label: String, score: Number? }
 page Infer(path: "/", title: "Infer", description: "Types the checker works out.") {
     state rows: [Row] = [Row(id: 1, label: "a"), Row(id: 2, label: "b", score: 9)]
