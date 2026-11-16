@@ -1,5 +1,8 @@
 // md-docs/recipes/render-from-rust.md
-page Invoice(path: "/", title: "Invoice {number}", description: "An invoice.") {
+type Customer { name: String }
+type Item { name: String, qty: Number, price: Number }
+page Invoice(path: "/", title: "Invoice {number}", description: "An invoice.",
+             number: String, customer: Customer, items: [Item], total: Number, paid: Bool) {
     Heading("Invoice #{number}").h1
     Text("Bill to: {customer.name}")
     Table {

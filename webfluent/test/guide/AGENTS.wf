@@ -959,7 +959,10 @@ page Doc(path: "/") {
 }
 
 // AGENTS.md
-page Invoice(path: "/", title: "Invoice") {
+type Customer { name: String }
+type Item { name: String, price: Number }
+page Invoice(path: "/", title: "Invoice",
+             number: String, customer: Customer, items: [Item], paid: Bool) {
     Container {
         Heading("Invoice #{number}").h1
         Text("Customer: {customer.name}")
