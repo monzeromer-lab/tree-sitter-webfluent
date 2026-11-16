@@ -507,22 +507,12 @@ page Doc(path: "/") {
 }
 
 // AGENTS.md
-type User { id: String, name: String }
-api Backend(base: env.PUBLIC_API) {     // its default in the config's `env`
-    timeout: 10.seconds
-    retry: .backoff(times: 3, on: [.network, .timeout, .status5xx])
-    credentials: .sameOrigin           // .omit · .sameOrigin · .include — the
-                                       // session cookie, which is where a
-                                       // session belongs; `persist` is not
-
-    on request(r)  { r.headers["X-Request-Id"] = uuid() }
-    on response(r) { log("{r.status} {r.url}") }
-
-    get    users(page: Number = 1, q: String?)   -> [User]!
-    get    user(id: String) at "users/:id"       -> User!
-    post   createUser(body: NewUser)             -> User!
-    delete removeUser(id: String) at "users/:id" -> !
-    post   avatar(id: String, file: File) at "users/:id/avatar" -> Url!
+/// Every request, timed.
+middleware timed(req, next) {           // req: Request · next: (Request) -> answer
+    let started = Date.now()
+    let answer = await next(req)
+    log("{req.method} {req.url} took {Date.now() - started} ms")
+    return answer
 }
 
 // AGENTS.md

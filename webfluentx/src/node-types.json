@@ -32,6 +32,10 @@
         "named": true
       },
       {
+        "type": "middleware_declaration",
+        "named": true
+      },
+      {
         "type": "page_declaration",
         "named": true
       },
@@ -510,6 +514,10 @@
           "named": true
         },
         {
+          "type": "api_middleware",
+          "named": true
+        },
+        {
           "type": "api_setting",
           "named": true
         },
@@ -587,6 +595,22 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "api_middleware",
+    "named": true,
+    "fields": {
+      "steps": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -1827,6 +1851,10 @@
       "types": [
         {
           "type": "endpoint_errors",
+          "named": true
+        },
+        {
+          "type": "endpoint_marker",
           "named": true
         },
         {
@@ -3286,6 +3314,64 @@
           },
           {
             "type": "unit_type",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "middleware_declaration",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "component_identifier",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "next": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "component_identifier",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "request": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "component_identifier",
+            "named": true
+          },
+          {
+            "type": "identifier",
             "named": true
           }
         ]
@@ -5895,6 +5981,10 @@
     "named": false
   },
   {
+    "type": "endpoint_marker",
+    "named": true
+  },
+  {
     "type": "enum",
     "named": false
   },
@@ -5993,6 +6083,10 @@
   {
     "type": "method",
     "named": true
+  },
+  {
+    "type": "middleware",
+    "named": false
   },
   {
     "type": "migrate",

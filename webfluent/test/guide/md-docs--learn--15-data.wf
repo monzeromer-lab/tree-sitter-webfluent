@@ -127,22 +127,37 @@ page Users(path: "/users", title: "Users", description: "Everyone.") {
 
 // md-docs/learn/15-data.md
 type User { id: String, name: String }
+type Token { token: String }
 store Session {
-    state token = ""
+    state accessToken = ""
     state language = "en"
-    action refresh() -> ! { token = try await http.get("/api/token", as: .text) }
+    action refresh() -> ! {
+        let fresh: Token = try await http.post("/api/token")
+        accessToken = fresh.token
+    }
 }
 api Backend(base: env.PUBLIC_API) {     // its default in the config's `env`
-    headers {
-        Authorization: "Bearer {Session.token}"
-        Accept-Language: Session.language
-    }
-
-    on request(r)  { r.headers["X-Request-Id"] = uuid() }
-    on response(r) { log("{r.status} {r.url}") }
-    on error(e)    { if e.status == 401 { await Session.refresh()  return "retry" } }
+    middleware [refreshOn401(Session.refresh), bearer(Session.accessToken), header("Accept-Language", Session.language), requestId]
 
     get me -> User!
+}
+
+// md-docs/learn/15-data.md
+type Me { name: String }
+/// Every request, timed.
+middleware timed(req, next) {
+    let started = Date.now()
+    let answer = await next(req)
+    log("{req.method} {req.url} took {Date.now() - started} ms")
+    return answer
+}
+/// What every request sends about the client.
+middleware client(req, next) {
+    return await next(Request(url: req.url, method: req.method, headers: req.headers.with("X-Client", "web"), body: req.body))
+}
+api Accounts(base: "/accounts") {
+    middleware [client, timed]
+    get me -> Me!
 }
 
 // md-docs/learn/15-data.md

@@ -196,6 +196,7 @@ module.exports = grammar({
         $.const_declaration,
         $.data_declaration,
         $.api_declaration,
+        $.middleware_declaration,
         $.animation_declaration,
         $.test_declaration,
       ),
@@ -234,8 +235,25 @@ module.exports = grammar({
 
     api_settings: ($) => seq("(", sepBy($.named_argument, ","), optional(","), ")"),
 
+    // `middleware timed(req, next) { … }` — a step a service's requests
+    // pass through.
+    middleware_declaration: ($) =>
+      seq(
+        "middleware",
+        field("name", $._name),
+        "(",
+        field("request", $._name),
+        ",",
+        field("next", $._name),
+        ")",
+        field("body", $.block),
+      ),
+
+    // `middleware [refreshOn401(Session.refresh), bearer(Session.token)]`
+    api_middleware: ($) => seq("middleware", field("steps", $.array), optional(",")),
+
     api_body: ($) =>
-      braced($, repeat(choice($.api_headers, $.event_handler, $.endpoint, $.api_setting))),
+      braced($, repeat(choice($.api_headers, $.event_handler, $.endpoint, $.api_middleware, $.api_setting))),
 
     // `timeout: 10.seconds`, `retry: .backoff(times: 3)` — a setting of the
     // service, or of a connection.
@@ -259,9 +277,12 @@ module.exports = grammar({
           optional(field("parameters", $.parameter_list)),
           optional(seq("at", field("path", $.string))),
           optional(seq("-", ">", field("returns", $._returns))),
-          repeat(choice($.endpoint_errors, $.endpoint_setting)),
+          repeat(choice($.endpoint_errors, $.endpoint_setting, $.endpoint_marker)),
         ),
       ),
+
+    // `idempotent` — safe to send twice, with the key that says so.
+    endpoint_marker: (_) => "idempotent",
 
     endpoint_errors: ($) => seq("errors", braced($, repeat(seq($.error_mapping, optional(","))))),
 

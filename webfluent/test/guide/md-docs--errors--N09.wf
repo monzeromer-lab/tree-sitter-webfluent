@@ -1,0 +1,17 @@
+// md-docs/errors/N09.md
+type Order { id: String, total: Number }
+api Shop(base: "/api") {
+    post placeOrder(body: Order) at "orders" -> Order! idempotent
+}
+page P(path: "/", title: "T", description: "D") {
+    state placed = ""
+    Heading("Checkout").h1
+    Button("Place the order") {
+        on click {
+            let made = try await Shop.placeOrder(body: Order(id: "o-1", total: 12), retry: 3)
+            placed = made.id
+        }
+    }
+    Text(placed)
+}
+
