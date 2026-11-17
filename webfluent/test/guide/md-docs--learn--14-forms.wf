@@ -75,7 +75,7 @@ page Contact(path: "/contact", title: "Contact", description: "Send us a message
         Input(bind: email, name: "email", label: "Email").email.required
         Input(bind: message, name: "message", label: "Message").required
         Button("Send", type: .submit, disabled: !form.valid || send.pending).primary
-        Text("Fields: {form.values.name} {form.values.email}").muted.sm
+        Text("{form.values.keys().length} fields filled in").muted.sm
     }
     if sent { Alert("Thanks — we will be in touch.").success }
 }
@@ -164,9 +164,9 @@ page Avatar(path: "/avatar", title: "Your picture", description: "Change your pi
     state picked: File? = null
     state done = false
 
-    action upload() {
+    action upload() -> ! {
         if let f = picked {
-            await Backend.avatar(id: "me", file: f)
+            try await Backend.avatar(id: "me", file: f)
             done = true
         }
     }

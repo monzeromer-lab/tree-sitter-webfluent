@@ -118,7 +118,7 @@ page Report(path: "/", title: "Report", description: "The month, at a glance.") 
         Stat("Revenue", value: 48210, format: .currency, change: 0.124)
         Stat("Churn", value: 0.031, format: .percent, change: -0.02)
     }
-    Text { Text("Search with ")  Kbd("mod+k") }
+    Row(gap: .xs, align: .center) { Text("Search with")  Kbd("mod+k") }
     for tag in tags by tag {
         Chip(tag).removable { on remove { tags = tags.filter(x => x != tag) } }
     }

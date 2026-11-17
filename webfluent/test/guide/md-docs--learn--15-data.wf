@@ -318,9 +318,9 @@ page Log(path: "/log", title: "Log", description: "A deploy's log, as it is writ
 
 // md-docs/learn/15-data.md
 page Doc(path: "/") {
-    action rename(id: String, name: String) {
+    action rename(id: String, name: String) -> ! {
         optimistic(Todos.items, items => items.map(i => if i.id == id { { ...i, title: name } } else { i }))
-        await Backend.updateUser(id: id, body: { name: name })
+        try await Backend.updateUser(id: id, body: Rename(name: name))
         Backend.users.invalidate()
     }
 }
