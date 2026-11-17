@@ -63,7 +63,7 @@ test "adds a user"(fakes: [OneUser]) {
 }
 
 // AGENTS.md
-page Home(path: "/", title: "Home") {
+page Home(path: "/", title: "Home", description: "The front page.") {
     state count = 0
 
     Container {
@@ -373,6 +373,7 @@ page Signup(path: "/join", title: "Join", description: "Make an account.") {
     }
     validate confirm { matches(password) "The two passwords differ" }
 
+    Heading("Join").h1
     Form(bind: form, show: .onBlur) {        // .onBlur (default) · .onSubmit · .live
         on submit { Backend.signUp(body: SignUp(email: email, password: password)) }
         Input(bind: email, label: "Email").email
@@ -718,8 +719,7 @@ page Home(path: "/", title: "Home", description: "The front page.") {
 page Doc(path: "/") {
     action rename(id: String, name: String) -> ! {
         optimistic(Todos.items, items => items.map(i => if i.id == id { { ...i, title: name } } else { i }))
-        try await Backend.updateUser(id: id, body: Rename(name: name))
-        Backend.users.invalidate()
+        try await Backend.todos.rename(id: id, body: Rename(title: name))
     }
 }
 
@@ -959,7 +959,7 @@ theme Brand {
 }
 
 // AGENTS.md
-theme Night { color-background: #0B1220  color-text: #E5E7EB  color-surface: #111827 }
+theme Night { color-background: #0B1220  color-text: #E5E7EB  color-text-muted: #9CA3AF  color-surface: #111827 }
 
 // AGENTS.md
 page Doc(path: "/") {
@@ -1103,7 +1103,7 @@ page List(path: "/todos", title: "Todos") {
 page Signup(path: "/signup", title: "Sign up") {
     state email = ""
     derived wrong = email != "" && !email.includes("@")
-    Input(bind: email, type: "email", label: "Email address")
+    Input(bind: email, label: "Email address").email
     if wrong {
         Text("Enter an email address.")
     }
