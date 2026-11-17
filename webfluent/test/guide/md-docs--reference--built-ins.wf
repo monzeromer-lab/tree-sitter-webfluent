@@ -1,6 +1,6 @@
 // md-docs/reference/built-ins.md
 page Doc(path: "/") {
-    after(3.seconds) { banner = null }
+    after(3000) { banner = null }
 }
 
 // md-docs/reference/built-ins.md
@@ -15,6 +15,16 @@ page Doc(path: "/") {
 
 // md-docs/reference/built-ins.md
 page Doc(path: "/") {
+    announce("{results.length} results")
+}
+
+// md-docs/reference/built-ins.md
+page Doc(path: "/") {
+    Button("Delete") { on click { if await ask("Delete the project?", yes: "Delete", danger: true) { remove() } } }
+}
+
+// md-docs/reference/built-ins.md
+page Doc(path: "/") {
     beacon("/analytics", { event: "checkout", value: total })
 }
 
@@ -25,7 +35,7 @@ page Doc(path: "/") {
 
 // md-docs/reference/built-ins.md
 page Doc(path: "/") {
-    every(1.seconds) { elapsed = elapsed + 1 }
+    every(1000) { elapsed = elapsed + 1 }
 }
 
 // md-docs/reference/built-ins.md
@@ -72,7 +82,7 @@ page Doc(path: "/") {
 
 // md-docs/reference/built-ins.md
 page Doc(path: "/") {
-    peer link = rtc(signal: m => lobby.post(m), initiator: query.host == "1") { on message(m) { heard = m.text } }
+    peer link = rtc(signal: m => lobby.post(m), initiator: query.host == "1") { receive Wave  on message(m) { heard = m.text } }
 }
 
 // md-docs/reference/built-ins.md
@@ -92,7 +102,7 @@ page Doc(path: "/") {
 
 // md-docs/reference/built-ins.md
 page Doc(path: "/") {
-    worker css = spawn("/workers/css.js", restart: 1) { on message(m) { problems = m.items } }
+    worker css = spawn("/workers/css.js", restart: 1) { receive CssMessage  on message(m) { problems = m.items } }
 }
 
 // md-docs/reference/built-ins.md
@@ -107,6 +117,11 @@ page Doc(path: "/") {
 
 // md-docs/reference/built-ins.md
 page Doc(path: "/") {
+    toast("Conversation archived", action: "Undo", onAction: restore)
+}
+
+// md-docs/reference/built-ins.md
+page Doc(path: "/") {
     action doc() {
         items = items.concat([Todo(id: uuid(), title: draft)])
     }
@@ -114,7 +129,7 @@ page Doc(path: "/") {
 
 // md-docs/reference/built-ins.md
 page Doc(path: "/") {
-    socket chat = ws("wss://example.com/chat", heartbeat: 20.seconds) { on message(m) { Feed.add(m) } }
+    socket chat = ws("wss://example.com/chat", heartbeat: 20.seconds) { send Outgoing  receive Incoming  on message(m) { Feed.add(m) } }
 }
 
 // md-docs/reference/built-ins.md
@@ -184,6 +199,6 @@ page Doc(path: "/") {
 
 // md-docs/reference/built-ins.md
 page Doc(path: "/") {
-    localStorage.setItem("last-seen", now.date())
+    localStorage.setItem("last-seen", "{now.date()}")
 }
 

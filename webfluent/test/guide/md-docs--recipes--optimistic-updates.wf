@@ -30,3 +30,26 @@ page Doc(path: "/") {
     }
 }
 
+// md-docs/recipes/optimistic-updates.md
+type Todo { id: String, title: String }
+type NewTodo { title: String }
+api Backend(base: "/api") { }
+api Backend.todos {
+    get list() at "todos" -> [Todo]!
+    post create(body: NewTodo) at "todos" -> Todo!
+        invalidates [list]
+}
+store Todos {
+    action add(title: String) {
+        let undo = Backend.todos.list.update(list => list.concat([Todo(id: "new", title: title)]))
+        if let .err(_) = await Backend.todos.create(body: NewTodo(title: title)) { undo() }
+    }
+}
+page List(path: "/todos", title: "Todos", description: "Todos that show at once.") {
+    use Todos
+    resource todos = Backend.todos.list()
+    Heading("Todos").h1
+    Button("Add bread") { on click { Todos.add("Bread") } }
+    for todo in todos.value ?? [] by todo.id { Text(todo.title) }
+}
+

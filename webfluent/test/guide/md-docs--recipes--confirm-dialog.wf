@@ -4,6 +4,7 @@ component Confirm(_ title: String, visible: Bool, danger: Bool = false) {
     event cancel()
     slot
     AlertDialog(visible: visible, title: title) {
+        on close { emit cancel() }
         children
         Row(gap: .sm, justify: .end) {
             Button("Cancel") { on click { emit cancel() } }

@@ -187,6 +187,7 @@ page Inbox(path: "/", title: "Inbox", description: "Toasts, a question, an annou
             }
         }
     }
+    if gone { Text("No messages.") }
 }
 
 // md-docs/learn/08-events.md

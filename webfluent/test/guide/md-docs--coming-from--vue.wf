@@ -16,3 +16,31 @@ component Counter(start: Number = 0) {
     }
 }
 
+// md-docs/coming-from/vue.md
+type Person { id: String, name: String }
+type NewPerson { name: String }
+api Backend(base: "/api") {
+    get people() at "people" -> [Person]!
+    post addPerson(body: NewPerson) at "people" -> Person!
+        invalidates [people]
+}
+page People(path: "/", title: "People", description: "The team.") {
+    state said = ""
+    resource people = Backend.people()
+    Heading("People").h1
+    match people {
+        .loading { Spinner }
+        .failed(e) { Alert(e.message).danger }
+        .loaded(list) { for p in list by p.id { Text(p.name) } }
+    }
+    Button("Add Grace") {
+        on click {
+            match await Backend.addPerson(body: NewPerson(name: "Grace")) {
+                .ok(p) { said = "Added {p.name}" }
+                .err(e) { said = e.message }
+            }
+        }
+    }
+    Text(said)
+}
+

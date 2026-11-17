@@ -1,14 +1,23 @@
 // md-docs/recipes/dark-mode-switch.md
-theme Light {
-    color-background: #FFFFFF
+/// The look by day. Every token not named here keeps its baseline value.
+theme Day {
+    color-primary: #2563EB
+    color-on-primary: #FFFFFF
+    color-background: #F8FAFC
+    color-surface: #FFFFFF
     color-text: #0F172A
+    color-text-muted: #64748B
+    color-border: #E2E8F0
 }
+/// The same tokens after dark.
 theme Night {
-    color-background: #0B1220
-    color-surface: #111827
-    color-text: #E5E7EB
-    color-text-muted: #9CA3AF
-    color-border: #1F2937
+    color-primary: #60A5FA
+    color-on-primary: #0B1120
+    color-background: #0B1120
+    color-surface: #131C2E
+    color-text: #E2E8F0
+    color-text-muted: #94A3B8
+    color-border: #1E293B
 }
 page Settings(path: "/settings", title: "Settings", description: "How the site looks.") {
     Heading("Settings").h1
@@ -17,5 +26,14 @@ page Settings(path: "/settings", title: "Settings", description: "How the site l
         Button("Dark", outlined: theme != "dark") { on click { setTheme("dark") } }
         Button("Match the system", outlined: theme != "system") { on click { setTheme("system") } }
     }
+}
+
+// md-docs/recipes/dark-mode-switch.md
+app {
+    Navbar {
+        Navbar.Brand { Text("Ledger").bold }
+        Navbar.Actions { ThemeToggle }
+    }
+    Router
 }
 

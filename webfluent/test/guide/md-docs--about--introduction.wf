@@ -8,3 +8,18 @@ page Home(path: "/", title: "Hello", description: "A first WebFluent page.") {
     }
 }
 
+// md-docs/about/introduction.md
+type User { id: String, name: String }
+api Backend(base: "/api") {
+    get users() at "users" -> [User]!
+}
+page People(path: "/", title: "People", description: "Who is here.") {
+    resource users = Backend.users()
+    Heading("People").h1
+    match users {
+        .loading { Spinner }
+        .failed(e) { Alert(e.message).danger }
+        .loaded(list) { for u in list by u.id { Text(u.name) } }
+    }
+}
+
