@@ -9,16 +9,24 @@ page Deploys(path: "/deploys", title: "Deploys", description: "Recent deploys.")
         .failed(e) { Alert("Could not load: {e.message}").danger }
         .loaded(rows) {
             if rows.length == 0 { Text("No deploys yet.").muted }
-            for d in rows by d.id {
-                Row(justify: .between) {
-                    Text(d.id).bold
-                    Badge(d.status, tone: if d.status == "ok" { .success } else { .danger })
-                    Text(ago(d.startedAt)).muted.sm
-                }
-            }
+            for d in rows by d.id { Text("{d.id}: {d.status}, {ago(d.startedAt)}") }
         }
     }
     Button("Refresh") { on click { deploys.reload() } }
+}
+
+// md-docs/learn/15-data.md
+type Post { slug: String, title: String, body: String }
+page PostPage(path: "/posts/:slug", title: "Post", description: "One post.", slug: String) {
+    resource post: Post = http.get("/api/posts/{slug}")
+    match post {
+        .loading { Skeleton }
+        .failed(e) { Alert("Not found").warning }
+        .loaded(p) {
+            Heading(p.title).h1
+            Markdown(p.body)
+        }
+    }
 }
 
 // md-docs/learn/15-data.md
@@ -41,172 +49,65 @@ page Servers(path: "/servers", title: "Servers", description: "Every server, kep
 }
 
 // md-docs/learn/15-data.md
-type Hit { id: String, title: String }
-page Search(path: "/search", title: "Search", description: "Search the catalogue.") {
-    state q = ""
-    state token = "demo-token"
-    resource hits: [Hit] = http.post("/api/search",
-        headers: { Authorization: "Bearer {token}" },
-        body: { query: q, limit: 20 })
+type Todo { id: String, title: String, done: Bool = false }
+type NewTodo { title: String }
+page Todos(path: "/todos", title: "Todos", description: "Todos saved to a server.") {
+    state todos: [Todo] = []
+    state draft = ""
+    state error = ""
 
-    Heading("Search").h1
-    Input(bind: q, label: "Search")
-    match hits {
-        .loading { Spinner.sm }
-        .failed(e) { Text(e.message).danger }
-        .loaded(list) { Text("{list.length} hits") }
+    action load() -> ! {
+        todos = try await http.get("/api/todos")
     }
-}
 
-// md-docs/learn/15-data.md
-type Post { slug: String, title: String, body: String }
-page PostPage(path: "/posts/:slug", title: "Post", description: "One post.", slug: String) {
-    resource post: Post = http.get("/api/posts/{slug}")
-    match post {
-        .loading { Skeleton }
-        .failed(e) { Alert("Not found").warning }
-        .loaded(p) {
-            Heading(p.title).h1
-            Markdown(p.body)
+    action add() {
+        if draft.trim() == "" { return }
+        let saved: Todo! = await http.post("/api/todos", body: NewTodo(title: draft))
+        match saved {
+            .ok(created) {
+                todos.push(created)
+                draft = ""
+            }
+            .err(e) { error = "Could not save: {e.message}" }
         }
     }
-}
 
-// md-docs/learn/15-data.md
-type Hit { id: String, title: String }
-page Lookup(path: "/lookup", title: "Lookup", description: "Search when you press Enter.") {
-    state draft = ""
-    state submitted = ""
-    resource hits: [Hit] = http.get("/api/search?q={submitted}")
-
-    Heading("Lookup").h1
-    Input(bind: draft, label: "Search") { on key("Enter") { submitted = draft } }
-    match hits {
-        .loading { Spinner.sm }
-        .failed(e) { Text(e.message).danger }
-        .loaded(list) { Text("{list.length} results for {submitted}") }
-    }
+    load()
+    Heading("Todos").h1
+    Input(bind: draft, label: "New todo") { on key("Enter") { add() } }
+    Button("Add", disabled: add.pending).primary { on click { add() } }
+    if error != "" { Alert(error).danger }
+    for todo in todos by todo.id { Text(todo.title) }
 }
 
 // md-docs/learn/15-data.md
 type User { id: String, name: String }
-type NewUser { name: String }
-/// Why adding someone can be refused.
-enum CreateUserError {
-    unprocessableContent(problem: Problem) on 422
-    http(error: HttpError)
-}
 api Backend(base: "/api/v1") {
-    credentials: .sameOrigin      // the session cookie goes with every call
     timeout: 10.seconds
     retry: .backoff(times: 3, on: [.network, .timeout, .status5xx])
 
-    get    users(page: Number = 1, q: String?) at "users"  -> [User]!
-    get    user(id: String) at "users/{id}"      -> User!
-    post   createUser(body: NewUser) at "createUser"            -> User ! CreateUserError
+    get    users(page: Number = 1, q: String?) at "users" -> [User]!
+    get    user(id: String) at "users/{id}" -> User!
     delete removeUser(id: String) at "users/{id}" -> !
 }
 page Users(path: "/users", title: "Users", description: "Everyone.") {
     state page: Number = 1
-    resource rows = Backend.users(page: page, cache: .swr(60.seconds), refresh: .onFocus)
+    resource rows = Backend.users(page: page, refresh: .onFocus)
 
     Heading("Users").h1
     match rows {
         .loading { Skeleton(height: "20px") }
         .failed(e) {
             match e {
-                .offline(_) { Alert("You are offline.").warning }
-                .timeout { Alert("The server took too long.").warning }
-                else     { Alert(e.message).danger }
+                .offline(_) { Alert("Could not reach the server.").warning }
+                .timeout(_) { Alert("The server took too long.").warning }
+                else { Alert(e.message).danger }
             }
             Button("Try again") { on click { rows.reload() } }
         }
         .loaded(list) { for u in list by u.id { Text(u.name) } }
     }
-}
-
-// md-docs/learn/15-data.md
-type User { id: String, name: String }
-type Token { token: String }
-store Session {
-    state accessToken = ""
-    state language = "en"
-    action refresh() -> ! {
-        let fresh: Token = try await http.post("/api/token")
-        accessToken = fresh.token
-    }
-}
-api Backend(base: env.PUBLIC_API) {     // its default in the config's `env`
-    middleware [refreshOn401(Session.refresh), bearer(Session.accessToken), header("Accept-Language", Session.language), requestId]
-
-    get me at "me" -> User!
-}
-
-// md-docs/learn/15-data.md
-type Me { name: String }
-/// Every request, timed.
-middleware timed(req, next) {
-    let started = Date.now()
-    let answer = await next(req)
-    log("{req.method} {req.url} took {Date.now() - started} ms")
-    return answer
-}
-/// What every request sends about the client.
-middleware client(req, next) {
-    return await next(Request(url: req.url, method: req.method, headers: req.headers.with("X-Client", "web"), body: req.body))
-}
-api Accounts(base: "/accounts") {
-    middleware [client, timed]
-    get me at "me" -> Me!
-}
-
-// md-docs/learn/15-data.md
-type Todo { id: String, title: String }
-type NewTodo { title: String }
-type Rename { title: String }
-api Backend(base: "/api") { }
-api Backend.todos {
-    get   list() at "todos" -> [Todo]!
-    get   byId(id: String) at "todos/{id}" -> Todo!
-    post  create(body: NewTodo) at "todos" -> Todo!
-    invalidates [list]
-    patch rename(id: String, body: Rename) at "todos/{id}" -> Todo!
-    idempotent
-        invalidates [list, byId(id)]
-}
-store Drafts {
-    action add(title: String) {
-        let undo = Backend.todos.list.update(list => list.concat([Todo(id: "new", title: title)]))
-        if let .err(_) = await Backend.todos.create(body: NewTodo(title: title)) { undo() }
-    }
-}
-page Todos(path: "/todos", title: "Todos", description: "The list.") {
-    resource todos = Backend.todos.list()
-    Heading("Todos").h1
-    Button("Add bread") {
-        on click { Backend.todos.create(body: NewTodo(title: "Bread")) }
-    }
-    match todos {
-        .loading { Spinner }
-        .failed(e) { Alert(e.message).danger }
-        .loaded(list) { for todo in list by todo.id { Text(todo.title) } }
-    }
-}
-
-// md-docs/learn/15-data.md
-api Backend from "openapi.json" (base: env.PUBLIC_API)
-
-// md-docs/learn/15-data.md
-/// Who is on the team.
-api Backend.people {
-    /// People whose name matches `q`, a page at a time.
-    get listPeople(q: String?, after: String?) at "people" -> PersonPage!
-    post createPerson(body: NewPerson) at "people" -> Person ! CreatePersonError
-    get getPerson(id: String) at "people/{id}" -> Person ! GetPersonError
-    delete deletePerson(id: String) at "people/{id}" -> ! DeletePersonError
-}
-page Doc(path: "/") {
-    // Code generated by `wf api sync` from openapi.json. DO NOT EDIT.
+    Button("Next page") { on click { page = page + 1 } }
 }
 
 // md-docs/learn/15-data.md
@@ -222,12 +123,11 @@ enum CreateUserError {
 }
 api Backend(base: "/api") {
     post createUser(body: NewUser) at "users" -> User ! CreateUserError
-    get ping() at "ping" -> !
 }
 store People {
     state said = ""
 
-    /// 1. Every case handled where the call is made.
+    /// Every case handled where the call is made.
     action submit(name: String) {
         match await Backend.createUser(body: NewUser(name: name)) {
             .ok(u) { said = "Added {u.name}" }
@@ -238,39 +138,60 @@ store People {
         }
     }
 
-    /// 2. The failure passed up, as the action's own.
+    /// The failure passed up, as the action's own.
     action invite(name: String) -> User ! CreateUserError {
         let user = try await Backend.createUser(body: NewUser(name: name))
         return user
     }
 }
-page Team(path: "/people", title: "People", description: "Adding someone, and why it can fail.") {
-    use People
-    state name = ""
-    Heading("People").h1
-    Input(bind: name, label: "Name")
-    Button("Add") { on click { People.submit(name) } }
-    Button("Invite") { on click { People.invite(name) } }
-    Text(People.said)
-    // 3. The last outcome of an action, read where it is shown.
-    if let .err(.unprocessableContent(p)) = People.invite.result {
-        Alert(p.title ?? "Check the form").danger
+
+// md-docs/learn/15-data.md
+type Todo { id: String, title: String }
+type NewTodo { title: String }
+api Backend(base: "/api") { }
+api Backend.todos {
+    get   list() at "todos" -> [Todo]!
+    get   byId(id: String) at "todos/{id}" -> Todo!
+    post  create(body: NewTodo) at "todos" -> Todo!
+        invalidates [list]
+    delete remove(id: String) at "todos/{id}" -> !
+        invalidates [list, byId(id)]
+}
+store Drafts {
+    state said = ""
+    action add(title: String) {
+        let undo = Backend.todos.list.update(list => list.concat([Todo(id: "new", title: title)]))
+        if let .err(e) = await Backend.todos.create(body: NewTodo(title: title)) {
+            undo()
+            said = e.message
+        }
+    }
+}
+page Todos(path: "/todos", title: "Todos", description: "The list.") {
+    use Drafts
+    resource todos = Backend.todos.list()
+    Heading("Todos").h1
+    Button("Add bread") { on click { Drafts.add("Bread") } }
+    Text(Drafts.said)
+    match todos {
+        .loading { Spinner }
+        .failed(e) { Alert(e.message).danger }
+        .loaded(list) { for todo in list by todo.id { Text(todo.title) } }
     }
 }
 
 // md-docs/learn/15-data.md
-type Item { id: String, name: String }
-api Catalog(base: "/api") {
-    get items(page: Number = 1) at "items" -> [Item]!
-        pages .number(param: page)
+type Todo { id: String, title: String }
+type Rename { title: String }
+api Backend(base: "/api") {
+    patch rename(id: String, body: Rename) at "todos/{id}" -> Todo!
 }
-page Items(path: "/items", title: "Items", description: "Everything, a page at a time.") {
-    resource list = Catalog.items()
+store Todos {
+    state items: [Todo] = []
 
-    Heading("Items").h1
-    for item in list.items by item.id { Text(item.name) }
-    if list.hasMore {
-        Button("Load more", loading: list.pending) { on click { list.loadMore() } }
+    action rename(id: String, title: String) -> ! {
+        optimistic(items, list => list.map(x => if x.id == id { Todo(id: x.id, title: title) } else { x }))
+        try await Backend.rename(id: id, body: Rename(title: title))
     }
 }
 
@@ -302,70 +223,64 @@ store Follow {
         for await line in Deploys.tail(id: id) { last = line.text }
     }
 }
-page Log(path: "/log", title: "Log", description: "A deploy's log, as it is written.") {
-    use Follow
-    resource lines = Deploys.tail(id: "7")
 
-    Heading("Deploy 7").h1
-    match lines {
+// md-docs/learn/15-data.md
+type User { id: String, name: String }
+type Token { token: String }
+store Session {
+    state accessToken = ""
+    action refresh() -> ! {
+        let fresh: Token = try await http.post("/api/token")
+        accessToken = fresh.token
+    }
+}
+api Backend(base: "/api") {
+    middleware [refreshOn401(Session.refresh), bearer(Session.accessToken), requestId]
+
+    get me() at "me" -> User!
+}
+
+// md-docs/learn/15-data.md
+type Person { id: String, name: String }
+type PersonPage { items: [Person], nextCursor: String? }
+api Backend(base: "/api") {
+    invalidations {
+        people.deletePerson(id) invalidates [people.listPeople, people.getPerson(id)]
+    }
+    pagination {
+        people.listPeople pages .cursor(param: after, next: p => p.nextCursor, items: p => p.items)
+    }
+}
+api Backend.people {
+    get listPeople(after: String?) at "people" -> PersonPage!
+    get getPerson(id: String) at "people/{id}" -> Person!
+    delete deletePerson(id: String) at "people/{id}" -> !
+}
+page Doc(path: "/") {
+    // generated/people.wf, written by `wf api sync`
+}
+
+// md-docs/learn/15-data.md
+type Person { id: String, name: String }
+api Backend(base: "/api") { }
+api Backend.people {
+    get list() at "people" -> [Person]!
+}
+page People(path: "/", title: "People", description: "The team.") {
+    resource people = Backend.people.list()
+    Heading("People").h1
+    match people {
         .loading { Spinner }
         .failed(e) { Alert(e.message).danger }
-        .loaded(all) { for line, i in all by i { Text("{line.at} {line.text}") } }
-    }
-    Button("Follow") { on click { Follow.watch("7") } }
-    Text(Follow.last)
-}
-
-// md-docs/learn/15-data.md
-page Doc(path: "/") {
-    action rename(id: String, name: String) -> ! {
-        optimistic(Todos.items, items => items.map(i => if i.id == id { { ...i, title: name } } else { i }))
-        try await Backend.updateUser(id: id, body: Rename(name: name))
-        Backend.users.invalidate()
+        .loaded(list) { for p in list by p.id { Text(p.name) } }
     }
 }
-
-// md-docs/learn/15-data.md
-type Todo { id: String, title: String, done: Bool = false }
-type NewTodo { title: String }
-type Change { done: Bool }
-page Todos(path: "/todos", title: "Todos", description: "Todos saved to a server.") {
-    state todos: [Todo] = []
-    state draft = ""
-    state error = ""
-
-    action load() -> ! {
-        todos = try await http.get("/api/todos")
-    }
-
-    action add() {
-        if draft.trim() == "" { return }
-        let saved: Todo! = await http.post("/api/todos", body: NewTodo(title: draft))
-        match saved {
-            .ok(created) {
-                todos.push(created)
-                draft = ""
-            }
-            .err(e) { error = "Could not save: {e.message}" }
-        }
-    }
-
-    action toggle(id: String) -> ! {
-        let found = todos.find(x => x.id == id)
-        if let todo = found {
-            let updated: Todo = try await http.patch("/api/todos/{id}", body: Change(done: !todo.done))
-            todos = todos.map(x => if x.id == id { updated } else { x })
-        }
-    }
-
-    load()
-    Heading("Todos").h1
-    Input(bind: draft, label: "New todo") { on key("Enter") { add() } }
-    Button("Add", disabled: add.pending).primary { on click { add() } }
-    if error != "" { Alert(error).danger }
-    for todo in todos by todo.id {
-        Checkbox(checked: todo.done, label: todo.title) { on change { toggle(todo.id) } }
-    }
+fake TwoPeople for Backend.people {
+    list() { .ok([Person(id: "1", name: "Ada"), Person(id: "2", name: "Grace")]) }
+}
+test "lists the team"(fakes: [TwoPeople]) {
+    People
+    expect "Grace"
 }
 
 // md-docs/learn/15-data.md
@@ -388,33 +303,11 @@ type Post { slug: String, title: String, date: String, body: String }
 data posts: [Post] = "posts.json"
 page PostPage(path: "/posts/:slug", slug: String, title: "Post", description: "A post.", paths: posts.map(p => p.slug)) {
     derived post = posts.find(p => p.slug == slug)
-    head { meta(property: "og:title", content: post?.title ?? "Post") }
     if let p = post {
         Heading(p.title).h1
         Markdown(p.body)
     } else {
         Alert("No such post").warning
     }
-}
-
-// md-docs/learn/15-data.md
-type Deploy { id: String, service: String, status: String }
-type Node { path: String, name: String, children: [Node] = [] }
-page Ops(path: "/", title: "Ops", description: "Deploys, files and a search.") {
-    state deploys: [Deploy] = [Deploy(id: "1", service: "web", status: "live")]
-    state chosen: [String] = []
-    state files: [Node] = [Node(path: "src", name: "src", children: [Node(path: "src/App.wf", name: "App.wf")])]
-    state file = ""
-    state who = ""
-    Heading("Ops").h1
-    DataTable(rows: deploys, key: d => d.id, bind: chosen, label: "Deploys").multiple {
-        empty { Text("No deploys yet") }
-        DataTable.Column("Service", value: d => d.service).sortable
-        DataTable.Column("Status") { cell(d) { Badge(d.status) } }
-    }
-    Tree(items: files, children: f => f.children, key: f => f.path, bind: file, label: "Files") {
-        row(f) { Text(f.name) }
-    }
-    Combobox(bind: who, options: ["Ada", "Alan", "Grace"], text: p => p, label: "Owner")
 }
 
