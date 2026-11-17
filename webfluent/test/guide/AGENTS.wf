@@ -282,13 +282,14 @@ page Doc(path: "/") {
 }
 
 // AGENTS.md
+type Product { name: String, price: Number }
 store CartStore {
-    state items: [Map] = []
+    state items: [Product] = []
     state total = 0
 
     derived count = items.length
 
-    action add(product: Map) {
+    action add(product: Product) {
         items = items.concat([product])
         total = total + product.price
     }
@@ -1085,7 +1086,8 @@ page Doc(path: "/") {
 }
 
 // AGENTS.md
-store Todos { state items: [Map] = [] }
+type Todo { id: String, title: String }
+store Todos { state items: [Todo] = [] }
 page List(path: "/todos", title: "Todos") {
     use Todos
     if Todos.items.length == 0 {
@@ -1155,8 +1157,9 @@ page Keys(path: "/keys", title: "Keys") {
 }
 
 // AGENTS.md
+type Deploy { id: String, service: String, status: String }
 store Deploys {
-    state items: [Map] = []
+    state items: [Deploy] = []
     derived live = items.filter(d => d.status == "live").length
 }
 page Live(path: "/live", title: "Live") {
@@ -1183,13 +1186,14 @@ component Banner(tone: Tone = .calm) {
 }
 
 // AGENTS.md
+type Deploy { id: String, service: String, status: String }
 store Deploys {
-    state items: [Map] = []
+    state items: [Deploy] = []
     state search = ""
     derived shown = items.filter(d => d.service.includes(search))
 
     action add(service: String) {
-        items = items.concat([{ id: service, service: service, status: "queued" }])
+        items = items.concat([Deploy(id: service, service: service, status: "queued")])
     }
 }
 page DeployList(path: "/deploys", title: "Deploys", description: "Every deploy.") {

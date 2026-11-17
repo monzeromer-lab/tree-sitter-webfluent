@@ -1,0 +1,13 @@
+// md-docs/errors/T23.md
+type User { name: String }
+store People {
+    state picked: User? = null
+    action pick(u: User) { picked = u }
+}
+page P(path: "/", title: "People", description: "D") {
+    use People
+    Heading("People").h1
+    Button("Ada") { on click { People.pick(User(name: "Ada")) } }
+    Text(if People.picked == null { "Nobody yet" } else { "Picked" })
+}
+

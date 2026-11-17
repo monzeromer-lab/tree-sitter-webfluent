@@ -1,0 +1,7 @@
+// md-docs/errors/T24.md
+page P(path: "/", title: "Prices", description: "D") {
+    state prices: [String: Number] = { tea: 3, coffee: 4 }
+    Heading("Prices").h1
+    Text("Tea is {prices.tea ?? 0}")
+}
+
