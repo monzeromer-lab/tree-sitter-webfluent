@@ -129,3 +129,15 @@ test "shows the server's field error"(fakes: [OneEngineer]) {
     expect called Backend.people.create
 }
 
+// md-docs/learn/16-testing.md
+type Person { id: String, name: String }
+api Backend(base: "/api") { }
+api Backend.people {
+    get listPeople at "people" -> [Person]!
+    post createPerson(body: Person) at "people" -> Person!
+}
+fake Examples for Backend.people from examples
+fake Refusing for Backend.people from examples {
+    createPerson(body) { .err(.status(503, null)) }
+}
+

@@ -577,7 +577,41 @@ middleware timed(req, next) {           // req: Request · next: (Request) -> an
 }
 
 // AGENTS.md
-api Backend from "openapi.json" (base: env.PUBLIC_API)
+api Backend.people {
+    get listPeople(q: String?, after: String?, pageSize: Number = 20 in query "page-size") at "people" -> PersonPage!
+    post createPerson(body: NewPerson) at "people" -> Person ! CreatePersonError
+}
+enum CreatePersonError {
+    conflict(problem: Problem) on 409
+    unprocessableContent(problem: ValidationProblem) on 422
+    clientError(problem: Problem?) on 4XX      // every other 4xx
+    http(error: HttpError)
+}
+page Doc(path: "/") {
+    // generated/people.wf
+
+    // generated/types.wf
+}
+
+// AGENTS.md
+type Person { id: String, name: String }
+type PersonPage { items: [Person], nextCursor: String? }
+api Backend(base: "/api") {
+    invalidations {
+        people.deletePerson(id) invalidates [people.listPeople, people.getPerson(id)]
+    }
+    pagination {
+        people.listPeople pages .cursor(param: after, next: p => p.nextCursor, items: p => p.items)
+    }
+}
+api Backend.people {
+    get listPeople(after: String?) at "people" -> PersonPage!
+    get getPerson(id: String) at "people/{id}" -> Person!
+    delete deletePerson(id: String) at "people/{id}" -> !
+}
+page Doc(path: "/") {
+    // generated/people.wf, written by `wf api sync`
+}
 
 // AGENTS.md
 page Doc(path: "/") {

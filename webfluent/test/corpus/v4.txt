@@ -1055,3 +1055,141 @@ test "lists"(fakes: [OneUser]) {
             (component_identifier)
             (identifier))
           (identifier))))))
+
+================================================================================
+A service that says what its generated endpoints make stale and how they page
+================================================================================
+
+api Backend(base: "/api") {
+    invalidations {
+        users.remove(id) invalidates [users.list, users.byId(id)]
+    }
+    pagination {
+        users.list pages .cursor(param: after, next: p => p.next)
+    }
+}
+
+api Backend.users {
+    get list(pageSize: Number = 20 in query "page-size", sid: String in cookie "session_id") at "users" -> [User]!
+}
+
+type Person { "first-name": String, id: String }
+
+enum CreateError {
+    unprocessableContent(problem: Problem) on 422
+    clientError(problem: Problem?) on 4XX
+    http(error: HttpError)
+}
+
+fake Examples for Backend.users from examples
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (api_declaration
+    (component_identifier)
+    (api_settings
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (api_body
+      (api_invalidations
+        (invalidation
+          (group_endpoint
+            (identifier)
+            (identifier)
+            (identifier))
+          (group_endpoint
+            (identifier)
+            (identifier))
+          (group_endpoint
+            (identifier)
+            (identifier)
+            (identifier))))
+      (api_pagination
+        (paging
+          (group_endpoint
+            (identifier)
+            (identifier))
+          (case_value
+            (identifier)
+            (arguments
+              (named_argument
+                (attribute_name
+                  (identifier))
+                (identifier))
+              (named_argument
+                (attribute_name
+                  (identifier))
+                (lambda
+                  (identifier)
+                  (member_expression
+                    (identifier)
+                    (identifier))))))))))
+  (api_declaration
+    (api_group_name
+      (component_identifier)
+      (identifier))
+    (api_body
+      (endpoint
+        (identifier)
+        (endpoint_parameters
+          (parameter
+            (identifier)
+            (builtin_type)
+            (number))
+          (parameter_location
+            (string
+              (string_content)))
+          (parameter
+            (identifier)
+            (builtin_type))
+          (parameter_location
+            (string
+              (string_content))))
+        (string
+          (string_content))
+        (result_type
+          (list_type
+            (named_type
+              (component_identifier)))))))
+  (type_declaration
+    (component_identifier)
+    (field_declaration
+      (string
+        (string_content))
+      (builtin_type))
+    (field_declaration
+      (identifier)
+      (builtin_type)))
+  (enum_declaration
+    (component_identifier)
+    (enum_case_declaration
+      (identifier)
+      (field_declaration
+        (identifier)
+        (named_type
+          (component_identifier)))
+      (number))
+    (enum_case_declaration
+      (identifier)
+      (field_declaration
+        (identifier)
+        (optional_type
+          (named_type
+            (component_identifier))))
+      (status_class))
+    (enum_case_declaration
+      (identifier)
+      (field_declaration
+        (identifier)
+        (named_type
+          (component_identifier)))))
+  (fake_declaration
+    (component_identifier)
+    (member_expression
+      (component_identifier)
+      (identifier))))
+

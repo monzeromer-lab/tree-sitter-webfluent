@@ -518,7 +518,15 @@
           "named": true
         },
         {
+          "type": "api_invalidations",
+          "named": true
+        },
+        {
           "type": "api_middleware",
+          "named": true
+        },
+        {
+          "type": "api_pagination",
           "named": true
         },
         {
@@ -625,6 +633,21 @@
     }
   },
   {
+    "type": "api_invalidations",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "invalidation",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "api_middleware",
     "named": true,
     "fields": {
@@ -638,6 +661,21 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "api_pagination",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "paging",
+          "named": true
+        }
+      ]
     }
   },
   {
@@ -2037,6 +2075,10 @@
           {
             "type": "number",
             "named": true
+          },
+          {
+            "type": "status_class",
+            "named": true
           }
         ]
       }
@@ -2406,7 +2448,7 @@
     "fields": {
       "body": {
         "multiple": false,
-        "required": true,
+        "required": false,
         "types": [
           {
             "type": "fake_body",
@@ -2464,6 +2506,10 @@
           },
           {
             "type": "identifier",
+            "named": true
+          },
+          {
+            "type": "string",
             "named": true
           }
         ]
@@ -2717,6 +2763,54 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "group_endpoint",
+    "named": true,
+    "fields": {
+      "argument": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "component_identifier",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "endpoint": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "component_identifier",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "group": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "component_identifier",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -3034,6 +3128,32 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "invalidation",
+    "named": true,
+    "fields": {
+      "read": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "group_endpoint",
+            "named": true
+          }
+        ]
+      },
+      "write": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "group_endpoint",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -3855,6 +3975,32 @@
     }
   },
   {
+    "type": "paging",
+    "named": true,
+    "fields": {
+      "by": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_expression",
+            "named": true
+          }
+        ]
+      },
+      "read": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "group_endpoint",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "pair",
     "named": true,
     "fields": {
@@ -3989,7 +4135,27 @@
     "type": "parameter_location",
     "named": true,
     "fields": {
+      "cookie": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
       "header": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      },
+      "query": {
         "multiple": false,
         "required": false,
         "types": [
@@ -6239,6 +6405,10 @@
     "named": false
   },
   {
+    "type": "examples",
+    "named": false
+  },
+  {
     "type": "expect",
     "named": false
   },
@@ -6304,6 +6474,10 @@
   },
   {
     "type": "invalidates",
+    "named": false
+  },
+  {
+    "type": "invalidations",
     "named": false
   },
   {
@@ -6379,6 +6553,10 @@
     "named": false
   },
   {
+    "type": "pagination",
+    "named": false
+  },
+  {
     "type": "part",
     "named": false
   },
@@ -6408,6 +6586,10 @@
   },
   {
     "type": "put",
+    "named": false
+  },
+  {
+    "type": "query",
     "named": false
   },
   {
@@ -6461,6 +6643,10 @@
   {
     "type": "state",
     "named": false
+  },
+  {
+    "type": "status_class",
+    "named": true
   },
   {
     "type": "step",

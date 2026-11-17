@@ -257,7 +257,49 @@ module.exports = grammar({
     api_middleware: ($) => seq("middleware", field("steps", $.array), optional(",")),
 
     api_body: ($) =>
-      braced($, repeat(choice($.api_headers, $.event_handler, $.endpoint, $.api_middleware, $.api_setting))),
+      braced(
+        $,
+        repeat(
+          choice(
+            $.api_headers,
+            $.event_handler,
+            $.endpoint,
+            $.api_middleware,
+            $.api_invalidations,
+            $.api_pagination,
+            $.api_setting,
+          ),
+        ),
+      ),
+
+    // `invalidations { users.create invalidates [users.list] }` — what a
+    // write of a group makes stale, beside a contract written elsewhere.
+    api_invalidations: ($) => seq("invalidations", braced($, repeat($.invalidation))),
+
+    invalidation: ($) =>
+      seq(
+        field("write", $.group_endpoint),
+        "invalidates",
+        "[",
+        sepBy(field("read", $.group_endpoint), ","),
+        optional(","),
+        "]",
+      ),
+
+    // `users.byId(id)`: an endpoint of one of the service's groups, and the
+    // write's parameters it is asked with.
+    group_endpoint: ($) =>
+      seq(
+        field("group", $._name),
+        token.immediate("."),
+        field("endpoint", $._name),
+        optional(seq("(", sepBy(field("argument", $._name), ","), ")")),
+      ),
+
+    // `pagination { users.list pages .cursor(param: after, next: p => p.next) }`
+    api_pagination: ($) => seq("pagination", braced($, repeat($.paging))),
+
+    paging: ($) => seq(field("read", $.group_endpoint), "pages", field("by", $._expression)),
 
     // `timeout: 10.seconds`, `retry: .backoff(times: 3)` — a setting of the
     // service, or of a connection.
@@ -296,9 +338,17 @@ module.exports = grammar({
     endpoint_parameters: ($) =>
       seq("(", sepBy(seq($.parameter, optional($.parameter_location)), ","), ")"),
 
-    // `token: String in header "X-Token"`, `theme: String? in cookie`
+    // `token: String in header "X-Token"`, `theme: String? in cookie`,
+    // `userId: String in query "user-id"`, `sid: String in cookie "session_id"`
     parameter_location: ($) =>
-      seq("in", choice(seq("header", field("header", $.string)), "cookie")),
+      seq(
+        "in",
+        choice(
+          seq("header", field("header", $.string)),
+          seq("query", field("query", $.string)),
+          seq("cookie", optional(field("cookie", $.string))),
+        ),
+      ),
 
     // `invalidates [list, byId(id)]` — the reads a write makes stale.
     endpoint_invalidates: ($) => seq("invalidates", field("reads", $.array)),
@@ -401,13 +451,18 @@ module.exports = grammar({
 
     // `fake OneUser for Backend.users { list(page) { .ok([…]) } }` — what
     // a test's endpoints answer in place of the network.
+    // `fake Examples for Backend.users from examples` answers with the
+    // spec's examples what it does not answer itself.
     fake_declaration: ($) =>
       seq(
         "fake",
         field("name", $._name),
         "for",
         field("target", $._expression),
-        field("body", $.fake_body),
+        choice(
+          seq("from", "examples", optional(field("body", $.fake_body))),
+          field("body", $.fake_body),
+        ),
       ),
 
     fake_body: ($) => braced($, repeat($.fake_answer)),
@@ -464,7 +519,8 @@ module.exports = grammar({
 
     field_declaration: ($) =>
       seq(
-        field("name", $._name),
+        // `"first-name": String` — a JSON name no program can write.
+        field("name", choice($._name, $.string)),
         ":",
         field("type", $._type),
         optional(seq("=", field("default", $._expression))),
@@ -483,9 +539,12 @@ module.exports = grammar({
       seq(
         field("name", choice($.identifier, alias($.null, $.identifier))),
         optional(seq("(", sepBy1($.field_declaration, ","), optional(","), ")")),
-        // `on 422`: the status a case of an error enum stands for.
-        optional(seq("on", field("status", $.number))),
+        // `on 422`: the status a case of an error enum stands for; `on 4XX`
+        // every status of its class no other case names.
+        optional(seq("on", field("status", choice($.status_class, $.number)))),
       ),
+
+    status_class: (_) => /[1-5][Xx][Xx]/,
 
     // A page or component may be named after a built-in (`page Menu`).
     _declaration_name: ($) => choice($._name, $.builtin_component),
