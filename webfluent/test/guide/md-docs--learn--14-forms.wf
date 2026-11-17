@@ -172,9 +172,7 @@ page Avatar(path: "/avatar", title: "Your picture", description: "Change your pi
     }
 
     Heading("Your picture").h1
-    FileUpload(accept: "image/*", label: "Choose a picture") {
-        on change(e) { picked = e.target.files[0] }
-    }
+    FileUpload(bind: picked, accept: "image/*", label: "Choose a picture")
     if let f = picked {
         Image(src: f.preview(), alt: "The picture you chose")
         Text("{f.name}, {format(f.size / 1024, .integer)} kB").muted.sm
