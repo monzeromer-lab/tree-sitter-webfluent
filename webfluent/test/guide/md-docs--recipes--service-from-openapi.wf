@@ -1,0 +1,34 @@
+// md-docs/recipes/service-from-openapi.md
+type Person { id: String, name: String }
+type PersonPage { items: [Person], nextCursor: String? }
+enum GetPersonError {
+    notFound(problem: Problem) on 404
+    http(error: HttpError)
+}
+api Backend(base: "/api") {
+    // Yours: what a write makes stale and how a read pages, for the
+    // generated endpoints.
+    pagination {
+        people.listPeople pages .cursor(param: after, next: p => p.nextCursor, items: p => p.items)
+    }
+}
+api Backend.people {
+    get listPeople(q: String?, after: String?) at "people" -> PersonPage!
+    get getPerson(id: String) at "people/{id}" -> Person ! GetPersonError
+}
+page People(path: "/", title: "People", description: "Everyone on the team.") {
+    resource people = Backend.people.listPeople()
+    Heading("People").h1
+    match people {
+        .loading { Spinner }
+        .failed(e) { Alert(e.message).danger }
+        .loaded(list) { for p in list by p.id { Text(p.name) } }
+    }
+    if people.hasMore {
+        Button("More") { on click { people.loadMore() } }
+    }
+}
+page Doc(path: "/") {
+    // What `wf api sync` writes, for a spec with a `people` tag:
+}
+

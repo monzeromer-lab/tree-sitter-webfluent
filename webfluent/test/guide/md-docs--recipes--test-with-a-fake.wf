@@ -1,0 +1,46 @@
+// md-docs/recipes/test-with-a-fake.md
+type Person { id: String, name: String }
+api Backend(base: "/api") { }
+api Backend.people {
+    get list() at "people" -> [Person]!
+    delete remove(id: String) at "people/{id}" -> !
+        invalidates [list]
+}
+page People(path: "/", title: "People", description: "The team.") {
+    state said = ""
+    resource people = Backend.people.list()
+    Heading("People").h1
+    match people {
+        .loading { Spinner }
+        .failed(e) { Alert(e.message).danger }
+        .loaded(list) {
+            for p in list by p.id {
+                Button("Remove {p.name}") {
+                    on click {
+                        match await Backend.people.remove(id: p.id) {
+                            .ok { said = "{p.name} removed" }
+                            .err(_) { said = "{p.name} is still here" }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    Text(said)
+}
+fake TwoPeople for Backend.people {
+    list() { .ok([Person(id: "1", name: "Ada"), Person(id: "2", name: "Grace")]) }
+    remove(id) { .err(.status(500, null)) }
+}
+test "lists the team"(fakes: [TwoPeople]) {
+    People
+    expect "Remove Ada"
+    expect "Remove Grace"
+}
+test "says when removing fails"(fakes: [TwoPeople]) {
+    People
+    click "Remove Ada"
+    expect "Ada is still here"
+    expect called Backend.people.remove
+}
+

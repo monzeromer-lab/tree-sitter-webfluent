@@ -1,0 +1,49 @@
+// md-docs/recipes/refresh-after-a-write.md
+type Todo { id: String, title: String }
+type NewTodo { title: String }
+api Backend(base: "/api") { }
+api Backend.todos {
+    get list() at "todos" -> [Todo]!
+    post create(body: NewTodo) at "todos" -> Todo!
+        invalidates [list]
+    delete remove(id: String) at "todos/{id}" -> !
+        invalidates [list]
+}
+page Todos(path: "/", title: "Todos", description: "Todos that stay current.") {
+    state draft = ""
+    state said = ""
+    resource todos = Backend.todos.list()
+
+    Heading("Todos").h1
+    Input(bind: draft, label: "New todo")
+    Button("Add").primary {
+        on click {
+            match await Backend.todos.create(body: NewTodo(title: draft)) {
+                .ok(_) { draft = "" }
+                .err(e) { said = e.message }
+            }
+        }
+    }
+    match todos {
+        .loading { Spinner }
+        .failed(e) { Alert(e.message).danger }
+        .loaded(list, refreshing) {
+            if refreshing { Spinner.sm }
+            for todo in list by todo.id {
+                Row(justify: .between) {
+                    Text(todo.title)
+                    Button("Remove {todo.title}") {
+                        on click {
+                            match await Backend.todos.remove(id: todo.id) {
+                                .ok { }
+                                .err(e) { said = e.message }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    Text(said)
+}
+

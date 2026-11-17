@@ -1,0 +1,45 @@
+// md-docs/recipes/form-with-server-errors.md
+type Person { id: String, name: String, email: String }
+type NewPerson { name: String, email: String }
+type FieldError { field: String, message: String }
+type ValidationProblem = Problem { errors: [FieldError] }
+/// Why adding someone can be refused: each status the server answers with,
+/// and `http` for the rest.
+enum CreatePersonError {
+    unprocessableContent(problem: ValidationProblem) on 422
+    conflict(problem: Problem) on 409
+    http(error: HttpError)
+}
+api Backend(base: "/api") {
+    post createPerson(body: NewPerson) at "people" -> Person ! CreatePersonError
+}
+page Join(path: "/", title: "Join", description: "Add yourself to the team.") {
+    state name = ""
+    state email = ""
+    state said = ""
+    validate name { required }
+    validate email { required  email }
+
+    Heading("Join the team").h1
+    Form(bind: form) {
+        on submit {
+            match await Backend.createPerson(body: NewPerson(name: name, email: email)) {
+                .ok(p) {
+                    said = "Welcome, {p.name}."
+                    form.reset()
+                }
+                .err(.unprocessableContent(problem)) {
+                    // Each field's message, by the field's name.
+                    form.apply(problem.errors.reduce((byField: [String: String], e: FieldError) => byField.with(e.field, e.message), {}))
+                }
+                .err(.conflict(problem)) { said = problem.detail ?? "You are already on the team." }
+                .err(.http(e)) { said = e.message }
+            }
+        }
+        Input(bind: name, label: "Name")
+        Input(bind: email, label: "Email").email
+        Button("Join", type: .submit, disabled: !form.valid).primary
+    }
+    Text(said)
+}
+
