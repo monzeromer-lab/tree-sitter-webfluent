@@ -1525,9 +1525,7 @@ page Doc(path: "/") {
 
 // md-docs/reference/components.md
 page Doc(path: "/") {
-    Callout("Every finding has a code, and a page that says how to fix it.", title: "Before you push").tip {
-        Link("Read about the checks", to: "/errors")
-    }
+    Callout("Run `wf check` before you push: every finding has a **code**, and [a page](/errors) that says how to fix it.", title: "Before you push").tip
 }
 
 // md-docs/reference/components.md
