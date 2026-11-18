@@ -32,6 +32,10 @@
         "named": true
       },
       {
+        "type": "example_declaration",
+        "named": true
+      },
+      {
         "type": "fake_declaration",
         "named": true
       },
@@ -978,11 +982,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "block_string_content",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "boolean",
@@ -2286,6 +2285,76 @@
           },
           {
             "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "example_declaration",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "block",
+            "named": true
+          }
+        ]
+      },
+      "component": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "builtin_component",
+            "named": true
+          },
+          {
+            "type": "component_identifier",
+            "named": true
+          },
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "fakes": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "example_fakes",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "string",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "example_fakes",
+    "named": true,
+    "fields": {
+      "list": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "array",
             "named": true
           }
         ]
@@ -4973,11 +5042,6 @@
     }
   },
   {
-    "type": "string_content",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "style_block",
     "named": true,
     "fields": {},
@@ -5613,10 +5677,6 @@
     "named": false
   },
   {
-    "type": "Any",
-    "named": false
-  },
-  {
     "type": "AppShell",
     "named": false
   },
@@ -5893,6 +5953,10 @@
     "named": false
   },
   {
+    "type": "Json",
+    "named": false
+  },
+  {
     "type": "Kbd",
     "named": false
   },
@@ -5918,10 +5982,6 @@
   },
   {
     "type": "LocaleSwitch",
-    "named": false
-  },
-  {
-    "type": "Map",
     "named": false
   },
   {
@@ -6273,6 +6333,10 @@
     "named": false
   },
   {
+    "type": "block_string_content",
+    "named": true
+  },
+  {
     "type": "by",
     "named": false
   },
@@ -6405,6 +6469,10 @@
     "named": false
   },
   {
+    "type": "example",
+    "named": false
+  },
+  {
     "type": "examples",
     "named": false
   },
@@ -6414,6 +6482,10 @@
   },
   {
     "type": "fake",
+    "named": false
+  },
+  {
+    "type": "fakes",
     "named": false
   },
   {
@@ -6663,6 +6735,10 @@
   {
     "type": "streamed",
     "named": false
+  },
+  {
+    "type": "string_content",
+    "named": true
   },
   {
     "type": "style",

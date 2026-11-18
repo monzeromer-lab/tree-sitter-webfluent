@@ -56,6 +56,11 @@ enum TokenType {
   RBRACKET,
   TRANSLATE,
   RAW_STRING,
+  REGEX,
+  // The division operator: never returned, only asked whether the grammar
+  // could take one here.
+  SLASH,
+  STRING_BRACE,
 };
 
 #define MAX_DEPTH 64
@@ -143,6 +148,98 @@ static bool scan_raw_string(TSLexer *lexer, bool one_line) {
   lexer->mark_end(lexer);
   lexer->result_symbol = RAW_STRING;
   return true;
+}
+
+// `/pattern/flags`, at its opening `/`: the first character is never `*`
+// or `/` (those open a comment), a `[…]` class may hold a `/`, an escape
+// is taken whole, and the pattern closes on its own line.
+static bool scan_regex(TSLexer *lexer) {
+  lexer->advance(lexer, false);
+  int32_t c = lexer->lookahead;
+  if (c == '*' || c == '/' || c == '\n' || c == 0) return false;
+  for (;;) {
+    c = lexer->lookahead;
+    if (c == '\n' || c == 0) return false;
+    if (c == '/') break;
+    if (c == '\\') {
+      lexer->advance(lexer, false);
+      if (lexer->lookahead == '\n' || lexer->lookahead == 0) return false;
+      lexer->advance(lexer, false);
+      continue;
+    }
+    if (c == '[') {
+      lexer->advance(lexer, false);
+      while (lexer->lookahead != ']') {
+        if (lexer->lookahead == '\n' || lexer->lookahead == 0) return false;
+        if (lexer->lookahead == '\\') lexer->advance(lexer, false);
+        lexer->advance(lexer, false);
+      }
+    }
+    lexer->advance(lexer, false);
+  }
+  lexer->advance(lexer, false);
+  while (lexer->lookahead >= 'a' && lexer->lookahead <= 'z') lexer->advance(lexer, false);
+  lexer->mark_end(lexer);
+  lexer->result_symbol = REGEX;
+  return true;
+}
+
+// Just past a `{` inside a string: whether it opens a splice, as the compiler
+// decides (`parser::v2::splice_end`, `splice_expr`). It does when a letter,
+// `_`, `[` or `(` follows it and its group — strings, and the older
+// `\"…\"` ones, taken whole — closes on the same line; and the group is
+// not prose: a `,`, or a `:` that is not a format's `:.`, outside any
+// bracket of its own is `{key: value}` or `{a, b}` written in text.
+static bool opens_splice_after(TSLexer *lexer) {
+  int32_t c = lexer->lookahead;
+  if (!((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || c == '_' || c == '[' || c == '(' ||
+        c >= 0x80)) {
+    return false;
+  }
+  unsigned braces = 1, nested = 0;
+  bool prose = false;
+  while (braces > 0) {
+    c = lexer->lookahead;
+    if (c == '\n' || c == 0) return false;
+    if (c == '\\') {
+      lexer->advance(lexer, false);
+      if (lexer->lookahead == '"') {
+        // `\"…\"`: a string inside a splice, its quotes escaped.
+        lexer->advance(lexer, false);
+        for (;;) {
+          if (lexer->lookahead == '\n' || lexer->lookahead == 0) return false;
+          if (lexer->lookahead == '\\') {
+            lexer->advance(lexer, false);
+            if (lexer->lookahead == '"') break;
+            continue;
+          }
+          lexer->advance(lexer, false);
+        }
+        lexer->advance(lexer, false);
+      }
+      continue;
+    }
+    if (c == '"') {
+      lexer->advance(lexer, false);
+      while (lexer->lookahead != '"') {
+        if (lexer->lookahead == '\n' || lexer->lookahead == 0) return false;
+        if (lexer->lookahead == '\\') lexer->advance(lexer, false);
+        lexer->advance(lexer, false);
+      }
+      lexer->advance(lexer, false);
+      continue;
+    }
+    lexer->advance(lexer, false);
+    if (c == '{') braces++;
+    else if (c == '}') braces--;
+    else if (c == '(' || c == '[') nested++;
+    else if ((c == ')' || c == ']') && nested > 0) nested--;
+    else if (braces == 1 && nested == 0) {
+      if (c == ',') prose = true;
+      if (c == ':' && lexer->lookahead != '.') prose = true;
+    }
+  }
+  return !prose;
 }
 
 // At a word after two spaces in a style value: whether it is the name of
@@ -292,6 +389,16 @@ bool WF_SCANNER(scan)(void *payload, TSLexer *lexer,
   // where the layout is then read.
   if (valid_symbols[STYLE_TEXT] && scan_style_text(lexer)) return true;
 
+  // A `{` in a string that opens no splice is the string's text; one that
+  // opens a splice is the grammar's.
+  if (valid_symbols[STRING_BRACE] && lexer->lookahead == '{') {
+    lexer->advance(lexer, false);
+    lexer->mark_end(lexer);
+    if (opens_splice_after(lexer)) return false;
+    lexer->result_symbol = STRING_BRACE;
+    return true;
+  }
+
   // A layout token, if any, is zero-width at the end of the line before.
   lexer->mark_end(lexer);
   bool end_of_line = false;
@@ -356,6 +463,10 @@ bool WF_SCANNER(scan)(void *payload, TSLexer *lexer,
     }
   }
   if (valid_symbols[RAW_STRING] && lexer->lookahead == '#') return scan_raw_string(lexer, false);
+  // A regular expression where a value starts and no value has just ended.
+  if (valid_symbols[REGEX] && !valid_symbols[SLASH] && lexer->lookahead == '/') {
+    return scan_regex(lexer);
+  }
   // `t(` of a translated rule message: one token, its parenthesis counted.
   if (valid_symbols[TRANSLATE] && lexer->lookahead == 't') {
     lexer->advance(lexer, false);

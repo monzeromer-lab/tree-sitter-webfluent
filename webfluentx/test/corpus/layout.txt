@@ -604,3 +604,59 @@ page P(path: "/")
             (else_pattern)
             (string
               (string_content))))))))
+
+================================================================================
+An example by indentation, with fakes; division and a regex
+================================================================================
+
+example UserCard "Away"(fakes: [OneUser])
+    state here = false
+    UserCard("Ada", active: here)
+
+store S
+    derived a3 = w / 2 + h / 2
+    derived ok = /^[a-z]+$/.test(s)
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (example_declaration
+    (component_identifier)
+    (string
+      (string_content))
+    (example_fakes
+      (array
+        (component_identifier)))
+    (block
+      (state_declaration
+        (identifier)
+        (boolean))
+      (element
+        (component_identifier)
+        (argument_list
+          (string
+            (string_content))
+          (named_argument
+            (attribute_name
+              (identifier))
+            (identifier))))))
+  (store_declaration
+    (component_identifier)
+    (block
+      (derived_declaration
+        (identifier)
+        (binary_expression
+          (binary_expression
+            (identifier)
+            (number))
+          (binary_expression
+            (identifier)
+            (number))))
+      (derived_declaration
+        (identifier)
+        (call_expression
+          (member_expression
+            (regex)
+            (identifier))
+          (arguments
+            (identifier)))))))

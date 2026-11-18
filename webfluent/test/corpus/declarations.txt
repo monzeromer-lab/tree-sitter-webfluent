@@ -185,7 +185,8 @@ store CartStore {
         (parameter_list
           (parameter
             (identifier)
-            (builtin_type)))
+            (named_type
+              (component_identifier))))
         (block
           (assignment
             (identifier)
@@ -680,10 +681,11 @@ page Café(path: "/") {
         (component_identifier)
         (argument_list
           (string
+            (interpolation
+              (identifier))
             (string_content)
-            (string_content)
-            (string_content)
-            (string_content)))))))
+            (interpolation
+              (identifier))))))))
 
 ================================================================================
 A test expects where the focus is

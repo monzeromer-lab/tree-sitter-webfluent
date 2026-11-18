@@ -346,6 +346,7 @@ store S {
       (derived_declaration
         (identifier)
         (string
+          (string_content)
           (string_content))))))
 
 ================================================================================

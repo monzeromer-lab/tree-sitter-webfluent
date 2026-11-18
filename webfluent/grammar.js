@@ -139,6 +139,16 @@ module.exports = grammar({
     // so a sample of code goes in whole. Read by the scanner, since what
     // ends it is a quote and the run of hashes it opened with.
     $.raw_string,
+    // `/pattern/flags`: read by the scanner, which is told whether the
+    // division operator could come here. Where it could, a `/` is that
+    // operator — `w / 2 + h / 2` — and a regular expression only where a
+    // value starts and no value has just ended.
+    $.regex,
+    "/",
+    // A `{` inside a string that opens no splice: the scanner looks ahead
+    // to the end of its group, as the compiler does, to tell `{name}` from
+    // `{key: value}` written in prose.
+    $._string_brace,
   ],
 
   conflicts: ($) => [
@@ -200,6 +210,7 @@ module.exports = grammar({
         $.animation_declaration,
         $.test_declaration,
         $.fake_declaration,
+        $.example_declaration,
       ),
 
     // `const API = "/api"`
@@ -477,6 +488,20 @@ module.exports = grammar({
         braced($, field("value", $._expression)),
       ),
 
+    // `example UserCard "A designer"(fakes: [OneUser]) { UserCard("Sam") }` —
+    // a component drawn one way, for the gallery and the editor.
+    example_declaration: ($) =>
+      seq(
+        "example",
+        field("component", $._declaration_name),
+        field("name", $.string),
+        optional(field("fakes", $.example_fakes)),
+        field("body", $.block),
+      ),
+
+    // `(fakes: [OneUser, Slow])`
+    example_fakes: ($) => seq("(", "fakes", ":", field("list", $.array), optional(","), ")"),
+
     // `expect "text"`, `expect not "text"`, `expect focus "Two"`,
     // `expect called Backend.users.create` — inside a test.
     expect_statement: ($) =>
@@ -609,7 +634,7 @@ module.exports = grammar({
         ")",
       ),
 
-    builtin_type: (_) => choice("String", "Number", "Bool", "Map", "Any"),
+    builtin_type: (_) => choice("String", "Number", "Bool", "Json"),
 
     list_type: ($) => seq("[", $._type, "]"),
 
@@ -1369,37 +1394,43 @@ module.exports = grammar({
     _quoted_string: ($) =>
       seq(
         '"',
-        repeat(choice($.string_content, $.escape_sequence, $.interpolation)),
-        choice('"', alias(token.immediate(/\{"/), '"')),
+        repeat(
+          choice(
+            $.string_content,
+            alias($._string_brace, $.string_content),
+            $.escape_sequence,
+            $.interpolation,
+          ),
+        ),
+        '"',
       ),
 
     // `"""…"""` — escapes and splices, over as many lines as it likes.
     block_string: ($) =>
       seq(
         '"""',
-        repeat(choice($.block_string_content, $.escape_sequence, $.interpolation)),
+        repeat(
+          choice(
+            $.block_string_content,
+            alias($._string_brace, $.block_string_content),
+            $.escape_sequence,
+            $.interpolation,
+          ),
+        ),
         '"""',
       ),
 
-    block_string_content: (_) =>
-      choice(
-        token.immediate(prec(2, /([^"\\{]|"[^"]|""[^"])+/)),
-        token.immediate(/\{[^a-zA-Z_"\\{\[(]/),
-        token.immediate(/\{\\./),
-      ),
+    block_string_content: (_) => token.immediate(prec(2, /([^"\\{]|"[^"]|""[^"])+/)),
 
-    // A `{` opens an interpolation only when a name, a `[` or a `(` follows
-    // it; `"{ a: 1 }"` and `"{"` are text, as they are for the compiler. A
-    // `{` right before the closing quote is text too.
+    // Text up to a `{`, a `\` or the closing quote. Whether a `{` opens a
+    // splice is the scanner's to say (`_string_brace`): only when a name, a
+    // `[` or a `(` follows it and its group closes on the same line, and
+    // not when the group is prose — `{key: value}`, `{a, b}` — rather than
+    // an expression; `"{ a: 1 }"`, `"{"` and `"{\n}"` are text, as they are
+    // for the compiler.
     // Precedence 2, above a `///` doc comment's 1: a string that begins
     // `"/// A doc comment…"` — a sample of code — is text, not a comment.
-    string_content: (_) =>
-      choice(
-        token.immediate(prec(2, /[^"\\{]+/)),
-        token.immediate(/\{[^a-zA-Z_"\\{\[(]/),
-        // A `{` before an escape opens nothing either: `"{\n}"`.
-        token.immediate(/\{\\./),
-      ),
+    string_content: (_) => token.immediate(prec(2, /[^"\\{]+/)),
 
     escape_sequence: (_) => token.immediate(/\\./),
 
@@ -1452,20 +1483,6 @@ module.exports = grammar({
     color: (_) => token(seq("#", /[0-9a-fA-F]{8}|[0-9a-fA-F]{6}|[0-9a-fA-F]{3,4}/)),
 
     number: (_) => /\d+(\.\d+)?/,
-
-    // `/pattern/flags`, where a value may start; a `/` after a value is the
-    // operator, which the contextual lexer tells apart.
-    regex: (_) =>
-      token(
-        seq(
-          "/",
-          // The first character is never `*` or `/`: those start a comment.
-          /[^/\\\n\[*]|\\.|\[[^\]\n]*\]/,
-          /([^/\\\n\[]|\\.|\[[^\]\n]*\])*/,
-          "/",
-          /[a-z]*/,
-        ),
-      ),
 
     boolean: (_) => choice("true", "false"),
 

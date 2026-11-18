@@ -462,14 +462,16 @@ page P(path: "/") {
       (parameter
         (identifier)
         (list_type
-          (builtin_type))))
+          (named_type
+            (component_identifier)))))
     (block
       (slot_declaration
         (identifier)
         (parameter_list
           (parameter
             (identifier)
-            (builtin_type))
+            (named_type
+              (component_identifier)))
           (parameter
             (identifier)
             (builtin_type))))

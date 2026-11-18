@@ -1,0 +1,196 @@
+================================================================================
+An example of a component, and one with fakes and state of its own
+================================================================================
+
+/// The usual case.
+example UserCard "A designer" {
+    UserCard("Sam", role: "Designer")
+}
+example UserCard "Away"(fakes: [OneUser]) { state here = false
+    UserCard("Ada", role: "Engineer", active: here) }
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (doc_comment)
+  (example_declaration
+    (component_identifier)
+    (string
+      (string_content))
+    (block
+      (element
+        (component_identifier)
+        (argument_list
+          (string
+            (string_content))
+          (named_argument
+            (attribute_name
+              (identifier))
+            (string
+              (string_content)))))))
+  (example_declaration
+    (component_identifier)
+    (string
+      (string_content))
+    (example_fakes
+      (array
+        (component_identifier)))
+    (block
+      (state_declaration
+        (identifier)
+        (boolean))
+      (element
+        (component_identifier)
+        (argument_list
+          (string
+            (string_content))
+          (named_argument
+            (attribute_name
+              (identifier))
+            (string
+              (string_content)))
+          (named_argument
+            (attribute_name
+              (identifier))
+            (identifier)))))))
+
+================================================================================
+Division after a value is the operator, a regex only where a value starts
+================================================================================
+
+store S {
+    derived a3 = w / 2 + h / 2
+    derived a4 = n / n / n
+    derived ok = /^[a-z]+$/.test(s)
+    derived r = x.replace(/a/g, "b")
+    derived c = s.match(/[/]+/)
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (store_declaration
+    (component_identifier)
+    (block
+      (derived_declaration
+        (identifier)
+        (binary_expression
+          (binary_expression
+            (identifier)
+            (number))
+          (binary_expression
+            (identifier)
+            (number))))
+      (derived_declaration
+        (identifier)
+        (binary_expression
+          (binary_expression
+            (identifier)
+            (identifier))
+          (identifier)))
+      (derived_declaration
+        (identifier)
+        (call_expression
+          (member_expression
+            (regex)
+            (identifier))
+          (arguments
+            (identifier))))
+      (derived_declaration
+        (identifier)
+        (call_expression
+          (member_expression
+            (identifier)
+            (identifier))
+          (arguments
+            (regex)
+            (string
+              (string_content)))))
+      (derived_declaration
+        (identifier)
+        (call_expression
+          (member_expression
+            (identifier)
+            (identifier))
+          (arguments
+            (regex)))))))
+
+================================================================================
+A brace group in prose is text; a name, an index and a format are splices
+================================================================================
+
+page P(path: "/") {
+    Text("Use {key: value} in prose, and {a, b} too")
+    Text("Total: {total:.currency}, shipped {when:.date(long)}")
+    Text("Hello, {name}, first is {items[0]}")
+    Text("{t(\"k\", n: count)} and {f(a, b)}")
+}
+
+--------------------------------------------------------------------------------
+
+(source_file
+  (page_declaration
+    (component_identifier)
+    (page_attributes
+      (named_argument
+        (attribute_name
+          (identifier))
+        (string
+          (string_content))))
+    (block
+      (element
+        (builtin_component)
+        (argument_list
+          (string
+            (string_content)
+            (string_content)
+            (string_content)
+            (string_content)
+            (string_content))))
+      (element
+        (builtin_component)
+        (argument_list
+          (string
+            (string_content)
+            (interpolation
+              (identifier)
+              (format_spec
+                (identifier)))
+            (string_content)
+            (interpolation
+              (identifier)
+              (format_spec
+                (identifier)
+                (identifier))))))
+      (element
+        (builtin_component)
+        (argument_list
+          (string
+            (string_content)
+            (interpolation
+              (identifier))
+            (string_content)
+            (interpolation
+              (index_expression
+                (identifier)
+                (number))))))
+      (element
+        (builtin_component)
+        (argument_list
+          (string
+            (interpolation
+              (call_expression
+                (identifier)
+                (arguments
+                  (string)
+                  (named_argument
+                    (attribute_name
+                      (identifier))
+                    (identifier)))))
+            (string_content)
+            (interpolation
+              (call_expression
+                (identifier)
+                (arguments
+                  (identifier)
+                  (identifier))))))))))

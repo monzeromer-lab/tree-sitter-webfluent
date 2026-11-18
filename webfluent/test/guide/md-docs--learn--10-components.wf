@@ -200,3 +200,22 @@ page Booking(path: "/", title: "Booking", description: "How many seats.") {
     Counter(seats, label: "Seats", min: 1) { on change(v) { seats = v } }
 }
 
+// md-docs/learn/10-components.md
+/// A person, at a glance.
+component UserCard(_ name: String, role: String, active: Bool = true) {
+    Card {
+        Text(name).bold
+        Text(role).muted
+        if active { Badge("Active").success }
+    }
+}
+/// The usual case.
+example UserCard "A designer" {
+    UserCard("Sam", role: "Designer")
+}
+example UserCard "Away" {
+    state here = false
+    UserCard("Ada", role: "Engineer", active: here)
+    Button("Back") { on click { here = true } }
+}
+

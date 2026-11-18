@@ -107,13 +107,15 @@ api Spec from "openapi.json" (base: env.PUBLIC_API)
         (endpoint_parameters
           (parameter
             (identifier)
-            (builtin_type)))
+            (named_type
+              (component_identifier))))
         (named_type
           (component_identifier))
         (endpoint_errors
           (error_mapping
             (number)
-            (builtin_type))))
+            (named_type
+              (component_identifier)))))
       (endpoint
         (identifier)
         (endpoint_parameters
@@ -436,6 +438,7 @@ page P(path: "/") {
             (argument_list
               (string
                 (string_content)
+                (escape_sequence)
                 (string_content))))))
       (element
         (builtin_component)
@@ -563,10 +566,9 @@ page P(path: "/") {
             (number))))
       (state_declaration
         (identifier)
-        (named_type
-          (component_identifier))
+        (builtin_type)
         (member_expression
-          (component_identifier)
+          (builtin_type)
           (identifier)))
       (action_declaration
         (identifier)
@@ -1192,4 +1194,3 @@ fake Examples for Backend.users from examples
     (member_expression
       (component_identifier)
       (identifier))))
-
